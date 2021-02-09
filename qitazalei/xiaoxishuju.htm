@@ -1,0 +1,143 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+            <li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new2')" >一.信息数据类 <span>(可收缩)</span></h6></li>
+	  <ol id="new2">
+			<li><blockquote><a href="#">1.设置</a></blockquote></li>
+			<li><blockquote><a href="#xxfz">2.复制</a></blockquote></li>
+			<li><blockquote><a href="#xxchongzhi">3.重置</a></blockquote></li>
+			
+			<li><blockquote><a href="#xxxxz1">4.信息值1</a></blockquote></li>
+			<li><blockquote><a href="#xxxxz1">5.信息值2</a></blockquote></li>
+			<li><blockquote><a href="#xxxxz1">6.信息对象</a></blockquote></li>
+		</ol>	
+	
+	</ol>
+</ul>
+</div>	
+
+
+
+<p align="left">
+<h2>信息数据类操作</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p> 
+<p align="left">&nbsp;</p>
+	
+<font style="font-size: 12pt; font-weight:700">● 设置</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可设置数据保存到当前对象中。</p>
+	<p align="left">参数1：输入要保存的一个整数。</p>
+	<p align="left">参数2：输入要保存的第二个整数。</p>
+	<p align="left">参数3：输入要保存的对象数据。</p>
+	<p align="left"><img border="0" src="j_zalei_images/10.png" ></p>
+</blockquote>
+	<a name="xxxxz1"></a>
+<font style="font-size: 12pt; font-weight:700">● 信息值1</font><br>
+<font style="font-size: 12pt; font-weight:700">● 信息值2</font><br>
+<font style="font-size: 12pt; font-weight:700">● 信息对象</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">以上为三个变量值，分别对应如下数据。</p>
+	<p align="left">信息值1：通过本变量可取出<b>“设置()”</b>方法中的<b>“参数1”</b>。</p>
+	<p align="left">信息值2：通过本变量可取出<b>“设置()”</b>方法中的<b>“参数2”</b>。</p>
+	<p align="left">信息对象：通过本变量可取出<b>“设置()”</b>方法中的<b>“参数3”</b>。</p>
+	<p align="left"><img border="0" src="j_zalei_images/11.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义类型为<b>“信息数据类”</b>的成员变量。</p>
+	<p align="left">2、<b>“按钮1”</b>被点击后，调用<b>“设置()”</b>方法设置数据。</p>
+	<p align="left">3、<b>“按钮2”</b>被点击后，通过三个变量值将保存的数据取出。</p>
+	<p align="left"><img border="0" src="j_zalei_images/12.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="j_zalei_images/13.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+	<a name="xxfz"></a>
+<font style="font-size: 12pt; font-weight:700">● 复制</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可将指定<b>“信息数据类”</b>中的数据复制到当前对象中。</p>
+	<p align="left"><img border="0" src="j_zalei_images/14.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义两个<b>“信息数据类”</b>变量，分别起名<b>“数据”</b>和<b>“数据2”</b>。</p>
+	<p align="left">2、<b>“按钮1”</b>被点击后，给<b>“数据”</b>设置数据。</p>
+	<p align="left">3、通过<b>“数据2”</b>调用当前方法，参数填写<b>“数据”</b>。</p>
+	<p align="left">4、<b>“按钮2”</b>被点击后，通过<b>“数据2”</b>取出<b>“信息值1”</b>。</p>
+	<p align="left"><img border="0" src="j_zalei_images/15.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><b>“按钮2”</b>被点击后可取出<b>“数据”</b>设置的888,证明<b>“数据”</b>被成功复制到<b>“数据2”</b>中。</p>
+	<p align="left"><img border="0" src="j_zalei_images/16.gif" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="xxchongzhi"></a>
+<font style="font-size: 12pt; font-weight:700">● 重置</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可重置当前对象。</p>
+	<p align="left"><b>“信息值1、2”</b>都会重置为0，<b>“信息对象”</b>会重置为空对象。</p>
+	<p align="left"><img src="j_zalei_images/17.png"> </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义<b>“信息数据类”</b>成员变量。</p>
+	<p align="left">2、<b>“按钮1”</b>被点击后，调用<b>“设置()”</b>方法设置数据，随即调用<b>“重置()”</b>方法。</p>
+	<p align="left">3、<b>“按钮2”</b>被点击后，取出信息值1。</p>
+	<p align="left"><img border="0" src="j_zalei_images/18.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终结果取出0，证明当前对象被重置。</p>
+	<p align="left"><img border="0" src="j_zalei_images/19.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

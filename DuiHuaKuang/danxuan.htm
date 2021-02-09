@@ -1,0 +1,200 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>对话框操作</h4></li>
+	<ol>
+    <li><blockquote><a href="#zbgz">0.准备工作</a></blockquote></li>     
+            <li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.单选列表对话框类<span>(可收缩)</span></h6></li>
+       
+	  <ol id="new1">
+			<li><blockquote><a href="#dxcjbxs">1.创建并显示</a></blockquote></li>
+            <li><blockquote><a href="#dxtbx">2.图标（写）</a></blockquote></li>
+             <li><blockquote><a href="#dxbtx">3.标题（写）</a></blockquote></li>
+            <li><blockquote><a href="#dxlbxbqrxz">4.列表项被确认选择（事件）</a></blockquote></li>
+		</ol>	
+				
+	</ol>
+</ul>
+</div>
+
+
+<p align="left">
+<h2>单选列表对话框类操作实例讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+<a name="zbgz"></a>    
+     
+<font style="font-size: 12pt; font-weight:700">● 帮助说明</font><br/>
+<br/>
+
+<blockquote>  
+	<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 准备一个界面</font><br/>
+<p align="left">&nbsp;</p>
+
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">打开窗口设计器，放两个<b>“按钮”</b>，右侧属性文本分别起名<b>“按钮1”</b>和<b>“按钮2”</b>。</p>
+	<p align="left"><img border="0" src="dhk_images/2.png" ></p>
+    <p align="left">保存布局后，右键<b>“按钮”</b>，添加<b>“按钮被单击事件接收方法”</b>，添加完毕后<b>如下图</b>所示。</p>
+    <p align="left"><img border="0" src="dhk_images/02.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="dxcjbxs"></a>
+<h2>一、单选列表对话框类</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 创建并显示</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">可以看到本方法有<b>“四个”</b>参数，其中有<b>“两个”</b>拥有默认值。</p>
+    <p align="left">并且会返回一个对话框对象。</p>
+   <p align="left">参数1：要显示的窗口，通常填写<b>“本对象”</b>即可。</p>
+    <p align="left">参数2：需要传递一个<b>数组文本</b>，用来显示<b>列表项目</b>。</p>
+	<p align="left"><img border="0" src="dhk_images/3.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写如下图</b>：</p>
+<blockquote>
+
+	<p align="left">指定按钮来源对象为<b>“按钮1”</b>，创建一个类型为<b>“文本型[]”</b>，名称为<b>“列表项目”</b>变量。</p>
+    <p align="left">为该变量设置文本数组的<b>“初始值”</b>，格式为<b>“{"列表1","列表2"……}”</b>。</p>
+    <p align="left">然后使用<b>“本类名”</b>加<b>“本方法”</b>就可以将<b>“单选列表对话框”</b>显示出来。</p>
+    <p align="left">参数1：写<b>“本对象”</b>。参数2：写定义的<b>“数组变量”</b>。</p>
+ <p align="left">参数<b>“3、4”</b>有默认值所以可省略。</p>
+	<p align="left"><img border="0" src="dhk_images/4.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">执行<b>“按钮1”</b>后，<b>“单选列表对话框”</b>就会弹出，然后你就可以进行选择。</p>
+ 
+       
+    <p align="left"><img border="0" src="dhk_images/5.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="dxtbx"></a>
+<font style="font-size: 12pt; font-weight:700">● 图标（写）</font><br/>
+
+<a name="dxbtx"></a>
+<font style="font-size: 12pt; font-weight:700">● 标题（写）</font><br/>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">以上两个都是<b>“写属性”</b>，首先我们需要在原来代码的基础上，增加两个变量。</p>
+    <p align="left">一个<b>“成员变量”</b>类型为<b>“单选列表对话框类”</b>名称为<b>“单选列表”</b>的变量，设置参考。</p>
+    <p align="left">另外一个<b>“局部变量”</b>类型为<b>“可绘制资源”</b>名称为<b>“图标”</b>的变量，并且导入一张图片。</p>
+    <p align="left">随后把创建的列表对象，赋值给定义的<b>“单选列表”</b>成员变量。</p>
+	
+    <p align="left">最后利用直接利用这两个<b>“写属性”</b>，赋值对应的内容即可。</p>
+    <p align="left"><img border="0" src="dhk_images/6.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">左图：<b>“安卓5.0”</b>效果，因安卓<b>“上下不兼容”</b>的问题，并没有显示图标。</p>
+    <p align="left">右图：<b>“安卓8.0”</b>效果，图标<b>“有显示”</b>。</p>
+    <p align="left">其它安卓版本是否显示，因设备有限无法测试。</p>
+	<p align="left"><img border="0" src="dhk_images/7.png" >
+    &nbsp;&nbsp;
+    <img border="0" src="dhk_images/8.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="dxlbxbqrxz"></a>
+<font style="font-size: 12pt; font-weight:700">● 列表项被确认选择（事件）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">可以看到本事件有一个整数参数，用来返回点击<b>“确认”</b>后，的项目索引。</p>
+    <p align="left"><img border="0" src="dhk_images/9.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写(1)</b>：</p>
+<blockquote>
+	<p align="left">右键<b>“单选列表对话框类”</b>，选择<b>“添加事件接受方法”</b>。</p>
+	<p align="left"><img border="0" src="dhk_images/10.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写(2)</b>：</p>
+<blockquote>
+    <p align="left">在新打开的窗口中可以看到只有一个事件，选择后点击<b>“添加”</b>即可。</p>
+	<p align="left"><img border="0" src="dhk_images/11.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写(3)</b>：</p>
+<blockquote>
+    <p align="left">添加后会生成如下表格代码，可以看到有<b>“三个”</b>参数。</p>
+    <p align="left">参数1：指定来源对象。</p>
+    <p align="left">参数2：标记值。<b>“挂接事件()”</b>方法的参数2可以传递标记。</p>
+    <p align="left">因我们挂接事件的时候，并没有传递参数，所以这里直接忽略即可。</p>
+    <p align="left">参数3：就是我们在帮助中看到的<b>“项目索引”</b>。</p>
+    <p align="left">直接用<b>“到文本()”</b>方法转换<b>“被选中项目索引”</b>即可。</p>
+	<p align="left"><img border="0" src="dhk_images/12.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写(4)</b>：</p>
+<blockquote>
+    <p align="left">在编译运行之前，我们还需要进行<b>“挂接事件”</b>操作，挂接的对象自然是定义的<b>“单选列表”</b>成员变量。</p>
+	<p align="left"><img border="0" src="dhk_images/13.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>运行效果（GIF）</b>：</p>
+<blockquote>
+    <p align="left">单选列表的项目索引从0开始。</p>
+	<p align="left"><img border="0" src="dhk_images/14.gif" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p><p align="left">&nbsp;</p>
+
+</body>
+</html>

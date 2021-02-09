@@ -1,0 +1,556 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+        <li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new2')" >一.JSON数组类<span>(可收缩)</span></h6></li>
+		<ol id="new2">
+    		<li><blockquote><a href="#">1.本类说明</a></blockquote></li>
+            <li><blockquote><a href="#cjzwbsj">2.创建自文本数据</a></blockquote></li>
+            <li><blockquote><a href="#cjzwbsj">3.成员数(读)</a></blockquote></li>
+            <li><blockquote><a href="#cjzsz">4.创建自数组</a></blockquote></li>
+            <li><blockquote><a href="#cjzjxdx">5.创建自解析对象</a></blockquote></li>
+            <li><blockquote><a href="#cjzjh">6.创建自集合</a></blockquote></li>
+            <li><blockquote><a href="#djsondx">7.到JSON对象</a></blockquote></li>
+            <li><blockquote><a href="#daokedu">8.到可读文本</a></blockquote></li>
+            <li><blockquote><a href="#jiaru">9.加入(转成文本)</a></blockquote></li>
+            <li><blockquote><a href="#quwenben">10.取小数值</a></blockquote></li>
+            <li><blockquote><a href="#quwenben">11.取整数值</a></blockquote></li>
+            <li><blockquote><a href="#quwenben">12.取文本值</a></blockquote></li>
+            <li><blockquote><a href="#quwenben">13.取逻辑值</a></blockquote></li>
+            <li><blockquote><a href="#quwenben">14.取长整数值</a></blockquote></li>
+            <li><blockquote><a href="#quzhi">15.取值</a></blockquote></li>
+            <li><blockquote><a href="#quwenben">16.取对象值</a></blockquote></li>
+            <li><blockquote><a href="#quwenben">17.取数组值</a></blockquote></li>
+            <li><blockquote><a href="#shifouweikong">18.是否为空数据</a></blockquote></li>
+            <li><blockquote><a href="#yichu">19.移除指定对象</a></blockquote></li>
+            <li><blockquote><a href="#zhiru">20.置入整数值</a></blockquote></li>
+            <li><blockquote><a href="#zhiru">21.置入小数值</a></blockquote></li>
+            <li><blockquote><a href="#zhiru">22.置入文本值</a></blockquote></li>
+            <li><blockquote><a href="#zhiru">23.置入逻辑值</a></blockquote></li>
+            <li><blockquote><a href="#zhiru">24.置入长整数值</a></blockquote></li>
+            <li><blockquote><a href="#zhiruduixiang">25.置入对象值</a></blockquote></li>
+            <li><blockquote><a href="#zhidingweizhi">26.置入对象值到指定位置</a></blockquote></li>
+            <li><blockquote><a href="#zhidingweizhi">27.置入整数值到指定位置</a></blockquote></li>
+            <li><blockquote><a href="#zhidingweizhi">28.置入文本值到指定位置</a></blockquote></li>
+            <li><blockquote><a href="#zhidingweizhi">29.置入逻辑值到指定位置</a></blockquote></li>
+            <li><blockquote><a href="#zhidingweizhi">30.置入长整数到指定位置</a></blockquote></li>
+            <li><blockquote><a href="#jsonqt">31.生成一段JSON</a></blockquote></li>
+		</ol>
+	
+	
+	</ol>
+</ul>
+</div>
+
+<p align="left">
+<h2>JSON数组类操作实例讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>    
+<font style="font-size: 12pt; font-weight:700">● 帮助说明</font><br/>
+<br/>
+<blockquote>
+<p align="left">本类位于<strong><b>“JSON数据访问支持”</b></strong>模块中。</p>
+</blockquote>
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+    <p align="left">JSON数组类和<a href="json_duixiang.htm"><b>“JSON对象类”</b></a>类似，只是具体的表现形式不同，具体如下：</p>
+	<p align="left">1、以精易网页助手2.66版本为准。</p>
+	<blockquote>
+	<p align="left">图左：为<strong>JSON数组类</strong>文本代码。</p>
+	<p align="left">图右：为解析到树形框后显示效果，更加方便理解JSON数组格式。</p>
+	</blockquote>
+	<p align="left">2、<strong>JSON数组类</strong>标准格式为以<strong><b>“[”</b></strong>开始，最终以<strong><b>“]”</b></strong>结尾。</p>
+	<blockquote>
+        <p align="left">JSON数组类没有键名键值概念，只有成员。</p>
+	  <p align="left">成员内容可以使用<strong><b>“文本”</b></strong>，<strong><b>“整数”</b></strong>，<strong><b>“小数”</b></strong>，<strong><b>“长整数”</b></strong>，<strong><b>“逻辑”</b></strong>（true为真、false为假）</p>
+	  <p align="left">以及<strong><b>“对象成员”</b></strong>（可使用json对象类或json数组类当成员）。</p>
+	  <p align="left">每个成员之间必须用英文的逗号隔开，并且最后一个成员不需要逗号。</p>
+	</blockquote>
+	<p align="left">3、利用精易网页助手解析到树型框后（图右），凡是以<strong><b>“组”</b></strong>文字开始的代表为<strong><b>“JSON数组类”</b></strong>。</p>
+
+  <p align="left"><img border="0" src="images/215.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="cjzwbsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建自文本数据</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 成员数(读)</font>
+    <p align="left">&nbsp;</p>
+<p align="left"><b>“创建自文本数据”</b>帮助页：</p>
+<blockquote>
+<p align="left">本方法只有一个参数，提供正确的JSON数组文本即可创建当前对象。</p>
+<p align="left">创建失败返回空对象。</p>
+	<p align="left"><img border="0" src="sz_img/1.png" ></p>
+</blockquote>
+    <p align="left">&nbsp;</p>
+<p align="left"><b>“成员数(读)”</b>帮助页：</p>
+<blockquote>
+<p align="left">通过本属性可取出JSON数组类中的成员数量。</p>
+	<p align="left"><img border="0" src="sz_img/2.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">准备如下JSON文本：</p>
+<blockquote>
+<p align="left" style="color: #F0161A">[1,"文本"]</p>
+</blockquote>    
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">1、将准备的JSON文本放入到常量值中。 </p>
+<p align="left">2、调用<b>“创建自文本数据()”</b>方法，并赋值给定义的<b>“JSON数组类”</b>变量。</p>
+<p align="left">3、调用<b>“成员数”</b>读属性，将结果显示在编辑框中。 </p>
+	<p align="left"><img border="0" src="sz_img/3.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">最后可看到成员数等于2.</p>
+	<p align="left"><img border="0" src="sz_img/4.png" ></p>
+</blockquote>    
+    
+  
+<p align="left">&nbsp;</p>
+<a name="cjzsz"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建自数组</font>
+    <p align="left">&nbsp;</p>
+<p align="left">帮助页如下图：</p>
+<blockquote>
+<p align="left">通过本方法可将<b>“文本数组”</b>或<b>“整数数组”</b>这样的基本数据类型数组转换成JSON数组类。</p>
+	<p align="left"><img border="0" src="sz_img/5.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">准备如下数组文本：</p>
+<blockquote>
+<p align="left" style="color: #F0161A">{"成员1","成员2"}</p>
+</blockquote>    
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">1、将准备的数组文本放入常量值中。</p>
+<p align="left">2、调用本方法创建JSON数组类，转换成文本显示在编辑框中。</p>
+	<p align="left"><img border="0" src="sz_img/6.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">最终可看到文本形式的JSON数组类被显示出来。</p>
+	<p align="left"><img border="0" src="sz_img/7.png" ></p>
+</blockquote>     
+    
+    
+<p align="left">&nbsp;</p>
+<a name="cjzjxdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建自解析对象</font>
+    <p align="left">&nbsp;</p>
+<p align="left">帮助页如下图：</p>
+<blockquote>
+<p align="left">通过<b>“JSON解析类”</b>创建当前数组对象，失败返回空对象。</p>
+	<p align="left"><img border="0" src="sz_img/8.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">准备如下JSON文本：</p>
+<blockquote>
+<p align="left" style="color: #F0161A">[1,"文本"]</p>
+</blockquote>    
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">1、定义文本常量，初始值导入json数据。</p>
+<p align="left">2、通过<b>“JSON解析类.创建自文本()”</b>方法创建解析类对象。</p>
+<p align="left">3、调用<b>“创建自解析对象()”</b>方法，创建数组对象后，将JSON数组类转换成文本显示出来。</p>
+	<p align="left"><img border="0" src="sz_img/9.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="sz_img/10.png" ></p>
+</blockquote>   
+    
+    
+    <p align="left">&nbsp;</p>
+<a name="cjzjh"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建自集合</font>
+    <p align="left">&nbsp;</p>
+<p align="left">帮助页如下图：</p>
+<blockquote>
+<p align="left">本方法，可通过一个基础类存在集合模板类的对象，来创建JSON数组类。</p>
+	<p align="left"><img border="0" src="sz_img/11.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">文本哈希集类帮助页：</p>
+<blockquote>
+<p align="left">通过查询帮助页，得知当前类的基础类存在<b>“集合模板类”</b>所以可以用来创建json数组类。</p>
+<p align="left"><img border="0" src="sz_img/12.png" ></p>
+</blockquote>    
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">1、定义<b>“文本哈希集类”</b>变量，并添加两个成员。</p>
+<p align="left">2、调用<b>“创建自集合()”</b>方法创建后，并将结果显示在编辑框中。</p>
+	<p align="left"><img border="0" src="sz_img/13.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">最终被添加的两个成员显示在了JSON数组类中。</p>
+	<p align="left"><img border="0" src="sz_img/14.png" ></p>
+</blockquote>   
+    
+    
+    <p align="left">&nbsp;</p>
+<a name="djsondx"></a>
+<font style="font-size: 12pt; font-weight:700">● 到JSON对象</font>
+    <p align="left">&nbsp;</p>
+<p align="left">帮助页如下图：</p>
+<blockquote>
+<p align="left">本方法可通过提供的<b>“键名数组”</b>和<b>“键值数组”</b>进行合并处理转换成JSON对象类。</p>
+	<p align="left"><img border="0" src="sz_img/15.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">准备如下JSON文本：</p>
+<blockquote>
+<p align="left" style="color: #F0161A">["键名1","键名2"]</p>
+<p align="left" style="color: #F0161A">["键值1","键值2"]</p>
+</blockquote>    
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">1、将准备的键名json和键值json分别放入常量值中。 </p>
+<p align="left">2、利用<b>“创建自文本数据()”</b>方法分别创建<b>“键值JSON数组类”</b>和<b>“键名JSON数组类”</b>。</p>
+<p align="left">3、最后利用当前方法合并成json对象类。</p>
+	<p align="left"><img border="0" src="sz_img/16.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">最终可看到准备的两个JSON数组类，被合并成了一个JSON对象类数据。</p>
+	<p align="left"><img border="0" src="sz_img/17.png" ></p>
+</blockquote>      
+    
+    <p align="left">&nbsp;</p>
+<a name="daokedu"></a>
+<font style="font-size: 12pt; font-weight:700">● 到可读文本</font>
+    <p align="left">&nbsp;</p>
+<p align="left">帮助页如下图：</p>
+<blockquote>
+<p align="left">本方法和<b>“到文本()”</b>的作用一致，不同之处是本方法可进行文本缩进。</p>
+<p align="left">注意：转换失败将返回空对象。</p>
+	<p align="left"><img border="0" src="sz_img/18.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">准备如下JSON文本：</p>
+<blockquote>
+<p align="left" style="color: #F0161A">[1,"文本"]</p>
+</blockquote>    
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">创建json数组类后可以直接调用本方法转换成可读文本数据。</p>
+	<p align="left"><img border="0" src="sz_img/19.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="sz_img/20.png" ></p>
+</blockquote>      
+    
+    <p align="left">&nbsp;</p>
+<a name="jiaru"></a>
+<font style="font-size: 12pt; font-weight:700">● 加入</font>
+    <p align="left">&nbsp;</p>
+<p align="left">帮助页如下图：</p>
+<blockquote>
+<p align="left">本方法的作用，是将JSON数组类中的每个成员用指定分隔符连接起来，返回连接后的文本。</p>
+	<p align="left"><img border="0" src="sz_img/21.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">准备如下JSON文本：</p>
+<blockquote>
+<p align="left" style="color: #F0161A">[1,"文本"]</p>
+</blockquote>    
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">创建JSON数组类后调用<b>“加入()”</b>方法，利用减号连接成员。</p>
+	<p align="left"><img border="0" src="sz_img/22.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">组中可看到每个成员用减号连接，并且如果是文本成员会保留引号。</p>
+	<p align="left"><img border="0" src="sz_img/23.png" ></p>
+</blockquote>      
+    
+    <p align="left">&nbsp;</p>
+<a name="quwenben"></a>
+<font style="font-size: 12pt; font-weight:700">● 取小数值</font>
+<font style="font-size: 12pt; font-weight:700">● 取整数值</font>
+<font style="font-size: 12pt; font-weight:700">● 取文本值</font>
+<font style="font-size: 12pt; font-weight:700">● 取逻辑值</font>
+<font style="font-size: 12pt; font-weight:700">● 取长整数值</font>
+<font style="font-size: 12pt; font-weight:700">● 取对象值</font>
+<font style="font-size: 12pt; font-weight:700">● 取数组值</font>
+    <p align="left">&nbsp;</p>
+    <p align="left">以上几个方法用于取出不同数据类型的成员。</p>
+    <p align="left">用法一致，此处演示<b>“取文本值()”</b>方法</p>
+    <p align="left">&nbsp;</p>
+<p align="left"><b>“取文本值”</b>帮助页：</p>
+<blockquote>
+<p align="left">顾名思义，本方法可取出JSON数组类指定成员索引的文本数据。</p>
+	<p align="left"><img border="0" src="sz_img/24.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">准备如下JSON文本：</p>
+<blockquote>
+<p align="left" style="color: #F0161A">[1,"文本"]</p>
+</blockquote>    
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">1、将准备的json文本放入常量中。</p>
+<p align="left">2、创建JSON数组类后继续调用<b>“取文本值()”</b>方法，取出索引0的数据。</p>
+	<p align="left"><img border="0" src="sz_img/25.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="sz_img/26.png" ></p>
+</blockquote>      
+    <p align="left">&nbsp;</p>
+<a name="quzhi"></a>
+<font style="font-size: 12pt; font-weight:700">● 取值</font>
+    <p align="left">&nbsp;</p>
+<p align="left">帮助页如下图：</p>
+<blockquote>
+<p align="left">本方法用于取出数组中成员的对象类值。</p>
+<p align="left">主要作用可用来判断，指定索引的成员是什么类型，从而决定如何进行下一步操作。</p>
+	<p align="left"><img border="0" src="sz_img/27.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">准备如下JSON文本：</p>
+<blockquote>
+<p align="left" style="color: #F0161A">
+    [
+  1,
+  1.1,
+  true,
+  "文本", 
+  {
+    "内嵌": "json对象"
+  }, 
+  [1, "内嵌json数组"]
+]</p>
+</blockquote>    
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">1、通过常量值创建JSON数组类对象。</p>
+<p align="left">2、利用<b>“循环”</b>JSON数组每一个成员。</p>
+<p align="left">3、取出的对象类成员，可通过<b>“属于”</b>关键词判断是否为指定类型。 </p>
+	<p align="left"><img border="0" src="sz_img/28.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="sz_img/29.png" ></p>
+</blockquote>      
+    
+    <p align="left">&nbsp;</p>
+<a name="shifouweikong"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否为空数据</font>
+    <p align="left">&nbsp;</p>
+<p align="left">帮助页如下图：</p>
+<blockquote>
+<p align="left">本方法用于判断成员是否为空数据，也就是成员是否为NULL。</p>
+	<p align="left"><img border="0" src="sz_img/30.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">准备如下JSON文本：</p>
+<blockquote>
+<p align="left" style="color: #F0161A">[ 1, null]</p>
+</blockquote>    
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">创建JSON数组类后，判断索引1的成员是否为空。</p>
+	<p align="left"><img border="0" src="sz_img/31.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="sz_img/32.png" ></p>
+</blockquote>      
+    
+    <p align="left">&nbsp;</p>
+<a name="yichu"></a>
+<font style="font-size: 12pt; font-weight:700">● 移除指定对象</font>
+    <p align="left">&nbsp;</p>
+<p align="left">帮助页如下图：</p>
+<blockquote>
+<p align="left">本方法类似于<b>“取值()”</b>，不同之处是本方法会将原对象内的指定成员索引的值删除。</p>
+	<p align="left"><img border="0" src="sz_img/33.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">准备如下JSON文本：</p>
+<blockquote>
+<p align="left" style="color: #F0161A">[
+  1,
+  1.1,
+  true,
+  "文本", 
+  {
+    "内嵌": "json对象"
+  }, 
+  [1, "内嵌json数组"]
+]</p>
+</blockquote>    
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">1、通过JSON数据创建JSON数组类对象。</p>
+<p align="left">2、移除索引4，返回索引4的成员数据。</p>
+<p align="left">3、输出原对象剩余成员数据。</p>
+	<p align="left"><img border="0" src="sz_img/34.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">最终可看到，输出的原成员数据内，缺少了JSON对象类数据。</p>
+    <p align="left">证明该数据已经被移除。</p>
+	<p align="left"><img border="0" src="sz_img/35.png" ></p>
+</blockquote>      
+    
+    <p align="left">&nbsp;</p>
+<a name="zhiru"></a>
+<font style="font-size: 12pt; font-weight:700">● 置入整数值</font>
+<font style="font-size: 12pt; font-weight:700">● 置入小数值</font>
+<font style="font-size: 12pt; font-weight:700">● 置入文本值</font>
+<font style="font-size: 12pt; font-weight:700">● 置入逻辑值</font>
+<font style="font-size: 12pt; font-weight:700">● 置入长整数值</font>
+    <p align="left">&nbsp;</p>
+    <p align="left">以上几个方法用法一致，不同之处为数据类型不同。</p>
+    <p align="left">下面举例置入文本值方法。</p>
+    <p align="left">&nbsp;</p>
+<p align="left">帮助页如下图：</p>
+<blockquote>
+<p align="left">调用本方法可置入文本数据到JSON数组类中。</p>
+<p align="left">失败返回空对象，如果数组中已经存在成员，则新置入的数据将加入到最后面。</p>
+	<p align="left"><img border="0" src="sz_img/36.png" ></p>
+</blockquote>  
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">1、定义<b>“JSON数组类”</b>变量，调用当前方法置入三个成员。</p>
+<p align="left">2、将结果显示在编辑框中。</p>
+	<p align="left"><img border="0" src="sz_img/37.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">三个成员被输出，证明置入成员成功。</p>
+	<p align="left"><img border="0" src="sz_img/38.png" ></p>
+</blockquote>      
+    
+    <p align="left">&nbsp;</p>
+<a name="zhiruduixiang"></a>
+<font style="font-size: 12pt; font-weight:700">● 置入对象值</font>
+    <p align="left">&nbsp;</p>
+<p align="left">帮助页如下图：</p>
+<blockquote>
+    <p align="left">通过本方法可置入任意类型的数据到JSON数组类中。</p>
+	<p align="left"><img border="0" src="sz_img/39.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">调用本方法分别置入文本，整数和JSON对象类数据。</p>
+	<p align="left"><img border="0" src="sz_img/40.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">所有置入的数据将显示在JSON数组类中。</p>
+	<p align="left"><img border="0" src="sz_img/41.png" ></p>
+</blockquote>      
+    
+    <p align="left">&nbsp;</p>
+<a name="zhidingweizhi"></a>
+<font style="font-size: 12pt; font-weight:700">● 置入对象值到指定位置</font><br>
+<font style="font-size: 12pt; font-weight:700">● 置入整数值到指定位置</font><br>
+<font style="font-size: 12pt; font-weight:700">● 置入文本值到指定位置</font><br>
+<font style="font-size: 12pt; font-weight:700">● 置入逻辑值到指定位置</font><br>
+<font style="font-size: 12pt; font-weight:700">● 置入长整数到指定位置</font>
+    <p align="left">&nbsp;</p>
+    <p align="left">以上几个方法的作用，可用于替换指定索引的成员数据。</p>
+    <p align="left">下面看代码演示<b>“置入文本值到指定位置”</b>。</p>
+    <p align="left">&nbsp;</p>
+
+<p align="left">准备如下JSON文本：</p>
+<blockquote>
+<p align="left" style="color: #F0161A">[1,"文本"]</p>
+</blockquote>    
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、利用常量值创建JSON数组类对象。</p>
+    <p align="left">2、调用<b>“置入文本值到指定位置()”</b>方法，替换索引0的成员。</p>
+    <p align="left">3、输出结果到编辑框中。</p>
+	<p align="left"><img border="0" src="sz_img/42.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">原成员<b>“1”</b>被替换成<b>“替换成员”</b>。</p>
+	<p align="left"><img border="0" src="sz_img/43.png" ></p>
+</blockquote>      
+   
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="jsonqt"></a>
+<font style="font-size: 12pt; font-weight:700">● 生成一段被嵌套的JSON数据</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">1、定义两个类型为<b>“JSON对象类”</b>的变量，分别为<b>“一级JSON”</b>和<b>“二级JSON”</b>。</p>
+<p align="left"><font color="#ED0F13">注：</font><b>“一级JSON”</b>即最外层的JSON对象，<b>“二级JSON”</b>为嵌套的JSON对象。</p>
+<p align="left">2、给<b>“二级JSON”</b>置入文本值，随后将当前对象保存到<b>“一级JSON”</b>中。</p>
+<p align="left">3、创建类型为<b>“JSON数组类”</b>的<b>“二级JSON数组”</b>变量，并置入三个文本值。</p>
+<p align="left">4、将<b>“二级JSON数组”</b>置入<b>“一级JSON”</b>对象中。</p>
+<p align="left">5、最后将<b>“一级JSON”</b>转换成可读文本。</p>
+	<p align="left"><img border="0" src="images/216.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="images/217.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

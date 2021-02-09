@@ -1,0 +1,2732 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>窗口组件基础类</h4></li>
+	<ol>
+    		<li><blockquote><a href="#zbgz">1.准备工作</a></blockquote></li>     
+            <li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.通常方法 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+            <li><blockquote><a href="#tcff">1.本分类说明</a></blockquote></li>  
+		  <li><blockquote><a href="#cjckzj">2.创建窗口组件</a></blockquote></li>
+   
+        <li><blockquote><a href="#qnbj">3.取内边距</a></blockquote></li>
+            <li><blockquote><a href="#qwbj">4.取外边距</a></blockquote></li>
+            <li><blockquote><a href="#qmzjx">5.取命中矩形</a></blockquote></li>
+   
+            <li><blockquote><a href="#qkd">6.取宽度</a></blockquote></li>
+            <li><blockquote><a href="#qgd">7.取高度</a></blockquote></li>
+            <li><blockquote><a href="#qxqkd">8.取需求宽度</a></blockquote></li>
+            <li><blockquote><a href="#qxqgd">9.取需求高度</a></blockquote></li>
+            <li><blockquote><a href="#qscck">10.取所处窗口</a></blockquote></li>
+            <li><blockquote><a href="#qkzbqdx">11.取扩展标签对象</a></blockquote></li>
+		    <li><blockquote><a href="#zkzbqdx">12.置扩展标签对象</a></blockquote></li>
+            <li><blockquote><a href="#qjdzj">13.取焦点组件</a></blockquote></li>
+            <li><blockquote><a href="#qfzj">14.取父组件</a></blockquote></li>
+            <li><blockquote><a href="#qbjt">15.取背景图</a></blockquote></li>
+		    <li><blockquote><a href="#zbjt">16.置背景图</a></blockquote></li>
+            <li><blockquote><a href="#qmrbqdx">17.取默认标签对象</a></blockquote></li>
+		    <li><blockquote><a href="#zmrbqdx">18.置默认标签对象</a></blockquote></li>
+            <li><blockquote><a href="#tccd">19.弹出菜单</a></blockquote></li>
+            <li><blockquote><a href="#sccksfhdjd">20.所处窗口是否获得焦点</a></blockquote></li>
+            
+            <li><blockquote><a href="#tszjdzqm">21.提升组件到最前面</a></blockquote></li>
+            <li><blockquote><a href="#bfsyxg">22.播放声音效果</a></blockquote></li>
+            <li><blockquote><a href="#sfbtm">23.是否不透明</a></blockquote></li>
+
+            <li><blockquote><a href="#sfhdjd">24.是否获得焦点</a></blockquote></li>
+            <li><blockquote><a href="#sfbxs">25.是否被显示</a></blockquote></li>
+            <li><blockquote><a href="#xssxwcd">26.显示上下文菜单</a></blockquote></li>
+            <li><blockquote><a href="#cczzj">27.查找子组件</a></blockquote></li>
+            <li><blockquote><a href="#czjdzj">28.查找焦点组件</a></blockquote></li>
+		    <li><blockquote><a href="#bqczzzj">29.标签查找子组件</a></blockquote></li>
+            <li><blockquote><a href="#mnzjdj">30.模拟组件单击</a></blockquote></li>
+            <li><blockquote><a href="#mnzjcmfk">31.模拟组件触觉反馈</a></blockquote></li>
+            <li><blockquote><a href="#mnzjcan">32.模拟组件长按</a></blockquote></li>
+            <li><blockquote><a href="#gdnr">33.滚动内容</a></blockquote></li>
+            <li><blockquote><a href="#gdnrd">34.滚动内容到</a></blockquote></li>
+            <li><blockquote><a href="#znbj">35.置内边距</a></blockquote></li>
+            <li><blockquote><a href="#zwbj">36.置外边距</a></blockquote></li>
+            <li><blockquote><a href="#zwbj2">37.置外边距2</a></blockquote></li>
+  
+            <li><blockquote><a href="#zztbjt">38.置状态背景图</a></blockquote></li>
+            <li><blockquote><a href="#zbkbj">39.置边框背景</a></blockquote></li>
+            <li><blockquote><a href="#zxqkd">40.置需求宽度</a></blockquote></li>
+            <li><blockquote><a href="#zxqgd">41.置需求高度</a></blockquote></li>
+            <li><blockquote><a href="#zxqcc">42.置需求尺寸</a></blockquote></li>
+            <li><blockquote><a href="#hdjd">43.获得焦点</a></blockquote></li>
+            <li><blockquote><a href="#sfjd">44.释放焦点</a></blockquote></li>
+
+	</ol>	
+	
+        <li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new2')" >二.静态方法<span>(可收缩)</span></h6></li>
+		<ol id="new2">
+    		<li><blockquote><a href="#jtff">1.本分类说明</a></blockquote></li>
+            <li><blockquote><a href="#sczjidz">2.生成组件ID置</a></blockquote></li>
+		</ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new3')" >三.属性读写方法<span>(可收缩)</span></h6></li>
+		<ol id="new3">
+			<li><blockquote><a href="#shuxingduxie">1.本分类说明</a></blockquote></li>
+            <li><blockquote><a href="#iddx">2.ID</a></blockquote></li>
+             <li><blockquote><a href="#snbjdx">3.上内边距</a></blockquote></li>
+            <li><blockquote><a href="#xnbjdx">4.下内边距</a></blockquote></li>
+         
+            
+        
+            <li><blockquote><a href="#yxsyxgdx">5.允许声音效果</a></blockquote></li>           
+                   
+            <li><blockquote><a href="#nrczpy">6.内容垂直偏移</a></blockquote></li>           
+                
+            <li><blockquote><a href="#nrmsdx">7.内容描述</a></blockquote></li>           
+            <li><blockquote><a href="#nrsppy">8.内容水平偏移</a></blockquote></li>           
+            
+            <li><blockquote><a href="#kddx">9.可视</a></blockquote></li>           
+            <li><blockquote><a href="#ynbjdx">10.右内边距</a></blockquote></li>           
+                   
+           
+            <li><blockquote><a href="#czwzdx">11.垂直位置</a></blockquote></li>           
+            <li><blockquote><a href="#czwzdx">12.垂直偏移</a></blockquote></li>           
+            <li><blockquote><a href="#czwzdx">13.垂直旋转角度</a></blockquote></li>           
+            <li><blockquote><a href="#czwzdx">14.垂直缩放比</a></blockquote></li>           
+                     
+            <li><blockquote><a href="#znbjdx">15.左内边距</a></blockquote></li>                 
+                        
+            <li><blockquote><a href="#qzpmdkdx">16.强制屏幕打开</a></blockquote></li>                 
+                       
+            <li><blockquote><a href="#zzdjdx">17.支持单击</a></blockquote></li>                 
+            <li><blockquote><a href="#zzcadx">18.支持长按</a></blockquote></li>                 
+                       
+            <li><blockquote><a href="#xzjddx">19.旋转角度</a></blockquote></li>                 
+            <li><blockquote><a href="#sfbaxdx">20.是否被按下</a></blockquote></li>                 
+            <li><blockquote><a href="#zzqwkddx">21.最小期望宽度</a></blockquote></li>                 
+            <li><blockquote><a href="#zzqwgddx">22.最小期望高度</a></blockquote></li>                 
+            <li><blockquote><a href="#bqwbdx">23.标签文本</a></blockquote></li>                 
+            <li><blockquote><a href="#czwzdx">24.水平位置</a></blockquote></li>                 
+            <li><blockquote><a href="#czwzdx">25.水平偏移</a></blockquote></li>                 
+            <li><blockquote><a href="#czwzdx">26.水平旋转角度</a></blockquote></li>                 
+            <li><blockquote><a href="#czwzdx">27.水平缩放比</a></blockquote></li>                 
+                     
+                    
+            <li><blockquote><a href="#jhdx">28.激活</a></blockquote></li>                 
+                    
+            <li><blockquote><a href="#bcmdx">29.触摸模式下可获得焦点</a></blockquote></li>                 
+            <li><blockquote><a href="#cjfkdx">30.触觉反馈</a></blockquote></li>                 
+            <li><blockquote><a href="#xkdx">31.许可</a></blockquote></li>                 
+                       
+            <li><blockquote><a href="#tmddx">32.透明度</a></blockquote></li>                 
+            <li><blockquote><a href="#mdczwzdx">33.锚点垂直位置</a></blockquote></li>                 
+            <li><blockquote><a href="#mdspwzdx">34.锚点水平位置</a></blockquote></li>                    
+		</ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new4')" >四.其它读写方法<span>(可收缩)</span></h6></li>
+		<ol id="new4">
+        
+           <li><blockquote><a href="#qtdxff">1.本分类说明</a></blockquote></li>
+           <li><blockquote><a href="#wzjzd">2.位置矩阵（读）</a></blockquote></li>  
+          <li><blockquote><a href="#kfhdjdd">3.可否获得焦点（读）</a></blockquote></li>
+       
+           <li><blockquote><a href="#sxdhbfqd">4.属性动画播放器（读）</a></blockquote></li>
+           <li><blockquote><a href="#sccksfksd">5.所处窗口是否可视（读）</a></blockquote></li>
+			<li><blockquote><a href="#sfwcmmsd">6.是否为触摸模式（读）</a></blockquote></li>
+          <li><blockquote><a href="#zzcmx">7.支持触摸（写）</a></blockquote></li>
+     
+    
+          <li><blockquote><a href="#wbjxd">8.文本基线（读）</a></blockquote></li>
+         
+          <li><blockquote><a href="#zzzzjgjt">9.支持指针经过监听（写）</a></blockquote></li>
+          <li><blockquote><a href="#zcajjtx">10.支持按键监听（写）</a></blockquote></li>
+    
+          <li><blockquote><a href="#zcckgjjtsjx">11.支持窗口挂接监听（写）</a></blockquote></li>
+        
+          <li><blockquote><a href="#bjtx">12.背景图（写）</a></blockquote></li>
+          <li><blockquote><a href="#bjsx">13.背景色（写）</a></blockquote></li>
+          <li><blockquote><a href="#bkbjx">14.边框背景（写）</a></blockquote></li>
+          <li><blockquote><a href="#zuobiand">15.左边（读）</a></blockquote></li>
+          <li><blockquote><a href="#youbiand">16.右边（读）</a></blockquote></li>
+          <li><blockquote><a href="#dingbiand">17.顶边（读）</a></blockquote></li>
+          <li><blockquote><a href="#dibiand">18.底边（读）</a></blockquote></li>
+		</ol>	
+		
+
+			<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new7')" >五.事件定义方法<span>(可收缩)</span></h6></li>
+		<ol id="new7">
+        
+           <li><blockquote><a href="#shijian">1.本分类说明</a></blockquote></li>
+          <li><blockquote><a href="#tanchucaidan">2.弹出菜单项被选择</a></blockquote></li>
+          <li><blockquote><a href="#gjdck">3.挂接到窗口</a></blockquote></li>
+          <li><blockquote><a href="#zzjg">4.指针经过</a></blockquote></li>
+          <li><blockquote><a href="#ajsr">5.按键输入</a></blockquote></li>
+        
+           <li><blockquote><a href="#bdjsj">6.被单击</a></blockquote></li>
+        
+           <li><blockquote><a href="#bcmsj">7.被触摸</a></blockquote></li>
+           <li><blockquote><a href="#bcasj">8.被长按</a></blockquote></li>
+       
+		</ol>	
+	
+		
+			<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new8')" >六.成员变量<span>(可收缩)</span></h6></li>
+		<ol id="new8">
+        
+           <li><blockquote><a href="#shexiangtou">1.本分类说明</a></blockquote></li>
+          <li><blockquote><a href="#sxdk">2.填满父组件</a></blockquote></li>
+          <li><blockquote><a href="#sxsd">3.等于内容尺寸</a></blockquote></li>
+		</ol>	
+		
+		
+		
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new10')" >七.标记类<span>(可收缩)</span></h6></li>
+		<ol id="new10">
+        
+           <li><blockquote><a href="#biaojilei">1.本类说明</a></blockquote></li>
+          <li><blockquote><a href="#biaoji">2.标记</a></blockquote></li>
+	</ol>
+
+</ul>
+</div>
+
+
+<p align="left">
+<h2>窗口组件基础类实例讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+		<font style="font-size: 12pt; font-weight:700">● 辅助说明</font><br/>
+     	<blockquote>
+		<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+	</blockquote>	
+<p align="left">&nbsp;</p>   
+     
+<font style="font-size: 12pt; font-weight:700">● 帮助文档查看</font><br/>
+<br/>
+
+
+<p align="left"><b>“窗口组件类”</b>操作，属于<b>“所有窗口组件”</b>的基础类。</p>
+<p align="left">并不能直接运行处理，需要借助具体的<b>“窗口组件”</b>来操作其中的方法。</p>
+<p align="left">例如：<strong>按钮，编辑框，文本框</strong>等所有窗口上能看到的组件。</p>
+<!--<p align="left">打开菜单<b>“项目--程序结构查看器”</b>。</p>
+<p align="left">打开<b>“系统库--安卓基本--窗口组件”</b>，就可以看到所有的窗口组件操作类。</p>-->
+<p align="left">例如：选择<b>“文本框”</b>组件，在右侧<strong>“帮助页”</strong>就可以看到<b>“继承自窗口组件的公开成员”</b>等字样。</p>
+	<p align="left">每一个窗口组件都会继承自<b>“窗口组件”</b>所有的操作方法。</p>
+	<p align="left">点击具体的方法名称，就可以查看具体更加详细的帮助。</p>
+	<p align="left">此教程就以<b>“文本框”</b>为例，讲解<b>“窗口组件”</b>所有的公开成员。</p>
+	<p align="left">关于<b><a href="a_ctrl_text.htm#wenbenkuang">“文本框”</a></b>的教程，会单独进行讲解。 </p>
+<blockquote>
+
+  <p align="left"><img src="ckzj_images/1.png" width="850" height="617" border="0" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="zbgz"></a>
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font><br/>
+<p align="left">&nbsp;</p>
+
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">打开窗口设计器，拖放两个<b>“按钮”</b>，一个<b>“文本框”</b>和一个<b>“线性布局器”</b></p>
+    <p align="left">分别起名<b>“按钮1、按钮2”</b>和<b>“文本框1”</b>。</p>
+	<p align="left"><img src="ckzj_images/2.png" width="651" height="624" border="0" ></p><br>
+    <p align="left">保存布局后，右键<b>“按钮”</b>选择<b>“添加事件接收方法”</b>。</p> 
+	<p align="left">然后去添加<b>“按钮_被单击”</b>事件。</p>
+	<p align="left">最终达到如图所示的效果。</p>
+    <p align="left"><img border="0" src="ckzj_images/3.png" ></p>
+
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="tcff"></a>
+<h2>一、通常方法</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本分类说明</font><br/>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">通常方法，需要通过<b>“类实例+方法”</b>调用。</p>
+	<p align="left">何为<b>“类实例”</b>简单来说就是创建变量的形式来调用当前的方法。</p>
+  <p align="left">如下图所示：</p>
+  <p align="left">调用<b>“加法计算”</b>时，需要定义<b>“计算类”</b>的变量，才能够调用。</p>
+  <p align="left">而这个<b>“计算类”</b>变量就是类实例，这种形式调用的方法，就属于<b>“通常方法”</b>。</p>
+	<p align="left"><img border="0" src="ckzj_images/4.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="cjckzj"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建窗口组件</font>
+
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本方法可以动态创建窗口组件。</p>
+	<p align="left">参数1：输入要创建<b>“窗口组件”</b>的名称。</p>
+	<p align="left">例如要创建<b>“按钮”</b>直接在参数内输入<b>“按钮”</b>即可。</p>
+	<p align="left">参数2：如果无特殊需求，省略即可。</p>
+	<p align="left"><img border="0" src="ckzj_images/5.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在<b>“按钮1”</b>被单击下，定义一个<b>“按钮”</b>变量起名<b>“按钮3”</b>。</p>
+	<p align="left">然后通过<b>“文本框1”</b>调用本方法赋值给<b>“按钮3”</b>即可，参数内直接填写<b>“按钮”</b>。</p>
+	<p align="left">随后可以通过<b>“按钮3”</b>设置按钮标题等信息。</p>
+	<p align="left">最后可以利用<b>“线性布局器1”</b>的<b>“添加子组件”</b>方法，将按钮加入到窗口中。</p>
+	<p align="left"><img border="0" src="ckzj_images/6.png" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可以看到<b>“按钮1”</b>被点击后，<b>“按钮3”</b>成功创建。</p>
+	<p align="left"><img border="0" src="ckzj_images/7.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="qnbj"></a><a name="znbj"></a>
+<font style="font-size: 12pt; font-weight:700">● 取内边距</font><br>
+<font style="font-size: 12pt; font-weight:700">● 置内边距</font><br>
+		<p align="left">&nbsp;</p>
+<p align="left"><b>“取内边距”</b>帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，取出当前组件的<b>“内边距”</b>，返回的是<b>“矩形类”</b>。</p>
+	<p align="left">通过<b>“矩形类”</b>的<b>“上下左右”</b>四个读属性，可以读取出具体的像素值。</p>
+	<p align="left">如果当前组件为设置<b>“内边距”</b>，最后将全部<b>“返回0”</b>.</p>
+	<p align="left"><img border="0" src="ckzj_images/9.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“置内边距”</b>帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，设置当前组件的内边距，单位像素。</p>
+	<p align="left">把想要设置的内边距像素，依次填入参数即可。</p>
+	<p align="left">如果当前组件是<b>“文本框”</b>就设置文本框的<b>“内边距”</b>，如果是<b>“按钮”</b>调用，那就会设置按钮的内边距。</p>
+	<p align="left"><img border="0" src="ckzj_images/10.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">判断<b>“按钮1”</b>被点击后，执行<b>“置内边距”</b>方法，分别设置10像素的内边距。</p>
+	<p align="left">判断<b>“按钮2”</b>被点击后，执行<b>“取内边距().X”</b>方法，</p>
+	<p align="left">分别读取<b>“上下左右”</b>四个读属性，最后<b>“到文本”</b>转换赋值给文本框显示。</p>
+	<p align="left"><img border="0" src="ckzj_images/11.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">可以看到首先点击<b>“按钮2”</b>，取出来的内边距全部是0。</p>
+	<p align="left">点击<b>“按钮1”</b>后再去点击<b>“按钮2”</b>，取出来的内边距就变成了<b>“10”</b>像素。</p>
+	<p align="left">并且还可以看到，文本框组件明显的发生了位置变动。</p>
+	<p align="left"><img border="0" src="ckzj_images/12.gif" ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="zwbj"></a><a name="qwbj"></a><a name="zwbj2"></a>
+<font style="font-size: 12pt; font-weight:700">● 置外边距</font><br>
+<font style="font-size: 12pt; font-weight:700">● 置外边距2</font>	<br>
+<font style="font-size: 12pt; font-weight:700">● 取外边距</font>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“置外边距”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法顾名思义，就是设置当前组件的外边距。</p>
+	<p align="left">如果当前组件是<b>“文本框”</b>就设置文本框的外边距，如果是<b>“按钮”</b>调用，那就会设置按钮的外边距。</p>
+	<p align="left">通过<b>“矩形类”</b>的<b>“上下左右”</b>四个写属性即可设置边距。</p>
+	<p align="left"><img border="0" src="ckzj_images/13.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“置外边距2”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法和<b>“置外边距”</b>不同之处在于，本方法四个参数，可以直接指定像素值。</p>
+	<p align="left">如果忽略参数或者填写<b>“-1”</b>，将不会改变原有边距。</p>
+	<p align="left"><img border="0" src="ckzj_images/14.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“取外边距”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，取出外边距。</p>
+	<p align="left">通过<b>“矩形类”</b>的上下左右四个读属性即可读取外边距。</p>
+	<p align="left"><img border="0" src="ckzj_images/15.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“置外边距”</b>调用方式。</p>
+	<p align="left"><img border="0" src="ckzj_images/16.png" ></p>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“置外边距2”</b>调用方式，选中其中任意一种即可。</p>
+
+	<p align="left"><img border="0" src="ckzj_images/17.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮2”</b>取出的是0，因为在此之前并没有设置过外边距。</p>
+	<p align="left">点击<b>“按钮1”</b>后重新去点击<b>“按钮2”</b>此刻就会将设置的外边距读取出来。</p>
+	<p align="left"><img border="0" src="ckzj_images/18.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="qmzjx"></a>
+<font style="font-size: 12pt; font-weight:700">● 取命中矩形</font><br>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">简单来说，就是取出当前组件的矩形区域位置坐标，本方法并不常用。</p>
+	<p align="left"><img border="0" src="ckzj_images/19.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">和<b>“取外边距”</b>方法一样，直接调用本方法后，继续调用<b>“上下左右”</b>四个读属性即可。</p>
+	<p align="left"><img border="0" src="ckzj_images/20.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">成功取出<b>“文本框”</b>的矩形区域坐标。</p>
+	<p align="left"><img border="0" src="ckzj_images/21.png" ></p>
+</blockquote>
+
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="qkd"></a>
+	<a name="qgd"></a>
+	<a name="qxqkd"></a>
+	<a name="qxqgd"></a>
+	<a name="zxqkd"></a>
+	<a name="zxqgd"></a>
+<font style="font-size: 12pt; font-weight:700">● 取宽度</font><br>
+<font style="font-size: 12pt; font-weight:700">● 取高度</font><br>
+<font style="font-size: 12pt; font-weight:700">● 取需求宽度</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取需求高度</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 置需求宽度</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 置需求高度</font>	
+	<p align="left">&nbsp;</p>
+	<p align="left">以上六个方法统一讲解说明。</p>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“取宽度”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">简单来说，取出当前组件的<b>“实际宽度”</b>。</p>
+	<p align="left">但是必须保证当前组件已经布局完毕，并且有父组件，否则会返回0.</p>
+	<p align="left">正常在窗口上拖放的组件都有父组件，即窗口本身。</p>
+	<p align="left">所以通常情况下到也不必担心父组件有没有情况。</p>
+	<p align="left"><img border="0" src="ckzj_images/26.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“取高度”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法同上，取出当前组件的实际高度。</p>
+	<p align="left"><img border="0" src="ckzj_images/27.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“取需求宽度”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法的返回值，并不能保证是准确精确的数值。</p>
+	<p align="left">如果当前组件设置了宽度类型为<b>“填满父组件”</b>，最后的结果会是<b>“填满父组件”</b>的常量值。</p>
+	<p align="left">另外使用本方法也必须保证，当前组件有父组件。</p>
+	
+	<p align="left"><img border="0" src="ckzj_images/28.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“取需求高度”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，本方法的作用就是用来取出高度值。</p>
+	<p align="left"><img border="0" src="ckzj_images/29.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“置需求宽度”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，设置当前的需求宽度。</p>
+	<p align="left">通过本方法可设置<b>“填满父组件”</b>等常量值，也可以是精确的数值。</p>
+	<p align="left"><img border="0" src="ckzj_images/30.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“置需求高度”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，设置当前的组件高度。</p>
+	<p align="left">通过本方法可设置<b>“填满父组件”</b>等常量值，也可以是精确的数值。</p>
+	<p align="left"><img border="0" src="ckzj_images/31.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">首先可以修改一下文本框的<b>“背景色”</b>和<b>“文本颜色”</b>，方便和火山黑色窗口区分开。</p>
+	<p align="left">然后在<b>“按钮1”</b>被单击后分别取出对应宽度赋值给文本框显示。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，设置需求高/宽度。</p>
+	<p align="left">其中一个设置常量值，另一个设置固定值。</p>
+
+	<p align="left"><img border="0" src="ckzj_images/32.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可以看到，直接点击<b>“按钮1”</b>取宽度时，前两个方法正常，后两个方法取出的为<b>“-1”</b>。</p>
+	<p align="left">此处的<b>“-1”</b>代表<b>“等于内容尺寸”</b>的常量值，默认<b>“文本框”</b>的需求高/宽度就是等于内容尺寸。</p>
+	<p align="left">点击<b>“按钮2”</b>后重新点击<b>“按钮1”</b>，所有的数值都发生了变化。</p>
+	<p align="left"><img border="0" src="ckzj_images/33.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="qscck"></a>
+<font style="font-size: 12pt; font-weight:700">● 取所处窗口</font>
+<p align="left">&nbsp;</p>
+
+<p align="left">帮助文档如下图</p>
+<blockquote>
+	<p align="left">顾名思义，通过本方法可以取出当前组件所在的窗口对象。</p>
+	<p align="left">如果不存在则返回空对象。</p>
+	<p align="left">简单来说本方法的作用就等同于<b>“本对象”</b>。</p>
+	<p align="left"><img border="0" src="ckzj_images/34.png" ></p>
+  </blockquote> 
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义<b>“系统相机类”</b>变量，通过<b>“相机1”</b>可调用<a href="a_media.htm#llxc"><b>“浏览相册”</b></a>方法。</p>
+	<p align="left"><a href="a_media.htm#llxc"><b>“浏览相册”</b></a>的参数为<b>“窗口”</b>，可使用本方法。</p>
+<p align="left"><img border="0" src="ckzj_images/35.png" ></p>
+  </blockquote> 
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可以看到点击<b>“按钮1”</b>后，成功打开了系统相册。</p>
+	<p align="left">点击查看<a href="a_media.htm#llxc"><b>“浏览相册”</b></a>的图文教程。</p>
+<p align="left"><img border="0" src="ckzj_images/36.gif" ></p>
+  </blockquote> 
+	
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="zkzbqdx"></a><a name="qkzbqdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 取扩展标签对象</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 置扩展标签对象</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“置扩展标签对象”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">标签分为两类，默认标签和扩展标签。</p>
+	<p align="left">本方法是设置指定对象的<b>“扩展标签对象”</b>。</p>
+	<p align="left">通俗理解，其实就是给指定对象打上一个标签。</p>
+	<p align="left"><img border="0" src="ckzj_images/38.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+<p align="left"><b>“取扩展标签对象”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法的作用就是根据设置的标签，将对象取出。</p>
+    <p align="left"><img border="0" src="ckzj_images/37.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">首先需要定义一个<b>“ID值资源”</b>变量，初始值设置一个空文本。</p>
+	<p align="left">随后就可以调用<b>“置扩展标签对象”</b>方法，给<b>“按钮1”</b>打上<b>“ID值”</b>标签。</p>
+	<p align="left">在<b>“按钮2”</b>被单击的时候，需要定义一个<b>“按钮”</b>变量，设置参考。</p>
+	<p align="left">随后调用<b>“取扩展标签对象(ID值)”</b>取出对象，然后强转为<b>“按钮”</b>赋值给按钮变量。</p>
+	<p align="left">最后就可以通过<b>“按钮3.内容”</b>读取出来<b>“按钮1”</b>的标题。</p>
+	
+	<p align="left"><img border="0" src="ckzj_images/39.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">最终可以成功看到<b>“按钮1”</b>标题显示在了<b>“文本框”</b>中。</p>
+	<p align="left"><img border="0" src="ckzj_images/40.gif" >
+    </p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="qmrbqdx"></a><a name="zmrbqdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 取默认标签对象</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 置默认标签对象</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“置默认标签对象”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法和上一个方法的区别就是，本方法少了一个<b>“ID值资源”</b>的参数。</p>
+	<p align="left">本方法可以理解为，该ID值已经被内置，不需要填写。</p>
+	<p align="left"><img border="0" src="ckzj_images/51.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+<p align="left"><b>“取默认标签对象”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本方法取出默认的标签对象。</p>
+    <p align="left"><img border="0" src="ckzj_images/52.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">本方法的代码和<b>“扩展标签对象”</b>基本一致，不同之处就是少了一个<b>“ID值”</b>。</p>
+	<p align="left">不再详细介绍，可看图内的注释。</p>
+	<p align="left"><img border="0" src="ckzj_images/53.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">最终可以成功看到<b>“按钮2”</b>标题显示在了<b>“文本框”</b>中。</p>
+	<p align="left"><img border="0" src="ckzj_images/54.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="qjdzj"></a>
+<font style="font-size: 12pt; font-weight:700">● 取焦点组件</font><br/>
+
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法的作用，就是取出当前可以<b>“直接或者间接”</b>获得输入焦点的组件。</p>
+    <p align="left">如果不存在或者不是火山窗口组件，将会返回<b>“空对象”</b>。</p>
+	<p align="left"><img border="0" src="ckzj_images/41.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+     <p align="left">定义两个变量，类型分别为<b>“窗口组件”</b>和<b>“编辑框”</b>。</p>
+    <p align="left">然后通过<b>“文本框1”</b>调用本方法，赋值给窗口组件变量。</p>
+    <p align="left">然后用<b>“如果”</b>判断<b>“窗口组件1”</b>是否等于<b>“空对象”</b>。</p>
+    <p align="left">如果等于就弹出提示，不等于就强转为<b>“编辑框”</b>。</p>
+    <p align="left">最后可以操作编辑框设置内容等等……</p>
+	<p align="left"><img border="0" src="ckzj_images/42.png" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">点击<b>“按钮1”</b>会弹出提示框，因为当前界面内并没有编辑框的存在。</p>
+	<p align="left"><img border="0" src="ckzj_images/43.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="qfzj"></a>
+<font style="font-size: 12pt; font-weight:700">● 取父组件</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">顾名思义，取出父组件容器。</p>
+<p align="left">如果当前组件没有父组件或者不为火山窗口组件，将返回空对象。</p>
+<p align="left">具体关于<b>“窗口容器组件”</b>的一些方法说明，可点击进去查看。</p>
+  <p align="left"><img border="0" src="ckzj_images/44.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">在<b>“按钮1”</b>被点击下，定义一个<b>“窗口容器组件”</b>的变量， 设置参考。</p>
+<p align="left">然后调用本方法赋值给<b>“容器组件”</b>。</p>
+<p align="left">最后判断是否为空对象，不为空的时候可以调用<b>“删除子组件”</b>方法，删除一个组件。</p>
+<p align="left">例如：此处删除的是<b>“按钮2”</b>。</p>
+  <p align="left"><img border="0" src="ckzj_images/45.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+<p align="left">编译运行后，可以看到<b>“按钮2”</b>被删除，证明<b>“文本框1”</b>存在父组件。</p>
+  <p align="left"><img border="0" src="ckzj_images/46.gif" ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="qbjt"></a><a name="zbjt"></a>
+<font style="font-size: 12pt; font-weight:700">● 取背景图</font><br>
+<font style="font-size: 12pt; font-weight:700">● 置背景图</font>	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“置背景图”</b>帮助文档：</p>
+<blockquote>
+   <p align="left">顾名思义，给当前组件设置背景图。</p>
+   <p align="left">背景图为<b>“可绘制对象类”</b>，并非<b>“可绘制资源”</b>，千万不要看错了。</p>
+  <p align="left"><img border="0" src="ckzj_images/47.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“取背景图”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，把当前组件设置的<b>“可绘制对象类”</b>取出并返回。</p>
+  <p align="left"><img border="0" src="ckzj_images/48.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，定义<b>“可绘制资源”</b>变量，点击初始值按钮导入一张图片。</p>
+	<p align="left">利用<b>“载入可绘制资源”</b>方法，可以将<b>“可绘制资源”</b>转换为<b>“可绘制对象类”</b>。</p>
+	<p align="left">通过<b>“文本框1”</b>调用<b>“置背景图”</b>就可以设置当前文本框的背景图。</p>
+	<p align="left">然后在<b>“按钮2”</b>被点击时，你想让<b>“按钮2”</b>的背景和<b>“文本框1”</b>一致。</p>
+	<p align="left">可以直接写<b>“按钮2.置背景图(文本框1.取背景图())”</b>即可。</p>
+	<p align="left"><img border="0" src="ckzj_images/49.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">可以看到<b>“按钮2”</b>和<b>“文本框1”</b>的背景图，最后是同样的图片。</p>
+	<p align="left"><img border="0" src="ckzj_images/50.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="sccksfhdjd"></a>
+<font style="font-size: 12pt; font-weight:700">● 所处窗口是否获得焦点</font>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，判断组件所处窗口是否获得焦点。</p>
+	<p align="left">获得焦点返回<b>“真”</b>，否则返回<b>“假”</b>。</p>
+	<p align="left"><img border="0" src="ckzj_images/55.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接用<b>“如果”</b>来判断本方法的返回值即可。</p>
+	<p align="left">然后弹出对应提示。</p>
+	
+	<p align="left"><img border="0" src="ckzj_images/56.png" ></p>
+</blockquote>
+	
+	
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+  <p align="left">最后可以看到<b>“文本框1”</b>在当前窗口，属于获得焦点状态。</p>
+	<p align="left"><img border="0" src="ckzj_images/57.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="tszjdzqm"></a>
+<font style="font-size: 12pt; font-weight:700">● 提升组件到最前面</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">简单来说，本方法的作用就是将<b>“指定组件”</b>提升到<b>“所有组件”</b>的最前面。</p>
+	<p align="left">本方法通常情况下只有在使用<b>“帧布局器”</b>时用得到。</p>
+    <p align="left"><img border="0" src="ckzj_images/58.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">界面准备如下图：</p>
+<blockquote>
+<p align="left">左侧组件框找到<b>“帧布局器”</b>进行拖放。</p>
+	<p align="left">然后在<b>“帧布局器”</b>内，放一个<b>“文本框”</b>，设置组件宽度为<b>“匹配父组件宽度”</b>。</p>
+	<p align="left">然后继续拖放一个<b>“编辑框”</b>。</p>
+	<p align="left">点击<b>“布局内容”</b>就可以看到<b>“帧布局器”</b>下有两个组件，确认无误后保存布局。</p>
+  
+    <p align="left"><img border="0" src="ckzj_images/59.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如图下图：</p>
+<blockquote>
+<p align="left">首先给<b>“编辑框1”</b>调整背景色，设置内容方便区分。</p>
+	<p align="left">最后在<b>“按钮1”</b>被单击下调用本方法，提升<b>“文本框1”</b>到所有组件的最前面。</p>
+  
+    <p align="left"><img border="0" src="ckzj_images/60.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+<p align="left">可以看到<b>“按钮1”</b>点击后，文本框立刻就覆盖了编辑框。</p>
+    <p align="left"><img border="0" src="ckzj_images/61.gif" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="bfsyxg"></a>
+<font style="font-size: 12pt; font-weight:700">● 播放声音效果</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">顾名思义，就是在单击<b>“当前组件”</b>的时候是否进行声音播放。</p>
+<p align="left">声音效果通过<b>“组件声音效果.XXX”</b>定义的常量值来指定。</p>
+<p align="left">并且务必保证<b>“允许声音效果”</b>属性值为<b>“真”</b>。</p>
+	<p align="left"><img border="0" src="ckzj_images/62.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">按照帮助文档中，首先设置<b>“允许声音效果”</b>为<b>“真”</b>。</p>
+<p align="left">随后设置文本框<b>“支持单击”</b>属性为<b>“真”</b>，因为<b>“文本框”</b>默认不支持单击。</p>
+<p align="left">最后可以调用当前方法，就可以实现点击<b>“文本框1”</b>时播放单击音效。</p>
+	<p align="left"><img border="0" src="ckzj_images/63.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="sfbtm"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否不透明</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">顾名思义，用来判断当前组件是否透明。</p>
+<p align="left">返回真表示不透明，返回假表示透明或者半透明。</p>
+	<p align="left"><img border="0" src="ckzj_images/64.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击的时候直接判断本方法的返回值即可，然后弹出对应提示。</p>
+<p align="left"><b>“按钮2”</b>被点击的时候，首先设置<b>“文本框1”</b>透明度，然后在进行判断。</p>
+	<p align="left"><img border="0" src="ckzj_images/65.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+<p align="left">最终可以看到<b>“按钮2”</b>被点击后，<b>“文本框1”</b>明显变黑了一些，这是因为透明到背景的缘故。</p>
+	<p align="left"><img border="0" src="ckzj_images/66.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="sfhdjd"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否获得焦点</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+   <p align="left">顾名思义，判断当前组件或者子组件是否有焦点。</p>
+   <p align="left">如果存在焦点返回真，否则返回假。</p>
+   <p align="left">根据自己的需求，决定参数中是否填写<b>“真”</b>或<b>“假”</b>。</p>
+	<p align="left"><img border="0" src="ckzj_images/67.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">直接判断本方法的返回值即可。</p>
+	<p align="left"><img border="0" src="ckzj_images/68.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+<p align="left">最后会提示<b>“没有焦点”</b>代表文本框并没有获得焦点。</p>
+	<p align="left"><img border="0" src="ckzj_images/69.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+	<a name="sfbxs"></a>
+	<font style="font-size: 12pt; font-weight:700">● 是否被显示</font>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">简单来说就是判断当前组件是否隐藏。</p>
+<p align="left">如果处于显示状态，返回真，否则就返回假。</p>
+	<p align="left"><img border="0" src="ckzj_images/70.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">分别在两个按钮被单击下，都调用本方法判断当前组件是否显示。</p>
+<p align="left"><b>“按钮2”</b>被点击，额外填写一个<b>“可视”</b>属性，设置为隐藏。</p>
+	<p align="left"><img border="0" src="ckzj_images/71.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left"><img border="0" src="ckzj_images/72.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="cczzj"></a>
+<font style="font-size: 12pt; font-weight:700">● 查找子组件</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本方法只有容器类组件才有作用。</p>
+<p align="left">本方法可参考<a href="a_win.htm#czzzj"><b>“窗口操作”</b></a>中的例子。</p>
+	<p align="left"><img border="0" src="ckzj_images/73.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="czjdzj"></a>
+<font style="font-size: 12pt; font-weight:700">● 查找焦点组件</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">简单来说就是查找焦点组件。</p>
+<p align="left">如果没有或者不存在，则返回空对象。</p>
+	<p align="left"><img border="0" src="ckzj_images/74.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">定义<b>“窗口组件”</b>变量，然后利用本方法赋值即可。</p>
+<p align="left">最后用如果判断是否为<b>“空对象”</b>。</p>
+<p align="left">然后执行对应的方法。</p>
+	<p align="left"><img border="0" src="ckzj_images/75.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+<p align="left">最后会弹出<b>“当前没有焦点组件”</b>。</p>
+	<p align="left"><img border="0" src="ckzj_images/76.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="bqczzzj"></a>
+<font style="font-size: 12pt; font-weight:700">● 标签查找子组件</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本方法也通常用于容器类的组件，例如：线性布局器等……</p>
+<p align="left">关于“标签”可点击可查看<a href="#qmrbqdx"><b>“默认标签对象”</b></a>的帮助文档。</p>
+	<p align="left"><img border="0" src="ckzj_images/77.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="mnzjdj"></a><a name="bdjsj"></a><a name="zzdjdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 模拟组件单击</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 被单击(事件)</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 支持单击（读）</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 支持单击（写）</font><br>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“模拟组件单击”</b>帮助文档：</p>
+<blockquote>
+<p align="left">通过本方法可以当前组件被点击，并且还可以从参数设置是否播放音效等。</p>
+<p align="left">注意：前提是必须设置了播放音效才有用。</p>
+	<p align="left"><img border="0" src="ckzj_images/78.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“被单击(事件)”</b>帮助文档：</p>
+<blockquote>
+<p align="left">此方法为事件方法，当组件被点击后会发送本事件方法。</p>
+<p align="left">注意：除了<b>“按钮”</b>和<b>“图片按钮”</b>外，其它类别的组件都要设置<b>“支持单击”</b>属性为真，否则本事件不会发送。</p>
+	<p align="left"><img border="0" src="ckzj_images/79.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“支持单击（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">本写属性的作用，就是用来设置当前组件是否支持单击。</p>
+<p align="left">设置<b>“真”</b>表示支持，否则不支持。</p>
+	<p align="left"><img border="0" src="ckzj_images/80.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“支持单击（读）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">本读属性的作用，用来判断当前组件是否支持单击。</p>
+<p align="left">支持返回真，不支持返回假。</p>
+	<p align="left"><img border="0" src="ckzj_images/81.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+<p align="left">首先在<b>“按钮1”</b>被点击下，判断是否支持单击。</p>
+<p align="left">如果不支持，则设置<b>“支持单击”</b>属性为真。</p>
+<p align="left">然后调用<b>“模拟组件单击”</b>命令。</p>
+<p align="left">如果当前组件支持单击，则直接调用<b>“模拟组件单击”</b>命令。</p>
+	<p align="left"><img border="0" src="ckzj_images/82.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+<p align="left">右键<b>“文本框”</b>选择<b>“添加事件接收方法”</b>。</p>
+	<p align="left"><img border="0" src="ckzj_images/83.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（3）：</p>
+<blockquote>
+<p align="left">选择<b>“文本框_被单击”</b>或者<b>“窗口组件_被单击”</b>都可以。</p>
+<p align="left">选择其中一个后，点击<b>“添加”</b>。</p>
+	<p align="left"><img border="0" src="ckzj_images/84.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（4）：</p>
+<blockquote>
+<p align="left">添加之后，依然是判断来源对象等于<b>“文本框1”</b>。</p>
+<p align="left">然后弹出一个提示框，来表示<b>“文本框”</b>被单击。</p>
+	<p align="left"><img border="0" src="ckzj_images/85.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+<p align="left">第一次：点击<b>“文本框”</b>时，文本框无任何反应。</p>
+<p align="left">第二次：点击<b>“按钮1”</b>后，弹出了<b>“文本框被点击”</b>提示。</p>
+<p align="left">随后单独单击<b>“文本框”</b>或者<b>“按钮”</b>都会弹出同样的提示。</p>
+<p align="left">间接证明，<b>“按钮1”</b>被点击的时候同时也模拟了<b>“文本框1”</b>被点击。</p>
+	<p align="left"><img border="0" src="ckzj_images/86.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="mnzjcmfk"></a><a name="cjfkdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 模拟组件触觉反馈</font><br>
+<font style="font-size: 12pt; font-weight:700">● 触觉反馈（读）</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 触觉反馈（写）</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">以上三个方法为关联方法，此处统一讲解。</p>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“模拟组件触觉反馈”</b>帮助文档如下图：</p>
+<blockquote>
+<p align="left">触觉反馈，即一种触摸效果，通过本方法可以模拟触摸效果。</p>
+<p align="left">例如：<b>“组件触觉反馈类型”</b>中有一个<b>“长按”</b>类型。</p>
+<p align="left">通常情况下在长按组件的时候，会有一个触觉反馈，一般表现为轻微的震动感。</p>
+<p align="left">通过本方法如果设置类型为<b>“长按”</b>即可模拟这种<b>“真实长按”</b>带来的震动感。</p>
+<p align="left">注意：本方法必须将<b>“触觉反馈”</b>属性设置为<b>“真”</b>才会生效。</p>
+	<p align="left"><img border="0" src="ckzj_images/87.png" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left"><b>“触觉反馈（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">本写属性的作用，就是用来设置是否开启<b>“触觉反馈”</b>。</p>
+<p align="left">开启后<b>“模拟组件触觉反馈”</b>方法才能有效的使用。</p>
+	<p align="left"><img border="0" src="ckzj_images/90.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“触觉反馈（读）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">本读属性的作用，就是用来判断是否开启了触觉反馈。</p>
+<p align="left">开启返回真，否则返回假。</p>
+	<p align="left"><img border="0" src="ckzj_images/91.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">直接可以在<b>“按钮1”</b>被单击下，判断是否开启了触觉反馈。</p>
+<p align="left">如果没有开启，则设置<b>“触觉反馈”</b>属性值为真。</p>
+<p align="left">最后调用<b>“模拟组件触觉反馈”</b>方法即可。</p>
+<p align="left">本方法并不常用，图文教程也无法演示触觉反馈，自行测试。</p>
+<p align="left">注意：并非所有设备都支持触觉反馈，如果你手机关闭了触觉反馈功能，那么此方法无效。</p>
+	<p align="left"><img border="0" src="ckzj_images/91a.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	
+	<a name="bcasj"></a><a name="zzcadx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 被长按(事件)</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 支持长按（读）</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 支持长按（写）</font><br>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“被长按(事件)”</b>帮助文档：</p>
+<blockquote>
+<p align="left">本事件只有在<b>“窗口组件”</b>被长按时（通常为1秒左右），才会发送。</p>
+<p align="left">注意：必须将要长按的组件<b>“支持长按”</b>属性设置为真。</p>
+<p align="left"><font color="##FC0206">注意：在组件长按过程中，如果想要不触发<b>“被单击”</b>事件，可填写本事件的返回值为“1”即可。</font></p>
+	<p align="left"><img border="0" src="ckzj_images/89.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“支持长按（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，设置当前组件是否支持长按属性。</p>
+<p align="left">属性值为真，表示支持长按，否则不支持。</p>
+	<p align="left"><img border="0" src="ckzj_images/92.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“支持长按（读）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，读取当前组件是否支持长按属性。</p>
+<p align="left">返回真表示支持，否则不支持。</p>
+	<p align="left"><img border="0" src="ckzj_images/93.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">首先在<b>“按钮1”</b>被单击下，判断文本框是否支持长按，如果不支持就开启长按。</p>
+<p align="left">然后去，添加<b>“窗口组件”</b>被长按事件。</p>
+<p align="left">添加后指定来源对象，弹出一个被长按的提示框。</p>
+	<p align="left"><img border="0" src="ckzj_images/94.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+<p align="left">可以看到，最开始无论如何去长按文本框都不会弹出提示。</p>
+<p align="left">点击<b>“按钮1”</b>后，长按文本框后就会弹出提示。</p>
+	<p align="left"><img border="0" src="ckzj_images/95.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+	<a name="mnzjcan"></a>
+	<font style="font-size: 12pt; font-weight:700">● 模拟组件长按</font><br>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">顾名思义，通过本方法可以模拟组件的长按事件。</p>
+	<p align="left"><img border="0" src="ckzj_images/96.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">只需要在上一个方法代码的基础上，增加判断<b>“按钮2”</b>被单击。</p>
+<p align="left">然后通过文本框调用本方法即可。</p>
+	<p align="left"><img border="0" src="ckzj_images/97.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+<p align="left">最后可以看到<b>“按钮2”</b>点击后也弹出了<b>“被长按”</b>的提示。</p>
+	<p align="left"><img border="0" src="ckzj_images/98.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+	<a name="gdnrd"></a><a name="gdnr"></a>
+<font style="font-size: 12pt; font-weight:700">● 滚动内容到</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 滚动内容</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“滚动内容到”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">顾名思义，滚动组件内的内容。</p>
+    <p align="left">注意：并非组件本身。</p>
+    <p align="left">通过本方法，可以将组件的内容滚动到指定的像素位置。</p>
+    <p align="left">如果需要横向滚动，参数1填写指定数值，参数2填写0即可。</p>
+    <p align="left">如果需要纵向滚动，参数1填写0，参数2填写指定数值即可。</p>
+	<p align="left"><img border="0" src="ckzj_images/99.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“滚动内容”</b>帮助文档如下图：</p>
+<blockquote>
+<p align="left">本方法和上一个方法不同之处在于，本方法可以实现增量滚动。</p>
+<p align="left">也就是在原位置的基础上继续滚动指定像素位置。</p>
+	<p align="left"><img border="0" src="ckzj_images/100.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">界面准备：</p>
+<blockquote>
+<p align="left">首先打开界面设计器，指定<b>“文本框1”</b>的高度值为固定值。</p>
+	<p align="left"><img border="0" src="ckzj_images/101.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+<p align="left">保存布局后，增加<b>“文本框1”</b>的<b>“内容”</b>属性，打开属性值编辑器。</p>
+<p align="left">在编辑器内输入有很多换行的文本。</p>
+	<p align="left"><img border="0" src="ckzj_images/102.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+<p align="left">在<b>“按钮1”</b>被点击执行<b>“滚动内容”</b>方法，参数1填写<b>“0”</b>，参数2填写<b>“10”</b>。</p>
+<p align="left">表示当前文本框增量10像素滚动。</p>
+<p align="left"><b>“按钮2”</b>被点击执行<b>“滚动内容到”</b>方法，表示一次滚动40像素的位置。</p>
+	<p align="left"><img border="0" src="ckzj_images/103.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+<p align="left">可以看到不停的点击<b>“按钮1”</b>文本框内的文本会不停的滚动。</p>
+<p align="left">点击<b>“按钮2”</b>就会滚动到指定的位置。</p>
+	<p align="left"><img border="0" src="ckzj_images/104.gif" ></p>
+</blockquote>
+	
+	
+
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="zztbjt"></a>
+	<font style="font-size: 12pt; font-weight:700">● 置状态背景图</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">顾名思义，设置当前组件的状态背景图。</p>
+<p align="left">例如：通常状态，被按下状态分别是什么图片。</p>
+<p align="left">需要通过定义<b>“状态到图像表”</b>变量来调用。</p>
+	<p align="left"><img border="0" src="ckzj_images/107.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">定义一个<b>“状态到图像表”</b>变量，增加两个属性分别为<b>“通常”</b>和<b>“被按下”</b>然后分别导入两张图片。</p>
+<p align="left">设置文本框<b>“支持单击”</b>属性为<b>“真”</b>。</p>
+<p align="left">最后将定义的变量写入当前方法的参数中即可。</p>
+	<p align="left"><img border="0" src="ckzj_images/108.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+<p align="left">可以看到文本框有了<b>“正常”</b>和<b>“按下”</b>两种状态的背景图。</p>
+	<p align="left"><img border="0" src="ckzj_images/109.gif" ></p>
+</blockquote>
+	
+	
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="zbkbj"></a>
+	<font style="font-size: 12pt; font-weight:700">● 置边框背景</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">顾名思义，通过本方法可以设置当前组件的边框背景。</p>
+<p align="left">边框通过<b>“常用边框类型.XXX”</b>来指定，例如：<b>“常用边框类型.圆角矩形”</b>。</p>
+<p align="left">其它参数根据自己的实际需求填写即可。</p>
+	<p align="left"><img border="0" src="ckzj_images/110.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">在<b>“按钮1”</b>被单击下，直接调用本方法依次填写对应参数即可。</p>
+	<p align="left"><img border="0" src="ckzj_images/111.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+<p align="left">最后可以看到文本框的外形和颜色都发生了改变。</p>
+	<p align="left"><img border="0" src="ckzj_images/112.gif" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="zxqcc"></a>
+	<font style="font-size: 12pt; font-weight:700">● 置需求尺寸</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">通过本方法可以同时设置当前组件的，高度值和宽度值。</p>
+<p align="left">如果没有父组件，则本方法无效，单位为像素值。</p>
+<p align="left">参数可填写<b>“窗口组件.填满父组件”</b>等常量值。</p>
+	<p align="left"><img border="0" src="ckzj_images/113.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">在<b>“按钮1”</b>被单击下，直接调用本方法依次填写对应参数即可。</p>
+	<p align="left"><img border="0" src="ckzj_images/114.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+<p align="left">最后可以看到文本框1的尺寸发生了变化。</p>
+	<p align="left"><img border="0" src="ckzj_images/115.gif" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="hdjd"></a><a name="sfjd"></a><a name="kfhdjdd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 获得焦点</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 释放焦点</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 可否获得焦点（读）</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">以上三个方法为关联方法，此处统一讲解。</p>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“获得焦点”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本方法可以让当前组件获得焦点。</p>
+	<p align="left">注意：并非所有的组件都可以通过本方法获得焦点。</p>
+	<p align="left"><img border="0" src="ckzj_images/116.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“释放焦点”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，将当前组件的焦点释放掉。</p>
+	<p align="left">注意：并不能保证一定能将当前焦点释放。</p>
+	<p align="left">例如：经实测，窗口上只有一个编辑框，想释放编辑框的焦点，必然会释放失败。</p>
+	<p align="left"><img border="0" src="ckzj_images/117.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“可否获得焦点（读）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本读属性的作用就是来判断当前组件是否支持获得焦点。</p>
+	<p align="left"><img border="0" src="ckzj_images/118.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">在<b>“按钮1”</b>被单击下，首先调用<b>“可否获得焦点”</b>读属性来判断，当前文本框是否支持获得焦点。</p>
+<p align="left">如果支持，就执行获得焦点方法，如果不支持就弹出提示。</p>
+<p align="left">另外还可以调用<b>“是否获得焦点”</b>方法来判断当前组件是否真正的获得焦点。</p>
+	<p align="left"><b>“按钮2”</b>被点击后执行<b>“释放焦点”</b>方法。</p>
+	<p align="left">同样也可以调用<b>“是否获得焦点”</b>方法来判断是否释放成功。</p>
+	<p align="left"><img border="0" src="ckzj_images/119.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+<p align="left">最后可以看到当前<b>“文本框1”</b>并不支持获得焦点。</p>
+<p align="left">因<b>“文本框1”</b>并没有获得焦点，因此点击按钮2<b>“释放焦点”</b>的时候，自然会提示<b>“焦点释放成功”</b>。</p>
+	<p align="left"><img border="0" src="ckzj_images/120.gif" ></p>
+</blockquote>
+
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+	<p align="left">&nbsp;</p>
+	<a name="tccd"></a><a name="tanchucaidan"></a>
+<font style="font-size: 12pt; font-weight:700">● 弹出菜单</font><br>
+<font style="font-size: 12pt; font-weight:700">● 弹出菜单项被选择(事件)</font>	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“弹出菜单”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，在当前组件上弹出指定菜单。</p>
+<p align="left">关于菜单信息可点击查看<a href="a_menu.htm#cdxx_cdxsz"><b>“菜单信息操作”</b></a>。</p>
+	<p align="left"><img border="0" src="ckzj_images/125.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“弹出菜单项被选择(事件)”</b>帮助文档：</p>
+<blockquote>
+<p align="left">当选择<b>“弹出菜单”</b>方法所弹出的菜单时，将会发送本事件。</p>
+<p align="left">通过<b>“菜单项”</b>参数，可以取出被选择菜单的<b>“标题”</b>或<b>“ID”</b>等信息。</p>
+	<p align="left"><img border="0" src="ckzj_images/126b.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+<p align="left">设置窗口<b>“背景色”</b>为白色，方便区分黑色的菜单。</p>
+<p align="left">定义<b>“菜单信息”</b>变量，然后调用<b>“加入菜单项”</b>即可加入菜单。</p>
+<p align="left">最后调用本方法，将变量填入参数中即可弹出菜单。</p>
+	<p align="left"><img border="0" src="ckzj_images/126.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+<p align="left">添加<b>“窗口组件_弹出菜单项被选择”</b>事件。</p>
+<p align="left">指定来源对象为<b>“文本框1”</b>后，就可以通过<b>“所选择菜单项”</b>参数取出菜单标题。</p>
+	<p align="left"><img border="0" src="ckzj_images/126a.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+<p align="left">可以看到<b>“按钮1”</b>内点击后成功弹出菜单。</p>
+<p align="left">选择菜单后，也弹出了对应菜单标题。</p>
+	<p align="left"><img border="0" src="ckzj_images/127.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<a name="xssxwcd"></a>
+<font style="font-size: 12pt; font-weight:700">● 显示上下文菜单</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">上下文菜单，简单来说就是长按指定组件，在当前窗口弹出一个菜单。</p>
+<p align="left">关于<b>“上下文菜单”</b>可点击查看<a href="a_menu.htm#cd_zbgz"><b>“上下文菜单操作”</b></a>。</p>
+	<p align="left"><img border="0" src="ckzj_images/128.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">首先在<a href="a_win.htm#tzbcj"><b>“通知_被创建”</b></a>方法下，开启上下文菜单支持。</p>
+<p align="left">随后在<a href="a_win.htm#tzcshzjsxwcd"><b>“通知_初始化组件上下文菜单”</b></a>方法下，添加想要显示的菜单。</p>
+	<p align="left"><img border="0" src="ckzj_images/129.png" ></p>
+	
+	<p align="left"></p>
+	<p align="left">最后，在按钮1被单击下，调用<b>“显示上下文菜单”</b>即可。</p>
+	<p align="left"><img border="0" src="ckzj_images/129a.png" ></p>
+
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+<p align="left">可以看到成功弹出上下文菜单。</p>
+<p align="left">注意：部分安卓系统，菜单显示位置可能略有不同。</p>
+	<p align="left"><img border="0" src="ckzj_images/130.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+	
+	
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="jtff"></a>
+<h2>二、静态方法</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本分类说明</font><br/>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left">静态方法，直接<b>“类名+方法名”</b>就可以调用。</p>
+  <p align="left">如下图所示：</p>
+  <p align="left">调用<b>“加法计算”</b>时，直接调用<b>“类名+方法名”</b>就可以调用。</p>
+ 
+	<p align="left"><img border="0" src="ckzj_images/136.png" >
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="sczjidz"></a><a name="iddx"></a>
+<font style="font-size: 12pt; font-weight:700">● 生成组件ID置</font><br/>
+<font style="font-size: 12pt; font-weight:700">● ID(写)</font><br/>
+<font style="font-size: 12pt; font-weight:700">● ID(读)</font>	
+<p align="left">&nbsp;</p>
+	
+	
+<p align="left"><b>“生成组件ID置”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，给当前组件生成一个可使用的ID值。</p>
+<p align="left">本方法通常情况下不需要调用，因为组件本身在创建的时候，系统会自而动赋值一个<b>“id值”</b>。</p>
+<p align="left">关于ID值的应用场景可参考<a href="a_dialog.htm#dhczzj"><b>“对话框类->查找组件”</b></a>。</p>
+<p align="left"></p>
+	<p align="left"><img border="0" src="ckzj_images/137.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“ID(写)”</b>帮助文档：</p>
+<blockquote>
+<p align="left">本写属性的作用，就是给当前组件赋值一个新的ID值，原ID将会覆盖。</p>
+	<p align="left"><img border="0" src="ckzj_images/138.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“ID(读)”</b>帮助文档：</p>
+<blockquote>
+<p align="left">本读属性的作用，就是将当前组件的ID值读取出来，返回值为整数。</p>
+	<p align="left"><img border="0" src="ckzj_images/139.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">在<b>“按钮1”</b>被单击下，给<b>“ID”</b>写属性赋值当前方法。</p>
+<p align="left">在<b>“按钮2”</b>被单击下，读取<b>“ID”</b>值显示在<b>“提示框”</b>中。</p>
+	<p align="left"><img border="0" src="ckzj_images/140.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+<p align="left">此处可以看到<b>“按钮2”</b>被点击后，在弹出的提示中可以看到，组件默认会有一个很长的id值。</p>
+<p align="left">当<b>“按钮1”</b>点击后，重新点击<b>“按钮2”</b>组件id将会更新。</p>
+	<p align="left"><img border="0" src="ckzj_images/141.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="shuxingduxie"></a>
+<h2>三、属性读写方法</h2>
+<p align="left">&nbsp;</p>
+
+	<font style="font-size: 12pt; font-weight:700">● 本分类说明</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">本分类中的所有属性，均有同名的读写属性。</p>
+<p align="left">例如：<b>“上内边距”</b>可以当读属性使用，也可以当写属性使用。</p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="xnbjdx"></a>
+	<a name="snbjdx"></a>
+	<a name="ynbjdx"></a>
+	<a name="znbjdx"></a>
+	
+	<font style="font-size: 12pt; font-weight:700">● 上内边距(读写)</font><br>
+
+	<font style="font-size: 12pt; font-weight:700">● 下内边距(读写)</font><br>
+
+	<font style="font-size: 12pt; font-weight:700">● 左内边距(读写)</font><br>
+
+	<font style="font-size: 12pt; font-weight:700">● 右内边距(读写)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">以上四个读写属性，就是字面上的意思，读取和设置当前组件的内边距，单位为像素。</p>
+	<p align="left">此处就不再截图查看帮助文档，自行查看。</p>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被单击时，分别设置内边距。</p>
+<p align="left"><b>“按钮2”</b>被单击时，分别读取内边距显示在文本框中。</p>
+	<p align="left"><img border="0" src="ckzj_images/142.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+<p align="left">可以看到点击<b>“按钮2”</b>读取时，内边距默认为0.</p>
+<p align="left">当点击<b>“按钮1”</b>设置内边距后，内边距会修改为50像素，随后点击“按钮2”也成功读取。</p>
+	<p align="left"><img border="0" src="ckzj_images/143.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+
+<a name="yxsyxgdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 允许声音效果（读写）</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“允许声音效果（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，是否开启当前组件的声音单击效果。</p>
+<p align="left">本属性在<a href="#bfsyxg"><b>“播放声音效果”</b></a>中调用过。</p>
+	<p align="left"><img border="0" src="ckzj_images/144.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“允许声音效果（读）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，读取当前是否开启了声音效果。</p>
+<p align="left">如果已经开启，则返回真，否则返回假。</p>
+	<p align="left"><img border="0" src="ckzj_images/145.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">可以首先判断当前文本框是否开启了声音效果。</p>
+<p align="left">如果未开启则执行写属性开启。</p>
+<p align="left">最后开启<b>“文本框1”</b>的支持单击属性，然后调用<b>“播放声音效果”</b>即可。</p>
+<p align="left">最终结果点击<b>“按钮1”</b>后去点击<b>“文本框1”</b>，此时会发出<b>“嘟嘟”</b>声。</p>
+<p align="left">注意：部分设备的点击声可能有所不同，图文教程无法演示，自行测试。</p>
+	<p align="left"><img border="0" src="ckzj_images/146.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="nrczpy"></a><a name="nrsppy"></a>
+<font style="font-size: 12pt; font-weight:700">● 内容垂直偏移（读写）</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 内容水平偏移（读写）</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“内容垂直偏移（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，本写属性就是用来设置当前组件内容的垂直偏移，单位为像素。</p>
+	<p align="left"><img border="0" src="ckzj_images/147.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“内容垂直偏移（读）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">本读属性的作用，就是用来读取当前组件内容的垂直偏移量。</p>
+	<p align="left"><img border="0" src="ckzj_images/148.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“内容水平偏移（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">本写属性的作用，就是用来设置当前内容的水平偏移，单位依然是像素。</p>
+	<p align="left"><img border="0" src="ckzj_images/149.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“内容水平偏移（读）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">本读属性就是用来读取当前内容的水平偏移量。</p>
+	<p align="left"><img border="0" src="ckzj_images/150.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击后设置内容偏移，<b>“按钮2”</b>点击读取偏移。</p>
+	<p align="left"><img border="0" src="ckzj_images/151.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（gif）：</p>
+<blockquote>
+<p align="left">可以看到，除了设置偏移后内容位置发生改变。</p>
+<p align="left">还可以看到读取内容偏移时，文本框内容位置恢复了正常。</p>
+<p align="left">证明：文本框内容被改变后，偏移会重置。</p>
+	<p align="left"><img border="0" src="ckzj_images/152.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="nrmsdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 内容描述（读写）</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“内容描述（写）”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本写属性的作用，就是用来设置当前按钮的<b>“内容描述”</b>文本。</p>
+    <p align="left">可以理解为，被隐藏的标题。</p>
+	<p align="left"><img border="0" src="ckzj_images/153.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“内容描述（读）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">本读属性的作用，就是用来读取当前的内容描述文本。</p>
+	<p align="left"><img border="0" src="ckzj_images/154.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击后设置当前<b>“文本框1”</b>的内容描述。</p>
+<p align="left">如果不是<b>“按钮1”</b>点击，就读取<b>“内容描述”</b>到文本框的内容之中。</p>
+	<p align="left"><img border="0" src="ckzj_images/155.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+<p align="left">可以看到，如果在不设置<b>“内容描述”</b>的情况下，直接<b>“读取内容描述”</b>程序会发生闪退。</p>
+<p align="left">这是因为在未设置时，当前内容描述为空对象，空对象并不能赋值给文本框，所以发生了闪退。</p>
+<p align="left">只有设置了<b>“内容描述”</b>后，程序才不会发生闪退。</p>
+<p align="left">同时也间接证明：所有的组件，自身不会带任何内容描述，需要手动设置。</p>
+	<p align="left"><img border="0" src="ckzj_images/156.gif" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="kddx"></a>
+<font style="font-size: 12pt; font-weight:700">● 可视（读写）</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“可视（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，本写属性的作用就是用来设置当前组件的可视状态。</p>
+<p align="left">通过<b>“组件可视状态.XXX”</b>来实现。</p>
+	<p align="left"><img border="0" src="ckzj_images/157.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“可视（读）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">本读属性的作用，就是用来读取当前组件的可视状态，返回值为<b>“组件可是状态”</b>类。</p>
+	<p align="left"><img border="0" src="ckzj_images/158.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">界面准备如下图：</p>
+<blockquote>
+<p align="left">打开界面设计器，准备一个如下图所示的界面。</p>
+<p align="left">组件从上到下分别是：按钮1，按钮2，文本框1，按钮3和按钮4。</p>
+	<p align="left"><img border="0" src="ckzj_images/159.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击后，设置<b>“可视”</b>属性为<b>“组件可是状态.可视”</b>。</p>
+<p align="left"><b>“按钮2”</b>被点击后，设置<b>“可视”</b>属性为<b>“组件可是状态.隐藏但保留位置”</b>。</p>
+<p align="left"><b>“按钮3”</b>被点击后，设置<b>“可视”</b>属性为<b>“组件可是状态.完全隐藏”</b>。</p>
+<p align="left"><b>“按钮4”</b>被点击后，分别判断每一个可视状态，然后弹出对应提示。</p>
+	<p align="left"><img border="0" src="ckzj_images/160.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="ckzj_images/161.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="czwzdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 垂直\水平位置(读写)</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 垂直\水平偏移(读写)</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 垂直\水平旋转角度(读写)</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 垂直\水平缩放比(读写)</font><br/>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">以上读写属性，功能一致，但方向不同。</p>
+	<p align="left">此处重点讲解<b>“垂直”</b>位置的读写属性，<b>“水平”</b>方向不再讲解自行测试。</p>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“垂直位置（写）”</b>帮助文档：</p>	
+<blockquote>
+<p align="left">顾名思义，设置当前组件的垂直位置。</p>
+<p align="left">属性值可以精确到小数。</p>
+<p align="left">如果在此之前并没有设置<b>“垂直偏移”</b>属性，那么此数值其实也就是组件距离<b>“顶边”</b>的位置。</p>
+	<p align="left"><img border="0" src="ckzj_images/162.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“垂直位置（读）”</b>帮助文档：</p>	
+<blockquote>
+<p align="left">顾名思义，读取当前组件的<b>“垂直位置”</b>。</p>
+<p align="left">也可以通过取出<b>“顶边”</b>+<b>“垂直偏移”</b>来取出垂直位置。</p>
+	<p align="left"><img border="0" src="ckzj_images/163.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击后，设置垂直位置为<b>“300”</b>。</p>
+<p align="left"><b>“按钮2”</b>被点击后，读取垂直位置到<b>“文本框1”</b>。</p>
+	<p align="left"><img border="0" src="ckzj_images/164.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（gif）：</p>
+<blockquote>
+<p align="left">如果直接点击<b>“按钮2”</b>去读取，可以看到当前组件是有<b>“垂直位置”</b>属性值的。</p>
+<p align="left">点击<b>“按钮1”</b>重新设置后，<b>“垂直位置”</b>属性值将更新。</p>
+	<p align="left"><img border="0" src="ckzj_images/165.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“垂直偏移（写）”</b>帮助文档：</p>	
+<blockquote>
+<p align="left">顾名思义，设置当前组件的垂直偏移。</p>
+<p align="left">注意：本属性是设置组件自身，而不是组件内容。</p>
+<p align="left">简单来说，就是在原有位置基础上，垂直增加多少像素的距离。</p>
+	<p align="left"><img border="0" src="ckzj_images/166.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“垂直偏移（读）”</b>帮助文档：</p>	
+<blockquote>
+<p align="left">本读属性的作用自然就是用来读取当前的<b>“垂直偏移”</b>数值。</p>
+<p align="left">如果未曾设置过<b>“垂直偏移”</b>，那么将<b>“返回0”</b>.</p>
+	<p align="left"><img border="0" src="ckzj_images/167.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击后，执行<b>“垂直偏移”</b>写属性。</p>
+<p align="left"><b>“按钮2”</b>被点击后，读取当前属性赋值给<b>“文本框1”</b>。</p>
+	<p align="left"><img border="0" src="ckzj_images/168.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（gif）：</p>
+<blockquote>
+<p align="left">如果直接点击<b>“按钮2”</b>去读取，可以看到当前属性值默认为0。</p>
+<p align="left">点击<b>“按钮1”</b>设置偏移后，<b>“垂直偏移”</b>属性值将更新，并且也可以看到文本框组件位置发生改变。</p>
+	<p align="left"><img border="0" src="ckzj_images/169.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“垂直旋转角度（写）”</b>帮助文档：</p>	
+<blockquote>
+<p align="left">顾名思义，本写属性的作用就是用来设置当前组件的旋转角度。</p>
+<p align="left">可以把当前平面的组件理解为一个3d组件。</p>
+<p align="left">调用本属性后，当前组件会进行横向旋转。</p>
+	<p align="left"><img border="0" src="ckzj_images/170.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“垂直旋转角度（读）”</b>帮助文档：</p>	
+<blockquote>
+<p align="left">顾名思义，读取当前组件的<b>“垂直旋转角度”</b>。</p>
+	<p align="left"><img border="0" src="ckzj_images/171.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击后，设置旋转60度。</p>
+<p align="left"><b>“按钮2”</b>被点击后，读取角度到<b>“文本框1”</b></p>
+	<p align="left"><img border="0" src="ckzj_images/172.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（gif）：</p>
+<blockquote>
+<p align="left"><b>“按钮2”</b>首先被点击时，默认角度为0.</p>
+<p align="left">点击<b>“按钮1”</b>后，可以看到组件发生了横向旋转。</p>
+<p align="left">具体表现为：组件左侧向外移动，组件右侧向内移动。</p>
+<p align="left">重新点击<b>“按钮2”</b>就会度取出当前的旋转角度。</p>
+	<p align="left"><img border="0" src="ckzj_images/173.gif" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“垂直缩放比（写）”</b>帮助文档：</p>	
+<blockquote>
+<p align="left">顾名思义，设置当前组件的缩放比。</p>
+<p align="left">属性值以1为基数，数值越大组件将会等比例的纵向放大。</p>
+	<p align="left"><img border="0" src="ckzj_images/174.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“垂直缩放比（读）”</b>帮助文档：</p>	
+<blockquote>
+<p align="left">顾名思义，读取当前组件的<b>“垂直缩放比”</b>。</p>
+	<p align="left"><img border="0" src="ckzj_images/175.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">点击<b>“按钮1”</b>后，设置属性值为<b>“2”</b>，表示放大两倍。</p>
+<p align="left"><b>“按钮2”</b>被点击后，读取缩放比到<b>“文本框1”</b>。 </p>
+	<p align="left"><img border="0" src="ckzj_images/176.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（gif）：</p>
+<blockquote>
+<p align="left">如果直接点击<b>“按钮2”</b>去读取，可以看到默认缩放比是<b>“1”</b>。</p>
+<p align="left">点击<b>“按钮1”</b>后，可以明显的看出，组件进行了纵向拉伸。</p>
+<p align="left">再次点击<b>“按钮2”</b>成功读取缩放比。</p>
+	<p align="left"><img border="0" src="ckzj_images/177.gif" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="qzpmdkdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 强制屏幕打开（读写）</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“强制屏幕打开（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">简单来说，通过本方法可以设置当前屏幕<b>“开启常亮模式”</b>，设置为真表示开启，为假表示关闭。</p>
+<p align="left">注意：部分手机可能为了节能省电等功能，当前属性并不一定能够正常使用。</p>
+	<p align="left"><img border="0" src="ckzj_images/179.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“强制屏幕打开（读）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，读取当前屏幕是否处于强制开启状态。</p>
+<p align="left">返回真，表示屏幕强制开启。</p>
+	<p align="left"><img border="0" src="ckzj_images/180.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">可以点击<b>“按钮1”</b>设置强制开启屏幕，<b>“按钮2”</b>被点击后，判断当前屏幕状态。</p>
+<p align="left">图文教程无法准确演示效果，自行测试。</p>
+<p align="left">测试方法：强制开启屏幕后，长时间观察，看看屏幕是否处于常亮模式。</p>
+<p align="left">如果开启后屏幕依然自动熄灭，就证明当前手机并不支持开启屏幕常亮。</p>
+	<p align="left"><img border="0" src="ckzj_images/181.png" ></p>
+</blockquote>
+
+
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="xzjddx"></a>	
+<font style="font-size: 12pt; font-weight:700">● 旋转角度（读写）</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“旋转角度（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left"> 顾名思义，设置当前组件的旋转角度，设置后将围绕组件中心位置，进行顺时针旋转。</p>
+<p align="left">单位：度。</p>
+	<p align="left"><img border="0" src="ckzj_images/185.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“旋转角度（读）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，读取当前设置的旋转角度。</p>
+<p align="left">本属性值，默认为0。</p>
+	<p align="left"><img border="0" src="ckzj_images/186.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">点击<b>“按钮1”</b>设置角度，<b>“按钮2”</b>被点击后读取旋转角度到文本框。</p>
+	<p align="left"><img border="0" src="ckzj_images/187.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">可以看到<b>“按钮1”</b>被点击后，文本框组件进行了旋转。</p>
+	<p align="left"><img border="0" src="ckzj_images/188.gif" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="sfbaxdx"></a>	
+<font style="font-size: 12pt; font-weight:700">● 是否被按下（读写）</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“是否被按下（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left"> 顾名思义，设置当前组件是否为<b>“被按下”</b>状态。</p>
+<p align="left">如果属性值为真，则按下状态，否则是正常状态。</p>
+	<p align="left"><img border="0" src="ckzj_images/189.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“是否被按下（读）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，读取当前是否处于被按下状态。</p>
+<p align="left">默认返回<b>“假”</b>。</p>
+	<p align="left"><img border="0" src="ckzj_images/190.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">定义<b>“状态到图像表”</b>变量，分别给属性名<b>“通常”</b>和<b>“被按下”</b>导入两张图片。</p>
+<p align="left">调用<b>“置状态背景图”</b>方法，将<b>“图片表”</b>变量写入参数中。</p>
+<p align="left">随后开启文本框1倍单击属性。</p>
+<p align="left">最后设置<b>“是否被按下”</b>属性值为<b>“真”</b>。</p>
+<p align="left"><b>“按钮2”</b>被点击后，就判断当前属性值是否等于真，然后弹出对应提示即可。</p>
+	<p align="left"><img border="0" src="ckzj_images/191.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">可以看到<b>“按钮1”</b>被点击后，文本框会变成蓝色，即<b>“lan.png”</b>图片被设置为背景。</p>
+	<p align="left"><b>“lan.png”</b>图片属于<b>“被按下”</b>属性，也就证明当前组件处于被按下状态。</p>
+	<p align="left"><b>“按钮2”</b>被点击，也印证了这个结果。</p>
+	<p align="left"><img border="0" src="ckzj_images/192.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="bqwbdx"></a>	
+<font style="font-size: 12pt; font-weight:700">● 标签文本（读写）</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“标签文本（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left"> 通过本属性可以给当前组件设置一串文本当做标签。</p>
+<p align="left">如果调用本属性后，又调用了<b>“置默认标签对象”</b>那么当前值会被覆盖。</p>
+<p align="left">本写属性的作用和<a href="#nrmsdx"><b>“内容描述”</b></a>类似。</p>
+	<p align="left"><img border="0" src="ckzj_images/193.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“标签文本（读）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">读取当前组件设置的标签文本，如果未设置返回空文本。</p>
+	<p align="left"><img border="0" src="ckzj_images/194.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+
+<p align="left"><b>“按钮1”</b>被点击后，随便设置一串标签文本。</p>
+<p align="left"><b>“按钮2”</b>被点击后，读取标签文本到<b>“文本框1”</b>显示。</p>
+	<p align="left"><img border="0" src="ckzj_images/195.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，去点击<b>“按钮2”</b>设置的标签文本就会显示在文本框1中。</p>
+	<p align="left"><img border="0" src="ckzj_images/196.gif" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="jhdx"></a>	
+<font style="font-size: 12pt; font-weight:700">● 激活（读写）</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“激活（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">通过本属性可设置当前组件是否处于激活状态。</p>
+<p align="left">设置<b>“真”</b>表示激活，否则相反。</p>
+	<p align="left"><img border="0" src="ckzj_images/197.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“激活（读）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">返回当前组件是否处于激活状态。</p>
+<p align="left">返回<b>“真”</b>表示当前处于激活状态，否则返回假。</p>
+<p align="left">所有组件，默认返回<b>“假”</b>。</p>
+	<p align="left"><img border="0" src="ckzj_images/198.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+
+<p align="left">直接用如果判断当前组件是否激活。</p>
+<p align="left">如果未激活就设置当前组件为激活状态。</p>
+	<p align="left"><img border="0" src="ckzj_images/199.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终的结果就是。</p>
+	<p align="left">第一次点击<b>“按钮1”</b>提示<b>“没有激活”</b>，第二次点击后就会提示<b>“激活”</b>。</p>
+	<p align="left"><img border="0" src="ckzj_images/200.gif" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="bcmdx"></a>	
+<font style="font-size: 12pt; font-weight:700">● 触摸模式下可获得焦点（读写）</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“触摸模式下可获得焦点（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">设置当前组件在触摸模式下是否可以获得焦点。</p>
+<p align="left">属性值为<b>“真”</b>表示可以获得，设置为<b>“假”</b>则不能获得。</p>
+	<p align="left"><img border="0" src="ckzj_images/203.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“触摸模式下可获得焦点（读）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">返回当前组件，是否支持触摸模式下获得焦点。</p>
+<p align="left">返回<b>“真”</b>表示当前组件支持触摸获得焦点。</p>
+<p align="left">如果当前组件为<b>“编辑框”</b>组件，并且<b>“许可”</b>属性为真，那么此属性必定返回<b>“真”</b>。</p>
+	<p align="left"><img border="0" src="ckzj_images/204.png" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+
+<p align="left">首先用<b>“如果”</b>判断是否可以获得焦点。</p>
+<p align="left">然后弹出<b>“提示框”</b>，调用写属性设置可以获得。</p>
+<p align="left">否则就提示<b>“不可以获得焦点”</b>。</p>
+	<p align="left"><img border="0" src="ckzj_images/205.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终弹出提示<b>“不可以获得焦点”</b>。</p>
+	<p align="left">如果把代码中的<b>“文本框1”</b>换成<b>“编辑框1”</b>那么必定会提示<b>“可以获得”</b>。</p>
+	<p align="left"><img border="0" src="ckzj_images/206.gif" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="xkdx"></a>	
+<font style="font-size: 12pt; font-weight:700">● 许可（读写）</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“许可（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">本写属性的作用，就是来设置当前组件是否允许交互。</p>
+<p align="left">例如：点击，长按，触摸，手势等各种操作。</p>
+<p align="left">设置为<b>“真”</b>表示支持，否则禁止任何操作。</p>
+	<p align="left"><img border="0" src="ckzj_images/207.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“许可（读）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">返回当前组件是否可以操作。</p>
+<p align="left">返回<b>“真”</b>表示支持，否则相反。</p>
+	<p align="left"><img border="0" src="ckzj_images/208.png" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+
+<p align="left"><b>“按钮1”</b>被点击，定义<b>“状态到图像表”</b>变量。</p>
+<p align="left">给<b>“被按下”</b>和<b>“通常”</b>两个属性值，导入两张图片。</p>
+<p align="left">最后给调用<b>“置状态背景图”</b>方法和<b>“支持单击”</b>写属性。</p>
+<p align="left">当<b>“按钮2”</b>被点击时，首先判断是否可用。</p>
+<p align="left">如果可用则弹出提示后，调用<b>“许可”</b>写属性设置为<b>“假”</b>。</p>
+<p align="left">否则直接弹出提示<b>“不可以点击”</b>。</p>
+	<p align="left"><img border="0" src="ckzj_images/209.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left"><img border="0" src="ckzj_images/210.gif" ></p>
+</blockquote>
+
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="tmddx"></a>	
+<font style="font-size: 12pt; font-weight:700">● 透明度（读写）</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“透明度（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">设置当前组件的透明度。</p>
+<p align="left">属性值位于<b>“0到1”</b>之间，0为完全透明，1为不透明。</p>
+<p align="left">如果填写<b>“0.5”</b>则透明一半。</p>
+	<p align="left"><img border="0" src="ckzj_images/211.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“透明度（读）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">返回当前组件的透明度</p>
+<p align="left">返回值必定位于<b>“0到1”</b>之间。</p>
+	<p align="left"><img border="0" src="ckzj_images/212.png" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+
+<p align="left">调用<a href="a_win.htm#bjsx"><b>“背景色”</b></a>写属性，设置窗口背景色（方便区分是否透明）。</p>
+<p align="left">然后调用写属性，设置透明度为0.5。</p>
+<p align="left">最后调用读属性，读取透明度显示在文本框中。</p>
+	<p align="left"><img border="0" src="ckzj_images/213.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，可以看到<b>“文本框1”</b>明显变透明了。</p>
+	<p align="left"><img border="0" src="ckzj_images/214.gif" ></p>
+</blockquote>
+	
+	
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="zzqwkddx"></a>	<a name="zzqwgddx"></a>	
+<font style="font-size: 12pt; font-weight:700">● 最小期望宽度/高度（读写）</font>
+<p align="left">&nbsp;</p>
+<p align="left">此处以<b>“最小期望宽度”</b>举例讲解，<b>“最小期望高度”</b>自行测试。</p>	
+<p align="left">&nbsp;</p>
+<p align="left"><b>“最小期望宽度（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，设置当前组件的最小期望宽度。</p>
+<p align="left">在官方文档中，对此<b>“宽度数值”</b>并无太多的解释，也没有具体的应用场景说明。</p>
+<p align="left">经过实测，本方法类似于给组件设置宽度值，但是并不能真正设置有效的宽度值。</p>
+<p align="left">如果在本属性之前执行过<b>“置需求宽度”</b>方法，那么本属性将无法设置组件宽度。</p>
+	<p align="left"><img border="0" src="ckzj_images/215.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“最小期望宽度（读）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，返回当前的最小期望宽度。</p>
+	<p align="left"><img border="0" src="ckzj_images/216.png" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+
+<p align="left"><b>“按钮1”</b>被点击后调用写属性设置宽度为100。</p>
+<p align="left">随后将设置的<b>“最小期望宽度”</b>弹出。</p>
+<p align="left"><b>“按钮2”</b>被点击后，执行<b>“置需求宽度”</b>方法，参数值填写50.</p>
+	<p align="left"><img border="0" src="ckzj_images/217.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终可以看到<b>“按钮1”</b>被点击后，<b>“文本框1”</b>的宽度被正常改变。</p>
+	<p align="left">点击<b>“按钮2”</b>后，再去重新点击<b>“按钮1”</b>会发现<b>“最小期望宽度”</b>无法进行设置。</p>
+	<p align="left">但是<b>“最小期望宽度”</b>的属性值可以正常读取。</p>
+	<p align="left"><img border="0" src="ckzj_images/217.gif" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="mdczwzdx"></a>	<a name="mdspwzdx"></a>	
+<font style="font-size: 12pt; font-weight:700">● 锚点垂直/水平位置（读写）</font>
+<p align="left">&nbsp;</p>
+<p align="left">此处以<b>“锚点垂直位置”</b>举例讲解，<b>“锚点水平位置”</b>自行测试。</p>	
+<p align="left">&nbsp;</p>
+<p align="left"><b>“锚点垂直位置（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，设置当前组件的垂直锚点位置，如果不设置默认为组件中心位置。</p>
+<p align="left">属性值为小数，单位像素。</p>
+<p align="left">如果调用本属性后，再调用<a href="#xzjddx"><b>“旋转角度”</b></a>方法时，旋转后的位置会发生改变。</p>
+	<p align="left"><img border="0" src="ckzj_images/218.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“锚点垂直位置（读）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，读取当前设置的锚点垂直位置。</p>
+	<p align="left"><img border="0" src="ckzj_images/219.png" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+
+<p align="left"><b>“按钮1”</b>被点击后，设置本属性为100，随后调用旋转角度为90。</p>
+<p align="left">最后用提示框方法，将<b>“锚点垂直位置”</b>弹出。</p>
+<p align="left"><b>“按钮2”</b>被点击后，直接执行<b>“旋转角度”</b>属性。</p>
+	<p align="left"><img border="0" src="ckzj_images/220.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">可以看到<b>“按钮2”</b>被点击后，组件会基于原位置旋转。</p>
+	<p align="left"><b>“按钮1”</b>被点击后，组件的位置会发生偏移。</p>
+	<p align="left"><img border="0" src="ckzj_images/221.gif" ></p>
+</blockquote>
+	
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="qtdxff"></a>
+<h2>四、其它读写方法</h2>
+<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本分类说明</font><br/>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">本类中的所有读写属性，并没有同名的相反属性。</p>
+	<p align="left">例如：<b>“位置矩阵（读）”</b>并没有同名的写属性。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="wzjzd"></a>
+<font style="font-size: 12pt; font-weight:700">● 位置矩阵（读）</font>	
+
+<p align="left">&nbsp;</p>	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本读属性可以得出当前组件的<b>“矩阵类”</b>对象，进行矩阵操作。</p>
+	<p align="left">关于矩阵类的操作可看<a href="a_canvas.htm#juzhenlei"><b>“高级画板->矩阵类”</b></a>，此处不再详细介绍。</p>
+	<p align="left"><img border="0" src="ckzj_images/222.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="sxdhbfqd"></a>
+<font style="font-size: 12pt; font-weight:700">● 属性动画播放器（读）</font>		
+	<p align="left">&nbsp;</p>	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">通过本读属性可以获得当前组件的<b>“组件属性动画播放器”</b>。</p>
+	<p align="left">通过本类可设置当前组件的动画效果。</p>
+	<p align="left"><img border="0" src="ckzj_images/223.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，直接在本属性后调用<b>“动画周期”</b>写属性，可以用来设置当前动画播放周期。</p>
+	<p align="left">调用<b>“水平位置”</b>方法，可以让当前组件实现平移动画。</p>
+	<p align="left">参数内填写<b>“文本框1.取宽度()”</b>，代表平移距离为当前组件的宽度。</p>
+	<p align="left"><img border="0" src="ckzj_images/224.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最后可以看到<b>“按钮1”</b>被点击后，<b>“文本框1”</b>进行了平移。</p>
+	<p align="left">在当前类中，除了平移外，还有很多很多动画播放效果，大家可自行查看。</p>
+	<p align="left">或者可参考<b>“火山自带例子”</b>，该例子位于，火山安装目录内的<b>“samples\samples.vsln”</b>。</p>
+	<p align="left">打开例子后找到<b>“窗口及组件”</b>就可以找到<b>“组件属性动画”</b>项目，继续打开<b>“main.v”</b>就可以看到本例子。</p>
+	
+	<p align="left"><img border="0" src="ckzj_images/225.gif" >&nbsp;&nbsp;<img border="0" src="ckzj_images/225.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="sccksfksd"></a>
+<font style="font-size: 12pt; font-weight:700">● 所处窗口是否可视（读）</font>	
+
+	<p align="left">&nbsp;</p>	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，就是用来判断当前窗口是否处于可见状态。</p>
+	<p align="left">返回<b>“真”</b>表示可视，否则返回<b>“假”</b>。</p>
+	<p align="left"><img border="0" src="ckzj_images/226.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接调用本属性判断返回值即可。</p>
+	<p align="left"><img border="0" src="ckzj_images/227.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">界面被显示的状态下，点击<b>“按钮1”</b>必定弹出提示<b>“可视”</b>。</p>
+	
+	<p align="left"><img src="ckzj_images/228.png" border="0" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="sfwcmmsd"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否为触摸模式（读）</font>	
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，就是判断当前组件是否处于触摸模式下。</p>
+	<p align="left">通常情况下，只要界面处于显示状态，那么本属性必定返回真。</p>
+	<p align="left">注意：并不代表当前组件开启触摸。</p>
+	<p align="left"><img src="ckzj_images/229.png" border="0" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接通过<b>“如果”</b>判断本属性的返回值，然后弹出对应提示即可。</p>	
+	<p align="left"><img src="ckzj_images/230.png" border="0" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">可以看到<b>“按钮1”</b>被点击后弹出了<b>“当前已经进入触摸交互模式”</b>。</p>
+	
+	<p align="left"><img src="ckzj_images/231.png" border="0" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+	
+	<a name="bcmsj"></a><a name="zzcmx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 支持触摸（写）</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 被触摸（事件）</font>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“支持触摸（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，使用本属性可以让当前组件支持触摸操作。</p>
+<p align="left">本属性值默认不开启，开启后会发送<b>“被触摸”</b>事件。</p>
+	<p align="left"><img border="0" src="ckzj_images/232.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“被触摸(事件)”</b>帮助文档：</p>
+<blockquote>
+<p align="left"><b>“支持触摸”</b>属性设置为<b>“真”</b>后，将会发送本事件。</p>
+	<p align="left"><img border="0" src="ckzj_images/88.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">在<b>“按钮1”</b>被点击下调用<b>“支持触摸”</b>，属性值设置为真。</p>
+<p align="left">添加<b>“窗口组件_被触摸”</b>事件，指定来源对象后，判断<b>“触摸动作.动作”</b>是否为<b>“动作类型.按下”</b>。</p>
+<p align="left">如果是<b>“按下”</b>动作，则取出<b>“横纵坐标”</b>显示在文本框中。</p>
+	<p align="left"><img border="0" src="ckzj_images/233.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+<p align="left">可以看到最开始点击<b>“文本框1”</b>并没有任何效果，证明触摸默认是关闭状态。</p>
+<p align="left">点击<b>“按钮1”</b>后再去点击<b>“文本框1”</b>会立刻取出坐标。</p>
+	<p align="left"><img border="0" src="ckzj_images/234.gif" ></p>
+</blockquote>
+	
+	
+	
+<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>	
+<a name="wbjxd"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本基线（读）</font><br/>	
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">读取当前组件的文本基线，如果当前组件不支持文本基线，则返回<b>“-1”</b>。</p>
+	<p align="left"><img border="0" src="ckzj_images/235.png" ></p>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“文本基线”</b>演示</p>
+	<p align="left"><img border="0" src="../HuaBan/hb_images/269a.png" ></p>
+
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接读取<b>“文本基线”</b>，赋值给文本框1显示。</p>
+	<p align="left"><img border="0" src="ckzj_images/236.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>后会成功在文本框显示文本基线。</p>
+	<p align="left"><img border="0" src="ckzj_images/237.png" ></p>
+</blockquote>
+
+
+	
+<p align="left">&nbsp;</p>
+<a name="zzjg"></a><a name="zzzzjgjt"></a>
+<font style="font-size: 12pt; font-weight:700">● 支持指针经过监听（写）</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 指针经过（事件）</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“支持指针经过监听（写）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本属性可以设置当前组件支持鼠标经过监听。</p>
+	<p align="left">属性值为真表示监听，否则相反。</p>
+	<p align="left">本属性设置为真后，会发送<b>“指针经过”</b>事件。</p>
+	<p align="left"><img border="0" src="ckzj_images/239.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“指针经过（事件）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本事件必须将<b>“支持指针经过监听”</b>设置为真才有效。</p>
+	<p align="left"><img border="0" src="ckzj_images/240.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在<b>“按钮1”</b>被单击下，设置本属性为真。</p>
+	<p align="left">添加<b>“窗口组件_指针经过”</b>事件，判断来源对象后，继续判断动作类型。</p>
+	<p align="left">如果等于<b>“经过”</b>则修改文本框的内容。</p>
+	<p align="left">备注：可能因模拟器并不能监听电脑鼠标指针的缘故，本事件在模拟器内运行无效。</p>
+	<p align="left">建议在真机测试本事件，可以外接一个蓝牙鼠标做测试。</p>
+	<p align="left"><img border="0" src="ckzj_images/241.png" ></p>
+</blockquote>
+	
+
+
+	<p align="left">&nbsp;</p>
+<a name="zcajjtx"></a><a name="ajsr"></a>
+<font style="font-size: 12pt; font-weight:700">● 支持按键监听（写）</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 按键输入（事件）</font>	
+<p align="left">&nbsp;</p>
+<p align="left"><b>“支持按键监听（写）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本属性可设置当前按键监听。</p>
+	<p align="left">属性值为真表示监听，否则相反。</p>
+	<p align="left">但是：本属性通常用于<b>“编辑框”</b>等带有输入焦点的组件。</p>
+	<p align="left"><img border="0" src="ckzj_images/242.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“按键输入（事件）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本事件必须将<b>“支持按键监听”</b>设置为真才会发送本事件。</p>
+	<p align="left">本事件的代码编写可参考<a href="a_win.htm#tzajsj"><b>“窗口操作->通知_按键事件”</b></a>。</p>
+	<p align="left">因<b>“文本框”</b>调用无效，因此不再详细讲解。</p>
+	<p align="left"><img border="0" src="ckzj_images/243.png" ></p>
+</blockquote>
+	
+	
+
+	
+	<p align="left">&nbsp;</p><p align="left">&nbsp;</p>
+<a name="zcckgjjtsjx"></a><a name="gjdck"></a>
+<font style="font-size: 12pt; font-weight:700">● 支持窗口挂接监听（写）</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 挂接到窗口（事件）</font>	
+<p align="left">&nbsp;</p>
+<p align="left"><b>“支持窗口挂接监听（写）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本属性可以监听当前组件是否挂接到窗口操作。</p>
+	<p align="left">并且会发送<b>“挂接到窗口”</b>事件。</p>
+	<p align="left"><img border="0" src="ckzj_images/246.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“挂接到窗口（事件）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本事件必须将<b>“支持窗口挂接监听”</b>设置为真才会发送本事件。</p>
+	<p align="left">参数返回<b>“真”</b>表示挂接到窗口，否则相反。</p>
+	<p align="left"><img border="0" src="ckzj_images/247.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击时设置监听。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，调用<b>“取窗口容器组件().删除子组件()”</b>方法，去删除<b>“文本框1”</b>。</p>
+	<p align="left">添加<b>“窗口组件_挂接到窗口”</b>事件，判断来源对象后，继续判断<b>“是否挂接”</b>参数是否为<b>“真”</b>。</p>
+	<p align="left">最后弹出对应提示即可。</p>
+	<p align="left"><img border="0" src="ckzj_images/248.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>后去点击<b>“按钮2”</b>删除组件，就会弹出提示<b>“没有挂接”</b>。</p>
+	<p align="left"><b>“挂接”</b>提示可以通过<b>“取窗口容器组件 ().添加子组件 ()”</b>来触发。</p>
+	<p align="left"><img border="0" src="ckzj_images/249.gif" ></p>
+</blockquote>
+
+	
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+	<a name="bjsx"></a><a name="bjtx"></a>
+<font style="font-size: 12pt; font-weight:700">● 背景图（写）</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 背景色（写）</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“背景图（写）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，设置当前组件的背景图。</p>
+	<p align="left">本属性和<b>“置背景图”</b>方法不同之处在于，本属性参数值是<b>“可绘制资源”</b>类型。</p>
+	<p align="left">注意：本属性会覆盖其它方式设置的背景。</p>
+	<p align="left"><img border="0" src="ckzj_images/252.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“背景色（写）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，本属性就是用来设置当前组件的背景颜色。</p>
+	<p align="left">本属性同样会覆盖其它方式设置的背景。</p>
+	<p align="left">可以调用<b>“颜色类”</b>中定义的常量值。</p>
+	<p align="left"><img border="0" src="ckzj_images/253.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，定义<b>“可绘制资源”</b>变量，导入一张图片当做背景。</p>
+	<p align="left">然后直接调用本属性，设置<b>“图片”</b>变量为背景图即可。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，设置<b>“背景色”</b>为<b>“颜色类.红色”</b>。</p>
+	<p align="left"><img border="0" src="ckzj_images/254.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">可以看到<b>“背景图”</b>和<b>“背景色”</b>会相互覆盖。</p>
+	<p align="left"><img border="0" src="ckzj_images/255.gif" ></p>
+</blockquote>
+	
+
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+	<a name="bkbjx"></a>
+<font style="font-size: 12pt; font-weight:700">● 边框背景（写）</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，本属性就是用来设置边框背景。</p>
+
+	<p align="left">本属性和<a href="#zbkbj"><b>“置边框背景”</b></a>方法不同之处在于，本属性只能设置边框。</p>
+		<p align="left">本属性同样会覆盖其它方式设置的背景，直接通过<b>“常用边框类型.XXX”</b>就可以设置。</p>
+	<p align="left"><img border="0" src="ckzj_images/256.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接给当前属性赋值<b>“常用边框类型.圆角矩形”</b>就可以设置当前组件为<b>“圆角矩形”</b>样式。</p>
+	<p align="left"><img border="0" src="ckzj_images/257.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，可以看到当前组件变成了圆角矩形。</p>
+	<p align="left"><img border="0" src="ckzj_images/258.gif" ></p>
+</blockquote>
+	
+	
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+	<a name="zuobiand"></a><a name="youbiand"></a><a name="dingbiand"></a><a name="dibiand"></a>
+<font style="font-size: 12pt; font-weight:700">● 左边（读）</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 右边（读）</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 顶边（读）</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 底边（读）</font>
+	
+<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">以上四个读属性就是字面上的意思，返回值为<b>“整数”</b>。</p>
+	<p align="left">此处不在展示帮助文档，大家可自行查看。</p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">分别读取四个读属性，显示在文本框中。</p>
+	<p align="left"><img border="0" src="ckzj_images/259.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>后将会成功读取当前文本框中。</p>
+	<p align="left"><img border="0" src="ckzj_images/260.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="shijian"></a>
+<h2>五、事件定义方法</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本分类说明</font><br/>	
+	<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+  <p align="left">本分类中，记录了<b>“窗口组件”</b>中所有的事件方法。</p>
+	<p align="left">分别如下（点击跳转）：</p>
+	<ol id="new5">
+	  <li>
+	    <blockquote><a href="#tanchucaidan" hidefocus="true">1.弹出菜单项被选择</a></blockquote>
+      </li>
+	  <li>
+	    <blockquote><a href="#gjdck" hidefocus="true">2.挂接到窗口</a></blockquote>
+      </li>
+	  <li>
+	    <blockquote><a href="#zzjg" hidefocus="true">3.指针经过</a></blockquote>
+      </li>
+	  <li>
+	    <blockquote><a href="#ajsr" hidefocus="true">4.按键输入</a></blockquote>
+      </li>
+
+	  <li>
+	    <blockquote><a href="#bdjsj" hidefocus="true">5.被单击</a></blockquote>
+      </li>
+	
+	  <li>
+	    <blockquote><a href="#bcmsj" hidefocus="true">6.被触摸</a></blockquote>
+      </li>
+	  <li>
+	    <blockquote><a href="#bcasj" hidefocus="true">7.被长按</a></blockquote>
+      </li>
+	
+  </ol>
+	<p align="left"></p>
+</blockquote>
+	
+
+<p align="left">&nbsp;</p><a name="shexiangtou"></a>
+<h2>六、成员变量</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本分类说明</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">本分类中，记录了<b>“窗口组件”</b>中的常量值。</p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+<a name="sxdk"></a><a name="sxsd"></a>
+<font style="font-size: 12pt; font-weight:700">● 填满父组件</font><br><font style="font-size: 12pt; font-weight:700">● 等于内容尺寸</font>	
+<p align="left">&nbsp;</p>
+	<p align="left">以上两种常量值，均是字面上的意思，此处不再截图帮助文档。</p>
+	<p align="left">共有两种使用方式。</p>
+	<p align="left">&nbsp;</p>
+<p align="left">第一种使用方式：</p>
+<blockquote>
+ 	<p align="left">选择要修改的组件，在右侧属性栏找到<b>“组件宽度/高度类型”</b></p>
+    <p align="left"><img src="ckzj_images/261.png" width="710" height="688" border="0" ></p>
+</blockquote>
+		
+<p align="left">&nbsp;</p>
+<p align="left">第二种使用方式：</p>
+<blockquote>
+ 	<p align="left">直接通过<b>“窗口组件”</b>调用本常量值即可。</p>
+    <p align="left"><img border="0" src="ckzj_images/262.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+ 	<p align="left">如果此时在<b>“文本框1”</b>内存入大量的内容，那么<b>“文本框1”</b>的高度则会自动匹配内容的高度。</p>
+    <p align="left"><img border="0" src="ckzj_images/263.gif" ></p>
+</blockquote>
+	
+	
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="biaojilei"></a>
+<h2>七、标记类</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+    <p align="left">本类中只有一个成员变量，提供了一种标记说明，类似于<a href="#nrmsdx"><b>“内容描述”</b></a>。</p>
+	
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="biaoji"></a>
+<font style="font-size: 12pt; font-weight:700">●标记</font>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后，设置一个标记。</p>
+    <p align="left">点击<b>“按钮2”</b>读取当前设置的标记到文本框显示。</p>
+	<p align="left"><img border="0" src="ckzj_images/264.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">最终成功读取。</p>
+	<p align="left"><img border="0" src="ckzj_images/265.gif" ></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

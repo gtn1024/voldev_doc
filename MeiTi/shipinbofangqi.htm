@@ -1,0 +1,654 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		   <li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.视频播放器 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+            <li><blockquote><a href="#spbfq">1.本类说明</a></blockquote></li>  
+		  <li><blockquote><a href="#bf">2.播放</a></blockquote></li>
+           <li><blockquote><a href="#zt">3.暂停</a></blockquote></li>
+             <li><blockquote><a href="#tz">4.停止</a></blockquote></li>
+            <li><blockquote><a href="#sf">5.释放</a></blockquote></li>
+            <li><blockquote><a href="#cxbf">6.重新播放</a></blockquote></li>
+            <li><blockquote><a href="#kfkj">7.可否快进（读）</a></blockquote></li>
+            <li><blockquote><a href="#kfkt">8.可否快退（读）</a></blockquote></li>
+            <li><blockquote><a href="#kfzt">9.可否暂停（读）</a></blockquote></li>
+            <li><blockquote><a href="#zzbf">10.正在播放（读）</a></blockquote></li>
+            <li><blockquote><a href="#xxwzd">11.现行位置（读）</a></blockquote></li>
+            <li><blockquote><a href="#cd">12.长度（读）</a></blockquote></li>
+            <li><blockquote><a href="#hcbfb">13.缓冲百分比（读）</a></blockquote></li>
+            <li><blockquote><a href="#hcbfb">14.媒体控制器（读）</a></blockquote></li>
+            <li><blockquote><a href="#xxwzx">15.现行位置（写）</a></blockquote></li>
+            <li><blockquote><a href="#jzsp">16.视频（写）</a></blockquote></li>
+            <li><blockquote><a href="#jzwb">17.加载完毕（事件）</a></blockquote></li>
+            <li><blockquote><a href="#ddxx">18.得到信息（事件）</a></blockquote></li>
+            <li><blockquote><a href="#bfcz">19.播放出错（事件）</a></blockquote></li>
+            <li><blockquote><a href="#bfjs">20.播放结束（事件）</a></blockquote></li>
+		</ol>	
+        <li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new2')" >二.媒体控制器类<span>(可收缩)</span></h6></li>
+		<ol id="new2">
+    		<li><blockquote><a href="#mtkzq">1.本类说明</a></blockquote></li>
+            <li><blockquote><a href="#xianshi">2.显示</a></blockquote></li>
+            <li><blockquote><a href="#yincang">3.隐藏</a></blockquote></li>
+            <li><blockquote><a href="#shifouxianshi">4.是否显示（读）</a></blockquote></li>
+            <li><blockquote><a href="#xssc">5.显示时长（写）</a></blockquote></li>
+            <li><blockquote><a href="#mdst">6.锚点视图（写）</a></blockquote></li>
+            <li><blockquote><a href="#sysbdj">7.上一首被单击（事件）</a></blockquote></li>
+            <li><blockquote><a href="#xysbdj">8.下一首被点击（事件）</a></blockquote></li>
+   
+		</ol>
+		
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left"><a name="zbgz"></a>
+<h2>视频播放器实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<font style="font-size: 12pt; font-weight:700">● 辅助说明</font><br/>
+<br/>
+<blockquote>
+<p align="left"><font color="#F70408">注意：本类位于<strong>“多媒体功能支持”</strong>模块中，必须添加此模块才能使用。</font></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font><br/>
+<p align="left">&nbsp;</p>
+
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">打开窗口设计器，拖放一个<b>“线性布局器”</b></p>
+    <p align="left">随后设置其<b>“布局方向”</b>为<b>“横向布局”</b>。</p>
+	<p align="left"><img src="mt_images/2.png" width="746" height="701" border="0" ></p><br>
+    <p align="left">随后在<b>“线性布局器”</b>内，放入四个<b>“按钮”</b>。</p> 
+	<p align="left">并且分别设置<b>“文本”</b>属性起名。</p>
+    <p align="left"><img border="0" src="mt_images/3.png"  width="746" height="701" ></p>
+	<br>
+	 <p align="left">继续放一个<b>“线性布局”</b>和两个<b>“按钮”</b>，并给<b>“按钮”</b>起名。</p> 
+	<p align="left">最终达到如下图所示的效果。</p>
+    <p align="left"><img border="0" src="mt_images/4.png"  ></p>
+	<br>
+	
+	 <p align="left">最后在<b>“基本组件”</b>内找到<b>“视频播放器”</b>，拖放到设计器内。</p> 
+	<p align="left">并分别设置<b>“组件宽度/高度类型”</b>。</p>
+    <p align="left"><img border="0" src="mt_images/5.png"  width="746" height="701" ></p>
+	<br>
+	 <p align="left">点击<b>“确定”</b>保存布局后，会看到如下代码。</p> 
+	<p align="left">同时右键<b>“按钮”</b>添加<b>“按钮被单击”</b>事件接收方法。</p>
+    <p align="left"><img border="0" src="mt_images/6.png" ></p>
+
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<h2>一、视频播放器</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">本类为窗口组件，如同<b>“按钮”</b>一样，可以在窗口设计器内看到。</p>
+	<p align="left">本组件可以用来播放<b>“本地（存储卡）、网络”</b>或<b>“安卓资源”</b>中的视频文件。</p>
+  <p align="left">本播放器支持<b>“3GP、MP4、avi”</b>等主流视频格式。</p>
+  <p align="left">注意：并非所有的视频格式都支持播放。</p>
+  <p align="left">图片中提到的<b>“媒体控制器”</b>会在稍后的<b>“媒体控制器类”</b>中进行详细介绍。</p>
+	<p align="left"><img border="0" src="mt_images/7.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="jzsp"></a><a name="jzwb"></a><a name="bf"></a><a name="zt"></a><a name="cxbf"></a><a name="sf"></a><a name="tz"></a>
+<font style="font-size: 12pt; font-weight:700">● 视频（写）</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 加载完毕（事件）</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 播放</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 暂停</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 停止</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 释放</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 重新播放</font><br/>
+
+<p align="left">&nbsp;</p>
+	<p align="left">以上七个为关联方法，此处统一讲解。</p>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“视频（写）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本<b>“写属性”</b>的作用就是为当前<b>“视频播放器”</b>设置要播放的视频。</p>
+	<p align="left">视频地址可以为<b>“存储卡视频”</b>和<b>“网络视频”</b>。</p>
+	<p align="left">当需要播放本地视频时，直接使用<b>“黄色方框”</b>内的方法即可。</p>
+	<p align="left">无论是播放<b>“网络视频”</b>还是<b>“本地视频”</b>，务必保证地址正确。</p>
+	<p align="left">并且视频格式能够被播放器支持，否则必然播放失败。</p>
+	<p align="left"><img border="0" src="mt_images/8.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“加载完毕（事件）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">当调用<b>“视频”</b>写属性后，一段时间后（两三秒钟）就会触发<b>“加载完毕”</b>事件。</p>
+	<p align="left">触发本事件后，才可以调用<b>“播放”</b>方法播放视频。</p>
+	<p align="left"><img border="0" src="mt_images/9.png" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left"><b>“播放”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，就是用来播放已经加载好的视频。</p>
+	<p align="left"><b>“加载完毕”</b>事件触发后，本方法才能正常使用。</p>
+	<p align="left">同时本方法也可用来播放被<b>“暂停”</b>的视频。</p>
+	<p align="left"><img border="0" src="mt_images/10.png" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left"><b>“暂停”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，就是<b>“暂停”</b>当前正在播放的视频。</p>
+	<p align="left">暂停后，可以调用<b>“播放”</b>方法继续播放视频。</p>
+	<p align="left"><img border="0" src="mt_images/11.png" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left"><b>“停止”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，<b>“停止”</b>播放当前视频。</p>
+	<p align="left">停止后可以调用<b>“重新播放”</b>方法来重新开始播放。</p>
+	<p align="left"><img border="0" src="mt_images/12.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“释放”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">如果播放的是网络视频，调用本方法后会<b>“释放”</b>掉缓冲内容，并且会停止当前视频的播放。</p>
+	<p align="left">调用<b>“重新播放”</b>可以重新开始播放当前视频。</p>
+	<p align="left"><img border="0" src="mt_images/13.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“重新播放”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，就是将当前视频重新开始播放。</p>
+	<p align="left"><img border="0" src="mt_images/14.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+	<p align="left">在<b>“按钮_被单击”</b>事件下，通过<b>“如果”</b>来判断来源对象是哪个按钮。</p>
+	<p align="left">然后执行对应的属性方法。</p>
+	<p align="left"><img border="0" src="mt_images/15.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+	<p align="left">随后右键<b>“视频播放器”</b>选择<b>“事件接收方法”</b>。</p>
+	<p align="left"><img border="0" src="mt_images/16.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（3）：</p>
+<blockquote>
+	<p align="left">在弹出的窗口中，选择<b>“视频播放器_加载完毕”</b>，最后点击<b>“添加”</b>。</p>
+	<p align="left"><img border="0" src="mt_images/17.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（4）：</p>
+<blockquote>
+	<p align="left">添加后，利用<b>“如果”</b>判断来源对象，弹出一个加载完毕的提示框。</p>
+	<p align="left"><img border="0" src="mt_images/18.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">大家可以看到，点击<b>“加载视频”</b>后就弹出了对应的<b>“加载完毕”</b>提示。</p>
+	<p align="left">此时就可以点击<b>“播放”</b>按钮播放视频。 </p>
+	<p align="left">接下来点击<b>“暂停”</b>后，重新点击<b>“播放”</b>会继续从原来的位置播放视频。 </p>
+	<p align="left">如果点击<b>“停止”</b>后去点击<b>“播放”</b>此时是无效的。</p>
+	<p align="left">必须点击<b>“重新播放”</b>，视频才能开始播放，并且视频加载后会自动开始播放。</p>
+	<p align="left">同样<b>“释放”</b>被点击后，必须去点击<b>“重新播放”</b>才能开始播放当前视频。</p>
+	<p align="left"><img border="0" src="mt_images/19.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<a name="kfkj"></a><a name="kfkt"></a><a name="kfzt"></a><a name="zzbf"></a>
+<font style="font-size: 12pt; font-weight:700">● 可否快进（读）</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 可否快退（读）</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 可否暂停（读）</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 正在播放（读）</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">以上四个读属性，全部返回的是逻辑型。</p>
+<p align="left">作用就是判断当前播放器对象，<b>“是否可以快进”</b>，<b>“是否可以快退”</b>，<b>“是否可以暂停”</b>和<b>“是否正在播放视频”</b>。</p>
+<p align="left">调用方式：通过<b>“如果”</b>来判断<b>“视频播放器1.XXX”</b>的返回值即可。</p>	
+<p align="left">&nbsp;</p>	
+<p align="left"><b>界面准备：</b></p>
+<blockquote>
+	<p align="left">打开<b>“界面设计器”</b>，修改其中四个按钮的标题。</p>
+	<p align="left">分别为：<b>“是否正在播放”</b>，<b>“可否暂停”</b>，<b>“可否快进”</b>和<b>“可否快退”</b>。</p>
+	<p align="left">最后点击<b>“确定”</b>保存修改。</p>
+<p align="left"><img border="0" src="mt_images/20.png" ></p>
+  </blockquote> 
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接通过<b>“如果”</b>来判断这四个<b>“读属性”</b>的返回值即可。</p>
+	<p align="left">然后弹出对应的提示。</p>
+<p align="left"><img border="0" src="mt_images/21.png" ></p>
+  </blockquote> 
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可以看到，只有点击了<b>“播放”</b>按钮，正式播放视频后才会提示<b>“正在播放”</b>。</p>
+	<p align="left">视频播放后，<b>“快进、快退”</b>和<b>“暂停”</b>自然都处于可以操作状态。</p>
+<p align="left"><img border="0" src="mt_images/21.gif" ></p>
+  </blockquote> 
+	
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="xxwzd"></a><a name="cd"></a><a name="hcbfb"></a>
+<font style="font-size: 12pt; font-weight:700">● 现行位置（读）</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 长度（读）</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 缓冲百分比（读）</font><br/>	
+<p align="left">&nbsp;</p>
+<p align="left"><b>“现行位置(读)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，本属性的作用是读取<b>“当前视频”</b>播放位置。</p>
+    <p align="left">返回值的单位为<b>“毫秒”</b>。</p>
+    <p align="left"><img border="0" src="mt_images/22.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>“长度（读）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，本属性的作用可以读取当前视频的总时长。</p>
+	<p align="left">返回值依然是毫秒。</p>
+	<p align="left"><img border="0" src="mt_images/23.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“缓冲百分比（读）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性和前两个属性不同之处在于，本属性只能用于<b>“网络视频”</b>。</p>
+	<p align="left">因为只有加载<b>“网络视频”</b>才会有缓冲，返回值为百分比。</p>
+	<p align="left">例如：总时长100分钟，视频缓冲了1分钟，最终返回<b>“1”</b>。</p>
+	<p align="left">返回值占总时长的百分之一。</p>
+	<p align="left"><img border="0" src="mt_images/24.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">界面设计如下图：</p>
+<blockquote>
+    <p align="left">打开界面设计器，修改其中<b>“三个按钮”</b>的文本属性。</p>
+    <p align="left">分别为<b>“现行位置”</b>，<b>“长度”</b>和<b>“缓冲百分比”</b>。</p>
+	<p align="left"><img border="0" src="mt_images/25.png" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">在原来的代码中，分别修改<b>“按钮3、4、5”</b>下方的代码。</p>
+    <p align="left">修改为<b>“视频播放器1.XXX”</b>读属性，<b>“除1000”</b>得到<b>“秒”</b>，最后利用<b>“到文本”</b>方法对其进行转换。</p>
+    <p align="left">注意：缓冲百分比不用除1000.</p>
+    <p align="left">最后将结果显示在<b>“按钮6”</b>的内容属性上。</p>
+	<p align="left"><img border="0" src="mt_images/26.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（gif）：</p>
+<blockquote>
+    <p align="left">最终可以看到，视频播放后成功的读取<b>“现行位置”</b>、<b>“长度”</b>和<b>“缓冲百分比”</b>。</p>
+    <p align="left">因本视频很短，所以<b>“缓冲百分比”</b>此时显示<b>“100?。</p>
+    <p align="left">也就意味着视频已经缓冲完毕。</p>
+    <p align="left">大家在测试过程中可以找一个长视频做测试。</p>
+	<p align="left"><img border="0" src="mt_images/27.gif" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+<a name="xxwzx"></a><a name="bfjs"></a><a name="ddxx"></a>
+<font style="font-size: 12pt; font-weight:700">● 现行位置（写）</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 播放结束（事件）</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 得到信息（事件）</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>“现行位置（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，本写属性的作用就是用来，设置当前播放进度。</p>
+<p align="left">它的单位依然是毫秒，数值应小于等于<b>“长度”</b>属性的返回值。</p>
+  <p align="left"><img border="0" src="mt_images/28.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“播放结束（事件）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，当前视频播放结束后会触发本事件。</p>
+  <p align="left"><img border="0" src="mt_images/29.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“得到信息（事件）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">开始播放视频后会触发本事件，并且会返回相应的<b>“消息类型”</b>。</p>
+<p align="left">需要注意的是<b>“消息代码”</b>参数并不是特定的代码。</p>
+  <p align="left"><img border="0" src="mt_images/30.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+	<p align="left">直接在源代码的基础上，修改<b>“按钮3”</b>被单击的代码。</p>
+	<p align="left">修改为<b>“现行位置”</b>写属性，属性值填写<b>“长度”</b>读属性。</p>
+	<p align="left">可以将其它用不到的代码删除掉。</p>
+	<p align="left">这样编写代码，当前视频会直接播放到<b>“视频结尾”</b>的位置。</p>
+	<p align="left"><img border="0" src="mt_images/31.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+	<p align="left">右键<b>“视频播放器”</b>继续添加<b>“事件接收方法”</b>。</p>
+	<p align="left">这里依次添加<b>“播放结束”</b>和<b>“得到信息”</b>。</p>
+	<p align="left"><img border="0" src="mt_images/32.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（3）：</p>
+<blockquote>
+	<p align="left">在<b>“播放结束”</b>事件下，判断来源对象后，调用<b>“提示框”</b>方法做演示。</p>
+	<p align="left"><img border="0" src="mt_images/33.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（4）：</p>
+<blockquote>
+	<p align="left">在<b>“得到信息”</b>事件下，判断来源对象后。</p>
+	<p align="left">继续使用<b>“如果”</b>来判断<b>“消息类型”</b>参数是否等于<b>“播放消息类型.XXX”</b>。</p>
+	<p align="left">然后弹出对应提示。</p>
+	<p align="left">注意：并非每一条<b>“消息类型”</b>都会返回。</p>
+	<p align="left">例如：消息类型中的<b>“未知”</b>只有在播放视频出现未知错误的时候，才会返回此消息类型。</p>
+	<p align="left"><img border="0" src="mt_images/34.png" ></p>
+</blockquote>
+	
+	
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+  <p align="left">可以看到点击<b>“加载视频”</b>后，提示<b>“加载完毕”</b>。</p>
+  <p align="left">点击<b>“播放”</b>后<b>“得到信息”</b>事件开始被触发。</p>
+  <p align="left">依次弹出提示<b>“开始缓冲”</b>，<b>“缓冲完毕”</b>和<b>“开始渲染”</b>。</p>
+  <p align="left">当点击<b>“现行位置”</b>设置播放进度后，<b>“播放结束”</b>随之弹出。</p>
+	<p align="left"><img border="0" src="mt_images/35.gif" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="bfcz"></a>
+<font style="font-size: 12pt; font-weight:700">● 播放出错（事件）</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本事件顾名思义，播放出现错误时会触发本事件。</p>
+	<p align="left">错误分两种：<b>“错误类型”</b>和<b>“错误代码”</b>。</p>
+	<p align="left">错误类型可以通过<b>“播放错误类型.XXX”</b>判断。</p>
+	<p align="left">错误代码可以通过<b>“播放错误代码.XXX”</b>判断。</p>
+  
+    <p align="left"><img border="0" src="mt_images/36.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+<p align="left">首先在源代码的基础上，修改<b>“视频”</b>中的地址，随便输入一个错误的地址。</p>
+	<p align="left">看看<b>“播放出错”</b>事件是否能被触发。</p>
+  
+    <p align="left"><img border="0" src="mt_images/37.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+<p align="left">添加<b>“播放出错”</b>接收事件后，判断来源对象。</p>
+	<p align="left">然后分别判断<b>“错误类型”</b>参数和<b>“错误代码”</b>参数，弹出对应提示。</p>
+  
+    <p align="left"><img border="0" src="mt_images/38.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+<p align="left">可以看到弹出一个<b>“信息框”</b>，此信息框是核心库内置的错误信息框。</p>
+<p align="left">除此之外还弹出了<b>“错误类型”</b>对应的<b>“未知错误”</b>提示，但是<b>“错误代码”</b>并未提示。</p>
+<p align="left">也就证明，一个错误的播放地址，并不会触发<b>“错误代码”</b>参数。</p>
+  
+    <p align="left"><img border="0" src="mt_images/39.gif" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="hcbfb"></a>
+<font style="font-size: 12pt; font-weight:700">● 媒体控制器（读）</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">通过本读属性，可以用来显示当前<b>“视频播放器”</b>的<b>“媒体控制器”</b>。</p>
+<p align="left">控制内有<b>“播放”</b>，<b>“前进”</b>，<b>“后退”</b>等控制按钮，可以点击操作。</p>
+<p align="left">本属性会在<a href="#mtkzq"><b>“媒体控制器类”</b></a>中详细介绍，此处不再讲解。</p>
+	<p align="left"><img border="0" src="mt_images/35.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="mtkzq"></a>
+<h2>二、媒体控制器类</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left">通过本类中的方法，可以操作视频播放器的媒体控制器。</p>
+  <p align="left">媒体控制器内包含<b>“播放/暂停”</b>，<b>“快进、快退”</b>和<b>“上一首、下一首”</b>等控制按钮。</p>
+ 
+	<p align="left"><img border="0" src="mt_images/40.png" >
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="xianshi"></a><a name="yincang"></a><a name="shifouxianshi"></a>
+<font style="font-size: 12pt; font-weight:700">● 显示</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 隐藏</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 是否显示（读）</font><br/>	
+<p align="left">&nbsp;</p>
+<p align="left"><b>“显示”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，调用本方法可以显示当前视频播放器的<b>“媒体控制器”</b>。</p>
+	<p align="left">注意：如果<b>“未加载”</b>视频的情况下，本方法无效。</p>
+	<p align="left"><img border="0" src="mt_images/41.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left"><b>“隐藏”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，隐藏当前视频播放器的媒体控制器。</p>
+	<p align="left">注意：如果<b>“未加载”</b>视频的情况下，本方法无效。</p>
+	<p align="left"><img border="0" src="mt_images/42.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left"><b>“是否显示（读）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，判断当前媒体控制是否显示。</p>
+	<p align="left">注意：如果<b>“未加载”</b>视频的情况下，本属性返回<b>“假”</b>。</p>
+	<p align="left"><img border="0" src="mt_images/43.png" ></p>
+</blockquote>	
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">界面准备如下图：</p>
+<blockquote>
+	<p align="left">打开界面设计器，修改其中三个按钮的<b>“文本”</b>标题。</p>
+	<p align="left">修改后保存布局。</p>
+	<p align="left"><img border="0" src="mt_images/44.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">媒体控制器有两种操作模式，分别如下。</p>
+	<p align="left"><b>第一：</b><b>“显示”</b>按钮被点击后。</p>
+	<p align="left">定义<b>“媒体控制器类”</b>变量，设置参考。</p>
+	<p align="left">然后通过<b>“视频播放器1.媒体控制器”</b>属性，读取控制器对象，赋值给定义的<b>“媒体控制器”</b>变量。</p>
+	<p align="left">最后通过<b>“变量”</b>名调用<b>“显示”</b>方法，即可实现显示当前控制器。</p>
+  <p align="left"><b>第二：</b><b>“隐藏”</b>按钮被单击后。</p>
+  <p align="left">直接输入<b>“视频播放器1.媒体控制器.隐藏()”</b>即可调用当前方法。</p>
+	<p align="left"><img border="0" src="mt_images/45.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可以看到，在没有播放视频的情况下，点击<b>“显示”</b>按钮并没有任何效果。</p>
+	<p align="left">加载视频播放后，就可以对<b>“媒体控制器”</b>进行隐藏和显示操作。</p>
+	<p align="left">同时控制器内的<b>“播放/暂停”</b>按钮，也可以操作。</p>
+	<p align="left"><img border="0" src="mt_images/46.gif" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="xssc"></a>
+<font style="font-size: 12pt; font-weight:700">● 显示时长（写）</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本写属性的作用，用来设置当前播放器临时显示时长，单位毫秒。</p>
+<p align="left">真实时长显示后，本时长会隐藏。</p>
+<p align="left">通常情况下，本时长肉眼不可见，因此不再演示。</p>
+<p align="left">调用方法：<b>“视频播放器1.媒体控制器.显示时长=10000”</b></p>
+	<p align="left"><img border="0" src="mt_images/47.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="mdst"></a>
+	<font style="font-size: 12pt; font-weight:700">● 锚点视图（写）</font><br/>
+<p align="left">&nbsp;</p>
+	
+<p align="left"><b>“锚点视图（写）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">简单来说，本写属性的作用，就是设置<b>“媒体控制器”</b>的显示位置。</p>
+	<p align="left">而要显示的位置，可以设置为一个<b>“窗口组件”</b>。</p>
+	<p align="left">例如：<b>“按钮”</b>，<b>“文本框”</b>或者当前的<b>“视频播放器”</b>都可以。</p>
+	<p align="left">只要是窗口组件，都可以设置为显示视图。</p>
+	<p align="left"><img border="0" src="mt_images/48.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">修改<b>“按钮4”</b>的标题为<b>“锚点试图”</b>，修改后保存布局。</p>
+	<p align="left"><img border="0" src="mt_images/49.png" ></p>
+</blockquote>	
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在<b>“锚点视图”</b>被单击下，直接书写<b>“视频播放器1.媒体控制器.锚点视图=XXX”</b>即可。</p>
+	<p align="left">例如：此处填写<b>“按钮6”</b>。</p>
+	<p align="left"><img border="0" src="mt_images/50.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可以看到点击<b>“锚点视图”</b>后，<b>“媒体控制器”</b>从最下面来到了<b>“按钮6”</b>所在的位置。</p>
+	<p align="left">并且<b>“媒体控制器”</b>大小也和<b>“按钮6”</b>一致。</p>
+	<p align="left">因此大家在设置<b>“锚点视图”</b>时，一定要保证组件足够宽。</p>
+	<p align="left"><img border="0" src="mt_images/51.gif" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="sysbdj"></a><a name="xysbdj"></a>
+<font style="font-size: 12pt; font-weight:700">● 上一首被单击（事件）</font><br/><font style="font-size: 12pt; font-weight:700">● 下一首被点击（事件）</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">以上两个事件均是由<b>“媒体控制器”</b>触发。</p>
+	<p align="left">注意：在此之前，一定要进行<b>“挂接事件”</b>操作。</p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+	<p align="left">首先在当前窗口的<b>“通知_被启动”</b>方法下，进行挂接事件操作。</p>
+	<p align="left">直接输入<b>“挂接事件(视频播放器1.媒体控制器)”</b>即可。</p>
+	<p align="left">关于<b>“通知_被启动”</b>可看<a href="a_win.htm"><b>“窗口操作教程”</b></a>。</p>
+	<p align="left"><img border="0" src="mt_images/52.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+	<p align="left">定义一个<b>“媒体控制器类”</b>变量，右键选择<b>“事件接收方法”</b>。</p>
+	<p align="left"><img border="0" src="mt_images/53.png" ></p>
+
+	<p align="left"></p>
+	<p align="left">在弹出的窗口中依次选择<b>“上一首被点击”</b>和<b>“下一首被点击”</b>后，点击<b>“添加”</b>。</p>
+	<p align="left"></p>
+	<p align="left"><img border="0" src="mt_images/54.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（3）：</p>
+<blockquote>
+	<p align="left">添加后，通过<b>“如果”</b>命令分别指定来源对象，然后弹出对应提示。</p>
+	<p align="left"><img border="0" src="mt_images/55.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可以看到<b>“媒体控制器”</b>中的<b>“上一首、下一首”</b>按钮被点击后，成功弹出了对应提示。</p>
+	<p align="left">如果不进行挂接事件操作，必然无法弹出提示。</p>
+	<p align="left"><img border="0" src="mt_images/56.gif" ></p>
+</blockquote>
+
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

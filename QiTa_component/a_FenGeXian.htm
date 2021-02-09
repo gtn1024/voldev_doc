@@ -1,0 +1,175 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		
+		  <li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new2')" >一.分隔线 <span>(可收缩)</span></h6></li>
+	  <ol id="new2">
+			<li><blockquote><a href="#fengexian">1.准备工作</a></blockquote></li>
+			<li><blockquote><a href="#fgxkd">2.宽度(读写)</a></blockquote></li>
+			<!-- <li><blockquote><a href="#fgxddxz">3.端点形状(读写)</a></blockquote></li> -->
+			<li><blockquote><a href="#fgxzx">3.纵向(读写)</a></blockquote></li>
+			<li><blockquote><a href="#fgxys">4.颜色(读写)</a></blockquote></li>
+			<li><blockquote><a href="#fgxhb">5.画笔(读)</a></blockquote></li>
+           
+		</ol>	
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>分隔线组件实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font>	
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">打开窗口设计器，从上到下依次拖放<b>“按钮1”</b>，<b>“分割线1”</b>和<b>“按钮2”</b>。</p>
+	<p align="left">然后设置<b>“分割线1”</b>的宽度类型为<b>“匹配父组件宽度”</b>。</p>
+	<p align="left">设置完毕后保存布局即可。</p>
+	<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+	<p align="left"><img border="0" src="fenge_images/46.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="fgxkd"></a>
+<font style="font-size: 12pt; font-weight:700">● 宽度(读写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“宽度(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本写属性就是用来设置当前<b>“分隔线”</b>的<b>“绘制宽度”</b>。</p>
+	<p align="left">关于DP单位可以看<b>“尺寸单位.DP”</b>常量值，也可以点击看<a href="https://baike.baidu.com/item/DP/2975777#viewPageContent" target="_blank">百度百科</a>相关资料。</p>
+	<p align="left">如果宽度值为0，则画笔将会绘制单像素的线条。</p>
+	<p align="left">同名读属性，即读取当前分隔线的宽度值。</p>
+	<p align="left">注意：本<b>“宽度”</b>属性并不是当前<b>“分隔线”</b>的宽度。</p>
+	<p align="left">分隔线宽度可通过<b>“置需求宽度”</b>方法来指定。</p>
+	<p align="left"><img border="0" src="fenge_images/47.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后设置当前宽度值为<b>“5dp”</b>。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，读取当前的宽度属性。</p>
+	<p align="left"><img border="0" src="fenge_images/48.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可以看到<b>“按钮1”</b>被点击后，当前<b>“分隔线”</b>的绘制宽度明显变宽。</p>
+    <p align="left"><b>“按钮2”</b>被点击后就会读取当前的宽度数值。</p>
+	<p align="left"><img border="0" src="fenge_images/49.gif" >
+    </p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="fgxzx"></a>
+<font style="font-size: 12pt; font-weight:700">● 纵向(读写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“纵向(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本写属性的作用就是用来设置当前线条的方向。</p>
+	<p align="left">如果属性值为真，则设置为纵向，否则为横向。</p>
+	<p align="left">如果不设置本属性，默认为横向。</p>
+	<p align="left">同名读属性，即判断当前分隔线是否为纵向，返回真表示纵向，否则相反。</p>
+	<p align="left"><img border="0" src="fenge_images/50.png" ></p>
+	<p align="left">&nbsp;</p>
+	<p align="left">如果要设置为<b>“纵向”</b>，那么当前分隔线的高度可以通过<b>“置需求高度”</b>来指定。</p>
+	<p align="left">或者打开界面设计器，删除<b>“组件宽度类型”</b>，直接指定<b>“组件高度类型”</b>。</p>
+	<p align="left"><img border="0" src="fenge_images/50a.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，设置当前属性值为真，同时设置<b>“宽度”</b>属性方便看效果。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，判断当前属性的返回值是否为真，然后弹出对应提示即可。</p>
+	<p align="left"><img border="0" src="fenge_images/51.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">第一次点击<b>“按钮2”</b>弹出<b>“横向”</b>提示。</p>
+    <p align="left">当点击<b>“按钮1”</b>后就可以在界面上看到一个<b>“纵向”</b>的分隔线。</p>
+    <p align="left">此时再次点击<b>“按钮1”</b>就会提示<b>“纵向”</b>。</p>
+	<p align="left"><img border="0" src="fenge_images/52.gif" >
+    </p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="fgxys"></a>
+<font style="font-size: 12pt; font-weight:700">● 颜色(读写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“颜色(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本写属性的作用可以用来设置当前分隔线的颜色，可以使用<b>“颜色类”</b>中定义的常量值。</p>
+	<p align="left">同名读属性即读取当前的颜色值。</p>
+	<p align="left"><img border="0" src="fenge_images/53.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，设置当前组件<b>“纵向”</b>、<b>“宽度”</b>和<b>“颜色”</b>属性。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，如果想让某个组件和当前颜色一致。</p>
+	<p align="left">可通过调整某个组件的背景色等于当前分隔线的颜色读属性。</p>
+	<p align="left">例如：本例程中写的是<b>“按钮2.背景色=分割线1.颜色”</b>。</p>
+	<p align="left"><img border="0" src="fenge_images/54.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可以看到点击<b>“按钮1”</b>后出现了纵向的分隔线，并且颜色为黄色。</p>
+    <p align="left"><b>“按钮2”</b>被点击后，按钮2的颜色值和分隔线的颜色值一致。</p>
+	<p align="left"><img border="0" src="fenge_images/55.gif" >
+    </p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="fgxhb"></a>
+<font style="font-size: 12pt; font-weight:700">● 画笔(读)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本读属性，可以读取当前<b>“分隔线”</b>的画笔对象。</p>
+	<p align="left">通过画笔对象可以进行各种各样的操作，详情可看<a href="a_canvas.htm#huabilei"><b>“画笔类”</b></a>帮助文档。</p>
+	<p align="left"><img border="0" src="fenge_images/56.png" ></p>
+</blockquote>	
+	
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

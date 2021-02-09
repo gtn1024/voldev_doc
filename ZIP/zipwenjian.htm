@@ -1,0 +1,198 @@
+
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new2')" >一.ZIP文件类<span>(可收缩)</span></h6></li>
+		<ol id="new2">
+           <li><blockquote><a href="#zipcjdx">1.创建对象</a></blockquote></li>
+          <li><blockquote><a href="#zipcjdx">2.取指定条目</a></blockquote></li>
+          <li><blockquote><a href="#zipcjdx">3.关闭</a></blockquote></li>
+          <li><blockquote><a href="#zipqsrl">4.取输入流</a></blockquote></li>
+          <li><blockquote><a href="#zipsytm">5.所有条目(读)</a></blockquote></li>
+          <li><blockquote><a href="#zipwjm">6.文件名(读)</a></blockquote></li>
+          <li><blockquote><a href="#ziptmsl">7.条目数量(读)</a></blockquote></li>
+		</ol>
+		
+		
+	</ol>
+</ul>
+</div>
+
+
+<p align="left">
+<h2>“ZIP文件类”操作实例讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+<a name="zbgz"></a>    
+<font style="font-size: 12pt; font-weight:700">● 帮助说明</font><br/>
+<br/>
+<blockquote>
+<p align="left"><font color="#F70408">本教程所有方法均位于<strong>“数据压缩解压及JAR访问支持”</strong>模块中。</font></p>
+ <!-- <p align="left"><img border="0" src="img/1.png" ></p>-->
+</blockquote>	
+	<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 创建对象</font><br>
+<font style="font-size: 12pt; font-weight:700">● 取指定条目</font><br>
+<font style="font-size: 12pt; font-weight:700">● 关闭</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“创建对象”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本方法可创建ZIP文件对象，通过创建的对象可对压缩包内的文件进行操作。</p>
+    <p align="left">注意：指定的文件非zip文件，或者文件不允许读取将返回空对象。</p>
+	<p align="left"><img border="0" src="img/398.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“取指定条目”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">通过本方法可取出ZIP压缩白内的指定条目(文件)对象。</p>
+    <p align="left">返回值为<b>“ZIP文件条目类”</b>,通过本对象可取出ZIP条目相关信息。</p>
+	<p align="left"><img border="0" src="img/399.png" ></p>
+	<p align="left"></p>
+	<p align="left"><b>“ZIP文件条目类”</b>可操作的读属性如下所示。</p>
+	<p align="left">本例程中演示<b>“名称”</b>和<b>“压缩前尺寸”</b>属性。</p>
+	<p align="left"><img border="0" src="img/403.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“关闭”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">不使用当前zip对象后，务必调用本方法进行关闭。</p>
+    <p align="left">关闭后想要重新调用必须使用<b>“创建对象()”</b>方法重新创建。</p>
+	<p align="left"><img border="0" src="img/400.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、定义类型为<b>“ZIP文件类”</b>的变量勾选参考。</p>
+    <p align="left">2、调用<b>“创建对象()”</b>方法赋值给此变量，参数填写一个完整的zip压缩包路径。</p>
+    <p align="left">3、定义类型为<b>“ZIP文件条目类”</b>变量勾选参考。</p>
+    <p align="left">4、调用<b>“取指定条目()”</b>方法，取出条目对象，参数填写的文件名务必保证压缩包内存在。</p>
+    <p align="left">5、通过<b>“ZIP条目对象”</b>取出<b>“名称”</b>和<b>“压缩前尺寸”</b>。</p>
+    <p align="left">6、不使用后调用<b>“关闭()”</b>方法关闭对象。</p>
+	<p align="left"><img border="0" src="img/401.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/402.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="zipqsrl"></a>
+<font style="font-size: 12pt; font-weight:700">● 取输入流</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本方法可取出指定条目对象的输入流对象。</p>
+    <p align="left">通过读取出来的流对象可取出当前条目(文件)数据。</p>
+	<p align="left"><img border="0" src="img/404.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、通过<b>“创建对象()”</b>方法创建当前zip文件对象。</p>
+    <p align="left">2、通过<b>“ZIP文件条目类.创建对象()”</b>方法创建条目对象，务必保证条目存在否则会创建失败。</p>
+    <p align="left">3、调用<b>“取输入流()”</b>方法创建输入流对象，参数填写创建的条目对象。</p>
+    <p align="left">4、定义<b>“缓冲区”</b>字节数组变量和<b>“读入尺寸”</b>整数变量，用于判断循环取出流对象中的数据。</p>
+    <p align="left">5、因<b>“文件1.txt”</b>编码是GBK编码，因此需要调用<b>“指定编码字节数组到文本()”</b>方法将其转换成GBK编码读取。</p>
+    <p align="left">6、最后关闭流对象和zip文件对象。</p>
+	<p align="left"><img border="0" src="img/405.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图： </p>
+<blockquote>
+	<p align="left"><img border="0" src="img/406.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<a name="zipsytm"></a>
+<font style="font-size: 12pt; font-weight:700">● 所有条目(读)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本属性可以读取压缩包内所有条目(文件)。</p>
+    <p align="left">返回值时对象类，使用时需要将其强制转换为<b>“ZIP文件条目列举器类”</b>。</p>
+	<p align="left"><img border="0" src="img/407.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、通过zip压缩包文件路径创建zip文件对象。</p>
+    <p align="left">2、定义类型为<b>“ZIP文件条目列举器类”</b>变量，调用<b>“所有条目”</b>属性强制转换为当前列举器，赋值给此变量。</p>
+    <p align="left">3、利用<b>“判断循环()”</b>循环判断是否有更多成员，如果有就调用<b>“到下一成员()”</b>方法取出成员。</p>
+    <p align="left">4、取出的成员是条目对象，可通过<b>“名称”</b>属性取出条目名字。</p>
+    <p align="left">5、最后将当前ZIP文件对象关闭。</p>
+	<p align="left"><img border="0" src="img/408.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图： </p>
+<blockquote>
+	<p align="left"><img border="0" src="img/409.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="zipwjm"></a>
+<font style="font-size: 12pt; font-weight:700">● 文件名(读)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本属性可读取当前ZIP完整路径。</p>
+	<p align="left"><img border="0" src="img/410.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">创建当前ZIP文件对象，调用当前属性赋值给编辑框即可。</p>
+	<p align="left"><img border="0" src="img/411.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图： </p>
+<blockquote>
+	<p align="left"><img border="0" src="img/412.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="ziptmsl"></a>
+<font style="font-size: 12pt; font-weight:700">● 条目数量(读)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本属性可取出当前zip文件内文件数量。</p>
+	<p align="left"><img border="0" src="img/413.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">创建zip文件对象，调用本属性转换为文本后赋值给编辑框显示。</p>
+	<p align="left"><img border="0" src="img/414.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图： </p>
+<blockquote>
+	<p align="left"><img border="0" src="img/415.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

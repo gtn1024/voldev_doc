@@ -1,0 +1,357 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new5')" >一.程序配置表<span>(可收缩)</span></h6></li>
+	  <ol id="new5">
+			<li><blockquote><a href="#peizhibiao">1.本类说明</a></blockquote></li>
+           <li><blockquote><a href="#pzxsfcz">2.配置项是否存在</a></blockquote></li>
+           <li><blockquote><a href="#pzbqxgq">3.取修改器</a></blockquote></li>
+           <li><blockquote><a href="#qljxpzx">4.取逻辑型配置项</a></blockquote></li>
+           <li><blockquote><a href="#qwbjpzx">5.取文本集配置项</a></blockquote></li>
+           <li><blockquote><a href="#qwbpzx">6.取文本配置项</a></blockquote></li>
+           <li><blockquote><a href="#qxspzx">7.取小数配置项</a></blockquote></li>
+           <li><blockquote><a href="#qczspzx">8.取长整数配置项</a></blockquote></li>
+           <li><blockquote><a href="#qzspzx">9.取整数配置项</a></blockquote></li>			
+      </ol>	
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new4')" >二.程序配置表修改器<span>(可收缩)</span></h6></li>
+		<ol id="new4">
+        
+           <li><blockquote><a href="#xiugaiqi">1.本类说明</a></blockquote></li>
+           <li><blockquote><a href="#zljxpzx">2.置逻辑型配置项</a></blockquote></li>
+           <li><blockquote><a href="#zljxpzx">3.提交</a></blockquote></li>
+           <li><blockquote><a href="#zwbjpzx">4.置文本集配置项</a></blockquote></li>
+           <li><blockquote><a href="#zwbpzx">5.置文本配置项</a></blockquote></li>
+           <li><blockquote><a href="#zxspzx">6.置小数配置项</a></blockquote></li>
+           <li><blockquote><a href="#zczspzx">7.置长整数配置项</a></blockquote></li>
+           <li><blockquote><a href="#zzspzx">8.置整数配置项</a></blockquote></li>
+           <li><blockquote><a href="#scpzx">9.删除配置项</a></blockquote></li>
+		</ol>	
+		
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>程序配置实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<ap align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="peizhibiao"></a>
+<h2>一、程序配置表</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档：</p>
+<blockquote>
+    <p align="left">本类的主要作用是用来<b>“取配置项”</b>，需要用到一个<b>“应用程序.取程序配置表()”</b>方法。</p>
+    <p align="left">本类总共有<b>“8个”</b>方法。</p>
+	<p align="left"><img border="0" src="img/69.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="pzxsfcz"></a>
+<font style="font-size: 12pt; font-weight:700">● 配置项是否存在</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">可以看到有两个参数，一个<b>“程序配置表对象”</b>参数，一个<b>“文本型”</b>参数。</p>
+    <p align="left">本方法的作用就是判断指定的<b>“配置项”</b>是否存在，存在<b>“返回真”</b>，不存在<b>“返回假”</b>。</p>
+    <p align="left">本方法支持动态调用。</p>
+	<p align="left"><img border="0" src="img/70.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">首先定义类型为<b>“程序配置表”</b>的变量，设置参考。</p>
+    <p align="left">随后利用<b>“应用程序.取程序配置表()”</b>方法取出配置表，赋值给<b>“配置表变量”</b>。</p>
+    <p align="left">最后利用<b>“本方法”</b>判断<b>“账号”</b>是否存在，然后弹出对应信息框。</p>
+	<p align="left"><img border="0" src="img/71.png" ></p>
+   
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果：</p>
+<blockquote>
+	<p align="left">因我们在<b>“删除配置项”</b>方法中，已经将<b>“账号”</b>删除，所以这里执行后会弹出<b>“不存在”</b>。</p>
+	<p align="left"><img border="0" src="img/72.gif" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="pzbqxgq"></a>
+<font style="font-size: 12pt; font-weight:700">● 取修改器</font><br/>
+<blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left">有两个参数，返回<b>“修改器”</b>对象。</p>
+    <p align="left">参数1：填写要操作的程序配置表。</p>
+    <p align="left">参数2：有默认值，可以省略，通常情况下省略即可。</p>
+    <p align="left">使用方法已经在<a href="#zwbpzx"><b>“置文本配置项”</b></a>方法中演示了调用过程，这里不再演示。</p>
+	<p align="left"><img border="0" src="img/73.png" ></p>
+   
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="qwbpzx"></a>
+<a name="qljxpzx"></a>
+<a name="qczspzx"></a>
+<a name="qzspzx"></a>
+<a name="qxspzx"></a>
+<font style="font-size: 12pt; font-weight:700">● 取文本配置项</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取逻辑型配置项</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取长整数配置项</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取整数配置项</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取小数配置项</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">以上五个方法，用法一致，这里举例<b>“取文本配置项”</b>。</p>
+<p align="left"><b>“取文本配置项”</b>帮助文档：</p>
+<blockquote>
+<p align="left">方法支持动态调用，有三个参数和一个文本返回值。</p>
+    <p align="left">参数1：提供要操作的配置表对象，动态调用的时候本参数可以忽略。</p>
+    <p align="left">参数2：提供要<b>“取配置项”</b>的名称。</p>
+    <p align="left">参数3：如果配置项<b>“不存在”</b>或者<b>“不匹配”</b>类型，将返回<b>“参数3”</b>的内容，默认为<b>“空文本”</b>。</p>
+    <p align="left"><img border="0" src="img/75.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">在<b>“按钮1”</b>被单击下，我们保存一个<b>“密码”</b>配置项。</p>
+    <p align="left">随后在<b>“按钮2”</b>被单击下，我们定义一个<b>“程序配置表”</b>的变量，设置参考。</p>
+	<p align="left">然后利用<b>“应用程序.取程序配置表”</b>方法赋值给变量。</p>
+    <p align="left">最后用本方法取<b>“密码”</b>配置项，赋值给<b>“编辑框1.内容”</b>显示出来。</p>
+    <p align="left"><img border="0" src="img/74.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">首先点击<b>“按钮1”</b>写密码，提示<b>“保存成功”</b>。</p>
+    <p align="left">接下来点击<b>“按钮2”</b>密码也成功在<b>“编辑框”</b>显示。</p>
+	<p align="left"><img border="0" src="img/76.gif" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="qwbjpzx"></a>
+<font style="font-size: 12pt; font-weight:700">● 取文本集配置项</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本方法支持动态调用，可以看到有<b>“两个参数”</b>和一个<b>“文本数据集类”</b>的返回值。</p>
+<p align="left">参数1：填写要操作的<b>“程序配置表”</b>。</p>
+<p align="left">参数2：填写要读取的<b>“配置项”</b>名称。</p>
+<p align="left">注意：如果<b>“类型不匹配”</b>或者<b>“配置项不存在”</b>，将会返回<b>“空对象”</b>。</p>
+    <p align="left">具体代码编写看<b>“<a href="#zwbjpzx">置文本集配置项</a>”</b>。</p>
+	<p align="left"><img border="0" src="img/77.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="xiugaiqi"></a>
+<h2>二、、程序配置表修改器</h2>
+<p align="left">&nbsp;</p>
+
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+    <p align="left"><b>“程序配置表”</b>可以理解为，此表用来保存一些较短的<b>“文本数据”</b>或者<b>“其它类型”</b>的数据。</p>
+    <p align="left">当程序卸载后，数据随之删除，如果不卸载将一直存在。</p>
+    <p align="left">需要通过<b>“程序配置表.取修改器()”</b>方法来获取到<b>“修改器”</b>，获取修改器后才可以进行接下来的操作。</p>
+    <p align="left"><b>“程序配置表”</b>则可以通过<b>“取程序配置表()”</b>方法获取。</p>
+    <p align="left">本类共有：8个方法。</p>
+	<p align="left"><img border="0" src="img/58.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="zljxpzx"></a>
+<a name="zwbpzx"></a>
+<a name="zxspzx"></a>
+<a name="zczspzx"></a>
+<a name="zzspzx"></a>
+<font style="font-size: 12pt; font-weight:700">● 置文本配置项</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 置逻辑型配置项</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 置小数配置项</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 置长整数配置项</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 置整数配置项</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 提交</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“置文本配置项”</b>到<b>“置整数配置项”</b>用法一致，这里单独举例<b>“置文本配置项”</b>。</p>
+<p align="left"><b>“提交”</b>必备的关联方法，这里统一讲解。</p>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“置文本配置项”</b>帮助：</p>
+<blockquote>
+    <p align="left">本方法支持动态调用，有三个参数。</p>
+    <p align="left">参数1：要操作<b>“程序配置表修改器”</b>。</p>
+    <p align="left">参数2：要配置项名称。</p>
+    <p align="left">参数3：要保存的数据。</p>
+    <p align="left">注意：写入数据后一定要调用<b>“提交”</b>方法，这样操作才能生效。</p>
+	<p align="left"><img border="0" src="img/59.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">"提交"帮助：</p>
+<blockquote>
+  <p align="left">无论是<b>“删除”</b>还是<b>“写新数据”</b>，都需要调用本方法来实现操作。</p>
+  <p align="left">只有一个<b>“程序配置表修改器”</b>对象参数，和一个<b>“逻辑”</b>返回值。</p>
+	<p align="left"><img border="0" src="img/60.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">需要定义两个变量，一个类型为<b>“程序配置表”</b>，另外一个类型为<b>“程序配置表修改器”</b>。</p>
+    <p align="left">两个变量都需要设置<b>“参考”</b>。</p>
+    <p align="left">随后可以用<b>“取程序配置表”</b>方法取出配置表赋值给定义的<b>“配置表”</b>变量。</p>
+    <p align="left">接下来利用<b>“配置表.取修改器()”</b>方法，取出修改器对象赋值给定义的<b>“修改器变量”</b>。</p>
+    <p align="left">然后利用<b>“置文本配置项”</b>写入数据，最后调用<b>“提交”</b>方法判断是否成功即可。</p>
+    <p align="left">本方法现在的调用模式是<b>“变量形式调用”</b>，这属于<b>“动态调用”</b>，动态调用中<b>“参数1”</b>必须忽略不写。</p>
+    <p align="left">接下来不再重复<b>“动态调用”</b>的<b>“注意事项”</b>。</p>
+    
+	<p align="left"><img border="0" src="img/61.png" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">执行<b>“按钮1”</b>后就会提示<b>“保存成功”</b>。</p>
+	<p align="left"><img border="0" src="img/62.png" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="zwbjpzx"></a>
+<font style="font-size: 12pt; font-weight:700">● 置文本集配置项</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+ <p align="left">本方法支持动态调用，可以看到有<b>“三个”</b>参数，没有返回值。</p>
+	<p align="left">参数1：要操作的<b>“程序配置表修改器”</b>对象。</p>
+    <p align="left">参数2：要保存的<b>“配置项”</b>名称。</p>
+    <p align="left">参数3：要写入的<b>“文本数据集”</b>对象。</p>
+    <p align="left">注意：本操作依然需要使用<b>“提交”</b>方法才会生效。</p>
+    <p align="left"><img border="0" src="img/63.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>备注：图太长无法完整截取，上下两张图是一起的。</b></p>
+    <p align="left">&nbsp;</p>
+     <p align="left"><b>“按钮1”</b>被单击，定义两个变量，设置参考。</p>
+      <p align="left">一个类型为<b>“程序配置表修改器”</b>，另外一个类型为<b>“文本数据集类”</b>。</p>
+       <p align="left">利用<b>“取程序配置表().取修改器()”</b>方法，取出修改器对象，赋值给<b>“修改器变量”</b>。</p>
+       <p align="left">随后利用<b>“文本哈希集类.创建()”</b>方法，参数填写想要创建的<b>“成员数”</b>，我这里填写<b>“2”</b>，创建<b>“两个”</b>成员。</p>
+       
+       <p align="left">创建成员数后，赋值给定义的<b>“文本集”</b>变量。</p><br>
+       
+       <p align="left">随后用<b>“如果”</b>命令，去判断<b>“文本集.添加成员()”</b>是否添加成功。</p>
+       <p align="left">如果<b>“添加成功”</b>继续执行一个<b>“添加成员()”</b>方法。</p>
+       <p align="left">随后利用<b>“置文本集配置项”</b>方法写配置项。</p>
+       <p align="left">动态调用<b>“忽略参数1”</b>，直接写<b>“参数2”</b>配置项名称，随后将<b>“文本集”</b>变量放入<b>“参数3”</b>。</p>
+       <p align="left">最后调用<b>“提交”</b>方法，用<b>“如果”</b>命令判断是否提交成功。</p>
+	<p align="left"><img border="0" src="img/64a.png" >
+    <p align="left">&nbsp;</p>
+    <p align="left">随后判断<b>“按钮2”</b>被点击，作用取出保存的<b>“文本集配置项”</b>。</p>
+    <p align="left">随后定义<b>“三个”</b>变量，设置参考。</p>
+    <p align="left">三个<b>“变量类型”</b>分别为<b>“程序配置表”</b>，<b>“文本数据集类”</b>和<b>“文本枚举器类”</b>。</p>
+     <p align="left">随后利用<b>“取程序配置表()”</b>方法，赋值给<b>“配置表”</b>变量。</p>
+     <p align="left">利用配置表<b>“取文本集配置项()”</b>方法，取出<b>“文本数据集类”</b>赋值给定义的<b>“文本集”</b>变量。</p>
+     <p align="left">参数填写<b>“置文本集配置项”</b>时填写的<b>“账号”</b>，只有填写的<b>“文本参数相同”</b>才能取出。</p>
+     <p align="left">然后利用<b>“文本集”</b>变量<b>“创建枚举器()”</b>赋值给定义的<b>“文本枚举”</b>变量。</p>
+     <p align="left">随后利用<b>“循环”</b>方法将<b>“枚举器”</b>内的成员取出。</p>
+     <p align="left">参数1：省略。</p>
+     <p align="left">参数2：填写"文本集.取成员数()"。</p>
+     <p align="left">循环语句内，利用<b>“编辑框1.添加内容()”</b>方法,将获取到的成员，添加到编辑框内。</p>
+     <p align="left"><b>“文本枚举”</b>变量的<b>“到下一个成员()”</b>方法可以获取<b>“成员内容”</b>。</p>
+    <img border="0" src="img/64b.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可以看到点击<b>“按钮1”</b>后提示信息框<b>“保存成功”</b>。</p>
+    <p align="left">随后我们执行<b>“按钮2”</b>，可以看到保存的成员全部取出。</p>
+	<p align="left"><img border="0" src="img/65.gif" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="scpzx"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除配置项</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+ <p align="left">可以看到有两个参数，没有返回值，依然需要调用<b>“提交”</b>方法来是实现<b>“删除”</b>。</p>
+    <p align="left">参数1：填写程序配置表修改器对象，如果动态调用，参数可以忽略。</p>
+    <p align="left">参数2：填写要删除的<b>“配置项”</b>名称。</p>
+    <p align="left">本方法也支持动态调用。</p>
+	<p align="left"><img border="0" src="img/66.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>下，我们写一个<b>“配置项”</b>。</p>
+    <p align="left">我们一个<b>“按钮2”</b>被点击，在这里去<b>“删除配置项”</b>。</p>
+    <p align="left">定义好前面的<b>“修改器”</b>变量后，下面直接调用<b>“删除配置项”</b>方法即可。</p>
+    <p align="left">参数内填写要删除的配置项名称，例如：<b>“账号”</b>。</p>
+    <p align="left">最后依然是<b>“提交”</b>判断。</p>
+	<p align="left"><img border="0" src="img/67.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">点击<b>“按钮1”</b>后，提示<b>“保存成功”</b>。</p>
+    <p align="left">随后点击<b>“按钮2”</b>，重复点击了<b>“两次”</b>依然提示<b>“删除成功”</b>。</p>
+	<p align="left">也就证明，即使是目标<b>“配置项”</b>不存在，<b>“删除时”</b>也依然会返回<b>“真”</b>。</p>
+    <p align="left"><img border="0" src="img/68.gif" >
+    </p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

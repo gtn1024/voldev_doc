@@ -1,0 +1,378 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>热词框组件</h4></li>
+	<ol>
+    		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new5')" >一.热词框 <span>(可收缩)</span></h6></li>
+	  <ol id="new5">
+            <li><blockquote><a href="#rznr">1.置内容</a></blockquote></li>  
+            <li><blockquote><a href="#rznr">2.置数组内容</a></blockquote></li> 
+             <li><blockquote><a href="#rqrcsl">3.取热词数量</a></blockquote></li>
+            <li><blockquote><a href="#rqrczj">4.取热词组件</a></blockquote></li>
+            <li><blockquote><a href="#rzzdtmbjs">5.置指定条目背景色</a></blockquote></li>
+            <li><blockquote><a href="#rnrhj">6.内容行距(读写)</a></blockquote></li>
+            <li><blockquote><a href="#rnrbjdx">7.内容边距(读写)</a></blockquote></li>
+            <li><blockquote><a href="#rwbcc">8.文本尺寸(读写)</a></blockquote></li>
+            <li><blockquote><a href="#rwbys">9.文本颜色(写)</a></blockquote></li>
+            <li><blockquote><a href="#rwbys">10.条目背景色(写)</a></blockquote></li>
+            <li><blockquote><a href="#rtmbjt">11.条目背景图(写)</a></blockquote></li>
+            <li><blockquote><a href="#rxmhj">12.项目行距(写)</a></blockquote></li>
+		    <li><blockquote><a href="#rxmbj">13.项目边距(写)</a></blockquote></li>
+		    <li><blockquote><a href="#rxmbdj">14.项目被点击(事件)</a></blockquote></li>
+		</ol>
+	
+
+	</ol>
+</ul>
+</div>
+
+
+<p align="left">
+<h2>热词框组件操作实例讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="rznr"></a>
+<h2>一、热词框</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 置内容</font><br>
+<font style="font-size: 12pt; font-weight:700">● 置数组内容</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">以上两个方法，都是设置热词内容，此处演示<b>“置内容”</b>方法。</p>
+	<p align="left"><font color="#F30F12">注意：本组件位于<strong>“杂类窗口组件1”</strong>模块中。</font></p>
+	<p align="left">&nbsp;</p>
+<p align="left">界面准备：</p>
+<blockquote>
+ 	<p align="left">准备如下界面，从上到下依次是<b>“按钮1”</b>和<b>“热词框1”</b>。</p>
+	<p align="left"><img border="0" src="text_images/154.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+ 	<p align="left">1、通过本方法可给当前热词框组件设置<b>“热词内容”</b>。</p>
+ 	<p align="left">2、如果提供的参数值为空对象或者没有任何成员，热词框将不添加任何数据。</p>
+	<p align="left"><img border="0" src="text_images/155.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、<b>“按钮1”</b>被点击后，定义<b>“列表数据”</b>变量，创建<b>“文本数组类”</b>对象赋值给<b>“列表数据”</b>变量。</p>
+	<p align="left">2、通过<b>“列表数据”</b>添加成员，添加的成员就是热词内容。</p>
+	<p align="left">3、最后调用当前方法，将<b>“列表数据”</b>变量填入参数即可。</p>
+	<p align="left"><img border="0" src="text_images/156.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，热词将出现在软件界面上。</p>
+	<p align="left"><img border="0" src="text_images/157.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="rqrcsl"></a>
+<font style="font-size: 12pt; font-weight:700">● 取热词数量</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">1、顾名思义，通过本方法可获得热词数量。</p>
+	<p align="left">2、如果未使用<b>“置内容”</b>或<b>“置数组内容”</b>方法，本方法将返回0。</p>
+	<p align="left"><img border="0" src="text_images/158.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、在<b>“通知_被创建”</b>虚拟方法下，添加热词。</p>
+	<p align="left">2、<b>“按钮1”</b>被点击后，取出热词数量。</p>
+	<p align="left"><img border="0" src="text_images/159.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，当前热词数量会被弹出。</p>
+	<p align="left"><img border="0" src="text_images/160.png" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="rqrczj"></a>
+<font style="font-size: 12pt; font-weight:700">● 取热词组件</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本方法可取出指定热词的文本框组件，如果填写的参数不正确将返回空对象。</p>
+	<p align="left">注意：本方法的参数值从1开始。</p>
+	<p align="left"><img border="0" src="text_images/161.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">调用本方法取第二个热词组件，取出<b>“文本框”</b>后可进行修改文本颜色等操作。</p>
+	<p align="left"><img border="0" src="text_images/162.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后可看到<b>“热词2”</b>被修改成红色。</p>
+	<p align="left"><img border="0" src="text_images/163.gif" ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+<a name="rzzdtmbjs"></a>
+<font style="font-size: 12pt; font-weight:700">● 置指定条目背景色</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本方法可设置指定热词的背景色，热词索引从1开始。</p>
+	<p align="left">注意：本方法会让热词组件失去圆角效果。</p>
+	<p align="left"><img border="0" src="text_images/164.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后调用本方法，修改<b>“热词1”</b>的背景色为红色。</p>
+	<p align="left"><img border="0" src="text_images/165.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>点击后<b>“热词1”</b>的背景色将会变成红色。</p>
+	<p align="left"><img border="0" src="text_images/166.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="rnrhj"></a>
+<font style="font-size: 12pt; font-weight:700">● 内容行距(读写)</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“内容行距(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本写属性可设置热词内容行距，单位DP。</p>
+	<p align="left">同名读属性，即读取当前内容行距，返回值为像素。</p>
+	<p align="left"><img border="0" src="text_images/167.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后设置行距为5DP，并调用同名读属性读取像素行距。</p>
+	<p align="left"><img border="0" src="text_images/168.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，行距效果会立刻在热词上呈现，并读取像素行距。</p>
+	<p align="left"><img border="0" src="text_images/169.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<a name="rnrbjdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 内容边距(读写)</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“内容边距(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本属性可设置热词内容左右边距，单位DP。</p>
+	<p align="left">同名读属性可读取当前热词内容的左右边距，返回值为像素。</p>
+	<p align="left"><img border="0" src="text_images/170.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后设置<b>“内容边距”</b>为20DP，并调用同名读属性读取内容边距。</p>
+
+	<p align="left"><img border="0" src="text_images/171.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，内容边距效果会立刻在热词上呈现，并读取像素边距。</p>
+	<p align="left"><img border="0" src="text_images/172.gif" ></p>
+</blockquote>
+	
+
+<p align="left">&nbsp;</p>
+<a name="rwbcc"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本尺寸(读写)</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“文本尺寸(写)”</b>帮助文档： </p>
+<blockquote>
+  <p align="left">1、本写属性可以给当前热词框，设置热词字号大小，单位SP。</p>
+  <p align="left">2、同名读属性，可读取当前设置的文本尺寸。</p>
+  <p align="left"><img border="0" src="text_images/173.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+ <p align="left"><b>“按钮1”</b>被点击后设置<b>“文本尺寸”</b>为20SP，并调用同名读属性读取文本尺寸。</p>
+  <p align="left"><img border="0" src="text_images/174.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+ <p align="left"><b>“按钮1”</b>被点击后，文本尺寸会立刻在热词上呈现，并读取设置的文本尺寸。</p>
+  <p align="left"><img border="0" src="text_images/175.gif" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+
+<a name="rwbys"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本颜色(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 条目背景色(写)</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">以上两个属性用于设置热词文本颜色和背景色。</p>
+	<p align="left">注意：设置的背景色将失去圆角效果。</p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后分别设置这两个属性的属性值即可。</p>
+	<p align="left"><img border="0" src="text_images/176.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">可看到热词文本颜色和背景颜色均被改变。</p>
+<p align="left"><img border="0" src="text_images/177.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<a name="rtmbjt"></a>
+<font style="font-size: 12pt; font-weight:700">● 条目背景图(写)</font>
+<p align="left">&nbsp;</p>
+
+<p align="left">帮助文档如下图</p>
+<blockquote>
+	<p align="left">顾名思义，通过本属性可设置热词背景图。</p>
+	<p align="left">注意：本属性会覆盖<b>“条目背景色”</b>属性。</p>
+	<p align="left"><img border="0" src="text_images/178.png" ></p>
+  </blockquote> 
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义<b>“可绘制资源”</b>变量，导入一张图片，调用当前属性设置背景图。</p>
+<p align="left"><img border="0" src="text_images/179.png" ></p>
+  </blockquote> 
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，热词背景图会更新。</p>
+<p align="left"><img border="0" src="text_images/180.gif" ></p>
+  </blockquote> 
+	
+<p align="left">&nbsp;</p>	
+<a name="rxmhj"></a>
+<font style="font-size: 12pt; font-weight:700">● 项目行距(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，本属性可设置热词项目行距，单位DP。</p>
+	<p align="left"><img border="0" src="text_images/181.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，设置行距为30DP。</p>
+    <p align="left"><img border="0" src="text_images/182.png" ></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可看到行与行之间，增加了一定间距。</p>
+	<p align="left"><img border="0" src="text_images/183.gif" >
+    </p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+<a name="rxmbj"></a>
+<font style="font-size: 12pt; font-weight:700">● 项目边距(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，本属性可设置热词项目边距，单位DP。</p>
+	<p align="left"><img border="0" src="text_images/184.png" ></p>
+</blockquote>	
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，设置边距为30DP。</p>
+	<p align="left"><img border="0" src="text_images/185.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">执行<b>“按钮1”</b>后，热词和热词之间会增加间距。</p>
+	<p align="left"><img border="0" src="text_images/186.gif" >
+    </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+
+	<a name="rxmbdj"></a>
+	<font style="font-size: 12pt; font-weight:700">● 项目被点击(事件)</font>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">热词项目被点击后触发本事件，将返回热词ID和热词组件。</p>
+	<p align="left"><img border="0" src="text_images/187.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加<b>“热词框_项目被点击”</b>事件，取出<b>“热词ID”</b>和<b>“热词内容”</b>。</p>
+    <p align="left"><img border="0" src="text_images/188.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">热词被点击后，会弹出提示。</p>
+    <p align="left"><img border="0" src="text_images/189.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

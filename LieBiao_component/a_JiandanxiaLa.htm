@@ -1,0 +1,209 @@
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+	
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>简单下拉列表框组件</h4></li>
+	<ol>
+        <li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new3')" >一.简单下拉列表框<span>(可收缩)</span></h6></li>
+		<ol id="new3">
+    		<li><blockquote><a href="#xllbk">1.准备工作</a></blockquote></li>
+			<!-- 下拉列表框基础类 -->
+    		<li><blockquote><a href="#xlckczpy">2.下拉窗口垂直偏移(写)</a></blockquote></li>
+			<li><blockquote><a href="#xlckczpy">3.下拉窗口水平偏移(写)</a></blockquote></li>
+    		<li><blockquote><a href="#xlckxqkd">4.下拉窗口需求宽度(写)</a></blockquote></li>
+    		<li><blockquote><a href="#xlckbjt">5.下拉窗口背景图(写)</a></blockquote></li>
+    		<li><blockquote><a href="#xlckbjt">6.置下拉窗口背景图(写)</a></blockquote></li>
+    		<li><blockquote><a href="#xlzxzxm2">7.置选择项目2</a></blockquote></li>
+			<li><blockquote><a href="#xlqt">8.其它</a></blockquote></li>
+			<!-- 简单列表适配器 -->
+			<!-- 
+			适配器组件基础类
+			适配器模板类
+			适配器基础类
+		
+			-->
+		</ol>
+	</ol>
+</ul>
+</div>	 
+	
+<p align="left">
+<h2>简单下拉列表框组件操作实例讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<a name="xllbk"></a>
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">界面准备：</p>
+<blockquote>
+	<p align="left">从上到下依次是<b>“按钮1”</b>和<b>“简单下拉列表框”</b>组件。</p>
+	<p align="left">本组件和<b>“简单列表框”</b>操作方法一致，不同之处为本组件具有下拉属性。</p>
+	<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+	<p align="left"><img border="0" src="jdxl_images/111.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写（1）：</p>
+<blockquote>
+	<p align="left">1、定义<b>“是否首次启动”</b>逻辑变量。</p>
+	<p align="left">2、在<b>“通知_被创建”</b>虚拟方法下，循环添加10个下拉项目。</p>
+	<p align="left">3、设置<b>“是否首次启动=假”</b>，如果不设置，程序首次启动时会触发<b>“项目被选择”</b>事件。</p>
+	<p align="left"><img border="0" src="jdxl_images/112.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写（2）：</p>
+<blockquote>
+	<p align="left">添加<b>“项目被选择”</b>接收事件，判断<b>“是否首次启动”</b>变量为假时，弹出项目索引。</p>
+	<p align="left">然后将<b>“是否首次启动”</b>变量设置为假。</p>
+	<p align="left"><img border="0" src="jdxl_images/113.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left"><img border="0" src="jdxl_images/114.gif" ></p>
+</blockquote>
+
+
+	<p align="left">&nbsp;</p>
+	<a name="xlckczpy"></a>
+<font style="font-size: 12pt; font-weight:700">● 下拉窗口垂直偏移(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 下拉窗口水平偏移(写)</font>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“下拉窗口垂直偏移(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，本属性用来设置下拉窗口垂直偏移，单位像素。</p>
+	<p align="left"><img border="0" src="jdxl_images/115.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“下拉窗口水平偏移(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，本属性用来设置下拉窗口水平偏移，单位像素。</p>
+	<p align="left"><img border="0" src="jdxl_images/116.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，分别执行这两个属性值偏移100像素。</p>
+	<p align="left"><img border="0" src="jdxl_images/117.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">可看到下拉的窗口发生了很明显的偏移。</p>
+	<p align="left"><img border="0" src="jdxl_images/118.gif" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<a name="xlckxqkd"></a>
+<font style="font-size: 12pt; font-weight:700">● 下拉窗口需求宽度(写)</font>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，设置下拉窗口的需求宽度值，单位像素。</p>
+	<p align="left"><img border="0" src="jdxl_images/119.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">设置本属性值为100像素。</p>
+	<p align="left"><img border="0" src="jdxl_images/120.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left"><img border="0" src="jdxl_images/121.gif" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<a name="xlckbjt"></a>
+<font style="font-size: 12pt; font-weight:700">● 下拉窗口背景图(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 置下拉窗口背景图(写)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">以上两个属性都是设置下拉窗口背景图，此处演示<b>“下拉窗口背景图”</b>属性。</p>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，设置下拉窗口背景图。</p>
+	<p align="left"><img border="0" src="jdxl_images/122.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义<b>“可绘制资源”</b>变量，导入图片后，赋值给当前属性即可。</p>
+	<p align="left"><img border="0" src="jdxl_images/123.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left"><img border="0" src="jdxl_images/124.gif" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<a name="xlzxzxm2"></a>
+<font style="font-size: 12pt; font-weight:700">● 置选择项目2</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可直接选中指定索引项目。</p>
+	<p align="left">参数1：提供要选中的项目索引。</p>
+	<p align="left">参数2：本参数在本方法中无效，填写真假都可以。</p>
+	<p align="left"><img border="0" src="jdxl_images/125.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">调用本方法跳转到项目索引5。</p>
+	<p align="left"><img border="0" src="jdxl_images/126.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left"><img border="0" src="jdxl_images/127.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<a name="xlqt"></a>
+<font style="font-size: 12pt; font-weight:700">● 其它</font>
+	<p align="left">&nbsp;</p>
+<blockquote>
+	  <p align="left">本组件除了上述方法外，还继承了<a href="a_ctrl_layout.htm#txms"><b>“适配器组件基础类”</b></a>，<a href="a_ctrl_layout.htm#tcrxm"><b>“适配器模板类”</b></a>和<a href="a_ctrl_layout.htm#tscxm"><b>“适配器基础类”</b></a>。</p>
+	<p align="left">以上三个类可参考<a href="a_ctrl_layout.htm#txddq"><b>“图像堆叠器组件”</b></a>。</p>
+	<p align="left">除此之外还继承了<a href="#jdcrlbx"><b>“简单列表适配器”</b></a>。</p>
+	
+</blockquote>	
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

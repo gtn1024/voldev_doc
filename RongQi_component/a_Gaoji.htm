@@ -1,0 +1,657 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new4')" >高级选择夹<span>(可收缩)</span></h6></li>
+		<ol id="new4">
+			<li><blockquote><a href="#gjxzj">1.准备工作</a></blockquote></li>
+			<li><blockquote><a href="#gbqnbj">2.关联视图容器</a></blockquote></li>
+			<li><blockquote><a href="#gqzdbqzj">3.取指定标签组件</a></blockquote></li>
+			<li><blockquote><a href="#gbqxzjt">4.标签选择监听</a></blockquote></li>
+			<li><blockquote><a href="#gszzsqwbj">5.设置指示器外边距</a></blockquote></li>
+			<li><blockquote><a href="#gszxxxzx">6.设置现行选中项</a></blockquote></li>
+			<li><blockquote><a href="#ggxsj">7.更新数据</a></blockquote></li>
+			<li><blockquote><a href="#gxhxdqfs">8.下划线顶对齐(写)</a></blockquote></li>
+			<li><blockquote><a href="#gxhxdqfs">9.下划线颜色(写)</a></blockquote></li>
+			<li><blockquote><a href="#gxhxdqfs">10.下划线高度(写)</a></blockquote></li>
+			<li><blockquote><a href="#gfgxnbj">11.分割线内边距(写)</a></blockquote></li>
+			<li><blockquote><a href="#gfgxnbj">12.分割线宽度(写)</a></blockquote></li>
+			<li><blockquote><a href="#gfgxnbj">13.分割线颜色(写)</a></blockquote></li>
+			<li><blockquote><a href="#gztdx">14.字体大小(写)</a></blockquote></li>
+			<li><blockquote><a href="#gzsqyjds">15.指示器圆角度数(写)</a></blockquote></li>
+			<li><blockquote><a href="#gzsqyjds">16.指示器宽度(写)</a></blockquote></li>
+			<li><blockquote><a href="#gzsqyjds">17.指示器顶对齐(写)</a></blockquote></li>
+			<li><blockquote><a href="#gzsqyjds">18.指示器颜色(写)</a></blockquote></li>
+			<li><blockquote><a href="#gzsqyjds">19.指示器高度(写)</a></blockquote></li>
+			<li><blockquote><a href="#gztdx">20.文字加粗(写)</a></blockquote></li>
+			<li><blockquote><a href="#gztdx">21.未选中文本颜色(写)</a></blockquote></li>
+			<li><blockquote><a href="#gbqnbj">22.标签内边距(写)</a></blockquote></li>
+			<li><blockquote><a href="#gbqnbj">23.标签宽度(写)</a></blockquote></li>
+			<li><blockquote><a href="#gbqnbj">24.标签空间平等(写)</a></blockquote></li>
+			<li><blockquote><a href="#gztdx">25.现行选中文本颜色(写)</a></blockquote></li>
+			<li><blockquote><a href="#gxxxzx">26.现行选中项(读写)</a></blockquote></li>
+			<li><blockquote><a href="#gzsqswbj">27.指示器上外边距(读)</a></blockquote></li>
+			<li><blockquote><a href="#gzsqswbj">28.指示器下外边距(读)</a></blockquote></li>
+			<li><blockquote><a href="#gzsqswbj">29.指示器右外边距(读)</a></blockquote></li>
+			<li><blockquote><a href="#gzsqswbj">30.指示器左外边距(读)</a></blockquote></li>
+			<li><blockquote><a href="#gbqsl">31.标签数量(读)</a></blockquote></li>
+			<li><blockquote><a href="#gwbdx">32.文本大写(写)</a></blockquote></li>
+			<li><blockquote><a href="#gbqxzjt">33.标签被选择(事件)</a></blockquote></li>
+			<li><blockquote><a href="#gbqxzjt">34.标签被重新选择(事件)</a></blockquote></li>
+			<li><blockquote><a href="#gzsqyjds">35.指示器对齐标签宽度(写)</a></blockquote></li>
+		</ol>
+		
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>高级选择夹实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+
+	<p align="left">&nbsp;</p>
+	<font style="font-size: 12pt; font-weight:700">● 辅助说明</font><br/>
+     	<blockquote>
+		<p align="left"><font color="#F70408">注意：本类位于<strong>“杂类窗口组件1”</strong>模块中，必须添加此模块才能使用。</font></p>
+	</blockquote>
+	
+	
+<p align="left">&nbsp;</p>	<a name="gjxzj"></a>
+<h2>一、高级选择夹</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font>	
+<p align="left">&nbsp;</p>
+<p align="left">界面准备：</p>	
+<blockquote>
+	<p align="left">打开启动类<b>“界面设计器”</b>，设计如下界面。</p>
+	<p align="left">组件依次为<b>“按钮1”</b>，<b>“高级选择夹1”</b>和<b>“视图容器1”</b>。</p>
+	<p align="left">设置高级选择夹1<b>“宽度”</b>为<b>“匹配父组件宽度”</b>。</p>
+	<p align="left">设置视图容器1<b>“高/宽度”</b>为<b>“匹配父组件高/宽度”</b>。</p>
+	<p align="left">注意：<strong>高级选择夹</strong>必须配合<strong>视图容器</strong>使用。</p>
+	<p align="left">本组件还继承了<b>“横向滚动容器”</b>和<b>“帧布局器”</b>的所有方法。</p>
+	<p align="left"><font color="#F30F12">注意：本组件位于<strong>“杂类窗口组件1”</strong>模块中。</font></p>
+	<p align="left"><img src="layout_images/105.png" width="741" height="612"  border="0" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="gbqnbj"></a>
+<font style="font-size: 12pt; font-weight:700">● 标签内边距(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 标签宽度(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 标签空间平等(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 关联视图容器</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“标签内边距(写)”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">顾名思义，设置高级选择夹标签内边距。</p>
+	<p align="left"><img border="0" src="layout_images/106.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“标签宽度(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">高级选择夹可设置一个或多个标签，此方法可用于设置标签的宽度。</p>
+	<p align="left">注意：如果使用了<b>“标签空间平等”</b>属性，则不要使用本属性。</p>
+	<p align="left"><img border="0" src="layout_images/107.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“标签空间平等(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本写属性的作用，用于是否让标签平分所有可布局空间。</p>
+	<p align="left"><img border="0" src="layout_images/108.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“关联视图容器”</b>帮助文档：</p>
+<blockquote>
+	<p align="left"><b>“高级选择夹”</b>无法单独使用，必须配合<b>“视图容器”</b>。</p>
+	<p align="left">此方法的作用就是用来关联<b>“视图容器”</b>并设置高级选择夹<b>“标题”</b>。</p>
+	<p align="left">注意：标题数组成员数必须等于视图容器的页面数量。</p>
+	<p align="left"><img border="0" src="layout_images/109.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）： </p>
+<blockquote>
+	<p align="left">给高级选择夹<b>“属性名”</b>一栏，增加<b>“标签空间平等”</b>和<b>“标签内边距”</b>属性。 </p>
+	<p align="left">注意：因使用了<b>“标签空间平等”</b>，所以此处不适用<b>“标签宽度”</b>属性。</p>
+	<p align="left"><img border="0" src="layout_images/110.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）： </p>
+<blockquote>
+	<p align="left">1、添加<a href="a_win.htm#tzbcj"><b>“通知_被创建”</b></a>虚拟方法。 </p>
+	<p align="left">2、定义<b>“标题数组”</b>和三个<b>“线性布局器”</b>，用于选择夹所需页面和标题。</p>
+	<p align="left">3、定义<b>“窗口容器组件列表类”</b>和<b>“窗口容器组件数组类”</b>变量，用于创建<b>“视图容器”</b>页面。 </p>
+	<p align="left">4、将定义的<b>“线性布局器”</b>全部添加到<b>“布局列表”</b>内，调用<b>“视图容器1.初始化视图容器”</b>方法，创建视图容器。</p>
+	<p align="left">5、 调用<b>“关联视图容器”</b>方法，将<b>“视图容器”</b>和<b>“选择夹标题”</b>结合。</p>
+	<p align="left">6、定义三个<b>“文本框”</b>，分别设置<b>“内容”</b>和<b>“文本字体尺寸”</b>属性。</p>
+	<p align="left">7、分别将这三个文本框添加到三个线性布局器内。 </p>
+	<p align="left">8、至此高级选择夹和视图容器全部初始化完毕，可正常使用。 </p>
+	<p align="left"><img src="layout_images/111.png" width="720" height="533" border="0" ><br><img border="0" src="layout_images/112.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">可看到有两种切换页面模式。</p>
+	<p align="left">1、点击标签可切换。</p>
+	<p align="left">2、左右滑动可切换。</p>
+	<p align="left">注意：标题下面的白色线条在火山中叫<b>“指示器”</b>。</p>
+	<p align="left"><img border="0" src="layout_images/112.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="gqzdbqzj"></a>
+<font style="font-size: 12pt; font-weight:700">● 取指定标签组件</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">取出<b>“高级选择夹”</b>标题中取出指定索引的文本框。</p>
+	<p align="left">注意：索引从0开始。</p>
+	<p align="left"><img border="0" src="layout_images/113.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">在源代码的基础上，增加<b>“按钮_被单击”</b>事件。</p>
+	<p align="left">定义<b>“文本框1”</b>变量，调用当前方法参数填写0，赋值给<b>“文本框1”</b>。</p>
+	<p align="left">就可以修改高级选择夹第一个标题的内容。</p>
+	<p align="left"><img border="0" src="layout_images/114.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>后就可以看到<b>“高级选择夹1”</b>的第一个<b>“标题”</b>被修改。</p>
+	<p align="left"><img border="0" src="layout_images/115.gif" >
+    </p>
+</blockquote>
+	
+
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="gbqxzjt"></a>
+<font style="font-size: 12pt; font-weight:700">● 标签选择监听</font><br>
+<font style="font-size: 12pt; font-weight:700">● 标签被选择(事件)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 标签被重新选择(事件)</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“标签选择监听”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本方法可监听标签被选择事件，参数值为真则监听，否则相反。</p>
+	<p align="left"><img border="0" src="layout_images/116.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“标签被选择(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">调用<b>“标签选择监听(真)”</b>后，当选择标签时，会触发本事件。</p>
+	<p align="left">参数返回被选择的标签索引，索引从0开始。</p>
+	<p align="left"><img border="0" src="layout_images/117.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“标签被重新选择(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">当某个标签被选中后，再次选择时会触发本事件。</p>
+	<p align="left"><img border="0" src="layout_images/118.png" ></p>
+</blockquote>
+	
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，调用当前方法设置参数为真即可。</p>
+	<p align="left">依次添加<b>“标签被选择”</b>事件和<b>“标签被重新选择”</b>事件，然后弹出被选择的标签索引。</p>
+	<p align="left"><img border="0" src="layout_images/119.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="layout_images/120.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="gszzsqwbj"></a>
+<font style="font-size: 12pt; font-weight:700">● 设置指示器外边距</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法可用来设置<b>“指示器”</b>的外边距。</p>
+	<p align="left">共有四个参数，分别设置上下左右的外边距，单位为DP。</p>
+	<p align="left">注意：本外边距并不是距离标题文本的外边距，而是针对高级选择夹的外边距。</p>
+	<p align="left"><img border="0" src="layout_images/121.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，调用本方法分别设置外边距10DP。</p>
+	<p align="left"><img border="0" src="layout_images/122.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">可看到指示器覆盖了标题，证明本方法的<b>“上外边距”</b>并不是以标签底部为准。</p>
+	<p align="left"><img border="0" src="layout_images/123.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="gszxxxzx"></a>
+<font style="font-size: 12pt; font-weight:700">● 设置现行选中项</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法可跳转到指定选择夹。</p>
+	<p align="left">参数1：填写要跳转的选择夹索引，索引从0开始。</p>
+	<p align="left">参数2：是否设置过度动画。</p>
+	<p align="left"><img border="0" src="layout_images/124.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">调用本方法，设置相关参数即可。</p>
+	<p align="left"><img border="0" src="layout_images/125.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后可看到跳转到了第三个选择夹。</p>
+	<p align="left"><img border="0" src="layout_images/126.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="ggxsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 更新数据</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当动态添加选择夹后，可调用本方法更新数据。</p>
+	<p align="left"><img border="0" src="layout_images/127.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）： </p>
+<blockquote>
+	<p align="left">将<b>“通知_被创建”</b>方法下定义的<b>“布局列表”</b>和<b>“布局数组列表”</b>剪切到成员变量中。</p>
+	<p align="left"><img src="layout_images/128.png" width="801" height="200" border="0" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）： </p>
+<blockquote>
+	<p align="left">1、定义<b>“新标题”</b>，<b>“线性布局器”</b>和<b>“文本框”</b>变量。</p>
+	<p align="left">2、调用<b>“布局列表.添加成员”</b>方法，添加<b>“线性布局4”</b>。</p>
+	<p align="left">3、重新调用<b>“初始化视图容器”</b>和<b>“关联视图容器”</b>方法。</p>
+	<p align="left">4、给<b>“线性布局4”</b>添加内容，最后调用<b>“更新数据”</b>方法。</p>
+	<p align="left"><img src="layout_images/129.png" width="764" height="369" border="0" ></p>
+</blockquote>
+	
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="layout_images/130.gif" >
+    </p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="gxhxdqfs"></a>
+<font style="font-size: 12pt; font-weight:700">● 下划线顶对齐(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 下划线颜色(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 下划线高度(写)</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“下划线顶对齐(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">给当前高级选择夹设置下划线对齐方式。</p>
+	<p align="left">属性值提供真则顶对齐，否则底部对齐。</p>
+	<p align="left"><img border="0" src="layout_images/131.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“下划线颜色(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">可使用颜色类中定义的颜色值。</p>
+	<p align="left"><img border="0" src="layout_images/132.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“下划线高度(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">设置下划线高度，单位像素，建议不要设置太高，否则会覆盖标题文字。</p>
+	<p align="left"><img border="0" src="layout_images/133.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，分别设置三个属性值。</p>
+	<p align="left"><img border="0" src="layout_images/134.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">可看到当前选择夹增加了红色下划线。</p>
+	<p align="left"><img border="0" src="layout_images/135.gif" >
+    </p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="gfgxnbj"></a>
+<font style="font-size: 12pt; font-weight:700">● 分割线内边距(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 分割线颜色(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 分割线宽度(写)</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“分割线内边距(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">设置分割线内边距，建议属性值不要设置太大。</p>
+	<p align="left"><img border="0" src="layout_images/136.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“分割线颜色(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">设置分割线颜色，可使用<b>“颜色类”</b>中定义的常量值。</p>
+	<p align="left"><img border="0" src="layout_images/137.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“分割线宽度(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">设置分割线宽度，单位像素。</p>
+	<p align="left"><img border="0" src="layout_images/138.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，分别设置三个属性值。</p>
+	<p align="left"><img border="0" src="layout_images/139.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">可看到当前选择夹增加了黄色分割线。</p>
+	<p align="left"><img border="0" src="layout_images/140.gif" >
+    </p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="gztdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 字体大小(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 文字加粗(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 未选中文本颜色(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 现行选中文本颜色(写)</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“字体大小(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">设置选择夹标签的字体大小。</p>
+	<p align="left"><img border="0" src="layout_images/141.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“文字加粗(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">设置标题文本加粗风格，共有三种风格。</p>
+	<p align="left">0：不加粗。</p>
+	<p align="left">1：选中加粗。</p>
+	<p align="left">2：加粗。</p>
+	<p align="left"><img border="0" src="layout_images/142.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“未选中文本颜色(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">设置未选中的标签文本颜色，可使用<b>“颜色类”</b>中定义的常量值。</p>
+	<p align="left"><img border="0" src="layout_images/143.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“现行选中文本颜色(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">设置被选中的标签文本颜色，可使用<b>“颜色类”</b>中定义的常量值。</p>
+	<p align="left"><img border="0" src="layout_images/144.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，分别设置四个属性值。</p>
+	<p align="left">同时也可以给当前组件调整<b>“背景色”</b>。</p>
+	<p align="left"><img border="0" src="layout_images/145.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">可看到颜色全部被修改。</p>
+	<p align="left"><img border="0" src="layout_images/146.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="gzsqyjds"></a>
+<font style="font-size: 12pt; font-weight:700">● 指示器圆角度数(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 指示器宽度(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 指示器对齐标签宽度(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 指示器高度(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 指示器顶对齐(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 指示器颜色(写)</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“指示器圆角度数(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">设置指示器的圆角度数，调整<b>“指示器高度”</b>后本属性才能有效果。</p>
+	<p align="left"><img border="0" src="layout_images/147.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“指示器宽度(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">设置指示器宽度，如果使用了<b>“指示器对齐标签宽度”</b>，则不要使用本属性。</p>
+	<p align="left"><img border="0" src="layout_images/148.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“指示器对齐标签宽度(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">设置指示器是否和标签宽度一致，如果属性值为真则宽度一致，否则相反。</p>
+	<p align="left"><img border="0" src="layout_images/150.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“指示器高度(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">设置指示器高度，单位像素，建议不要设置太高，否则会覆盖标签。</p>
+	<p align="left"><img border="0" src="layout_images/149.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“指示器顶对齐(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">设置指示器是否位于标签顶部，如果为真则会出现在标签顶部。</p>
+	<p align="left"><img border="0" src="layout_images/151.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“指示器颜色(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">设置指示器颜色，可使用<b>“颜色类”</b>中定义的常量值。</p>
+	<p align="left"><img border="0" src="layout_images/152.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，分别设置这六个属性值。</p>
+	<p align="left">注意：<b>“指示器宽度”</b>和<b>“指示器对齐标签宽度”</b>属性二选一。</p>
+	<p align="left"><img border="0" src="layout_images/153.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">最后可看到指示器从标签底部来到了标签顶部，并且颜色样式都发生了变化。</p>
+	<p align="left"><img border="0" src="layout_images/154.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="gzsqswbj"></a>
+<font style="font-size: 12pt; font-weight:700">● 指示器上外边距(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 指示器下外边距(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 指示器右外边距(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 指示器左外边距(读)</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">以上四个读属性，分别读取指示器<b>“上下左右”</b>四个方向外边距。</p>
+	<p align="left">注意：单位为像素。</p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">使用这四个读属性之前，务必保证设置了<b>“外边距”</b>，如果未设置读取时将返回0。</p>
+	<p align="left">注意：设置的外边距单位为DP，读取时返回的是像素单位。</p>
+	<p align="left">在不同设备下，设置的DP单位和返回的像素单位数值并不保证一致。</p>
+	<p align="left"><img border="0" src="layout_images/155.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">在当前设备下设置10DP单位，返回15像素，不同设备下可能有所差异。</p>
+	<p align="left"><img border="0" src="layout_images/156.png" >
+    </p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="gxxxzx"></a>
+<font style="font-size: 12pt; font-weight:700">● 现行选中项(读写)</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“现行选中项(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">设置当前选择夹的现行选中项，本属性会使用默认切换动画。</p>
+	<p align="left">属性值为选择夹索引，从0开始。</p>
+	<p align="left">同名读属性，即读取当前的现行选中项。</p>
+	<p align="left"><img border="0" src="layout_images/157.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，设置当前属性值，并将其读取出来。</p>
+	<p align="left"><img border="0" src="layout_images/158.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">可看到跳转到了第三个容器。</p>
+	<p align="left"><img border="0" src="layout_images/159.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="gbqsl"></a>
+<font style="font-size: 12pt; font-weight:700">● 标签数量(读)</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本读属性，用来读取高级选择夹标签数量。</p>
+	<p align="left"><img border="0" src="layout_images/160.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">调用当前读属性，直接读取后显示在提示信息框中。</p>
+	<p align="left"><img border="0" src="layout_images/161.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left"><img border="0" src="layout_images/162.png" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="gwbdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本大写(写)</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本写属性可将标题中的小写英文字母转换为大写。</p>
+	<p align="left">属性值为真则转换大写，否则不进行转换。</p>
+	<p align="left"><img border="0" src="layout_images/163.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">在<b>“通知_被创建”</b>下设置本属性值为真。</p>
+	<p align="left">修改<b>“选择夹标题”</b>数组，输入小写英文标题。</p>
+	<p align="left"><img border="0" src="layout_images/164.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">可看到小写英文都变成了大写英文的。</p>
+	<p align="left"><img border="0" src="layout_images/165.gif" >
+    </p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

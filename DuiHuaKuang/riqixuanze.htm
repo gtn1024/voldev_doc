@@ -1,0 +1,170 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>对话框操作</h4></li>
+	<ol>
+    <li><blockquote><a href="#zbgz">0.准备工作</a></blockquote></li>     
+      
+        <li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new5')" >一.日期选择对话框类<span>(可收缩)</span></h6></li>
+	  <ol id="new5">
+			<li><blockquote><a href="#rqcj">1.创建</a></blockquote></li>
+            <li><blockquote><a href="#rqzrq">2.置日期</a></blockquote></li>
+             <li><blockquote><a href="#rqbgb">3.日期被改变（事件）</a></blockquote></li>
+		</ol>	
+						
+	</ol>
+</ul>
+</div>
+
+
+<p align="left">
+<h2>日期选择对话框类操作实例讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+<a name="zbgz"></a>    
+     
+<font style="font-size: 12pt; font-weight:700">● 帮助说明</font><br/>
+<br/>
+
+
+
+<blockquote>
+<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 准备一个界面</font><br/>
+<p align="left">&nbsp;</p>
+
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">打开窗口设计器，放两个<b>“按钮”</b>，右侧属性文本分别起名<b>“按钮1”</b>和<b>“按钮2”</b>。</p>
+	<p align="left"><img border="0" src="dhk_images/2.png" ></p>
+    <p align="left">保存布局后，右键<b>“按钮”</b>，添加<b>“按钮被单击事件接收方法”</b>，添加完毕后<b>如下图</b>所示。</p>
+    <p align="left"><img border="0" src="dhk_images/02.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<h2>五、日期选择对话框类</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 创建</font><br/>
+<a name="rqzrq"></a>
+<font style="font-size: 12pt; font-weight:700">● 置日期</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“创建”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">顾名思义，就是创建一个<b>“日期选择对话框类”</b>对象，创建后返回该对象。</p>
+    <p align="left">参数1：要显示的窗口，如果是代码处于当前窗口，直接写<b>“本对象”</b>即可。</p>
+    <p align="left">参数2、3、4：直接写对应的日期即可。</p>
+	<p align="left"><img border="0" src="dhk_images/85.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“置日期”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">按照顺序，依次填写日期就可以设置对话框日期。</p>
+    <p align="left">注意：这是设置对话框显示的日期，不是设置手机日期。</p>
+ 
+	<p align="left"><img border="0" src="dhk_images/86.png" >
+
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写：</p>
+<blockquote>
+    <p align="left">首先定义类型为<b>“日期选择对话框类”</b>的变量，设置参考。</p>
+	<p align="left">随后在<b>“按钮1”</b>被单击下写<b>“日期选择对话框类.创建()”</b>。</p>
+    <p align="left">创建日期后，赋值给定义的成员变量。</p>
+    <p align="left">最后调用<b>“显示”</b>方法显示。</p>
+    <p align="left">点击<b>“按钮2”</b>利用<b>“置日期”</b>方法设置<b>“新日期”</b>。</p>
+    <p align="left">例如：我这里填写2009年9月11日，依次按照参数写入即可。</p>
+    <p align="left"><img border="0" src="dhk_images/87.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>执行后，日期对话框显示，并且日期也是设置的<b>“2017年8月3日”</b></p>
+    <p align="left">点击<b>“按钮2”</b>后，日期更新为<b>“2000年9月11日”</b>。</p>
+	<p align="left"><img border="0" src="dhk_images/88.gif" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="rqbgb"></a>
+<font style="font-size: 12pt; font-weight:700">● 日期被改变（事件）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">点击日期对话框内的<b>“确定”</b>按钮，就会发送本事件。</p>
+    <p align="left">发送后，会在事件内返回<b>“年份、月份、日”</b>三个整数时间。</p>
+	<p align="left"><img border="0" src="dhk_images/89.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+	<p align="left">首先依然需要添加<b>“日期被改变”</b>事件接收方法。</p>
+    <p align="left">右键<b>“类名”</b>就可以选择<b>“添加”</b>。</p>
+	<p align="left"><img border="0" src="dhk_images/90.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+	<p align="left">在生成的事件内，可以用<b>“提示信息框”</b>显示结果。</p>
+	<p align="left"><img border="0" src="dhk_images/91.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（3）：</p>
+<blockquote>
+	<p align="left">最重要的一点，不要忘记<b>“挂接事件”</b>。</p>
+	<p align="left"><img border="0" src="dhk_images/92.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果：</p>
+<blockquote>
+	<p align="left">点击<b>“确定”</b>后，可以看到当前选择的<b>“日期”</b>被取出。</p>
+	<p align="left"><img border="0" src="dhk_images/93.gif" ></p>
+   
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+
+</body>
+</html>

@@ -1,0 +1,681 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>安卓无障碍操作</h4></li>
+	<ol>
+			<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.无障碍操作<span>(可收缩)</span></h6></li>
+		<ol id="new1">
+            <li><blockquote><a href="#zbgz">1.准备工作</a></blockquote></li> 
+            <li><blockquote><a href="#ckckm">2.查看窗口名</a></blockquote></li>  
+			<li><blockquote><a href="#czzjid">3.查看组件ID</a></blockquote></li>  
+            <li><blockquote><a href="#cjwzafw">4.创建无障碍服务</a></blockquote></li>
+            <li><blockquote><a href="#pdsfkq">5.判断是否开启</a></blockquote></li>
+		    <li><blockquote><a href="#jiedian">6.无障碍节点简述</a></blockquote></li>
+		    <li><blockquote><a href="#wmndj">6.模拟单击</a></blockquote></li>
+            <li><blockquote><a href="#changan">7.模拟长按</a></blockquote></li>
+
+            <li><blockquote><a href="#wzajdxxl">8.无障碍节点信息类</a></blockquote></li>
+            <li><blockquote><a href="#qzjnr">9.取组件内容</a></blockquote></li>
+            <li><blockquote><a href="#xzjnr">10.写组件内容</a></blockquote></li>
+            <li><blockquote><a href="#jtnr">11.监听内容改变</a></blockquote></li>
+            <li><blockquote><a href="#jtxqgb">12.监听选区改变</a></blockquote></li>
+            <li><blockquote><a href="#jtzjdj">13.监听组件单击</a></blockquote></li>
+
+            <li><blockquote><a href="#jtztlnr">14.监听状态栏内容</a></blockquote></li>
+            <li><blockquote><a href="#mnztldj">15.模拟通知点击</a></blockquote></li>
+		</ol>
+	</ol>
+</ul>
+</div>
+
+<p align="left">
+<h2>安卓无障碍操作实例讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p> 
+<h2>一、无障碍操作</h2>
+<p align="left">&nbsp;</p>
+	
+<a name="zbgz"></a>    
+<font style="font-size: 12pt; font-weight:700">● 帮助说明</font><br/>
+	<p align="left">&nbsp;</p>
+	<p align="left">无障碍的所有操作均位于<strong>“无障碍服务支持”</strong>模块中，使用时首先需要添加其模块。</p>
+	<p align="left">&nbsp;</p>
+	
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font><br/>
+<p align="left">&nbsp;</p>
+
+<p align="left">1、下载<b>“开发者助手”</b>APP</p>
+<blockquote>
+    <p align="left">① 可进入酷安网下载：<a href="https://www.coolapk.com/apk/com.toshiba_dealin.developerhelper">https://www.coolapk.com/apk/com.toshiba_dealin.developerhelper</a></p>
+	<p align="left">② 本程序的主要作用：获取APP组件ID值，通过获取的ID值可实现对该组件进行一些操作。</p>
+	<p align="left">③ 例如：模拟点击、获取组件内容等。</p>
+	<p align="left">④ 安装完毕后，会在手机上看到下图所示的软件图标。</p>
+	<p align="left">⑤ 注意：如果手机没有进行root，本软件运行可能会有一些异常情况，但不影响软件节点分析。</p>
+	<p align="left"><img src="wza_images/1.png" border="0" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">2、开启<b>“开发者助手”</b>无障碍服务。</p>
+<blockquote>
+    <p align="left">① 打开系统<b>“设置”</b>找到<b>“无障碍”</b>，打开无障碍后，找到<b>“开发者助手”</b>点击进入。</p>
+    <p align="left">② 注：不同系统之间，无障碍的位置可能有所差异，具体查看该手机的帮助手册。</p>
+	<p align="left"><img src="wza_images/2.png" border="0" ></p>
+  <p align="left">&nbsp;</p>
+	<p align="left">③ 进入后点击开关按钮打开该服务。</p>
+	<p align="left"><img src="wza_images/3.png" border="0" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">3、打开<b>“开发者助手”</b>APP。</p>
+<blockquote>
+    <p align="left">① 打开软件后勾选前三个选项，最后点击黄色箭头所指向的按钮。</p>
+    <p align="left">② 如果前三个选项已处于勾选状态，则直接点击按钮。</p>
+	<p align="left"><img src="wza_images/4.png" border="0" ></p>
+  <p align="left">&nbsp;</p>
+	<p align="left">③ 点击按钮后<b>“开发者助手”</b>窗口将关闭，桌面上将出现如图所示的悬浮按钮。</p>
+	<p align="left"><img src="wza_images/5.png" border="0" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="ckckm"></a>
+<font style="font-size: 12pt; font-weight:700">● 查看窗口名</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left">1、打开任意APP。</p>
+  <p align="left">2、点击<b>“开发者助手”</b>悬浮按钮将出现以下界面。</p>
+  <p align="left">3、窗口名就位于<b>“当前Activity”</b>。</p>
+	<blockquote>
+	<p align="left"><img border="0" src="wza_images/6.png" ></p>
+  </blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">4、点击窗口名后可弹出信息框，可对窗口名进行复制。</p>
+	<blockquote>
+	<p align="left"><img border="0" src="wza_images/7.png" ></p>
+	</blockquote>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="czzjid"></a>
+<font style="font-size: 12pt; font-weight:700">● 查看组件ID</font>
+		<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left">1、点击<b>“开发者助手”</b>悬浮按钮将出现以下界面。</p>
+  <p align="left">2、点击界面中的<b>“点击开始”</b>按钮，开始分析界面。</p>
+	<blockquote>
+	<p align="left"><img border="0" src="wza_images/8.png" ></p>
+  </blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">3、分析完毕后，软件上会出现绿色的方框。</p>
+	<p align="left">注：方框的数量由软件内的资源量决定。</p>
+	<blockquote>
+	<p align="left"><img border="0" src="wza_images/9.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">4、此时点击<b>“按钮”</b>后会出现如下图所示的控件属性。</p>
+	<p align="left">5、<b>“id-Name”</b>一栏后显示的就就是当前组件的ID值。</p>
+	<p align="left">注意：有些软件的组件可能没有ID值。</p>
+	<p align="left">注意2：ID值在实际使用时，只要后面的<b>“rg_n”</b>。</p>
+	<blockquote>
+	<p align="left"><img border="0" src="wza_images/10.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">6、点击ID值后会弹出信息框，可进行ID值的复制操作。</p>
+	<blockquote>
+	<p align="left"><img border="0" src="wza_images/11.png" ></p>
+	</blockquote>
+</blockquote>
+	
+	
+		<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="cjwzafw"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建无障碍服务</font>
+		<p align="left">&nbsp;</p>
+<p align="left">1、准备工作：</p>
+<blockquote>                
+	<p align="left">① 打开火山安装目录内<b>“ samples\vprj_android\samples\accessibility\src”</b>目录。</p>
+	<p align="left">② 复制当前目录内的<b>“res”</b>文件夹。</p>
+	<blockquote>
+	  <p align="left"><img border="0" src="wza_images/12.png" ></p>
+  </blockquote>
+</blockquote>
+
+	
+<p align="left">&nbsp;</p>
+<p align="left">2、粘贴res文件夹：</p>
+<blockquote>
+	<p align="left">① 右键项目，选择<b>“打开所在的文件夹”</b>。</p>
+	<blockquote>
+	<p align="left"><img border="0" src="wza_images/13.png" ></p>
+  </blockquote>
+  <p align="left">&nbsp;</p>
+	<p align="left">② 把复制的<b>“res”</b>文件夹粘贴到本项目的目录内。</p>
+	<p align="left">③ 注意：本文件夹内的任何文件名都不要随意修改。</p>
+		<blockquote>
+	<p align="left"><img border="0" src="wza_images/14.png" ></p>
+  </blockquote>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">3、无障碍描述信息填写：</p>
+<blockquote>
+	<p align="left">① 打开当前项目<b>“res\values”</b>目录。</p>
+	<p align="left">② 使用记事本编辑<b>“vol_accessibility_service_strings.xml”</b>文件。</p>
+	<p align="left">③ 当前文件中可编辑<b>“无障碍描述”</b>信息，描述信息会显示在<b>“无障碍设置”</b>中。</p>
+	<blockquote>
+	  <p align="left"><img border="0" src="wza_images/15.png" ></p>
+  </blockquote>
+</blockquote>
+			<p align="left">&nbsp;</p>
+<p align="left">4、定义无障碍服务类：</p>
+<blockquote>
+  <p align="left">① 新建一个类（Ctrl+D），基础类填写<b>“无障碍服务类”</b>，名称随意勾选公开。</p>
+	<p align="left">② 属性名:<b>“@安卓.附加清单”</b></p>
+		<blockquote>
+			<p align="left">属性值：<b>“&lt;. android:label=&quot;火山自定义无障碍服务&quot;&gt;</p>
+			<p align="left"> &lt;meta-data android:name=&quot;android.accessibilityservice&quot; android:resource = &quot;@xml/voldev_accessibility_service_config&quot;/&gt; &lt;/.&gt;”</b></p>
+		</blockquote>
+	<p align="left">③ 属性名：<b>“@安卓.外部资源”</b></p>	
+		<blockquote>
+			<p align="left">属性值：<b>“res”</b>。</p>
+			<p align="left">本属性的作用，就是用来指定复制过来的<b>“res”</b>文件夹。</p>
+			<p align="left">注意：本文件夹名称不能修改。</p>
+		</blockquote>
+	<p align="left">④ 属性名：<b>“@强制输出”</b></p>	
+		<blockquote>
+			<p align="left">属性值：<b>“真”</b>。</p>
+			<p align="left">火山开发采用按需求编译模式，未被引用的代码都会被剔除。</p>
+			<p align="left">使用本属性可强制输出，让本服务被正常编译。</p>
+		</blockquote>
+	<blockquote>
+	  <p align="left"><img border="0" src="wza_images/16.png" ></p>
+  </blockquote>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">5、添加虚拟方法：</p>
+<blockquote>
+	<p align="left">① 右键<b>“无障碍服务类”</b></p>
+	<p align="left">② 选择<b>“添加‘XX’的虚拟方法”</b>。</p>
+	<blockquote>
+	  <p align="left"><img border="0" src="wza_images/17.png" ></p>
+    </blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">③ 依次添加<b>“服务已连接”</b>和<b>“被解除所有绑定”</b>方法。</p>
+	<blockquote>
+	  <p align="left"><img border="0" src="wza_images/18.png" ></p>
+    </blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">④ 添加完毕后，让当前两个虚拟方法分别弹出提示框。</p>
+	<blockquote>
+		<p align="left">这两个虚拟方法可以理解为<b>“无障碍服务”</b>的开启和关闭的监听事件。</p>
+		<p align="left">开启后会触发<b>“服务已连接”</b>，关闭后会触发<b>“被解除所有绑定”</b>。</p>
+	  <p align="left"><img border="0" src="wza_images/19.png" ></p>
+    </blockquote>	
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">6、开启程序无障碍：</p>
+<blockquote>
+	<p align="left">① 编译安装程序，安装后就可在系统设置无障碍中看到当前程序的无障碍服务。</p>
+	<p align="left">② 点击进入当前服务。</p>
+	<blockquote>
+	  <p align="left"><img border="0" src="wza_images/20.png" ></p>
+    </blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">③ 进入后可看到<b>“无障碍服务描述文本”</b>以及<b>“服务开关”</b>，默认处于关闭状态。</p>
+	<blockquote>
+	  <p align="left"><img border="0" src="wza_images/21.png" ></p>
+    </blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">④ 运行效果如下图（GIF）</p>
+	<blockquote>
+		<p align="left">当开关开启或关闭，当前程序都会监听到当前服务是否开启或关闭。</p>
+	  <p align="left"><img border="0" src="wza_images/22.gif" ></p>
+    </blockquote>	
+</blockquote>
+	
+
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="pdsfkq"></a>
+<font style="font-size: 12pt; font-weight:700">● 判断当前无障碍服务是否开启</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">1、判断无障碍服务是否开启，需要用到<strong>三个类</strong>。</p>
+	<p align="left"><strong>无障碍管理类：</strong>系统级服务，用于对无障碍事件的调度或查询系统当前的无障碍服务状态.</p>
+		<blockquote>
+			<p align="left">① 本类可单独使用,不会依赖无障碍服务。</p>
+			<p align="left">② 获取实例方法：<b>“安卓环境.获取系统服务 (本对象, 安卓环境.无障碍管理服务)”</b>。</p>
+  </blockquote>
+	<p align="left"><strong>无障碍服务信息列表类：</strong>本类是列表模板类，可通过<b>“无障碍管理类.取已启用服务列表()”</b>获取本对象。</p>
+		<blockquote>
+			<p align="left">③ 本对象中存储了所有的无障碍信息。</p>
+		</blockquote>
+	<p align="left"><strong>无障碍服务信息类：</strong>本类中存储了，单个的无障碍信息数据。</p>
+		<blockquote>
+			<p align="left">④ 可通过<b>“无障碍服务信息列表类.取成员()”</b>获取本对象。</p>
+		</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">2、除了以上三个大类外，还需要用到<strong>三个方法</strong>。</p>
+	<p align="left"><strong><a href="j_text.htm#zwbth">子文本替换：</a></strong>取出的无障碍服务信息中包含多余的字符，需要通过本方法进行字符过滤。</p>
+	<p align="left"><strong>取类名：</strong>本方法可用来取出指定类的java名称，可用来记录或者对比，返回值为文本型。</p>
+		<blockquote>
+			 <p align="left"><img border="0" src="wza_images/23.png" ></p>
+		</blockquote>
+	<p align="left"><strong><a href="j_text.htm#wbbh">文本包含：</a></strong>通过本方法可判断所有已经开启的无障碍服务中是否包含当前服务。</p>
+		<blockquote>
+			 <p align="left">如果包含了当前服务，则当前服务必然处于开启状态。</p>
+		</blockquote>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">界面准备如下图： </p>
+	<blockquote>
+		<p align="left">打开启动类界面设计器，拖放一个<b>“按钮”</b>即可，</p>
+		<p align="left"><img border="0" src="wza_images/26.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+	<p align="left">1、新建一个方法（Ctrl+M），方法名随意，返回值填写<b>“逻辑型”</b>。</p>
+	<p align="left">2、定义类型为<b>“无障碍管理类”</b>变量，勾选参考，通过<b>“安卓环境.获取系统服务()”</b>方法获得本对象。</p>
+	<blockquote>
+	  <p align="left">因本方法返回的是<b>“对象类”</b>，因此需要将其强转为<b>“无障碍管理类”</b>，并赋值给定义的变量。</p>
+	</blockquote>
+	<p align="left">3、定义类型为<b>“无障碍服务信息列表类”</b>变量，勾选参考。</p>
+	<blockquote>
+		<p align="left">通过<b>“无障碍”</b>变量，调用<b>“取已启用服务列表(无障碍反馈类型.所有反馈)”</b>方法，赋值给定义的<b>“服务列表”</b>变量。</p>
+	  <p align="left">本方法可取出所有已启用的无障碍服务。</p>
+	</blockquote>	
+  <p align="left">4、定义<b>“计次”</b>整数变量，利用<b>“循环”</b>方法取出<b>“服务列表”</b>内所有成员。</p>
+  <p align="left">5、定义类型为<b>“无障碍服务信息类”</b>变量，勾选参考。</p>
+	<blockquote>
+		<p align="left">通过<b>“服务列表”</b>变量，调用<b>“取成员()”</b>方法，赋值给定义的<b>“无障碍信息”</b>变量。</p>
+		<p align="left">本方法可依次取出单个的无障碍信息。</p>
+	</blockquote>		
+  <p align="left">6、定义<b>“服务ID”</b>文本型变量，利用<b>“子文本替换()”</b>方法，替换掉<b>“无障碍信息.服务ID”</b>中多余的字符。</p>
+	<blockquote>
+		<p align="left">每个无障碍服务都有一个固定的服务ID，通过定义的<b>“无障碍信息”</b>变量可获取此ID。</p>
+	  <p align="left">服务ID中存在一个多余的字符<b>“/”</b>，需通过本方法剔除。</p>
+	</blockquote>	
+  <p align="left">7、定义<b>“当前服务名”</b>文本型变量，通过<b>“取类名()”</b>方法，取出<b>“自定义无障碍服务”</b>的java名称。</p>
+	<blockquote>
+	<p align="left">将取出的名称，赋值给定义的文本型变量。</p>
+	</blockquote>		
+  <p align="left">8、利用<b>“文本包含()”</b>方法，判断<b>“服务ID”</b>中是否存在<b>“当前服务名”</b>。</p>
+	<blockquote>
+		<p align="left">如果存在则执行<b>“返回(真)”</b>，并执行<b>“跳出循环”</b>，表示当前服务已经开启。</p>
+	</blockquote>	
+  <p align="left">9、最后在<b>“循环”</b>方法外，输入<b>“返回(假)”</b>，表示在已经开启的服务列表内未发现当前服务，即当前服务没有开启。</p>
+  <p align="left"><img border="0" src="wza_images/24.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+	<blockquote>
+	<p align="left">1、<b>“按钮1”</b>被点击后，直接判断<b>“无障碍服务是否开启()”</b>方法的返回值。</p>
+	<blockquote>
+		<p align="left">如果返回真，则提示<b>“无障碍服务已经开启”</b>，返回假则提示<b>“没有开启服务”</b>。</p>
+	</blockquote>	
+	<p align="left">2、如果没有开启服务可执行<b>“无障碍管理类.打开设置(本对象)”</b>方法，可直接打开无障碍设置界面。</p>	
+	<p align="left"><img border="0" src="wza_images/25.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">首次运行无障碍服务必然处于关闭状态。</p>
+  <p align="left">因此点击<b>“按钮1”</b>后会弹出<b>“没有开启服务”</b>并直接打开<b>“无障碍设置”</b>。</p>
+	<p align="left">开启无障碍服务后，点击<b>“返回”</b>可重新回到当前程序。</p>
+	<p align="left">此时再次点击<b>“按钮1”</b>会提示<b>“无障碍服务已经开启”</b>。</p>
+	<p align="left"><img border="0" src="wza_images/27.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="jiedian"></a>
+<font style="font-size: 12pt; font-weight:700">● 无障碍节点简述和获取方法</font>
+<p align="left">&nbsp;</p>
+<p align="left">1、无障碍针对某个程序的窗口进行操作时，会把这个窗口当成一棵大树。</p>
+<p align="left">2、如下图所示：当前<b>“窗口”</b>为根节点，窗口上的所有组件全部都是<b>“子节点”</b>。</p>
+<blockquote>
+	<p align="left"><img border="0" src="wza_images/28.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>	
+<p align="left">3、查找到的节点，通常存储在<b>“无障碍节点信息类”</b>和<b>“无障碍节点信息列表类”</b>中。</p>
+<p align="left">4、窗口根节点可通过<b>“取根节点活动窗口 ()”</b>方法获取，返回值为<b>“无障碍节点信息类”</b>。 </p>
+<blockquote>
+<p align="left"><img border="0" src="wza_images/29.png" ></p>
+</blockquote>	
+<p align="left">5、组件节点通过<b>“窗口根节点值.指定资源ID查找节点 ()”</b>方法获取。 </p>
+<blockquote>
+	<p align="left">本方法继承自<b>“无障碍节点信息类”</b>，共有两个参数，支持动态调用。</p>
+	<p align="left">参数1：动态调用时本参数忽略即可，否则填写欲操作的对象。</p>
+	<p align="left">参数2：填写<b>“程序包名”</b>+<b>“:id/”</b>+<b>“组件ID值”</b>。</p>
+	<p align="left">返回值为<b>“无障碍节点信息列表类”</b>，可通过<b>“取成员()”</b>方法取出指定节点。</p>
+	<blockquote>
+	<p align="left"><img border="0" src="wza_images/30.png" ></p>
+	</blockquote>		
+</blockquote>		
+
+<p align="left">&nbsp;</p>
+<a name="wmndj"></a>
+<font style="font-size: 12pt; font-weight:700">● 结合上述的节点知识，实现模拟单击</font>
+	<p align="left">&nbsp;</p>
+<p align="left">获取窗口信息：</p>
+<blockquote>
+	<p align="left">通过<a href="https://www.coolapk.com/apk/com.toshiba_dealin.developerhelper"><b>“开发者助手”</b></a>获取指定程序的<b>“包名”</b>，<a href="#ckckm"><b>“窗口名”</b></a>和<a href="#czzjid"><b>“组件ID”</b></a>。</p>
+	<p align="left"><img border="0" src="wza_images/35.png" ></p>
+</blockquote>
+	 
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“通知_收到新事件”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">无障碍所有的操作都是基于虚拟方法，参数返回<b>“无障碍事件类”</b>，可进行具体的无障碍操作。</p>
+	<p align="left"><img border="0" src="wza_images/31.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写说明：</p>
+<blockquote>
+  <p align="left">1、添加<b>“通知_接收新事件”</b>虚拟方法，定义<b>“是否点击”</b>逻辑变量。</p>
+	<blockquote>
+		<p align="left">① 本虚拟方法会持续监听，<b>“是否点击”</b>变量用于防止按钮重复点击。</p>
+	</blockquote>
+	<p align="left">2、在虚拟方法下定义三个变量，类型分别为<b>“无障碍节点信息类”</b>和<b>“无障碍节点信息列表类”</b>。</p>
+	<blockquote>
+	  <p align="left">① 三个变量全部勾选参考，用于存储窗口和组件节点信息。</p>
+	</blockquote>
+	<p align="left">3、判断<b>“事件对象.事件类型”</b>是否等于<b>“无障碍事件类型.窗口状态改变”</b>。</p>
+	<blockquote>
+	  <p align="left">① 顾名思义，用于判断程序窗口是否被改变。</p>
+	</blockquote>	
+	<p align="left">4、利用<b>“文本相等”</b>命令，判断窗口名称是否等于<b>“事件对象.类名”</b>。</p>
+	<blockquote>
+		<p align="left">① 如果相等，代表当前手机显示的窗口为指定的窗口。</p>
+	</blockquote>	
+	<p align="left">5、通过<b>“取根节点活动窗口()”</b>方法，取出窗口节点赋值给<b>“窗口根节点”</b>变量。</p>
+	<p align="left">6、判断当前窗口节点是否为空对象，防止获取失败。</p>
+	<p align="left">7、调用<b>“指定资源ID查找节点()”</b>方法，查找<b>“按钮1”</b>的组件。</p>
+	<blockquote>
+		<p align="left">① 将查找到的节点赋值给<b>“按钮列表”</b>变量。</p>
+		<p align="left">② 组件ID书写格式：<b>“包名”</b>+<b>“:id/”</b>+<b>“组件id”</b></p>
+	</blockquote>	
+	<p align="left">8、判断<b>“按钮列表”</b>是否为空对象，或者成员数是否大于0，防止获取失败。</p>
+	<p align="left">9、通过<b>“取成员()”</b>方法取出当前<b>“按钮节点”</b>。</p>
+	<blockquote>
+		<p align="left">① 因只是一个组件，参数值直接填写0即可。</p>
+	</blockquote>	
+	<p align="left">10、判断<b>“是否点击”</b>变量是否为假，用于防止重复点击。</p>
+	<p align="left">11、通过<b>“按钮节点”</b>调用<b>“执行动作()”</b>方法，来模拟点击。</p>
+	<blockquote>
+		<p align="left">① <b>“执行动作”</b>帮助文档：</p>
+		<p align="left">② 参数1：动态调用时省略即可，否则填写当前对象。</p>
+		<p align="left">③ 参数2：调用方式<b>“无障碍服务节点动作类型.XXX”</b>。</p>
+		<p align="left">④ 参数3：保留空对象即可。</p>
+		<p align="left"><img border="0" src="wza_images/36.png" ></p>
+	</blockquote><br>
+	<p align="left">12、最后需要设置<b>“是否点击=真”</b>。</p>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+		<blockquote>
+	<p align="left"><img border="0" src="wza_images/32.png" ></p>
+		</blockquote>	
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">左图：无障碍下模拟点击，并且只会点击一次。</p>
+	<p align="left">右图：正常点击状态。</p>
+	<p align="left"><img border="0" src="wza_images/33.gif" >
+	&nbsp;&nbsp;<img border="0" src="wza_images/34.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<a name="changan"></a>
+<font style="font-size: 12pt; font-weight:700">● 模拟长按</font>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在源代码的基础上，将<b>“执行动作()”</b>方法内的参数修改成<b>“无障碍服务节点动作类型.长按操作”</b>即可。</p>
+	<p align="left"><img border="0" src="wza_images/37.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">左图：无障碍模拟长按。</p>
+	<p align="left">右图：正常长按。</p>
+	<p align="left"><img border="0" src="wza_images/38.gif" >&nbsp;&nbsp;
+	<img border="0" src="wza_images/39.gif" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="wzajdxxl"></a>
+<font style="font-size: 12pt; font-weight:700">● 无障碍节点信息类</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">1、本类中所有的属性和方法和<a href="a_ctrl_base.htm"><b>“窗口组件”</b></a>基础类的用法基本一致。</p>
+	<p align="left">2、可以理解为窗口组件的另外一种表示形式，此处举例<b>“读组件内容”</b>操作。</p>
+	<p align="left">注意：本类和<b>“窗口组件”</b>基础类同理，并非所有方法都能正常使用。</p>
+	<p align="left">例如：在本类中存在一个<b>“内容”</b>写属性，但是本属性并不能给<b>“编辑框”</b>赋值，赋值需要用<b>“执行动作”</b>方法。</p>
+	<p align="left"><img border="0" src="wza_images/40.png" ></p>
+</blockquote>	
+
+<p align="left">&nbsp;</p>
+<a name="qzjnr"></a>
+<font style="font-size: 12pt; font-weight:700">● 取组件内容</font>
+	<p align="left">&nbsp;</p>
+<p align="left">通过<b>“开发者助手”</b>取出窗口组件信息：</p>
+<blockquote>
+	<p align="left"><img border="0" src="wza_images/41.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">取编辑框的组件内容很简单，在源代码的基础上通过<b>“编辑框节点”</b>调用<b>“内容”</b>读属性即可。</p>
+	<p align="left">注意：取组件内容仅限于<b>“按钮”</b>，<b>“文本框”</b>或者<b>“编辑框”</b>等存储文本字符串的组件。</p>
+	<p align="left">并不能读取图片框的图片数据。</p>
+	<p align="left"><img border="0" src="wza_images/42.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">打开<b>“计算器”</b>这个程序，编辑框的内容就会被弹出。</p>
+<p align="left"><img border="0" src="wza_images/43.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<a name="xzjnr"></a>
+<font style="font-size: 12pt; font-weight:700">● 写组件内容</font>
+<p align="left">&nbsp;</p>
+	
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">写组件内容无法修改图片框组件的，只能修改编辑框类的组件数据。</p>
+</blockquote> 
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义<b>“数据包类”</b>变量，调用<b>“写文本字段()”</b>方法，设置要写入的新内容。</p>
+	<blockquote>
+		<p align="left">字段名务必填写：无障碍服务节点动作参数类型.指定文本内容。</p>
+	</blockquote> 	
+	<p align="left">2、调用<b>“睡眠当前线程()”</b>延时1秒后调用<b>“执行动作()”</b>方法。</p>
+	<blockquote>
+		<p align="left">参数1：必须填写<b>“无障碍服务节点动作类型.设置文本”</b>。</p>
+		<p align="left">参数2：填写定义的<b>“数据包”</b>变量。</p>
+	</blockquote> 	
+	<p align="left"><img border="0" src="wza_images/44.png" ></p>
+</blockquote> 
+
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+<p align="left"><img border="0" src="wza_images/45.gif" ></p>
+</blockquote> 
+	
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="jtnr"></a>
+<font style="font-size: 12pt; font-weight:700">● 监听指定编辑框内容改变</font>
+<p align="left">&nbsp;</p>	
+	<p align="left">想要实现监听指定编辑框内容被改变，需要学习两个新的方法。</p>
+	<p align="left"><b>“查找指定焦点节点”</b>和<b>“对象是否相等”</b></p>	
+	<p align="left">&nbsp;</p>	
+	
+<p align="left"><b>“查找指定焦点节点”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">1、本方法继承自<b>“无障碍服务类”</b>。</p>
+	<p align="left">2、通过本方法可查找指定焦点节点，参数值填写<b>“假”</b>即可查找编辑框组件。</p>
+	<p align="left">3、本方法的返回值为<b>“无障碍节点信息类”</b>。</p>
+	<p align="left"><img border="0" src="wza_images/46.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>	
+<p align="left"><b>“对象是否相等”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">1、本方法继承自对象类。</p>
+	<p align="left">2、顾名思义，通过本方法可判断两个对象是否相等。</p>
+	<p align="left">3、相等返回真，不相等返回假。</p>
+	<p align="left"><img border="0" src="wza_images/47.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义一个<b>“逻辑型”</b>的成员变量，用于判断是否为指定窗口。</p>
+	<p align="left">2、判断<b>“事件类型”</b>是否为<b>“窗口状态改变”</b>，用于确定逻辑变量的逻辑值。</p>
+	<p align="left">3、判断<b>“事件类型”</b>是否为<b>“文本已改变”</b>，用于监听内容被改变。</p>
+	<p align="left">4、判断是否为指定窗口，如果为指定窗口则执行编辑框节点判断操作。</p>
+	<p align="left">5、查找要监听的编辑框节点。</p>
+	<p align="left">6、调用<b>“查找指定焦点节点()”</b>方法，查找带有焦点的编辑框节点。</p>
+	<p align="left">7、如果两个节点相等，则表示要监听的编辑框内容被改变。</p>
+    <p align="left"><img border="0" src="wza_images/48.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="wza_images/49.gif" >
+    </p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>	
+<a name="jtxqgb"></a>
+<font style="font-size: 12pt; font-weight:700">● 监听指定编辑框选区被改变</font>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在源代码的基础上简单修改即可实现本功能。</p>
+	<p align="left">1、判断<b>“事件类型”</b>是否等于<b>“文本选择被改变”</b>。</p>
+	<p align="left">2、继续判断是否为指定窗口。</p>
+	<p align="left">3、取出要监听的编辑框节点。</p>
+	<p align="left">4、判断选区位置是否相同，目的是判断是否存在选区。</p>
+	<p align="left">5、如果存在选区，计算选区长度后，利用<b>“取子文本()”</b>方法取出被选择文本。</p>
+	<p align="left"><img border="0" src="wza_images/50.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可看到选择第一个编辑框内容，会弹出选区文本。</p>
+    <p align="left">选择第二个编辑框无任何反应。</p>
+	<p align="left"><img border="0" src="wza_images/51.gif" >
+    </p>
+</blockquote>
+		
+<p align="left">&nbsp;</p>	
+<a name="jtzjdj"></a>
+<font style="font-size: 12pt; font-weight:700">● 监听指定组件被单击</font>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在源代码的基础上简单修改即可实现本功能。</p>
+	<p align="left">1、判断<b>“事件类型”</b>是否等于<b>“被单击”</b>。</p>
+	<p align="left">2、继续判断是否为指定窗口。</p>
+	<p align="left">3、取出要监听的组件节点。</p>
+	<p align="left">4、调用<b>“事件对象.取节点信息()”</b>方法，可取出当前响应事件的组件节点。</p>
+	<p align="left">5、调用<b>“对象是否相等()”</b>方法，判断两个节点对象是否相等。</p>
+	<p align="left">6、如果相等表示指定组件被点击，不相等则相反。</p>
+	<p align="left"><img border="0" src="wza_images/52.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="wza_images/53.gif" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>	
+<a name="jtztlnr"></a>
+<font style="font-size: 12pt; font-weight:700">● 监听状态栏消息内容</font>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在源代码的基础上简单修改即可实现本功能。</p>
+	<p align="left">1、判断<b>“事件类型”</b>是否等于<b>“通知栏状态改变”</b>。</p>
+	<p align="left">2、随后判断<b>“事件对象.取分配对象()”</b>是否属于<b>“安卓通知栏”</b>。</p>
+	<p align="left">3、定义类型为<b>“字符串列表类”</b>变量，勾选参考，调用<b>“取文本()”</b>方法赋值给字符串变量。</p>
+	<p align="left">4、通过字符串变量调用<b>“取成员()”</b>方法，取出的最后一个成员就是当前状态栏显示文本。</p>
+	<blockquote>
+
+			<p align="left">① 安卓5.X以下版本，通知栏消息会在状态栏显示消息文本</p>
+			<p align="left">② 5.X以上不再支持文本显示，但是并不影响消息监听。</p>
+			<p align="left">③ 监听的状态栏内容，实际上就是监听的通知栏消息。</p>
+	</blockquote>
+	<p align="left"><img border="0" src="wza_images/54.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">点击要监听的软件按钮后，当前程序会弹出一条通知消息。</p>
+	<p align="left">因当前系统是安卓5.1，状态栏内容并不会显示在状态栏上，但并不影响无障碍程序监听。</p>
+	<p align="left"><img border="0" src="wza_images/55.gif" >
+    </p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<a name="mnztldj"></a>
+<font style="font-size: 12pt; font-weight:700">● 模拟通知栏消息点击</font>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在源代码的基础上简单修改即可实现本功能。</p>
+	<p align="left">1、定义类型为<b>“安卓通知栏”</b>的变量，勾选参考。</p>
+	<p align="left">2、取出分配对象强转为<b>“安卓通知栏”</b>并赋值给<b>“通知栏”</b>变量。</p>
+	<p align="left">3、通过定义的<b>“通知栏”</b>变量调用<b>“取条目启动对象().发送()”</b>，即可实现模拟通知栏消息点击。</p>
+	<p align="left"><img border="0" src="wza_images/56.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">左图：无障碍模拟通知栏点击。</p>
+	<p align="left">右图：正常状态下点击通知栏消息。</p>
+	<p align="left"><img border="0" src="wza_images/57.gif" >&nbsp;&nbsp;<img border="0" src="wza_images/58.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

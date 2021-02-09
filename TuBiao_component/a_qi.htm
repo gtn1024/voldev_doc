@@ -1,0 +1,248 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		
+		   <li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new2')" >一.气泡图 <span>(可收缩)</span></h6></li>
+	  <ol id="new2">
+			<li><blockquote><a href="#">1.准备工作</a></blockquote></li>
+			<li><blockquote><a href="#qptcj">2.图表数据创建</a></blockquote></li>
+			<li><blockquote><a href="#qtbsj">3.图表数据(写)</a></blockquote></li>
+			<li><blockquote><a href="#qznrtlxz">4.值内容脱离选中(事件)</a></blockquote></li>
+			<li><blockquote><a href="#qznrtlxz">5.值内容被选中(事件)</a></blockquote></li>
+			<!-- 气泡图数据类 -->
+			<li><blockquote><a href="#qtbsj">6.创建</a></blockquote></li>
+			<li><blockquote><a href="#qzgshdx">7.值格式化对象(写)</a></blockquote></li>
+			<li><blockquote><a href="#qzgshdx">8.显示标签(写)</a></blockquote></li>
+			<li><blockquote><a href="#qqpzlb">9.气泡值列表(写)</a></blockquote></li>
+			<li><blockquote><a href="#qqpccbl">10.气泡尺寸比例(写)</a></blockquote></li>
+			<li><blockquote><a href="#qpxzsjts">11.选择数据提示(写)</a></blockquote></li>
+			<!-- 图表组件基础类 -->
+			<!-- 图表数据基础类 -->
+		</ol>	
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>气泡图组件实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p> 
+<font style="font-size: 12pt; font-weight:700">● 教程说明</font><br/>
+<br/>
+	<blockquote>
+	<p align="left"><font color="#F30F12">注意：本组件位于<strong>“图表类窗口组件”</strong>模块中。</font></p>
+ </blockquote>
+	<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 详细例程</font><br/>
+<br/><blockquote>
+	<p align="left">可打开火山安装目录下<b>“samples\samples.vsln”</b>解决方案。 </p>
+	<p align="left">位于<b>“窗口及组件->图表系列组件”</b>分类下。</p>
+	<p align="left"><img src="chart_images/0.png" border="0" ></p>
+	 </blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<h2>一、气泡图</h2>
+<p align="left">&nbsp;</p>
+	
+ 
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">打开启动类<b>“界面设计器”</b>，设计如下界面。</p>
+    <p align="left">依次是<b>“按钮1”</b>和<b>“气泡图1”</b>。 </p>
+    <p align="left">本组件除了文档中的方法外，还继承了<b>“图表组件基础类”</b>和<b>“图表数据基础类”</b>的所有方法。 </p>
+	<p align="left"><img src="chart_images/62.png" border="0" ></p>
+
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="qptcj"></a>
+<font style="font-size: 12pt; font-weight:700">● 图表数据创建</font>
+
+<p align="left">&nbsp;</p>
+<p align="left">气泡图创建方法如下：</p>
+<blockquote>
+  <p align="left">共需四个类，分别是<b>“图表气泡值列表类”</b>、<b>“图表气泡值数组类”</b>、<b>“图表气泡值类”</b>和<b>“气泡图数据类”</b>。</p>
+  <p align="left">作用分别如下：</p>
+  <p align="left">1、图表气泡值列表类：用于存储气泡坐标和气泡半径数值。</p>
+  <p align="left">2、图表气泡值数组类：用于创建<b>“图表气泡值列表类”</b>。</p>
+  <p align="left">3、图表气泡值类：用于创建气泡坐标和气泡半径信息。</p>
+  <p align="left">4、气泡图数据类：通过定义好的气泡信息，创建整个气泡图表数据。</p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="qtbsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 图表数据(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 创建</font>
+
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“图表数据(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，设置当前气泡数据，属性值为<b>“气泡图数据类”</b>。 </p>
+	<p align="left"><img border="0" src="chart_images/63.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“创建”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法继承自<b>“气泡图数据类”</b>，用于创建<b>“气泡数据”</b>。</p>
+	<p align="left">创建后赋值给<b>“图表数据”</b>属性，即可生成气泡图。</p>
+	<p align="left"><img border="0" src="chart_images/64.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“创建”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法是继承自<b>“图表气泡值类”</b>，用于定义气泡坐标和气泡半径。</p>
+	<p align="left"><img border="0" src="chart_images/65.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义四个变量，类型分别为<b>“图表气泡值列表类”</b>、<b>“图表气泡值类”</b>，<b>“气泡图数据类”</b>，全部勾选参考。</p>
+	<p align="left">2、设置<b>“气泡值列表”</b>数据。</p>
+	<p align="left">3、通过<b>“气泡列表”</b>创建当前<b>“气泡数据”</b>。</p>
+	<p align="left">4、最后将设置<b>“图表数据”</b>的属性值为<b>“气泡数据”</b>即可。</p>
+	<p align="left"><img border="0" src="chart_images/66.png" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">注意：气泡图在不设置任何数据的情况下，默认存在气泡。</p>
+	<p align="left"><img border="0" src="chart_images/67.gif" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>	
+<a name="qznrtlxz"></a>
+<font style="font-size: 12pt; font-weight:700">● 值内容脱离选中(事件)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 值内容被选中(事件)</font>
+<p align="left">&nbsp;</p>	
+<blockquote>
+  <p align="left">以上两个事件参考<a href="#bznrtlxz"><b>“饼状图”</b></a>组件中的同名事件。</p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>	
+<a name="qzgshdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 值格式化对象(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 显示标签(写)</font>
+
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“显示标签(写)”</b>帮助文档： </p>
+<blockquote>
+	<p align="left">本属性值为真，将在气泡图上显示<b>“气泡半径值”</b>。</p>
+	<p align="left"><img border="0" src="chart_images/69.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“值格式化对象(写)”</b>帮助文档： </p>
+<blockquote>
+  <p align="left">本属性继承自<b>“气泡图数据类”</b>，通过本属性可设置<b>“气泡半径值”</b>保留几位小数点。</p>
+	<p align="left"><img border="0" src="chart_images/68.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">以上两个属性务必写到<b>“创建”</b>方法后，<b>“图表数据”</b>属性前。</p>
+	<p align="left"><img border="0" src="chart_images/70.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最后可看到半径数据均保留了一位小数。</p>
+	<p align="left"><img border="0" src="chart_images/71.png" >
+  </p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>	
+<a name="qqpzlb"></a>
+	<font style="font-size: 12pt; font-weight:700">● 气泡值列表(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性继承自<b>“气泡图数据类”</b>，同<b>“气泡图数据类.创建()”</b>方法作用一致。</p>
+	<p align="left">使用本属性后就无需使用<b>“创建”</b>。</p>
+	<p align="left"><img border="0" src="chart_images/72.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">通过<b>“气泡数据”</b>调用本属性，设置属性值为<b>“气泡值列表”</b>即可。</p>
+	<p align="left"><img border="0" src="chart_images/73.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="chart_images/74.png" >
+  </p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>	
+<a name="qqpccbl"></a>
+	<font style="font-size: 12pt; font-weight:700">● 气泡尺寸比例(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可对气泡进行等比例缩放。</p>
+	<p align="left">属性值提供<b>“0-1”</b>之间的小数，如提供0.5则缩小一半。</p>
+	<p align="left"><img border="0" src="chart_images/75.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">本属性需要在<b>“创建”</b>和<b>“图表数据”</b>之间书写。</p>
+	<p align="left"><img border="0" src="chart_images/76.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">可看到气泡尺寸明显变小很多。</p>
+	<p align="left"><img border="0" src="chart_images/77.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>	
+<a name="qpxzsjts"></a>
+	<font style="font-size: 12pt; font-weight:700">● 选择数据提示(写)</font>
+	
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">本属性参考<a href="bxzsjts"><b>“饼状图”</b></a>中的同名属性。</p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

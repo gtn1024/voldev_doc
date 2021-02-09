@@ -1,0 +1,565 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		
+		<li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new8')" >一.矩阵类<span>(可收缩)</span></h6></li>
+		<ol id="new8">
+			<li><blockquote><a href="#juzhenlei">1.本类说明</a></blockquote></li>  
+    		<li><blockquote><a href="#jzjlcqjz">2.建立错切矩阵</a></blockquote></li>
+    		<li><blockquote><a href="#jzcycqjz">3.乘于错切矩阵</a></blockquote></li>
+    		<li><blockquote><a href="#jzjlcqjz2">4.建立错切矩阵2</a></blockquote></li>
+    		<li><blockquote><a href="#jzcycqjz2">5.乘于错切矩阵2</a></blockquote></li>
+    		<li><blockquote><a href="#jzjlpyjz">6.建立平移矩阵</a></blockquote></li>
+    		<li><blockquote><a href="#jzcypyjz">7.乘于平移矩阵</a></blockquote></li>
+    		<li><blockquote><a href="#jzjlsfjz">8.建立缩放矩阵</a></blockquote></li>
+    		<li><blockquote><a href="#jzcysfjz">9.乘于缩放矩阵</a></blockquote></li>
+    		<li><blockquote><a href="#jzjlsfjz2">10.建立缩放矩阵2</a></blockquote></li>
+    		<li><blockquote><a href="#jzcysfjz2">11.乘于缩放矩阵2</a></blockquote></li>
+    		<li><blockquote><a href="#jzjlxzjz">12.建立旋转矩阵</a></blockquote></li>
+    		<li><blockquote><a href="#jzcyxzjz">13.乘于旋转矩阵</a></blockquote></li>
+    		<li><blockquote><a href="#jzjlxzjz2">14.建立旋转矩阵2</a></blockquote></li>
+    		<li><blockquote><a href="#jzjlxzjz3">15.建立旋转矩阵3</a></blockquote></li>
+    		<li><blockquote><a href="#jhlxzjz4">16.建立旋转矩阵4</a></blockquote></li>
+    		<li><blockquote><a href="#jzcyxzjz2">17.乘于旋转矩阵2</a></blockquote></li>
+    		<li><blockquote><a href="#jccyjz">18.乘于矩阵</a></blockquote></li>
+    		<li><blockquote><a href="#qjzsj">19.取矩阵数据</a></blockquote></li>
+    		<li><blockquote><a href="#qnjz">20.取逆矩阵</a></blockquote></li>
+    		<li><blockquote><a href="#jzfz">21.复制</a></blockquote></li>
+    		<li><blockquote><a href="#jzsfxt">22.是否相同</a></blockquote></li>
+    		<li><blockquote><a href="#zwdbjxhjg">23.置为多边形转换结果</a></blockquote></li>
+    		<li><blockquote><a href="#zwxcjg">24.置为相乘结果</a></blockquote></li>
+    		<li><blockquote><a href="#zwjxzhjg">25.置为矩形转换结果</a></blockquote></li>
+    		<li><blockquote><a href="#zjzsj">26.置矩阵数据</a></blockquote></li>
+    		<li><blockquote><a href="#jzzhbj">27.转换半径</a></blockquote></li>
+    		<li><blockquote><a href="#jzzhzb">28.转换坐标</a></blockquote></li>
+			<li><blockquote><a href="#jzzhzbsz">29.转换坐标数组</a></blockquote></li>
+			<li><blockquote><a href="#zhslsz">30.转换矢量数组</a></blockquote></li>
+			<li><blockquote><a href="#jzzhjx">31.转换矩形</a></blockquote></li>
+			<li><blockquote><a href="#jzjhjx2">32.转换矩形2</a></blockquote></li>
+			<li><blockquote><a href="#jzcz">33.重置</a></blockquote></li>
+			<li><blockquote><a href="#bdzjzbx">34.不导致矩形变形</a></blockquote></li>
+			<li><blockquote><a href="#wdwjzd">35.为单位矩阵（读）</a></blockquote></li>
+		</ol>
+		
+	</ol>
+</ul>
+</div>	
+<p align="left">
+<h2>矩阵类实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+  	<p align="left">本类的主要作用就是用来进行坐标转换。</p>
+  	<p align="left">我们在<b>“画板类”</b>中也运用了一些矩阵演示，不过用的并不是本类。</p>
+  	<p align="left">虽然不是用的本类进行转换，但是也大同小异。</p>
+  	<p align="left">另外我们在<a href="#jzhwt"><b>“矩阵画位图”</b></a>方法中，运用了<b>“矩阵类”</b>中的<b>“乘于平移矩阵”</b>方法。</p>
+  	<p align="left">图内关于矩阵的说明，大家可以简单了解一下，实在看不懂，那么就直接看本类中的实际例子。</p>
+	<p align="left">或者参考<b>“画板类”</b>中几个关于矩阵的方法。</p>
+	<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+	<p align="left"><img border="0" src="hb_images/433.png" >
+</blockquote>	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+		<a name="jzjlsfjz"></a>
+	<a name="jzjlxzjz"></a>
+	<a name="jzjlpyjz"></a>
+	<a name="jzjlcqjz"></a>
+	<font style="font-size: 12pt; font-weight:700">● 建立缩放矩阵</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 建立旋转矩阵</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 建立平移矩阵</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 建立错切矩阵</font><br/>
+<p align="left">&nbsp;</p>
+	
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">以上方法都是建立对应的<b>“矩阵对象”</b>，建立矩阵并不会进行乘法运算，而是直接建立当前矩阵。</p>
+	<p align="left"><b>“多次建立”</b>对应的矩阵也只会以<b>“最后一次”</b>建立的矩阵为准。</p>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">此处讲解<b>“乘于错切矩阵”</b>，其它矩阵的效果，可跳转至<a href="#cycqjz"><b>“画板类.乘于XX矩阵”</b></a>查看。</p>
+	<p align="left"><b>“建立错切矩阵”</b>的<b>“错切因子”</b>依然是切斜角度<b>“tan值”</b>。</p>
+	<p align="left">可参考<a href="#cycqjz"><b>“画板类.乘于错切矩阵”</b></a>中的相关解释。</p>
+	<p align="left"><img border="0" src="hb_images/434.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">可以看到上面依旧是建立位图那一套方法。</p>
+	<p align="left">随后定义<b>“矩阵类”</b>变量，调用本方法<b>“建立错切矩阵”</b>。</p>
+	<p align="left">参数也可以使用<b>“求正切(3.14/4)”</b>，同样也表示倾斜45度。</p>
+	<p align="left">最后执行<b>“矩阵画位图”</b>方法绘制位图对象。</p>
+	<p align="left"><img border="0" src="hb_images/435.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终的结果就是，导入的图片切斜了45度。</p>
+	<p align="left"><img border="0" src="hb_images/436.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jzjlxzjz3"></a>
+	<font style="font-size: 12pt; font-weight:700">● 建立旋转矩阵3</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法与<b>“建立旋转矩阵”</b>的区别，是通过<b>“正弦值”</b>和<b>“余弦值”</b>进行旋转。</p>
+	<p align="left"><img border="0" src="hb_images/439.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在<b>“建立XX矩阵”</b>代码的基础上进行简单修改即可。</p>
+	<p align="left">需要增加<b>“两个小数”</b>变量。</p>
+	<p align="left">分别调用<b>“求正弦”</b>和<b>“求余弦”</b>方法，赋值给<b>“正弦”</b>和<b>“余弦”</b>变量</p>
+	<p align="left">方法内的公式的目的，是将<b>“角度值”</b>转换为<b>“弧度值”</b>，通过<b>“弧度值”</b>才可以进行求正弦余弦，</p>
+	<p align="left">公式中<b>“45”</b>代表旋转角度，想要旋转多少度，公式内就修改成多少度。</p>
+	<p align="left"><img border="0" src="hb_images/440.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="hb_images/441.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+	<a name="jzjlxzjz2"></a>
+	<a name="jzjlsfjz2"></a>
+	<a name="jzjlcqjz2"></a>
+	<font style="font-size: 12pt; font-weight:700">● 建立旋转矩阵2</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 建立缩放矩阵2</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 建立错切矩阵2</font><br/>
+	<a name="jhlxzjz4"></a>
+	<font style="font-size: 12pt; font-weight:700">● 建立旋转矩阵4</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">以上的四个<b>“建立XX矩阵”</b>，都如下图所示的，会增加两个参数。</p>
+	<p align="left">分别用来定义<b>“中心横坐标”</b>和<b>“中心纵坐标”</b>。</p>
+	<p align="left">大家可以自己填写<b>“中心横纵坐标”</b>参数，自行查看效果，此处不再详细介绍。</p>
+	<p align="left">代码编写参考上面的建立方法。</p>
+	<p align="left"><img border="0" src="hb_images/437.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+	   <a name="jzcypyjz"></a>
+	<a name="jzcysfjz"></a>
+	<a name="jzcyxzjz"></a>
+	<a name="jzcycqjz"></a>
+	<font style="font-size: 12pt; font-weight:700">● 乘于平移矩阵</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 乘于缩放矩阵</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 乘于旋转矩阵</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 乘于错切矩阵</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">以上四个方法与<b>“建立矩阵”</b>不同之处在于，以上方法都会进行一次乘法运算（知道即可，无需深入了解）。
+		</p>
+	<p align="left">除此之外，本方法可连续使用多个，以达到多次<b>“旋转或平移”</b>的目的。</p>
+	<p align="left">以上方法可参考<a href="#cycqjz"><b>“画板类.乘于XX矩阵”</b></a>，此处不再进行演示。</p>
+	<p align="left">代码编写可参考，上面的建立矩阵方法。</p>
+</blockquote>
+
+	
+
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jzcycqjz2"></a>
+		<a name="jzcysfjz2"></a>
+	<a name="jzcyxzjz2"></a>
+	<font style="font-size: 12pt; font-weight:700">● 乘于缩放矩阵2</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 乘于旋转矩阵2</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 乘于错切矩阵2</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">以上三个<b>“乘于XX矩阵2”</b>的方法，和<b>“建立XX矩阵2”</b>相同，都增加了<b>“两个中心坐标”</b>参数。</p>
+	<p align="left">此处不再详细介绍，大家可以自己填写相关参数，演示效果。</p>
+	<p align="left">代码编写可参考，上面的建立矩阵方法。</p>
+	<p align="left"><img border="0" src="hb_images/438.png" ></p>
+</blockquote>	
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jccyjz"></a>
+	<font style="font-size: 12pt; font-weight:700">● 乘于矩阵</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法也进行了乘法运算，将<b>“参数1”</b>的矩阵和<b>“参数2”</b>的矩阵进行计算，最后结果返回给<b>“参数1”</b>的矩阵</p>
+	<p align="left">简单来说，就是将两种矩阵结合起来。</p>
+	<p align="left">比如说，你想让一个图形进行<b>“平移旋转”</b>，这个时候可以使用本方法操作。</p>
+	<p align="left"><img border="0" src="hb_images/442.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">还是建立矩阵的那一套代码，这里需要定义<b>“两个矩阵”</b>变量。</p>
+	<p align="left">通过<b>“矩阵”</b>建立一个平移矩阵，<b>“矩阵2”</b>建立一个旋转。</p>
+	<p align="left">随后采用动态调用格式，通过<b>“矩阵”</b>变量调用<b>“乘于矩阵”</b>方法，参数内填写<b>“矩阵2”</b>。</p>
+	<p align="left">最后调用<b>“矩阵画位图”</b>进行位图绘制即可。</p>
+	<p align="left"><img border="0" src="hb_images/443.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终的结果，绘制的图片首先进行了<b>“平移”</b>，随后会进行<b>“90度”</b>旋转。</p>
+	<p align="left">当然整个过程是不可见的，会直接显示<b>“平移旋转”</b>后的结果。</p>
+	<p align="left"><img border="0" src="hb_images/444.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="qjzsj"></a>
+	<font style="font-size: 12pt; font-weight:700">● 取矩阵数据</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用就是用来获取矩阵的<b>“9个分量值”</b>。</p>
+	<p align="left">知道即可，本方法无需深入了解。</p>
+	<p align="left"><img border="0" src="hb_images/445.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="qnjz"></a>
+	<font style="font-size: 12pt; font-weight:700">● 取逆矩阵</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用就是字面上的意思。</p>
+		<p align="left">取当前矩阵的逆向矩阵，如果存在逆向矩阵返回<b>“真”</b>，并且将<b>“逆向矩阵”</b>赋值给<b>“参数2”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/446.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">例如：我们建立平移矩阵，参数填写<b>“负值”</b>。</p>
+	<p align="left">然后用<b>“取逆矩阵”</b>方法取出逆矩阵。</p>
+	<p align="left">最后绘制<b>“逆向矩阵”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/447.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终的结果你会发现，即使是填写<b>“负值”</b>也正常绘制。</p>
+	<p align="left">这就是<b>“逆向矩阵”</b>的功劳。</p>
+	<p align="left">其它矩阵的逆向，大家可自行测试。</p>
+	<p align="left"><img border="0" src="hb_images/448.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jzfz"></a>
+	<font style="font-size: 12pt; font-weight:700">● 复制</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，就是将指定矩阵的内容赋值到当前矩阵内。</p>
+	<p align="left">调用方式：<b>“矩阵类.复制()”</b>，本方法不进行详细介绍。</p>
+	<p align="left"><img border="0" src="hb_images/449.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jzsfxt"></a>
+	<font style="font-size: 12pt; font-weight:700">● 是否相同</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，本方法就是用来判断两个矩阵是否相同。</p>
+	<p align="left">相同返回<b>“真”</b>，不相同返回<b>“假”</b>。</p>
+	<p align="left">调用方式：<b>“矩阵类.是否相同()”</b>，本方法不进行详细介绍。</p>
+	<p align="left"><img border="0" src="hb_images/450.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="zwdbjxhjg"></a>
+	<font style="font-size: 12pt; font-weight:700">● 置为多边形转换结果</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">简单来说就是通过两个<b>“浮点小数数组”</b>指定一个<b>“源矩形”</b>和<b>“目的矩形”</b>形成一个转换矩阵。</p>
+	<p align="left"><img border="0" src="hb_images/454.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">我们需要额外定义五个变量，分别为<b>“一个矩阵”</b>，<b>“两个小数数组”</b>和<b>“两个浮点小数数组”</b></p>
+	<p align="left">小数数组内设置<b>“初始值”</b>至少八个成员，两个成员指定一个坐标。，</p>
+	<p align="left"><b>“四个坐标”</b>指定一个<b>“矩形”</b>，坐标顺序为逆时针方向。</p>
+	<p align="left">矩形坐标顺序分别为：<b>“左上角”</b>，<b>“左下角”</b>，<b>“右下角”</b>和<b>“右上角”</b>。</p>
+	<p align="left">通过<b>“浮点小数数组.从小数数组创建”</b>方法，创建浮点小数后，赋值给对应的变量。</p>
+	<p align="left">然后就可以调用本方法进行转换，最后绘制位图。</p>
+	<p align="left"><img border="0" src="hb_images/455.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="hb_images/456.png" ></p>
+</blockquote>
+	
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="zwxcjg"></a>
+	<font style="font-size: 12pt; font-weight:700">● 置为相乘结果</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“乘于矩阵”</b>类似，不同之处在于，本方法有三个参数。</p>
+	<p align="left"><b>“参数2”</b>和<b>“参数3”</b>相乘（也就是相结合），最后结果赋值给<b>“参数1”</b>。</p>
+	<p align="left">另外注意：本方法首先对<b>“参数3”</b>设置的矩阵进行转换，然后才是<b>“参数2”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/451.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">本方法这里需要定义三个<b>“矩阵类”</b>变量。</p>
+	<p align="left"><b>“矩阵2”</b>和<b>“矩阵3”</b>分贝建立<b>“平移和旋转”</b>矩阵。</p>
+	<p align="left">然后调用<b>“本方法”</b>相乘，分别填入对应参数。</p>
+	<p align="left">在本方法内，首先会执行<b>“旋转45度”</b>操作，然后在进行<b>“平移”</b>。</p>
+	<p align="left">最后调用<b>“矩阵画位图”</b>绘制<b>“矩阵1”</b>即可。</p>
+	<p align="left"><img border="0" src="hb_images/452.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="hb_images/453.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="zwjxzhjg"></a>
+	<font style="font-size: 12pt; font-weight:700">● 置为矩形转换结果</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法与<b>“置为多边形转换结果”</b>类似。</p>
+	<p align="left">不同之处是本方法是通过<b>“小数矩形类”</b>来定义两个矩形。</p>
+	<p align="left">并且增加了<b>“矩阵矩形转换方式”</b>，本方式调用方法：<b>“矩阵矩形转换方式.XXX”</b>。</p>
+	<p align="left"><b>“小数矩形类”</b>在本教程中也多次使用，此处不再进行演示，大家自行测试。</p>
+	<p align="left"><img border="0" src="hb_images/457.png" ></p>
+</blockquote>
+
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="zjzsj"></a>
+	<font style="font-size: 12pt; font-weight:700">● 置矩阵数据</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用就是用来设置矩阵的<b>“9个分量值”</b>。</p>
+	<p align="left">知道即可无需深入了解，因此本方法不再演示。</p>
+	<p align="left"><img border="0" src="hb_images/458.png" ></p>
+</blockquote>
+	
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jzzhbj"></a>
+	<font style="font-size: 12pt; font-weight:700">● 转换半径</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的主要作用就是用来计算矩阵转换后的<b>“平均半径”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/459.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">建立一个缩放矩阵，参数填写<b>“0.5和1”</b>，表示横向缩放一倍，纵向不变。</p>
+	<p align="left">随后调用本方法转换<b>“半径100”</b>，用<b>“提示框”</b>弹出结果。</p>
+	<p align="left"><img border="0" src="hb_images/460.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终缩放后的平均半径为<b>“70.71”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/461.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jzzhzb"></a>
+	<font style="font-size: 12pt; font-weight:700">● 转换坐标</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“转换半径”</b>有些类似，不同之处本方法转换的<b>“坐标值”</b>值为精准值。</p>
+	
+	<p align="left"><img border="0" src="hb_images/462.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	
+	<p align="left">我们直接在<b>“转换半径”</b>的代码上稍作修改，增加一个<b>“坐标类”</b>设置横纵坐标为<b>“100”</b>。</p>
+	<p align="left">随后调用<b>“转换坐标”</b>方法转换本坐标，最后利用<b>“横纵坐标”</b>读属性，将转换后的坐标值读取出来。</p>
+	<p align="left"><img border="0" src="hb_images/463.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终结果，绘制的图片缩小了一半，坐标也跟着缩小了一半。</p>
+	<p align="left"><img border="0" src="hb_images/464.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jzzhzbsz"></a>
+	<font style="font-size: 12pt; font-weight:700">● 转换坐标数组</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“转换坐标”</b>不同之处在于，本方法可以一次性转换一堆坐标值。</p>
+	<p align="left">填写的<b>“浮点小数数组”</b>成员数必须为偶数，最终的转换结果也会返回当前数组内。</p>
+	<p align="left"><b>“浮点小数数组”</b>的创建可参考<a href="#zwdbjxhjg"><b>“置为多边形转换结果”</b></a>。</p>
+	
+	<p align="left"><b>“浮点小数数组”</b>取成员的办法，可参考<a href="#qwbzfkd"><b>“取文本字符宽度”</b></a>方法。</p>
+	<p align="left"><img border="0" src="hb_images/465.png" ></p>
+</blockquote>
+
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="zhslsz"></a>
+	<font style="font-size: 12pt; font-weight:700">● 转换矢量数组</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“转换坐标数组”</b>类似，因此不在详细介绍。</p>
+	<p align="left"><img border="0" src="hb_images/466.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jzzhjx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 转换矩形</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法简单来说，就是判断当前矩阵类进行转换后是否为<b>“矩形”</b>。</p>
+	<p align="left">生成的四个坐标值，将会赋值给<b>“参数2小数矩形类”</b>。</p>
+	<p align="left">通过<b>“小数矩形类”</b>的<b>“上下左右”</b>四个属性可以获取矩形边界坐标。</p>
+	<p align="left">本方法返回值为<b>“真”</b>，表示最终结果为一个矩形，相反返回假。</p>
+	<p align="left"><img border="0" src="hb_images/467.png" ></p>
+</blockquote>
+
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jzjhjx2"></a>
+	<font style="font-size: 12pt; font-weight:700">● 转换矩形2</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“转换矩形”</b>的区别在于，本方法的最终结果会赋值给<b>“参数3”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/468.png" ></p>
+</blockquote>
+
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jzcz"></a>
+	<font style="font-size: 12pt; font-weight:700">● 重置</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用可将当前矩阵重置为<b>“单位矩阵”</b>。</p>
+	<p align="left">单位矩阵特性：任何矩阵与单位矩阵相乘都等于本身。</p>
+	<p align="left">知道即可，无需深入了解。</p>
+	<p align="left"><img border="0" src="hb_images/469.png" ></p>
+</blockquote>
+
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="bdzjzbx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 不导致矩形变形</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">简单来说，本方法的作用就是判断转换后是否还是矩形。</p>
+	<p align="left"><img border="0" src="hb_images/470.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="wdwjzd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 为单位矩阵（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本读属性的作用就是用来判断当前矩阵是否为<b>“单位矩阵”</b>。</p>
+	<p align="left">如果是<b>“返回真”</b>，相反返回<b>“假”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/471.png" ></p>
+</blockquote>
+	
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

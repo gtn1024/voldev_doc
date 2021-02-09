@@ -1,0 +1,1684 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+	<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+</head>
+
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+			<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.文本型类<span>(可收缩)</span></h6></li>
+		<ol id="new1">
+         	<li><blockquote><a href="#czzwb">1.查找子文本</a></blockquote></li>
+			<li><blockquote><a href="#czzf">2.查找字符</a></blockquote></li>
+			<li><blockquote><a href="#dzzwb">3.倒找子文本</a></blockquote></li>
+            <li><blockquote><a href="#dzzwb2">4.倒找子文本2</a></blockquote></li>
+    		<li><blockquote><a href="#dzzf">5.倒找字符</a></blockquote></li>
+    		<li><blockquote><a href="#dzzf2">6.倒找字符2</a></blockquote></li>
+    		<li><blockquote><a href="#dwb">7.到文本</a></blockquote></li>
+    		<li><blockquote><a href="#fzwbdsz">8.复制文本到数组</a></blockquote></li>
+    		<li><blockquote><a href="#gshwb">9.格式化文本</a></blockquote></li>
+    		<li><blockquote><a href="#qwbcd">10.取文本长度</a></blockquote></li>
+            <li><blockquote><a href="#qwbzf">11.取文本字符</a></blockquote></li>
+            <li><blockquote><a href="#qzwb">12.取子文本</a></blockquote></li>
+            <li><blockquote><a href="#scswkb">13.删除首尾空白</a></blockquote></li>
+            <li><blockquote><a href="#wbbh">14.文本包含</a></blockquote></li>
+            <li><blockquote><a href="#wbbj">15.文本比较</a></blockquote></li>
+            <li><blockquote><a href="#wbddx">16.文本到大写</a></blockquote></li>
+            <li><blockquote><a href="#wbddzs">17.文本到短整数</a></blockquote></li>
+            <li><blockquote><a href="#wbdljz">18.文本到逻辑值</a></blockquote></li>
+            <li><blockquote><a href="#wbdxs">19.文本到小数</a></blockquote></li>
+            <li><blockquote><a href="#wbdxx">20.文本到小写</a></blockquote></li>
+            <li><blockquote><a href="#wbdczs">21.文本到长整数</a></blockquote></li>
+            <li><blockquote><a href="#wbdzs">22.文本到整数</a></blockquote></li>
+            <li><blockquote><a href="#wbdzfc">23.文本到字符串</a></blockquote></li>
+            <li><blockquote><a href="#wbdzfsz">24.文本到字符数组</a></blockquote></li>
+            <li><blockquote><a href="#wbdzj">25.文本到字节</a></blockquote></li>
+            <li><blockquote><a href="#wbdzjsz">26.文本到字节数组</a></blockquote></li>
+            <li><blockquote><a href="#wbfz">27.文本复制</a></blockquote></li>
+            <li><blockquote><a href="#wbfz2">28.文本复制2</a></blockquote></li>
+            <li><blockquote><a href="#wbfz3">29.文本复制3</a></blockquote></li>
+            <li><blockquote><a href="#wblj">30.文本连接</a></blockquote></li>
+            <li><blockquote><a href="#wbsfwk">31.文本是否为空</a></blockquote></li>
+            <li><blockquote><a href="#wbxd">32.文本相等</a></blockquote></li>
+            <li><blockquote><a href="#wbxd2">33.文本相等2</a></blockquote></li>
+            <li><blockquote><a href="#wbzfth">34.文本字符替换</a></blockquote></li>
+            <li><blockquote><a href="#yzdwbjw">35.以指定文本结尾</a></blockquote></li>
+            <li><blockquote><a href="#yzdwbks">36.以指定文本开始</a></blockquote></li>
+           <li><blockquote><a href="#zzwbfg">37.正则文本分割</a></blockquote></li>
+            <li><blockquote><a href="#zzwbpp">38.正则文本匹配</a></blockquote></li>
+            <li><blockquote><a href="#zzwbth">39.正则文本替换</a></blockquote></li>
+            <li><blockquote><a href="#zwbbj">40.子文本比较</a></blockquote></li>
+            <li><blockquote><a href="#zwbth">41.子文本替换</a></blockquote></li>
+            <li><blockquote><a href="#zfszdwb">42.字符数组到文本</a></blockquote></li>
+            <li><blockquote><a href="#zfszdwb2">43.字符数组到文本2</a></blockquote></li>
+            <li><blockquote><a href="#zjszdwb">44.字节数组到文本</a></blockquote></li>
+            <li><blockquote><a href="#zjszdwb2">45.字节数组到文本2</a></blockquote></li>
+		</ol>
+
+	</ol>
+</ul>
+</div>
+
+
+<p align="left">
+<p align="left">
+<h2>文本型类实例讲解</h2>
+<p><b>作者：创世魂</b></p>
+<!--<p align="left">[<a href="object.htm">上一章</a>] [<a href="homeland.htm">下一章</a>]</p>-->
+<p align="left">&nbsp;</p>
+		<font style="font-size: 12pt; font-weight:700">● 辅助说明</font><br/>
+     	<blockquote>
+		<p align="left"><font color="#F70408">注意：本类位于<strong>“Java基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+	</blockquote>	
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 进行文本操作之前，我们需要设计一个APP界面</font><br/><br/>
+<p align="left">&nbsp;</p>
+<p align="left">右键空白区域，选择&quot;<b>设计启动类的界面布局&quot;</b></p>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="images/sj1.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">以下是<b>&quot;启动类&quot;</b>的界面布局。</p>
+<p align="left">选中<b>&quot;编辑框&quot;</b>拖动到设计器内，并且在右侧修改<b>&quot;组件宽度类型&quot;</b>为<b>&quot;匹配父组件宽度&quot;</b></p>
+<p align="left">设置之后，编辑框的宽度就和APP窗口宽度一样了。</p>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img src="images/sj2.png" border="0" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">选中<b>&quot;编辑框&quot;</b>按<b>&quot;Ctrl+C&quot;</b>复制组件，复制后按<b>&quot;Ctrl+Shift+V&quot;</b>粘贴到后方，达到下图效果。</p>
+<p align="left">拖动<b>&quot;按钮&quot;</b>，修改<b>&quot;文本&quot;</b>，最后点击<b>&quot;确定&quot;</b>保存你的布局。</p>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img src="images/sj3.png" border="0" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">点击添加后会自动生成如下代码，我们右键选择按钮<b>&quot;添加事件接收方法&quot;</b>。</p>
+
+  <p align="left"><img border="0" src="images/sj4.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">我们在弹出的窗口中，选择<b>&quot;按钮_被单击&quot;</b>，点击<b>&quot;添加&quot;</b>。</p>
+  <p align="left"><img border="0" src="images/sj5.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">添加我们就可以对按钮进行<b>&quot;被单击&quot;</b>操作。</p>
+  <p align="left"><img border="0" src="images/sj6.png"></p>
+<p align="left">&nbsp;</p>
+</blockquote>
+
+
+
+<font style="font-size: 12pt; font-weight:700">● 文本型类总述</font><br/>
+<br/>
+<blockquote>
+<p align="left"><b>本类</b>所需界面如下图，APP界面从上到下依次是：  </p>
+<blockquote>
+
+	<p align="left"><b>编辑框1</b>、<b>编辑框2</b>、<b>编辑框3</b>和<b>按钮1</b>。</p>
+
+</blockquote>
+
+	<blockquote>
+  		<p align="left"><img border="0" src="images/jm.png"></p>
+	</blockquote>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+	<blockquote>
+  		<p align="left"><b>本类</b>需要用到的操作：查看<b>"帮助内容"</b>。</p>
+	</blockquote>
+    
+<blockquote>
+	<blockquote>
+	  <p align="left">例如：<b>"查找子文本"</b>方法，右键<b>该命令</b>选择<b>"帮助内容"</b>，就可以看到该方法<b>帮助文档</b>。</p>
+  	</blockquote>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="images/wb1.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700" color="#FF0000">● 注意事项</font><br/><br/>
+<blockquote>
+  <p align="left"> <font color="#FF0000"> <b>字符：</b></font>每一个<b>"汉字"</b>，<b>"字母"</b>，<b>"数字"</b>均代表一个<b>"字符"</b>（以后关于字符方面不再赘述）。
+    
+  </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="czzwb"></a>
+<font style="font-size: 12pt; font-weight:700">● 查找子文本方法</font><br/><br/>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开<b>帮助内容</b>可以看到<b>"查找子文本"</b>有<b>"三个参数"</b>和一个<b>"整数"</b>返回值。</p>
+
+  <p align="left"><img border="0" src="images/wb2.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义一个变量（名称随意）来接收<b>"查找子文本"</b>的返回值。</p>
+<p align="left">参数1：填写<b>"编辑框1.内容"</b>。</p>
+<p align="left">参数2：填写<b>"编辑框2.内容"</b>。</p>
+<p align="left">参数3：有<b>默认值0</b>，所以可以省略不写。</p>
+<p align="left">最后把结果<b>赋值</b>给<b>编辑框3的内容</b>。</p>
+  <p align="left"><img border="0" src="images/wb3.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">选择菜单<b>"调试--&gt;运行"</b>,执行后效果如下。</p>
+<p align="left">备注：因<b>查找子文本</b>是从<b>0</b>开始查找，所以查找<b>"发"</b>返回<b>"5"</b>。</p>
+<p align="left">&nbsp;</p>
+
+
+  <p align="left"><img border="0" src="images/y1.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="dzzwb"></a>
+<font style="font-size: 12pt; font-weight:700">● 倒找子文本方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容可以看到<b>"倒找子文本"</b>方法有<b>"两个"</b>参数和<b>"一个"</b>整数返回值。</p>
+</blockquote>
+<blockquote>
+  <p align="left"><img border="0" src="images/wb4.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">它与<b>查找文本</b>使用方法基本一致，<b>不同</b>之处就是，它是从<b>文本最后向前</b>查找，并且它只有<b>两个</b>参数。</p>
+
+  <p align="left"><img border="0" src="images/wb5.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">选择菜单<b>"调试--&gt;运行"</b>,执行后效果如下。</p>
+<p align="left"><b>编辑框1</b>有两个<b>"火"</b>，执行<b>"倒找子文本"</b>后，会返回最后一次出现的<b>"火"</b>所在的位置。</p>
+
+  <p align="left"><img border="0" src="images/y2.png"></p>
+  
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="dzzwb2"></a>
+<font style="font-size: 12pt; font-weight:700">● 倒找子文本2方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+ <p align="left"><img border="0" src="images/wb6.png"></p>
+ 
+<p align="left">&nbsp;</p>
+
+<p align="left">打开它的帮助内容，可以看到它比<b>倒找子文本</b>方法多了一个<b>起始查找位置</b>参数。</p>
+<p align="left">直接在<b>上一个例子</b>中把<b>倒找子文本</b>变成<b>"倒找子文本2"</b>并且增加一个<b>参数三</b>，并且填写<b>"5"</b>。</p>
+<p align="left"><b>备注：</b>参数三请根据您的实际需求填写。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="images/wb7.png"></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">运行结果如下图：</p>
+<blockquote>
+
+<p align="left">执行<b>"倒找子文本2"</b>虽然<b>编辑框1</b>内有两个<b>"山"</b>，但是我们上图指定了<b>起始查找位置</b>所以这里返回<b>"1"</b></p>
+
+
+  <p align="left"><img src="images/y3.png" border="0"></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="czzf"></a>
+<font style="font-size: 12pt; font-weight:700">● 查找字符方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开<b>"查找字符"</b>帮助内容，我们可以看到它和<b>查找文本</b>一样有<b>"三个参数"</b>和<b>"整数返回值"</b>，唯一不同支持就是它查找的是<b>字符</b>数据。</p>
+
+  <p align="left"><img border="0" src="images/wb8.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">1、我们需要定义<b>"三个"</b>变量。</p>
+<p align="left">2、首先将<b>编辑框2</b>的内容转换成<b>"字符串类"</b>。</p>
+<p align="left">3、用<b>"字符串类"</b>取字符方法，将<b>"字符串类"</b>转<b>"字符"</b>（参数2设置0即可）。</p>
+<p align="left">4、最后<b>查找字符</b>，将定义的<b>"字符变量"</b>输入到<b>参数二</b>，参数一自然还是<b>编辑框1.内容</b>，参数三因为有<b>默认0</b>，所以省略即可<b>（</b>实际操作中，请根据您的实际需求填写参数三<b>）</b>。</p>
+<p align="left">5、最后转换<b>返回值</b>为<b>文本型</b>赋值给<b>编辑框3</b>显示。</p>
+<p align="left"><b>注意红圈：</b>字符串变量一定要设置<b>"参考"</b>。</p>
+
+  <p align="left"><img border="0" src="images/wb9.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">运行结果如下图：</p>
+<blockquote>
+
+<p align="left">执行<b>"查找字符"</b>虽然<b>编辑框1</b>内有两个<b>"山"</b>，但是这里只会返回第一个出现的<b>"山"</b>。</p>
+  <p align="left"><img src="images/y3.png" border="0"></p>
+</blockquote>
+
+
+
+
+	<p align="left">&nbsp;</p>
+    <a name="dzzf"></a>
+<font style="font-size: 12pt; font-weight:700">● 倒找字符方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助可以看到它与<b>倒找文本</b>方法基本一致，唯一的区别就是它欲查找的是<b>字符</b>。</p>
+
+  <p align="left"><img border="0" src="images/wb10.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">可以利用和<b>"查找字符"</b>一样的方法，来进行对<b>编辑框2的内容</b>进行转换成<b>"字符"</b>。</p>
+<p align="left">最后将返回结果赋值给<b>编辑框3</b>。</p>
+  <p align="left"><img border="0" src="images/wb11.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+  <p align="left"><b>编辑框1</b>有两个<b>"火"</b>，执行<b>"倒找字符"</b>后，会返回最后一次出现的<b>"火"</b>所在的位置。</p>
+
+  <p align="left"><img border="0" src="images/y2.png"></p>
+  
+</blockquote>
+
+
+
+	<p align="left">&nbsp;</p>
+    <a name="dzzf2"></a>
+<font style="font-size: 12pt; font-weight:700">● 倒找字符2方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="images/wb12.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+<blockquote>
+<p align="left">打开帮助可以看到它仅仅是比<b>"倒找字符"</b>多了一个参数<b>"起始查找位置"</b>。</p>
+<p align="left">所以只需要在<b>"倒找字符"</b>代码的基础上，变成<b>"倒找字符2"</b>并且增加一个<b>参数三</b>，内容可以填写<b>"5"</b>（根据实际需求填写需要的数字）。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="images/wb13.png"></p>
+</blockquote>
+
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">运行结果如下图：</p>
+<blockquote>
+
+<p align="left">执行<b>"倒找字符2"</b>虽然<b>编辑框1</b>内有两个<b>"山"</b>，但是我们上图指定了<b>起始查找位置</b>所以这里返回<b>"1"</b></p>
+
+  <p align="left"><img src="images/y3.png" border="0"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="dwb"></a>
+<font style="font-size: 12pt; font-weight:700">● 到文本方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开<b>"到文本"</b>帮助内容，可以看到<b>"到文本"</b>有一个<b>"所有类型"</b>参数和一个<b>"文本"</b>返回值。</p>
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="images/wb14.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">1、定义<b>两个</b>变量，一个为<b>小数</b>类型，一个为<b>文本型</b>，并且给<b>小数</b>类型指定一个<b>"初始值1.2"</b>。</p>
+<p align="left">2、将装换后的数据用<b>"提示信息框"</b>弹出。</p>
+<p align="left"><b>备注：</b>并非所有的<b>数据类型</b>都能转换成文本型。</p>
+<p align="left">例如：<b>"数组"</b>就<b>"不可以转换"</b>文本型。</p>
+
+
+  <p align="left"><img border="0" src="images/wb15.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">编译运行后效果如下图，成功将<b>"小数1.2"</b>转换<b>"文本型"</b>弹出。</p>
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="images/y4.png"></p>
+</blockquote>
+
+
+
+
+<p align="left">&nbsp;</p>
+<a name="fzwbdsz"></a>
+<font style="font-size: 12pt; font-weight:700">● 复制文本到数组方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开<b>"复制文本到数组"</b>帮助内容，可以看到它有<b>"五个"</b>参数。</p>
+<p align="left"><b>通俗理解就是：</b>从<b>文本</b>中读取指定索引<b>字符</b>，替换到<b>字符数组</b>中。</p>
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="images/wb16.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left"><b>本方法</b>因参数较多，所以需要在原界面的基础上增加<b>两个编辑框</b>。</p>
+
+<blockquote>
+<p align="left">APP界面从上到下依次是： </p>
+  <p align="left"><b>编辑框1、编辑框2、编辑框3、编辑框4、编辑框5</b>和<b>按钮1</b>。</p>
+</blockquote>
+<blockquote>
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="images/jm2.png"></p>
+</blockquote>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">1、定义<b>四个</b>变量。
+<blockquote> 注意：<b>字符</b>书写方法，每一个字符用<b>单引号</b>引起来，<b>字符数组</b>就是将一个个<b>字符</b>放在一起，并且用<b>英文逗号</b>隔开，最后用<b>花括号</b>括起来。
+</blockquote>
+
+<p align="left">2、将<b>编辑框内容</b>依次转换成<b>对应参数</b>，并将参数依次<b>写入方法</b>内。</p>
+<p align="left">3、最后利用<b>循环</b>语句，把定义的<b>字符数组</b>输出到<b>编辑框5</b>，就可以得到<b>最终结果</b>。</p>
+
+
+  <p align="left"><img src="images/wb17.png" border="0"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行如下图：</p>
+<blockquote>
+<p align="left">1、要操作的文本输入<b>"12345678"</b>。</p>
+<p align="left">2、起始复制位置输入<b>"2"</b>。</p>
+<p align="left">3、复制位置我们输入<b>"3"</b>（这样就会将<b>345字符</b>取出）。</p>
+<p align="left">4、复制到字符位置5，从数组的<b>第5位</b>开始替换（位置从0计算）。</p>
+<p align="left">5、执行之后，我们定义的字符数组<b>"火山软件开发平台"</b>就会变成<b>"火山软件开345"</b>。</p>
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img src="images/y5.png" border="0"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="gshwb"></a>
+<font style="font-size: 12pt; font-weight:700">● 格式化文本方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开<b>"格式化文本"</b>帮助内容，可以看到它有<b>"两个"</b>参数和一个<b>文本返回值</b>。</p>
+<p align="left"><b>参数1：</b>格式文本，就就是一串文本中带有下图<b>黄框</b>内的符号。</p>
+<blockquote>
+	<p align="left"><b>例如：</b>"火山<b>%s</b>软件<b>%s</b>开发平台"（这句话就是格式文本）。</p>
+</blockquote>
+
+<p align="left"><b>参数2：</b>如果<b>格式文本</b>中的符号是<b>文本型</b>，这里<b>替换数据</b>也必须填写<b>文本数据</b>。</p>
+<blockquote>
+	<p align="left"><b>备注：</b>参数二可以自由扩展更多参数。</p>
+</blockquote>
+
+<p align="left"><img border="0" src="images/wb18.png"></p>
+
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left"><b>参数一：</b>赋值<b>"编辑框1"</b>的内容。</p>
+<p align="left"><b>参数二：</b>赋值<b>"编辑框2"</b>的内容。</p>
+<p align="left"><b>自由扩展的参数三：</b>赋值<b>"编辑框3"</b>的内容。</p>
+<p align="left">最后将结果返回给<b>"编辑框4"</b></p>
+
+  <p align="left"><img border="0" src="images/wb19.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">编译运行后效果如下图，成功将<b>"两个%s"</b>转换成对应的<b>"文本数据"</b>弹出。</p>
+
+  <p align="left"><img border="0" src="images/y6.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="qwbcd"></a>
+<font style="font-size: 12pt; font-weight:700">● 取文本长度方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到<b>"取文本长度"</b>有一个<b>"文本"</b>参数和一个<b>"整数"</b>返回值。</p>
+
+  <p align="left"><img border="0" src="images/wb20.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图： </p>
+<blockquote>
+<p align="left">1、定义<b>一个</b>变量，存储<b>文本长度</b>。</p>
+<p align="left">2、将<b>"编辑框1"</b>的内容放入参数，并且将该方法赋值给<b>文本长度</b>变量。</p>
+<p align="left"><b>备注：</b>所有<b>汉字，字母，数字，符号</b>都算<b>一个</b>长度。</p>
+
+
+  <p align="left"><img border="0" src="images/wb21.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">编译运行后效果如下图，可以看到<b>每一个字符</b>都算<b>一个长度</b>。</p>
+
+  <p align="left"><img border="0" src="images/y7.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="qwbzf"></a>
+<font style="font-size: 12pt; font-weight:700">● 取文本字符方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到<b>"取文本字符"</b>有<b>两个参数</b>和一个<b>字符返回值</b>。</p>
+
+  <p align="left"><img border="0" src="images/wb22.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">1、定义<b>一个字符变量</b>。</p>
+<p align="left">2、参数一：我们放<b>编辑框1</b>的内容。</p>
+<p align="left">3、参数二：我们使用<b>"文本到整数"</b>方法，将<b>编辑框2</b>的内容转换成<b>整数</b>。</p>
+<p align="left">因<b>"字符数据"</b>无法作为<b>"文本"</b>显示在<b>"编辑框"</b>，所以我们需要<b>"到文本"</b>方法进行转换，最后赋值给编辑框。</p>
+
+  <p align="left"><img border="0" src="images/wb23.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">编译运行后效果如下图，成功将<b>位置索引3</b>的字符取出。</p>
+  <p align="left"><img border="0" src="images/y8.png"></p>
+</blockquote>
+
+
+<a name="qzwb"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 取子文本方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到<b>"取子文本"</b>有<b>"三个"</b>参数和一个<b>"文本"</b>返回值。</p>
+
+  <p align="left"><img border="0" src="images/wb24.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+  <p align="left">参数1：直接放<b>编辑框1</b>的内容。</p>
+<p align="left">参数2：利用<b>"文本到整数"</b>方法将<b>编辑框2</b>的内容转换成<b>"起始索引位置"</b>。</p>
+<p align="left">参数3：同上操作，放转换后<b>编辑框3</b>的内容。</p>
+
+<p align="left">最后将赋值给<b>"编辑框4"</b>显示出来。</p>
+
+
+  <p align="left"><img border="0" src="images/wb25.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">编译运行后效果如下图，点击<b>"按钮1"</b>成功返回<b>指定长度</b>的文本。</p>
+  <p align="left"><img border="0" src="images/y9.png"></p>
+</blockquote>
+
+
+<a name="scswkb"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 删除首尾空白方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到<b>"删除首尾空白"</b>只有一个<b>"文本"</b>参数和一个<b>"文本"</b>返回值。</p>
+<p align="left"><b>作用：</b>删除文本<b>首部</b>和<b>尾部</b>所有的空格符。</p>
+
+  <p align="left"><img border="0" src="images/wb26.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+
+<blockquote>
+  <p align="left">直接将<b>编辑框1</b>的内容填入<b>参数1</b>，并且将<b>整个方法</b>赋值给<b>编辑框2</b>的内容。</p>
+<p align="left"><img border="0" src="images/wb27.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">运行操作后如下图所示：<b>首部空格</b>被<b>删除</b>，但是<b>中间空格</b>并<b>不会</b>被删除。</p>
+
+  <p align="left"><img border="0" src="images/y10.png"></p>
+</blockquote>
+
+<a name="wbbh"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 文本包含方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到<b>"文本包含"</b>有<b>两个</b>参数和一个<b>"逻辑返回值"</b>。</p>
+<p align="left">顾名思义，它的作用就是检查<b>参数1</b>内<b>参数2</b>是否存在。</p>
+
+  <p align="left"><img border="0" src="images/wb28.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">参数内分别填写<b>编辑框1</b>内容和<b>编辑框2</b>内容，最后给<b>逻辑变量</b>赋值。</p>
+<p align="left">然后用<b>如果</b>条件语句，判断<b>逻辑变量</b>的返回值。</p>
+<p align="left"><img border="0" src="images/wb29.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">编译运行后，输入的<b>编辑框1</b>内，<b>不包含编辑框2的内容</b>，所以弹出了<b>上图代码</b>设定好的信息框<b>"不包含"</b>。</p>
+
+  <p align="left"><img border="0" src="images/y11.png"></p>
+</blockquote>
+
+
+
+<a name="wbbj"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 文本比较方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到<b>"文本比较"</b>有<b>三个</b>参数和一个<b>"整数返回值"</b>。</p>
+<p align="left"><b>注意：</b>要注意<b>黄色框</b>内的返回值说明。</p>
+
+  <p align="left"><img border="0" src="images/wb30.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">方法参数内分别填写<b>编辑框1</b>内容和<b>编辑框2</b>内容。</p>
+<p align="left">因<b>参数三</b>有默认值<b>假</b>所以可以省略不写（具体根据实际需求填写<b>"真"或者"假"</b>）</p>
+<p align="left">创建一个<b>"比较结果"</b>变量，并给它赋值。</p>
+<p align="left">然后用<b>如果</b>条件语句，判断<b>"比较结果"</b>的返回值是否大于或小于0。</p>
+
+<p align="left"><b>注意：</b>黄色箭头的<b>"等于比较"</b>，一定要是<b>双等号</b>。</p>
+<p align="left"><img border="0" src="images/wb31.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">编译运行后，输入内容判断结果如下图。</p>
+
+  <p align="left"><img border="0" src="images/y12.png"></p>
+</blockquote>
+
+
+<a name="wbddx"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 文本到大写方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到<b>"文本到大写"</b>有<b>一个</b>参数和一个<b>"文本返回值"</b>。</p>
+<p align="left">顾名思义，它的作用就是将<b>小写字母</b>转换成<b>大写字母</b>，并且只能转换<b>"字母"</b>。</p>
+
+  <p align="left"><img border="0" src="images/wb32.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">参数内直接填写<b>"编辑框1"</b>的内容，然后赋值给<b>"编辑框2"</b>即可。</p>
+<p align="left"><img border="0" src="images/wb33.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">编译运行后效果如下：除了字母外，其它的字符不会发生变化。</p>
+
+  <p align="left"><img border="0" src="images/y13.png"></p>
+</blockquote>
+
+
+
+<a name="wbddzs"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 文本到短整数方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到<b>"文本到短整数"</b>有<b>一个文本</b>参数和一个<b>"短整数返回值"</b>。</p>
+<p align="left"><b>短整数型：</b>可容纳-32768到32767之间的数值，<b>超过</b>或者<b>低于</b>这个数值就会<b>返回0</b>。</p>
+
+  <p align="left"><img border="0" src="images/wb34.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">参数内直接填写<b>编辑框1</b>的内容，然后赋值给<b>短整数变量</b>的内容。</p>
+<p align="left">最后使用<b>到文本</b>赋值给<b>"编辑框2"</b>的内容即可。</p>
+<p align="left"><img border="0" src="images/wb35.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">编译运行后，因提供的文本超过了<b>短整数</b>的范围，所以执行结果<b>返回0</b>。</p>
+
+  <p align="left"><img border="0" src="images/y14.png"></p>
+</blockquote>
+
+
+
+<a name="wbdljz"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 文本到逻辑值方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到<b>"文本到逻辑值"</b>有<b>一个</b>参数和一个<b>"逻辑返回值"</b>。</p>
+<p align="left">它的作用就是将：<b>"false"</b>转换成<b>"假"</b>，<b>"true"</b>转换成<b>"真"</b>，除了<b>false和true</b>之外的所有字符，全部返回<b>假</b>。</p>
+
+  <p align="left"><img border="0" src="images/wb36.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义<b>逻辑变量</b>，<b>编辑框1</b>的内容做参数，最后用<b>如果语句</b>判断即可。</p>
+<p align="left"><img border="0" src="images/wb37.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">编译运行后，<b>左图</b>输入<b>"true"</b>返回<b>真</b>，<b>右图</b>输入除了<b>"true"</b>之外的任意字符都会返回<b>假</b>。</p>
+
+  <p align="left"><img border="0" src="images/y15.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img border="0" src="images/y15a.png">
+  </p>
+</blockquote>
+
+
+
+<a name="wbdxs"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 文本到小数方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到<b>"文本到小数"</b>有<b>一个</b>文本参数和一个<b>"小数返回值"</b>。</p>
+<p align="left">顾名思义，它的作用就是把<b>文本</b>转换成<b>小数型</b>，如果<b>被转换的文本</b>不能转换成<b>小数型</b>则<b>返回0</b>。</p>
+  <p align="left"><img border="0" src="images/wb38.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义<b>"小数变量"</b>，<b>编辑框1</b>的内容直接写入<b>参数1</b>。</p>
+<p align="left">因<b>小数</b>不能作为文本显示出来，所以我们需要<b>到文本</b>转换后赋值给<b>编辑框2</b>查看结果。</p>
+<p align="left"><img border="0" src="images/wb39.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">编译运行后，输入的文本<b>"火山"</b>并不能转换成<b>小数</b>所以会<b>返回0</b>。</p>
+
+  <p align="left"><img border="0" src="images/y16.png"></p>
+</blockquote>
+
+
+
+<a name="wbdxx"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 文本到小写方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到<b>"文本到小写"</b>有<b>一个文本参数</b>和一个<b>"文本返回值"</b>。</p>
+<p align="left">顾名思义，它的作用就是把<b>"大写字母"</b>转换成<b>"小写字母"</b>。</p>
+
+  <p align="left"><img border="0" src="images/wb40.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left"><b>"文本到小写"</b>和<b>"文本到大写"</b>代码编写一致。</p>
+<p align="left"><img border="0" src="images/wb41.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">编译执行代码后，除了<b>"大写字母"</b>变成<b>"小写字母"</b>外，其他的字符不发生任何变化。</p>
+  <p align="left"><img border="0" src="images/y17.png"></p>
+</blockquote>
+
+
+
+<a name="wbdczs"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 文本到长整数方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到一个<b>文本参数</b>和一个<b>长整数</b>返回值。</b>。</p>
+<p align="left">顾名思义，就是把<b>文本转换长整数</b>，注意下图红框内，无法转换的会<b>返回0</b>。</p>
+
+  <p align="left"><img border="0" src="images/wb42.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义一个<b>长整数变量</b>(名称随意)，<b>编辑框1</b>内容填写到<b>参数1</b>，最后转换赋值给<b>编辑框2</b>显示出来。</p>
+<p align="left"><img border="0" src="images/wb43.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">编译运行后，<b>编辑框1输入小数</b>，因<b>小数</b>并不能转换成<b>长整数</b>所以<b>返回0</b>。</p>
+<p align="left">除此之外<b>汉字，字母</b>均不能转换成长整数。</p>
+
+  <p align="left"><img border="0" src="images/y18.png"></p>
+</blockquote>
+
+
+<a name="wbdzs"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 文本到整数方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图： </p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到<b>"文本到整数"</b>有一个<b>文本参数</b>和一个<b>整数返回值</b>。</p>
+<p align="left">顾名思义，它的作用就是将<b>文本转换成整数</b>，不能进行转换的<b>返回0</b>。</p>
+
+  <p align="left"><img border="0" src="images/wb44.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">此方法与<b>"文本到长整数"</b>输入一致，具体看代码。</p>
+<p align="left"><img border="0" src="images/wb45.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">编译运行结果和<b>"文本到长整数"</b>效果一致。</p>
+
+  <p align="left"><img border="0" src="images/y18.png"></p>
+</blockquote>
+
+
+<a name="wbdzfc"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 文本到字符串方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图： </p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到有一个<b>文本参数</b>和<b>字符串类返回值</b>。</p>
+
+  <p align="left"><img border="0" src="images/wb46.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图代码：</p>
+<blockquote>
+<p align="left">定义两个变量，编辑框1内容填入参数1，赋值给字符串类变量。</p>
+
+<p align="left">因<b>字符串类</b>无法直接显示，利用<b>取字符</b>的方法，<b>取出字符</b>转换<b>字符为文本</b>显示在<b>编辑框2</b>。</p>
+<p align="left"><b>备注：</b>取字符用的是<b>变量类</b>调用，所以我们这里<b>取字符</b>的<b>参数1字符串类</b>可以忽略，直接填写<b>参数2</b>的字符位置即可。</p>
+<p align="left"><img border="0" src="images/wb47.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">编译运行后，如下图成功返回<b>"软"</b>字，间接证明<b>"文本到字符串"</b>转换成功。</p>
+
+  <p align="left"><img border="0" src="images/y19.png"></p>
+</blockquote>
+
+
+<a name="wbdzfsz"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 文本到字符数组方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图： </p>
+<blockquote>
+<p align="left">打开帮助内容，有一个<b>文本参数</b>和一个<b>字符数组</b>返回值</p>
+<p align="left">顾名思义就是把<b>文本</b>变成<b>字符数组</b>。</p>
+
+  <p align="left"><img border="0" src="images/wb48.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">如代码所示定义<b>两个变量</b>，将<b>编辑框1内容</b>放入<b>参数1</b>。</p>
+<p align="left">因<b>字符数组</b>无法直接表达出来，所以可以利用<b>"取数组成员数"</b>的方法，显示成员数量，最后<b>到文本</b>转换给<b>编辑框2</b>显示。</p>
+<p align="left"><img border="0" src="images/wb49.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">编译运行后结果如下，间接证明<b>转换字符数组</b>成功。</p>
+
+  <p align="left"><img border="0" src="images/y20.png"></p>
+</blockquote>
+
+
+<a name="wbdzj"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 文本到字节方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图： </p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到<b>"文本到字节"</b>有<b>一个<b>“文本参数”</b></b>和一个<b>"字节返回值"</b>。</p>
+
+  <p align="left"><img border="0" src="images/wb50.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义一个<b>"字节变量"</b>，然后将<b>"编辑框1"</b>的内容写入到<b>"参数"</b>。</p>
+<p align="left">最后使用<b>"到文本"</b>转换赋值给<b>"编辑框2"</b>，间接来证明<b>"文本到字节"</b>转换成功。</p>
+<p align="left"><img border="0" src="images/wb51.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+<blockquote>
+<p align="left">运行效果如下，间接证明<b>"文本到字节"</b>转换成功。</p>
+<img border="0" src="images/yxwb51.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="wbdzjsz"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本到字节数组方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图： </p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到有一<b>文本参数</b>和一个<b>字节数组</b>返回值。</p>
+<p align="left">它的作用就是将<b>文本转换字节数组</b>。</p>
+
+  <p align="left"><img border="0" src="images/wb52.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">代码如下图：</p>
+<blockquote>
+<p align="left">它和<b>"文本到字节"</b>不同之处就是它转换的是<b>"字节数组"</b>，所以我们只需要在<b>"文本到字节"</b>代码基础上增加<b>一点点</b>的改变即可。</p>
+<p align="left">增加一个<b>数组成员数</b>变量，最后<b>"到文本"</b>赋值给<b>"编辑框2"</b>显示。</p>
+<p align="left"><img border="0" src="images/wb53.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">编译运行后效果如下，因汉字是<b>3个字节</b>，所以这里显示数组成员数是<b>5</b>。</p>
+
+  <p align="left"><img border="0" src="images/y21.png"></p>
+</blockquote>
+
+
+<a name="wbfz"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 文本复制方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，我们可以看到它只有一个<b>文本参数</b>和一个<b>文本返回值</b>。</p>
+<p align="left">顾名思义，它的作用就是把<b>参数复制一份</b>返回出来。</p>
+  <p align="left"><img src="images/wb54.png"  border="0"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">参数填写<b>编辑框1内容</b>，最后赋值给<b>编辑框2</b>显示出来即可。</p>
+<p align="left"><img border="0" src="images/wb55.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">编译运行后如下图。</b></p>
+
+  <p align="left"><img border="0" src="images/y22.png"></p>
+</blockquote>
+
+
+<a name="wbfz2"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 文本复制2方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到它与<b>"文本复制"</b>的功能基本一致，不同之处就是它复制的是<b>"安全文本缓冲区"</b>内存储的文本。</p>
+
+  <p align="left"><img border="0" src="images/wb56.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">因复制的是<b>"安全文本缓冲区"</b>内的文本，所以我们直接创建一个<b>类型</b>为<b>"安全文本缓冲区"</b>的变量。</p>
+<p align="left">利用<b>"安全文本缓冲区"</b>的<b>"添加"</b>方法，将<b>"编辑框1"</b>的内容添加进来，赋值给<b>"安全文本变量"</b>。</p>
+<p align="left">最后使用<b>"文本复制2"</b>复制内容<b>赋值给编辑框2</b>即可。</p>
+<p align="left"><img border="0" src="images/wb57.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">编译运行后<b>"文本复制"</b>方法的效果一致。</p>
+
+  <p align="left"><img border="0" src="images/y22.png"></p>
+</blockquote>
+
+
+<a name="wbfz3"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 文本复制3方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到有一个<b>"文本缓冲区参数"</b>和一个<b>"文本返回值"</b>。</p>
+<p align="left">顾名思义，它的作用就是把<b>文本缓冲区内</b>的文本复制出来。</p>
+
+  <p align="left"><img border="0" src="images/wb58.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">它与<b>"文本复制2"</b>方法代码编写方法基本一致，不同之处就是将<b>"安全文本缓冲区"</b>类型换成了<b>"文本缓冲区"</b></p>
+<p align="left"><img border="0" src="images/wb59.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">编译运行后效果与<b>"文本复制"</b>和<b>"文本复制2"</b>一致。</p>
+
+  <p align="left"><img border="0" src="images/y22.png"></p>
+</blockquote>
+
+
+<a name="wblj"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 文本连接方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到有<b>"两个文本参数"</b>和一个<b>"文本返回值"</b>。</p>
+<p align="left">顾名思义，它的作用就是将<b>"两个文本"</b>连接起来。</p>
+
+  <p align="left"><img border="0" src="images/wb60.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">直接将<b>"参数一和参数二"</b>分别填写<b>"编辑框1"</b>内容和<b>"编辑框2"</b>内容，最后赋值给<b>"编辑框3"</b>。</p>
+<p align="left"><img border="0" src="images/wb61.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">编译运行后，两个文本顺利连接。</p>
+
+  <p align="left"><img border="0" src="images/y23.png"></p>
+</blockquote>
+
+
+<a name="wbsfwk"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 文本是否为空方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以有一个<b>"文本参数"</b>和一个<b>"逻辑返回值"</b>。</p>
+<p align="left">顾名思义，就是检查参数内的<b>"文本"</b>是否为<b>"空文本"</b>。</p>
+<p align="left">备注：空格文本，不属于空文本范畴。</p>
+
+  <p align="left"><img border="0" src="images/wb62.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">编写方法也很简单，定义一个<b>"逻辑变量"</b>，让<b>"该方法"</b>的返回结果复制给<b>"逻辑变量"</b>。</p>
+<p align="left"><b>"编辑框1"</b>的内容直接当<b>"参数1"</b>使用，最后利用<b>"如果"</b>语句判断<b>"逻辑变量"</b>，判断后返回给<b>编辑框2</b>显示。</p>
+
+<p align="left"><img border="0" src="images/wb63.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">编译运行后，<b>左图</b>编辑框1什么都没有所以<b>返回空</b>，<b>右图</b>输入了<b>空格</b>所以显示<b>有内容</b>。</p>
+
+
+  <p align="left"><img border="0" src="images/y24.png">&nbsp;&nbsp;&nbsp;&nbsp;<img border="0" src="images/y24a.png"></p>
+</blockquote>
+
+
+<a name="wbxd"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 文本相等方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到有<b>"三个参数"</b>和一个<b>"逻辑返回值"</b></p>
+<p align="left">顾名思义，他就是用来判断<b>"两个文本"</b>是否一致。</p>
+
+
+  <p align="left"><img border="0" src="images/wb64.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义一个<b>"逻辑变量"</b>，<b>编辑框1内容</b>和<b>编辑框2内容</b>分别填入参数内，最后赋值给<b>"逻辑变量"</b>。</p>
+<p align="left"><b>参数三</b>因为有<b>默认值</b>，所以可以<b>省略</b>。</p>
+<p align="left">最后用<b>"如果"</b>判断<b>逻辑变量</b>即可。</p>
+
+<p align="left"><img border="0" src="images/wb65.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">编译运行后，效果如下图。</p>
+
+
+  <p align="left"><img border="0" src="images/y25.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img border="0" src="images/y25a.png"></p>
+</blockquote>
+
+
+<a name="wbxd2"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 文本相等2方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到它与<b>"文本相等"</b>的区别是，它比较的是<b>"字符串"</b>。</p>
+
+
+  <p align="left"><img border="0" src="images/wb66.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">代码编写，只需要在<b>"文本相等"</b>的基础上增加一个<b>"字符串类"</b>变量，随后将<b>编辑框2</b>的内容进行转换，最后赋值给<b>逻辑变量</b>。</p>
+<p align="left"><b>备注：</b>注意<b>字符串类</b>一定要设置<b>参考</b>。</p>
+
+<p align="left"><img border="0" src="images/wb67.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">编译运行后，效果和<b>"文本相等"</b>一致。</p>
+
+  <p align="left"><img border="0" src="images/y25.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img border="0" src="images/y25a.png"></p>
+</blockquote>
+
+<a name="wbzfth"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 文本字符替换方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到有<b>"三个参数"</b>和一个<b>"文本返回值"</b>。</p>
+<p align="left">顾名思义，它的作用就是将文本内的<b>指定字符</b>进行<b>替换操作</b>，并且返回<b>替换后</b>的文本。</p>
+<p align="left">备注：一个文本代表一个字符，也就意味着无法进行对两个文本字符进行替换。</p>
+
+  <p align="left"><img border="0" src="images/wb68.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">本方法我们需要定义<b>四个变量</b>（名称随意），分别如下所示。</p>
+<p align="left">将<b>"编辑框2"</b>和<b>"编辑框3"</b>分别转换成<b>"字符串"</b>，随后用<b>"字符串类取字符"</b>的方法<b>"取出字符"</b>，最后赋值给<b>定义的变量</b>。</p>
+<p align="left">依次填入方法<b>"参数"</b>后，最终替换结果赋值给<b>"编辑框4"显示</b>。</p>
+<p align="left"><img border="0" src="images/wb69.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">运行结果如下，所有的<b>"火"</b>，替换成了<b>"水"</b>。</p>
+
+  <p align="left"><img border="0" src="images/y26.png"></p>
+</blockquote>
+
+
+<a name="yzdwbjw"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">
+● 以指定文本结尾方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到有<b>"两个文本参数"</b>和一个<b>"逻辑返回值"</b>。</p>
+<p align="left">它的作用就是检查，<b>文本1</b>的内容是否以<b>文本2</b>结尾。</p>
+
+  <p align="left"><img border="0" src="images/wb70.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义<b>逻辑变量</b>，<b>编辑框内容</b>依次当做<b>参数</b>写入，最后判断<b>逻辑变量</b>即可。</p>
+
+<p align="left"><img border="0" src="images/wb71.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">运行结果如下：</p>
+
+  <p align="left"><img border="0" src="images/y27.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img border="0" src="images/y27a.png"></p>
+</blockquote>
+
+<a name="yzdwbks"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 以指定文本开始方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到它和<b>"以指定文本结尾"</b>基本一致，不同之处就是它判断的是<b>文本开始位置</b>。</p>
+
+  <p align="left"><img border="0" src="images/wb72.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">代码编写和<b>"以指定文本结尾"</b>一致。</p>
+<p align="left"><img border="0" src="images/wb73.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">两种运行结果如下图：</p>
+
+  <p align="left"><img  border="0"  src="images/y28.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img border="0" src="images/y28a.png"></p>
+</blockquote>
+
+<a name="zzfgwb"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 正则文本分割方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到它有<b>三个参数</b>和一个<b>文本数组</b>返回值。</p>
+<p align="left">注意：下图<b>黄框</b>内的分割数目说明。</p>
+
+  <p align="left"><img border="0" src="images/wb74.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left"><b>参数1</b>直接填写<b>编辑框1</b>的内容，<b>参数2</b>填写<b>正则表达式</b>（请根据自己的需求填写合适的表达式）。</p>
+<p align="left">下图内的正则表达式说明：</p>
+
+	<blockquote>
+<p align="left"><b>[\u4e00-\u9fa5]</b>：匹配中文。</p>
+<p align="left"><b>(.*?)</b>：匹配任意字符。</p>
+	</blockquote>
+
+<p align="left">随后<b>取出数组成员数</b>，到文本赋值给编辑框显示。</p>
+<p align="left"><b>参数3</b>有默认值省略不写。</p>
+
+<p align="left"><img border="0" src="images/wb75.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">编译运行后如下图：成功匹配到<b>四个</b>汉字。</p>
+
+
+  <p align="left"><img border="0" src="images/y29.png"></p>
+</blockquote>
+
+<a name="zzwbpp"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 正则文本匹配方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助可以看到，有<b>两个文本</b>参数和<b>一个逻辑</b>返回值。</p>
+<p align="left">顾名思义就是判断<b>是否匹配成功</b>！</p>
+
+
+  <p align="left"><img border="0" src="images/wb76.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">参数内分别填写<b>编辑框1</b>内容和<b>编辑框2</b>内容，最后给<b>逻辑变量</b>赋值。</p>
+<p align="left">然后用<b>如果</b>条件语句，判断<b>逻辑变量</b>的返回值。</p>
+
+<p align="left"><img border="0" src="images/wb77.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left"><b>左图：</b>在中文中匹配任意字符成功。</p>
+<p align="left"><b>右图：</b>匹配数字则会失败。</p>
+
+
+  <p align="left"><img border="0" src="images/y30.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img border="0" src="images/y30a.png"></p>
+</blockquote>
+
+<a name="zzwbth"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 正则文本替换方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助可以看到有<b>四个参数</b>和一个<b>文本返回值</b>。</p>
+<p align="left">顾名思义，就是利用<b>正则表达式</b>来进行<b>替换文本</b>。</p>
+
+
+  <p align="left"><img border="0" src="images/wb78.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">参数依次如下图填写，最后赋值给<b>编辑框4的内容</b>显示出来。</p>
+
+<p align="left"><img border="0" src="images/wb79.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">编译运行后结果如下，成功将<b>所有数字</b>替换成了<b>指定文本</b>。</p>
+
+
+  <p align="left"><img border="0" src="images/y31.png"></p>
+</blockquote>
+
+<a name="zwbbj"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 子文本比较方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助，可以看到<b>"六个"</b>参数和一个<b>逻辑返回值</b>。</p>
+<p align="left">它的作用就是用来比较<b>一串文本</b>中<b>指定位置</b>的文本<b>是否相等</b>。</p>
+
+
+  <p align="left"><img border="0" src="images/wb80.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义<b>四个</b>变量，随后分别将<b>"编辑框2、4、5"</b>转换成整数，赋值给<b>对应的变量</b>。</p>
+<p align="left">然后<b>依次填写</b>到方法内，最终返回结果<b>赋值</b>给<b>逻辑变量</b>。</p>
+
+<p align="left"><img border="0" src="images/wb81.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">左图：都从<b>第四位</b>开始取出<b>四位</b>，会都取出来<b>"软件开发"</b>，所以<b>文本相等</b>。</p>
+<p align="left">右图：从第二位置取一个取出<b>"安"</b>，一个取出<b>"电"</b>，所以文本<b>不相等</b>。</p>
+
+
+  <p align="left"><img border="0" src="images/y32.png"></p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img border="0" src="images/y32a.png"></p>
+</blockquote>
+
+<a name="zwbth"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 子文本替换方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助可以看到<b>有三个参数</b>和一个<b>文本返回值</b>。</p>
+<p align="left">该方法作用就是返回<b>替换后</b>的文本。</p>
+
+
+  <p align="left"><img border="0" src="images/wb82.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left"><b>编辑框1,2,3</b>的内容分别写入方法参数内，最后<b>赋值</b>给<b>编辑框4</b>显示。</p>
+
+<p align="left"><img border="0" src="images/wb83.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">运行后成功将<b>"火"</b>变成了<b>"水"</b>。</p>
+
+
+  <p align="left"><img border="0" src="images/y33.png"></p>
+</blockquote>
+
+<a name="zjszdwb"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 字符数组到文本方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助可以看到有一个<b>"字符数组"</b>参数，和一个<b>"文本返回值"</b>。</p>
+<p align="left">顾名思义它的作用就是把<b>字符数组</b>转换成<b>文本</b>。</p>
+
+
+  <p align="left"><img border="0" src="images/wb84.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义一个<b>"字符数组"</b>变量，填写初始值<b>{'火','山','软','件'}</b>。</p>
+<p align="left">最后<b>参数</b>写数组变量，赋值给<b>编辑框1</b>显示即可。</p>
+
+<p align="left"><img border="0" src="images/wb85.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">运行后效果如下，成功将<b>字符数组</b>转换成<b>文本</b>显示出来。</p>
+
+
+  <p align="left"><img border="0" src="images/y34.png"></p>
+</blockquote>
+
+<a name="zfszdwb2"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 字符数组到文本2方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">该方法和<b>"字符数组到文本"</b>的区别在于，它可以取出<b>指定位置</b>的字符。</p>
+
+
+  <p align="left"><img border="0" src="images/wb86.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义如下<b>"三个变量"</b>，<b>"字符数组"</b>设定一个<b>"初始值"</b>。</p>
+<p align="left">然后将<b>"编辑框2、3"</b>分别转换成<b>"整数"</b>赋值给对应的<b>"整数变量"</b>。</p>
+<p align="left">变量依次填写进去，最后赋值给<b>编辑框1</b>显示出来即可。</p>
+
+<p align="left"><img border="0" src="images/wb87.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">编译运行后从<b>{'火','山','软','件'}</b>顺利取出了<b>"山软"</b>两个字。</p>
+
+
+  <p align="left"><img border="0" src="images/y35.png"></p>
+</blockquote>
+
+<a name="zjszdwb"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 字节数组到文本方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助，可以看到有一个<b>字节数组</b>参数和一个<b>文本返回值</b>。</p>
+<p align="left">它的作用就是把<b>字节数组</b>转换成<b>文本</b>显示出来。</p>
+
+  <p align="left"><img border="0" src="images/wb88.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">因<b>字符数组</b>无法显示出来，所以用<b>"文本到字节数组"</b>的方法，转换成定义的变量<b>"字节数组"</b>。</p>
+<p align="left">最后在使用<b>"字节数组到文本"</b>，把定义的<b>字节数组变量</b>转换成<b>文本</b>显示到<b>编辑框2</b>的内容。</p>
+
+<p align="left"><img border="0" src="images/wb89.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">运行结果如下图，成功转换。</p>
+
+
+  <p align="left"><img border="0" src="images/y36.png"></p>
+</blockquote>
+
+
+
+<a name="zjszdwb2"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 字节数组到文本2方法</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">此方法比<b>"字节数组到文本"</b>多了<b>两个</b>参数，<b>起始位置</b>和<b>字节数目</b>。</p>
+<p align="left"><b>注意：</b>红框内提供的范围无效，会返回<b>空文本</b>。</p>
+
+  <p align="left"><img border="0" src="images/wb90.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义三个变量：</p>
+<blockquote>
+<p align="left">首先还是将<b>编辑框1</b>的内容转换成<b>字节数组</b>。</p>
+<p align="left"><b>编辑框2</b>转换成<b>起始选择位置</b>。</p>
+<p align="left"><b>编辑框3</b>转换成<b>字节数目</b>。</p>
+</blockquote>
+<p align="left">依次将<b>变量</b>填入方法中，最后赋值给<b>编辑框4</b>显示。</p>
+
+
+
+<p align="left"><img border="0" src="images/wb91.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">运行效果如下图所示，成功取出<b>"山软"</b>两个字</p>
+
+  <p align="left"><img border="0" src="images/y37.png"></p>
+</blockquote>
+
+
+</body>
+
+</html>

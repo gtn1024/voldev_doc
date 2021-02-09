@@ -1,0 +1,309 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+			<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >高级图片框<span>(可收缩)</span></h6></li>
+		<ol id="new1">
+			<li><blockquote><a href="#gaojitupian">1.本类说明</a></blockquote></li>
+			<li><blockquote><a href="#zctpdjdt">2.支持图片点击监听(写)</a></blockquote></li>
+			<li><blockquote><a href="#zctpdjdt">3.图片被点击(事件)</a></blockquote></li>
+			<li><blockquote><a href="#zcwbdjjt">4.支持外部点击监听(写)</a></blockquote></li>
+			<li><blockquote><a href="#zcwbdjjt">5.外部被点击(事件)</a></blockquote></li>
+			<li><blockquote><a href="#zcxsqgbjt">6.支持显示矩阵改变监听(写)</a></blockquote></li>
+			<li><blockquote><a href="#zcxsqgbjt">7.显示矩阵已改变(事件)</a></blockquote></li>
+			<li><blockquote><a href="#sfssqy">8.缩放手势启用(写)</a></blockquote></li>
+			<li><blockquote><a href="#qxsqy">9.取显示区域</a></blockquote></li>
+			<li><blockquote><a href="#qxsjz">10.取显示矩阵</a></blockquote></li>
+			<li><blockquote><a href="#xzzdjd">11.旋转指定角度</a></blockquote></li>
+			<li><blockquote><a href="#ztpydsf">12.置图片原点缩放</a></blockquote></li>
+			<li><blockquote><a href="#ztpydsf">13.置图片缩放</a></blockquote></li>
+			<li><blockquote><a href="#xzzdjd">14.置当前旋转角度</a></blockquote></li>
+			<li><blockquote><a href="#zxsjz">15.置显示矩阵</a></blockquote></li>
+		</ol>
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left"><a name="gaojitupian"></a>
+<h2>高级图片框实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<br/>
+<blockquote>
+ <p align="left">本组件和<a href="a_TuPianKuang.htm"><b>“图片框”</b></a>作用一致，主要用于显示图片，本组件也继承了图片框的所有方法。</p>
+ <p align="left">不同之处在于，本组件可是实现双指捏合缩放图片，双击放大图片，旋转图片等特殊效果。</p>
+    <p align="left"><font color="#F70408">注意：本组件位于<strong><b>“高级图片框”</b></strong>模块中，欲使用本组件需添加其模块。</font> </p>
+	<p align="left"><img border="0" src="photo_images/1.png" > </p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">界面设计如下图：</p>
+<blockquote>
+    <p align="left">添加<b>“高级图片框”</b>模块后，在界面设计器的<b>“扩展组件”</b>中可以看到本组件。</p>
+    <p align="left">从上到下依次拖放<b>“按钮1”</b>和<b>“高级图片框1”</b>。</p>
+	<p align="left"><img border="0" src="photo_images/2.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码如下图：</p>
+<blockquote>
+    <p align="left">利用图片框的<a href="a_ctrl_img.htm#tupianx"><b>“图片”</b></a>属性，给当前图片框设置一个图片。</p>
+	<p align="left"><img border="0" src="photo_images/3.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="photo_images/4.png" ></p>
+	</blockquote>	
+<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+<a name="zctpdjdt"></a>
+<font style="font-size: 12pt; font-weight:700">● 支持图片点击监听(写)</font> <br>
+<font style="font-size: 12pt; font-weight:700">● 图片被点击(事件)</font> 
+<p align="left">&nbsp;</p>
+<p align="left"><b>“支持图片点击监听(写)”</b>帮助文档： </p>
+<blockquote>
+    <p align="left">顾名思义，通过本属性可以开启图片被点击事件。</p>
+	<p align="left"><img border="0" src="photo_images/5.png" ></p>
+	</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“图片被点击(事件)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">当设置<b>“支持图片点击监听=真”</b>后，点击高级图片框的图片就可以触发本事件。</p>
+    <p align="left">注意：如果高级图片框很大，但是显示图片的区域很小，此时未显示图片的区域点击后不会响应本事件。</p>
+	<p align="left"><img border="0" src="photo_images/6.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、<b>“按钮1”</b>被点击后设置<b>“支持图片点击监听=真”</b>。</p>
+    <p align="left">2、添加<b>“图片被点击”</b>事件，并取出水平和垂直位置。</p>
+	<p align="left"><img border="0" src="photo_images/7.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>点击前，点击图片框无任何反应。</p>
+	<p align="left">点击<b>“按钮1”</b>后，再次点击图片框会取出水平和垂直位置，证明事件被触发。</p>
+	<p align="left"><img border="0" src="photo_images/8.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	<a name="zcwbdjjt"></a>
+<font style="font-size: 12pt; font-weight:700">● 支持外部点击监听(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 外部被点击(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“支持外部点击监听(写)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">当设置本属性为真时，图片框的非图片显示区域被点击后可以触发<b>“外部被点击”</b>事件。</p>
+	<p align="left"><img border="0" src="photo_images/9.png" ></p>
+	</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“外部被点击(事件)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">当设置<b>“支持外部点击监听=真”</b>后，点击非图片显示区域后本事件可以被触发。</p>
+	<p align="left"><img border="0" src="photo_images/10.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、给<b>“高级图片框1”</b>设置背景色，用于填充非图片显示区域的颜色。</p>
+    <p align="left">2、添加<b>“通知_被创建”</b>虚拟方法，将<b>“高级图片框1”</b>的尺寸设置最大。</p>
+    <p align="left">3、<b>“按钮1”</b>被点击后，设置<b>“支持外部点击监听=真”</b>。</p>
+    <p align="left">4、添加<b>“外部被点击”</b>事件，弹出信息框。</p>
+	<p align="left"><img border="0" src="photo_images/11.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击前，点击黄色的非图片显示区域无任何反应。</p>
+	<p align="left">当<b>“按钮1”</b>被点击后，再次点击非图片显示区域时，会触发事件弹出信息框。</p>
+	<p align="left"><img border="0" src="photo_images/12.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	<a name="zcxsqgbjt"></a>
+<font style="font-size: 12pt; font-weight:700">● 支持显示矩阵改变监听(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 显示矩阵已改变(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“支持显示矩阵改变监听(写)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">通过设置本属性为真，可以监听显示矩阵区域改变。</p>
+    <p align="left">注意：在此处的矩阵指的是，图片上下左右四个点的坐标。</p>
+	<p align="left"><img border="0" src="photo_images/13.png" ></p>
+	</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“显示矩阵已改变(事件)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">设置<b>“支持显示矩阵改变监听=真”</b>后，当图片的显示区域被改变时会触发本事件。</p>
+    <p align="left">参数返回的是<b>“小说矩形类”</b>，通过本类的<b>“上下左右”</b>四个读属性可取出坐标值，坐标值为小数类型。</p>
+	<p align="left"><img border="0" src="photo_images/14.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、<b>“按钮1”</b>被点击后，设置本属性值为真。 </p>
+    <p align="left">2、添加<b>“显示矩阵已改变”</b>事件，取出坐标信息显示在<b>“标题”</b>上。 </p>
+	<p align="left"><img border="0" src="photo_images/15.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">双击图片框可进行放大图片的操作，显示区域被改变的同时坐标也会显示在<b>“标题”</b>上。</p>
+	<p align="left"><img border="0" src="photo_images/16.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>	<a name="sfssqy"></a>
+<font style="font-size: 12pt; font-weight:700">● 缩放手势启用(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本属性可以开启或者关闭手势缩放功能，本功能默认为开启状态。</p>
+	<p align="left"><img border="0" src="photo_images/17.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后调用本属性关闭缩放功能。</p>
+	<p align="left"><img border="0" src="photo_images/18.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可以看到当<b>“按钮1”</b>被点击后，图片框无论如何进行双击都不会进行缩放。</p>
+	<p align="left"><img border="0" src="photo_images/19.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	<a name="qxsqy"></a>
+<font style="font-size: 12pt; font-weight:700">● 取显示区域</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本方法可取出图片显示区域的上下左右四个点的位置，返回值为<b>“小数矩形类”</b>。</p>
+    <p align="left">通过<b>“小数矩形类”</b>的<b>“上、下、左、右”</b>四个读属性可以取出具体方向的位置。</p>
+	<p align="left"><img border="0" src="photo_images/20.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、<b>“按钮1”</b>被点击后，定义类型为<b>“小数矩形类”</b>的变量并勾选参考。</p>
+    <p align="left">2、调用<b>“取显示区域()”</b>方法赋值给定义的小数矩形类变量。</p>
+    <p align="left">3、取出具体位置后显示在窗口标题上。</p>
+	<p align="left"><img border="0" src="photo_images/21.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">最终得出以下结果：</p>
+	<p align="left">1、图片顶边距离图片框顶部119像素。</p>
+	<p align="left">2、图片底边距离图片框顶部646像素。</p>
+	<p align="left">3、图片左边距离图片框左边0像素。</p>
+	<p align="left">4、图片右边距离图片框左边540像素。</p>
+	<p align="left"><img border="0" src="photo_images/22.png" ></p>
+</blockquote><p align="left">&nbsp;</p>	<a name="qxsjz"></a>
+<font style="font-size: 12pt; font-weight:700">● 取显示矩阵</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本方法可取出图片的显示矩阵。</p>
+	<p align="left"><img border="0" src="photo_images/23.png" ></p>
+	</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、定义类型为<b>“矩阵类”</b>的变量，并将变量名放入<b>“取显示矩阵()”</b>的方法中，这样就完成对矩阵变量的赋值操作。</p>
+    <p align="left">2、定义类型为<b>“坐标类”</b>的变量，调用<a href="a_canvas.htm#jzzhzb"><b>“矩阵.转换坐标()”</b></a>方法就可以取出坐标信息。</p>
+    <p align="left">3、最后将坐标显示在窗口标题上。</p>
+	<p align="left"><img border="0" src="photo_images/24.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">最终点击<b>“按钮1”</b>后，图片的坐标会显示在窗口标题上。</p>
+	<p align="left"><img border="0" src="photo_images/25.png" ></p>
+</blockquote><p align="left">&nbsp;</p>	<a name="xzzdjd"></a>
+<font style="font-size: 12pt; font-weight:700">● 旋转指定角度</font><br>
+<font style="font-size: 12pt; font-weight:700">● 置当前旋转角度</font>
+<p align="left">&nbsp;</p>
+<p align="left">以上两个方法都是用来设置图片旋转角度，此处演示<b>“旋转指定角度()”</b>方法。</p>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本方法可将图片框的图片旋转指定角度。</p>
+    <p align="left">注意：是在当前图片的旋转角度的基础上继续旋转。</p>
+	<p align="left"><img border="0" src="photo_images/26.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后调用当前方法旋转30度。</p>
+	<p align="left"><img border="0" src="photo_images/27.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到当前图片被旋转。</p>
+	<p align="left"><img border="0" src="photo_images/28.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	<a name="ztpydsf"></a>
+<font style="font-size: 12pt; font-weight:700">● 置图片原点缩放</font><br>
+<font style="font-size: 12pt; font-weight:700">● 置图片缩放</font>
+<p align="left">&nbsp;</p>
+<p align="left">以上两个方法都是用来进行图片缩放，此处演示<b>“置图片原点缩放”</b>方法。</p>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本方法可对图片框的图片进行缩放。</p>
+    <p align="left">参数1：用来填写缩放几倍，例如：提供2则表示放大两倍。</p>
+    <p align="left">参数2、3：以图片的某个坐标点开始缩放。</p>
+    <p align="left">参数4：是否带动画，默认为假不带动画。</p>
+	<p align="left"><img border="0" src="photo_images/29.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后调用本方法对图片进行放大两倍操作。</p>
+	<p align="left"><img border="0" src="photo_images/30.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到图片被放大。</p>
+	<p align="left"><img border="0" src="photo_images/31.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	<a name="zxsjz"></a>
+<font style="font-size: 12pt; font-weight:700">● 置显示矩阵</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本方法课设置当前图片所使用的显示矩阵。</p>
+	<p align="left"><img border="0" src="photo_images/32.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、定义类型为<b>“矩阵类”</b>的变量，调用<a href="a_canvas.htm#jzjlpyjz"><b>“建立平移矩阵()”</b></a>方法平移100像素的矩阵。</p>
+    <p align="left">2、调用当前方法将矩阵变量填入参数中即可。</p>
+	<p align="left"><img border="0" src="photo_images/33.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终当<b>“按钮1”</b>被点击后，图片会平移100像素。</p>
+	<p align="left"><img border="0" src="photo_images/34.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

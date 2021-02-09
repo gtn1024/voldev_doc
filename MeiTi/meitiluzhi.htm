@@ -1,0 +1,340 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new7')" >一.媒体录制类<span>(可收缩)</span></h6></li>
+		<ol id="new7">
+        
+           <li><blockquote><a href="#meitiluzhi">1.本类说明</a></blockquote></li>
+          <li><blockquote><a href="#zxjpz">2.置相机配置</a></blockquote></li>
+          <li><blockquote><a href="#zxjpz">3.置视频源</a></blockquote></li>
+          <li><blockquote><a href="#zxjpz">4.置音频源</a></blockquote></li>
+          <li><blockquote><a href="#zypbm">5.置音频编码</a></blockquote></li>
+           <li><blockquote><a href="#zypbm">6.置音频编码比特率</a></blockquote></li>
+           <li><blockquote><a href="#zypbm">7.置音频通道数</a></blockquote></li>
+           <li><blockquote><a href="#zypbm">8.置音频采样率</a></blockquote></li>
+           <li><blockquote><a href="#zscgs">9.置输出格式</a></blockquote></li>
+           <li><blockquote><a href="#zscgs">10.置视频尺寸</a></blockquote></li>
+           <li><blockquote><a href="#zscgs">11.置视频编码</a></blockquote></li>
+			 <li><blockquote><a href="#zscgs">12.置视频编码比特率</a></blockquote></li>
+			 <li><blockquote><a href="#zscgs">13.置视频采样率</a></blockquote></li>
+			 <li><blockquote><a href="#zscgs">14.置保存地理位置</a></blockquote></li>
+			 <li><blockquote><a href="#zzszj">15.置展示组件</a></blockquote></li>
+			 <li><blockquote><a href="#zlzfx">16.置录制方向</a></blockquote></li>
+			 <li><blockquote><a href="#zscwjm">17.置输出文件名</a></blockquote></li>
+			 <li><blockquote><a href="#zscwjzdcc">18.置输出文件最大尺寸</a></blockquote></li>
+			 <li><blockquote><a href="#zzdsc">19.置最大时长</a></blockquote></li>
+			 <li><blockquote><a href="#lzzb">20.准备</a></blockquote></li>
+			 <li><blockquote><a href="#lzzb">21.开始</a></blockquote></li>
+			 <li><blockquote><a href="#lzzb">22.停止</a></blockquote></li>
+			 <li><blockquote><a href="#lzzb">23.重置</a></blockquote></li>
+			 <li><blockquote><a href="#lzzb">24.释放</a></blockquote></li>
+			 <li><blockquote><a href="#lzfscw">27.发生错误（事件）</a></blockquote></li>
+			 <li><blockquote><a href="#lzddxx">28.得到信息（事件）</a></blockquote></li>
+ 
+		</ol>	
+	</ol>
+</ul>
+</div>		
+<p align="left">
+<h2>媒体录制类实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<font style="font-size: 12pt; font-weight:700">● 辅助说明</font><br/>
+<br/>
+<blockquote>
+<p align="left"><font color="#F70408">注意：本类位于<strong>“多媒体功能支持”</strong>模块中，必须添加此模块才能使用。</font></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本类实现了对<b>“媒体视频/音频”</b>的录制（并非屏幕录制），可用来制作类似手机相机的拍摄视频功能。</p>
+    <p align="left">录制的具体实现过程，需要调用很多设置方法，对视频音频进行各种设置。</p>
+	<p align="left"><img border="0" src="mt_images/114.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="zxjpz"></a>
+<font style="font-size: 12pt; font-weight:700">●置相机配置</font>、
+    <font style="font-size: 12pt; font-weight:700">●置视频源</font>、
+    <font style="font-size: 12pt; font-weight:700">●置音频源</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">以上三个用法用来设置视频音频等基本数据的来源信息，此处统一讲解。</p>
+	<p align="left">&nbsp;</p>
+<p align="left"><strong>“置相机配置”</strong>帮助文档：</p>
+<blockquote>
+    <p align="left">本方法调用了<b>“摄像头类”</b>，通过摄像头类的相关方法可以设置一些<b>“摄像头”</b>的参数。</p>
+    <p align="left">例如：前后摄像头和显示角度等，统称为配置。</p>
+    <p align="left">注意：本方法务必放在<b>“录制代码”</b>的最前面。</p>
+	<p align="left"><img border="0" src="mt_images/115.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left"><strong>“置视频源”</strong>帮助文档：</p>
+<blockquote>
+    <p align="left">本方法设置视频来源，通过<b>“媒体录制视频来源”</b>设定。</p>
+    <p align="left">通常情况下直接使用<b>“媒体录制视频来源.相机”</b>即可。</p>
+    <p align="left">注意：本方法也要写到<b>“录制代码”</b>的最前面（即<b>“准备”</b>方法之前），<b>“置相机配置”</b>方法之后。</p>
+	<p align="left"><img border="0" src="mt_images/116.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+<p align="left"><strong>“置音频源”</strong>帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法设置音频来源，通过<b>“媒体录制音频源”</b>设置。</p>
+    <p align="left">通常情况下直接写<b>“媒体录制音频源.麦克风”</b>即可。</p>
+    <p align="left">注意：本方法要写到<b>“准备”</b>方法之前，<b>“置相机配置”</b>方法之后。</p>
+	<p align="left"><img border="0" src="mt_images/117.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	
+	<a name="zypbm"></a>
+	<font style="font-size: 12pt; font-weight:700">●置音频编码</font>、
+    <font style="font-size: 12pt; font-weight:700">●置音频编码比特率</font>、
+    <font style="font-size: 12pt; font-weight:700">●置音频通道数</font>、
+    <font style="font-size: 12pt; font-weight:700">●置音频采样率</font>
+<p align="left">&nbsp;</p>
+	<p align="left">以上四个方法用来设置音频相关操作，如果对音频格式不了解，建议直接按本文档给出的数据进行设置即可。</p>
+	<p align="left">&nbsp;</p>
+<p align="left"><strong>“置音频编码”</strong>帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本方法可以设置音频编码，通过<b>“媒体录制音频编码”</b>类指定。</p>
+    <p align="left">通常情况下直接使用<b>“媒体录制音频编码.HE_AAC”</b>即可。</p>
+    <p align="left">关于：HE_ACC是一种高效率高级音频编码，详情可看<a href="https://baike.baidu.com/item/ACC/8537680" target="_blank"><b>“百度百科”</b></a></p>
+    <p align="left">本方法需要写到<b>“准备”</b>之前，<b>“置相机配置”</b>方法之后。</p>
+	<p align="left"><img border="0" src="mt_images/118.png" ></p>
+</blockquote>
+
+	
+<p align="left">&nbsp;</p>
+<p align="left"><strong>“置音频编码比特率”</strong>帮助文档如下图：</p>
+<blockquote>
+  <p align="left">比特率：一秒钟传输的比特数量，详情看<a href="https://baike.baidu.com/item/比特率/1022775?fr=aladdin" target="_blank"><b>“百度百科”</b></a></p>
+  <p align="left">通常情况下，我们常用的单位是<b>“kbps”</b>（即每秒钟1000比特）作为单位。</p>
+    <p align="left">
+      常见的<b>“光盘”</b>中的<b>“数字音乐”</b>比特率为<b>“1411.2kbps”</b>。</p>
+    <p align="left">也就是记录<b>“1秒钟”</b>的音乐，需要<b>“1411.2×1000”</b>比特的数据。</p>
+    <p align="left">总结来说：参数中的比特率，数值越大音质越好，如果不了解建议设置<strong>“320000”</strong>即可。</p>
+    <p align="left">本方法需要写到<b>“准备”</b>之前，<b>“置相机配置”</b>方法之后。</p>
+	<p align="left"><img border="0" src="mt_images/119.png" ></p>
+</blockquote>
+
+	
+<p align="left">&nbsp;</p>
+<p align="left"><strong>“置音频通道数”</strong>帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过帮助文档可以看到，参数中的<b>“整数”</b>类型，只能填写<b>“1或2”</b>，来表达<b>“单声道”</b>和<b>“立体声道”</b>。</p>
+	 <p align="left">本方法需要写到<b>“准备”</b>之前，<b>“置相机配置”</b>方法之后。</p>
+	<p align="left"><img border="0" src="mt_images/120.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left"><strong>“置音频采样率”</strong>帮助文档如下图：</p>
+<blockquote>
+    <p align="left">关于音频编码和采样率，详情可看<a href="https://baike.baidu.com/item/音频编码" target="_blank"><b>“百度百科”</b></a>，建议设置：<strong>“48000”</strong>即可。</p>
+	 <p align="left">本方法需要写到<b>“准备”</b>之前，<b>“置相机配置”</b>方法之后。</p>
+	<p align="left"><img border="0" src="mt_images/121.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	
+	<a name="zscgs"></a>
+	<font style="font-size: 12pt; font-weight:700">●置输出格式</font>、
+	<font style="font-size: 12pt; font-weight:700">●置视频尺寸</font>、
+	<font style="font-size: 12pt; font-weight:700">●置视频编码</font>、
+	<font style="font-size: 12pt; font-weight:700">●置视频编码比特率</font>、
+	<font style="font-size: 12pt; font-weight:700">●置视频采样率</font>、
+	<font style="font-size: 12pt; font-weight:700">●置保存地理位置</font>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">以上系列方法用于设置视频相关数据信息，如果对视频格式不了解，建议直接按本文档给出的设置进行设置即可。</p>
+	<p align="left">&nbsp;</p>
+<p align="left"><strong>“置输出格式”</strong>帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本方法可设置文件的指定输出格式，通过<b>“媒体录制输出格式.XXX”</b>调用。</p>
+    <p align="left">通常情况下直接之用<b>“媒体录制输出格式.MPEG_4”</b>（即常见的mp4格式）。</p>
+	<p align="left">本方法务必紧跟着<b>“置音频/视频源”</b>方法之后，否则将录制失败。</p>
+	<p align="left"><img border="0" src="mt_images/122.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left"><strong>“置视频尺寸”</strong>帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本方法可以设置要录制视频的尺寸，参数中的<b>“高度/宽度”</b>单位为像素。</p>
+    <p align="left">如果不清楚尺寸信息，建议填写宽度：<strong>“1920”</strong>，高度：<strong>“1080”</strong>即可。</p>
+	<p align="left">注意：本方法需要在<b>“置视频源”</b>和<b>“置输出格式”</b>后，<b>“准备”</b>之前调用。</p>
+	<p align="left"><img border="0" src="mt_images/123.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><strong>“置视频编码”</strong>帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本方法可以设置录制的视频编码，通过<b>“媒体录制视频编码.XXX”</b>调用。</p>
+    <p align="left">通常情况下直接使用<b>“媒体录制视频编码.H264”</b>即可，此编码为大部分手机默认使用的编码。</p>
+	<p align="left"><img border="0" src="mt_images/124.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><strong>“置视频编码比特率”</strong>帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法可以设置视频编码的比特率，可参考<a href="#zypbmbtl"><b>“置音频编码比特率”</b></a>。</p>
+    <p align="left">注意：本方法要写到<b>“准备”</b>方法之前，如果不了解直接填写<strong>“41943040”</strong>即可。</p>
+	<p align="left"><img border="0" src="mt_images/125.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><strong>“置视频采样率”</strong>帮助文档如下图：</p>
+<blockquote>
+    <p align="left"><b>“视频采样率”</b>即每秒录制的视频帧数，数值越大、视频越流畅。</p>
+    <p align="left">如果不了解建议填写<strong>“30”或“60”</strong>都可以。</p>
+  <p align="left">本方法需要写到<b>“置视频源”</b>和<b>“置输出格式”</b>之后，<b>“准备”</b>方法之前调用。</p>
+	<p align="left"><img border="0" src="mt_images/126.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><strong>“置保存地理位置”</strong>帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本方法可以将经纬度保存在视频或音频中，参数提供经纬度坐标即可。</p>
+    <p align="left">本方法需要在<b>“准备”</b>之前调用。</p>
+	<p align="left"><img border="0" src="mt_images/127.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<a name="zzszj"></a>
+	<font style="font-size: 12pt; font-weight:700">●置展示组件</font><p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本方法可以绑定一个<b>“高级画板”</b>用来临时显示录制时的画面。</p>
+	<p align="left"><img border="0" src="mt_images/128.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<a name="zlzfx"></a>
+	<font style="font-size: 12pt; font-weight:700">●置录制方向</font><p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本方法可以设置，视频最终的旋转角度。</p>
+    <p align="left">总共支持四个角度，分别是：<b>“0、90、180和270度”</b>。</p>
+    <p align="left">注意：本方法同样需要在<b>“准备”</b>方法之前调用。</p>
+	<p align="left"><img border="0" src="mt_images/129.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<a name="zscwjm"></a>
+	<font style="font-size: 12pt; font-weight:700">●置输出文件名</font><p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">输出文件名，即最终的媒体文件保存路径。</p>
+    <p align="left">可通过<b>“取外部存储空间根目录()”</b>获取存储卡路径。</p>
+    <p align="left">注意：本方法需要在<b>“置输出格式”</b>后，<b>“准备”</b>之前调用。</p>
+	<p align="left"><img border="0" src="mt_images/130.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<a name="zscwjzdcc"></a>
+	<font style="font-size: 12pt; font-weight:700">●置输出文件最大尺寸</font><p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本方法可以限制当前录制媒体的<b>“输出文件”</b>时的最大尺寸。</p>
+    <p align="left">如果填写<b>“0”</b>或者<b>“负数”</b>表示不限制。</p>
+    <p align="left">注意：本方法需要在<b>“置输出格式”</b>后，<b>“准备”</b>之前调用。</p>
+	<p align="left"><img border="0" src="mt_images/131a.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<a name="zzdsc"></a>
+	<font style="font-size: 12pt; font-weight:700">●置最大时长</font><p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法和<b>“置输出文件最大尺寸”</b>不同之处在于，本方法限制的是<b>“媒体时长”</b>。</p>
+    <p align="left">注意：本方法同样需要在<b>“置输出格式”</b>后，<b>“准备”</b>之前调用。</p>
+	<p align="left"><img border="0" src="mt_images/131.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+
+	<p align="left">&nbsp;</p>
+	
+	<a name="lzzb"></a>
+	<font style="font-size: 12pt; font-weight:700">●准备</font>、
+	<font style="font-size: 12pt; font-weight:700">●开始</font>、
+	<font style="font-size: 12pt; font-weight:700">●停止</font>、
+	<font style="font-size: 12pt; font-weight:700">●重置</font>、
+	<font style="font-size: 12pt; font-weight:700">●释放</font><br>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+    <p align="left">以上几个方法和<a href="#meitijichu"><b>“媒体播放基础类”</b></a>中的同名方法作用一致。</p>
+    <p align="left">使用操作，可参考<b>“媒体播放基础类”</b>中同名的方法。</p>
+	
+</blockquote>
+<p align="left">&nbsp;</p>
+	
+	<a name="lzfscw"></a><a name="lzddxx"></a>
+	<font style="font-size: 12pt; font-weight:700">●发生错误（事件）</font><br>
+	<font style="font-size: 12pt; font-weight:700">●得到信息（事件）</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助如下图：</p>
+<blockquote>
+    <p align="left">以上两个事件和<a href="#ddxx"><b>“视频播放器”</b></a>中的同名事件作用一致。</p>
+    <p align="left">使用操作，可参考<b>“视频播放器”</b>中同名的事件，这里不再详细介绍。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">界面准备如下图：</p>
+<blockquote>
+    <p align="left">准备一个如下图的界面。</p>
+    <p align="left">线性布局内放两个按钮，分别为<b>“按钮1”</b>和<b>“按钮2”</b>标题修改为<b>“开始录制”</b>和<b>“停止录制”</b>。</p>
+	<p align="left">紧接着拖放一个<b>“文本框”</b>设置其宽度为<b>“匹配父组件宽度”</b>。</p>
+	<p align="left">最后放一个<b>“高级画板”</b>，高度和宽度分别设置<b>“匹配父组件高度/宽度”</b>。</p>
+	<p align="left"><img border="0" src="mt_images/134.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+	<p align="left">保存布局后代码如下图，随后新增一个<b>“摄像头类”</b>变量，起名<b>“摄像头”</b>。</p>
+	<p align="left"><img border="0" src="mt_images/135.png" ></p>
+</blockquote>	
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+	
+    <p align="left">在<b>“按钮1”</b>被单击下，执行<b>“开始录制”</b>的相关方法，配置录制参数等等……</p>
+	<p align="left">在<b>“按钮2”</b>被单击下，执行<b>“停止”</b>方法。</p>
+	<p align="left">如果不使用后，务必执行<b>“释放”</b>方法，将所有资源释放。</p>
+	<p align="left"><b>“摄像头”</b>不使用后，务必执行<b>“释放”</b>方法来释放资源。</p>
+	<p align="left">备注：如果录制失败或者打不开摄像头，可能是权限问题导致的。</p>
+	<p align="left">具体解决方法，找到手机<b>“安全中心”</b>找到<b>“应用权限”</b>，设置当前应用可以打开摄像头。 </p>
+	<p align="left"><img border="0" src="mt_images/136.png" ><br>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">左图：录制效果。</p>
+    <p align="left">右图：录制结束后在文件管理器就可以看到录制的视频。</p>
+    <p align="left">注意：如果录制的时候，没有画面，可能是因为软件没有摄像头和录音权限。</p>
+    <p align="left">打开手机安全中心，手动设置一下软件权限即可。</p>
+	<p align="left"><img border="0" src="mt_images/137.gif" >&nbsp;&nbsp;&nbsp;&nbsp;<img border="0" src="mt_images/137a.gif" ><br>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

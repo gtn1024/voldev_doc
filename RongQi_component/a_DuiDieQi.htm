@@ -1,0 +1,593 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		
+			<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new9')" >图像堆叠器<span>(可收缩)</span></h6></li>
+		<ol id="new9">
+			<li><blockquote><a href="#txddq">1.准备工作</a></blockquote></li>
+			<li><blockquote><a href="#tspq">2.适配器(读)</a></blockquote></li>
+			<!-- 继承自<b>“图片组适配器”</b> -->
+			<li><blockquote><a href="#tjzztcc">3.脚注字体尺寸(写)</a></blockquote></li>
+			<li><blockquote><a href="#tjzztcc">4.脚注字体类型(写)</a></blockquote></li>
+			<li><blockquote><a href="#tjzztcc">5.脚注字体风格(写)</a></blockquote></li>
+			<li><blockquote><a href="#tcrlbx">6.插入列表项</a></blockquote></li>
+			<li><blockquote><a href="#tspq">7.插入列表项2</a></blockquote></li>
+			<!-- 继承自<b>“适配器模板类”</b> -->
+			<li><blockquote><a href="#txgxm">8.修改项目</a></blockquote></li>
+			<li><blockquote><a href="#tqxm">9.取项目</a></blockquote></li>
+			<li><blockquote><a href="#tcrypxm">10.插入一批项目</a></blockquote></li>
+			<li><blockquote><a href="#tcrxm">11.插入项目</a></blockquote></li>
+			<li><blockquote><a href="#tcrxmsy">12.查找项目索引</a></blockquote></li>
+			<!-- 继承自<b>“适配器基础类”</b> -->
+			<li><blockquote><a href="#tscxm">13.删除项目</a></blockquote></li>
+			<li><blockquote><a href="#tscxm">14.通知内容被改变</a></blockquote></li>
+			<!-- <li><blockquote><a href="#tscsyxm">14.删除所有项目</a></blockquote></li> -->
+			<li><blockquote><a href="#tqxms">15.取项目数</a></blockquote></li>
+			<!-- 继承自<b>“视图浏览器基础类”</b> -->
+			<li><blockquote><a href="#tdqstsy">16.当前视图索引(读写)</a></blockquote></li>
+			<li><blockquote><a href="#tdsyst">17.到上一视图</a></blockquote></li>
+			<li><blockquote><a href="#tdsyst">18.到下一视图</a></blockquote></li>
+			<!-- 继承自<b>“适配器组件基础类”</b> -->
+			<li><blockquote><a href="#txms">19.项目数(读)</a></blockquote></li>
+			<li><blockquote><a href="#tzbxzxm">20.置被选择项目</a></blockquote></li>
+			<li><blockquote><a href="#txmbdj">21.项目被单击(事件)</a></blockquote></li>
+
+		</ol>
+
+	</ol>
+</ul>
+</div>
+
+<p align="left">
+<h2>图像堆叠器组件实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+
+	<p align="left">&nbsp;</p>
+	<font style="font-size: 12pt; font-weight:700">● 辅助说明</font><br/>
+     	<blockquote>
+		<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+	</blockquote>
+<p align="left">&nbsp;</p><a name="txddq"></a>
+<h2>一、图像堆叠器</h2>
+<p align="left">&nbsp;</p>
+	
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font>	
+<p align="left">&nbsp;</p>
+<p align="left">界面准备：</p>	
+<blockquote>
+	<p align="left">打开启动类<b>“界面设计器”</b>，设计如下界面。</p>
+	<p align="left">组件依次为<b>“按钮1”</b>，<b>“图像堆叠器1”</b>。</p>
+	<p align="left">设置图像堆叠器1<b>“高/宽度”</b>为<b>“匹配父组件高/宽度”</b>。</p>
+	<p align="left"><img src="duidie_images/194.png" width="741" height="612"  border="0" ></p>
+</blockquote>	
+
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="tspq"></a>
+<font style="font-size: 12pt; font-weight:700">● 适配器(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 插入列表项2</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“适配器(读)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性可读取当前组件的<b>“图片组适配器”</b>，通过此适配器可对当前组件内容进行一些操作。</p>
+	<p align="left">例如：<b>“插入列表项”</b>和<b>“插入列表项2”</b>方法均位于此适配器中。</p>
+	<p align="left"><img border="0" src="duidie_images/195.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“插入列表项2”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本方法在当前组件中插入项目。</p>
+	<p align="left">参数1：要插入的图像，类型为<b>“可绘制资源”</b>。</p>
+	<p align="left">参数2：脚注文本，显示在图像下方的一串文本，默认为空文本。</p>
+	<p align="left">参数3：用来设置脚注文本颜色，如果为空将使用默认颜色。</p>
+	<p align="left">参数4：欲插入的索引位置，如果为空则默认值为-1。</p>
+	<p align="left">注意：本方法继承自<b>“图片组适配器”</b>。</p>
+	<p align="left"><img border="0" src="duidie_images/196.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，调用两次<b>“插入列表项2”</b>方法，一次性插入两个图像堆叠器项目。</p>
+	<p align="left"><img border="0" src="duidie_images/197.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>后，可看到当前界面出现了两张堆叠在一起的图片项目。</p>
+	<p align="left">并且两张图片之间可相互拖动切换。</p>
+	<p align="left"><img border="0" src="duidie_images/198.gif" >
+    </p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="tcrlbx"></a>
+<font style="font-size: 12pt; font-weight:700">● 插入列表项</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“插入列表项2”</b>不同之处在于，本方法的<b>“参数1”</b>为<b>“可绘制对象类”</b>。</p>
+	<p align="left"><img border="0" src="duidie_images/199.png" ></p>
+</blockquote>
+	
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，调用当前方法，参数1填写<b>“载入可绘制资源(图像1)”</b>即可。</p>
+	<p align="left"><img border="0" src="duidie_images/200.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">多次点击<b>“按钮1”</b>会一直插入项目。</p>
+	<p align="left"><img border="0" src="duidie_images/201.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="tjzztcc"></a>
+<font style="font-size: 12pt; font-weight:700">● 脚注字体尺寸(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 脚注字体类型(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 脚注字体风格(写)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">以上三个属性全部继承自<b>“图片组适配器”</b>。</p>
+	<p align="left">&nbsp;</p>
+<p align="left">"脚注字体尺寸(写)"帮助文档：</p>
+<blockquote>
+	<p align="left">设置<b>“图像堆叠器”</b>脚注字体尺寸，单位为SP。</p>
+	<p align="left">填写0使用默认字体尺寸。</p>
+	<p align="left"><img border="0" src="duidie_images/202.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">"脚注字体类型(写)"帮助文档：</p>
+<blockquote>
+	<p align="left">设置<b>“图像堆叠器”</b>脚注字体类型，调用方数：<b>“常用字体类型.XXX”</b>。</p>
+	<p align="left"><img border="0" src="duidie_images/203.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">"脚注字体风格(写)"帮助文档：</p>
+<blockquote>
+	<p align="left">设置<b>“图像堆叠器”</b>脚注字体类型，调用方数：<b>“字体风格.XXX”</b>。</p>
+	<p align="left"><img border="0" src="duidie_images/204.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">调用<b>“插入列表项2”</b>插入项目后，就可调用以上三个属性设置字体尺寸和字体风格。</p>
+	<p align="left">注意：<b>“脚注字体类型”</b>和<b>“脚注字体风格”</b>二选一即可。</p>
+	<p align="left"><img border="0" src="duidie_images/205.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">可看到当前<b>“图像堆叠器”</b>内的脚注字体明显变大，并且字体也变成粗体。</p>
+	<p align="left"><img border="0" src="duidie_images/206.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="tcrxm"></a>
+<font style="font-size: 12pt; font-weight:700">● 插入项目</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法也可以给当前组件插入项目。</p>
+	<p align="left">参数1：点击<b>“模板类型1”</b>可查看其具体数据类型。</p>
+	<p align="left">参数2：插入索引，默认为-1。</p>
+	<p align="left"><img border="0" src="duidie_images/207.png" ></p>
+	<p align="left">&nbsp;</p>
+	<p align="left">本方法继承自<b>“适配器模板类”</b>，当前类是<b>“图片组适配器”</b>的基础类。</p>
+  <p align="left"><img border="0" src="duidie_images/208a.png" >
+  <p align="left">&nbsp;</p>
+	<p align="left">打开<b>“模板类型1”</b>后，找到<b>“图片组适配器”</b>，它所对应的实际数据类型为<b>“图片浏览列表项”</b>。</p>
+	<p align="left"><img border="0" src="duidie_images/208.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、定义<b>“可绘制资源”</b>和<b>“图片浏览列表项”</b>变量。</p>
+	<p align="left">2、<b>“图片列表”</b>中有三个属性可分别设置<b>“图像”</b>，<b>“脚注文本”</b>和<b>“脚注文本颜色”</b>。</p>
+	<p align="left">3、设置完毕后将<b>“图片列表”</b>放入<b>“插入项目”</b>的参数中即可。</p>
+	<p align="left"><img border="0" src="duidie_images/209.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="duidie_images/210.gif" >
+    </p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="tcrypxm"></a>
+<font style="font-size: 12pt; font-weight:700">● 插入一批项目</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“插入项目”</b>不同之处在于，本方法的<b>“参数1”</b>是数组。</p>
+	<p align="left"><img border="0" src="duidie_images/211.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">在<b>“插入项目”</b>代码上简单修改即可。</p>
+	<p align="left">1、给<b>“图片浏览列表项”</b>类型设置数组3。</p>
+	<p align="left">2、使用循环方法，循环3次，定义<b>“计次”</b>变量。</p>
+	<p align="left">3、新建对象<b>“图片浏览列表项”</b>，赋值给<b>“图片列表[计次]”</b>。</p>
+	<p align="left">4、然后就可以通过<b>“图片列表[计次]”</b>设置<b>“图像”</b>、<b>“脚注文本”</b>等信息。</p>
+	<p align="left">5、最后调用当前方法，将<b>“图片列表”</b>写入参数中即可。</p>
+	<p align="left"><img border="0" src="duidie_images/212.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="duidie_images/213.gif" >
+    </p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="txgxm"></a>
+<font style="font-size: 12pt; font-weight:700">● 修改项目</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">修改指定索引的项目数据。</p>
+	<p align="left">参数1：要修改的项目索引。</p>
+	<p align="left">参数2：要修改的新数据。</p>
+	<p align="left"><img border="0" src="duidie_images/214.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+	<p align="left">在<b>“通知_被创建”</b>虚拟方法下，插入一批项目。</p>
+	<p align="left"><img border="0" src="duidie_images/215.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+	<p align="left">1、定义类型为<b>“可绘制资源”</b>和<b>“图片浏览列表项”</b>的变量。</p>
+	<p align="left">2、分别设置<b>“新表项”</b>的<b>“图像”</b>，<b>“脚注文本”</b>和<b>“脚注文本颜色”</b>。</p>
+	<p align="left">3、调用当前方法，填写对应参数即可。</p>
+	<p align="left"><img border="0" src="duidie_images/216.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，可看到第一个项目被修改数据。</p>
+	<p align="left"><img border="0" src="duidie_images/217.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="tqxm"></a>
+<font style="font-size: 12pt; font-weight:700">● 取项目</font>
+	<p align="left">&nbsp;</p>
+	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">取出指定索引的项目数据，索引值必须提供有效数据。</p>
+	<p align="left"><img border="0" src="duidie_images/218.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、<b>“按钮1”</b>被点击后，定义类型为<b>“图片浏览列表项”</b>的变量，勾选参考。</p>
+	<p align="left">2、调用本方法后赋值给定义的变量，项目索引填写0.</p>
+	<p align="left">3、通过定义的变量就可以取出指定项目索引的<b>“脚注文本”</b>信息。</p>
+	<p align="left"><img border="0" src="duidie_images/219.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left"><img border="0" src="duidie_images/220.png" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="tcrxmsy"></a>
+<font style="font-size: 12pt; font-weight:700">● 查找项目索引</font>
+	<p align="left">&nbsp;</p>
+	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法可查找<b>“返回所指定项目数据”</b>的索引位置，未找到返回-1。</p>
+	<p align="left"><img border="0" src="duidie_images/221.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、调用<b>“取项目”</b>方法，取出指定索引的数据对象。</p>
+	<p align="left">2、调用当前方法，将<b>“图片浏览”</b>变量写入参数，即可返回索引位置。</p>
+	<p align="left"><img border="0" src="duidie_images/222.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left"><img border="0" src="duidie_images/223.png" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="tscxm"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除项目</font>
+<font style="font-size: 12pt; font-weight:700">● 通知内容被改变</font>
+	<p align="left">&nbsp;</p>
+	
+<p align="left"><strong>“删除项目”</strong>帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用，可删除指定索引项目。</p>
+	<p align="left">参数1：提供要删除的项目索引。</p>
+	<p align="left">参数2：要删除的项目数量，不提供默认为1。</p>
+	<p align="left">参数3：默认立刻刷新，否则需要手动刷新。</p>
+	<p align="left">注意：本方法继承自<b>“适配器基础类”</b>。 </p>
+	<p align="left"><img border="0" src="duidie_images/224.png" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<p align="left"><strong>“通知内容被改变”</strong>帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法继承自适配器，主要作用就是用于手动刷新所有项目。</p>
+	<p align="left"><img border="0" src="duidie_images/1.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，执行本方法填写对应参数即可。 </p>
+	<p align="left"><img border="0" src="duidie_images/225.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后可看到项目1被删除。</p>
+	<p align="left"><img border="0" src="duidie_images/226.gif" >
+    </p>
+</blockquote>
+	
+<!--	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="tscsyxm"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除所有项目</font>
+	<p align="left">&nbsp;</p>
+	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">取出指定索引的项目数据，索引值必须提供有效数据。</p>
+	<p align="left"><img border="0" src="duidie_images/227.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、<b>“按钮1”</b>被点击后，定义类型为<b>“图片浏览列表项”</b>的变量，勾选参考。</p>
+	<p align="left">2、调用本方法后赋值给定义的变量。</p>
+	<p align="left">3、通过定义的变量就可以取出指定项目索引的<b>“脚注文本”</b>信息。</p>
+	<p align="left"><img border="0" src="duidie_images/228.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)： </p>
+<blockquote>
+	<p align="left"><img border="0" src="duidie_images/229.gif" >
+    </p>
+</blockquote>-->
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="tqxms"></a>
+<font style="font-size: 12pt; font-weight:700">● 取项目数</font>
+	<p align="left">&nbsp;</p>
+	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法可取出当前图像堆叠器的项目数量。</p>
+	<p align="left"><img border="0" src="duidie_images/230.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接调用当前方法读取即可。</p>
+	<p align="left"><img border="0" src="duidie_images/231.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left"><img border="0" src="duidie_images/232.png" >
+    </p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="tdqstsy"></a>
+<font style="font-size: 12pt; font-weight:700">● 当前视图索引(读写)</font>
+	<p align="left">&nbsp;</p>
+	
+<p align="left"><b>“当前视图索引(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本写属性的作用，用来设置当前图像堆叠器的现行选中项，不设置本属性默认为第一个项目。</p>
+	<p align="left">同名读属性，即读取当前视图索引。</p>
+	<p align="left">注意：项目索引从0开始，本方法继承自<b>“视图浏览器基础类”</b>。</p>
+	<p align="left"><img border="0" src="duidie_images/233.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接调用当前属性即可设置当前视图，调用读属性可直接读取当前视图索引。</p>
+	<p align="left"><img border="0" src="duidie_images/234.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后将直接跳转到了第三个项目。</p>
+	<p align="left"><img border="0" src="duidie_images/235.gif" >
+    </p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="tdsyst"></a>
+<font style="font-size: 12pt; font-weight:700">● 到上一视图</font><br>
+<font style="font-size: 12pt; font-weight:700">● 到下一视图</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">以上两个方法作用一致但是方向不同，此处讲解<b>“到下一视图”</b>。</p>
+	<p align="left">&nbsp;</p>
+	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，到下一个视图。</p>
+	<p align="left"><img border="0" src="duidie_images/236.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接调用当前方法即可。</p>
+	<p align="left"><img border="0" src="duidie_images/237.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)： </p>
+<blockquote>
+	<p align="left"><img border="0" src="duidie_images/238.gif" >
+    </p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="txms"></a>
+<font style="font-size: 12pt; font-weight:700">● 项目数(读)</font>
+	<p align="left">&nbsp;</p>
+	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本读属性同样是用来取出当前项目数。</p>
+	<p align="left">注意：本属性继承自<b>“适配器组件基础类”</b>。</p>
+	<p align="left"><img border="0" src="duidie_images/239.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，直接调用当前方法读取即可。</p>
+	<p align="left"><img border="0" src="duidie_images/240.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left"><img border="0" src="duidie_images/241.png" >
+    </p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="tzbxzxm"></a>
+<font style="font-size: 12pt; font-weight:700">● 置被选择项目</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">设置当前选中项，索引从0开始。</p>
+	<p align="left"><img border="0" src="duidie_images/242.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，直接调用本方法填写参数即可。</p>
+	<p align="left"><img border="0" src="duidie_images/243.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)： </p>
+<blockquote>
+	<p align="left">可看到<b>“按钮1”</b>被点击后跳转到了第二个项目。</p>
+	<p align="left"><img border="0" src="duidie_images/244.gif" >
+    </p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="txmbdj"></a>
+<font style="font-size: 12pt; font-weight:700">● 项目被单击(事件)</font>
+	<p align="left">&nbsp;</p>
+	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">某个项目被点击后触发本事件，参数将返回被单击的项目索引。</p>
+	<p align="left"><img border="0" src="duidie_images/245.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加<b>“图像堆叠器_项目被单击”</b>事件。</p>
+	<p align="left">指定来源对象后就可通过<b>“被点击项目索引”</b>参数就可以取出脚注文本。</p>
+	<p align="left"><img border="0" src="duidie_images/246.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="duidie_images/247.gif" >
+    </p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

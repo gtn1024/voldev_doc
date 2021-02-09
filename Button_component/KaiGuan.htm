@@ -1,0 +1,267 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+	
+	
+	
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>开关组件</h4></li>
+	<ol>
+		</ol>	
+        <li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new2')" >一.开关<span>(可收缩)</span></h6></li>
+		<ol id="new2">
+    		<li><blockquote><a href="#kaiguan">1.本类说明</a></blockquote></li>
+            <li><blockquote><a href="#dktswbdx">2.打开提示文本（读写）</a></blockquote></li>
+            <li><blockquote><a href="#gbtswbdx">3.关闭提示文本（读写）</a></blockquote></li>
+            <li><blockquote><a href="#anzxkddx">4.按钮最小宽度（读写）</a></blockquote></li>
+            <li><blockquote><a href="#hkywbjjdx">5.滑块与文本间距（读写）</a></blockquote></li>
+            <li><blockquote><a href="#hktxx">6.滑块图像（写）</a></blockquote></li>
+            <li><blockquote><a href="#zhktxx">7.置滑块图像（写）</a></blockquote></li>
+            <li><blockquote><a href="#zgdtxx">8.置轨道图像（写）</a></blockquote></li>
+            <li><blockquote><a href="#gdtxx">9.轨道图像（写）</a></blockquote></li>
+
+		</ol>
+	
+		
+		
+	</ol>
+</ul>
+</div>
+
+
+
+<p align="left">
+<h2>开关组件操作实例讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<h2>一、开关</h2>
+<p align="left">&nbsp;</p>
+<a name="kaiguan"></a>
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left">本类是一个可视化组件，可以实现一个开关的效果。</p>
+  <p align="left">可通过继承自<b>“文本框”</b>的<b>“内容”</b>写属性，给本组件添加文本内容。</p>
+  <p align="left">本组件除了继承自文本框和窗口组件外，还继承了<b>“组合按钮基础类”</b>的所有方法。</p>
+		<p align="left"><font color="#F70408">本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 界面准备</font>
+	
+<blockquote>
+<p align="left">拖放两个<b>“按钮”</b>和一个<b>“开关”</b>。</p>
+<p align="left">分别起名<b>“按钮1”</b>，<b>“按钮2”</b>和<b>“开关1”</b>。</p>
+	<p align="left"><img border="0" src="kg_images/24.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="dktswbdx"></a><a name="gbtswbdx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 打开提示文本（读写）</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 关闭提示文本（读写）</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">以上两个方法效果一致，都是用来设置一个提示文本，此处讲解<b>“打开提示文本”</b>。</p>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“打开提示文本（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，本方法就是用来设置一个提示文本。</p>
+<p align="left">注意：本文本不可见。</p>
+<p align="left"><img border="0" src="kg_images/25.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“打开提示文本（读）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">读取当前设置的提示文本。</p>
+<p align="left"><img border="0" src="kg_images/26.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击后，设置一串提示文本。</p>
+<p align="left"><b>“按钮2”</b>被点击后，将其取出。</p>
+	<p align="left"><img border="0" src="kg_images/27.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+<p align="left">可以看到<b>“按钮1”</b>被点击后，再去点击<b>“按钮2”</b>会弹出提示文本。</p>
+	<p align="left"><img border="0" src="kg_images/28.gif" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="anzxkddx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 按钮最小宽度（读写）</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“按钮最小宽度（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，设置当前开关按钮的最小宽度，单位像素，类型为整数。</p>
+<p align="left"><img border="0" src="kg_images/29.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“按钮最小宽度（读）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">读取当前的设置的最小宽度，返回值是整数。</p>
+<p align="left"><img border="0" src="kg_images/30.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击后，设置当前开关的最小宽度为<b>“100”</b>。</p>
+<p align="left"><b>“按钮2”</b>被点击后，读取宽度到<b>“内容”</b>属性。</p>
+
+	<p align="left"><img border="0" src="kg_images/31.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击后，可以看到当前的开关明显变宽。</p>
+<p align="left"><b>“按钮2”</b>被点击后，也成功读取当前宽度。</p>
+	<p align="left"><img border="0" src="kg_images/32.gif" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="hkywbjjdx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 滑块与文本间距（读写）</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“滑块与文本间距（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，设置当前文本和开关之间的间距，单位为像素，类型为整数。</p>
+<p align="left"><img border="0" src="kg_images/33.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“滑块与文本间距（读）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">读取当前设置的文本间距，返回值为整数。</p>
+<p align="left"><img border="0" src="kg_images/34.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击后，设置当前滑块与文本间距为<b>“50”</b>像素。</p>
+<p align="left"><b>“按钮2”</b>被点击后，读取间距到<b>“内容”</b>属性。</p>
+
+	<p align="left"><img border="0" src="kg_images/35.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击后，可以看到文本和开关之间明显增加了一定的距离。</p>
+<p align="left"><b>“按钮2”</b>被点击后，也成功读取当前的间距。</p>
+	<p align="left"><img border="0" src="kg_images/36.gif" ></p>
+</blockquote>
+
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="hktxx"></a><a name="zhktxx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 滑块图像（写）</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 置滑块图像（写）</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“滑块图像（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，本属性就是用来设置当前的滑块图像。</p>
+<p align="left">属性值的类型为<b>“可绘制资源”</b>。</p>
+<p align="left">注意：本属性值会覆盖<b>“置滑块图像”</b>。</p>
+<p align="left"><img border="0" src="kg_images/37.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“置滑块图像（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">本属性同样也是用来设置滑块图像，不同之处在于，本属性的类型为<b>“可绘制对象类”</b>。</p>
+<p align="left">注意：本属性值同样会覆盖<b>“滑块图像”</b>。</p>
+<p align="left"><img border="0" src="kg_images/38.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击后，通过<b>“滑块图像”</b>来设置滑块。</p>
+<p align="left"><b>“按钮2”</b>被点击后，通过<b>“置滑块图像”</b>来设置滑块。</p>
+<p align="left"><b>“载入可绘制资源”</b>方法可以将<b>“可绘制资源”</b>转换为<b>“可绘制对象类”</b>。</p>
+	<p align="left"><img border="0" src="kg_images/39.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+<p align="left">可以看到无论是<b>“按钮1”</b>点击还是<b>“按钮2”</b>点击。</p>
+<p align="left">当前的滑块都会发生变化。</p>
+	<p align="left"><img border="0" src="kg_images/40.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="gdtxx"></a><a name="zgdtxx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 轨道图像（写）</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 置轨道图像（写）</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+<p align="left">以上两个写属性就是用来设置当前滑块的轨道图像。</p>
+<p align="left">属性值的类型分别为<b>“可绘制资源”</b>和<b>“可绘制对象类”</b>。</p>
+<p align="left">此处演示<b>“轨道图像”</b>。</p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">定义<b>“可绘制资源类”</b>变量，导入一个图片。</p>
+<p align="left">然后调用<b>“轨道图像”</b>属性，设置属性值为定义的<b>“轨道1”</b>变量即可。</p>
+	<p align="left"><img border="0" src="kg_images/41.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+<p align="left">可以看到<b>“按钮1”</b>被点击后，当前开关轨道发生了变化。</p>
+	<p align="left"><img border="0" src="kg_images/42.gif" ></p>
+</blockquote>
+	
+	
+
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

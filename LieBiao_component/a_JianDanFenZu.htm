@@ -1,0 +1,560 @@
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+	
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>简单分组列表框组件</h4></li>
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new4')" >一.简单分组列表框<span>(可收缩)</span></h6></li>
+		<ol id="new4">
+			<li><blockquote><a href="#jdfxlbk">1.准备工作</a></blockquote></li>
+			<li><blockquote><a href="#fzspq">2.适配器(读)</a></blockquote></li>
+			<!-- 简单分组列表适配器 -->
+			<li><blockquote><a href="#fzspq">3.插入组列表项</a></blockquote></li>
+			<li><blockquote><a href="#fzspq">4.插入子列表项</a></blockquote></li>
+			<li><blockquote><a href="#fzzxmztfg2">5.组项目标题字体尺寸(写)</a></blockquote></li>
+			<li><blockquote><a href="#fzzxmztfg2">6.组项目标题字体风格(写)</a></blockquote></li>
+			<li><blockquote><a href="#fzzxmztfg2">7.子项目标题字体尺寸(写)</a></blockquote></li>
+			<li><blockquote><a href="#fzzxmztfg2">8.子项目标题字体风格(写)</a></blockquote></li>
+			<li><blockquote><a href="#fzzxmztfg2">9.子项目脚注字体尺寸(写)</a></blockquote></li>
+			<li><blockquote><a href="#fzzxmztfg2">10.子项目脚注字体风格(写)</a></blockquote></li>
+			<li><blockquote><a href="#fzzxmyxzk">11.子项目有选择框(写)</a></blockquote></li>
+			<li><blockquote><a href="#fzzxmsjjl">12.子项目缩进距离(写)</a></blockquote></li>
+	
+			<!-- 分组适配器模板类 -->
+			<li><blockquote><a href="#fzcrzxm">13.插入组项目</a></blockquote></li>
+			<li><blockquote><a href="#fzcrzxm">14.插入子项目</a></blockquote></li>
+			<li><blockquote><a href="#fzcryp">15.插入一批组项目</a></blockquote></li>
+			<li><blockquote><a href="#fzcryp">16.插入一批子项目</a></blockquote></li>
+			<li><blockquote><a href="#fzcryp">17.取组项目</a></blockquote></li>
+			<li><blockquote><a href="#fzcryp">18.取子项目</a></blockquote></li>
+			<li><blockquote><a href="#fzcryp">19.修改组项目</a></blockquote></li>
+			<li><blockquote><a href="#fzcryp">20.修改子项目</a></blockquote></li>
+			
+			<!-- 分组适配器基础类 -->
+			<li><blockquote><a href="#fzsczxm">21.删除组项目</a></blockquote></li>
+			<li><blockquote><a href="#fzsczxm">22.删除子项目</a></blockquote></li>
+			<li><blockquote><a href="#fzsczxm">23.删除所有组项目</a></blockquote></li>
+			<li><blockquote><a href="#fzsczxm">24.删除所有子项目</a></blockquote></li>
+			<li><blockquote><a href="#fzsczxm">25.取子项目数</a></blockquote></li>
+			<li><blockquote><a href="#fzsczxm">26.取组项目数</a></blockquote></li>
+			<li><blockquote><a href="#fzydzxm">27.移动子项目</a></blockquote></li>
+	
+			<!-- 分组列表框基础类 -->
+			<li><blockquote><a href="#fzzxmfgttx">28.子项目分隔条图像(写)</a></blockquote></li>
+			<li><blockquote><a href="#fzdfzlbkwz">29.到分组列表项位置</a></blockquote></li>
+			<li><blockquote><a href="#fzdyslbxwz">30.到原始列表项位置</a></blockquote></li>
+			<li><blockquote><a href="#fzdyslbxwz">31.到原始列表项位置2</a></blockquote></li>
+			<li><blockquote><a href="#fzzk">32.展开</a></blockquote></li>
+			<li><blockquote><a href="#fzzk">33.折叠</a></blockquote></li>
+			<li><blockquote><a href="#fzsfbzk">34.是否被展开</a></blockquote></li>
+			<li><blockquote><a href="#fzzzxmfgttx">35.置子项目分隔条图像</a></blockquote></li>
+			<li><blockquote><a href="#fenzxmbdj">36.子项目被单击(事件)</a></blockquote></li>
+			<li><blockquote><a href="#fenzxmbdj">37.组项目被单击(事件)</a></blockquote></li>
+			<li><blockquote><a href="#fzzdbgb">38.组折叠状态被改变(事件)</a></blockquote></li>
+			<li><blockquote><a href="#fenzuqita">39.其它</a></blockquote></li>
+			<!-- 列表框基础类 -->
+			<!-- 列表组件基础类 -->
+			
+			<!-- 
+			适配器组件基础类
+			-->
+		</ol>
+		
+		
+
+	</ol>
+</ul>
+</div>	 
+
+<p align="left">
+<h2>简单分组列表框组件操作实例讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="jdfxlbk"></a>
+<h2>一、简单分组列表框</h2>
+<p align="left">&nbsp;</p>
+	
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font>	
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">打开启动类<b>“界面设计器”</b>，设计如下界面。</p>
+	<p align="left">依次是<b>“按钮1”</b>，<b>“按钮2”</b>和<b>“简单分组列表框1”</b>。</p>
+	<p align="left">本组件和<b>“简单列表框”</b>的用法基本一致，不同之处就是增加了组的概念。</p>
+	<p align="left">本篇教程针对分组进行重点演示。</p>
+	<p align="left"><font color="#F30F12">注意：本组件位于<strong>“分组列表类窗口组件”</strong>模块中。</font></p>
+	<p align="left"><img src="jdfz_images/128.png"></p>
+</blockquote>	
+	
+
+<p align="left">&nbsp;</p>	
+<a name="fzspq"></a>
+<font style="font-size: 12pt; font-weight:700">● 适配器(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 插入组列表项</font><br>
+<font style="font-size: 12pt; font-weight:700">● 插入子列表项</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“适配器(读)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本属性可返回<b>“简单分组列表框适配器”</b>。</p>
+	<p align="left">本适配器和<b>“简单列表适配器”</b>基本一致，不同之处就是多了分组的概念。</p>
+	<p align="left"><img border="0" src="jdfz_images/129.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“插入组列表项”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本方法可插入一个组项目，返回<b>“组项目索引”</b>，从0开始。</p>
+	<p align="left">参数1：提供分组标题。</p>
+	<p align="left">参数2：提供分组图像，可通过<b>“载入可绘制资源”</b>方法，将可绘制资源转换为当前对象类。</p>
+	<p align="left">参数3：提供标题文本颜色，默认为0。</p>
+	<p align="left">参数4：标题是否加粗，默认不加粗。</p>
+	<p align="left">参数5：组项目插入位置，默认为-1。</p>
+	<p align="left"><img border="0" src="jdfz_images/130.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“插入子列表项”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法用于插入子项目，参数和<b>“组项目”</b>基本一致，不同之处增加了一个<b>“组项目索引位置”</b>。</p>
+	<p align="left"><img border="0" src="jdfz_images/131.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、定义<b>“组索引”</b>变量。</p>
+	<p align="left">2、<b>“按钮1”</b>被点击后，通过<b>“适配器”</b>读属性插入组项目后赋值给<b>“组索引”</b>变量。</p>
+	<p align="left">3、<b>“按钮2”</b>被点击后，调用<b>“插入子项目”</b>方法，参数8填写<b>“组索引”</b>变量。</p>
+	<p align="left"><img border="0" src="jdfz_images/132.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>和<b>“按钮2”</b>依次点击后，点击分组可实现收缩。</p>
+	<p align="left"><img border="0" src="jdfz_images/133.gif" >
+    </p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>	
+<a name="fzzxmztfg2"></a>
+<font style="font-size: 12pt; font-weight:700">● 组项目标题字体尺寸(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 组项目标题字体风格(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 子项目标题字体尺寸(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 子项目标题字体风格(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 子项目脚注字体尺寸(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 子项目脚注字体风格(写)</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">以上六个属性，用来设置分组和子项字体属性。</p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在<b>“简单分组列表框”</b>属性栏，分别设置以上属性值。</p>
+	<p align="left"><img border="0" src="jdfz_images/134.png" >
+    </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="jdfz_images/135.gif" >
+    </p>
+</blockquote>
+	
+
+<p align="left">&nbsp;</p>	
+<a name="fzzxmyxzk"></a>
+<font style="font-size: 12pt; font-weight:700">● 子项目有选择框(写)</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">本属性参考<a href="#jdyxzk1"><b>“简单列表框->有选择框(写)”</b></a>。</p>
+</blockquote>	
+
+	
+<p align="left">&nbsp;</p>	
+<a name="fzzxmsjjl"></a>
+<font style="font-size: 12pt; font-weight:700">● 子项目缩进距离(写)</font>
+<p align="left">&nbsp;</p>
+
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性可设置子项目缩进距离，单位为DP。</p>
+	<p align="left"><img border="0" src="jdfz_images/136.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">通过<b>“适配器”</b>设置当前属性值即可。</p>
+	<p align="left"><img border="0" src="jdfz_images/137.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="jdfz_images/138.png" >
+    </p>
+</blockquote>
+	
+
+<p align="left">&nbsp;</p>	
+<a name="fzcrzxm"></a>
+<font style="font-size: 12pt; font-weight:700">● 插入组项目</font><br>
+<font style="font-size: 12pt; font-weight:700">● 插入子项目</font>
+<p align="left">&nbsp;</p>
+<p align="left">以上两个方法继承自<b>“分组适配器模板类”</b>，本适配器和<b>“适配器模板类”</b>用法一致，</p>
+<p align="left">不同之处就是增加了分组的概念，此处演示插入项目。</p>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“插入组项目”</b>帮助文档： </p>
+<blockquote>
+	<p align="left">本方法可插入一个组项目。</p>
+	<p align="left">参数1：<b>“模板类型1”</b>的实际数据类型为<b>“简单分组列表组项目”</b>。</p>
+	<p align="left">参数2：欲插入的索引位置，默认为-1。</p>
+	<p align="left"><img border="0" src="jdfz_images/141.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“插入子项目”</b>帮助文档： </p>
+<blockquote>
+	<p align="left">本方法可插入一个子项目。</p>
+	<p align="left">参数1：<b>“模板类型2”</b>的实际数据类型为<b>“简单分组列表子项目”</b>。</p>
+	<p align="left">参数2：提供欲插入的组索引位置。</p>
+	<p align="left">参数3：欲插入的子索引位置，默认为-1。</p>
+	<p align="left"><img border="0" src="jdfz_images/142.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><img border="0" src="jdfz_images/139.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="jdfz_images/140.gif" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>	
+<a name="fzcryp"></a>
+<font style="font-size: 12pt; font-weight:700">● 插入一批组项目</font><br>
+<font style="font-size: 12pt; font-weight:700">● 插入一批子项目</font><br>
+<font style="font-size: 12pt; font-weight:700">● 取组项目</font><br>
+<font style="font-size: 12pt; font-weight:700">● 取子项目</font><br>
+<font style="font-size: 12pt; font-weight:700">● 修改组项目</font><br>
+<font style="font-size: 12pt; font-weight:700">● 修改子项目</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">以上方法依次参考：</p>
+	<p align="left">	<a href="a_ctrl_layout.htm#tcrypxm"><b>“图像堆叠器->插入一批项目”</b></a>方法。</p>
+	<p align="left"><a href="a_ctrl_layout.htm#tqxm"><b>“图像堆叠器->取项目”</b></a>方法。</p>	
+	<p align="left"><a href="a_ctrl_layout.htm#txgxm"><b>“图像堆叠器->修改项目”</b></a>方法。</p>		
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+<a name="fzsczxm"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除组项目</font><br>
+<font style="font-size: 12pt; font-weight:700">● 删除子项目</font><br>
+<font style="font-size: 12pt; font-weight:700">● 删除所有组项目</font><br>
+<font style="font-size: 12pt; font-weight:700">● 删除所有子项目</font><br>
+<font style="font-size: 12pt; font-weight:700">● 取子项目数</font><br>
+<font style="font-size: 12pt; font-weight:700">● 取组项目数</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">以上方法继承自<b>“分组适配器基础类”</b>，本适配器和<b>“适配器基础类”</b>用法一致。</p>
+	<p align="left">依次参考：</p>
+	<p align="left"><a href="a_ctrl_layout.htm#tscxm"><b>“图像堆叠器->删除项目”</b></a>方法。</p>
+	<p align="left"><a href="#jdshanchu"><b>“简单列表框->删除所有项目”</b></a>方法。</p>	
+	<p align="left"><a href="a_ctrl_layout.htm#tqxms"><b>“图像堆叠器->取项目数”</b></a>方法。</p>		
+</blockquote>
+	
+
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="fzydzxm"></a>
+<font style="font-size: 12pt; font-weight:700">● 移动子项目</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法可将指定分组的子项目移动到另外一个分组。</p>
+	<p align="left">参数1：提供源组项目索引。</p>
+	<p align="left">参数2：提供要移动的子项目索引。</p>
+	<p align="left">参数3：提供目的分组索引。</p>
+	<p align="left">参数4：提供目的子项目索引。</p>
+	<p align="left"><img border="0" src="jdfz_images/143.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">在<b>“通知_被创建”</b>虚拟方法下，插入组项目后循环插入10个子项目。</p>
+	<p align="left"><b>“按钮1”</b>被点击后，执行本方法填写对应参数即可。</p>
+	<p align="left"><img border="0" src="jdfz_images/144.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote> 
+	<p align="left">最后可看到<b>“子项目5”</b>移动到了<b>“子项目0”</b>的下方。</p>
+	<p align="left"><img border="0" src="jdfz_images/145.gif" >
+    </p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>	
+<a name="fzzxmfgttx"></a>
+<font style="font-size: 12pt; font-weight:700">● 子项目分隔条图像(写)</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">本属性参考<a href="#jdtxfgt"><b>“图像分隔条(写)”</b></a>。</p>
+</blockquote>	
+	
+
+	
+	<p align="left">&nbsp;</p>	
+<a name="fzdyslbxwz"></a>
+<font style="font-size: 12pt; font-weight:700">● 到原始列表项位置</font><br>
+<font style="font-size: 12pt; font-weight:700">● 到原始列表项位置2</font>
+<p align="left">&nbsp;</p>
+<p align="left">以上两个方法都是取出原始索引，此处演示<b>“到原始列表项位置()”</b>方法。</p>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">例如：<b>“分组0”</b>下有<b>“子项0”</b>，<b>“子项1”</b>。</p>
+    <p align="left">以上三个项目的原始索引如下：</p>
+    <p align="left">分组0=索引0。</p>
+    <p align="left">子项0=索引1。</p>
+    <p align="left">子项1=索引2。</p>
+    <p align="left">如果有更多的分组和子项目以此类推。</p>
+    <p align="left">参数1：填写分组索引，从0开始。</p>
+    <p align="left">参数2：填写分组下的子项索引，从0开始。</p>
+	<p align="left">本方法的返回值为原始索引位置。</p>
+	<p align="left"><img border="0" src="jdfz_images/146.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">参数1和参数2均填写0。</p>
+	<p align="left">意思就是，取出<b>“分组0”</b>下<b>“子项0”</b>的原始索引位置。</p>
+	<p align="left"><img border="0" src="jdfz_images/147.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left"><img border="0" src="jdfz_images/148.png" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<a name="fzdfzlbkwz"></a>
+<font style="font-size: 12pt; font-weight:700">● 到分组列表项位置</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法通过原始索引位置，取出对应的分组和子项索引位置。</p>
+	<p align="left">例如：</p>
+	<p align="left">分组0=原始索引0</p>
+	<p align="left">子项0=原始索引1</p>
+	<p align="left">子项1=原始索引2</p>
+	<p align="left">如果此方法的<b>“参数1”</b>填写<b>“2”</b>，最终将返回分组索引<b>“0”</b>和子项索引<b>“1”</b>。</p>
+	<p align="left"><img border="0" src="jdfz_images/149.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">定义<b>“分组列表框位置”</b>变量，将变量名写入<b>“参数2”</b>。</p>
+	<p align="left">参数1填写原始索引3。</p>
+	<p align="left">最后通过<b>“分组位置.组项目索引位置”</b>可取出原始索引所在分组位置。</p>
+	<p align="left">通过<b>“分组位置.子项目索引位置”</b>可取出原始索引所对应的子项索引。</p>
+	<p align="left"><img border="0" src="jdfz_images/150.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left"><img border="0" src="jdfz_images/151.png" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<a name="fzzk"></a>
+<font style="font-size: 12pt; font-weight:700">● 展开</font>
+<font style="font-size: 12pt; font-weight:700">● 折叠</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“展开”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，展开指定索引分组。</p>
+	<p align="left">参数1：提供分组索引。</p>
+	<p align="left">参数2：是否使用动画。</p>
+	<p align="left"><img border="0" src="jdfz_images/152.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“折叠”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">折叠指定索引分组。</p>
+	<p align="left"><img border="0" src="jdfz_images/153.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>点击，展开分组0。</p>
+	<p align="left"><b>“按钮2”</b>点击，折叠分组0。</p>
+	<p align="left"><img border="0" src="jdfz_images/154.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="jdfz_images/155.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<a name="fzsfbzk"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否被展开</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，本方法可判断子项目是否被展开。</p>
+	<p align="left">返回真表示展开，否则相反。</p>
+	<p align="left"><img border="0" src="jdfz_images/156.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><img border="0" src="jdfz_images/157.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="jdfz_images/158.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<a name="fzzzxmfgttx"></a>
+<font style="font-size: 12pt; font-weight:700">● 置子项目分隔条图像</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">设置子项目分隔条图像，提供<b>“空对象”</b>则清除分隔条图像。</p>
+	<p align="left"><img border="0" src="jdfz_images/159.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">通过<b>“载入可绘制资源()”</b>方法，可将<b>“可绘制资源”</b>转换为<b>“可绘制资源对象类”</b>。</p>
+	<p align="left"><img border="0" src="jdfz_images/160.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="jdfz_images/161.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<a name="fenzxmbdj"></a>
+<font style="font-size: 12pt; font-weight:700">● 子项目被单击(事件)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 组项目被单击(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“子项目被单击(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，当子项被单击后发送本事件。</p>
+	<p align="left">参数1、2分别返回组项目和子项目索引。</p>
+	<p align="left"><img border="0" src="jdfz_images/162.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“组项目被单击(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left"> 组项目被点击后发送本事件，参数返回组项目索引。</p>
+	<p align="left"><img border="0" src="jdfz_images/163.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><img border="0" src="jdfz_images/164.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="jdfz_images/165.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<a name="fzzdbgb"></a>
+<font style="font-size: 12pt; font-weight:700">● 组折叠状态被改变(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，当分组折叠状态被改变后将发送本事件。</p>
+	<p align="left">参数1：返回组项目索引。</p>
+	<p align="left">参数2：返回当前分组是否被折叠。</p>
+	<p align="left"><img border="0" src="jdfz_images/166.png" ></p>
+</blockquote>	
+
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">判断<b>“被折叠”</b>参数，然后弹出对应提示。</p>
+	<p align="left"><img border="0" src="jdfz_images/167.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="jdfz_images/168.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<a name="fenzuqita"></a>
+<font style="font-size: 12pt; font-weight:700">● 其它</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+	 <p align="left">本组件除了上述方法外，还继承了
+	 <a href="a_ctrl_layout.htm#txms"><b>“适配器组件基础类”</b></a>，
+	 <a href="#jdfgtgd"><b>“列表框基础类”</b></a>和
+	 <a href="#jdcdbkstx"><b>“列表组件基础类”</b></a>。</p>
+	
+</blockquote>	
+
+	
+
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

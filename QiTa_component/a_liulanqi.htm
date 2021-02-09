@@ -1,0 +1,783 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new11')" >一.浏览框<span>(可收缩)</span></h6></li>
+		<ol id="new11">
+			<li><blockquote><a href="#">1.准备工作</a></blockquote></li>
+			<li><blockquote><a href="#llkdz">2.地址(读写)</a></blockquote></li>
+			<li><blockquote><a href="#szd">3.设置(读)</a></blockquote></li>
+			<li><blockquote><a href="#cshsfbl">4.初始缩放比例(写)</a></blockquote></li>
+			<li><blockquote><a href="#nrgdd">5.内容高度(读)</a></blockquote></li>
+			<li><blockquote><a href="#qjgdlbd">6.前进后退列表(读)</a></blockquote></li>
+			<li><blockquote><a href="#dzd">7.地址(读)</a></blockquote></li>
+			<li><blockquote><a href="#dzd">8.标题(读)</a></blockquote></li>
+			<li><blockquote><a href="#nfqjd">9.能否前进(读)</a></blockquote></li>
+			<li><blockquote><a href="#nfqjd">10.能否后退(读)</a></blockquote></li>
+			<li><blockquote><a href="#jdd">11.进度(读)</a></blockquote></li>
+			<li><blockquote><a href="#sg">12.上滚</a></blockquote></li>
+			<li><blockquote><a href="#xgyy">13.下滚一页</a></blockquote></li>
+			<li><blockquote><a href="#shuaxin">14.刷新</a></blockquote></li>
+			<li><blockquote><a href="#qianjin">15.前进</a></blockquote></li>
+			<li><blockquote><a href="#qianjin">16.后退</a></blockquote></li>
+			<li><blockquote><a href="#qjhht">17.前进或后退</a></blockquote></li>
+			<li><blockquote><a href="#fdym">18.放大页面</a></blockquote></li>
+			<li><blockquote><a href="#fdym">19.缩小页面</a></blockquote></li>
+			<li><blockquote><a href="#ccqb">20.查找全部</a></blockquote></li>
+			<li><blockquote><a href="#chazhao">21.查找下一个</a></blockquote></li>
+			<li><blockquote><a href="#qkppgl">22.清空匹配高亮</a></blockquote></li>
+			<li><blockquote><a href="#qkls">23.清空历史</a></blockquote></li>
+			<li><blockquote><a href="#gbst">24.滚动视图</a></blockquote></li>
+			<li><blockquote><a href="#zrsj">25.载入数据</a></blockquote></li>
+			<li><blockquote><a href="#zrsj">26.载入数据2</a></blockquote></li>
+			<li><blockquote><a href="#llkxh">27.销毁</a></blockquote></li>
+			<li><blockquote><a href="#jjtz">28.即将跳转(事件)</a></blockquote></li>
+			<li><blockquote><a href="#ksxzwj">29.开始下载文件(事件)</a></blockquote></li>
+			<li><blockquote><a href="#sfblbgbsj">30.缩放比例被改变(事件)</a></blockquote></li>
+			<li><blockquote><a href="#hdbtsj">31.获得标题(事件)</a></blockquote></li>
+			<li><blockquote><a href="#zrzy">32.载入资源(事件)</a></blockquote></li>
+			<li><blockquote><a href="#zrjdbgb">33.载入进度被改变(事件)</a></blockquote></li>
+			<li><blockquote><a href="#ymkszr">34.页面开始载入(事件)</a></blockquote></li>
+			<li><blockquote><a href="#ymkszr">35.页面载入完毕(事件)</a></blockquote></li>
+		</ol>
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>浏览框组件实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+ 	
+<font style="font-size: 12pt; font-weight:700">● 详细例程</font><br/>
+<br/><blockquote>
+	<p align="left">可打开火山安装目录下<b>“samples\samples.vsln”</b>解决方案，可看到本组件详细例程。 </p>
+	<p align="left"><font color="#F30F12">注意：本组件位于<strong>“浏览器窗口组件”</strong>模块中。</font></p>
+	<p align="left"><img src="liulanqi_images/0.png" border="0" >
+</p>
+	 </blockquote>
+	<p align="left">&nbsp;</p>
+  
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">打开启动类界面设计器，设计如下界面。</p>
+    <p align="left">依次是<b>“按钮1”</b>和<b>“浏览框1”</b>，并设置浏览框1的高度和宽度。 </p>
+	<p align="left"><img src="liulanqi_images/2.png" border="0" ></p>
+
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>
+<a name="llkdz"></a>
+<font style="font-size: 12pt; font-weight:700">● 地址(读写)</font>
+
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“地址(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本属性可让浏览器跳转到指定地址。</p>
+	<p align="left">属性值填写要跳转的URL地址即可。</p>
+	<p align="left">同名读属性，可以读取当前浏览器地址。</p>
+	<p align="left">但读属性读取的地址，未必和写属性的地址一致。</p>
+	<p align="left"><img border="0" src="liulanqi_images/3.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在<b>“浏览框1”</b>属性栏，增加<b>“地址”</b>属性，属性值填写<b>“https://www.baidu.com”</b></p>
+	<p align="left"><b>“按钮1”</b>被点击后，读取当前<b>“浏览器1”</b>的地址。</p>
+	<p align="left"><img border="0" src="liulanqi_images/4.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终可看到，读取的地址和设置的地址并不一致。</p>
+	<p align="left">这是因为浏览的网页内部进行了地址跳转。</p>
+	<p align="left"><img border="0" src="liulanqi_images/5.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="szd"></a>
+<font style="font-size: 12pt; font-weight:700">● 设置(读)</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可返回<b>“浏览器设置类”</b>，通过本类可对浏览器进行一些高级设置。</p>
+	<p align="left">例如：启用js等操作。</p>
+	<p align="left"><img border="0" src="liulanqi_images/6.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、在<b>“启动类”</b>属性名输入<b>“@安卓.附加清单”</b>，属性值填写<b>“常用窗口附加清单.开启硬件加速”</b>。</p>
+	<p align="left">2、在<b>“浏览器1”</b>的属性名输入<b>“地址”</b>，属性值输入一个网址。</p>
+	<p align="left">3、<b>“按钮1”</b>被点击后，通过<b>“设置”</b>调用<b>“启用JS”</b>，设置属性值为真。</p>
+	<p align="left">4、重新设置地址，以刷新网页启用js。</p>
+	<p align="left">注释1：如果不启用<b>“硬件加速”</b>，当网页在播放视频时，可能会出现<b>“有声音但无画面”</b>的现象，所以必须要开启硬件加速。</p>
+	<p align="left">注释2：浏览器的<b>“启用js”</b>属性，默认值为假，即关闭状态。</p>
+	<p align="left">本属性值必须为真，因为网页中可能存在大量的js操作，如果禁止很多网页功能将无法正常使用。</p>
+	<p align="left"><img border="0" src="liulanqi_images/7.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">例如：当前打开了一个视频网站，在没有点击<b>“按钮1”</b>开启js的情况下，当前视频无法正常播发。</p>
+	<p align="left">因为播放视频需要js支持，<b>“按钮1”</b>被点击后，会启用js，并且刷新网址。</p>
+	<p align="left">此时网址内的视频才可以正常播放。</p>
+	<p align="left"><img border="0" src="liulanqi_images/8.gif" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<a name="cshsfbl"></a>
+<font style="font-size: 12pt; font-weight:700">● 初始缩放比例(写)</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本属性可设置当前浏览器的缩放比例。</p>
+	<p align="left">属性值提供25表示最小比例缩放，100最大比例缩放，0表示默认。</p>
+	<p align="left"><img border="0" src="liulanqi_images/9.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">设置本属性的属性值为80。</p>
+	<p align="left"><img border="0" src="liulanqi_images/10.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最后可看到网页出现放大效果，但是并未将整个网页完整的展示。</p>
+	<p align="left"><img border="0" src="liulanqi_images/11.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<a name="nrgdd"></a>
+<font style="font-size: 12pt; font-weight:700">● 内容高度(读)</font><br>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性用来读取网页的页面内容高度。</p>
+	<p align="left"><img border="0" src="liulanqi_images/12.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，直接读取即可。</p>
+	<p align="left"><img border="0" src="liulanqi_images/13.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="liulanqi_images/14.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="qjgdlbd"></a>
+<font style="font-size: 12pt; font-weight:700">● 前进后退列表(读)</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性可读取当前浏览器的历史记录，返回类型为<b>“浏览历史类”</b>。</p>
+	<p align="left">通过当前类，可读取具体历史数据。</p>
+	<p align="left"><img border="0" src="liulanqi_images/15.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义<b>“历史”</b>变量，类型为<b>“浏览历史类”</b>设置参考。</p>
+	<p align="left">2、调用当前属性，赋值给<b>“历史”</b>。</p>
+	<p align="left">3、通过<b>“历史”</b>可读取相关的历史浏览信息。</p>
+	<p align="left"><img border="0" src="liulanqi_images/16.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="liulanqi_images/17.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="dzd"></a>
+<font style="font-size: 12pt; font-weight:700">● 地址(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 标题(读)</font>
+	
+<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">以上两个属性，分别用来读取当前浏览框内网页的<b>“地址和标题”</b>。</p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击后，直接读取即可。</p>
+	<p align="left"><img border="0" src="liulanqi_images/18.png" ></p>
+</blockquote>
+		
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left"><img border="0" src="liulanqi_images/19.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="nfqjd"></a>
+<font style="font-size: 12pt; font-weight:700">● 能否前进(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 能否后退(读)</font>
+		<p align="left">&nbsp;</p>
+		<p align="left">以上两个读属性，用来判断当前浏览框内的网页是否能前进或者后退。</p>
+		<p align="left">此处演示<b>“能否后退”</b>属性。</p>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">本属性可用来判断当前浏览框内的网页是否可以后退。</p>
+	<p align="left">返回真表示可后退，否则返回假。</p>
+	<p align="left"><img border="0" src="liulanqi_images/20.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接调用本属性判断返回值即可。</p>
+	<p align="left"><img border="0" src="liulanqi_images/21.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">随便点击网页内的一个链接后，再去<b>“按钮1”</b>就会提示<b>“可后退”</b>。</p>
+	<p align="left"><img border="0" src="liulanqi_images/22.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="jdd"></a>
+<font style="font-size: 12pt; font-weight:700">● 进度(读)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，用来读取当前浏览框进度。</p>
+	<p align="left"><img border="0" src="liulanqi_images/23.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义<b>“时钟1”</b>类型为<b>“时钟类”</b>的成员变量，设置<b>“周期”</b>属性为100毫秒。</p>
+	<p align="left">2、<b>“按钮1”</b>被点击后，设置<b>“地址”</b>属性，调用<b>“时钟1.启动()”</b>方法。</p>
+	<p align="left">3、添加<b>“时钟类_时钟周期”</b>事件，读取<b>“进度”</b>到<b>“标题”</b>。</p>
+	<p align="left">4、最后判断进度值为100时，停止时钟。</p>
+	<p align="left"><img border="0" src="liulanqi_images/24.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">注意观察程序标题。</p>
+	<p align="left"><img border="0" src="liulanqi_images/25.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="sg"></a>
+<font style="font-size: 12pt; font-weight:700">● 上滚</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可让当前浏览框内的网页，滚动到顶部。</p>
+	<p align="left"><img border="0" src="liulanqi_images/26.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接调用本方法，参数值设置为<b>“真”</b>即可。</p>
+	<p align="left"><img border="0" src="liulanqi_images/27.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，可看到当前浏览框内的网页滚动到了顶部。</p>
+	<p align="left"><img border="0" src="liulanqi_images/28.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="xgyy"></a>
+<font style="font-size: 12pt; font-weight:700">● 下滚一页</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用，正好和<b>“上滚”</b>相反，用于滚动到底部。</p>
+	<p align="left"><img border="0" src="liulanqi_images/29.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接调用本方法，参数值填写真即可。</p>
+	<p align="left"><img border="0" src="liulanqi_images/30.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，可看到当前浏览框内的网页滚动到了底部。</p>
+	<p align="left"><img border="0" src="liulanqi_images/31.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="shuaxin"></a>
+<font style="font-size: 12pt; font-weight:700">● 刷新</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本方法可刷新当前网页。</p>
+	<p align="left"><img border="0" src="liulanqi_images/32.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接调用本方法即可。</p>
+	<p align="left"><img border="0" src="liulanqi_images/33.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，当前网页会刷新显示。</p>
+	<p align="left"><img border="0" src="liulanqi_images/34.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="qianjin"></a>
+<font style="font-size: 12pt; font-weight:700">● 前进</font><br>
+<font style="font-size: 12pt; font-weight:700">● 后退</font>
+		<p align="left">&nbsp;</p>
+		<p align="left">以上两个方法用作前进或者后退，此处演示<b>“后退”</b>方法。</p>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，本方法用来返回上一个页面的内容。</p>
+	<p align="left"><img border="0" src="liulanqi_images/35.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接调用本方法即可。</p>
+	<p align="left"><img border="0" src="liulanqi_images/36.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，网页会后退。</p>
+	<p align="left"><img border="0" src="liulanqi_images/37.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="qjhht"></a>
+<font style="font-size: 12pt; font-weight:700">● 前进或后退</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可前进和后退指定步数。</p>
+	<p align="left">参数值大于0则前进，小于0则后退。</p>
+	<p align="left"><img border="0" src="liulanqi_images/38.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，调用本方法、参数值填写-2，作用后退两步。</p>
+	<p align="left"><img border="0" src="liulanqi_images/39.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">可看到<b>“按钮1”</b>被点击后，当前网页后退了两步。</p>
+	<p align="left"><img border="0" src="liulanqi_images/40.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="fdym"></a>
+<font style="font-size: 12pt; font-weight:700">● 放大页面</font><br>
+<font style="font-size: 12pt; font-weight:700">● 缩小页面</font>
+		<p align="left">&nbsp;</p>
+		<p align="left">以上两个方法用来放大和缩小网页，此处演示<b>“放大页面”</b>。</p>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本方法可放大网页。</p>
+	<p align="left"><img border="0" src="liulanqi_images/41.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接调用本方法即可。</p>
+	<p align="left"><img border="0" src="liulanqi_images/42.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">多次点击<b>“按钮1”</b>可连续放大。</p>
+	<p align="left"><img border="0" src="liulanqi_images/43.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="ccqb"></a>
+<font style="font-size: 12pt; font-weight:700">● 查找全部</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本方法可在当前网页内查找指定文本。</p>
+	<p align="left"><img border="0" src="liulanqi_images/44.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，调用本方法查找<b>“火山”</b>。</p>
+	<p align="left"><img border="0" src="liulanqi_images/45.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可看到网页内的所有<b>“火山”</b>被高亮显示。</p>
+	<p align="left"><img border="0" src="liulanqi_images/46.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="chazhao"></a>
+<font style="font-size: 12pt; font-weight:700">● 查找下一个</font>
+	<p align="left">&nbsp;</p>
+<p align="left">界面准备：</p>
+<blockquote>
+	<p align="left">在原界面的基础上增加一个<b>“按钮2”</b>。</p>
+	<p align="left"><img border="0" src="liulanqi_images/47.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用，用来高亮下一个文本匹配项。</p>
+	<p align="left">本方法需要配合<b>“查找全部”</b>方法使用。</p>
+	<p align="left">参数值填写真，向前查找，否则向后查找。</p>
+	<p align="left"><img border="0" src="liulanqi_images/48.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，调用<b>“查找全部”</b>方法。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，调用当前方法。</p>
+	<p align="left"><img border="0" src="liulanqi_images/49.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="liulanqi_images/50.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="qkppgl"></a>
+<font style="font-size: 12pt; font-weight:700">● 清空匹配高亮</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，本方法用来清空匹配的高亮文本。</p>
+	<p align="left"><img border="0" src="liulanqi_images/51.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后查找<b>“火山”</b>。</p>
+	<p align="left"><b>“按钮2”</b>被点击后调用本方法清空。</p>
+	<p align="left"><img border="0" src="liulanqi_images/52.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><b>“按钮2”</b>被点击后，当前所有的高亮文本将会清空。</p>
+	<p align="left"><img border="0" src="liulanqi_images/53.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="qkls"></a>
+<font style="font-size: 12pt; font-weight:700">● 清空历史</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本方法可清空浏览框的所有历史记录，前进和后退也将会清空。</p>
+	<p align="left"><img border="0" src="liulanqi_images/54.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，调用本方法清空。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，调用<b>“能够后退”</b>属性判断返回值。</p>
+	<p align="left"><img border="0" src="liulanqi_images/55.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="liulanqi_images/56.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="gbst"></a>
+<font style="font-size: 12pt; font-weight:700">● 滚动视图</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本方法可滚动浏览框内的网页视图。</p>
+	<p align="left">参数1：填写横向滚动距离。</p>
+	<p align="left">参数2：填写纵向滚动距离。</p>
+	<p align="left">单位均是像素。</p>
+	<p align="left"><img border="0" src="liulanqi_images/57.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">调用本方法滚动500像素。</p>
+	<p align="left"><img border="0" src="liulanqi_images/58.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="liulanqi_images/60.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="zrsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 载入数据</font><br>
+<font style="font-size: 12pt; font-weight:700">● 载入数据2</font>
+		<p align="left">&nbsp;</p>
+		<p align="left">以上两个方法都是用来载入HTML超文本数据，此处演示<b>“载入数据2”</b>。</p>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法共有五个参数。</p>
+	<p align="left">需重点注意<b>“参数1”</b>和<b>“参数2”</b>，如果载入的HTML文本中没有相关数据，忽略即可。</p>
+	<p align="left">参数3：填写要载入的文档类型，如果要载入HTML文档保持默认值即可。</p>
+	<p align="left">参数4：填写文档编码，可通过<b>“文本编码.XXX”</b>调用，默认值为<b>“UTF-8”</b>。</p>
+	<p align="left">参数5：填写一个有效的URL地址，作为历史记录，默认为空对象。</p>
+	<p align="left"><img border="0" src="liulanqi_images/59.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义<b>“HTMl文本”</b>变量，初始值设置一段HTML文本。</p>
+	<p align="left">2、调用当前方法，将<b>“HTML文本”</b>填入<b>“参数2”</b>，其余参数保持默认值即可。</p>
+	<p align="left"><img border="0" src="liulanqi_images/61.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="liulanqi_images/62.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="llkxh"></a>
+<font style="font-size: 12pt; font-weight:700">● 销毁</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，本方法用来销毁浏览框。</p>
+	<p align="left">浏览框销毁后，所有数据将清空。</p>
+	<p align="left"><img border="0" src="liulanqi_images/63.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接调用本方法即可。</p>
+	<p align="left"><img border="0" src="liulanqi_images/64.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="liulanqi_images/65.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="jjtz"></a>
+<font style="font-size: 12pt; font-weight:700">● 即将跳转(事件)</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当浏览框内的网页即将开始跳转新页面的时，本事件将会发送。</p>
+	<p align="left">参数返回要跳转的URL地址。</p>
+	<p align="left"><img border="0" src="liulanqi_images/66.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加本事件，将返回的<b>“URL地址”</b>赋值给<b>“窗口标题”</b>。</p>
+	<p align="left"><img border="0" src="liulanqi_images/67.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">最后可看到新地址，显示在窗口标题上。</p>
+	<p align="left"><img border="0" src="liulanqi_images/68.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="ksxzwj"></a>
+<font style="font-size: 12pt; font-weight:700">● 开始下载文件(事件)</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，当浏览器开始下载文件时，本事件将会发送。</p>
+	<p align="left">参数1：返回要下载的文件地址。</p>
+	<p align="left">参数2：返回代理信息。</p>
+	<p align="left">参数3：返回http配置头信息。</p>
+	<p align="left">参数4：返回媒体类型。</p>
+	<p align="left">参数5：返回要下载的文件尺寸，单位字节。</p>
+	<p align="left"><img border="0" src="liulanqi_images/69.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加本事件，把返回的信息添加到信息框中。</p>
+	<p align="left"><img border="0" src="liulanqi_images/70.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="liulanqi_images/71.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="sfblbgbsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 缩放比例被改变(事件)</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当前网页缩放比例改变后将发送本事件。</p>
+	<p align="left">参数1：返回缩放前的比例。</p>
+	<p align="left">参数2：返回缩放后的比例。</p>
+	<p align="left"><img border="0" src="liulanqi_images/72.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、<b>“按钮1”</b>被点击后，执行<b>“缩放页面”</b>方法。</p>
+	<p align="left">2、添加本事件，将两个缩放比例显示在按钮标题上。</p>
+	<p align="left"><img border="0" src="liulanqi_images/73.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="liulanqi_images/74.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="hdbtsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 获得标题(事件)</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，当浏览框内的网页获得网页标题后，将触发本事件。</p>
+	<p align="left">参数将返回网页标题。</p>
+	<p align="left"><img border="0" src="liulanqi_images/75.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">将获得的网页标题显示在<b>“按钮1”</b>上。</p>
+	<p align="left"><img border="0" src="liulanqi_images/76.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="liulanqi_images/77.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="zrzy"></a>
+<font style="font-size: 12pt; font-weight:700">● 载入资源(事件)</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当前网页开始载入资源后将触发本事件。</p>
+	<p align="left">参数返回网页中的<b>“资源地址”</b>。</p>
+	<p align="left">注意：返回的资源地址为大写英文字母，资源地址并非当前网页url。</p>
+	<p align="left"><img border="0" src="liulanqi_images/78.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加本事件，将<b>“资源地址”</b>显示在<b>“按钮1”</b>的标题上。</p>
+	<p align="left"><img border="0" src="liulanqi_images/79.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="liulanqi_images/80.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="zrjdbgb"></a>
+<font style="font-size: 12pt; font-weight:700">● 载入进度被改变(事件)</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当网页进度发生改变后会触发本事件。</p>
+	<p align="left">参数返回现行进度。</p>
+	<p align="left"><img border="0" src="liulanqi_images/81.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加本事件，将<b>“现行进度”</b>显示在<b>“按钮1”</b>的标题上。</p>
+	<p align="left"><img border="0" src="liulanqi_images/82.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="liulanqi_images/83.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="ymkszr"></a>
+<font style="font-size: 12pt; font-weight:700">● 页面开始载入(事件)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 页面载入完毕(事件)</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">以上两个事件，在网页载入和载入完毕时会触发。</p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">分别添加这两个事件，将<b>“页面地址”</b>参数显示在<b>“按钮”</b>的标题上。</p>
+	<p align="left"><img border="0" src="liulanqi_images/84.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="liulanqi_images/85.gif" ></p>
+</blockquote>
+
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

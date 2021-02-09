@@ -1,0 +1,103 @@
+
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new4')" >一.JSON文本类<span>(可收缩)</span></h6></li>
+		<ol id="new4">
+        
+           <li><blockquote><a href="#jsonwbl">1.本类说明</a></blockquote></li>
+          <li><blockquote><a href="#cjjson">2.创建非数组JSON</a></blockquote></li>
+          <li><blockquote><a href="#cjszjson">3.创建数组JSON</a></blockquote></li>
+		</ol>	
+	</ol>
+</ul>
+</div>
+
+
+<p align="left">
+<h2>JSON文本类操作实例讲解</h2><a name="jsonwbl"></a>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 帮助说明</font><br/>
+<br/>
+<blockquote>
+<p align="left">本教程针对JSON数据的生成进行了讲解说明。</p>
+<p align="left">本类位于<strong>“JSON数据访问支持”</strong>模块中。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<h2>一、JSON文本类</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left">本类的作用和<b>“JSON对象类”</b>类似，不同之处为本类只能<b>“创建JSON对象”</b>，<b>“不能进行取值”</b>操作。</p>
+  <p align="left">注：通过本类创建的JSON数据并不会进行排版。</p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="cjjson"></a>
+
+<font style="font-size: 12pt; font-weight:700">● 创建非数组JSON</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">1、<b>“按钮1”</b>被点击后，定义类型为<b>“JSON文本类”</b>的变量。</p>
+<p align="left">2、务必调用<b>“开始编码对象()”</b>方法，进行编码操作。</p>
+<p align="left">3、调用<b>“编码属性名称()”</b>方法，可设置<b>“键名。”</b></p>
+<p align="left">4、调用<b>“编码XX属性值()”</b>，可设置<b>“键值”</b>。</p>
+<p align="left">5、最后务必调用<b>“结束编码对象()”</b>结束编码。</p>
+<p align="left">6、通过<b>“到文本()”</b>转换本对象为可读文本。</p>
+<p align="left">7、<b>“按钮2”</b>被点击后，通过编辑框的JSON数据，创建JSON对象，取出指定键名的键值。</p>
+	<p align="left"><img border="0" src="images/221.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="images/222.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="cjszjson"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建数组JSON</font><br/>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">创建数组JSON很简单。</p>
+<p align="left">只需要在<b>“编码XX属性值()”</b>方法前后调用<b>“开始编码数组()”</b>和<b>“结束编码数组()”</b>方法即可。</p>
+<p align="left">注意：数组JSON不能设置<b>“键名”</b>。</p>
+	<p align="left"><img border="0" src="images/223.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="images/224.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

@@ -1,0 +1,182 @@
+
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new2')" >一.XML解析器类<span>(可收缩)</span></h6></li>
+		<ol id="new2">
+          <li><blockquote><a href="#zairuxml">1.载入XML</a></blockquote></li>
+          <li><blockquote><a href="#zairuxml">2.当前解析位置(读)</a></blockquote></li>
+		  <li><blockquote><a href="#zairuxml">3.解析下一位置</a></blockquote></li>
+          <li><blockquote><a href="#zairuxml">4.当前节点名(读)</a></blockquote></li>
+          <li><blockquote><a href="#zairuxml">5.当前节点内容(读)</a></blockquote></li>
+          <li><blockquote><a href="#xmlshuxing">6.属性数量(读)</a></blockquote></li>
+          <li><blockquote><a href="#xmlshuxing">7.取属性内容</a></blockquote></li>
+          <li><blockquote><a href="#xmlshuxing">8.取属性名</a></blockquote></li>
+		</ol>	
+	</ol>
+</ul>
+</div>
+
+
+<p align="left">
+<h2>XML解析器类操作实例讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+<a name="zbgz"></a>    
+     
+<font style="font-size: 12pt; font-weight:700">● 帮助说明</font><br/>
+<br/>
+<blockquote>
+<p align="left">本类位于<strong>“XML数据访问支持”</strong>模块中。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 载入XML</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 当前解析位置(读)</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 当前节点名(读)</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 当前节点内容(读)</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 解析下一位置</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“载入XML”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，用于载入XML文档，成功返回真。</p>
+	<p align="left">参数1：填写xml文档字节数组。</p>
+
+	<p align="left">参数2：调用方式<b>“文本编码.XXX”</b>。</p>
+	<p align="left"><img border="0" src="img/245.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“当前解析位置(读)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">在XML解析中，都是根据当前位置进行对应的解析操作。</p>
+	<p align="left">本属性的作用就是用来取出解析位置，返回值如下图所示。</p>
+	<p align="left"><img border="0" src="img/246.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“解析下一位置”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">当前位置内容解析后，想要解析下一个位置务必调用本方法进行移位，返回值与前一个方法相同。</p>
+	<p align="left"><img border="0" src="img/247.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“当前节点名(读)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">调用本属性可读取当前节点名，读取失败返回空对象。</p>
+	<p align="left">注意：要确保解析位置位于<b>“节点开始”</b>或者<b>“节点结束”</b>。</p>
+	<p align="left"><img border="0" src="img/248.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“当前节点内容(读)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性用于读取当前节点内容，读取失败返回空对象。</p>
+	<p align="left"><img border="0" src="img/249.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">XML文档准备：</p>
+<blockquote>
+	<p align="left">准备如下图所示的一个XML文档，逐步解析取出所有关键内容。</p>
+	<p align="left"><img border="0" src="img/252.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义类型为<b>“XML解析器类”</b>、<b>“整数”</b>变量。</p>
+	<p align="left">2、载入XML文档，根据文档编码设置参数2。</p>
+	<p align="left">3、初次载入后需要调用<b>“当前解析位置”</b>属性，并赋值给<b>“当前位置”</b>变量。</p>
+	<p align="left">4、判断<b>“当前位置”</b>是否等于0，等于0则表示当前为<b>“文档开始”</b>位置。</p>
+	<p align="left">5、调用<b>“解析下一位置()”</b>方法进行移位。</p>
+	<p align="left">6、判断<b>“当前位置”</b>是否等于2，如果等于2则为<b>“节点开始”</b>位置。</p>
+	<p align="left">7、调用<b>“当前节点名”</b>属性，读取<b>“开始节点名”</b>，继续下一位置并读取<b>“当前节点内容”</b>。</p>
+	<p align="left">8、继续解析下一位置，判断位置是否等于3，然后读取<b>“结束节点名”</b>。</p>
+	<p align="left"><img border="0" src="img/250.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最后将读取当前xml文档所有关键内容。</p>
+	<p align="left">总结：<b>“开始节点”</b>，<b>“节点内容”</b>和<b>“结束节点”</b>都位于不同位置。需调用<b>“解析下一位置()”</b>方法移位。</p>
+	<p align="left"><img border="0" src="img/251.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="xmlshuxing"></a>
+<font style="font-size: 12pt; font-weight:700">● 属性数量(读)</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取属性内容</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取属性名</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“属性数量(读)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本属性可读取当前节点的属性数量，失败返回<b>“-1”</b>。</p>
+	<p align="left">注：属性位于<b>“开始节点名”</b>内。</p>
+	<p align="left"><img border="0" src="img/253.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“取属性名”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">当前节点位置位于<b>“开始节点名”</b>时，调用本方法可读取当前节点的<b>“属性名”</b>。</p>
+	<p align="left">如有多个属性，索引值从0开始，不能大于属性数量。</p>
+	<p align="left"><img border="0" src="img/254.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“取属性内容”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法的返回值和参数和<b>“取属性名”</b>一致。</p>
+	<p align="left"><img border="0" src="img/255.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">准备XML文档：</p>
+<blockquote>
+	<p align="left">准备如下图所示的XML文档，文档中有多个属性。</p>
+	<p align="left"><img border="0" src="img/256.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、载入XML数据，判断<b>“当前解析位置”</b>。</p>
+	<p align="left">2、判断<b>“解析下一位置()”</b>是否等于节点开始位置。</p>
+	<p align="left">3、调用<b>“属性数量”</b>属性，赋值给定义的<b>“整数”</b>变量。</p>
+	<p align="left">4、判断当前<b>“属性数量”</b>是否大于0，<b>“循环”</b>取出所有属性名和属性值。</p>
+	<p align="left"><img border="0" src="img/257.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">所有的属性名和属性值均被取出。</p>
+	<p align="left"><img border="0" src="img/258.png" ></p>
+</blockquote>
+	
+
+
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

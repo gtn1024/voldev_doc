@@ -1,0 +1,2026 @@
+﻿<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<h3 align="center">火山平台语法学习手册</h3>
+<h4 align="center">(普通用户图文版)</h4>
+<h4><a name="c_term"></a>一. 相关术语:</h4>
+<blockquote>
+	<h5>1. 面向对象的程序设计方法</h5>
+	<blockquote>
+		<p align="left">面向对象的程序设计方法是目前最先进的程序设计理念,也是被目前绝大多数程序设计语言都使用的一种程序设计方法,它可以最大限度地提高程序代码的可复用性和可维护性,如果您想学习程序设计,那么这种设计方法是必须需要掌握的.</p>
+		<p align="left">为了降低用户的学习门槛,火山对这套理念进行了最大限度的精简,一些晦涩难懂的和一些不大常用/实用的内容均被剔除出去,只保留了其精华和必须需要掌握的部分,因此学习起来并不难.</p>
+		<p><b><font color="#FF0000">注意</font>:</b></p>
+		<blockquote>
+			<p><b>A. </b>如果您对面向对象的程序设计方法了解不多,推荐您先阅读[<a href="object.htm">面向对象的程序设计方法</a>]章节,再来阅读本手册后续内容,将会帮助您对后续内容的理解;</p>
+			<p><b>B.</b> 由于所基于系统类库的不同(语法层面是一致的),本手册中的例程示图如必要会提供火山视窗和火山安卓两个平台程序版本.</p>
+		</blockquote>
+		<p>&nbsp;</p>
+	</blockquote>
+	<h5><a name="c_name"></a>2. 名称:</h5>
+	<blockquote>
+		<p>火山平台中的名称分为以下这些:</p>
+		<p><b><a name="pure_name"></a>A. 单名称:</b></p>
+		<blockquote>
+			<p>单名称必须以英文字母/下划线字符/汉字字符开头,后面跟随英文字母/下划线字符/数字/汉字字符.如未特殊标注,本文档中所提出的所有&quot;名称&quot;均为单名称.</p>
+		</blockquote>
+		<p><a name="full_name"></a><b>B. 全名称:</b></p>
+		<blockquote>
+			<p>以句点字符组合在一起的单名称称为全名称,如&quot;火山.程序&quot;. 
+			单名称可以被认为是全名称的一种(只包括一个单名称的全名称).</p>
+			<p>实际上,目前只有<a href="#package_declare">包名</a>才使用到由多个单名称组成的全名称.</p>
+		</blockquote>
+		<p>注意: 火山中的名称对英文字母的<b>大小写敏感</b>,譬如&quot;abc&quot;,&quot;ABC&quot;所指定的不是同一名称.</p>
+		<p>下图为名称在程序中的使用和定义方法:</p>
+		<blockquote>
+			<p><img border="0" src="images/b56.png" width="502" height="362"></p>
+		</blockquote>
+		<h6>操作提示:</h6>
+		<blockquote>
+			<p>火山程序中的名称就其来源可以分为以下两种:</p>
+			<blockquote>
+				<p><b>1. </b>系统中预先定义的名称. 主要是<a href="#c_keyword">关键字</a>和系统属性名称;</p>
+				<p><b>2. </b>用户程序中自行定义的名称. 主要是各种定义型程序成员(如<a href="#class_declare">类</a>/<a href="#method_declare">方法</a>/<a href="#const_declare">常量</a>/<a href="#element_var_declare">变量</a>/参数)的名称.</p>
+			</blockquote>
+			<p>这些名称均可以通过系统内置的首拼或全拼输入法输入. 如:</p>
+			<blockquote>
+				<p>上图中定义&quot;变量A&quot;和&quot;变量a&quot;时所使用的&quot;<b>整数</b>&quot;数据类型,可以使用首拼输入方式&quot;zs&quot;或者全拼输入方式&quot;zhengshu&quot;输入;</p>
+				<p>上图中所定义的&quot;<b>测试方法1</b>&quot;方法,可以使用首拼输入方式&quot;csff1&quot;或者全拼输入方式&quot;ceshifangfa1&quot;在程序语句中输入.</p>
+			</blockquote>
+			<p>具体输入法匹配规则请见系统输入法插件被载入时在开发环境状态框中输出的提示信息:</p>
+			<p>　<img border="0" src="images/b98.png" width="891" height="277"></p>
+		</blockquote>
+	</blockquote>
+	<h5><a name="imm_value"></a>3. 立即数</h5>
+	<blockquote>
+		<p>立即数用作表达一个直接的字面数据值,有以下几类:</p>
+		<p><b>1. 数值立即数:</b></p>
+		<blockquote>
+			<p><b>A. </b>十进制整数或小数,小数支持使用科学计数法,如: 1.32e3</p>
+			<p><b>B. </b>十六进制整数: &quot;0x&quot;后跟数字0-9或字母A-F(大小写无关). 如: 0x12AC3F</p>
+			<p><b>C. </b>字符整数值: 使用单引号括住的字符,如'A',&#39;吴&#39;.</p>
+			<p>如果欲强行指定数值的数据类型,可以使用&quot;<a href="#data_type_convert">强制类型转换</a>&quot;操作符,譬如&quot;(长整数)1&quot;,提供了一个数据类型为长整数的数值立即数.</p>
+			<p>如果某整数的数值超出了整数的最大有效范围,将自动被设定为长整数数据类型. 如: 0x123456789A 
+			将被自动认为是长整数数据类型.</p>
+		</blockquote>
+		<p><b>2. 逻辑型立即数:</b> 为真/假.</p>
+		<p><b>3. 字符串立即数:</b></p>
+		<blockquote>
+			<p>为用双引号括住的一段文本,文本内支持使用以下转义符:</p>
+			<table border="1" style="border-collapse: collapse">
+				<tr>
+					<td bgcolor="#808080" width="150" align="center"><b>转义符</b></td>
+					<td bgcolor="#808080" align="center"><b>解释</b></td>
+				</tr>
+				<tr>
+					<td width="150">\b</td>
+					<td>退格符</td>
+				</tr>
+				<tr>
+					<td width="150">\f</td>
+					<td>换页符</td>
+				</tr>
+				<tr>
+					<td width="!50">\r</td>
+					<td>回车符</td>
+				</tr>
+				<tr>
+					<td width="150">\n</td>
+					<td>换行符</td>
+				</tr>
+				<tr>
+					<td width="150">\t</td>
+					<td>水平制表符</td>
+				</tr>
+				<tr>
+					<td width="150">\'</td>
+					<td>单引号</td>
+				</tr>
+				<tr>
+					<td width="150">\&quot;</td>
+					<td>双引号</td>
+				</tr>
+				<tr>
+					<td width="150">\\</td>
+					<td>反斜杠</td>
+				</tr>
+				<tr>
+					<td width="150">\x</td>
+					<td>后跟1-3个十六进制字符,为所对应字符的代码值.</td>
+				</tr>
+				</table>
+			<p>如: &quot;您好!\r\n祖国&quot; 在&quot;您好!&quot;和&quot;祖国&quot;之间通过使用转义符插入了一个
+			回车和换行符.</p>
+		</blockquote>
+		<p><b>4. 数组立即数</b>(只能在提供常量/变量数组初始值时使用):</p>
+		<blockquote>
+			<p>为使用花括号括住的立即数的组合,如: { 1, 2 }, 多维数组可以嵌套,如: { { 1, 2 }, 
+			{ 3, 4 }, { 5, 6 } }</p>
+			<p>注意: 多维数组的同一维内成员数目必须相等,譬如如下格式的数组立即数是不允许的: { { 1, 2 }, { 
+			3 } } ,因为其第2个维中的成员数目不相等.</p>
+		</blockquote>
+		<p>下面为各类立即数在初始值和程序语句中的使用例图:</p>
+		<p>　<img border="0" src="images/b54.png" width="701" height="282"></p>
+		<p>&nbsp;</p>
+	</blockquote>
+	<h5><a name="c_datatype"></a>4. 数据类型:</h5>
+	<blockquote>
+		<p>数据类型可以为以下几种:</p>
+		<blockquote>
+			<p><b>A.</b> <a href="#base_data_type">基本数据类型</a>;</p>
+			<p><b>B.</b> <a href="#class_declare">用户程序中定义的类</a>,称为<b>类数据类型</b>;</p>
+			<p><b><a name="ary_data_type"></a>C. </b>数组数据类型</p>
+			<blockquote>
+				<p>数组数据类型为基本或类数据类型后面跟随一个或多个数组维定义组成.</p>
+				<p>每个数组维定义由左右中括号(&quot;[]&quot;)组成,如果应用在变量定义上,可以在中括号内部置入具体成员数目,表示生成具有对应维数的数组变量实例. 
+				如:</p>
+				<blockquote>
+					<p>单维文本数组数据类型: 文本 [] </p>
+					<p>多维整数数组数据类型: 整数 [] []</p>
+					<p>定义具有指定成员数目的整数数组实例变量: 整数 [3], 整数 [3][2]</p>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+		<p>数据类型可以在定义常量/变量/参数/方法返回值时使用,也可以在程序语句中使用,如:</p>
+		<blockquote>
+			<table border="1" width="100%" style="border-collapse: collapse">
+				<tr>
+					<td align="center"><b>视窗示例</b></td>
+					<td align="center"><b>安卓示例</b></td>
+				</tr>
+				<tr>
+					<td>
+					<img border="0" src="images/w1.png" width="656" height="445"></td>
+					<td>
+					<img border="0" src="images/b55.png" width="780" height="540"></td>
+				</tr>
+			</table>
+		</blockquote>
+		<p>　</p>
+	</blockquote>
+</blockquote>
+<h4><a name="c_struct"></a>二. 火山程序结构:</h4>
+<blockquote>
+	<p>一个火山程序的构成结构如下:</p>
+	<p>1. <a href="#package_declare">包定义</a></p>
+	<blockquote>
+		<p>1. 文档嵌入行(普通用户无需了解)</p>
+		<p>2. <a href="#remark_line">文档注释行</a></p>
+		<p>3. <a href="#class_declare">类定义</a></p>
+		<blockquote>
+			<p>1. 类嵌入行(普通用户无需了解)</p>
+			<p>2. <a href="#remark_line">类注释行</a></p>
+			<p>3. <a href="#const_declare">类成员常量</a></p>
+			<p>4. <a href="#element_var_declare">类成员变量</a></p>
+			<p>5. <a href="#method_declare">类成员方法</a></p>
+			<blockquote>
+				<p>1. 方法参数</p>
+				<p>2. <a href="#const_declare">方法局部常量</a></p>
+				<p>3. <a href="#element_var_declare">方法局部变量</a></p>
+				<p>4. <a href="#remark_line">语句注释行</a></p>
+				<p>5. 语句嵌入行(普通用户无需了解)</p>
+				<p>6. <a href="#statment">语句行</a></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+	<p>下面是一个火山程序的基本样图(天蓝色文字为说明,下同):</p>
+	<p>
+	&nbsp;</p>
+	<table border="1" width="100%" style="border-collapse: collapse">
+		<tr>
+			<td align="center"><b>视窗示例</b></td>
+			<td align="center"><b>安卓示例</b></td>
+		</tr>
+		<tr>
+			<td><img border="0" src="images/w2.png" width="631" height="772"></td>
+			<td>
+	<img border="0" src="images/structure.png"></td>
+		</tr>
+	</table>
+	<p>
+	&nbsp;</p>
+	<p>　</p>
+	<h5><a name="package_declare"></a>1. 包:</h5>
+	<blockquote>
+		<p>包名为<a href="#full_name">全名称</a>(即中间可以包括句点<b>)</b>,通常使用的名称格式为以组织或事物的从大到小排列,譬如:&quot;湖北.武汉.递归公司&quot;/&quot;递归公司.软件开发部&quot;/&quot;火山系统.安卓平台.测试程序&quot;等等,这些都可以,自己维护这些代码时觉得清晰易懂就行了.</p>
+		<p>一个包内可以包含多个文档注释行/文档嵌入行/类定义,所有这些内容都被认为位于这个名称的包中.</p>
+		<p>每新建一个火山程序,都会在首部固定加入一个不可被删除的包定义成员,该成员始终位于源文件的首部而且只能存在一个:</p>
+<blockquote>
+	<p><img border="0" src="images/b3.png" width="221" height="70"></p>
+</blockquote>
+		<p>多个程序文件可以具有相同的包名,此时其中的内容被认为处于同一个包中:</p>
+		<p><img border="0" src="images/b57.png" width="489" height="397"></p>
+		<p><img border="0" src="images/b58.png" width="557" height="240"></p>
+		<p>&nbsp;</p>
+	</blockquote>
+	<h5><a name="remark_line"></a>2. 注释</h5>
+	<blockquote>
+		<p>可以使用以下方式定义火山程序中的注释:</p>
+		<blockquote>
+			<p><b>A. </b>任何定义型成员其名称如果以<b>连续两个'/'字符</b>引导,说明其处于被注释状态,其以及其中的所有内容(包括直接/间接子成员)在编译时都将被忽略;</p>
+			<p><b>B. </b>在类外部的程序行,被称为<b>文档注释行</b>;<b> </b>在类内部但是在类方法外部的程序行,被称为<b>类注释行</b>;</p>
+			<p><b>C. </b>在类方法内部可以使用<b>连续两个'/'字符</b>引导一段一直到行尾的语句注释文本. </p>
+		</blockquote>
+		<p>文档注释行/类注释行/从行首开始的语句注释文本,其尾部如果以一个或多个<b>减号</b>/<b>等号</b>字符结束,IDE将自动在其后绘制对应长度的单/双分隔线.可以在IDE设置选项中将此机制关闭.</p>
+		<blockquote>
+			<p><img border="0" src="images/b59.png" width="667" height="678"></p>
+		</blockquote>
+		<p>从上图可以看到,<b>任何不在方法内部的文本行均被看作是注释行</b>,请注意这一点.</p>
+		<p>&nbsp;</p>
+	</blockquote>
+	<h5><a name="class_declare"></a>3. 类</h5>
+	<blockquote>
+		<p>类用作定义一个可以具有各种子成员的复合数据类型,这些子成员为:</p>
+		<blockquote>
+			<p><b>1.</b> <a href="#remark_line">类注释行</a>;</p>
+			<p><b>2.</b> 类嵌入行(普通用户无需掌握);</p>
+			<p><b>3.</b> <a href="#element_var_declare">类成员变量</a>;</p>
+			<p><b>4.</b> <a href="#const_declare">类成员常量</a>;</p>
+			<p><b>5.</b> <a href="#method_declare">类成员方法</a>(通常方法/属性读或写方法/事件定义或接收方法).</p>
+		</blockquote>
+		<p>注意事项:</p>
+		<blockquote>
+			<p><b>1. </b>同一个包中不允许出现相同的类名;</p>
+			<p><b>2. </b>类名为<a href="#pure_name">单名称</a>(即其中不允许使用句点). 
+			实际上包名是唯一允许中间使用句点的名称;</p>
+			<p><b>3. </b>名称为&quot;<b>启动类</b>&quot;的类被用作特殊指定用户程序的启动类,用户程序将从此处开始执行;</p>
+			<p><b>4. </b>引用类名时可以直接使用类名称,或者使用&quot;<b>包名.类名</b>&quot;进行引用,此格式被称为类的<b>全名称</b>,当访问其它包中的公开类时,必须提供类的全名称;</p>
+			<p><b>5. </b>在需要访问类实例对象的成员时,在类对象实例名称和欲访问的子成员名称之间使用<b>句点</b>分隔即可,前面指定具体访问哪一个对象实例,后面指定访问这个对象实例的具体哪个子成员. 
+			如:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b64.png" width="442" height="109"></p>
+				<p>分别访问了&quot;测试类&quot;的实例对象&quot;测试类对象&quot;的&quot;成员变量1&quot;/&quot;成员常量1&quot;/&quot;成员方法&quot;三个子成员.</p>
+			</blockquote>
+		</blockquote>
+		<p>基本属性表:</p>
+		<table border="1" style="border-collapse: collapse">
+			<tr>
+				<td align="center" bgcolor="#808080" width="169"><b>名称</b></td>
+				<td align="center" bgcolor="#808080"><b>解释</b></td>
+			</tr>
+			<tr>
+				<td width="169"><a name="base_class_name"></a>基础类</td>
+				<td>指定本类的基础类名称,可以是单名称/全名称,也可以是空文本(表示无基础类).<p>
+				如果定义了非空基础类,当前类将自动继承所有来自该基础类的内容,如果该基础类还有基础类,将一并继承过来,此时本类称为这些类的&quot;<b>继承类</b>&quot;.</p>
+				<p>注: 有一些编程语言也称&quot;继承类&quot;为&quot;<b>子类</b>&quot;,&quot;基础类&quot;为&quot;<b>父类</b>&quot;,意思是一样的.</p>
+				<p>继承类访问其直接/间接基础类中的成员不需要其为公开状态.</p>
+				<p>例图说明:</p>
+				<blockquote>
+		<p>
+		<img border="0" src="images/b63.png" width="659" height="764"></p>
+		</blockquote>
+				</td>
+			</tr>
+			<tr>
+				<td width="169">公开</td>
+				<td>指定本类是否对外公开.<p>公开类可以在所处包外部被访问,而非公开类只能在所处包内部被访问.</p>
+				<p>例图说明:</p>
+				<blockquote>
+					<p>
+					<img border="0" src="images/b61.png" width="632" height="484"></p>
+					<p>
+					<img border="0" src="images/b62.png" width="405" height="267"></p>
+				</blockquote>
+				</td>
+			</tr>
+		</table>
+		<blockquote>
+			<p>&nbsp;</p>
+		</blockquote>
+	</blockquote>
+	<h5><a name="const_declare"></a>4. 类成员或局部常量</h5>
+	<blockquote>
+		<p>常量用作定义一个不允许在程序中进行修改的恒定值.</p>
+		<p>常量与变量有以下不同之处:</p>
+		<blockquote>
+			<p><b>1. </b>常量只能在定义时被赋予初始值,不能在程序中被修改;</p>
+			<p><b>2. </b>在设置常量初始值时,只能提供<a href="#imm_value">立即数</a>,不能提供其它常量;</p>
+			<p><b>3. </b>常量的数据类型只能为基本数据类型(注: 还可以为常量类,但普通用户不需了解);</p>
+			<p><b>4. </b>常量的&quot;<b>静态</b>&quot;属性固定为真,即:常量并未存放在类的对象实例中,而只存放在类信息本身中,所以无论定义多少类对象实例,常量都只存在一份.因此常量的访问方式与静态成员变量的访问方式
+			是一样的,在其所处类/继承类外部需要以&quot;<b>所处类名.常量名</b>&quot;的方式访问.</p>
+		</blockquote>
+		<p>基本属性表:</p>
+		<table border="1" style="border-collapse: collapse">
+			<tr>
+				<td bgcolor="#808080" align="center" width="169"><b>名称</b></td>
+				<td bgcolor="#808080" align="center"><b>解释</b></td>
+			</tr>
+			<tr>
+				<td width="169">类型</td>
+				<td>提供常量的数据类型,只能是基本数据类型或<a href="p_grammar.htm#const_class">常量类</a>.</td>
+			</tr>
+			<tr>
+				<td width="169">公开</td>
+				<td>指定本常量是否公开.公开常量可以在所处类外部被访问,而非公开常量只能在本类或者其继承类中访问.<p>局部常量没有本属性.</td>
+			</tr>
+			<tr>
+				<td width="169"><a name="const_initial_value"></a>初始值</td>
+				<td>提供常量的初始值立即数,必须对应常量的数据类型.<p>在设置常量初始值时,只能提供<a href="#imm_value">立即数</a>,不能提供其它常量.<p>
+				如果数据类型为<a href="p_grammar.htm#const_class">常量类</a>,则应该直接提供该常量类所对应基本数据类型的<a href="#imm_value">立即数</a>,如:<table border="1" width="100%" style="border-collapse: collapse">
+					<tr>
+						<td align="center"><b>视窗示例</b></td>
+						<td align="center"><b>安卓示例</b></td>
+					</tr>
+					<tr>
+						<td>
+						<img border="0" src="images/w3.png" width="865" height="125"><p>上图为
+						视窗系统类库中的一个名为&quot;位图资源&quot;的常量类,其初始值数据类型为文本型,下图为一个设置了对应数据类型初始值的常量.此时
+						视窗平台编译器会自动对此类常量进行特殊处理,以收集并建立对应的视窗资源.<p>
+						<img border="0" src="images/w4.png" width="403" height="54"></td>
+						<td><blockquote>
+					<p>
+					<img border="0" src="images/b66.png" width="481" height="140"></blockquote>
+				<p>上图为安卓系统类库中的一个名为&quot;可绘制资源&quot;的常量类,其初始值数据类型为文本型,下图为一个设置了对应数据类型初始值的常量.此时安卓平台编译器会自动对此类常量进行特殊处理,以收集并建立对应的安卓资源.<blockquote>
+					<p>
+					<img border="0" src="images/b65.png" width="434" height="60"></blockquote>
+						</td>
+					</tr>
+				</table>
+				<p><b>注意: </b>普通用户只需要知道当常量/变量的数据类型为系统类库中所提供的常量类时,可以直接设置对应的基本数据类型<a href="#imm_value">立即数</a>初始值即可,其它方面(譬如如何建立常量类),无需掌握,可以将其当前普通的类同样看待.</td>
+			</tr>
+		</table>
+	</blockquote>
+	<blockquote>
+		<p>常量一般用作定义一些恒定值,譬如圆周率的PI. 这样既能避免多次输入出错,还能提供程序的运行效率(便于优化).</p>
+		<p>下图是在火山安卓基本库的&quot;数学运算类&quot;中定义的2个数学常量及其使用例子,在需要使用这些值的地方可以使用常量来代替(如&quot;数学运算类.E&quot;. &quot;数学运算类.PI&quot;),避免输入错误:</p>
+		<blockquote>
+			<p>
+			<img border="0" src="images/b14.png" width="837" height="167"></p>
+			<p>
+			<img border="0" src="images/b67.png" width="425" height="89"></p>
+		</blockquote>
+		<p>注: 火山视窗中的对应类名为&quot;常数&quot;,用法是一致的.</p>
+		<blockquote>
+			<p>&nbsp;</p>
+		</blockquote>
+	</blockquote>
+	<h5><a name="element_var_declare"></a>5. 类成员或局部变量</h5>
+	<blockquote>
+		<p>变量的内容允许在程序中被动态修改.</p>
+		<p>基本属性表:</p>
+		<table border="1" style="border-collapse: collapse">
+			<tr>
+				<td bgcolor="#808080" align="center" width="169"><b>名称</b></td>
+				<td bgcolor="#808080" align="center"><b>解释</b></td>
+			</tr>
+			<tr>
+				<td width="169">类型</td>
+				<td>提供变量的数据类型,可以是基本数据类型或者类数据类型.</td>
+			</tr>
+			<tr>
+				<td width="169">静态</td>
+				<td>指定是否为静态变量.<p>静态成员变量有以下特点:</p>
+<blockquote>
+	<p><b>1. </b>静态变量在所处类载入后即保持始终存在,并且未存放在类的对象实例中,而只存放在类信息本身中,所以无论定义多少类对象实例,静态成员变量都只存在一份;</p>
+	<p><b>2. </b>由于静态成员变量存放在类本身中,所以在其所处类/继承类外部需要以&quot;<b>所处类名.静态成员变量名</b>&quot;的方式访问:</p>
+	<blockquote>
+		<p>
+		<img border="0" src="images/b10.png" width="555" height="486"></p>
+		<p>如上图,在&quot;<b>测试类1</b>&quot;中定义了一个名为&quot;<b>静态成员变量1</b>&quot;的成员变量,在测试类2中红色箭头所指向的代码是正确的访问方式,黄色箭头所指向的代码虽然也能被编译器所接受,但是由于不是推荐的访问方式会提示警告.</p>
+		<p>无论在&quot;<b>测试方法</b>&quot;方法中定义了几个&quot;<b>测试类1</b>&quot;的对象实例(&quot;对象1&quot;/&quot;对象2&quot;),&quot;<b>测试类1</b>&quot;的&quot;<b>静态成员变量1</b>&quot;始终只存在一份,因此红色和黄色箭头指向的代码所访问的&quot;<b>静态成员变量1</b>&quot;都是同一个.</p>
+	</blockquote>
+	<p><b>3. </b>由于静态变量初始化时不存在所处类实例,静态成员变量不支持自动挂接其事件到其所处类,在需要时必须通过&quot;<a href="#rev_event">挂接事件</a>&quot;命令手动挂接.非静态的类成员变量,如果其数据类型为类且其中定义有事件,将被自动挂接到当前类实例对象.</p>
+</blockquote>
+				</td>
+			</tr>
+			<tr>
+				<td width="169">参考</td>
+				<td>指定是否为参考变量.<p><b>注意: </b>
+				在火山视窗平台中,不支持定义参考型数据,这是两个平台在语法层面上唯一不同的地方.当在火山视窗程序中定义参考变量时,将会如图所示:</p>
+				<blockquote>
+					<p>
+					<img border="0" src="images/w5.png" width="454" height="100"></p>
+				</blockquote>
+				<p>因此下面的讲述均为针对火山安卓平台.</p>
+				<p>参考变量有以下特点:</p>
+<blockquote>
+	<p><b>1. </b>参考变量本身并不会创建对象实例,而是用作保存到其它对象实例的指向性信息(即<b>参考</b>),访问参考变量等于访问该变量所参考到的另一个对象实例.反之非参考变量(&quot;参考&quot;属性为假的变量)将自动创建一个对应数据类型的对象
+	实例;</p>
+	<p><b>2. </b>由于其本身并未定义对象实例,因此参考变量在使用前必须首先赋值(即赋予其所参考到的对象实例).</p>
+</blockquote>
+				<p>
+				想想我们手机通讯录中的联系人条目,每个条目均相当于一个&quot;参考变量&quot;,它记录有指向某联系人(对象实例)的相关信息,但是不为该联系人(对象实例)本身.</p>
+<p>请查看如下代码:</p>
+<blockquote>
+	<p>
+	<img border="0" src="images/b79.png" width="603" height="230"></p>
+</blockquote>
+<p>首部定义了一个&quot;<b>测试类1</b>&quot;的对象实例&quot;<b>变量1</b>&quot;,然后定义了一个&quot;<b>测试类1</b>&quot;的参考变量&quot;<b>变量2</b>&quot;.</p>
+<p>两者的区别在于: 前者创建了真实存在的对象实例,而后者仅仅用作存放一个参考.</p>
+<p>由于&quot;<b>变量1</b>&quot;存在对象实例,因此后面调用其&quot;<b>方法1</b>&quot;方法不会有问题,而紧跟其后的&quot;<b>变量2.方法1</b> 
+()&quot;调用就会被编译器报错,因为其尚未设置所欲参考到的对象实例.</p>
+<p>在后面通过将&quot;<b>变量1</b>&quot;赋值过去,从而将&quot;<b>变量2</b>&quot;参考到了&quot;<b>变量1</b>&quot;所指向的对象实例,因此再调用&quot;<b>变量2.方法1</b> 
+()&quot; 就不会出错了,其等效于调用了&quot;<b>变量1.方法1 ()</b>&quot;.</p>
+				<hr>
+				<h6>获得对象实例的各种方法:</h6>
+				<blockquote>
+					<p><b>1. </b>通过定义非参考变量的方式直接创建:</p>
+					<blockquote>
+						<p>
+						<img border="0" src="images/b182.png" width="437" height="136"></p>
+					</blockquote>
+					<p><b>2.</b> 通过所提供的类方法创建:</p>
+					<blockquote>
+						<p>
+						某些类不能通过直接定义该类的变量来创建其对象实例,因为欲创建其对象实例时可能还需要提供一些必要的参数信息或者满足其它前提. 
+						如:</p>
+						<p>在定义&quot;屏幕度量信息类&quot;时,指定了不允许直接定义其非参考对象变量:</p>
+						<blockquote>
+							<p>
+							<img border="0" src="images/b184.png" width="596" height="120"></p>
+						</blockquote>
+						<p>因此在编译下图程序时,将会出错:</p>
+						<blockquote>
+							<p>
+							<img border="0" src="images/b183.png" width="708" height="240"></p>
+						</blockquote>
+						<p>我们查看一下该类所提供的所有方法,可以找到创建并返回其对象实例的方法为:</p>
+						<blockquote>
+							<p>
+							<img border="0" src="images/b185.png" width="317" height="251"></p>
+						</blockquote>
+						<p>那么我们把前面的程序改为如下内容就可以了:</p>
+						<blockquote>
+							<p>
+							<img border="0" src="images/b186.png" width="640" height="114"></p>
+						</blockquote>
+						<p><b>总结: </b>
+						如果某个类指定了不能直接定义其对象实例变量,那么肯定可以通过调用某个方法获得其对象实例.绝大多数情况下该方法由此类自行提供,名称中一般包括&quot;创建&quot;/&quot;新建&quot;/&quot;获取&quot;之类的字样,该方法一般为静态方法.
+						</p>
+						<p>如&quot;可绘制对象类&quot;的如下方法:</p>
+						<blockquote>
+							<p>
+							<img border="0" src="images/b187.png" width="418" height="253"></p>
+							<p>
+							<img border="0" src="images/b188.png" width="602" height="255"></p>
+						</blockquote>
+					</blockquote>
+				</blockquote>
+				<hr>
+<p><b><font color="#FF0000">注意</font></b>,使用参考属性时最容易犯的错误:</p>
+				<h6>1. 遗漏设置必要的&quot;<b>参考</b>&quot;属性,如下图:</h6>
+<blockquote>
+	<p>
+	<img border="0" src="images/b53.png" width="472" height="425"></p>
+	<p>
+	&quot;方法1&quot;和&quot;方法2&quot;中的&quot;变量1&quot;在定义时均没有设置&quot;参考&quot;属性,这样编译器会自动为其创建一个&quot;测试类&quot;对象实例,但是所创建的该对象实例在程序中根本没有被使用,从而导致程序执行效率降低,还占用了不必要的内存空间.</p>
+	<p>所以每当我们定义一个数据类型为类的变量时,一定要检查是否需要为其设置&quot;<b>参考</b>&quot;属性
+	,判断方法就是编译器自动创建的对象实例有没有在程序中被使用到,如果没有被使用到,就一定要设置&quot;<b>参考</b>&quot;属性.</p>
+</blockquote>
+				<h6>&nbsp;</h6>
+				<h6>2. 使用空参考变量:</h6>
+				<blockquote>
+					<p>所谓&quot;空参考变量&quot;,即没有参考到任何对象实例的变量,如:</p>
+					<blockquote>
+						<p>
+						<img border="0" src="images/b180.png" width="445" height="84"></p>
+					</blockquote>
+					<p>
+					像这样的代码,首先在编译时会报错.其次,即使编译通过,在运行时也会报告类似如下的空指针错误信息(NullPointerException, 
+					Java目的平台):</p>
+					<blockquote>
+						<p>
+						<img border="0" src="images/b181.png" width="644" height="75"></p>
+					</blockquote>
+					<p>所以我们在使用参考变量前,一定要记得首先确保它已经参考到了一个非空对象的对象实例.</p>
+				</blockquote>
+				</td>
+			</tr>
+			<tr>
+				<td width="169">公开</td>
+				<td>指定本变量是否公开.公开变量可以在所处类外部被访问,而非公开变量只能在本类或者其继承类中访问.<p>局部变量没有本属性.</td>
+			</tr>
+			<tr>
+				<td width="169">初始值</td>
+				<td>提供变量的初始值,必须对应变量的数据类型.<p>如果未提供初始值,非数组变量的初始值如下:<blockquote>
+					<p>数值型变量的初始值为0,逻辑型变量的初始值为假,文本型变量的初始值为&quot;&quot;(即空文本).对于火山安卓平台,参考变量(&quot;参考&quot;属性为真的变量)及非基本数据类型变量的初始值均为<a href="#null_object">空对象</a>,对于火山视窗平台,由于不支持定义参考型数据,因此所有非基本数据类型变量均为对应的对象
+					实例.</blockquote>
+				<p>数组变量的初始值如下:<blockquote>
+					<p>数值型数组变量的每个成员初始值为0,逻辑型数组变量的每个成员初始值为假,其它所有数据类型(包括文本型)数组变量的每个成员初始值
+					如果为火山安卓平台则为<a href="#null_object">空对象</a>,为火山视窗平台则为对应的对象实例.<p>
+					因此,在火山安卓平台中,对于非数值和逻辑型的数组,其每个成员在使用前必须首先被单独赋值,如:<blockquote>
+						<p>
+						<img border="0" src="images/b122.png" width="525" height="195"></p>
+					</blockquote>
+				</blockquote>
+				<p>与<a href="#const_declare">常量</a>不同的是: 在设置变量初始值时,可以提供<a href="#imm_value">立即数</a>,也可以提供<a href="#const_declare">常量</a>.<p>
+				变量初始值设置例图:<blockquote>
+					<table border="1" width="100%" style="border-collapse: collapse">
+						<tr>
+							<td align="center"><b>视窗示例</b></td>
+							<td align="center"><b>安卓示例</b></td>
+						</tr>
+						<tr>
+							<td>
+							<img border="0" src="images/w6.png" width="652" height="206"></td>
+							<td>
+							<img border="0" src="images/b68.png" width="703" height="234"></td>
+						</tr>
+					</table>
+					<p>从上图中可以看出,&quot;变量2&quot;使用<a href="#const_declare">常量</a>作为初始值,&quot;变量9&quot;和<a href="#const_initial_value">常量初始值</a>一样,当数据类型为常量类时,可以为其设置所对应基本数据类型的<a href="#imm_value">立即数</a>初始值.</p>
+				</blockquote>
+				</td>
+			</tr>
+		</table>
+	</blockquote>
+	<p>　</p>
+	<h5><a name="method_declare"></a>6. 类成员方法</h5>
+	<blockquote>
+		<p>定义类的方法,用作类对外提供其所支持的功能时使用.</p>
+		<p><b>方法的名称:</b></p>
+		<blockquote>
+			<p><b>1. </b>方法的名称必须为<a href="#pure_name">单名称</a>,而且必须在类的所有成员名称中唯一;</p>
+			<p><b>2. </b><a name="class_init_method"></a>名称为&quot;<b>类_初始化</b>&quot;的方法为类的初始化方法(在类对象被创建时自动调用),该方法不携带任何参数并且不返回值,对是否公开没有要求. 
+			如下图:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b69.png" width="551" height="513"></p>
+			</blockquote>
+			<p><b>3. </b><a name="class_clean_method"></a>名称为&quot;<b>类_清理</b>&quot;的方法为类的清理方法(在类对象被销毁时自动调用),该方法不携带任何参数并且不返回值,对是否公开没有要求.</p>
+			<p><b>注意</b>:在火山安卓平台上,由于内存垃圾自动回收机制的限制,类清理方法不被支持.</p>
+			<p>以下为在火山视窗平台上的演示程序:</p>
+			<p><img border="0" src="images/w7.png" width="578" height="560"></p>
+			<p><b>提示</b>: &quot;类_初始化&quot;和&quot;类_清理&quot;方法在开发环境中可以通过按下Ctrl+I组合键调用对应对话框自动插入对应空方法:</p>
+			<p><img border="0" src="images/w8.png" width="501" height="398"></p>
+		</blockquote>
+		<p><b>方法的基本属性表:</b></p>
+		<table border="1" style="border-collapse: collapse">
+			<tr>
+				<td bgcolor="#808080" align="center" width="169"><b>名称</b></td>
+				<td bgcolor="#808080" align="center"><b>解释</b></td>
+			</tr>
+			<tr>
+				<td width="169">返回值类型</td>
+				<td>提供方法执行完毕后所返回数据的数据类型<p>如果指定了非空数据类型,则方法中就必须调用&quot;<b>返回</b>&quot;关键字语句来返回对应数据类型的数据:</p>
+				<blockquote>
+					<p>
+					<img border="0" src="images/b17.png" width="429" height="121"></p>
+				</blockquote>
+				</td>
+			</tr>
+			<tr>
+				<td width="169">静态</td>
+				<td>指定是否为静态方法.
+				注意:<blockquote>
+					<p><b>1. </b>与类的静态<a href="#element_var_declare">成员变量</a>一样,类的静态方法需要通过&quot;类名.方法名&quot;的方式来引用;</p>
+					<p><b>2. </b>在静态方法内部,只能访问其所处类或者其所处类的基础类中的成员常量或者静态成员变量. 如:</p>
+<blockquote>
+	<p>
+	<img border="0" src="images/b16.png" width="496" height="403"></p>
+	<p>
+	其中定义了一个名为&quot;测试方法&quot;的静态方法,其中第一行代码同时访问了类中的&quot;静态变量1&quot;和&quot;常量1&quot;,这是被允许的,然后后面的一行代码访问了非静态变量&quot;变量1&quot;(红色箭头指向处),这是不被允许的,编译器将报错.</p>
+</blockquote>
+					<p><b>3. </b>如果静态方法所定义第一个参数的数据类型为方法所处类本身而且没有指定参数匹配和需求类型(普通用户无需了解),那么可以基于该类对象以动态格式来调用该静态方法,编译器将自动进行转换:</p>
+					<blockquote>
+						<p>
+						<img border="0" src="images/b52.png" width="486" height="463"></p>
+						<p>譬如上面的程序在&quot;测试类&quot;中定义了一个名为&quot;方法1&quot;的静态方法,它第一个参数的数据类型为&quot;测试类&quot;自身,那么在程序中其它位置调用这个方法时,可以采用以下两种方式:</p>
+						<blockquote>
+							<p><b>1. </b>测试类.方法1 (变量1, 1)</p>
+							<p><b>2. </b>变量1.方法1 (1)</p>
+						</blockquote>
+						<p>第一种方式是标准的静态方法访问方式,第二种就是优化后的方式,其第一个参数被移动到方法访问对象上,这种方式在编译时将被自动转换为第一种方式.</p>
+						<p>采用这种优化方式的具体要求为:</p>
+						<blockquote>
+							<p><b>静态方法第一个参数的数据类型必须为其所处类本身.</b></p>
+						</blockquote>
+						<p>只要满足这个要求,该静态方法被调用时第一个参数就可以被移动到其方法访问对象上,其后续参数正常填写.</p>
+					</blockquote>
+				</blockquote>
+				</td>
+			</tr>
+			<tr>
+				<td width="169">类别</td>
+				<td>指定方法的具体类别,可以为以下几种之一(关于属性和事件类别方法后面有专门章节描述,此处了解一下就可以了):<blockquote>
+					<p><b>1. 通常: </b>表明本方法为通常方法</p>
+					<p>　</p>
+					<p><b>2. 属性读:</b> 表明本方法为属性读取方法. 该属性可以在程序语句中被读取.</p>
+					<blockquote>
+						<p>如果属性读方法为静态方法,所要求的定义格式:</p>
+						<blockquote>
+							<p><b>A</b>. 必须定义且只能定义一个参数,该参数的数据类型必须为属性读方法所处类本身;</p>
+							<p><b>B</b>. 必须定义有返回值,该返回值的数据类型不能为数组,该数据类型即为本属性被读取时的数据类型.</p>
+						</blockquote>
+						<p>如果属性读方法不为静态方法,所要求的定义格式:</p>
+						<blockquote>
+							<p><b>A</b>. 不能定义参数;</p>
+							<p><b>B</b>. 必须定义有返回值,该返回值的数据类型不能为数组,该数据类型即为本属性被读取时的数据类型.</p>
+						</blockquote>
+						<p>注意:</p>
+						<blockquote>
+							<p><b>A</b>. 在程序中,必须以与变量相同的引用方式来访问属性读方法. 如: &quot;类对象1.属性1&quot;;</p>
+							<p><b>B</b>. 如果存在同名属性写方法,则两者的数据类型必须一致;</p>
+							<p><b>C</b>. 在全局类中不能定义属性读方法(普通用户无需掌握).</p>
+							<p>　</p>
+						</blockquote>
+					</blockquote>
+					<p><b>3. 属性写:</b> 
+					表明本方法为属性写入方法. 该属性除了可以在程序语句中被赋值,还可以在该类对象变量的扩展属性表的&quot;<b>属性</b>&quot;列中被赋予初始值.<a name="prop_set_method"></a></p>
+				</blockquote>
+				<blockquote>
+					<blockquote>
+						<p>如果属性写方法为静态方法,所要求的定义格式:</p>
+						<blockquote>
+							<p><b>A</b>. 必须未定义返回值;</p>
+							<p><b>B</b>. 
+							必须定义且只能定义两个参数,第一个参数的数据类型必须为属性写方法所处类本身,第二个参数的数据类型不能为数组,该数据类型即为本属性被写入时
+							所需要的数据类型.</p>
+						</blockquote>
+						<p>如果属性写方法不为静态方法,所要求的定义格式:</p>
+						<blockquote>
+							<p><b>A</b>. 必须未定义返回值;</p>
+							<p><b>B</b>. 
+							必须定义且只能定义一个参数,该参数的数据类型不能为数组,该数据类型即为本属性被写入时所需要的数据类型.</p>
+						</blockquote>
+						<p>注意:</p>
+						<blockquote>
+							<p><b>A</b>. 在程序中,必须以与变量相同的引用方式来访问属性写方法. 如: 
+							&quot;类对象1.属性1 = 1&quot;;</p>
+							<p><b>B</b>. 如果存在同名属性读方法,则两者的数据类型必须一致;</p>
+							<p><b>C</b>. 在全局类中不能定义属性写方法(普通用户无需掌握).</p>
+							<p>　</p>
+						</blockquote>
+					</blockquote>
+					<p><b>4. 定义事件: </b>定义本类对象将会发送事件的名称及格式,此种方法必须满足以下格式要求:<a name="event_declare_method"></a></p>
+					<blockquote>
+						<p><b>A. </b>方法体必须为空;</p>
+						<p><b>B. </b>返回值数据类型必须为整数;</p>
+						<p><b>C. </b>不能为静态方法.</p>
+						<p>　</p>
+					</blockquote>
+					<p><b>5. 接收事件: 
+					</b>定义本类对象将会接收本类中成员变量对象所发送的事件,此种方法且必须满足以下要求:<a name="event_rev_method"></a></p>
+					<blockquote>
+						<p><b>A. </b>返回值数据类型必须为整数;</p>
+						<p><b>B. </b>不能为静态方法;</p>
+						<p><b>C. </b>方法名称格式必须为: 事件对象类名 + &quot;_&quot; + 欲接收事件名;</p>
+						<p><b>D. </b>方法的第1个参数的数据类型必须为欲接收其事件的事件对象类名;</p>
+						<p><b>E. </b>方法的第2个参数的数据类型必须为整数,用作接收&quot;<a href="#rev_event">挂接事件</a>&quot;关键字调用所提供的&quot;标记值&quot;参数值(非该方式挂接事件则此参数值固定为0);</p>
+						<p><b>F. </b>方法其余参数的数目及数据类型必须与欲接收事件的定义方法一致.</p>
+						<p>注: 开发环境中有对应的快捷功能自动生成指定事件的接收方法.</p>
+					</blockquote>
+				</blockquote>
+				</td>
+			</tr>
+			<tr>
+				<td width="169">公开</td>
+				<td>指定本方法是否公开.公开方法可以在所处类外部被访问,而非公开方法只能在本类或者其继承类中访问.</td>
+			</tr>
+			<tr>
+				<td width="169">参数表</td>
+				<td>
+<p>为方法定义一个参数表,用作指定调用此方法时所需要提供的参数:</p>
+<blockquote>
+	<p>
+	<img border="0" src="images/b80.png" width="671" height="189"></p>
+</blockquote>
+<p>需要注意的是:</p>
+<blockquote>
+	<p><b>1. </b>数据类型为<b>类</b>或<b>文本型</b>的参数始终以参考方式传递对象(这一点上视窗和安卓平台是一致的). 譬如上图的参数1和参数2<b>,</b>如果在外部调用&quot;测试方法<b> </b>
+	(测试类1对象, 文本变量1, 123)&quot;,那么&quot;参数1&quot;将是指向&quot;测试类1对象<b>&quot;</b>的参考,操作&quot;参数1&quot;等效于操作&quot;测试类1对象<b>&quot;,</b></p>
+	<p>&quot;参数2&quot;将是指向&quot;文本变量1<b>&quot;</b>的参考,操作&quot;参数2&quot;等效于操作&quot;文本变量1<b>&quot;</b>;</p>
+	<p><b>2. </b>调用方法时,必须加上用小括号括住的参数表,即使该方法的参数表为空,也必须加上用小括号括住的空参数表. 如: 
+	假设前面的&quot;测试方法&quot;没有定义任何参数,调用它时也必须使用&quot;测试方法()&quot;格式.</p>
+</blockquote>
+				</td>
+			</tr>
+		</table>
+	</blockquote>
+	<p>　</p>
+	<h5><a name="element_attr"></a>7. 类成员属性</h5>
+	<blockquote>
+		<p>类成员属性用作表达或修改类的特征时使用,可以使用类方法或者类成员变量来定义.</p>
+		<p>根据其可访问方式分为3类: &quot;<b>可读成员属性</b>&quot; / &quot;<b>可写成员属性</b>&quot; / 
+	&quot;<b>可读写成员属性</b>&quot;.</p>
+	</blockquote>
+</blockquote>
+<p>　</p>
+<blockquote>
+	<blockquote>
+		<h6>1. 定义&quot;可读成员属性&quot;:</h6>
+		<blockquote>
+			<p>&quot;<b>可读成员属性</b>&quot;用作支持对属性值的读取.</p>
+			<p>插入一个方法,将其&quot;<b>类别</b>&quot;列设置为&quot;<b>属性读</b>&quot;,然后保证其满足以下格式要求:</p>
+			<blockquote>
+				<p><b>A. </b>访问权限必须为&quot;<b>公开</b>&quot;;</p>
+				<p><b>B. </b>不能为静态方法(实际上静态方法也可以用作定义属性,不过这个不需要普通用户掌握);</p>
+				<p><b>C. </b>没有参数;</p>
+				<p><b>D. </b>必须定义有一个返回值,该返回值的数据类型即为该属性的<b>数据类型</b>.</p>
+			</blockquote>
+			<p>譬如以下代码在&quot;<b>测试类</b>&quot;中定义了一个数据类型为&quot;<b>整数</b>&quot;的可读属性&quot;<b>我的属性</b>&quot;:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b18.png" width="641" height="254"></p>
+			</blockquote>
+			<p>注意: 虽然&quot;<b>我的属性</b>&quot;是以成员方法的形式定义的,但是在程序中访问时不能以方法的访问方式&quot;<b>对象.我的属性()</b>&quot;来访问,而应该以访问&quot;<b>成员变量</b>&quot;的方式来访问,即:&quot;<b>对象.属性名</b>&quot;.</p>
+			<p>如,访问上面可读属性的语句为:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b19.png" width="444" height="115"></p>
+			</blockquote>
+			<p>其中黄色箭头指向处定义了&quot;<b>测试类</b>&quot;的一个对象实例,红色箭头处读取了其&quot;<b>我的属性</b>&quot;的属性值并将其赋值到&quot;<b>整数变量1</b>&quot;.</p>
+			<p>实际上,读取&quot;<b>测试类对象.我的属性</b>&quot;时,等效于调用了&quot;<b>我的属性</b>&quot;属性读取方法.</p>
+		</blockquote>
+		<p>　</p>
+		<h6>2. 定义&quot;可写成员属性&quot;:</h6>
+		<blockquote>
+			<p>顾名思义,&quot;<b>可写成员属性</b>&quot;就是用作支持对属性值的写入.它的定义方式与定义&quot;<b>可读成员属性</b>&quot;类似,只是所定义方法的格式要求不同.</p>
+			<p>插入一个方法,将其&quot;<b>类别</b>&quot;列设置为&quot;<b>属性写</b>&quot;,然后保证其满足以下格式要求:</p>
+			<blockquote>
+				<p><b>A. </b>访问权限必须为&quot;<b>公开</b>&quot;;</p>
+				<p><b>B. </b>不能为静态方法(实际上静态方法也可以用作定义属性,不过这个不需要普通用户掌握);</p>
+				<p><b>C. </b>只有一个参数,该参数的数据类型即为该可写属性的<b>数据类型</b>;</p>
+				<p><b>D. </b>没有返回值.</p>
+			</blockquote>
+			<p>譬如以下代码在&quot;<b>测试类</b>&quot;中定义了一个数据类型为&quot;<b>整数</b>&quot;的可写属性&quot;<b>我的属性</b>&quot;:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b20.png" width="644" height="311"></p>
+			</blockquote>
+			<p>同样,虽然此处&quot;<b>我的属性</b>&quot;是以成员方法的形式定义的,但是在程序中访问时不能以方法的访问方式&quot;<b>对象.我的属性(欲写入的属性值)</b>&quot;来访问,而应该以访问&quot;<b>成员变量</b>&quot;的方式来访问,即:&quot;<b>对象.属性名 
+		= 欲写入的属性值</b>&quot;.</p>
+			<p>如,访问上面可写属性的语句为:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b21.png" width="441" height="91"></p>
+			</blockquote>
+			<p>其中黄色箭头指向处定义了&quot;<b>测试类</b>&quot;的一个对象实例,红色箭头处将其&quot;<b>我的属性</b>&quot;的属性值赋值为123.</p>
+			<p>实际上,写入&quot;<b>测试类对象.我的属性</b>&quot;时,等效于调用了&quot;<b>我的属性</b>&quot;属性写入方法.</p>
+			<p>&quot;<b>可写成员属性</b>&quot;还有另外一种访问方式,就是直接在对象的属性表中设置,如:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b24.png" width="460" height="69"></p>
+			</blockquote>
+			<p>等效于前面通过语句&quot;测试类对象.我的属性 = 123&quot;对该属性的写入.</p>
+			<p>操作小提示:要想知道当前对象有哪些&quot;<b>可写属性</b>&quot;,在&quot;<b>属性名</b>&quot;列上<b>按下空格</b>即可:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b25.png" width="450" height="82"></p>
+			</blockquote>
+			<p>　</p>
+		</blockquote>
+		<h6>3. 定义&quot;可读写成员属性&quot;:</h6>
+		<blockquote>
+			<p>很容易理解,&quot;<b>可读写成员属性</b>&quot;就是既可以<b>被读取</b>又可以<b>被写入</b>的属性,定义它的方式也很简单,就是同时定义名称相同的<b>属性读</b>和<b>属性写</b>方法,如:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b22.png" width="646" height="436"></p>
+			</blockquote>
+			<p>其中黄色箭头指向定义了&quot;<b>我的属性</b>&quot;的<b>属性读</b>方法,红色箭头指向定义了&quot;<b>我的属性</b>&quot;的<b>属性写</b>方法.</p>
+			<p>前面已经讲过,&quot;<b>可读属性</b>&quot;用作支持对类属性的<b>读取</b>操作,&quot;<b>可写属性</b>&quot;用作支持对类属性的<b>写入</b>操作,编译器会根据当前操作是读取还是写入自动调用对应的<b>属性读/写方法</b>.当以以下方式对&quot;<b>我的属性</b>&quot;进行访问时:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b23.png" width="437" height="137"></p>
+			</blockquote>
+			<p>黄色箭头指向处将调用&quot;<b>我的属性</b>&quot;的属性读方法,而红色箭头指向处将调用&quot;<b>我的属性</b>&quot;的属性写方法.</p>
+			<p>定义&quot;<b>可读写成员属性</b>&quot;时需要注意的是:</p>
+			<blockquote>
+				<p>&quot;<b>属性读方法</b>&quot;和&quot;<b>属性写方法</b>&quot;的数据类型必须一致,也就是说: &quot;<b>属性读方法</b>&quot;的返回值与同名&quot;<b>属性写方法</b>&quot;第一个参数的数据类型必须一致:</p>
+				<blockquote>
+					<p>
+					<img border="0" src="images/b26.png" width="646" height="432"></p>
+				</blockquote>
+				<p>如图中黄色和红色箭头所指向的数据类型必须一致.</p>
+				<p>　</p>
+			</blockquote>
+		</blockquote>
+		<h6><a name="attr_var"></a>4. 定义&quot;可读写成员变量属性&quot;:</h6>
+		<blockquote>
+			<p>有时候我们想直接把一个&quot;<b><a href="#element_var_declare">成员变量</a></b>&quot;同时定义为&quot;<b>成员属性</b>&quot;,譬如前面的例子所定义的&quot;<b>我的属性</b>&quot;也可以这样定义:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b27.png" width="482" height="72"></p>
+			</blockquote>
+			<p>具体方法就是为该成员变量设置属性值为<b>真</b>的&quot;<b>@属性变量</b>&quot;系统属性(系统属性是指以'<b>@</b>'字符开头的系统预定义属性)即可.</p>
+			<p>操作小提示:要想知道当前对象有哪些&quot;系统属性&quot;,在&quot;<b>属性名</b>&quot;列上输入'<b>@</b>'字符,要想知道当前对象有哪些&quot;用户程序属性&quot;,在&quot;<b>属性名</b>&quot;列上输入<b>空格</b>字符:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b28.png" width="490" height="226"></p>
+			</blockquote>
+			<p>注意:这些系统属性,除了在本文档中提到的,一般用户无需了解.</p>
+			<p>此处定义的&quot;<b>我的属性</b>&quot;,与前面通过&quot;<b>属性读/写方法</b>&quot;定义的&quot;<b>我的属性</b>&quot;没有任何区别,同样可以在对象的属性表中使用:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b24.png" width="460" height="69"></p>
+			</blockquote>
+			<p>那么问题来了,既然可以这么简单地定义成员属性,那么为什么还要那么麻烦去通过&quot;<b>属性读/写方法</b>&quot;来定义呢?</p>
+			<p>道理很简单:通过&quot;<b>属性读/写方法</b>&quot;来定义可以使用程序代码对属性的<b>读/写</b>操作进行具体控制,还可以进行一些额外的特定操作,而定义&quot;<b>成员变量属性</b>&quot;就没办法达到这个目的了,本处两者效果一致只是一个特例.</p>
+			<p>　</p>
+		</blockquote>
+		<h6>5. 定义&quot;只读成员属性&quot;和&quot;只写成员属性&quot;:</h6>
+		<blockquote>
+			<p>定义&quot;<b>只读成员属性</b>&quot;和&quot;<b>只写成员属性</b>&quot;很简单:</p>
+			<blockquote>
+				<p>只提供了&quot;<b>属性读方法</b>&quot;的属性就是<b>只读属性</b>,只提供了&quot;<b>属性写方法</b>&quot;的属性就是<b>只写属性</b>.</p>
+			</blockquote>
+			<p>如果想对&quot;<b>只读成员属性</b>&quot;进行写操作,或者想对&quot;<b>只写成员属性</b>&quot;进行读操作,编译器都会报错:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b29.png" width="684" height="744"></p>
+			</blockquote>
+			<p>如上图,在&quot;<b>测试类</b>&quot;中定义了名为&quot;<b>我的只读属性</b>&quot;的只读属性(未提供该名称的属性写方法)和名为&quot;<b>我的只写属性</b>&quot;的只写属性(未提供该名称的属性读方法),那么在黄色和红色箭头所指向处的代码在编译时都会报错.</p>
+			<p>可以通过此方式对属性的读写权限进行分别控制.</p>
+		</blockquote>
+		<p>&nbsp;</p>
+		<h6>6. 填写成员属性表:</h6>
+		<blockquote>
+			<p>火山中所有定义型成员(包/类/方法/常量/变量/参数)都具有一个属性表(由紧挨着的&quot;<b>属性名</b>&quot;和&quot;<b>属性值</b>&quot;两列组成),用作指定该成员相关属性的值.</p>
+			<p><b>A. </b>以下属性可以在所有成员的属性表中被使用:</p>
+			<blockquote>
+				<p><b>1. </b>火山系统定义的全局扩展属性或项目插件定义的项目扩展属性(属性名以'@'开头,普通用户无需掌握).</p>
+				<p>&nbsp;</p>
+			</blockquote>
+			<p><b>B. </b>以下属性可以在类的属性表中被使用,用作在类对象被创建时自动初始化相关属性值:</p>
+			<blockquote>
+				<p><b>1. </b>类自身或其基础类中定义的<a href="#attr_var">可读写成员变量属性</a>;</p>
+				<p><b>2. </b>类自身或其基础类中定义的所有<a href="#prop_set_method">属性写方法</a>;</p>
+				<p><b>3. </b>以上属性的<b>子属性</b>,如&quot;可读属性1.可读属性2.可写属性3&quot;,前面的父属性必须均为可读取属性,最后一个属性必须为可写入属性.</p>
+				<p>&nbsp;</p>
+			</blockquote>
+			<p><b>C. </b>以下属性可以在类成员变量的属性表中被使用:</p>
+			<blockquote>
+				<p><b>1. </b>类成员变量的数据类型类或其基础类中定义的<a href="#attr_var">可读写成员变量属性</a>;</p>
+				<p><b>2. </b>类成员变量的数据类型类或其基础类中定义的所有<a href="#prop_set_method">属性写方法</a>;</p>
+				<p><b>3. </b>以上属性的<b>子属性</b>,如&quot;可读属性1.可读属性2.可写属性3&quot;,前面的父属性必须均为可读取属性,最后一个属性必须为可写入属性.</p>
+				<p>　</p>
+			</blockquote>
+			<p><b>D.</b> 属性值:</p>
+			<blockquote>
+				<p><b>1. </b>属性值可以引用程序中定义的<a href="#const_declare">常量</a>或者提供对应数据类型的<a href="#imm_value">立即数</a>;</p>
+				<p><b>2.</b> 如果属性指定只能从其提供的选择列表中选择属性值(使用&quot;@列表选择项&quot;系统全局属性指定,普通用户知道即可,无需掌握),则属性值只能从这些列表项中选择;</p>
+				<p><b>3.</b> 如果属性数据类型为<a href="p_grammar.htm#const_class">常量类</a>:</p>
+				<blockquote>
+					<p><b>A. </b>如果该常量类中定义有常量成员,则属性值只能从这些常量成员中选择;</p>
+					<p><b>B.</b> 否则可以直接提供该常量类所对应数据类型的<a href="#imm_value">立即数</a>. 
+		譬如,假设属性A的数据类型为&quot;可绘制资源&quot;(安卓平台)或&quot;位图资源&quot;(视窗平台),那么属性值除了可以为其提供一个同样数据类型的常量以外,还可以直接为其提供一个
+					对应图片文件名文本.</p>
+				</blockquote>
+				<blockquote>
+					<p><b>注意: </b>普通用户只需要知道当属性的数据类型为系统类库中所提供的常量类时,可以如此处理即可,其它方面(譬如如何建立常量类),无需掌握,可以将其当前普通的类同样看待.</blockquote>
+				<p>&nbsp;</p>
+			</blockquote>
+			<p>属性表填写实例如下图:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b70.png" width="962" height="801"></p>
+			</blockquote>
+			<p>下图为所使用到的安卓平台系统类&quot;文件打开方式&quot;的定义,了解一下即可:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b71.png" width="928" height="305"></p>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+	</blockquote>
+	<h5><a name="element_event"></a>8. 类成员事件</h5>
+	<blockquote>
+		<p align="left"><b>成员事件</b>用来类对外发送通知时使用.</p>
+		<p align="left">一个很简单的例子: 用作&quot;<b>按钮</b>&quot;的类必须在用户单击按钮时向外部发送&quot;<b>被单击</b>&quot;事件,用作&quot;<b>时钟</b>&quot;的类必须向外部定时发送&quot;<b>时钟周期</b>&quot;事件,等等.</p>
+		<p align="left">类的其它三类&quot;<b>成员变量</b>&quot; / &quot;<b>成员属性</b>&quot; / &quot;<b>成员方法</b>&quot;都是被动接受来自外部的访问,而&quot;<b>成员事件</b>&quot;是主动向外部发送通知,这是两者之间的最主要不同.</p>
+		<p align="left">　</p>
+		<p align="left"><b>A. </b>定义<b>&quot;成员事件&quot;: </b></p>
+		<blockquote>
+			<p align="left">插入一个方法,将其&quot;<b>类别</b>&quot;列设置为&quot;<b>定义事件</b>&quot;,然后保证其满足以下格式要求:
+			</p>
+			<blockquote>
+				<p align="left">1. 访问权限必须为&quot;<b>公开</b>&quot;;</p>
+				<p align="left">2. 不能为静态方法;</p>
+				<p align="left">3. 返回值必须为整数;</p>
+				<p align="left">4. 方法体必须为空.</p>
+			</blockquote>
+			<p align="left"><b>事件定义方法</b>对参数表没有要求,用户可以根据自己的需要随意定义.</p>
+			<p align="left">譬如下图我们为&quot;测试类1&quot;定义了一个&quot;我的事件1&quot;事件: </p>
+			<blockquote>
+				<p align="left">
+				<img border="0" src="images/b72.png" width="552" height="342"></p>
+			</blockquote>
+		</blockquote>
+		<p align="left">　</p>
+		<p align="left"><b>B. 在类中发送事件: </b></p>
+		<blockquote>
+			<p align="left">在类中的代码内,当需要发送事件时,直接调用该事件的&quot;<b>事件定义方法</b>&quot;即可. 如上图.</p>
+			<p align="left">当调用&quot;<b>事件定义方法</b>&quot;时,如果该事件定义方法上挂接了对应的&quot;<b>事件接收方法</b>&quot;(见下),会自动去调用该&quot;<b>事件接收方法</b>&quot;并返回其所返回的整数值,否则会直接返回整数值0.</p>
+		</blockquote>
+		<p align="left">　</p>
+		<p align="left"><b>C. 接收其它类所发送过来的事件: </b></p>
+		<blockquote>
+			<p align="left">要想接收其它类所发送的事件,必须首先定义相应的<b>事件接收方法</b>,譬如以下代码在&quot;<b>测试类2</b>&quot;中定义了一个前面的&quot;<b>测试类1</b>&quot;的对象变量:
+			</p>
+			<blockquote>
+				<p align="left">
+				<img border="0" src="images/b73.png" width="500" height="141"></p>
+			</blockquote>
+			<p align="left">想要接收其&quot;<b>我的事件1</b>&quot;事件,需要如下操作: </p>
+			<p align="left">鼠标右键单击&quot;<b>成员变量1</b>&quot;的定义行: </p>
+			<blockquote>
+				<p align="left">
+				<img border="0" src="images/b74.png" width="515" height="448"></p>
+			</blockquote>
+			<p align="left">选择其中的&quot;<b>添加成员变量1的事件接收及虚拟方法方法</b>&quot;菜单项: </p>
+			<blockquote>
+				<p align="left">
+				<img border="0" src="images/b75.png" width="683" height="467"></p>
+			</blockquote>
+			<p align="left">再选择其中的&quot;<b>测试类1_我的事件1</b>&quot;,然后单击&quot;<b>添加</b>&quot;按钮,会自动在程序中插入对应的事件接收方法:
+			</p>
+			<blockquote>
+				<p align="left">
+				<img border="0" src="images/b76.png" width="487" height="283"></p>
+			</blockquote>
+			<p align="left">当然,你也可以自己手工创建并填写符合此格式的事件接收方法,效果是一样的.</p>
+			<p align="left">查看上面所生成的事件接收方法,可以发现它的格式要求: </p>
+			<blockquote>
+				<p align="left"><b>1.</b> 方法名称必须为: &quot;事件定义方法所处类名&quot;+下划线+&quot;事件定义方法名称&quot;;</p>
+				<p align="left"><b>2.</b> 不能为静态方法;</p>
+				<p align="left"><b>3.</b> 方法的第一个参数必须为固定的&quot;<b>来源对象</b>&quot;参数,其数据类型为发送事件的类,用作提供具体是哪个对象发送过来的事件;</p>
+				<p align="left"><b><a name="event_mark_value"></a>4.</b> 方法的第二个参数必须为固定的&quot;<b>标记值</b>&quot;参数,其数据类型为整数,用作动态挂接事件时使用(见后);</p>
+				<p align="left"><b>5.</b> 方法的后续参数表必须与对应的&quot;<b>事件定义方法</b>&quot;一致,用作提供在事件定义方法所处类中发送事件(调用该事件定义方法)时所传递过来的具体参数值;</p>
+				<p align="left"><b>6.</b> 方法的返回值必须为整数,此返回值将被传递回在事件定义方法所处类中调用该事件定义方法的调用方.</p>
+			</blockquote>
+			<p align="left">一旦为<b><a href="#element_var_declare">类成员变量</a></b>对象的&quot;<b>事件定义方法</b>&quot;定义了对应的&quot;<b>事件接收方法</b>&quot;,那么该事件就被自动挂接到了此接收方法上,在事件定义方法所处类中一旦调用该&quot;<b>事件定义方法</b>&quot;,此&quot;<b>事件接收方法</b>&quot;就会被自动调用.</p>
+			<p align="left">注意,由于同一类的同一事件均被发送到同一个事件接收方法,因此必须充分使用&quot;<b>来源对象</b>&quot;和&quot;<b>标记值</b>&quot;两个参数进行区分.&nbsp; 
+			如:</p>
+			<blockquote>
+				<p align="left">
+				<img border="0" src="images/b94.png" width="505" height="426"></p>
+			</blockquote>
+			<p align="left">
+			如上图,&quot;成员变量1&quot;和&quot;成员变量2&quot;由于其类型都为&quot;测试类1&quot;,因此收到其&quot;我的事件1&quot;后,都会调用&quot;测试类1_我的事件1&quot;事件接收方法,在该方法中可以通过判断具体来源对象来进行区分处理.</p>
+			<p align="left">附: 这种特性是不是比其它编程语言更强大? 不再是只有在被设计窗体上的窗口组件才能发送事件了,也不再需要为了让其能发送事件去开发
+			专用的窗口哑组件了.在火山中,任何代码位置处的<b>对象</b>均可以发送事件.</p>
+		</blockquote>
+		<p align="left">　</p>
+		<p align="left"><b><a name="dynamic_attach_event"></a>D. 动态挂接其它类所发送过来的事件: </b></p>
+		<blockquote>
+			<p align="left">如前所述,一旦为<b><a href="#element_var_declare">类成员变量</a></b>对象的&quot;<b>事件定义方法</b>&quot;定义了对应的&quot;<b>事件接收方法</b>&quot;,那么该事件就被自动挂接到了当前类中的对应&quot;<b>事件接收方法</b>&quot;上,但是其它代码位置处对象的事件是不会自动挂接到当前类中的,譬如下面代码:
+			</p>
+			<blockquote>
+				<p align="left">
+				<img border="0" src="images/b77.png" width="479" height="180"></p>
+			</blockquote>
+			<p align="left">在&quot;<b>测试方法1</b>&quot;中定义了一个&quot;<b>测试类1</b>&quot;的局部变量对象,此时该对象上的&quot;<b>我的事件1</b>&quot;事件是不会自动挂接到当前类的&quot;<b>测试类1_我的事件1</b>&quot;事件接收方法上的.也就是说,当前类此时将无法接收到来自此&quot;<b>测试类1</b>&quot;对象实例的&quot;<b>我的事件1</b>&quot;事件.</p>
+			<p align="left">如果需要接收该局部变量对象的事件,必须调用&quot;<a href="#rev_event">挂接事件</a>&quot;关键字明确挂接其事件到当前类:
+			</p>
+			<blockquote>
+				<p align="left">
+				<img border="0" src="images/b78.png" width="486" height="178"></p>
+			</blockquote>
+			<p align="left">&quot;<b>挂接事件(变量1)</b>&quot;语句被执行后,此&quot;<b>测试类1</b>&quot;对象的&quot;<b>我的事件1</b>&quot;事件就被挂接到了当前类的&quot;<b>测试类1_我的事件1</b>&quot;事件接收方法上,以后当前类就可以接收到来自该对象的&quot;<b>我的事件1</b>&quot;事件了:</p>
+			<p align="left">在调用&quot;<a href="#rev_event">挂接事件</a>&quot;关键字时可以额外再提供一个标记值参数,如: &quot;<b>挂接事件 
+			(变量1,123)</b>&quot;,此时该&quot;<b>测试类1</b>&quot;对象一旦发送事件,事件接收方法的&quot;<a href="#event_mark_value">标记值</a>&quot;参数将接收到此处所提供的标记值&quot;<b>123</b>&quot;,便于程序中对此事件进行特定处理.</p>
+		</blockquote>
+		<p align="left">&nbsp;</p>
+	</blockquote>
+	<h5 align="left"><a name="virtual_method"></a>9. 虚拟方法</h5>
+	<blockquote>
+		<p align="left">虚拟方法为可以在继承类中将其覆盖的方法.</p>
+		<p align="left">对于普通用户来说,不需要掌握如何定义虚拟方法,只需要了解如何覆盖系统类中定义好的虚拟方法即可.</p>
+		<p align="left"><b>虚拟方法相比普通方法的不同之处:</b> 虚拟方法被调用时,所调用到的实际方法由调用对象的<b>运行时真实数据类型</b>而不是其<b>声明时数据类型</b>决定.</p>
+		<p align="left">听起来挺拗口,而且不好理解,不要紧,下面我们来逐步讲解.</p>
+		<p align="left">假设存在以下两个类: 
+		&quot;测试类1&quot;和&quot;测试类2&quot;,其中&quot;测试类1&quot;是&quot;测试类2&quot;的基础类,同时这两个类中都定义了一个名叫&quot;<b>方法1</b>&quot;的方法:</p>
+		<blockquote>
+			<p align="left">
+			<img border="0" src="images/b81.png" width="604" height="355"></p>
+		</blockquote>
+		<p align="left">
+		这两个方法的定义格式完全相同(具有相同的名称/返回值数据类型/参数表),而且均定义了&quot;<b>@虚拟方法</b>&quot;属性.这就是&quot;虚拟方法&quot;名词的来由,凡是定义了&quot;@虚拟方法&quot;属性的方法,均称为<b>虚拟方法</b>.</p>
+		<p align="left">使用下面这段代码对这两个方法进行调用:</p>
+		<blockquote>
+			<p align="left">
+			<img border="0" src="images/b82.png" width="534" height="341"></p>
+		</blockquote>
+		<p align="left">
+		在&quot;测试方法2&quot;中对&quot;方法1&quot;进行了调用,按照常理来说,由于&quot;参数1&quot;的数据类型为&quot;测试类1&quot;,因此应该始终是调用&quot;测试类1&quot;中定义的&quot;方法1&quot;才对.如果&quot;方法1&quot;不是虚拟方法,这种假设是对的,但是由于其是虚拟方法,所以此处所具体调用的是哪个类里面的&quot;方法1&quot;由&quot;参数1&quot;的当前运行时实际数据类型决定,即: 
+		&quot;参数1&quot;如果指向的是&quot;测试类1&quot;的对象,则调用的就是&quot;测试类1&quot;的&quot;方法1&quot;,如果指向的是&quot;测试类2&quot;的对象,则调用的就是&quot;测试类2&quot;的&quot;方法1&quot;.</p>
+		<p align="left">很明显,&quot;测试方法2 (测试类1对象)&quot;语句调用的是&quot;测试类1&quot;中的&quot;方法1&quot;,而&quot;测试方法2 
+		(测试类2对象)&quot;语句调用的是&quot;测试类2&quot;中的&quot;方法1&quot;.</p>
+		<p align="left">使用虚拟方法有什么好处? 
+		最重要的好处就是可以在继承类中通过虚拟方法覆盖改写基础类中的同名方法,此特性可以用作以下几个方面:</p>
+		<blockquote>
+			<p align="left"><b>1. 修改基础类中的原有功能</b></p>
+			<blockquote>
+				<p align="left">注意: 本条普通用户只需稍作了解即可.</p>
+				<p align="left">考虑一下这个应用场景,在程序中一直使用来自第三方库的名为&quot;测试类1&quot;的类,我们发现其&quot;方法1&quot;不能满足需要而我们又无法去直接修改它,如果该方法为虚拟方法,则我们可以建立一个&quot;测试类1&quot;的继承类&quot;测试类2&quot;,并将其&quot;方法1&quot;覆盖,然后将所有创建&quot;测试类1&quot;对象的代码均改为创建&quot;测试类2&quot;的对象即可.</p>
+				<p align="left">&nbsp;</p>
+			</blockquote>
+			<p align="left"><b>2. 建立多态类</b></p>
+			<blockquote>
+				<p align="left">注意: 本条普通用户只需稍作了解即可.</p>
+				<p align="left">虚拟方法可以用作实现基于同一基础类的继承类表现出不同的行为.</p>
+				<p align="left">
+				假设有一个画板类,其中可以绘制各种图形(如三角形/圆/矩形等),按照面向对象的设计方法,我们可以定义一个名为&quot;图形类&quot;的基础类,该类定义了一个名为&quot;绘制&quot;的虚拟方法,然后再定义&quot;图形类&quot;的各种继承类,如&quot;三角形类&quot;,&quot;圆形类&quot;,&quot;矩形类&quot;等等,在这些继承类中,将基础类中的&quot;绘制&quot;方法覆盖以实现其特定的绘制工作.在画板类中进行绘制时,接收一个&quot;图形类&quot;的对象,调用其&quot;绘制&quot;方法即可绘制各种不同的图形,而不用管具体接收的是哪种图形类对象.</p>
+				<p align="left">&nbsp;</p>
+			</blockquote>
+			<p align="left"><b>3. 在基础类中调用位于继承类中的方法</b></p>
+			<blockquote>
+				<p align="left">火山类库广泛使用本特性向用户继承类发送通知,因此本条普通用户必须了解.</p>
+				<p align="left">由于火山安卓平台的类库中虚拟方法的应用场合较多,下面以该平台程序作为例子进行说明.</p>
+				<p align="left">这是一个非常简单的安卓程序,用作在所处窗口被创建时显示一个提示框:</p>
+				<blockquote>
+					<p align="left">
+					<img border="0" src="images/b84.png" width="492" height="278"></p>
+				</blockquote>
+				<p align="left">&quot;启动类&quot;为系统类&quot;窗口&quot;的继承类,其中覆盖了该类中定义的虚拟方法&quot;通知_被创建&quot;:</p>
+				<blockquote>
+					<p align="left">
+					<img border="0" src="images/b85.png" width="1009" height="251"></p>
+				</blockquote>
+				<p align="left">
+				当安卓程序启动后,将自动创建用户的&quot;启动类&quot;窗口实例对象,当该窗口被创建时,系统类中将自动调用其&quot;通知_被创建&quot;方法,由于窗口实例对象的真实数据类型为&quot;启动类&quot;,因此此时所实际调用的是用户&quot;启动类&quot;中的&quot;通知_被创建&quot;方法,从而达到了在窗口被创建时通知用户程序的目的.</p>
+				<p align="left">
+				在火山开发环境中,可以执行以下菜单功能来自动创建用作基础类中的虚拟覆盖方法,在继承类中的任意位置点击右键,选择&quot;添加xxx的
+				事件接收及虚拟方法&quot;菜单项:</p>
+				<blockquote>
+					<p align="left">
+					<img border="0" src="images/b86.png" width="516" height="440"></p>
+				</blockquote>
+				<p align="left">选中所需要创建的虚拟覆盖方法,然后点击&quot;添加&quot;按钮:</p>
+				<blockquote>
+					<p align="left">
+					<img border="0" src="images/b87.png" width="677" height="465"></p>
+				</blockquote>
+				<p align="left">即可将对应的虚拟覆盖方法加入到当前类中,下图为添加后的结果:</p>
+				<blockquote>
+					<p align="left">
+					<img border="0" src="images/b88.png" width="471" height="116"></p>
+				</blockquote>
+				<p align="left">最后在所添加的方法体中加入自己的处理代码即可.</p>
+				<p align="left">注意,在继承类的虚拟方法中,有时候想调用基础类中被覆盖的虚拟方法,可以采用类似以下语句调用:</p>
+			</blockquote>
+		</blockquote>
+		<blockquote>
+			<blockquote>
+				<blockquote>
+					<p align="left">
+					<img border="0" src="images/b83.png" width="496" height="373"></p>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+	<h5><a name="statment"></a>10. 方法语句</h5>
+	<blockquote>
+		<p>程序语句在方法中使用,用作提供具体的方法实现代码.</p>
+		<p>下面为程序语句的简单概念,稍作了解即可:</p>
+		<blockquote>
+			<p>程序语句可以使用表达式进行描述<b>,</b>表达式由使用操作符组合在一起的语句单元组成,分为以下几类:</p>
+			<blockquote>
+				<p><b>1. </b>一元表达式,如: -变量1,&nbsp; (长整数)1</p>
+				<p><b>2. </b>二元或多元表达式,如: 变量1 + 变量2, 变量1 * 123 * 变量2</p>
+				<p><b>3. </b>命令或方法调用表达式,如: 方法1 (123), 如果 (变量1)</p>
+				<p><b>4. </b>表达式可以嵌套,如: -(变量1 + 变量2), 如果 (变量1 == 真)</p>
+			</blockquote>
+			<p>表达式中的语句单元可以是: 数据类型/变量/常量/参数/方法/名称类关键字/<a href="#imm_value">立即数</a> 等</p>
+		</blockquote>
+		<p>&nbsp;</p>
+		<p><font color="#FF0000"><b>注意</b></font>: 在火山程序中,没有<b>流程线</b>,只有<b>子语句体</b>. 
+		即:</p>
+		<blockquote>
+			<p><b>1.</b> 任何程序语句都可以拥有一条或多条下属语句,这些下属语句称为该语句的<b>子语句体</b>,该语句称为这些下属语句的<b>父语句</b>;</p>
+			<p><b>2. </b>子语句体可以嵌套. 也就是说,子语句可以继续拥有子语句体.</p>
+		</blockquote>
+		<p>如图:</p>
+		<blockquote>
+			<p><img border="0" src="images/b89.png" width="223" height="342"></p>
+		</blockquote>
+		<p>其中,所有子语句体与其所处的父语句之间均使用虚线括住标注出来了. 即:</p>
+		<blockquote>
+			<p>语句行12-16是语句行11的子语句体;</p>
+			<p>语句行15-16是语句行14的子语句体;</p>
+			<p>语句行19-26是语句行18的子语句体;</p>
+			<p>语句行22-23是语句行21的子语句体;</p>
+			<p>语句行25-26是语句行24的子语句体.</p>
+		</blockquote>
+		<p>在使用虚线标注子语句体的时候,系统对&quot;<b>如果</b>&quot;和&quot;<b>否则</b>&quot;语句进行了特殊处理,将两者的子语句体线连接起来了,这样看起来
+		结构更清晰一些.</p>
+		<p>　</p>
+	</blockquote>
+</blockquote>
+
+<h4><a name="c_keyword"></a>三. 火山平台关键字:</h4>
+<h5><a name="base_data_type"></a>1. 基本数据类型关键字:</h5>
+<blockquote>
+<table border="1" width="100%" style="border-collapse: collapse">
+	<tr>
+		<td width="12%" bgcolor="#C3D9FF" align="center"><b>名称</b></td>
+		<td bgcolor="#C3D9FF" align="center" width="5%"><b>输入字1</b></td>
+		<td bgcolor="#C3D9FF" align="center"><b>解释</b></td>
+	</tr>
+	<tr>
+		<td width="12%" valign="top">字节</td>
+		<td width="5%" valign="top">sbyte</td>
+		<td valign="top">字节(有符号)基本数据类型,有效值范围从-128到127,占用1个字节空间.</td>
+	</tr>
+	<tr>
+		<td width="12%" valign="top" bgcolor="#F0F0F0">短整数</td>
+		<td width="5%" valign="top" bgcolor="#F0F0F0">short</td>
+		<td valign="top" bgcolor="#F0F0F0">短整数基本数据类型,有效值范围从-32768到32767,占用2个字节空间.</td>
+	</tr>
+	<tr>
+		<td width="12%" valign="top">字符</td>
+		<td width="5%" valign="top">wchar</td>
+		<td valign="top">宽字符基本数据类型,有效值范围从0到65535,占用2个字节空间.</td>
+	</tr>
+	<tr>
+		<td width="12%" valign="top" bgcolor="#F0F0F0">整数</td>
+		<td width="5%" valign="top" bgcolor="#F0F0F0">int</td>
+		<td valign="top" bgcolor="#F0F0F0">整数基本数据类型,有效值范围从-2147483648到2147483647,占用4个字节空间.</td>
+	</tr>
+	<tr>
+		<td width="220">变整数</td>
+		<td width="89">vint</td>
+		<td>
+		变整数基本数据类型,本类型在目的编程语言为c/c++且编译64位程序时等效于长整数类型,编译32位程序时等效于整数类型.目的编程语言为非c/c++时均等于整数类型. 
+		一般情况下无需使用.</td>
+	</tr>
+	<tr>
+		<td width="12%" valign="top">长整数</td>
+		<td width="5%" valign="top">long</td>
+		<td valign="top">长整数基本数据类型,有效值范围从-9223372036854775808到9223372036854775807,占用8个字节空间.</td>
+	</tr>
+	<tr>
+		<td width="12%" valign="top" bgcolor="#F0F0F0">小数</td>
+		<td width="5%" valign="top" bgcolor="#F0F0F0">double</td>
+		<td valign="top" bgcolor="#F0F0F0">双精度小数基本数据类型,有效值范围从1.797693e+308到4.9000000e-324,占用8个字节空间.</td>
+	</tr>
+	<tr>
+		<td width="12%" valign="top">逻辑型</td>
+		<td width="5%" valign="top">bool</td>
+		<td valign="top">逻辑型基本数据类型,有效值为真/假.</td>
+	</tr>
+	<tr>
+		<td width="12%" valign="top" bgcolor="#F0F0F0">文本型</td>
+		<td width="5%" valign="top" bgcolor="#F0F0F0">string</td>
+		<td valign="top" bgcolor="#F0F0F0">文本型基本数据类型,用作记录一段字符串文本.</td>
+	</tr>
+	<tr>
+		<td width="12%" valign="top"><a name="template_data_type"></a>模板类型1 -&gt; 模板类型8</td>
+		<td width="5%" valign="top">　</td>
+		<td valign="top">注意: 本关键字普通用户只需要了解一下即可.<p>模板数据类型,只能在<a href="p_grammar.htm#template_base_class">模板基础类</a>中使用.</p>
+		<p>模板数据类型本身并不是真实存在的数据类型,所对应的真实数据类型需要由<a href="p_grammar.htm#template_inherit_class">模板实现类</a>来提供.</p>
+		<p>我们举个例子,假设我们需要开发一个数组操作类,用作支持对各种数组类型进行操作,如果不使用模板类型,那么我们需要写很多类似的类:<blockquote>
+			<p>整数数组操作类, 小数数组操作类, 文本数组操作类 ......</blockquote>
+		<p>而这些类的处理代码是完全一样的,唯一不同之处就是其所操作的数据类型不同,使用模板类型,我们可以把所有代码都放到<a href="p_grammar.htm#template_base_class">模板基础类</a>里面,然后定义对应的<a href="p_grammar.htm#template_inherit_class">模板实现类</a>即可. 
+		如:<blockquote>
+			<p><img border="0" src="images/b121.png" width="648" height="519"></blockquote>
+		<p>这样能大大减少工作量,也能让程序具有更好的可维护性(只需维护一处即可).</td>
+	</tr>
+</table>
+<p>注释:</p>
+<blockquote>
+	<p><b>1. </b>&quot;<b>输入字</b>&quot;的意思是在程序中还可以通过输入此文本来输入该关键字.</p>
+</blockquote>
+<h6>&nbsp;</h6>
+<h6>使用图例:</h6>
+<blockquote>
+	<p>下图为一个定义了各种基本数据类型变量的程序:</p>
+	<blockquote>
+		<p><img border="0" src="images/b95.png" width="476" height="236"></p>
+	</blockquote>
+</blockquote>
+<h6>说明:</h6>
+<blockquote>
+	<p><b><a name="number_data_type"></a>A.</b> &quot;字节/短整数/字符/整数/长整数/小数&quot;这几种数据类型被统称为数值数据类型,它们按照所能容纳数值范围的大小(也称为<b>容量</b>)从小到大顺序排列为:</p>
+	<blockquote>
+		<blockquote>
+			<p>字节 &lt; 短整数 &lt; 字符 &lt; 整数 &lt; 长整数 &lt; 小数</p>
+		</blockquote>
+	</blockquote>
+	<p>&nbsp;</p>
+	<p><b>B. </b>如何确定数值计算表达式的结果数据类型:</p>
+	<blockquote>
+		<p>数值计算表达式的结果数据类型确定方法为:</p>
+		<blockquote>
+			<p>为数值计算表达式中具有最大容量的数值数据类型</p>
+		</blockquote>
+		<p>假设有一个数值计算表达式: &quot;变量1 + 变量2&quot;, 
+		其中&quot;变量1&quot;的数据类型为整数,&quot;变量2&quot;的数据类型为小数,那么这个表达式计算后结果的数据类型就是其中最大容量的数据类型: 小数.</p>
+	</blockquote>
+	<h6>&nbsp;</h6>
+	<p><b>C. </b>如何在帮助中查看模板类型的真实数据类型:</p>
+	<blockquote>
+		<p>假设有下面这段代码:</p>
+		<blockquote>
+			<p><img border="0" src="images/b91.png" width="362" height="111"></p>
+		</blockquote>
+		<p>当你右键单击末语句行上的&quot;<b>置入</b>&quot;方法,然后选择查看其帮助菜单项后,看到帮助页面中参数部分为以下内容:</p>
+		<blockquote>
+			<p><img border="0" src="images/b92.png" width="746" height="175"></p>
+		</blockquote>
+		<p>你一定会感到困惑,&quot;模板类型1&quot;和&quot;模板类型2&quot;所对应的真实数据类型到底是什么呢?</p>
+		<p>很简单,请继续单击该&quot;模板类型1&quot;/&quot;模板类型2&quot;链接,譬如点击前者将看到如下页面:</p>
+		<blockquote>
+			<p><img border="0" src="images/b93.png" width="640" height="269"></p>
+		</blockquote>
+		<p>
+		根据&quot;对象变量1&quot;的当前数据类型&quot;整数到对象哈希表类&quot;,就可以得知,&quot;模板类型1&quot;当前所对应的真实数据类型为&quot;整数类&quot;,这就是&quot;整数到对象哈希表类&quot;为其模板基础类中的&quot;置入&quot;方法第一个参数
+		提供的真实数据类型.</p>
+	</blockquote>
+</blockquote>
+<p>&nbsp;</p>
+</blockquote>
+
+<h5><a name="name_keyword"></a>2. 名称关键字:</h5>
+<blockquote>
+<table border="1" width="100%" style="border-collapse: collapse">
+	<tr>
+		<td width="10%" bgcolor="#C3D9FF" align="center" valign="top"><b>名称</b></td>
+		<td bgcolor="#C3D9FF" align="center" width="5%" valign="top"><b>输入字1</b></td>
+		<td bgcolor="#C3D9FF" align="center" valign="top"><b>解释</b></td>
+	</tr>
+	<tr>
+		<td colspan="3" bgcolor="#D3E9FF" width="10%" valign="top"><b>对象名称关键字:</b></td>
+	</tr>
+	<tr>
+		<td width="10%" valign="top">本对象</td>
+		<td width="5%" valign="top">this</td>
+		<td valign="top">用作在程序语句中代表所处类的对象本身.<p><b>注意:</b> 
+		如果语句所处方法为静态方法,由于此时根本不存在当前类的实例对象,所以不能使用本关键字.</p>
+		<blockquote>
+			<p><img border="0" src="images/b96.png" width="514" height="537"></p>
+		</blockquote>
+		</td>
+	</tr>
+	<tr>
+		<td width="10%" valign="top" bgcolor="#F0F0F0">父对象</td>
+		<td width="5%" valign="top" bgcolor="#F0F0F0">super</td>
+		<td valign="top" bgcolor="#F0F0F0">用作在类成员方法中代表所处类的父类对象.<p><b>注意:</b> 
+		如果语句所处方法为静态方法,由于此时根本不存在当前类的实例对象,所以不能使用本关键字.</p>
+		<blockquote>
+			<p><img border="0" src="images/b97.png" width="543" height="485"></p>
+		</blockquote>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3" bgcolor="#D3E9FF" width="85%" valign="top"><b>立即数名称关键字:</b></td>
+	</tr>
+	<tr>
+		<td width="10%" valign="top">真</td>
+		<td width="5%" valign="top">true</td>
+		<td valign="top">用作代表逻辑值<a href="#imm_value">立即数</a>真</td>
+	</tr>
+	<tr>
+		<td width="10%" valign="top" bgcolor="#F0F0F0">假</td>
+		<td width="5%" valign="top" bgcolor="#F0F0F0">false</td>
+		<td valign="top" bgcolor="#F0F0F0">用作代表逻辑值<a href="#imm_value">立即数</a>假</td>
+	</tr>
+	<tr>
+		<td width="10%" valign="top"><a name="null_object"></a>空对象</td>
+		<td width="5%" valign="top">null</td>
+		<td valign="top">用作代表空对象,可以匹配所有非常量类的类数据类型以及文本型.<blockquote>
+			<p><img border="0" src="images/b99.png" width="589" height="611"></p>
+		</blockquote>
+		</td>
+	</tr>
+</table>
+<p>&nbsp;</p>
+</blockquote>
+
+<h5><a name="oper_keyword"></a>3. 操作符关键字:</h5>
+<blockquote>
+<table border="1" width="100%" style="border-collapse: collapse">
+	<tr>
+		<td width="8%" bgcolor="#C3D9FF" align="center" valign="top"><b>名称</b></td>
+		<td bgcolor="#C3D9FF" align="center" width="8%" valign="top"><b>特性</b></td>
+		<td bgcolor="#C3D9FF" align="center" width="4%" valign="top"><b>优先级</b></td>
+		<td bgcolor="#C3D9FF" align="center" width="5%" valign="top"><b>输入字1</b></td>
+		<td bgcolor="#C3D9FF" align="center" width="9%" valign="top"><b>首/左侧参数</b></td>
+		<td bgcolor="#C3D9FF" align="center" width="8%" valign="top"><b>右侧参数</b></td>
+		<td bgcolor="#C3D9FF" align="center" valign="top"><b>解释</b></td>
+	</tr>
+	<tr>
+		<td width="8%" height="27" valign="top">.</td>
+		<td width="8%" height="27" valign="top">[可扩展]</td>
+		<td width="4%" height="27" valign="top">1</td>
+		<td width="5%" height="27" valign="top">　</td>
+		<td width="9%" height="27" valign="top">欲访问类/类对象名称</td>
+		<td height="27" width="8%" valign="top">欲访问类成员名称</td>
+		<td height="27" valign="top">句点分隔操作符,用作分隔类/类对象与其成员名称,或者用作建立包/类的全名称.<blockquote>
+			<p><img border="0" src="images/b100.png" width="614" height="716"></p>
+		</blockquote>
+		</td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">[]</td>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">[只能为参数]<p>[可扩展]</td>
+		<td width="4%" valign="top" bgcolor="#F0F0F0">1</td>
+		<td width="5%" valign="top" bgcolor="#F0F0F0">　</td>
+		<td width="9%" valign="top" bgcolor="#F0F0F0">欲访问数组数据</td>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">[整数] 欲访问数组成员索引值</td>
+		<td valign="top" bgcolor="#F0F0F0">数组成员访问操作符,用作访问所指定索引位置处的数组成员. 也可以在定义<a href="#ary_data_type">数组数据类型</a>时使用.<p>
+		数组成员访问索引值从0开始,有效范围为从0到数组成员数-1,分别对应数组的第一个和最后一个成员.</p>
+		<blockquote>
+			<p><img border="0" src="images/b101.png" width="495" height="188"></p>
+		</blockquote>
+		</td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top">-</td>
+		<td width="8%" valign="top">[只能为参数]<p>[右结合]</td>
+		<td width="4%" valign="top">2</td>
+		<td width="5%" valign="top">　</td>
+		<td width="9%" valign="top">[数值] 欲取反的数值</td>
+		<td width="8%" valign="top">　</td>
+		<td valign="top">算术取反操作符,用作返回将指定数值进行符号翻转后的结果值<blockquote>
+			<p><img border="0" src="images/b102.png" width="451" height="180"></p>
+		</blockquote>
+		</td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top" bgcolor="#F0F0F0"><a name="data_type_convert"></a>强制类型转换</td>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">[只能为参数]<p>[右结合]</td>
+		<td width="4%" valign="top" bgcolor="#F0F0F0">2</td>
+		<td width="5%" valign="top" bgcolor="#F0F0F0">　</td>
+		<td width="9%" valign="top" bgcolor="#F0F0F0">欲转换到数据类型名称</td>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">欲转换数据类型的数据</td>
+		<td valign="top" bgcolor="#F0F0F0">类型强转操作符,用作将数据强行转换到所指定的数据类型.<p>调用格式为: <b>(欲强行转换到的数据类型)欲转换类型的数据</b></p>
+		<p>允许以下数据类型之间进行强制转换:</p>
+		<blockquote>
+			<p><b>1. </b>&quot;空对象&quot;可以强制转换到任何非常量类的类数据类型或文本型:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b103.png" width="480" height="227"></p>
+			</blockquote>
+			<p>
+			<b>2. </b>数值数据类型之间可以强行转换. 
+			<blockquote>
+				<p>注意: 当从<a href="#number_data_type">容量</a>大的数值数据类型强制转换到<a href="#number_data_type">容量</a>小的数值数据类型时,其中数值精度将会存在被丢失的风险.<p>
+				譬如,将小数数值强行转换到整数数值将丢失所有小数点后面的数值部分.<p>
+				<img border="0" src="images/b104.png" width="467" height="260"></blockquote>
+			<p><b>3. </b>常量类可以强制转换到其所对应的基本数据类型(普通用户知道一下即可,无需过多了解);<p><b>4. 
+			</b>类数据类型只能强制转换到其直接/间接基础类或继承类.<blockquote>
+				<p><b>注意:</b> 用户必须确保对象实例的运行时数据类型匹配该被强行转换到的数据类型,否则将导致程序运行时出错.<p>
+				<img border="0" src="images/b105.png" width="620" height="567"></blockquote>
+		</blockquote>
+		</td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top">*</td>
+		<td width="8%" valign="top">[只能为参数]<p>[可扩展]</td>
+		<td width="4%" valign="top">3</td>
+		<td width="5%" valign="top">　</td>
+		<td width="9%" valign="top">[数值] 被乘数</td>
+		<td width="8%" valign="top">[数值] 乘数</td>
+		<td valign="top">算术相乘操作符,用作计算两个数值的相乘结果.<p>例如: 数值变量1 * 123</td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">/</td>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">[只能为参数]<p>[可扩展]</td>
+		<td width="4%" valign="top" bgcolor="#F0F0F0">3</td>
+		<td width="5%" valign="top" bgcolor="#F0F0F0">　</td>
+		<td width="9%" rowspan="2" bgcolor="#F0F0F0">[数值] 被除数</td>
+		<td rowspan="2" width="8%" bgcolor="#F0F0F0">[数值] 除数</td>
+		<td valign="top" bgcolor="#F0F0F0">算术相除操作符,用作计算两个数值的相除结果.<p>例如: 数值变量1 / 123</td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">%</td>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">[只能为参数]</td>
+		<td width="4%" valign="top" bgcolor="#F0F0F0">3</td>
+		<td width="5%" valign="top" bgcolor="#F0F0F0">　</td>
+		<td valign="top" bgcolor="#F0F0F0">算术模除操作符,用作计算两个整数的相除后的余数.<p>例如: 5 % 4 等于 1</td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top">+</td>
+		<td width="8%" valign="top">[只能为参数]<p>[可扩展]</td>
+		<td width="4%" valign="top">4</td>
+		<td width="5%" valign="top">　</td>
+		<td width="9%" valign="top">[数值/文本] 被加数</td>
+		<td width="8%" valign="top">[数值/文本] 加数</td>
+		<td valign="top">算术相加操作符,用作计算两个数值/文本的相加结果.<p>例如:</p>
+		<blockquote>
+			<p>数值相加: 数值变量1 + 123</p>
+			<p>文本相加: &quot;abc&quot; + 到文本 (1)</p>
+		</blockquote>
+		</td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">-</td>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">[只能为参数]<p>[可扩展]</td>
+		<td width="4%" valign="top" bgcolor="#F0F0F0">4</td>
+		<td width="5%" valign="top" bgcolor="#F0F0F0">　</td>
+		<td width="9%" valign="top" bgcolor="#F0F0F0">[数值] 被减数</td>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">[数值] 减数</td>
+		<td valign="top" bgcolor="#F0F0F0">算术相减操作符,用作计算两个数值的相减结果.<p>例如: 数值变量1 - 123</td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top">&lt;=</td>
+		<td width="8%" valign="top">[只能为参数]</td>
+		<td width="4%" valign="top">5</td>
+		<td width="5%" valign="top">　</td>
+		<td width="9%" rowspan="4">[数值] 被比较数值</td>
+		<td rowspan="4" width="8%">[数值] 比较数值</td>
+		<td valign="top">小于等于逻辑比较操作符,当左侧参数小于等于右侧参数时返回真.<p>例如: 如果 (数值变量1 &lt;= 123)</td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top">&gt;=</td>
+		<td width="8%" valign="top">[只能为参数]</td>
+		<td width="4%" valign="top">5</td>
+		<td width="5%" valign="top">　</td>
+		<td valign="top">大于等于逻辑比较操作符,当左侧参数大于等于右侧参数时返回真.<p>例如: 如果 (数值变量1 &gt;= 123)</td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top">&lt;</td>
+		<td width="8%" valign="top">[只能为参数]</td>
+		<td width="4%" valign="top">5</td>
+		<td width="5%" valign="top">　</td>
+		<td valign="top">小于逻辑比较操作符,当左侧参数小于右侧参数时返回真.<p>例如: 如果 (数值变量1 &lt; 123)</td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top">&gt;</td>
+		<td width="8%" valign="top">[只能为参数]</td>
+		<td width="4%" valign="top">5</td>
+		<td width="5%" valign="top">　</td>
+		<td valign="top">大于逻辑比较操作符,当左侧参数大于等于右侧参数时返回真.<p>例如: 如果 (数值变量1 &gt; 123)</td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">属于</td>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">[只能为参数]</td>
+		<td width="4%" valign="top" bgcolor="#F0F0F0">5</td>
+		<td width="5%" valign="top" bgcolor="#F0F0F0">instanceof</td>
+		<td width="9%" valign="top" bgcolor="#F0F0F0">[对象] 被检查对象</td>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">用作检查的类名</td>
+		<td valign="top" bgcolor="#F0F0F0">返回左侧对象是否为右侧类或者其直接/间接继承类的实例对象,即左侧对象能否被安全转换到右侧类数据类型.<p>注意: 
+		左侧对象的数据类型必须为类,而且必须与右侧类之间存在继承/被继承关系或者等于右侧类本身.</p>
+		<blockquote>
+			<p><img border="0" src="images/b106.png" width="505" height="449"></p>
+		</blockquote>
+		</td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top">==</td>
+		<td width="8%" valign="top">[只能为参数]</td>
+		<td width="4%" valign="top">6</td>
+		<td width="5%" valign="top">　</td>
+		<td width="9%" rowspan="2">[数值/逻辑型/文本/数组/对象] 被比较值</td>
+		<td rowspan="2" width="8%">[数值/逻辑型/文本/数组/对象]&nbsp; 比较值</td>
+		<td rowspan="2" valign="top">等于/不等于逻辑比较操作符,当左侧参数等于/不等于右侧参数时返回真.<p><b>注意:</b><blockquote>
+			<p><b>1. </b>对于数组对象,唯一能够与其进行比较的是&quot;<a href="#null_object">空对象</a>&quot;;<p>
+			<b>2. </b>对于文本数据,将比较两者实际文本内容是否相同(区分字母大小写),也可以将文本数据与&quot;<a href="#null_object">空对象</a>&quot;进行比较;<p>
+			<b>3. </b>类对象比较仅比较两者是否指向同一个对象实例,而不会去对比两者所指向对象实例中存放的数据内容是否相同(火山安卓平台比较两个对象是否参考到同一对象实例,火山视窗平台比较两个对象的所处地址是否相同).<blockquote>
+				<p>注意,在火山视窗平台中:<p><b>A. </b>如欲比较两个对象的数据内容是否相同,可以使用系统类库中所提供的&quot;<b>对象内容是否相同</b>&quot;全局方法;<p>
+				<b>B. </b>&quot;<b>字节集类</b>&quot;是一个特例,该类的对象之间进行比较将比较两者的实际数据内容是否相同.</blockquote>
+		</blockquote>
+		<p>例图:<blockquote>
+			<p><img border="0" src="images/b107.png" width="513" height="484"></blockquote>
+		</td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top">!=</td>
+		<td width="8%" valign="top">[只能为参数]</td>
+		<td width="4%" valign="top">6</td>
+		<td width="5%" valign="top">　</td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">&amp;&amp;</td>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">[只能为参数]<p>[可扩展]</td>
+		<td width="4%" valign="top" bgcolor="#F0F0F0">7</td>
+		<td width="5%" valign="top" bgcolor="#F0F0F0">且</td>
+		<td width="9%" rowspan="2" bgcolor="#F0F0F0">[逻辑型] 逻辑值一</td>
+		<td rowspan="2" width="8%" bgcolor="#F0F0F0">[逻辑型] 逻辑值二</td>
+		<td valign="top" bgcolor="#F0F0F0">并且逻辑操作符,当左侧参数和右侧参数均为逻辑值真时返回真.<p>例如:</p>
+		<blockquote>
+			<p>如果 (数值变量1 &gt;= 100 &amp;&amp; 数值变量1 &lt;= 200)</p>
+			<p>仅当&quot;数值变量1&quot;大于等于100且小于等于200时判断表达式才为真</p>
+		</blockquote>
+		</td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">||</td>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">[只能为参数]</td>
+		<td width="4%" valign="top" bgcolor="#F0F0F0">8</td>
+		<td width="5%" valign="top" bgcolor="#F0F0F0">或</td>
+		<td valign="top" bgcolor="#F0F0F0">或者逻辑操作符,当左侧参数和右侧参数其中任意一个为逻辑值真时返回真.<p>
+		例如:</p>
+		<blockquote>
+			<p>如果 (数值变量1 &gt;= 100 || 数值变量2 &lt;= 200)</p>
+			<p>仅当&quot;数值变量1&quot;大于等于100或者&quot;数值变量2&quot;小于等于200时判断表达式才为真</p>
+		</blockquote>
+		</td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top">=</td>
+		<td width="8%" valign="top">[右结合]</td>
+		<td width="4%" valign="top">9</td>
+		<td width="5%" valign="top">　</td>
+		<td width="9%" valign="top">赋值到的变量/可写属性</td>
+		<td width="8%" valign="top"><p>用作提供赋值用数据</td>
+		<td valign="top">赋值操作符,将右侧参数的值赋予给左侧参数所指定的变量/可写属性.<br>
+		例如:<blockquote>
+			<p>变量1 = 1</p>
+			<p>对象变量1.属性1 = 变量2</p>
+		</blockquote>
+		</td>
+	</tr>
+</table>
+<p>注释:</p>
+<blockquote>
+	<p><b>1. </b>表格中的优先级值越小表明该操作符优先级越高. 以下为操作符优先级在表达式中的处理算法:</p>
+	<blockquote>
+		<p>在表达式中,优先级高的操作符将优先组合其两侧运算元. 如:</p>
+		<blockquote>
+			<p>1 + 3 * 2</p>
+		</blockquote>
+		<p>在以上表达式中,算术相乘操作符的优先级为3,而算术相加操作符的优先级为4,因此相乘操作符的优先级要比相加操作符的高,所以编译器将先运算&quot;3 
+		* 2&quot;,然后再运算&quot;1 + 6&quot;,从而得到最终结果7.</p>
+		<p>如果两个操作符的优先级一致,如:</p>
+		<blockquote>
+			<p>1 + 3 - 2</p>
+		</blockquote>
+		<p>则将按照操作符的排列顺序进行依次处理,因此编译器将先运算&quot;1 + 3&quot;,然后运算&quot;4 - 2&quot;,从而得到最终结果2.</p>
+		<p>如果欲强制调节操作符的处理顺序,可以使用小括号. 如:</p>
+		<blockquote>
+			<p>(1 + 3) * 2</p>
+		</blockquote>
+		<p>此时相加操作符将优先于相乘操作符处理,从而得到最终结果8.</p>
+		<p>&nbsp;</p>
+	</blockquote>
+	<p><b>2. </b>&quot;特性&quot;列中的&quot;<b>[只能为参数]</b>&quot;表示该操作符只能位于语句参数中; &quot;<b>[右结合]</b>&quot;表示操作符
+	将优先结合其右侧的操作元,&quot;<b>[可扩展]</b>&quot;表明右侧参数可以被扩展多个.</p>
+</blockquote>
+<p>&nbsp;</p>
+</blockquote>
+
+<h5><a name="command_keyword"></a>4. 命令关键字:</h5>
+<blockquote>
+<table border="1" width="100%" style="border-collapse: collapse">
+	<tr>
+		<td width="8%" bgcolor="#C3D9FF" align="center" valign="top"><b>名称</b></td>
+		<td bgcolor="#C3D9FF" align="center" width="7%" valign="top"><b>特性</b></td>
+		<td bgcolor="#C3D9FF" align="center" width="4%" valign="top"><b>输入字1</b></td>
+		<td bgcolor="#C3D9FF" align="center" width="6%" valign="top"><b>参数类型</b></td>
+		<td bgcolor="#C3D9FF" align="center" width="8%" valign="top"><b>参数名称</b></td>
+		<td bgcolor="#C3D9FF" align="center" width="17%" valign="top"><b>参数解释</b></td>
+		<td bgcolor="#C3D9FF" align="center" width="6%" valign="top"><b>返回值</b></td>
+		<td bgcolor="#C3D9FF" align="center" width="44%" valign="top"><b>解释</b></td>
+	</tr>
+	<tr>
+		<td colspan="8" bgcolor="#D3E9FF" valign="top"><b>循环类关键字:</b></td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top">判断循环</td>
+		<td width="7%" valign="top">[需求语句体]</td>
+		<td width="4%" valign="top">while</td>
+		<td width="6%" valign="top">逻辑型</td>
+		<td width="8%" valign="top">判断值 </td>
+		<td width="17%" valign="top">当此参数值为真时进入循环体,为假时将跳过循环体.</td>
+		<td width="6%" valign="top">　</td>
+		<td width="44%" valign="top">
+		本命令根据提供的逻辑参数的值,来决定是否进入循环体(本语句的子语句体).如果提供的逻辑参数值为真,程序顺序执行下一条语句进入循环体,否则跳转到本命令循环体的下一条语句处.<blockquote>
+			<p><img border="0" src="images/b108.png" width="360" height="98"></p>
+		</blockquote>
+		</td>
+	</tr>
+	<tr>
+		<td width="8%" rowspan="4" valign="top" bgcolor="#F0F0F0">循环</td>
+		<td width="7%" rowspan="4" valign="top" bgcolor="#F0F0F0">[需求语句体]<p>[隐藏空参数表]</td>
+		<td width="4%" rowspan="4" valign="top" bgcolor="#F0F0F0">for</td>
+		<td width="6%" valign="top" bgcolor="#F0F0F0">整数</td>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">[可省略] 变量起始值</td>
+		<td width="17%" valign="top" bgcolor="#F0F0F0">定义循环变量的起始数值.<p>如果被省略,默认值为0.</td>
+		<td width="6%" rowspan="4" valign="top" bgcolor="#F0F0F0">　</td>
+		<td width="44%" rowspan="4" valign="top" bgcolor="#F0F0F0">
+		本命令将利用变量对循环体(本语句的子语句体)内的命令进行循环执行.第一次执行此命令时将使用&quot;变量起始值&quot;参数初始化&quot;循环变量&quot;参数所指定的变量.每次(包括第一次)执行到此命令处都将判断循环变量内的值是否已经到达&quot;变量目标值&quot;参数所指定的值,如已等于或超过,则跳转到循环体的下一条语句处,否则进入循环体.<p>
+		例图,正向遍历处理所指定的数组:</p>
+		<blockquote>
+			<p><img border="0" src="images/b109.png" width="511" height="153"></p>
+		</blockquote>
+		<p>正向循环3次:</p>
+		<blockquote>
+			<p><img border="0" src="images/b111.png" width="433" height="129"></p>
+		</blockquote>
+		<p>逆向遍历处理所指定的数组:</p>
+		<blockquote>
+			<p><img border="0" src="images/b110.png" width="505" height="164"></p>
+		</blockquote>
+		<p>逆向循环3次:</p>
+		<blockquote>
+			<p><img border="0" src="images/b112.png" width="439" height="131"></p>
+		</blockquote>
+		</td>
+	</tr>
+	<tr>
+		<td width="6%" valign="top" bgcolor="#F0F0F0">整数</td>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">[可省略] 变量目标值</td>
+		<td width="17%" valign="top" bgcolor="#F0F0F0">
+		定义循环变量的目标数值,在循环首部如果发现循环变量值已到达此目标值时(递增值小于0时<b>小于等于</b>目标值,递增值大于0时<b>大于等于</b>目标值)将跳出循环
+		而不再进入循环体.<p>如果被省略,默认值为1.</td>
+	</tr>
+	<tr>
+		<td width="6%" valign="top" bgcolor="#F0F0F0">整数</td>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">[可省略][需求可写变量] 循环变量</td>
+		<td width="17%" valign="top" bgcolor="#F0F0F0">
+		本整数型变量将用作控制循环执行次数,在循环尾部将自动递增或递减该变量内的数值(由变量递增值参数决定).循环体中的用户程序可以直接取用此变量中的值.<p>如果被省略,将自动使用内部临时变量.</td>
+	</tr>
+	<tr>
+		<td width="6%" valign="top" bgcolor="#F0F0F0">整数</td>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">[可省略][需求立即数] 变量递增值</td>
+		<td width="17%" valign="top" bgcolor="#F0F0F0">
+		每次执行到循环尾部时都将把此值加入到循环变量中去,此值可为正数或负数,如为正数则递增,为负数则递减.<p>注意: 
+		必须为本参数提供非0整数立即值,以便编译器建立循环结束条件.</p>
+		<p>如果被省略,则默认值为1.</td>
+	</tr>
+	<tr>
+		<td colspan="8" bgcolor="#D3E9FF" valign="top"><b>流程控制类关键字:</b></td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top">如果</td>
+		<td width="7%" valign="top">[需求语句体]</td>
+		<td width="4%" valign="top">if</td>
+		<td width="6%" valign="top">逻辑型</td>
+		<td width="8%" valign="top">判断条件</td>
+		<td width="17%" valign="top">本条件值的结果决定下一步程序执行位置</td>
+		<td width="6%" valign="top">　</td>
+		<td width="44%" valign="top">
+		本命令根据所提供逻辑参数的值,来决定是否改变程序的执行位置.如果提供的逻辑参数值为真,程序继续顺序向下执行进入本命令的子语句体,然后跳过本命令后续所有的&quot;否则&quot;命令,为假则将跳过本命令的子语句体.<p>
+		例如: 如果 (整数变量 == 1)</td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">否则</td>
+		<td width="7%" valign="top" bgcolor="#F0F0F0">[需求语句体]<p>[隐藏空参数表]</td>
+		<td width="4%" valign="top" bgcolor="#F0F0F0">elseif</td>
+		<td width="6%" valign="top" bgcolor="#F0F0F0">逻辑型</td>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">判断条件</td>
+		<td width="17%" valign="top" bgcolor="#F0F0F0">本条件值的结果决定下一步程序执行位置. 注意: 本参数可忽略以不提供,但是此时不能再后续跟随其它的&quot;否则&quot;语句.</td>
+		<td width="6%" valign="top" bgcolor="#F0F0F0">　</td>
+		<td width="44%" valign="top" bgcolor="#F0F0F0">
+		本命令只能放在&quot;如果&quot;或其它&quot;否则&quot;命令的后面,根据所提供逻辑参数的值,来决定是否改变程序的执行位置.如果提供的逻辑参数值为真,程序继续顺序向下执行进入本命令的子语句体,然后跳过本命令后续所有的&quot;否则&quot;命令,为假则将跳过本命令的子语句体.<p>
+		例图:</p>
+		<blockquote>
+			<p>&nbsp;<img border="0" src="images/b113.png" width="199" height="152"></p>
+		</blockquote>
+		</td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top"><a name="continue"></a>到循环尾</td>
+		<td width="7%" valign="top">[隐藏空参数表]</td>
+		<td width="4%" valign="top">continue</td>
+		<td width="6%" valign="top">　</td>
+		<td width="8%" valign="top">　</td>
+		<td width="17%" valign="top">　</td>
+		<td width="6%" valign="top">　</td>
+		<td width="44%" valign="top">本命令转移当前程序执行位置到当前所处循环体的尾部<p>注意: 
+		由于火山的所有循环类别关键字均没有循环尾语句,所以此关键字也可以看作为&quot;到循环首&quot;.</p>
+		<p>例图:</p>
+		<blockquote>
+			<p><img border="0" src="images/b114.png" width="375" height="202"></blockquote>
+		</td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top" bgcolor="#F0F0F0"><a name="break"></a>跳出循环</td>
+		<td width="7%" valign="top" bgcolor="#F0F0F0">[隐藏空参数表]</td>
+		<td width="4%" valign="top" bgcolor="#F0F0F0">break</td>
+		<td width="6%" valign="top" bgcolor="#F0F0F0">　</td>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">　</td>
+		<td width="17%" valign="top" bgcolor="#F0F0F0">　</td>
+		<td width="6%" valign="top" bgcolor="#F0F0F0">　</td>
+		<td width="44%" valign="top" bgcolor="#F0F0F0">本命令转移当前程序执行位置到当前所处循环体尾部的下一条语句处.<p>
+		例图:</p>
+		<blockquote>
+			<p><img border="0" src="images/b115.png" width="446" height="179"></p>
+		</blockquote>
+		<p>结合前面的&quot;循环&quot;语句,可以达到类似basic语言的goto语句的效果:</p>
+		<blockquote>
+			<img border="0" src="images/b119.png" width="393" height="199">
+		</blockquote>
+		</td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top">返回</td>
+		<td width="7%" valign="top">[隐藏空参数表]</td>
+		<td width="4%" valign="top">return</td>
+		<td width="6%" valign="top">　</td>
+		<td width="8%" valign="top">[可省略] 返回值</td>
+		<td width="17%" valign="top">当所处方法定义有非空返回值数据类型时,必须提供返回到调用方的具体值,否则必须省略掉本参数,即两者必须对应.</td>
+		<td width="6%" valign="top">　</td>
+		<td width="44%" valign="top">本命令转移当前程序执行位置到调用本语句所处方法的下一条语句处,并可根据需要返回一个值到调用语句处.<p>
+		例图:</p>
+		<blockquote>
+			<p><img border="0" src="images/b116.png" width="476" height="371"></p>
+		</blockquote>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="8" bgcolor="#D3E9FF" valign="top"><b>运算类关键字:</b></td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top">取反</td>
+		<td width="7%" valign="top">　</td>
+		<td width="4%" valign="top">　</td>
+		<td width="6%" valign="top">逻辑型</td>
+		<td width="8%" valign="top">待取反逻辑值</td>
+		<td width="17%" valign="top">提供将其反转的逻辑值</td>
+		<td width="6%" valign="top">逻辑型</td>
+		<td width="44%" valign="top">将所指定逻辑值进行反转(假反转为真,真反转为假),返回反转后的结果.<p>例如: 
+		&quot;取反 (真)&quot; 将返回结果值&quot;假&quot;.</td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">位取反</td>
+		<td width="7%" valign="top" bgcolor="#F0F0F0">　</td>
+		<td width="4%" valign="top" bgcolor="#F0F0F0">　</td>
+		<td width="6%" valign="top" bgcolor="#F0F0F0">所有整数型</td>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">待取反整数值</td>
+		<td width="17%" valign="top" bgcolor="#F0F0F0">提供将其所有位反转的整数值</td>
+		<td width="6%" valign="top" bgcolor="#F0F0F0">对应整数型</td>
+		<td width="44%" valign="top" bgcolor="#F0F0F0">将所指定整数值的每一个位值进行反转(位值1将被反转为位值0,位值0将被反转为位值1),返回反转后的结果.<p>
+		例如: &quot;位取反 (0xFFFFFFF0)&quot; 将返回结果值&quot;0x0F&quot;.</td>
+	</tr>
+	<tr>
+		<td width="8%" rowspan="2" valign="top">位与</td>
+		<td width="7%" rowspan="2" valign="top">　</td>
+		<td width="4%" rowspan="2" valign="top">　</td>
+		<td width="6%" valign="top">所有整数型</td>
+		<td width="8%" valign="top">整数参数一</td>
+		<td width="17%" valign="top">提供用作位操作的整数参数值一</td>
+		<td width="6%" rowspan="2" valign="top">对应整数型</td>
+		<td width="44%" rowspan="2" valign="top">将参数1的每一个位值和参数2的对应位置处位值进行与操作(仅当两个位值均为1时才置为1,否则置为0),返回运算后的结果.<p>
+		例如: &quot;位与 (0xFFFF1234, 0x0000FFFF)&quot; 将返回结果值&quot;0x00001234&quot;.</td>
+	</tr>
+	<tr>
+		<td width="6%" valign="top">所有整数型</td>
+		<td width="8%" valign="top">整数参数二</td>
+		<td width="17%" valign="top">提供用作位操作的整数参数值二</td>
+		</tr>
+	<tr>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">位或</td>
+		<td width="7%" valign="top" bgcolor="#F0F0F0">　</td>
+		<td width="4%" valign="top" bgcolor="#F0F0F0">　</td>
+		<td width="37%" colspan="4" rowspan="2" bgcolor="#F0F0F0">同&quot;位与&quot;</td>
+		<td width="44%" valign="top" bgcolor="#F0F0F0">将参数1的每一个位值和参数2的对应位置处位值进行或操作(当两个位值中任意一个为1时即置为1,否则置为0),返回运算后的结果.<p>
+		例如: &quot;位或 (0x80000000, 1)&quot; 将返回结果值&quot;0x80000001&quot;.</td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">位异或</td>
+		<td width="7%" valign="top" bgcolor="#F0F0F0">　</td>
+		<td width="4%" valign="top" bgcolor="#F0F0F0">　</td>
+		<td width="44%" valign="top" bgcolor="#F0F0F0">将参数1的每一个位值和参数2的对应位置处位值进行异或操作(当两个位值不相等时置为1,否则置为0),返回运算后的结果.<p>例如: &quot;位异或 (0x80000000, 0x80000001)&quot; 
+		将返回结果值&quot;1&quot;.</td>
+	</tr>
+	<tr>
+		<td width="8%" rowspan="2" valign="top">位左移</td>
+		<td width="7%" rowspan="2" valign="top">　</td>
+		<td width="4%" rowspan="2" valign="top">　</td>
+		<td width="6%" valign="top">所有整数型</td>
+		<td width="8%" valign="top">待位移整数值</td>
+		<td width="17%" valign="top">提供被位移的整数值</td>
+		<td width="6%" rowspan="2" valign="top">对应整数型　</td>
+		<td width="44%" rowspan="2" valign="top">将参数1的每一位值向左移动(不考虑符号位)参数2所指定的数目,移动所留下的右侧空位值使用0补齐,返回运算后的结果.<p>
+		例如: &quot;位左移 (1, 2)&quot;将返回结果值&quot;4&quot;.</td>
+	</tr>
+	<tr>
+		<td width="6%" valign="top">所有整数型</td>
+		<td width="8%" valign="top">位移数目</td>
+		<td width="17%" valign="top">提供进行位移的位数</td>
+		</tr>
+	<tr>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">位右移</td>
+		<td width="7%" valign="top" bgcolor="#F0F0F0">　</td>
+		<td width="4%" valign="top" bgcolor="#F0F0F0">　</td>
+		<td width="37%" colspan="4" valign="top" bgcolor="#F0F0F0">同&quot;位左移&quot;</td>
+		<td width="44%" valign="top" bgcolor="#F0F0F0">将参数1的每一位向右移动(不考虑符号位)参数2所指定的数目,移动所留下的左侧空位值使用0补齐,返回运算后的结果.<p>
+		例如: &quot;位右移 (0x80000000, 2)&quot;将返回结果值&quot;0x20000000&quot;.</td>
+	</tr>
+	<tr>
+		<td colspan="8" bgcolor="#D3E9FF" valign="top"><b>编译时处理关键字:</b></td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top">编译出错<a name="cerror"></a></td>
+		<td width="7%" valign="top">　</td>
+		<td width="4%" valign="top">cerror</td>
+		<td width="6%" valign="top">　</td>
+		<td width="8%" valign="top">　</td>
+		<td width="17%" valign="top">　</td>
+		<td width="6%" valign="top">　</td>
+		<td width="44%" valign="top">仅在编译程序时起作用,编译器一旦编译到具有本关键字的语句,就会报告发现了编译错误并停止编译.<p>
+		本关键字普通用户无需了解.</td>
+	</tr>
+	<tr>
+		<td colspan="8" bgcolor="#D3E9FF" valign="top">调试类关键字:</td>
+	</tr>
+	<tr>
+		<td width="8%" rowspan="2" valign="top">调试检查<a name="assert"></a></td>
+		<td width="7%" rowspan="2" valign="top">　</td>
+		<td width="4%" rowspan="2" valign="top">assert</td>
+		<td width="6%" valign="top">逻辑型</td>
+		<td width="8%" valign="top">检查值</td>
+		<td width="17%" valign="top">在调试版中,当此参数值为假时,程序将中断执行并报错.</td>
+		<td width="6%" rowspan="2" valign="top">　</td>
+		<td width="44%" rowspan="2" valign="top">
+		本命令的调用语句仅在程序所编译的调试版本中存在,在程序所编译的发布版中将被忽略不编译.<p>所谓&quot;<b>调试版</b>&quot;,即当调试运行当前项目时所编译的程序可执行版本.</p>
+		<p>在调试版中,当所提供的参数值为假时,程序将在此处中断执行并报错.</p>
+		<p>
+		本关键字在增强程序可靠性方面非常有用,可以在程序中大量使用本关键字语句检查相关处理数据的合法性,又不用担心编译程序的发布版本时这些检查语句降低了程序执行效率. 
+		如:</p>
+		<blockquote>
+			<p><img border="0" src="images/b117.png" width="697" height="288"></p>
+		</blockquote>
+		</td>
+	</tr>
+	<tr>
+		<td width="6%" valign="top">文本型</td>
+		<td width="8%" valign="top">[可省略] 检查失败信息</td>
+		<td width="17%" valign="top">指定当检查失败时(检查值参数为假)所输出的信息.如果被省略,则默认为空文本.</td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top" bgcolor="#F0F0F0"><a name="is_debug_ver"></a>为调试版</td>
+		<td width="7%" valign="top" bgcolor="#F0F0F0">　</td>
+		<td width="4%" valign="top" bgcolor="#F0F0F0">　</td>
+		<td width="6%" valign="top" bgcolor="#F0F0F0">　</td>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">　</td>
+		<td width="17%" valign="top" bgcolor="#F0F0F0">　</td>
+		<td width="6%" valign="top" bgcolor="#F0F0F0">逻辑型</td>
+		<td width="44%" valign="top" bgcolor="#F0F0F0">返回当前所编译程序是否为调试版本.<p>所谓&quot;<b>调试版</b>&quot;,即当调试运行当前项目时所编译的程序可执行版本.</p>
+		<p>使用本关键字可以加入一些仅在编译调试版时才会编译进去的语句,如:</p>
+		<blockquote>
+			<p><img border="0" src="images/b120.png" width="428" height="280"></p>
+		</blockquote>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="8" bgcolor="#D3E9FF" valign="top"><b>其它:</b></td>
+	</tr>
+	<tr>
+		<td width="8%" rowspan="2" valign="top"><a name="rev_event"></a>挂接事件</td>
+		<td width="7%" rowspan="2" valign="top">　</td>
+		<td width="4%" rowspan="2" valign="top">　</td>
+		<td width="6%" valign="top">对象</td>
+		<td width="8%" valign="top">欲挂接其事件的对象</td>
+		<td width="17%" valign="top">提供欲将其所定义事件挂接到当前类对应<a href="#event_rev_method">事件接收方法</a>的对象</td>
+		<td width="6%" rowspan="2" valign="top">　</td>
+		<td width="44%" rowspan="2" valign="top">将指定对象所支持的事件挂接到当前类对象中的对应事件接收方法上. 
+		本命令仅用作动态挂接对象事件,类中定义的成员对象变量除非明确指定不自动挂接(普通用户无需了解),均会自动挂接事件.<p>具体请参见前面的&quot;<a href="#dynamic_attach_event">动态挂接其它类所发送过来的事件</a><b>&quot;</b>章节.</td>
+	</tr>
+	<tr>
+		<td width="6%" valign="top">整数</td>
+		<td width="8%" valign="top">标记值</td>
+		<td width="17%" valign="top">
+		用作提供欲挂接其事件的对象所对应的标记值,由用户自行定义.该值将被原值发送给事件接收方法,用作区分具体的事件来源.如果被省略,则默认为0.</td>
+	</tr>
+	<tr>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">取消事件挂接</td>
+		<td width="7%" valign="top" bgcolor="#F0F0F0">　</td>
+		<td width="4%" valign="top" bgcolor="#F0F0F0">　</td>
+		<td width="6%" valign="top" bgcolor="#F0F0F0">对象</td>
+		<td width="8%" valign="top" bgcolor="#F0F0F0">欲取消其事件挂接的对象</td>
+		<td width="17%" valign="top" bgcolor="#F0F0F0">
+		提供欲取消将其所定义事件挂接到当前类对应<a href="#event_rev_method">事件接收方法</a>的对象</td>
+		<td width="6%" valign="top" bgcolor="#F0F0F0">　</td>
+		<td width="44%" valign="top" bgcolor="#F0F0F0">不再将指定对象所支持的事件挂接到当前类对象中的对应事件接收方法上.<p>
+		无论是自动挂接事件的类成员对象变量,还是手动调用<a href="#rev_event">挂接事件</a>关键字挂接的对象,均可以调用本关键字取消其事件挂接. 
+		事件挂接一旦取消,该对象的事件将不会再被接收到.</p>
+		<blockquote>
+			<p><img border="0" src="images/b118.png" width="547" height="200"></p>
+		</blockquote>
+		</td>
+	</tr>
+	</table>
+<p>注释:</p>
+<blockquote>
+	<p><b>1. </b>&quot;特性&quot;列中的&quot;<b>[需求语句体]</b>&quot;表示该命令需要携带一个子语句体,&quot;<b>[隐藏空参数表]</b>&quot;表示当该命令的参数表为空时将被省略掉不显示;</p>
+	<p><b>2. </b>&quot;参数表&quot;列中的&quot;<b>[可省略]</b>&quot;表示该参数可以被省略不提供;&quot;<b>[需求可写变量]</b>&quot;表示必须为该参数提供一个可写入变量或参数;&quot;<b>[需求立即数]</b>&quot;表示必须为该参数提供一个立即数.</p>
+</blockquote>
+<p>&nbsp;</p>
+</blockquote>
+
+<h4><br><a name="c_other"></a>四. 其它:</h4>
+<blockquote>
+	<h5><a name="compile_check"></a>1. 按需编译</h5>
+	<blockquote>
+		<p>火山编译器实行的是按需编译模式,也就是说,凡是不可能被执行到的代码,一概不进行编译. 具体为:</p>
+		<blockquote>
+			<p>从程序的启动位置开始,所有未在程序执行流程中的代码都将不会被编译.<b> </b></p>
+		</blockquote>
+		<p>以火山安卓开发平台举例,譬如下图:</p>
+		<blockquote>
+			<p><img border="0" src="images/b60.png" width="659" height="751"></p>
+		</blockquote>
+		<p><b><font size="3"><a name="flow_control"></a>2. 扩展流程控制</font></b></p>
+		<blockquote>
+			<p><font size="2">除了命令关键字外,火山平台的核心类库中封装了一些自定义流程控制全局方法.</font></p>
+			<p>火山视窗平台的例程解决方案(&quot;samples\vprj_win\samples.vsln&quot;)中提供了一个名为&quot;<b>自定义流程控制</b>&quot;的样例项目用作列举它们的使用方法,可以打开查看.相关图示如下:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/w21.png" width="734" height="617"></p>
+				<p>
+				<img border="0" src="images/w22.png" width="589" height="229"></p>
+			</blockquote>
+			<p><b><font size="3"><a name="exception_manager"></a>3. 异常管理</font></b></p>
+			<blockquote>
+				<p>同样,异常管理火山平台也没有提供对应的关键字,而改用系统类封装解决,以下为火山视窗类库中的相关封装类:</p>
+				<p>
+				<img border="0" src="images/w23.png" width="253" height="352"></p>
+			</blockquote>
+		<p><b><font size="3"><a name="edit_tips"></a>4. 常用开发环境操作方法</font></b></p>
+			<blockquote>
+				<p><b>1. 编辑新建方法子语句体:</b></p>
+				<blockquote>
+					<p>按照下图中的说明即可进入编辑所指定新建方法的子语句体:</p>
+					<p>
+					<img border="0" src="images/w9.png" width="798" height="163"></p>
+				</blockquote>
+				<p><b>2. </b>使用 &quot;<b>Ctrl+[</b>&quot; 和 &quot;<b>Ctrl+]</b>&quot; 
+		组合快捷键可以将当前光标所处语句或者所选中语句块左移或右移,以改变其当前缩进层次,从而改变其所处语句块:</p>
+				<blockquote>
+					<p>如图,假设不小心将局部变量设置在了方法的外面,可以使用 &quot;<b>Ctrl+]</b>&quot; 组合快捷键将其调整进去:</p>
+					<blockquote>
+						<p>
+						<img border="0" src="images/w10.png" width="485" height="236"></p>
+					</blockquote>
+					<p>选中所欲调整层次的语句行,再按下 &quot;<b>Ctrl+]</b>&quot; 组合快捷键将其调整进去:</p>
+					<blockquote>
+						<p>
+						<img border="0" src="images/w11.png" width="537" height="224"></p>
+					</blockquote>
+					<p>同样,类似以下的程序,我想把被选中的部分移动到外层语句块中:</p>
+					<blockquote>
+						<p>
+						<img border="0" src="images/w12.png" width="448" height="221"></p>
+					</blockquote>
+					<p>选中所欲调整层次的语句行,再按下 &quot;<b>Ctrl+[</b>&quot; 组合快捷键将其调整过去:</p>
+					<blockquote>
+						<p>
+						<img border="0" src="images/w13.png" width="455" height="213"></p>
+					</blockquote>
+				</blockquote>
+				<p><b>3. </b>另外几个使用得比较多的快捷键为&quot;<b>Insert</b>&quot;和&quot;<b>Shift+Insert</b>&quot;,用作向前/向后插入行.其中,在方法的参数/常量/变量定义表格上按下&quot;<b>Shift+Insert</b>&quot;快捷键,将固定在其下方插入一条空白语句行,如图:</p>
+				<blockquote>
+					<blockquote>
+						<p>
+						<img border="0" src="images/w14.png" width="653" height="223"></p>
+					</blockquote>
+					<p>在&quot;局部变量1&quot;的定义行上按下&quot;<b>Shift+Insert</b>&quot;快捷键后的结果:</p>
+					<blockquote>
+						<p>
+						<img border="0" src="images/w15.png" width="484" height="276"></p>
+					</blockquote>
+				</blockquote>
+				<p><b>4. </b>开发过程中充分利用&quot;<b>即时帮助(F1)</b>和&quot;<b>程序结构查看器(Shift+F1)</b>&quot;可以获得所有系统类和用户程序类的详细使用帮助信息:</p>
+				<blockquote>
+					<p>
+					<img border="0" src="images/w16.png" width="854" height="584"></p>
+				</blockquote>
+				<p><b>5. </b>在开发环境左侧的&quot;<b>类库</b>&quot;夹中展开当前项目类型,可以获得该类型项目当前可用的所有系统类库模块信息:</p>
+				<blockquote>
+					<p>
+					<img border="0" src="images/w17.png" width="1009" height="736"></p>
+					<p>注意对应模块如果欲使用,需要首先在程序中将其配置进去:</p>
+					<p>
+					<img border="0" src="images/w19.png" width="388" height="451"></p>
+					<p>然后选中对应的模块确认即可:</p>
+					<p>
+					<img border="0" src="images/w20.png" width="772" height="580"></p>
+				</blockquote>
+				<p><b>6. </b>查找某名称所处的模块</p>
+				<blockquote>
+					<p>用户如果在编译项目时遇到&quot;<font color="#FF0000">名称未找到</font>&quot;错误，有可能是因为其所处模块没有被加入到项目中，可以通过如下操作来查找(以火山视窗平台举例)：</p>
+					<p><b>A. </b>在编辑器内该名称文本上单击右键，选择&quot;<b>在类库中查找</b>&quot;菜单项：</p>
+					<blockquote>
+						<p>
+						<img border="0" src="images/b202.png" width="423" height="434"></p>
+					</blockquote>
+					<p><b>B. </b>找到后在其帮助页顶部操作栏上点击&quot;<b>添加模块到项目</b>&quot;链接
+					即可将该名称所处模块添加到当前项目：</p>
+					<blockquote>
+						<p>
+						<img border="0" src="images/b203.png" width="975" height="280"></p>
+					</blockquote>
+				</blockquote>
+				<p><b>7. </b>在帮助页面中点击“<b>例程</b>”链接（如上图黄色箭头）可以搜寻并打开包括所指定名称的例程，这对于了解该名称的使用方法很有好处：</p>
+				<blockquote>
+					<blockquote>
+						<p>
+						<img border="0" src="images/b204.png" width="971" height="709"></p>
+					</blockquote>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+	<blockquote>
+		<blockquote>
+			<blockquote>
+				<p>&nbsp;</p>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+</blockquote>
+<p align="center">--- 完 ---</p>
+<script language="JavaScript" type="text/javascript" src="script/doc_foot.js"></script>
+</body>
+
+
+</html>

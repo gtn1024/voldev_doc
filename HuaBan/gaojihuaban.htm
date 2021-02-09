@@ -1,0 +1,290 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		
+		
+        <li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new2')" >一.高级画板<span>(可收缩)</span></h6></li>
+		<ol id="new2">
+			<li><blockquote><a href="#gjhb">1.界面准备</a></blockquote></li>  
+    		<li><blockquote><a href="#kshz">2.开始绘制（写）</a></blockquote></li>
+            <li><blockquote><a href="#ybhzz">3.异步绘制帧（事）</a></blockquote></li>
+			<li><blockquote><a href="#xsgs">4.像素格式（写）</a></blockquote></li>
+            <li><blockquote><a href="#sxpl">5.刷新频率（写）</a></blockquote></li>
+            <li><blockquote><a href="#pmcl">6.屏幕常亮（写）</a></blockquote></li>
+            <li><blockquote><a href="#xscc">7.显示尺寸（读）</a></blockquote></li>
+            <li><blockquote><a href="#zgdcc">8.置固定尺寸</a></blockquote></li>
+            <li><blockquote><a href="#xsqybgb">9.显示区域被改变（事）</a></blockquote></li>
+		</ol>
+		
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>高级画板组件实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<font style="font-size: 12pt; font-weight:700">● 帮助说明</font><br/>
+<br/>
+<blockquote>
+<p align="left"><b>“高级画板”</b>可以用来进行一些复杂的绘制操作，例如：小游戏开发，制作视频播放器等等……</p>
+	<p align="left">建议用<b>“真机测试”</b>，模拟器可能会显示异常。</p>
+	<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 界面准备</font><br/>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left">打开界面设计器，右键<b>“画板”</b>可以选择<b>“删除”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/10.png" >
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<blockquote>
+  <p align="left">左侧组件列表找到<b>“高级画板”</b>，拖到设计器，设置<b>“组件高度（宽度）类型”</b>分别为<b>“匹配父组件高度（宽度）”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/11.png" >
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="kshz"></a><a name="ybhzz"></a>
+<font style="font-size: 12pt; font-weight:700">● 开始绘制（写）</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 异步绘制帧（事）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">以上两个关联方法，这里统一讲解。</p>
+<p align="left"><b>“开始绘制”</b>帮助文档：</p>
+<blockquote>
+<p align="left">本属性值默认为假，设置为<b>“真”</b>后，会发送<b>“异步绘制帧”</b>事件进行画板绘制操作。</p>
+	<p align="left">需要注意的是，本属性一旦设置为真，属性将会失效。</p>
+	
+	<p align="left"><img border="0" src="hb_images/12.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>“异步绘制帧”</b>帮助文档：</p>
+<blockquote>
+<p align="left"><b>“开始绘制”</b>属性设置为<b>“真”</b>后，本事件会重复不停的发送。</p>
+	<p align="left">发送频率跟设置的<b>“刷新频率”</b>属性有关联。</p>
+  <p align="left">本事件有两个参数。</p>
+	<p align="left">参数1：通过<b>“画板类”</b>可以进行各种绘制操作。</p>
+	<p align="left">参数2：<b>“上次绘制”</b>和<b>“本次绘制”</b>中间间隔的时间，单位为<b>“秒”</b>，并且必定大于零。</p>
+	<p align="left">因<b>“高级画板”</b>在单独的线程内工作，所以它可以用来进行很多复杂的绘制操作，例如：制作小游戏等。</p>
+	
+
+	<p align="left"><img border="0" src="hb_images/13.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+<p align="left">删掉最开始定义的<b>“画板_绘制内容”</b>事件，右键<b>“高级画板”</b>，选择<b>“事件接收方法”</b>。</p>
+
+	<p align="left"><img border="0" src="hb_images/14.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+<p align="left">弹出的窗口内，继续选择<b>“异步绘制帧”</b>，点击<b>“添加”</b>。</p>
+
+	<p align="left"><img border="0" src="hb_images/15.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（3）：</p>
+<blockquote>
+<p align="left">添加完毕后如图所示，随后指定<b>“来源对象==高级画板1”</b>。</p>
+
+	<p align="left"><img border="0" src="hb_images/16.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（4）：</p>
+<blockquote>
+<p align="left">右键<b>“按钮”</b>添加<b>“按钮_被单击”</b>接收事件。</p>
+<p align="left">添加完毕后，指定<b>“来源对象==按钮1”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/17.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（5）：</p>
+<blockquote>
+	<p align="left">首先在<b>“按钮1”</b>被单击下，设置<b>“高级画板1”</b>的<b>“开始绘制”</b>属性为<b>“真”</b>。</p>
+	<p align="left">设置后就会不停的发送<b>“异步绘制帧”</b>事件。</p>
+	<p align="left">这中间间隔的时间，是一个不确定的数值，通过<b>“异步绘制帧”</b>的<b>“帧前进时间”</b>参数可以获取。</p>
+	<p align="left">随后在<b>“异步绘制帧”</b>接收事件下，定义一个类型为<b>“小数”</b>的总长度变量，设置<b>“静态”</b>。</p>
+	<p align="left">随后书写<b>“总长度=总长度+帧前进时间*10”</b>。</p>
+	<p align="left"><b>“帧前进时间”</b>是一个极小的数值，这里乘10，让这个数值变的更大，方便演示最终效果。</p>
+	<p align="left">随后把<b>“总长度”</b>赋值给画直线的参数4中。</p>
+	<p align="left">最终的效果就是<b>“总长度+帧前进时间*10”</b>赋值给<b>“总长度”</b>。</p>
+	<p align="left">因本事件会不停发送，所以<b>“总长度”</b>值会越来越大。</p>
+	<p align="left">所画的直线，长度会以肉眼可见的形式逐渐变长。</p>
+	<p align="left"><img border="0" src="hb_images/18.png" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+<p align="left">大家可以看到，点击<b>“按钮1”</b>后，界面指定位置开始画出来一条直线，并且这条直线越来越长。</p>
+	<p align="left">同时也证明<b>“异步绘制帧”</b>事件在不停的工作。</p>
+	<p align="left"><img border="0" src="hb_images/19.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<a name="xsgs"></a>
+<font style="font-size: 12pt; font-weight:700">● 像素格式（写）</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">写属性，用来设置<b>“高级画板”</b>的像素显示格式。</p>
+	<p align="left">调用方法：高级画板.像素格式=图像像素格式.XXXX</p>
+	<p align="left">像素格式常量内，有一个值为<b>“L8”</b>的。</p>
+	<p align="left">如果设置本常量，那么画板内将无法绘制带有RGB颜色的内容。</p>
+	<p align="left">因为<b>“L8”</b>常量值，表示画板内只能绘制灰度图像。</p>
+	<p align="left">默认的像素格式为<b>“RGBA8888”</b>，通常情况下像素格式很少修改，所以这里不做详细的讲解。</p>
+	<p align="left"><img border="0" src="hb_images/20.png" ></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="sxpl"></a>
+<font style="font-size: 12pt; font-weight:700">● 刷新频率（写）</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本写属性的作用，是用来指定<b>“异步绘制帧”</b>的刷新频率的每秒最高上限。</p>
+	<p align="left">要注意的是，本属性并不是准确的刷新数值。</p>
+    <p align="left">设置为0，表示不限制。</p>
+	<p align="left"><img border="0" src="hb_images/21.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="pmcl"></a>
+<font style="font-size: 12pt; font-weight:700">● 屏幕常亮（写）</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">设置当前屏幕是否保持<b>“常亮状态”</b>，也就是不被安卓<b>“系统息屏”</b>。</p>
+	<p align="left">如果不设置本属性，默认为假。设置为<b>“真”</b>后屏幕将保持常亮不被息屏。</p>
+	<p align="left">调用方式<b>“高级画板1.屏幕常亮=真”</b>或者<b>“假”</b></p>
+	<p align="left"><img border="0" src="hb_images/22.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="xscc"></a>
+<font style="font-size: 12pt; font-weight:700">● 显示尺寸（读）</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本属性可以读取当前画板的显示区域尺寸，返回的是一个<b>“矩形类”</b>。</p>
+	<p align="left">通过<b>“矩形类”</b>，可以获得显示区域的<b>“高度”</b>和<b>“宽度”</b>属性。</p>
+  <p align="left">注意：本属性只能在<b>“窗口主线程”</b>，或者<b>“异步绘制”</b>事件中处理。</p>
+	<p align="left">另外不要去修改返回的<b>“矩形类”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/23.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">可以直接在<b>“按钮1”</b>被单击下，定义三个变量。</p>
+<p align="left">类型分别为两个<b>“文本型”</b>和一个<b>“矩形类”</b>。</p>
+	<p align="left">通过本读属性赋值给<b>“矩形”</b>变量，然后通过<b>“矩形.宽度”</b>就可以获得当前画板的宽度值。</p>
+	<p align="left"><b>“高度”</b>同样如此，随后把它们进行<b>“到文本”</b>转换赋值给定义的文本型变量。</p>
+	<p align="left">最后放到提示信息框内，展示结果。</p>
+	<p align="left"><img border="0" src="hb_images/24.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>后就弹出了一个信息框。</p>
+	<p align="left">信息框内成功显示，当前画板显示区域的高度和宽度，单位为像素。</p>
+	<p align="left"><img border="0" src="hb_images/25.gif" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="zgdcc"></a>
+	<a name="xsqybgb"></a>
+<font style="font-size: 12pt; font-weight:700">● 置固定尺寸</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 显示区域被改变（事）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">以上为两个关联方法，统一讲解。</p>
+<p align="left"><b>“置固定尺寸”</b>帮助文档如下图：</p>
+<blockquote>
+<p align="left">可以看到本方法有<b>“两个整数”</b>的参数，用本方法可以设置当前画板显示区域的尺寸。</p>
+	<p align="left">使用本方法会触发<b>“显示区域被改变”</b>事件。</p>
+	
+	<p align="left"><img border="0" src="hb_images/26.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“显示区域被改变”</b>帮助文档如下图：</p>
+<blockquote>
+<p align="left">事件方法，通过<b>“像素格式”</b>或<b>“置固定尺寸”</b>都会触发本事件。</p>
+	<p align="left">另外当画板被创建的时候，本事件会自动触发一次。</p>
+	<p align="left">通过<b>“参数1”</b>可以判断是否为被创建时的发送。</p>
+	<p align="left"><img border="0" src="hb_images/26a.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+<p align="left">直接在<b>“按钮1”</b>被单击事件下写<b>“高级画板1.置固定尺寸（）”</b>。</p>
+	<p align="left">参数1和参数2就输入你想要修改的数值。</p>
+	<p align="left"><img border="0" src="hb_images/27.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+<p align="left">右键<b>“高级画板”</b>选择<b>“事件接受方法”</b>，添加<b>“显示区域被改变”</b>事件接受方法。</p>
+	
+	<p align="left"><img border="0" src="hb_images/28.png" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left">代码编写（3）：</p>
+<blockquote>
+<p align="left">添加完毕后，指定来源对象，随后可以利用<b>“到文本”</b>方法转换最新<b>“高度和宽度”</b>提供给信息框显示。</p>
+	
+	<p align="left"><img border="0" src="hb_images/29.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果（GIF）：</p>
+<blockquote>
+<p align="left">可以看到，运行程序后就立刻弹出了一个信息框，显示了高度和宽度。</p>
+	<p align="left">证明<b>“显示区域被改变”</b>事件被触发了一次。</p>
+	<p align="left">接下来点击<b>“按钮1”</b>，信息框内显示的<b>“高度和宽度”</b>就变成了<b>“设置的高度和宽度”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/30.gif" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

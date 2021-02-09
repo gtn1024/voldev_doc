@@ -1,0 +1,295 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new3')" >一.垂直刷新容器<span>(可收缩)</span></h6></li>
+		<ol id="new3">
+			<li><blockquote><a href="#czsxrq">1.准备工作</a></blockquote></li>
+			<li><blockquote><a href="#czcsxjt">2.支持刷新监听(写)</a></blockquote></li>
+			<li><blockquote><a href="#cjdqcc">3.进度圆圈尺寸(写)</a></blockquote></li>
+			<li><blockquote><a href="#cjdqcc">4.进度圆圈直径(读)</a></blockquote></li>
+			<li><blockquote><a href="#czzjsfkgd">5.子组件是否可滚动(读)</a></blockquote></li>
+			<li><blockquote><a href="#czcsxjt">6.显示刷新(读写)</a></blockquote></li>
+			<li><blockquote><a href="#cky">7.可用(读写)</a></blockquote></li>
+			<li><blockquote><a href="#czcsxjt">8.置进度圆圈颜色</a></blockquote></li>
+			<li><blockquote><a href="#czjdqyszy">9.置进度圆圈颜色资源</a></blockquote></li>
+			<li><blockquote><a href="#cszjzjt">10.设置加载监听</a></blockquote></li>
+			<li><blockquote><a href="#czcsxjt">11.刷新已开始(事件)</a></blockquote></li>
+			<li><blockquote><a href="#cszjzjt">12.加载已开始(事件)</a></blockquote></li>
+		</ol>
+		
+		
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>垂直刷新容器实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+		<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="czsxrq"></a>
+<h2>一、垂直刷新容器</h2>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font>	
+<p align="left">&nbsp;</p>
+<p align="left">界面准备：</p>	
+<blockquote>
+	<p align="left">打开启动类<b>“界面设计器”</b>，设计如下界面。</p>
+	<p align="left">在<b>“垂直刷新容器1”</b>内嵌套<b>“简单列表框1”</b>。</p>
+	<p align="left">设置其组件<b>“高/宽度”</b>为<b>“匹配父组件高/宽度”</b>。</p>
+	<p align="left"><font color="#F30F12">注意：本组件位于<strong>“杂类窗口组件1”</strong>模块中。</font></p>
+	<p align="left"><img src="layout_images/78.png" width="741" height="612"  border="0" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="czcsxjt"></a>
+<font style="font-size: 12pt; font-weight:700">● 支持刷新监听(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 刷新已开始(事件)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 置进度圆圈颜色</font><br>
+<font style="font-size: 12pt; font-weight:700">● 显示刷新(读写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“支持刷新监听(写)”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">设置本属性值为真，可发送<b>“刷新已开始”</b>事件，否则相反。</p>
+	<p align="left"><img border="0" src="layout_images/79.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“刷新已开始(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">设置<b>“支持刷新监听”</b>属性值为真可发送本事件。</p>
+	<p align="left"><img border="0" src="layout_images/81.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“置进度圆圈颜色”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本方法可设置进度圈显示的颜色，参数值为可扩展颜色。</p>
+	<p align="left">第一颜色：用户下拉滑动后显示的颜色。</p>
+	<p align="left">扩展的其它颜色值，会依次在进度圈显示。</p>
+	<p align="left"><img border="0" src="layout_images/80.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“显示刷新(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本属性可设置是否主动显示刷新进度圈。</p>
+	<p align="left">属性值为真，则显示进度圈，否则相反。</p>
+	<p align="left"><img border="0" src="layout_images/82.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、给<b>“垂直刷新容器”</b>设置<b>“支持刷新监听”</b>属性，属性值为真。</p>
+	<p align="left">2、添加<a href="a_win.htm#tzbcj"><b>“通知_被创建”</b></a>虚拟方法，在当前方法下调用<b>“置进度圆圈颜色”</b>方法。</p>
+	<p align="left">3、添加<b>“垂直刷新容器_刷新已开始”</b>事件，在当前事件下给简单列表框插入列表项。</p>
+	<p align="left">4、插入完毕后需要调用<b>“显示刷新”</b>属性，设置属性值为假。</p>
+	<p align="left">注意：如果不设置<b>“显示刷新=假”</b>，进度圆圈将会一直存在。</p>
+	<p align="left"><img border="0" src="layout_images/83.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">左图：设置显示刷新属性为假，<b>“进度圆圈”</b>因列表项加载很快瞬间消失。</p>
+	<p align="left">右图：没有设置显示刷新属性为假，可看到<b>“进度圆圈”</b>的颜色在依次交替显示，并且不会消失。</p>
+	<p align="left"><img border="0" src="layout_images/84.gif" >
+	&nbsp;&nbsp;	<img border="0" src="layout_images/85.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="cjdqcc"></a>
+<font style="font-size: 12pt; font-weight:700">● 进度圆圈尺寸(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 进度圆圈直径(读)</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“进度圆圈尺寸(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本属性可设置进度圆圈的尺寸，属性值只能填写<b>“0或1”</b>。</p>
+	<p align="left"><img border="0" src="layout_images/86.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“进度圆圈直径(读)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本读属性可读取进度圆圈直径。</p>
+	<p align="left"><img border="0" src="layout_images/87.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">在原代码的基础上简单修改即可。</p>
+	<p align="left">1、在<b>“垂直刷新容器1”</b>属性栏增加<b>“进度圆圈尺寸”</b>设置属性值为<b>“0”</b>。</p>
+	<p align="left">2、在<b>“刷新已开始”</b>接收事件下，调用<b>“进度圆圈直径”</b>读属性，读取进度圆圈直径。</p>
+	<p align="left"><img src="layout_images/88.png" width="663" height="606" border="0" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">左图：<b>“进度圆圈尺寸”</b>属性值设置为0的效果。</p>
+	<p align="left">右侧：<b>“进度圆圈尺寸”</b>属性值设置为1的效果。</p>
+	<p align="left"><img border="0" src="layout_images/89.png" >
+	&nbsp;&nbsp;	<img border="0" src="layout_images/90.png" >
+    </p>
+</blockquote>
+	
+
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="czzjsfkgd"></a>
+<font style="font-size: 12pt; font-weight:700">● 子组件是否可滚动(读)</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本读属性可判断当前<b>“垂直刷新容器1”</b>内的子组件是否支持<b>“向上”</b>滚动。</p>
+	<p align="left"><img border="0" src="layout_images/91.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">界面准备：</p>
+<blockquote>
+	<p align="left">在原界面的基础上增加一个<b>“按钮1”</b>。</p>
+	<p align="left"><img border="0" src="layout_images/92.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，调用当前属性判断即可。</p>
+	<p align="left"><img border="0" src="layout_images/93.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">可看到当列表位于顶部时，弹出<b>“不支持滚动”</b>。</p>
+	<p align="left">滚动列表后就会弹出<b>“支持滚动”</b>。</p>
+	<p align="left"><img border="0" src="layout_images/94.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="cky"></a>
+<font style="font-size: 12pt; font-weight:700">● 可用(读写)</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性用来设置当前组件是否可用，属性值为真可用，否则相反。</p>
+	<p align="left">同名读属性，即读取当前组件是否可用。</p>
+	<p align="left"><img border="0" src="layout_images/95.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，设置当前属性值为<b>“取反(垂直刷新容器1.可用)”</b>。</p>
+	<p align="left"><img border="0" src="layout_images/96.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">可看到<b>“按钮1”</b>被点击后，当前垂直刷新容器无法使用，再次点击后就可正常使用。</p>
+	<p align="left"><img border="0" src="layout_images/97.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="czjdqyszy"></a>
+<font style="font-size: 12pt; font-weight:700">● 置进度圆圈颜色资源</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法同样是给进度圆圈设置颜色，参数类型为<b>“颜色值资源”</b>。</p>
+	<p align="left"><img border="0" src="layout_images/98.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">在<b>“通知_被创建”</b>虚拟方法下，定义<b>“颜色值资源”</b>变量，在初始值填写<b>“#0000FF”</b>十六进制颜色值。</p>
+	<p align="left">然后调用当前方法，将变量写入参数即可。</p>
+	<p align="left"><img border="0" src="layout_images/99.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">最后可看到进度圆圈变成蓝色。</p>
+	<p align="left"><img border="0" src="layout_images/100.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="cszjzjt"></a>
+<font style="font-size: 12pt; font-weight:700">● 设置加载监听</font><br>
+<font style="font-size: 12pt; font-weight:700">● 加载已开始(事件)</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“设置加载监听”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本方法可设置针对列表框的<b>“上拉加载”</b>监听。</p>
+	<p align="left">参数1：设置是否监听，填写真表示监听。</p>
+	<p align="left">参数2：填写列表框名称即可，例如：简单列表框1、简单表格1等等。</p>
+	<p align="left">参数3：参数值填写真，当列表滑动到底部后，立刻执行加载事件。否则二次拖动时才会加载。</p>
+	<p align="left"><img border="0" src="layout_images/101.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“加载已开始(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">需要提前调用<b>“设置加载监听”</b>方法，本事件才会被触发。</p>
+	<p align="left"><img border="0" src="layout_images/102.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）： </p>
+<blockquote>
+	<p align="left">在<b>“通知_被创建”</b>虚拟方法下，调用当前方法，监听<b>“简单列表框1”</b>。</p>
+	<p align="left">注意：参数3忽略默认为假。</p>
+	<p align="left"><img border="0" src="layout_images/103.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）： </p>
+<blockquote>
+	<p align="left">添加<b>“垂直刷新容器_加载已开始”</b>事件。</p>
+	<p align="left">本事件默认不会显示刷新圆圈，可执行<b>“显示刷新=真”</b>手动显示。</p>
+	<p align="left">循环方法执行完毕后，执行<b>“显示刷新=假”</b>隐藏进度圆圈。</p>
+	<p align="left"><img border="0" src="layout_images/104.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="layout_images/104.gif" >
+    </p>
+</blockquote>
+		
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

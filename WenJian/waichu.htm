@@ -1,0 +1,321 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+ 
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new3')" >一.安卓外储文件类<span>(可收缩)</span></h6></li>
+		<ol id="new3">
+			<li><blockquote><a href="#waichublsm">1.本类说明</a></blockquote></li>
+            <li><blockquote><a href="#qwbcckjgml">2.取外部存储空间根目录</a></blockquote></li>
+             <li><blockquote><a href="#qwbgksjzml">3.取外部公开数据子目录</a></blockquote></li>
+            <li><blockquote><a href="#qwbsyhcml">4.取外部私有缓存目录</a></blockquote></li>
+            <li><blockquote><a href="#qwbsysjzml">5.取外部私有数据子目录</a></blockquote></li>
+            <li><blockquote><a href="#wbccsfkyc">6.外部存储是否可移除</a></blockquote></li>
+            <li><blockquote><a href="#wbccsfky">7.外部存储是否可用</a></blockquote></li>
+            <li><blockquote><a href="#changliang">8.博客</a></blockquote></li>
+            <li><blockquote><a href="#changliang">9.铃声</a></blockquote></li>
+            <li><blockquote><a href="#changliang">10.闹钟</a></blockquote></li>
+            <li><blockquote><a href="#changliang">11.摄像</a></blockquote></li>
+            <li><blockquote><a href="#changliang">12.通知</a></blockquote></li>
+            <li><blockquote><a href="#changliang">13.图片</a></blockquote></li>
+            <li><blockquote><a href="#changliang">14.下载</a></blockquote></li>
+            <li><blockquote><a href="#changliang">15.音乐</a></blockquote></li>
+            <li><blockquote><a href="#changliang">16.影片</a></blockquote></li>
+            
+            
+		</ol>
+		
+			
+	</ol>
+</ul>
+</div>
+
+
+<p align="left">
+<h2>安卓外储文件类操作实例讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 辅助说明</font><br/>
+     	<blockquote style="color: #E91C1F">
+		<p align="left">注意：从安卓10（API29）开始（安卓11彻底禁止），谷歌针对安卓文件系统进行了大修改，逐渐开始禁止软件操作存储卡目录。</p>
+		<p align="left">其目的是为了规范软件本身文件管理，防止软件滥用文件创建功能和软件隐私保护，防止被第三方不法软件获取软件数据。</p>
+        <p align="left">所有软件只能操作私有数据目录，对私有目录内容进行读写。</p>   
+        <p align="left">在火山中即使用<a href="neichu.htm#qnbsysjbm">“取内部私有数据目录()”</a>和<a href="#qwbsysjzml">“取外部私有数据子目录()”</a>，取出操作目录来进行文件读写操作。</p>   
+	</blockquote>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本类是对<b>“外部存储空间”</b>（通常指sd卡）中文件或目录的操作支持。</p>
+<p align="left">这个<b>“外部存储空间”</b>也就是大家打开手机文件管理器看到的东西，很多软件的部分数据都是存储在这里。</p>
+<p align="left"><font color="#FF0000">注意：</font>在进行外部存储操作之前，一定要进行检测，利用<b>“外部存储是否可用”</b>方法来进行判断。</p>
+<p align="left">至于<b>“外部私有数据根目录”</b>，目前<b>“没有安全的方法”</b>能够限制其它程序访问。</p>
+<p align="left">本类目录的大概结构，图内也标注的非常清晰了，这里不再讲述。</p>
+	<p align="left"><img border="0" src="awj_images/37.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+<a name="qwbcckjgml"></a>
+<font style="font-size: 12pt; font-weight:700">● 取外部存储空间根目录</font><br/>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本方法没有参数，返回一个<b>“文件名类”</b>，本方法取出的路径就是sd卡的根目录。</p>
+    <p align="left">打开<b>“手机文件管理器”</b>后看到的文件都是存放在这个路径。</p>
+    <p align="left">不要在这个目录下直接写文件，可以自己创建一个目录，写到创建的目录中。</p>
+    <p align="left">或者调用<b>“取外部公开数据子目录”</b>方法。</p>
+    <p align="left">存在这里的数据，程序卸载后数据不会删除，依然存在，而且也可以被其它程序调用。</p>
+    <p align="left"><img border="0" src="awj_images/38.png" ></p>
+ 
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写：</p>
+<blockquote>
+	<p align="left">在<b>“按钮1”</b>被单击下，定义一个类型为<b>“文件名类”</b>的变量，设置参考。</p>
+    <p align="left">随后使用本方法直接赋值给定义的<b>“文件变量”</b>，然后利用<b>“取文件名”</b>方法赋值给<b>“编辑框”</b>显示。</p>
+	<p align="left"><img border="0" src="awj_images/39.png" ></p>
+   
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">执行<b>“按钮1”</b>后就会显示sd卡的<b>“根目录”</b>，这个路径下的文件，就是打开<b>“手机文件管理器”</b>看到的文件。</p>
+   
+	<p align="left"><img border="0" src="awj_images/40.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="qwbgksjzml"></a>
+<font style="font-size: 12pt; font-weight:700">● 取外部公开数据子目录</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法和<b>“取外部存储空间根目录”</b>的区别就是，这里多了一个<b>“目录参数”</b>。</p>
+    <p align="left">如果填写<b>“空文本”</b>则会返回<b>“根目录”</b>。</p>
+	<p align="left"><img border="0" src="awj_images/41.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">我们在上一个方法的代码基础上稍微修改。</p>
+    <p align="left">将<b>“取外部存储空间根目录”</b>方法改成<b>“取外部公开数据子目录”</b>。</p>
+    <p align="left">参数内随意输入一个目录名，比如：火山软件。</p>	
+    <p align="left"><img border="0" src="awj_images/42.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+<p align="left">执行<b>“按钮1”</b>，<b>“编辑框1”</b>的内容就会出现sd卡根目录，并且自动添加了参数<b>“火山软件”</b>。</p>
+	
+    <p align="left"><img border="0" src="awj_images/43.png" >
+    </p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="qwbsyhcml"></a>
+<font style="font-size: 12pt; font-weight:700">● 取外部私有缓存目录</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法同样返回<b>“文件名类”</b>，取出的是当前程序<b>“外部私有缓存”</b>目录。</p>
+    <p align="left">本目录，程序卸载后会<b>“自动删除”</b>，但是安卓系统不会对其进行监控，也不会主动删除。</p>
+    <p align="left">安卓系统清理垃圾功能，会扫描此目录。</p>
+    <p align="left">另外就是缓存的大小，仅仅受限于存储卡的容量。</p>
+	<p align="left"><img border="0" src="awj_images/44.png" >
+    
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">和前两个方法编写过程一样，写<b>“本方法”</b>名赋值给<b>“文件变量”</b>。</p>
+    <p align="left">最后<b>“取文件名”</b>赋值给<b>“编辑框1.内容”</b>显示出来。</p>
+	<p align="left"><img border="0" src="awj_images/45.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">执行<b>“按钮1”</b>后，完整的<b>“外部缓存目录”</b>就会取出。</p>
+    <p align="left">可以看到<b>“缓存目录”</b>，也是在<b>“包名目录”</b>内放着。</p>
+	<p align="left"><img border="0" src="awj_images/46.png" >
+    
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="qwbsysjzml"></a>
+<font style="font-size: 12pt; font-weight:700">● 取外部私有数据子目录</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>  
+<p align="left">本方法和<b>“取外部公开数据子目录”</b>参数和返回值一模一样，就是最终结果不同。</p>
+	<p align="left"><img border="0" src="awj_images/47.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在本方法的参数内，随便输入一个目录名，例如：<b>“文件”</b>。</p>
+	<p align="left"><img border="0" src="awj_images/48.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">执行后输出的<b>“目录中”</b>，就可以看到你输入的<b>“参数”</b>，并且这个目录是在<b>“files”</b>目录中。</p>
+	<p align="left"><img border="0" src="awj_images/49.png" ></p>
+   
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+<a name="wbccsfkyc"></a>
+<font style="font-size: 12pt; font-weight:700">● 外部存储是否可移除</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">顾名思义，就是判断当前<b>“外部存储”</b>是否可以被移除。</p>
+<p align="left">可以移除返回真，不可以返回假。</p>
+	<p align="left"><img border="0" src="awj_images/50.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接用如果判断<b>“本方法”</b>即可。</p>
+    <p align="left"><img border="0" src="awj_images/51.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">点击<b>“按钮1”</b>后可以看到弹出了<b>“不可以”</b>，证明本方法返回<b>“假”</b>，外部存储不可被移除。</p>
+	<p align="left"><img border="0" src="awj_images/52.gif" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+<a name="wbccsfky"></a>
+<font style="font-size: 12pt; font-weight:700">● 外部存储是否可用</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是判断存储<b>“是否可用”</b>，<b>“返回真”</b>表示存储可以用，<b>“返回假”</b>则不可以。</p>
+    <p align="left">注意：在进行<b>“任何文件操作之前”</b>，<b>“一定要”</b>调用本方法检测一下。</p>
+	<p align="left"><img border="0" src="awj_images/53.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写：</p>
+<blockquote>
+<p align="left"><b>“本方法”</b>和<b>“外部存储是否可移除”</b>代码一致，直接判断本方法<b>“是否”</b>等于真即可。</p>
+ <p align="left">然后可以弹出对应的信息框。</p>
+	<p align="left"><img border="0" src="awj_images/54.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</b></p>
+<blockquote>
+    <p align="left">执行<b>“按钮1”</b>后，通常情况下都会返回<b>“真”</b>。</p>
+    <p align="left">如果存储卡损坏，或者被其它设备占用，例如：电脑，这些情况下会返回<b>“假”</b>。</p>
+	<p align="left"><img border="0" src="awj_images/55.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="changliang"></a>
+<font style="font-size: 12pt; font-weight:700">● 博客</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 铃声</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 闹钟</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 摄像</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 通知</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 图片</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 下载</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 音乐</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 影片</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">以上都是文本常量值，这些常量值存储的其实就是一些英文名称。</p>
+    <p align="left">调用方法<b>“安卓外储文件类.XX”</b>。</p>
+    <p align="left"><b>“取外部私有数据子目录”</b>和<b>“取内部私有数据文件路径”</b>等方法都可以用。</p>
+	<p align="left"><img border="0" src="awj_images/56.png" ></p>
+    <p align="left">&nbsp;</p>
+    
+</blockquote>
+
+<p align="left">运行效果如下图：</p>
+    
+    <blockquote>
+    <p align="left">分别执行<b>“按钮1”</b>和<b>“按钮2”</b>后，对应的路径也都会取出来。</p>
+    <p align="left"><b>“下载”</b>常量其实就是<b>“Download”</b>，而<b>“图片”</b>常量其实就是<b>“Pictures”</b>。</p>
+    <p align="left"><img border="0" src="awj_images/57.gif" ></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

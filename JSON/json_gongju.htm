@@ -1,0 +1,161 @@
+
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+	
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new3')" >一.JSON工具类<span>(可收缩)</span></h6></li>
+		<ol id="new3">
+			<li><blockquote><a href="#">1.本类说明</a></blockquote></li>
+            <li><blockquote><a href="#gjjsonqwb">2.取文本</a></blockquote></li>
+            <li><blockquote><a href="#gjjsonqwb">3.取小数</a></blockquote></li>
+            <li><blockquote><a href="#gjjsonqwb">4.取整数</a></blockquote></li>
+            <li><blockquote><a href="#gjjsonqwb">5.取逻辑型</a></blockquote></li>
+            <li><blockquote><a href="#gjjsonqwb">6.取长整数</a></blockquote></li>
+            <li><blockquote><a href="#qwblb">7.取文本列表</a></blockquote></li>
+            <li><blockquote><a href="#qwbsz">8.取文本数组</a></blockquote></li>
+		</ol>
+	
+	</ol>
+</ul>
+</div>
+
+
+<p align="left">
+<h2>JSON工具类操作实例讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+	 <p align="left">本类位于<strong>“JSON数据访问支持”</strong>模块中。</p>
+  <p align="left">本工具类是基于JSON对象类二次封装，封装了多种取JSON数据的方法，操作非常方便快捷。</p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="gjjsonqwb"></a>
+<font style="font-size: 12pt; font-weight:700">● 取文本</font>
+<font style="font-size: 12pt; font-weight:700">● 取小数</font>
+<font style="font-size: 12pt; font-weight:700">● 取整数</font>
+<font style="font-size: 12pt; font-weight:700">● 取逻辑型</font>
+<font style="font-size: 12pt; font-weight:700">● 取长整数</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">以上几个方法用法一致，不同之处为要取的目标类型不同，此处演示“取文本()”方法。</p>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">参数1：填写要解析的json文本。</p>
+<p align="left">参数2：填写键名，务必保证键名存在。</p>
+<p align="left">参数3：如果json解析失败或者键名不存在，此默认值将返回。</p>
+	<p align="left"><img border="0" src="images/218.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">准备一段JSON文本：</p>
+<blockquote>
+<p align="left" style="color:#F10307">{"键名":"键值"}</p>
+</blockquote>    
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">1、定义<b>“JSON文本”</b>常量值，导入json数据。</p>
+<p align="left">2、直接通过本类名调用“取文本()”就可以取出<b>“键名”</b>的键值。</p>
+	<p align="left"><img border="0" src="images/219.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，将取出指定键名的键值。</p>
+	<p align="left"><img border="0" src="images/220.png" ></p>
+</blockquote>	
+
+    
+  	<p align="left">&nbsp;</p>
+<a name="qwblb"></a>
+<font style="font-size: 12pt; font-weight:700">● 取文本列表</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">当要解析的JSON对象中键值为JSON数组类，可通过本方法将JSON数组类转换成文本列表类数据。</p>
+<p align="left">参数1：填写要解析的json文本。</p>
+<p align="left">参数2：填写键名，务必保证键名存在且键值为JSON数组类。</p>
+<p align="left">参数3：如果json解析失败或者键名不存在，此默认值将返回。</p>
+	<p align="left"><img border="0" src="gongju_img/3.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">准备一段键值为JSON数组类的JSON文本：</p>
+<blockquote>
+<p align="left" style="color:#F10307">{
+"键名":[1,"文本"]
+}
+</p>
+</blockquote>    
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">1、定义<b>“JSON文本”</b>常量值，导入json数据。</p>
+<p align="left">2、调用<strong>“取文本列表()”</strong>方法，取出列表数据后赋值给文本列表变量。</p>
+<p align="left">3、循环取出文本列表内容显示在编辑框中。</p>
+	<p align="left"><img border="0" src="gongju_img/2.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，将取出数组键值的所有成员。</p>
+	<p align="left"><img border="0" src="gongju_img/1.png" ></p>
+</blockquote>	  
+    <p align="left">&nbsp;</p>
+<a name="qwbsz"></a>
+<font style="font-size: 12pt; font-weight:700">● 取文本数组</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本方法的作用和“取文本列表()”方法类似，不同之处为本方法返回的是文本数组。</p>
+<p align="left">参数1：填写要解析的json文本。</p>
+<p align="left">参数2：填写键名，务必保证键值是JSON数组类。</p>
+<p align="left">参数3：如果json解析失败或者键名不存在，此默认值将返回。</p>
+	<p align="left"><img border="0" src="gongju_img/4.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">准备一段键值为JSON数组类的JSON文本：</p>
+<blockquote>
+<p align="left" style="color:#F10307">{"键名":["数组键值1","数组键值2"]}</p>
+</blockquote>    
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">1、定义<b>“JSON文本”</b>常量值，导入json数据。</p>
+<p align="left">2、调用当前方法解析JSON文本，赋值给文本数组。</p>
+<p align="left">3、循环取出文本数组数据，显示在编辑框中。</p>
+	<p align="left"><img border="0" src="gongju_img/5.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，将取出指定JSON数组类的所有成员。 </p>
+	<p align="left"><img border="0" src="gongju_img/6.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

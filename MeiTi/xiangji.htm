@@ -1,0 +1,331 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new11')" >一.系统相机类<span>(可收缩)</span></h6></li>
+		<ol id="new11">
+        
+           <li><blockquote><a href="#xiangji">1.本类说明</a></blockquote></li>
+          <li><blockquote><a href="#kspz">2.开始拍照</a></blockquote></li>
+          <li><blockquote><a href="#kslx">3.开始录像</a></blockquote></li>
+          <li><blockquote><a href="#sfzcsgd">4.是否支持闪光灯</a></blockquote></li>
+          <li><blockquote><a href="#kqsgd">5.开启闪光灯</a></blockquote></li>
+           <li><blockquote><a href="#gbsgd">6.关闭闪光灯</a></blockquote></li>
+           <li><blockquote><a href="#llxc">7.浏览相册</a></blockquote></li>
+           <li><blockquote><a href="#llxccj">8.浏览相册并裁剪照片</a></blockquote></li>
+           <li><blockquote><a href="#qzpxzjd">9.取照片旋转角度</a></blockquote></li>
+           <li><blockquote><a href="#hdfhsj">10.获得返回数据</a></blockquote></li>
+           <li><blockquote><a href="#xjpzwb">11.拍摄完毕（事件）</a></blockquote></li>
+           <li><blockquote><a href="#xjlxwb">12.录像完毕（事件）</a></blockquote></li>
+           <li><blockquote><a href="#xjllwb">13.浏览完毕（事件）</a></blockquote></li>
+           <li><blockquote><a href="#xjcjwb">14.裁剪完毕（事件）</a></blockquote></li>
+		</ol>	
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>系统相机类实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+
+<p align="left">&nbsp;</p>	
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">通过本类可直接调用<b>“系统相机”</b>进行<b>“拍照和录像”</b>等操作。</p>
+	<p align="left">除此之外，还可以打开系统相册，选择图片进行裁剪。</p>
+	<p align="left"><font color="#F70408">注意：本类位于<strong>“多媒体功能支持”</strong>模块中，必须添加此模块才能使用。</font></p>
+</blockquote>	
+
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="hdfhsj"></a><a name="kspz"></a><a name="xjpzwb"></a>
+<font style="font-size: 12pt; font-weight:700">● 获得返回数据</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 开始拍照</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 拍照完毕（事件）</font><br>
+<p align="left">&nbsp;</p>
+<p align="left">以上三个为关联方法，此处统一讲解。</p>
+<p align="left">&nbsp;</p>	
+<p align="left"><b>“获得返回数据”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">无论执行<b>“拍照”</b>或<b>“录像”</b>，本方法必须调用。</p>
+    <p align="left">需要将此方法写到<b>“通知_获得返回数据”</b>虚拟方法下，否则<b>“拍摄事件”</b>无法响应。</p>
+	<p align="left"><img border="0" src="mt_images/194.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“开始拍照”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">执行本方法后将会触发<b>“拍摄完毕”</b>事件。</p>
+    <p align="left">参数1：提供要保存的文件路径即可。</p>
+    <p align="left">参数2：通常情况下直接填写<b>“本对象”</b>即可。</p>
+	<p align="left"><img border="0" src="mt_images/195.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“拍摄完毕（事件）”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">执行<b>“开始拍照”</b>方法后触发本事件。</p>
+    <p align="left">通过本事件的<b>“照片路径”</b>参数可获得照片保存路径。</p>
+	<p align="left"><img border="0" src="mt_images/196.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">界面准备如下图：</p>
+<blockquote>
+    <p align="left">打开设计器，拖放一个<b>“按钮”</b>，<b>“文本框”</b>和<b>“图片框”</b>。</p>
+  <p align="left">设置<b>“文本框”</b>组件宽度类型为<b>“匹配父组件宽度”</b>。</p>
+    <p align="left">设置<b>“图片框”</b>组件高/宽度类型为<b>“匹配父组件高/宽度”</b>。</p>
+	<p align="left"><img border="0" src="mt_images/197.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+  <p align="left">保存布局后，定义<b>“系统相机类”</b>变量，右键选择<b>“事件接收方法”</b>。</p>
+    <p align="left">添加<b>“拍摄完毕”</b>事件。</p>
+	<p align="left"><img border="0" src="mt_images/198.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+  <p align="left">添加完毕后，判断<b>“来源对象==相机1”</b>。</p>
+    <p align="left">然后将<b>“照片路径”</b>显示在文本框中。</p>
+    <p align="left">通过<b>“读入文件”</b>命令，读取照片为字节数据。</p>
+    <p align="left">最后将此方法放入，<b>“图片框1.置图片数据”</b>的参数中。</p>
+    <p align="left">如此操作后，拍着的照片就会显示在图片框中。</p>
+	<p align="left"><img border="0" src="mt_images/199.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（3）：</p>
+<blockquote>
+  <p align="left">在<b>“通知_获得返回数据”</b>方法下，执行<b>“相机1.获得返回数据”</b>方法。</p>
+    <p align="left">三个参数分别对号入座即可。</p>
+	<p align="left"><img border="0" src="mt_images/200.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（4）：</p>
+<blockquote>
+  <p align="left">最后需要在<b>“按钮1”</b>被单击下，执行<b>“相机1.开始拍照()”</b>方法。</p>
+    <p align="left">参数1：填写要保存的文件路径即可。</p>
+    <p align="left">参数2：直接填写<b>“本对象”</b>即可。</p>
+	<p align="left"><img border="0" src="mt_images/201.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+  <p align="left">点击<b>“按钮1”</b>会调用系统相机开始拍照，拍照结束后图片框就会显示刚刚拍摄的照片。</p>
+	<p align="left">如果手机内有多个相机软件，大部分手机会弹出相机选择，让你手动选择相机软件拍摄（右图）。</p>
+	<p align="left"><img src="mt_images/202.png" width="400" height="711" border="0" ><img src="mt_images/202a.png" width="400" height="711" border="0" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+
+<a name="kslx"></a><a name="xjlxwb"></a>	
+	<font style="font-size: 12pt; font-weight:700">● 开始录像</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 录像完毕（事件）</font><br>
+<p align="left">&nbsp;</p>
+	<p align="left">以上两个为关联方法，统一讲解。</p>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“开始录像”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">通过本方法即可打开系统自带相机的录像界面。</p>
+  <p align="left">本方法共有三个参数，参数1：依然是保存路径，参数2：录像品质，只能0或1。</p>
+	<p align="left">参数3：直接填写本对象即可。</p>
+	<p align="left">注意：本方法会触发<b>“录像完毕”</b>事件。</p>
+	<p align="left"><img border="0" src="mt_images/203.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“录像完毕（事件）”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">调用<b>“开始录像”</b>录像结束后会触发本事件。</p>
+  <p align="left">通过<b>“录像路径”</b>参数可以获得录像结束后文件保存路径。</p>
+	<p align="left"><img border="0" src="mt_images/204.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写（1）：</p>
+<blockquote>
+  <p align="left">直接在原代码的基础上，修改<b>“开始拍照”</b>为<b>“开始录像”</b>，然后填写对应参数，即可。</p>
+  <p align="left"><img border="0" src="mt_images/205.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写（2）：</p>
+<blockquote>
+  <p align="left">录像结束后，将<b>“录像路径”</b>显示在<b>“文本框1”</b>中。</p>
+    <p align="left">录像无法演示，自行测试。</p>
+  <p align="left"><img border="0" src="mt_images/206.png" ></p>
+</blockquote>
+	
+
+<p align="left">&nbsp;</p>
+<a name="llxc"></a>
+<a name="xjllwb"></a>
+	<font style="font-size: 12pt; font-weight:700">●浏览相册 </font><br>
+	<font style="font-size: 12pt; font-weight:700">● 浏览完毕（事件）</font><br>
+<p align="left">&nbsp;</p>
+	<p align="left">以上两个为关联方法，统一讲解。</p>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“浏览相册”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">顾名思义，调用本方法可以打开系统相册进行浏览相册。</p>
+	<p align="left">选择照片后，会触发<b>“浏览完毕”</b>事件。</p>
+	<p align="left">参数直接填写<b>“本对象”</b>即可。</p>
+	<p align="left">注意：建议选择系统自带相册，第三方相册可能会导致程序闪退。</p>
+	<p align="left"><img border="0" src="mt_images/207.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“浏览完毕（事件）”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">调用<b>“浏览相册”</b>选择照片后会触发本事件。</p>
+	<p align="left">通过<b>“文件路径”</b>参数可以获得被选择照片的路径。</p>
+	<p align="left"><img border="0" src="mt_images/208.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写（1）：</p>
+<blockquote>
+    <p align="left">直接在<b>“按钮1”</b>被单击下，调用本方法即可。</p>
+	<p align="left"><img border="0" src="mt_images/209.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写（2）：</p>
+<blockquote>
+    <p align="left">添加<b>“浏览完毕”</b>事件，在事件下利用<b>“读入文件”</b>方法读取图片到图片框。</p>
+
+	<p align="left"><img border="0" src="mt_images/210.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">可以看到，选择图片后图片框成功显示了选择的图片。</p>
+	<p align="left"><img border="0" src="mt_images/211.gif" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<a name="llxccj"></a>
+<a name="xjcjwb"></a>
+	<font style="font-size: 12pt; font-weight:700">●浏览相册并裁剪照片 </font><br>
+	<font style="font-size: 12pt; font-weight:700">● 裁剪完毕（事件）</font><br>
+<p align="left">&nbsp;</p>
+<p align="left">以上方法和前两个不同之处在于，本方法支持选择照片是进行裁剪。</p>
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写（1）：</p>
+<blockquote>
+    <p align="left">直接在<b>“按钮1”</b>被单击下，调用<b>“浏览相册并裁剪照片”</b>方法即可。</p>
+    <p align="left">本方法同样只有一个参数，直接填写<b>“本对象”</b>即可。</p>
+	<p align="left"><img border="0" src="mt_images/212.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写（2）：</p>
+<blockquote>
+    <p align="left">添加<b>“裁剪完毕”</b>事件，在事件下利用<b>“读入文件”</b>方法读取图片到图片框。 </p>
+
+	<p align="left"><img border="0" src="mt_images/213.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">可以看到，选择图片后出现了控制柄可以调整大小。</p>
+	<p align="left">调整完毕后就可以将方框内的区域剪裁下来。</p>
+	<p align="left">因国内系统多为定制系统，剪裁界面和下图未必一样。</p>
+	<p align="left"><img border="0" src="mt_images/214.gif" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+	<a name="sfzcsgd"></a>
+<a name="kqsgd"></a><a name="gbsgd"></a>
+	<font style="font-size: 12pt; font-weight:700">●是否支持闪光灯 </font><br>
+	<font style="font-size: 12pt; font-weight:700">● 开启闪光灯</font><br><font style="font-size: 12pt; font-weight:700">● 关闭闪光灯</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">以上三个方法，就是字面上的意思，此处不再展示帮助文档。</p>
+	<p align="left">大家可以自行打开帮助文档查看。</p>
+	<p align="left">&nbsp;</p>
+
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">直接调用<b>“如果”</b>去判断<b>“是否支持闪光灯()”</b>方法即可。</p>
+	<p align="left">如果支持，就执行<b>“开启闪光灯”</b>，不支持就弹出对应提示。</p>
+	<p align="left"><b>“开启闪光灯”</b>有一个逻辑返回值，可以继续用<b>“如果”</b>进行判断。</p>
+	<p align="left">至于<b>“关闭闪光灯”</b>，本方法并没有任何参数，在需要关闭的地方调用本方法即可。</p>
+	<p align="left"><img border="0" src="mt_images/215.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">可以看到当前闪光灯<b>“开启失败”</b>，因为教程使用的是<b>“安卓模拟器”</b>。</p>
+    <p align="left">安卓模拟器并没有闪光灯，所以自然提示开启失败。</p>
+    <p align="left">至于为什么没有弹出<b>“不支持闪光灯”</b>，可能是因为安卓模拟器内部进行了<b>“特殊处理”</b>。</p>
+	
+	<p align="left"><img border="0" src="mt_images/216.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<a name="qzpxzjd"></a>
+<font style="font-size: 12pt; font-weight:700">● 取照片旋转角度</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法顾名思义，可以取出指定路径的照片旋转角度。</p>
+	<p align="left">务必保证<b>“照片路径”</b>真是存在，且照片为标准的图片格式。</p>
+	<p align="left">返回一个整数值，如果为<b>“0”</b>表示没有旋转，否则代表<b>“旋转角度”</b>。</p>
+	<p align="left"><img border="0" src="mt_images/217.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">通过<b>“相机1”</b>调用本方法即可，参数内填写一个真实存在的<b>“图片路径”</b>。</p>
+	<p align="left">然后将其赋值给<b>“返回值”</b>变量。</p>
+	<p align="left">最后判断返回值是否为0，根据判断结果执行对应的提示框。</p>
+	<p align="left"><img border="0" src="mt_images/218.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">可以看到，我指定的图片提示<b>“照片没有旋转”</b>。</p>
+	<p align="left">也就表示，当前方法执行后返回了<b>“0”</b>。</p>
+	<p align="left"><img border="0" src="mt_images/219.gif" ></p>
+</blockquote>
+	
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

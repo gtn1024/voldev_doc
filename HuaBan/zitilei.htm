@@ -1,0 +1,212 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		 <li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new14')" >一.字体类<span>(可收缩)</span></h6></li>
+		<ol id="new14">
+			<li><blockquote><a href="#zitilei">1.本类说明</a></blockquote></li>  
+			<li><blockquote><a href="#ztcwjcj">2.从文件创建</a></blockquote></li>  
+    		<li><blockquote><a href="#ztcwjmlcj">3.从文件名类创建</a></blockquote></li>
+    		<li><blockquote><a href="#ztczywjcj">4.从资产文件创建</a></blockquote></li>
+    		<li><blockquote><a href="#ziticj">5.创建</a></blockquote></li>
+    		<li><blockquote><a href="#ztcjqtztfg">6.创建其它字体风格</a></blockquote></li>
+    		<li><blockquote><a href="#ztqcyzt">7.取常用字体</a></blockquote></li>
+    		<li><blockquote><a href="#ztqmrzt">8.取默认字体</a></blockquote></li>
+    		<li><blockquote><a href="#ztsfxt">9.是否相同</a></blockquote></li>
+    		<li><blockquote><a href="#ztsfwxtd">10.是否为斜体（读）</a></blockquote></li>
+    		<li><blockquote><a href="#ztsfwstd">11.是否为粗体（读）</a></blockquote></li>
+    		<li><blockquote><a href="#ztfgd">12.风格（读）</a></blockquote></li>
+   		</ol>
+		
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>字体类实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+  	<p align="left">通过本类中的方法结合<b>“画笔类.字体”</b>写属性，可以给绘制的文本增加各种各样的字体样式。</p>
+<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="ztcwjcj"></a>
+	<font style="font-size: 12pt; font-weight:700">● 从文件创建</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用就是根据存储卡内指定路径的<b>“字体文件”</b>，修改文本的<b>“字体”</b>。</p>
+	<p align="left"><b>“字体文件”</b>通常后缀名为<b>“ttf”</b>，可以百度搜索字体网站下载下体。</p>
+	<p align="left"><img border="0" src="hb_images/542.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">注意：务必保证存储卡根目录有名称为<b>“字体.ttf”</b>字体文件。</p>
+	<p align="left">可跳转查看<a href="j_file.htm#wjm_cj3"><b>“文件名类.创建3”</b></a>方法的解释。</p>
+	<p align="left"><img border="0" src="hb_images/543.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+	<p align="left">运行结果：</p>
+<blockquote>
+	<p align="left">可以看到绘制的文本，发生了字体变化。</p>
+	<p align="left"><img border="0" src="hb_images/544.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="ztcwjmlcj"></a>
+	<font style="font-size: 12pt; font-weight:700">● 从文件名类创建</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“从文件创建”</b>不同之处在于，本方法的参数为<b>“文件名类”</b>参数。</p>
+	<p align="left">代码编写可参考<a href="#ztx"><b>“画笔类.字体”</b></a>写属性。</p>
+	<p align="left"><img border="0" src="hb_images/545.png" ></p>
+</blockquote>
+		
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="ztczywjcj"></a>
+	<font style="font-size: 12pt; font-weight:700">● 从资产文件创建</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用是通过<b>“资产文件”</b>创建本对象。</p>
+	<p align="left"><b>“资产文件”</b>的导入和引用方式可参考<a href="#czywjcj"><b>“位图类.从资产文件创建”</b></a>。</p>
+	<p align="left">创建本对象后直接赋值给<b>“画笔类变量.字体”</b>写属性即可。</p>
+	<p align="left"><img border="0" src="hb_images/546.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="ziticj"></a>
+	<font style="font-size: 12pt; font-weight:700">● 创建</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用就是根据<b>“字体风格”</b>参数创建本对象。</p>
+	
+	<p align="left">参数1：字体家族名称，无需深入了解，直接填写<b>“空对象”</b>即可。</p>
+	<p align="left">参数2：<b>“字体风格”</b>内有四种常量可以使用，分别是：<b>“通常”</b>，<b>“粗体”</b>，<b>“斜体”</b>和<b>“粗斜体”</b>。</p>
+	<p align="left">创建本对象后直接赋值给<b>“画笔类变量.字体”</b>写属性即可。</p>
+	<p align="left"><img border="0" src="hb_images/547.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="ztcjqtztfg"></a>
+	<font style="font-size: 12pt; font-weight:700">● 创建其它字体风格</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法是通过<b>“字体家族”</b>的字体类对象和<b>“字体风格”</b>进行组合。</p>
+	<p align="left">参数1：直接填写<b>“空对象”</b>即可，无需深入了解。</p>
+	<p align="left">参数2：填写<b>“字体风格.XXX”</b>共有四个常量可以调用。</p>
+	<p align="left"><img border="0" src="hb_images/548.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="ztqcyzt"></a>
+	<font style="font-size: 12pt; font-weight:700">● 取常用字体</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用是通过<b>“常用字体类型”</b>创建字体类对象。</p>
+	<p align="left">类型内有五个常量值可用，大家自行测试，此处不再演示。</p>
+	<p align="left"><img border="0" src="hb_images/549.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="ztqmrzt"></a>
+	<font style="font-size: 12pt; font-weight:700">● 取默认字体</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法是通过<b>“字体风格”</b>创建字体类对象，有<b>“四个常量”</b>可供使用。</p>
+	<p align="left">大家自行测试，此处不再演示。</p>
+	<p align="left"><img border="0" src="hb_images/550.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="ztsfxt"></a>
+	<font style="font-size: 12pt; font-weight:700">● 是否相同</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，本方法就是判断两个<b>“字体类”</b>中的内容是否相同。</p>
+	<p align="left">相同返回<b>“真”</b>，不相同返回<b>“假”</b>。</p>
+	<p align="left">直接通过<b>“如果”</b>条件语句，判断本方法的返回值即可。</p>
+	<p align="left">此处不再详细讲解。</p>
+	<p align="left"><img border="0" src="hb_images/551.png" ></p>
+</blockquote>
+
+
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="ztsfwxtd"></a>
+	<a name="ztsfwstd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 是否为斜体（读）</font><br/>
+	
+	<font style="font-size: 12pt; font-weight:700">● 是否为粗体（读）</font><br/>
+<p align="left">&nbsp;</p>
+
+<blockquote>
+	<p align="left">以上两个为<b>“读属性”</b>，就是用来判断当前字体类是否为<b>“粗体”</b>或<b>“斜体”</b>。</p>
+	<p align="left">调用方法：直接用<b>“如果”</b>语句内判断这两个属性的返回值即可。</p>
+</blockquote>
+
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="ztfgd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 风格（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote><b>
+	<p align="left">本读属性的作用，可以返回当前字体对象的<b>“字体风格”</b>。</p>
+	<p align="left">调用方式：<b>“字体类变量.风格”</b>，就可以读取当前字体类变量的字体风格。</p>
+	<p align="left">自行测试，不再详细介绍。</p>
+	<p align="left"><img border="0" src="hb_images/552.png" ></p>
+</blockquote>
+
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

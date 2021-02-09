@@ -1,0 +1,153 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+				
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new9')" >一.时间选择器<span>(可收缩)</span></h6></li>
+		<ol id="new9">
+			<li><blockquote><a href="#shijian">1.准备工作</a></blockquote></li>
+			<li><blockquote><a href="#sjfz">2.分钟(读写)</a></blockquote></li>
+			<li><blockquote><a href="#sjfz">3.分钟2(读写)</a></blockquote></li>
+			<li><blockquote><a href="#sjfz">4.小时(读写)</a></blockquote></li>
+			<li><blockquote><a href="#sjfz">5.小时2(读写)</a></blockquote></li>
+			<li><blockquote><a href="#sj24xs">6.时间24小时制(读写)</a></blockquote></li>
+			<li><blockquote><a href="#sjbgb">7.时间被改变(事件)</a></blockquote></li>
+		</ol>
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left"><a name="shijian"></a>
+<h2>时间选择器实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<h2>一、时间选择器</h2>
+<p align="left">&nbsp;</p>
+	
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font>	
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">拖放一个<b>“按钮”</b>和<b>“时间选择器”</b>。</p>
+	<p align="left">拖放完毕后保存布局即可。</p>
+		<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+	<p align="left"><img border="0" src="sj_images/141.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="sjfz"></a>
+<font style="font-size: 12pt; font-weight:700">● 小时(读写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 小时2(读写)</font><br><font style="font-size: 12pt; font-weight:700">● 分钟(读写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 分钟2(读写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“小时(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本属性可以设置当前<b>“时间选择器”</b>的小时。</p>
+	<p align="left">同名读属性即读取当前的小时。</p>
+	<p align="left"><b>“小时2”</b>和<b>“小时”</b>不同之处在于，<b>“小时2”</b>用于安卓API23（即安卓6.0）之后的版本。</p>
+	<p align="left"><img border="0" src="sj_images/142.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“分钟(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本属性可以设置当前<b>“时间选择器”</b>的分钟。</p>
+	<p align="left">同名读属性即读取当前的分钟。</p>
+	<p align="left"><b>“分钟2”</b>和<b>“分钟”</b>不同之处在于，<b>“分钟2”</b>用于安卓API23（即安卓6.0）之后的版本。</p>
+	<p align="left"><img border="0" src="sj_images/143.png" ></p>
+</blockquote>	
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">直接在<b>“按钮1”</b>被点击下，首先可利用<b>“取安卓系统版本()”</b>方法，判断当前系统版本号，是否<b>“大于等于23”</b>。</p>
+	<p align="left">如果<b>“大于等于23”</b>则用2方法，否则相反。</p>
+	<p align="left"><img border="0" src="sj_images/144.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">可以看到，点击<b>“按钮1”</b>后，当前时间变成了12点钟。</p>
+	<p align="left"><img border="0" src="sj_images/145.gif" >
+    </p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="sj24xs"></a>
+<font style="font-size: 12pt; font-weight:700">● 时间24小时制(读写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“时间24小时制(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本属性可以设置当前<b>“时间选择器”</b>的是否用24小时格式显示。</p>
+	<p align="left">属性值为真为24小时，否则为12小时。</p>
+	<p align="left">同名读属性，即读取当前是否为24小时显示。</p>
+	<p align="left"><img border="0" src="sj_images/146.png" ></p>
+</blockquote>	
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">直接利用<b>“取反”</b>方法，赋值给当前写属性即可。</p>
+	<p align="left"><img border="0" src="sj_images/147.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">可以看到，点击<b>“按钮1”</b>后，当前时间会在12小时和24小时之间进行切换。</p>
+	<p align="left"><img border="0" src="sj_images/148.gif" >
+    </p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="sjbgb"></a>
+<font style="font-size: 12pt; font-weight:700">● 时间被改变(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">时间被选择后会触发本事件，并返回当前<b>“小时”</b>和<b>“分钟”</b></p>
+	<p align="left"><img border="0" src="sj_images/149.png" ></p>
+</blockquote>	
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">添加<b>“时间选择器_时间被改变”</b>事件，指定来源对象后，就可以直接取出当前选择后的时间。</p>
+	<p align="left"><img border="0" src="sj_images/150.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">可以看到，当前时间选择器被修改后，时间同步到了<b>“按钮1”</b>的标题上。</p>
+	<p align="left"><img border="0" src="sj_images/151.gif" >
+    </p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

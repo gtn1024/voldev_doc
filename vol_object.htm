@@ -1,0 +1,423 @@
+﻿<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<p align="left"><b><font style="font-size: 14pt">在火山平台中进行面向对象的程序设计</font></b></p>
+<p align="left">注: 基于火山安卓平台举例</p>
+<p align="left">[<a href="object.htm">上一章</a>] [<a href="homeland.htm">下一章</a>]</p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700"><a name="package_declare"></a></font>
+<font style="font-size: 12pt; font-weight:700">● 定义包</font></p>
+<p align="left">[<a href="grammar.htm#package_declare">语法手册中的说明信息</a>]</p>
+<p align="left">每新建一个火山程序,都会在首部固定有一个不可被删除的包定义成员:</p>
+<blockquote>
+	<p align="left"><img border="0" src="images/b3.png" width="221" height="70"></p>
+</blockquote>
+<p align="left">在“<b>包名</b>”列中直接填入你所自己的包名即可。名称可以随意填写，可以与其它火山程序所使用的包名一致，此时说明这些火山程序均位于同一个包中，也就是说，这些相同包名的火山程序中定义的类均具有相同的包名前缀。</p>
+<p align="left">包名中间可以包括<b>句点</b>，通常使用的名称格式为以组织或事物的从大到小排列，譬如：“湖北.武汉.递归公司”、“递归公司.软件开发部”、“火山系统.安卓平台.测试程序”等等，这些都可以，自己维护这些代码时觉得清晰易懂就行了。</p>
+<p align="left">如果不需要使用当前火山程序又不想把它从工程中删除，可以在名称前面加上“<b>//</b>”文本（“//”为火山系统的注释引导文本）将其在编译时屏蔽掉：</p>
+<blockquote>
+	<p align="left"><img border="0" src="images/b4.png" width="348" height="75"></p>
+</blockquote>
+<p align="left">在程序中的所有各类成员定义表格中均可进行类似处理，只要在名称前加上“<b>//</b>”文本，那么该定义实体及其中的所有内容在编译时就会被全部屏蔽掉。</p>
+<p align="left">在“<b>属性名</b>”和“<b>属性值</b>”列中，可以填入对应当前所定义成员的<b>系统属性</b>（以‘@’字符开头，除非特意指出，一般用户无需了解）或者<b>用户属性</b>（仅针对数据类型为<b>类</b>的<b>成员变量</b>/<b>局部变量</b>有效，由该类的<b>可写成员属性</b>提供，见后）。</p>
+<p align="left">　</p>
+<p align="left"><font style="font-size: 12pt; font-weight:700">
+<a name="class_declare"></a>● 定义类</font></p>
+<p align="left">[<a href="grammar.htm#class_declare">语法手册中的说明信息</a>]</p>
+<p align="left">在编辑器中点击鼠标右键，选择“插入-&gt;插入新类”即可在当前程序所处包中插入一个新的类：</p>
+<blockquote>
+	<p align="left"><img border="0" src="images/b5.png" width="321" height="84"></p>
+</blockquote>
+<p align="left">同样，在“<b>类名</b>”列中填入你所期望的名字就行了，与包名不同的是：</p>
+<blockquote>
+	<p align="left">1、同一个包中不允许出现相同的类名；</p>
+	<p align="left">2、类名中不允许使用句点。实际上包名是唯一允许中间使用句点的名称。</p>
+</blockquote>
+<p align="left">如果你的类使用了基础类，同样在“<b>基础类</b>”列中填入该类的名称即可：</p>
+<blockquote>
+	<p align="left"><img border="0" src="images/b6.png" width="460" height="79"></p>
+</blockquote>
+<p align="left">此时,当前类将自动继承所有来自所指定基础类的内容，如果该基础类还有基础类，将一并继承过来。</p>
+<p align="left">类定义中还有一个“<b>公开</b>”列，用作定义类对外提供的访问权限。它是一个勾选列，被勾选表示为真，未被勾选表示为假。下同。</p>
+<p align="left">如果你勾选了“<b>公开</b>”，那么这个类在你的程序的任意地方都可以被使用，如果你没有勾选，那么这个类只能在它所处包的内部程序中被使用。</p>
+<p align="left">譬如，如果保持前面的“<b>保温电水壶类</b>”的<b>公开</b>列被勾选，那么下面的代码就可以正常使用：</p>
+<blockquote>
+	<p align="left">
+	<img border="0" src="images/b7.png" width="540" height="231"></p>
+</blockquote>
+<p align="left">如果你将“<b>保温电水壶类</b>”的<b>公开</b>列取消勾选,那么由于“<b>测试类</b>”所处的包“<b>火山.测试</b>”与“<b>保温电水壶类</b>”所处的包“<b>湖北.武汉.甲公司</b>”不一致，箭头所指向的代码就会编译失败。</p>
+<p align="left">当然，如果“<b>测试类</b>”也位于“<b>湖北.武汉.甲公司</b>”包里面，则还是可以访问的。</p>
+<p align="left"><b>类</b>在程序中的使用方法和基本数据类型譬如“<b>整数</b>”、“<b>文本型</b>”是一样的，任何可以使用基本数据类型的位置都可以使用<b>类</b>。</p>
+<p align="left">两者之间唯一的不同在于：<b>类</b>有子成员，而基本数据类型没有子成员。</p>
+<p align="left">譬如上图中的代码定义了一个“<b>保温电水壶类</b>”的“<b>我的电水壶</b>”对象实例，那么我们就可以使用“<b>我的电水壶.壶盖</b>”访问它的“<b>壶盖</b>”成员变量，使用“<b>我的电水壶.烧水（）</b>”调用它的“<b>烧水</b>”方法。</p>
+<p align="left">在类的对象实例名称和欲访问的子成员名称之间使用<b>句点</b>分隔即可，前面指定具体访问哪一个对象实例（也就是说，假设有很多个电水壶，我要去使用哪一个），后面指定访问这个对象实例的具体哪个子成员。</p>
+<p align="left">　</p>
+<p align="left"><font style="font-size: 12pt; font-weight:700">
+<a name="element_var_declare"></a></font>
+<font style="font-size: 12pt; font-weight:700">● 定义类成员变量</font></p>
+<p align="left">[<a href="grammar.htm#element_var_declare">语法手册中的说明信息</a>]</p>
+<p align="left"><b>成员变量</b>用作类存储其数据时使用。</p>
+<p align="left">在类中点击鼠标右键，选择“插入-&gt;插入新成员/局部变量”即可在当前类中插入一个新的成员变量：</p>
+<blockquote>
+	<p align="left"><img border="0" src="images/b8.png" width="475" height="74"></p>
+</blockquote>
+<p align="left">在“<b>成员变量名</b>”列中填入该成员变量的名称，要求在其所处类及其所处类的所有基础类中均唯一。</p>
+<p align="left">在“<b>类型</b>”列中填入该成员变量的数据类型，可以是基本数据类型譬如“<b>整数</b>”、“<b>文本型</b>”等，也可以是<b>类</b>。</p>
+<p align="left">“<b>公开</b>”列用作定义类成员变量对外提供的访问权限：如果“<b>公开</b>”设置为真，表明该成员变量在所有程序位置都可以被访问，如果为假，表明该成员变量只能在<b>其所处类</b>或者<b>其所处类的继承类</b>中被访问。</p>
+<p align="left">譬如：前面“<b>电水壶类</b>”中的“<b>壶盖</b>”和“<b>壶体</b>”成员变量：</p>
+<blockquote>
+	<p align="left"><img border="0" src="images/b9.png" width="524" height="95"></p>
+</blockquote>
+<p align="left">由于其“<b>公开</b>”未被设置，因此其只能在“<b>电水壶类</b>”及其继承类“<b>保温电水壶类</b>”中被访问，在程序中的其它位置均无法访问则两个成员变量。</p>
+<p align="left">其它类别的类成员（譬如方法、属性、事件）的“<b>公开</b>”列均是本作用，下面就不再累述。</p>
+<p align="left">成员变量的“<b>静态</b>”列如果被勾选，表明该变量为<b>静态成员变量</b>。静态成员变量有以下特点：</p>
+<blockquote>
+	<p align="left">1、静态成员变量并未存放在类的对象实例中，而只存放在类本身中，所以无论定义多少类对象实例，静态成员变量都只存在一份；</p>
+	<p align="left">2、由于静态成员变量存放在类本身中，所以在其所处类/继承类外部需要以“<b>所处类名.静态成员变量名</b>”的方式访问。</p>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/b10.png" width="555" height="486"></p>
+	</blockquote>
+	<p align="left">如上图,在“<b>测试类1</b>”中定义了一个名为“<b>静态成员变量1</b>”的成员变量，在测试类2中红色箭头所指向的代码是正确的访问方式，黄色箭头所指向的代码虽然也能被编译器所接受，但是由于不是推荐的访问方式会提示警告。</p>
+	<p align="left">无论在“<b>测试方法</b>”方法中定义了几个“<b>测试类1</b>”的对象实例（“对象1”、“对象2”），“<b>测试类1</b>”的“<b>静态成员变量1</b>”始终只存在一份，因此红色和黄色箭头指向的代码所访问的“<b>静态成员变量1</b>”都是同一个。</p>
+</blockquote>
+<p align="left">成员变量的“<b>参考</b>”列如果被勾选，表明该变量为<b>参考变量</b>。参考变量有以下特点：</p>
+<blockquote>
+	<p align="left">1、参考变量本身并不会定义对象实例，而是用作保存指向其它对象实例的“<b>参考</b>”，访问这个变量等于访问这个变量所参考到的另一个对象实例；</p>
+	<p align="left">2、由于其本身并未定义对象实例，因此参考变量在使用前必须首先赋值（即赋予其所参考到的对象实例）。</p>
+	<p align="left">想一想我们常用的耳机的插头，它就是“<b>参考变量</b>”的一个例子：当它连接电脑时，我们可以听到电脑播放的声音，当它连接手机时，我们可以听到手机播放的声音，这个“连接”动作就代表了对插头这个“<b>参考变量</b>”进行赋值（
+		指定其参考到电脑或手机）。当它未连接任何设备时（即未参考到任何对象实例时），当然什么声音都听不到。</p>
+</blockquote>
+<p align="left">请查看如下代码（通过局部变量演示，两者“<b>参考</b>”属性的作用是一样的）：</p>
+<blockquote>
+	<p align="left">
+	<img border="0" src="images/b11.png" width="497" height="334"></p>
+</blockquote>
+<p align="left">首部定义了“<b>电水壶对象1</b>”和“<b>电水壶对象2</b>”两个“电水壶类”的对象实例，然后定义了一个名为“<b>电水壶参考对象</b>”的“电水壶类”参考变量。</p>
+<p align="left">两者的区别在于：前者创建了真实存在的对象实例，而后者仅仅用作存放一个参考。</p>
+<p align="left">由于“<b>电水壶对象1</b>”和“<b>电水壶对象2</b>”存在对象实例，因此后面调用其“<b>烧水</b>”方法不会有问题，而紧跟其后的“<b>电水壶参考对象.烧水</b>（）”（红箭头指向）调用就会被编译器报错，因为其尚未设置所欲参考到的对象实例。</p>
+<p align="left">在后面通过将“<b>电水壶对象1</b>”赋值过去，从而将“<b>电水壶参考对象</b>”参考到了“<b>电水壶对象1</b>”,因此再调用“<b>电水壶参考对象.烧水</b>（）”（青箭头指向）就不会出错了，其等效于调用了“<b>电水壶对象1.烧水</b>（）”。</p>
+<p align="left"><b><font color="#FF0000">注意</font></b>，最容易犯的错误是遗漏设置必要的“参考”属性，如下图：</p>
+<blockquote>
+	<p align="left">
+	<img border="0" src="images/b53.png" width="472" height="425"></p>
+	<p align="left">
+	“方法1”和“方法2”中的“变量1”在定义时均没有设置“参考”属性，这样编译器会自动为其创建一个“测试类”对象实例，但是所创建的该对象实例在程序中根本没有被使用，从而导致程序执行效率降低，还占用了不必要的内存空间。</p>
+	<p align="left">所以每当我们定义一个数据类型为类的变量时，一定要检查是否需要为其设置“参考”属性
+	，判断方法就是编译器自动创建的对象实例有没有在程序中被使用到，如果没有被使用到，就一定要设置“参考”属性。</p>
+</blockquote>
+<p align="left"><b>初始值</b>列仅用作给<b>基本数据类型</b>的变量赋予初始值，譬如：</p>
+<blockquote>
+	<p align="left">
+	<img border="0" src="images/b12.png" width="469" height="163"></p>
+</blockquote>
+<p align="left">具体可用的基本数据类型及初始值格式见语法手册.</p>
+<p align="left">　</p>
+<p align="left"><font style="font-size: 12pt; font-weight:700">
+<a name="const_declare"></a></font>
+<font style="font-size: 12pt; font-weight:700">● 定义类成员常量</font></p>
+<p align="left">[<a href="grammar.htm#const_declare">语法手册中的说明信息</a>]</p>
+<p align="left"><b>成员常量</b>用作类存储其恒定不变的数据时使用。</p>
+<p align="left">“<b>不可被修改的变量</b>”被称为<b>“常量”</b>，其也是<b>成员变量</b>的一种，因此在前面就没有单独阐述。</p>
+<p align="left">在类中点击鼠标右键，选择“插入-&gt;插入新常量”即可在当前类中插入一个新的成员常量：</p>
+<blockquote>
+	<p align="left">
+	<img border="0" src="images/b13.png" width="352" height="75"></p>
+</blockquote>
+<p align="left">常量与变量有以下不同之处:</p>
+<blockquote>
+	<p align="left">1、常量只能在定义时被赋予初始值，不能在程序中被修改；</p>
+	<p align="left">2、常量的数据类型只能为基本数据类型（注：还可以为常量类，但普通用户不需了解）；</p>
+	<p align="left">3、常量“<b>静态</b>”属性固定为真，即：常量并未存放在类的对象实例中，而只存放在类本身中，所以无论定义多少类对象实例，常量都只存在一份；</p>
+	<p align="left">4、由于常量的数据类型只能为基本数据类型，所以“<b>参考</b>”属性对于常量来说没有意义。</p>
+</blockquote>
+<p align="left">常量的访问方式与静态成员变量的访问方式一样，在其所处类/继承类外部需要以“<b>所处类名.常量名</b>”的方式访问。</p>
+<p align="left">常量一般用作定义一些不会在程序中被修改的恒定值，譬如圆周率的PI。这样既能避免多次输入出错，还能提供程序的运行效率（便于优化）。</p>
+<p align="left">下图是在火山基本库的“数学运算类”中定义的2个数学常量，在需要使用这些值的地方可以使用常量来代替（如“数学运算类.E”、“数学运算类.PI”），避免输入错误：</p>
+<blockquote>
+	<p align="left">
+	<img border="0" src="images/b14.png" width="834" height="165"></p>
+</blockquote>
+<p align="left">　</p>
+<p align="left"><font style="font-size: 12pt; font-weight:700">● 定义类成员方法</font></p>
+<p align="left">[<a href="grammar.htm#method_declare">语法手册中的说明信息</a>]</p>
+<p align="left"><b>成员方法</b>用作类对外提供其所支持的功能时使用。</p>
+<p align="left">在类中点击鼠标右键，选择“插入-&gt;插入新方法”即可在当前类中插入一个新的成员方法：</p>
+<blockquote>
+	<p align="left">
+	<img border="0" src="images/b15.png" width="418" height="87"></p>
+</blockquote>
+<p align="left">在“<b>方法名</b>”列中填入该方法的名称，要求在其所处类及其所处类的所有基础类中均唯一。</p>
+<p align="left">方法的“<b>类别</b>”列可以选择“<b>通常</b>/<b>属性读</b>/<b>属性写</b>/<b>定义事件</b>/<b>接收事件</b>”5类，本处只讨论“<b>通常</b>”类别，其余4种在后面讨论<b>属性</b>和<b>事件</b>成员时再阐述。</p>
+<p align="left">“<b>静态</b>”列为真的方法与<b>静态成员变量</b>基本类似，在其所处类/继承类外部需要以“<b>所处类名.方法名</b>”的方式访问。两者之间不同的是：在<b>静态方法</b>内部，只能访问其所处类或者其所处类的基础类中的成员常量或者静态成员变量。譬如：</p>
+<blockquote>
+	<p align="left">
+	<img border="0" src="images/b16.png" width="496" height="403"></p>
+</blockquote>
+<p align="left">其中定义了一个名为“<b>测试方法</b>”的静态方法，其中第一行代码同时访问了类中的“<b>静态变量1</b>”和“<b>常量1</b>”，这是被允许的，然后后面的一行代码访问了非静态变量“变量1”（红色箭头指向处），这是不被允许的，编译器将报错。</p>
+<p align="left">“<b>返回值类型</b>”列指定了方法返回值的数据类型。如果指定了非空数据类型，则方法中就必须调用“<b>返回</b>”关键字语句来返回对应数据类型的数据。</p>
+<blockquote>
+	<p align="left">
+	<img border="0" src="images/b17.png" width="429" height="121"></p>
+</blockquote>
+	<p align="left">注意，为了让用户使用起来更方便，火山程序对一种特定格式静态方法的调用方式进行了优化：</p>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/b52.png" width="486" height="463"></p>
+		<p align="left">
+		譬如上面的程序在“测试类”中定义了一个名为“方法1”的静态方法，它第一个参数的数据类型为“测试类”自身，那么在程序中其它位置调用这个方法时，可以采用以下两种方式：</p>
+		<blockquote>
+			<p align="left">1、测试类.方法1 (变量1, 1)</p>
+			<p align="left">2、变量1.方法1 (1)</p>
+			<p align="left">
+			第一种方式是标准的静态方法访问方式，第二种就是优化后的方式，其第一个参数被移动到方法访问对象上，这种方式在编译时将被自动转换为第一种方式。</p>
+		</blockquote>
+		<p align="left">采用这种优化方式的具体要求为：</p>
+		<blockquote>
+			<p align="left">静态方法第一个参数的数据类型必须为其所处类本身。</p>
+		</blockquote>
+		<p align="left">只要满足这个要求，该静态方法被调用时第一个参数就可以被移动到其方法访问对象上，其后续参数正常填写。</p>
+	</blockquote>
+<p align="left">可以为方法定义一个参数表，用作指定调用此方法时所需要提供的参数：</p>
+<blockquote>
+	<p align="left">
+	<img border="0" src="images/b38.png" width="798" height="160"></p>
+</blockquote>
+<p align="left">需要注意的是:</p>
+<blockquote>
+	<p align="left">1、数据类型为<b>类</b>的参数始终以参考方式传递对象。譬如前面的“<b>参数1</b>”<b>，</b>如果在外部调用“<b>测试方法 
+		（电水壶对象1， 123）</b>”，那么“<b>参数1</b>”将是指向“<b>电水壶对象1”</b>的参考，操作“<b>参数1</b>”等效于操作“<b>电水壶对象1”</b>；</p>
+	<p align="left">2、调用方法时，必须加上用小括号括住的参数表，即使该方法的参数表为空，也必须加上用小括号括住的空参数表。如，假设前面的“<b>测试方法</b>”没有定义任何参数，调用它时也必须使用“<b>测试方法（）</b>”。</p>
+</blockquote>
+<p align="left">　</p>
+<p align="left"><font style="font-size: 12pt; font-weight:700">● 定义类成员属性</font></p>
+<p align="left">[<a href="grammar.htm#element_attr">语法手册中的说明信息</a>]</p>
+<p align="left"><b>成员属性</b>用作表达或修改类的特征时使用。</p>
+<p align="left"><b>成员属性</b>根据其可访问方式分为3类：“<b>可读成员属性</b>”、“<b>可写成员属性</b>”、“<b>可读写成员属性</b>”。</p>
+<p align="left">　</p>
+<p align="left"><b>1、</b>定义“<b>可读成员属性</b>”：</p>
+<blockquote>
+	<p align="left">“<b>可读成员属性</b>”用作支持对属性值的读取。</p>
+	<p align="left">插入一个方法，将其“<b>类别</b>”列设置为“<b>属性读</b>”，然后保证其满足以下格式要求：</p>
+	<blockquote>
+		<p align="left">1、访问权限必须为“<b>公开</b>”；</p>
+		<p align="left">2、不能为静态方法（实际上静态方法也可以用作定义属性，不过这个不需要普通用户掌握，有兴趣可以去查看语法手册）；</p>
+		<p align="left">3、没有参数；</p>
+		<p align="left">4、必须定义有一个返回值，该返回值的数据类型即为该属性的<b>数据类型</b>。</p>
+	</blockquote>
+	<p align="left">譬如以下代码在“<b>测试类</b>”中定义了一个数据类型为“<b>整数</b>”的可读属性“<b>我的属性</b>”：</p>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/b18.png" width="641" height="254"></p>
+	</blockquote>
+	<p align="left">注意：虽然“<b>我的属性</b>”是以成员方法的形式定义的，但是在程序中访问时不能以方法的访问方式“<b>对象.我的属性（）</b>”来访问，而应该以访问“<b>成员变量</b>”的方式来访问，即：“<b>对象.属性名</b>”。</p>
+	<p align="left">如，访问上面可读属性的语句为：</p>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/b19.png" width="444" height="115"></p>
+	</blockquote>
+	<p align="left">其中黄色箭头指向处定义了“<b>测试类</b>”的一个对象实例，红色箭头处读取了其“<b>我的属性</b>”的属性值并将其赋值到“<b>整数变量1</b>”。</p>
+	<p align="left">实际上，读取“<b>测试类对象.我的属性</b>”时，等效于调用了“<b>我的属性</b>”属性读取方法。</p>
+</blockquote>
+<p align="left">　</p>
+<p align="left"><b>2、</b>定义“<b>可写成员属性</b>”：</p>
+<blockquote>
+	<p align="left">顾名思义，“<b>可写成员属性</b>”就是用作支持对属性值的写入。它的定义方式与定义“<b>可读成员属性</b>”类似，只是所定义方法的格式要求不同。</p>
+	<p align="left">插入一个方法，将其“<b>类别</b>”列设置为“<b>属性写</b>”，然后保证其满足以下格式要求：</p>
+	<blockquote>
+		<p align="left">1、访问权限必须为“<b>公开</b>”；</p>
+		<p align="left">2、不能为静态方法（同上）；</p>
+		<p align="left">3、只有一个参数，该参数的数据类型即为该可写属性的<b>数据类型</b>；</p>
+		<p align="left">4、没有返回值。</p>
+	</blockquote>
+	<p align="left">譬如以下代码在“<b>测试类</b>”中定义了一个数据类型为“<b>整数</b>”的可写属性“<b>我的属性</b>”：</p>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/b20.png" width="644" height="311"></p>
+	</blockquote>
+	<p align="left">同样，虽然此处“<b>我的属性</b>”是以成员方法的形式定义的，但是在程序中访问时不能以方法的访问方式“<b>对象.我的属性（欲写入的属性值）</b>”来访问，而应该以访问“<b>成员变量</b>”的方式来访问，即：“<b>对象.属性名 
+		= 欲写入的属性值</b>”。</p>
+	<p align="left">如，访问上面可写属性的语句为：</p>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/b21.png" width="441" height="91"></p>
+	</blockquote>
+	<p align="left">其中黄色箭头指向处定义了“<b>测试类</b>”的一个对象实例，红色箭头处将其“<b>我的属性</b>”的属性值赋值为123。</p>
+	<p align="left">实际上，写入“<b>测试类对象.我的属性</b>”时，等效于调用了“<b>我的属性</b>”属性写入方法。</p>
+	<p align="left">“<b>可写成员属性</b>”还有另外一种访问方式，就是直接在对象的属性表中设置，如：</p>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/b24.png" width="460" height="69"></p>
+	</blockquote>
+	<p align="left">等效于前面通过语句“测试类对象.我的属性 = 123”对该属性的写入。</p>
+	<p align="left">操作小提示：要想知道当前对象有哪些“<b>可写属性</b>”，在“<b>属性名</b>”列上<b>按下空格</b>即可：</p>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/b25.png" width="450" height="82"></p>
+	</blockquote>
+	<p align="left">　</p>
+</blockquote>
+<p align="left"><b>3、</b>定义“<b>可读写成员属性</b>”：</p>
+<blockquote>
+	<p align="left">很容易理解，“<b>可读写成员属性</b>”就是既可以<b>被读取</b>又可以<b>被写入</b>的属性，定义它的方式也很简单，就是同时定义名称相同的<b>属性读</b>和<b>属性写</b>方法，如：</p>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/b22.png" width="646" height="436"></p>
+	</blockquote>
+	<p align="left">其中黄色箭头指向定义了“<b>我的属性</b>”的<b>属性读</b>方法，红色箭头指向定义了“<b>我的属性</b>”的<b>属性写</b>方法。</p>
+	<p align="left">前面已经讲过，“<b>可读属性</b>”用作支持对类属性的<b>读取</b>操作，“<b>可写属性</b>”用作支持对类属性的<b>写入</b>操作，编译器会根据当前操作是读取还是写入自动调用对应的<b>属性读/写方法</b>。当以以下方式对“<b>我的属性</b>”进行访问时：</p>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/b23.png" width="437" height="137"></p>
+	</blockquote>
+	<p align="left">黄色箭头指向处将调用“<b>我的属性</b>”的属性读方法，而红色箭头指向处将调用“<b>我的属性</b>”的属性写方法。</p>
+	<p align="left">定义“<b>可读写成员属性</b>”时需要注意的是：</p>
+	<blockquote>
+		<p align="left">“<b>属性读方法</b>”和“<b>属性写方法</b>”的数据类型必须一致，也就是说：“<b>属性读方法</b>”的返回值与同名“<b>属性写方法</b>”第一个参数的数据类型必须一致：</p>
+		<blockquote>
+			<p align="left">
+			<img border="0" src="images/b26.png" width="646" height="432"></p>
+		</blockquote>
+		<p align="left">如图中黄色和红色箭头所指向的数据类型必须一致。</p>
+		<p align="left">　</p>
+	</blockquote>
+</blockquote>
+<p align="left"><b>4、</b>定义“<b>可读写成员变量属性</b>”：</p>
+<blockquote>
+	<p align="left">有时候我们想直接把一个“<b>成员变量</b>”同时定义为“<b>成员属性</b>”，譬如前面的例子所定义的“<b>我的属性</b>”也可以这样定义：</p>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/b27.png" width="482" height="72"></p>
+	</blockquote>
+	<p align="left">具体方法就是为该成员变量设置属性值为<b>真</b>的“<b>@属性变量</b>”系统属性（系统属性是指以'<b>@</b>'字符开头的系统预定义属性）即可。</p>
+	<p align="left">操作小提示：要想知道当前对象有哪些“<b>系统属性</b>”，在“<b>属性名</b>”列上<b>输入'@'字符</b>即可：</p>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/b28.png" width="490" height="226"></p>
+	</blockquote>
+	<p align="left">注意：这些系统属性，除了在本文档中提到的，一般用户无需了解。</p>
+	<p align="left">此处定义的“<b>我的属性</b>”，与前面通过“<b>属性读/写方法</b>”定义的“<b>我的属性</b>”没有任何区别，同样可以在对象的属性表中使用：</p>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/b24.png" width="460" height="69"></p>
+	</blockquote>
+	<p align="left">那么问题来了，既然可以这么简单地定义成员属性，那么为什么还要那么麻烦去通过“<b>属性读/写方法</b>”来定义呢？</p>
+	<p align="left">道理很简单：通过“<b>属性读/写方法</b>”来定义可以使用程序代码对属性的<b>读/写</b>操作进行具体控制，还可以进行一些额外的特定操作，而定义“<b>成员
+		变量属性</b>”就没办法达到这个目的了，本处两者效果一致只是一个特例。</p>
+	<p align="left">　</p>
+</blockquote>
+<p align="left"><b>5、</b>定义“<b>只读成员属性</b>”和“<b>只写成员属性</b>”：</p>
+<blockquote>
+	<p align="left">定义“<b>只读成员属性</b>”和“<b>只写成员属性</b>”很简单：</p>
+	<blockquote>
+		<p align="left">只提供了“<b>属性读方法</b>”的属性就是<b>只读属性</b>，只提供了“<b>属性写方法</b>”的属性就是<b>只写属性</b>。</p>
+	</blockquote>
+	<p align="left">如果想对“<b>只读成员属性</b>”进行写操作，或者想对“<b>只写成员属性</b>”进行读操作，编译器都会报错：</p>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/b29.png" width="684" height="744"></p>
+	</blockquote>
+	<p align="left">如上图，在“<b>测试类</b>”中定义了名为“<b>我的只读属性</b>”的只读属性（未提供该名称的属性写方法）和名为“<b>我的只写属性</b>”的只写属性（未提供该名称的属性读方法），那么在黄色和红色箭头所指向处的代码在编译时都会报错。</p>
+	<p align="left">可以通过此方式对属性的读写权限进行分别控制。</p>
+	<p align="left">　</p>
+</blockquote>
+<p align="left"><font style="font-size: 12pt; font-weight:700">● 定义类成员事件</font></p>
+<p align="left">[<a href="grammar.htm#element_event">语法手册中的说明信息</a>]</p>
+<p align="left"><b>成员事件</b>用来类对外发送通知时使用。</p>
+<p align="left">一个很简单的例子：用作“<b>按钮</b>”的类必须在用户单击按钮时向外部发送“<b>被单击</b>”事件，用作“<b>时钟</b>”的类必须向外部定时发送“<b>时钟周期</b>”事件，等等。</p>
+<p align="left">类的其它三类“<b>成员变量</b>”、“<b>成员属性</b>”、“<b>成员方法</b>”都是被动接受来自外部的访问，而“<b>成员事件</b>”是主动向外部发送通知，这是两者之间的最主要不同。</p>
+<p align="left">　</p>
+<p align="left"><b>1、</b>定义<b>“成员事件”：</b></p>
+<p align="left">插入一个方法，将其“<b>类别</b>”列设置为“<b>定义事件</b>”，然后保证其满足以下格式要求：</p>
+<blockquote>
+	<p align="left">1、访问权限必须为“<b>公开</b>”；</p>
+	<p align="left">2、不能为静态方法；</p>
+	<p align="left">3、返回值必须为整数；</p>
+	<p align="left">4、方法体必须为空。</p>
+</blockquote>
+<p align="left"><b>事件定义方法</b>对参数表没有要求，用户可以根据自己的需要随意定义。</p>
+<p align="left">譬如我们先前所定义的“<b>电水壶类</b>”中的“<b>水烧开警告</b>”事件：</p>
+<blockquote>
+	<p align="left">
+	<img border="0" src="images/b30.png" width="620" height="137"></p>
+</blockquote>
+<p align="left">　</p>
+<p align="left"><b>2、在类中发送事件：</b></p>
+<p align="left">在类中的代码内，当需要发送事件时，直接调用该事件的“<b>事件定义方法</b>”即可，如前面例子中的：</p>
+<blockquote>
+	<p align="left">
+	<img border="0" src="images/b31.png" width="603" height="172"></p>
+</blockquote>
+<p align="left">当调用“<b>事件定义方法</b>”时,如果该事件定义方法上挂接了对应的“<b>事件接收方法</b>”（见下），会自动去调用该“<b>事件接收方法</b>”并返回其所返回的整数值，否则会直接返回整数值0。</p>
+<p align="left">　</p>
+<p align="left"><b>3、接收其它类所发送过来的事件：</b></p>
+<p align="left">要想接收其它类所发送的事件，必须首先定义相应的<b>事件接收方法</b>，譬如以下代码在“<b>测试类</b>”中定义了一个“<b>电水壶类</b>”的对象：</p>
+<blockquote>
+	<p align="left">
+	<img border="0" src="images/b32.png" width="682" height="146"></p>
+</blockquote>
+<p align="left">想要接收其“<b>水烧开警告</b>”事件，需要如下操作：</p>
+<p align="left">鼠标右键单击“<b>电水壶对象</b>”的定义行：</p>
+<blockquote>
+	<p align="left">
+	<img border="0" src="images/b33.png" width="659" height="524"></p>
+</blockquote>
+<p align="left">选择其中的“<b>添加电水壶对象的事件接收方法</b>”菜单项：</p>
+<blockquote>
+	<p align="left">
+	<img border="0" src="images/b34.png" width="704" height="471"></p>
+</blockquote>
+<p align="left">再选择其中的“<b>电水壶类_水烧开警告</b>”，然后单击“<b>添加</b>”按钮，会自动在程序中插入对应的事件接收方法：</p>
+<blockquote>
+	<p align="left">
+	<img border="0" src="images/b35.png" width="1070" height="213"></p>
+</blockquote>
+<p align="left">当然，你也可以自己手工创建并填写符合此格式的方法，效果是一样的。</p>
+<p align="left">查看上面所生成的“<b>事件接收方法</b>”，可以发现它的格式要求：</p>
+<blockquote>
+	<p align="left">1、方法名称必须为：“事件定义方法所处类名”+下划线+“事件定义方法名称”；</p>
+	<p align="left">2、不能为静态方法；</p>
+	<p align="left">3、方法的第一个参数必须为固定的“<b>来源对象</b>”参数，其数据类型为发送事件的类，用作提供具体是哪个对象发送过来的事件；</p>
+	<p align="left">4、方法的第二个参数必须为固定的“<b>标记值</b>”参数，其数据类型为整数，用作动态挂接事件时使用（见后）；</p>
+	<p align="left">5、方法的后续参数表必须与对应的“<b>事件定义方法</b>”一致，用作提供在事件定义方法所处类中发送事件（调用该事件定义方法）时所传递过来的具体参数值；</p>
+	<p align="left">6、方法的返回值必须为整数，此返回值将被传递回在事件定义方法所处类中调用该事件定义方法的调用方。</p>
+</blockquote>
+<p align="left">一旦为<b>类成员变量</b>对象的“<b>事件定义方法</b>”定义了对应的“<b>事件接收方法</b>”，那么该事件就被自动挂接到了此接收方法上，在事件定义方法所处类中一旦调用该“<b>事件定义方法</b>”，此“<b>事件接收方法</b>”就会被自动调用。</p>
+<p align="left">具体例程请参见系统安装目录的“samples\beginner\beginner.vsln”解决方案中的“<b>火山面向对象设计</b>”项目<b>。</b></p>
+<p align="left">附：这种特性是不是比其它编程语言更强大？不再是只有在被设计窗体上的窗口组件才能发送事件了，也不再需要为了让其能发送事件去开发类似“时钟”这样的哑窗口组件了。在火山中，任何代码位置处的<b>对象</b>均可以发送事件。</p>
+<p align="left">　</p>
+<p align="left"><b>4、动态挂接其它类所发送过来的事件：</b></p>
+<p align="left">如前所述，一旦为<b>类成员变量</b>对象的“<b>事件定义方法</b>”定义了对应的“<b>事件接收方法</b>”，那么该事件就被自动挂接到了当前类中的对应“<b>事件接收方法</b>”上，但是其它代码位置处对象的事件是不会自动挂接到当前类中的，譬如下面代码：</p>
+<blockquote>
+	<p align="left">
+	<img border="0" src="images/b36.png" width="680" height="146"></p>
+</blockquote>
+<p align="left">在“<b>测试方法</b>”中定义了一个“<b>电水壶类</b>”的局部变量对象，此时该对象上的“<b>水烧开警告</b>”事件是不会自动挂接到当前类的“<b>电水壶类_水烧开警告</b>”事件接收方法上的。也就是说，当前类此时将无法接收到来自此“<b>局部电水壶对象</b>”的“<b>水烧开警告</b>”事件。</p>
+<p align="left">如果需要接收该局部变量对象的事件，必须调用“<b>挂接事件</b>”关键字明确挂接其事件到当前类：</p>
+<blockquote>
+	<p align="left">
+	<img border="0" src="images/b37.png" width="692" height="177"></p>
+</blockquote>
+<p align="left">“<b>挂接事件（局部电水壶对象）</b>”语句被执行后，此“<b>局部电水壶对象</b>”的“<b>水烧开警告</b>”事件就被挂接到了当前类的“<b>电水壶类_水烧开警告</b>”事件接收方法上，以后当前类就可以接收到来自该对象的“<b>水烧开警告</b>”事件了。</p>
+<p align="left">在调用“<b>挂接事件</b>”关键字时可以额外再提供一个标记值参数，如：“<b>挂接事件（局部电水壶对象，123）</b>”，此时该“<b>局部电水壶对象</b>”一旦发送事件，事件接收方法的“<b>标记值</b>”参数将接收到此处所提供的标记值“<b>123</b>”，便于程序中对此事件进行特定处理。</p>
+
+<p align="left">&nbsp;</p>
+
+</body>
+
+</html>

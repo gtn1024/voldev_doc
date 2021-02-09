@@ -1,0 +1,194 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		  <li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new3')" >一.单选组合框<span>(可收缩)</span></h6></li>
+		<ol id="new3">
+    		<li><blockquote><a href="#dxzhk">1.准备工作</a></blockquote></li>
+    		<li><blockquote><a href="#dxzdxk">2.选中单选框</a></blockquote></li>
+    		<li><blockquote><a href="#dqbxzdxkid">3.取被选中单选框ID</a></blockquote></li>
+    		<li><blockquote><a href="#dqbxzdxk">4.取被选中单选框</a></blockquote></li>
+    		<li><blockquote><a href="#dqxxz">5.取消选择</a></blockquote></li>
+    		<li><blockquote><a href="#dqxzdxkgb">6.被选中单选框改变(事件)</a></blockquote></li>
+		</ol>
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>单选组合框实例讲解</h2> <a name="dxzhk"></a>
+<p><strong>作者：创世魂</strong></p>
+	<p align="left">&nbsp;</p>
+	<font style="font-size: 12pt; font-weight:700">● 辅助说明</font><br/>
+     	<blockquote>
+		<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<h2>一、单选组合框</h2>
+<p align="left">&nbsp;</p>
+	
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本组件用作管理一组单选框，当单选框位于容器内时，任何时候只能有一个单选框被选中。</p>
+	<p align="left">本组件继承了<b>“线性布局器”</b>的所有方法，因此也可以在其容器内添加其他组件。</p>
+	<p align="left"><img border="0" src="layout_images/39.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">界面准备：</p>
+<blockquote>
+	<p align="left">打开启动类<b>“界面设计器”</b>，设计如下界面。</p>
+	<p align="left">拖放<b>“单选组合框”</b>，在组合框内依次拖放<b>“按钮1”</b>，<b>“单选框1-3”</b>。</p>
+	<p align="left"><img border="0" src="layout_images/36.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+	<a name="dxzdxk"></a>
+<font style="font-size: 12pt; font-weight:700">● 选中单选框</font>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，选中容器内的指定单选框组件。</p>
+	<p align="left">如果参数填写空对象，即清除单选框选中状态。</p>
+	<p align="left"><img border="0" src="layout_images/37.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，执行当前方法选中<b>“单选框2”</b>。</p>
+	<p align="left"><img border="0" src="layout_images/38.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">可看到<b>“单选框2”</b>被选中。</p>
+	<p align="left"><img border="0" src="layout_images/39.gif" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<a name="dxzdxk"></a>
+<font style="font-size: 12pt; font-weight:700">● 取被选中单选框ID</font>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可取出，被选中单选框的组件ID。</p>
+	<p align="left">未选中任何单选框则返回-1。</p>
+	<p align="left"><img border="0" src="layout_images/40.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">通过本方法取出ID后，可通过当前容器的<b>“查找子组件”</b>方法查找到当前单选框组件。</p>
+	<p align="left">最后可调用<b>“内容”</b>属性修改标题。</p>
+	<p align="left"><img border="0" src="layout_images/41.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，可看到<b>“单选框1”</b>的标题被修改。</p>
+	<p align="left"><img border="0" src="layout_images/42.gif" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<a name="dqbxzdxk"></a>
+<font style="font-size: 12pt; font-weight:700">● 取被选中单选框</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可直接取出被选中的<b>“单选框”</b>组件。</p>
+	<p align="left"><img border="0" src="layout_images/43.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">调用当前方法后赋值给<b>“单选框组件”</b>变量。</p>
+	<p align="left">通过<b>“单选框组件”</b>可进行修改标题操作。</p>
+	<p align="left"><img border="0" src="layout_images/44.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，可看到<b>“单选框1”</b>的标题被修改。</p>
+	<p align="left"><img border="0" src="layout_images/45.gif" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<a name="dqxxz"></a>
+<font style="font-size: 12pt; font-weight:700">● 取消选择</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法，可取消容器内被选择的单选框。</p>
+	<p align="left"><img border="0" src="layout_images/46.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接调用本方法即可。</p>
+	<p align="left"><img border="0" src="layout_images/47.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">可看到任意单选框，都会被取消选择。</p>
+	<p align="left"><img border="0" src="layout_images/48.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<a name="dqxzdxkgb"></a>
+<font style="font-size: 12pt; font-weight:700">● 被选中单选框改变(事件)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当组合框内单选框被选中后触发本事件，参数返回被选择的单选框ID。</p>
+	<p align="left"><img border="0" src="layout_images/49.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加<b>“单选组合框_被选中单选框改变”</b>接收事件，可通过返回的ID直接查找当前被选中的单选框。</p>
+	<p align="left"><img border="0" src="layout_images/50.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left"><img border="0" src="layout_images/51.gif" ></p>
+</blockquote>	
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,537 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		 <li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new7')" >一.剪裁区域类<span>(可收缩)</span></h6></li>
+		<ol id="new7">
+			<li><blockquote><a href="#jcqyl">1.本类说明</a></blockquote></li>  
+    		<li><blockquote><a href="#jccjxcj">2.从矩形创建</a></blockquote></li>
+    		<li><blockquote><a href="#jccjxcj2">3.从矩形创建2</a></blockquote></li>
+    		<li><blockquote><a href="#jcqyfz">4.复制</a></blockquote></li>
+    		<li><blockquote><a href="#jcqyfzcj">5.复制创建</a></blockquote></li>
+    		<li><blockquote><a href="#jrjxqy">6.加入矩形区域</a></blockquote></li>
+    		<li><blockquote><a href="#jxbhcs">7.矩形包含测试</a></blockquote></li>
+    		<li><blockquote><a href="#jxbhcs1">8.矩形包含测试2</a></blockquote></li>
+    		<li><blockquote><a href="#jxbxjcs">9.矩形不相交测试</a></blockquote></li>
+    		<li><blockquote><a href="#jxbxjcs2">10.矩形不相交测试2</a></blockquote></li>
+    		<li><blockquote><a href="#jcqyqk">11.清空</a></blockquote></li>
+    		<li><blockquote><a href="#qybxjcs">12.区域不相交测试</a></blockquote></li>
+    		<li><blockquote><a href="#jcqbjjx">13.取边界矩形</a></blockquote></li>
+    		<li><blockquote><a href="#jcqbjjx2">14.取边界矩形2</a></blockquote></li>
+    		<li><blockquote><a href="#jcqbjlj">15.取边界路径</a></blockquote></li>
+    		<li><blockquote><a href="#jcqbjlj2">16.取边界路径2</a></blockquote></li>
+    		<li><blockquote><a href="#jcsfbhzdd">17.是否包含指定点</a></blockquote></li>
+    		<li><blockquote><a href="#jcsfxt">18.是否相同</a></blockquote></li>
+    		<li><blockquote><a href="#jcyd">19.移动</a></blockquote></li>
+    		<li><blockquote><a href="#jcyd2">20.移动2</a></blockquote></li>
+    		<li><blockquote><a href="#jczwjxqy">21.置为矩形区域</a></blockquote></li>
+    		<li><blockquote><a href="#zwjxqy2">22.置为矩形区域2</a></blockquote></li>
+    		<li><blockquote><a href="#zwljjcjg">23.置为路径剪裁结果</a></blockquote></li>
+    		<li><blockquote><a href="#zzhjg">24.置组合结果</a></blockquote></li>
+    		<li><blockquote><a href="#zhhjg2">25.置组合结果2</a></blockquote></li>
+    		<li><blockquote><a href="#zhjxqy">26.组合矩形区域</a></blockquote></li>
+    		<li><blockquote><a href="#zhjxqy2">27.组合矩形区域2</a></blockquote></li>
+    		<li><blockquote><a href="#zhqy">28.组合区域</a></blockquote></li>
+			<li><blockquote><a href="#jcsfwkd">29.是否为空（读）</a></blockquote></li>
+		
+		</ol>
+		
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>剪裁区域类实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+  	<p align="left">简单来说，设置<b>“剪裁区域”</b>后，<b>“绘制内容”</b>时会将<b>“剪裁区域外”</b>的内容剪裁掉。</p><p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+	<p align="left"><img border="0" src="hb_images/395.png" >
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jccjxcj"></a>
+	<font style="font-size: 12pt; font-weight:700">● 从矩形创建</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法简单来说，就是通过四个参数的坐标位置，设置一个矩形剪裁区域。</p>
+	<p align="left">绘制内容时，只能在这个区域内进行绘制。</p>
+	<p align="left">本方法已经在<a href="#zrjcqy"><b>“置入剪裁区域”</b></a>中使用过，可点击跳转过去参考代码。</p>
+	<p align="left"><img border="0" src="hb_images/396.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jccjxcj2"></a>
+	<font style="font-size: 12pt; font-weight:700">● 从矩形创建2</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“从矩形创建”</b>不同之处在于，本方法只有一个<b>“矩形类”</b>参数。</p>
+	<p align="left">需要定义一个<b>“矩形类”</b>变量，设置<b>“上下左右”</b>四个属性来指定矩形区域。</p>
+	<p align="left"><b>“矩形类”</b>的用法在本教程中多次使用，此处不再讲解使用方法。</p>
+	<p align="left"><img border="0" src="hb_images/397.png" ></p>
+</blockquote>
+
+
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jcqyfz"></a>
+	<font style="font-size: 12pt; font-weight:700">● 复制</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">就是将<b>“参数2”</b>剪裁区域的内容赋值给<b>“参数1”</b>。</p>
+	<p align="left">这样<b>“参数1”</b>就拥有了<b>“参数2”</b>所有的内容。</p>
+	<p align="left"><img border="0" src="hb_images/398.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写演示：</p>
+<blockquote>
+	<p align="left">如图所示的编写代码，<b>“剪裁区域2”</b>就会拥有<b>“剪裁区域1”</b>创建的矩形。</p>
+	<p align="left"><img border="0" src="hb_images/399.png" ></p>
+</blockquote>	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jcqyfzcj"></a>
+	<font style="font-size: 12pt; font-weight:700">● 复制创建</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">简单来说，就是将<b>“参数1”</b>的对象复制一份并返回。</p>
+	<p align="left"><b>“返回值”</b>将会拥有<b>“参数1”</b>创建的剪裁区域。</p>
+	<p align="left">可以通过<a href="#zrjcqy"><b>“画板类.置入剪裁区域”</b></a>方法调用本返回值，实现剪裁区域的应用。</p>
+	<p align="left"><img border="0" src="hb_images/400.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jrjxqy"></a>
+	<font style="font-size: 12pt; font-weight:700">● 加入矩形区域</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">简单来说就是将<b>“矩形类”</b>和<b>“当前剪裁区域”</b>进行合并。</p>
+	<p align="left">返回结果为逻辑型，判断<b>“是否不为”</b>空。</p>
+	<p align="left"><img border="0" src="hb_images/401.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义<b>“剪裁区域类”</b>变量，设置参考。</p>
+	<p align="left">定义<b>“矩形类”</b>变量，分别设置<b>“上下左右”</b>四个属性。</p>
+	<p align="left">随后创建一个矩形剪裁区域，赋值给<b>“剪裁区域1”</b>变量。</p>
+	<p align="left">然后调用<b>“剪裁区域类.加入矩形区域”</b>方法，将<b>“剪裁区域1”</b>和<b>“矩形”</b>两个变量分别写入参数内。</p>
+	<p align="left">最后还需要调用<b>“画板对象.置入剪裁区域”</b>方法，将剪裁区域应用到画板上，最后填充颜色做演示。</p>
+	<p align="left"><img border="0" src="hb_images/402.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">可以看到一次性出现两个黄色矩形，证明合并成功。</p>
+	<p align="left"><img border="0" src="hb_images/403.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jxbhcs"></a>
+	<font style="font-size: 12pt; font-weight:700">● 矩形包含测试</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">简单来说就是根据指定的坐标，判断<b>“坐标”</b>形成的<b>“矩形”</b>是否完全在<b>“剪裁矩形”</b>内。</p>
+	<p align="left">如果<b>“矩形”</b>完全在<b>“剪裁矩形”</b>内，则返回<b>“真”</b>，如果没有则返回<b>“假”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/404.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码演示：</p>
+<blockquote>
+	<p align="left">当前代码的执行结果必然为<b>“包含”</b>。</p>
+	<p align="left">如果说修改<b>“矩形包含测试”</b>后两个参数，任意一个大于100，则必然会返回<b>“不包含”</b>。</p>
+	<p align="left">因为我们定义的<b>“剪裁矩形”</b>高度和宽度就是100，如果超过了这个数值，自然就不包含了。</p>
+	<p align="left"><img border="0" src="hb_images/405.png" ></p>
+</blockquote>	
+
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jxbhcs1"></a>
+	<font style="font-size: 12pt; font-weight:700">● 矩形包含测试2</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法与<b>“矩形包含测试”</b>不同之处在于，本方法判断是的是<b>“矩形类”</b>。</p>
+	<p align="left">通过<b>“矩形类”</b>的<b>“上下左右”</b>四个参数可以进行指定一个矩形。</p>
+	<p align="left">本教程中多次用到了<b>“矩形类”</b>，此处不在详细说明。</p>
+	<p align="left"><img border="0" src="hb_images/406.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jxbxjcs"></a>
+	<font style="font-size: 12pt; font-weight:700">● 矩形不相交测试</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，就是用来判断指定的<b>“矩形”</b>是否与<b>“剪裁区域”</b>相交。</p>
+	<p align="left">返回<b>“真”</b>有两种情况。</p>
+	<p align="left">第一：剪裁区域为空。</p>
+	<p align="left">第二：矩形和剪裁区域不相交。</p>
+	<p align="left">除了这两种情况外，其它情况都返回假。</p>
+	<p align="left">代码可参考<a href="#jxbhcs"><b>“矩形包含测试”</b></a>。</p>
+	<p align="left"><img border="0" src="hb_images/407.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jxbxjcs2"></a>
+	<font style="font-size: 12pt; font-weight:700">● 矩形不相交测试2</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“矩形不相交测试”</b>的区别在于，矩形坐标是由<b>“矩形类”</b>指定。</p>
+	<p align="left">返回值的返回条件和<b>“矩形不相交测试”</b>一样。</p>
+	<p align="left"><img border="0" src="hb_images/408.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="qybxjcs"></a>
+	<font style="font-size: 12pt; font-weight:700">● 区域不相交测试</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用是用来判断指定的<b>“剪裁区域”</b>是否与<b>“当前剪裁区域”</b>相交。</p>
+	<p align="left">返回值为<b>“逻辑型”</b>。</p>
+	<p align="left"><b>“返回真”</b>表示两个剪裁区域不想交，如果相交<b>“返回假”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/410.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jcqyqk"></a>
+	<font style="font-size: 12pt; font-weight:700">● 清空</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，就是用来清空<b>“剪裁区域”</b>。</p>
+	<p align="left">调用方法<b>“剪裁区域类.清空()”</b>，参数内填写要清空的剪裁区域对象即可。</p>
+	<p align="left"><img border="0" src="hb_images/409.png" ></p>
+</blockquote>
+
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jcqbjjx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 取边界矩形</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法有点类似于<a href="#jsbwjx"><b>“绘制路径类.计算包围矩形()”</b></a>。</p>
+	<p align="left">不同之处在于，本方法是针对<b>“剪裁区域”</b>进行操作，并且取出来的矩形是以返回值的形式出现。</p>
+	<p align="left">通过<b>“矩形类”</b>的<b>“上下左右”</b>四个读属性，可以取出边界矩形的四个坐标。</p>
+	<p align="left">本方法此处不再演示效果，大家自行测试。</p>
+	<p align="left"><img border="0" src="hb_images/411.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jcqbjjx2"></a>
+	<font style="font-size: 12pt; font-weight:700">● 取边界矩形2</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法与<b>“取边界矩形”</b>不同之处在于，本方法的<b>“边界矩形”</b>的<b>“矩形类”</b>是通过参数返回。</p>
+	<p align="left">代码编写可参考：<a href="#jsbwjx"><b>“绘制路径类.计算包围矩形()”</b></a>。</p>
+	<p align="left"><img border="0" src="hb_images/412.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jcqbjlj"></a>
+	<font style="font-size: 12pt; font-weight:700">● 取边界路径</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法与<b>“取边界矩形”</b>不同之处在于，本方法返回的是<b>“绘制路径类”</b>对象。</p>
+	<p align="left">可以通过调用<b>“画板对象.画路径 ()”</b>方法，将返回的路径绘制出来。</p>
+	<p align="left"><img border="0" src="hb_images/413.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jcqbjlj2"></a>
+	<font style="font-size: 12pt; font-weight:700">● 取边界路径2</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法与<b>“取边界路径”</b>不同之处在于，它是通过参数返回<b>“绘制路径类”</b>对象。</p>
+	<p align="left"><img border="0" src="hb_images/414.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jcsfbhzdd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 是否包含指定点</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用就是根据<b>“坐标”</b>判断<b>“指定点”</b>是否存在于<b>“剪裁区域内”</b>。</p>
+	<p align="left">包含返回<b>“真”</b>，不包含返回<b>“假”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/415.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jcsfxt"></a>
+	<font style="font-size: 12pt; font-weight:700">● 是否相同</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，它的作用就是判断两个<b>“剪裁区域”</b>是否相同。</p>
+	<p align="left">相同返回<b>“真”</b>，不相同返回<b>“假”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/416.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jcyd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 移动</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，就是移动<b>“当前剪裁区域”</b>，移动后返回本对象内。</p>
+	<p align="left">本方法和<a href="#ydlj"><b>“移动路径”</b></a>大同小异，可参考移动路径的代码。</p>
+	<p align="left"><img border="0" src="hb_images/417.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jcyd2"></a>
+	<font style="font-size: 12pt; font-weight:700">● 移动2</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“移动”</b>的不同之处在于，本方法移动后的结果会返回给<b>“参数4”</b>中。</p>
+	<p align="left">本方法和<a href="#ydlj"><b>“移动路径”</b></a>大同小异，可参考移动路径的代码。</p>
+	<p align="left"><img border="0" src="hb_images/418.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jczwjxqy"></a>
+	<font style="font-size: 12pt; font-weight:700">● 置为矩形区域</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">注意：本方法会清除剪裁区域的原有内容，并将其设置为<b>“矩形剪裁区域”</b>。</p>
+	<p align="left">这个矩形区域是通过方法内的<b>“四个”</b>参数决定。</p>
+	<p align="left"><img border="0" src="hb_images/419.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="zwjxqy2"></a>
+	<font style="font-size: 12pt; font-weight:700">● 置为矩形区域2</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法与<b>“置为矩形区域”</b>不同之处在于，本方法是通过<b>“矩形类”</b>来指定剪裁区域。</p>
+	<p align="left">通过<b>“矩形类”</b>的<b>“上下左右”</b>四个写属性可以指定坐标。</p>
+	<p align="left"><b>“矩形类”</b>在本教程中也是多次使用，因此不再演示。</p>
+	<p align="left"><img border="0" src="hb_images/420.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="zwljjcjg"></a>
+	<font style="font-size: 12pt; font-weight:700">● 置为路径剪裁结果</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">简单来说，就是利用<b>“参数3”</b>的剪裁区域对<b>“参数2”</b>的路径，进行剪裁操作，最后的结果放入<b>“参数1”</b>中。</p>
+	<p align="left">返回结果<b>“真”</b>表示不是空的。</p>
+	<p align="left">返回<b>“假”</b>表示空的。</p>
+	<p align="left"><img border="0" src="hb_images/421.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">我们需要定义三个变量，一个<b>“绘制路径类”</b>变量和两个<b>“剪裁区域类”</b>变量。</p>
+	<p align="left">其中一个<b>“剪裁区域2”</b>设置参考。</p>
+	<p align="left">然后按照如图所示的代码一一编写。</p>
+	<p align="left">最终的效果就是：<b>“剪裁区域2”</b>创建的矩形会对<b>“圆形路径”</b>进行剪裁操作，并且结果会放入<b>“剪裁区域1”</b>内。</p>
+	<p align="left"><img border="0" src="hb_images/422.png" ></p>
+</blockquote>	
+	
+
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终的结果，可以看到<b>“圆形”</b>只剩下一个扇形，剩下的被<b>“矩形剪裁区域”</b>给剪掉了。</p>
+	<p align="left"><img border="0" src="hb_images/423.png" ></p>
+</blockquote>
+	
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="zzhjg"></a>
+	<font style="font-size: 12pt; font-weight:700">● 置组合结果</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">简单来说就是将<b>“参数2”</b>和<b>“参数3”</b>进行组合，组合方式为<b>“剪裁区域组合方式.XXX”</b>。</p>
+	<p align="left">最后的组合结果返回<b>“参数1”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/424.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义三个<b>“剪裁区域类”</b>变量，后两个设置参考。</p>
+	<p align="left">然后分别给<b>“剪裁区域2”</b>和<b>“3”</b>创建矩形剪裁区域。</p>
+		
+<p align="left">随后调用<b>“剪裁区域类.置组合结果”</b>方法，填入对应的参数。</p>
+<p align="left">最后在画板上应用<b>“剪裁区域1”</b>，也就是最终组合结果。</p>
+<p align="left">然后给剪裁区域<b>“填充颜色”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/425.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">可以看到两个矩形的相交部分被剪裁掉，这是<b>“不相交”</b>模式的结果。</p>
+	<p align="left">其它模式大家可以自行测试。</p>
+	<p align="left"><img border="0" src="hb_images/426.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="zhhjg2"></a>
+	<font style="font-size: 12pt; font-weight:700">● 置组合结果2</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“置组合结果”</b>不同之处在于，它是让<b>“矩形类”</b>和<b>“剪裁区域”</b>进行组合。</p>
+	<p align="left">最终的结果依然是返回<b>“参数1”</b>中。</p>
+	<p align="left"><img border="0" src="hb_images/427.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="zhjxqy"></a>
+	<font style="font-size: 12pt; font-weight:700">● 组合矩形区域</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和前面两个方法类似，也是组合区域的。</p>
+	<p align="left">不同之处是，本方法是通过<b>“参数2、3、4、5”</b>创建的矩形区域和<b>“参数1”</b>进行组合。</p>
+	<p align="left">最终的结果返回给<b>“参数1”</b>中。</p>
+	<p align="left">代码编写可参考<b>“置组合结果”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/428.png" ></p>
+</blockquote>
+
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="zhjxqy2"></a>
+	<font style="font-size: 12pt; font-weight:700">● 组合矩形区域2</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法与<b>“组合矩形区域”</b>不同之处在于，本方法是通过<b>“矩形类”</b>进行组合。</p>
+	<p align="left"><b>“矩形类”</b>的创建方法，本教程中也多次使用，这里不再演示。</p>
+	<p align="left"><img border="0" src="hb_images/429.png" ></p>
+</blockquote>
+
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="zhqy"></a>
+	<font style="font-size: 12pt; font-weight:700">● 组合区域</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和前面两个不同之处在于，本方法是<b>“两个”</b>剪裁区域类进行组合。</p>
+	<p align="left">组合结果依然是返回<b>“参数1”</b>中。</p>
+	<p align="left"><img border="0" src="hb_images/430.png" ></p>
+</blockquote>
+
+		
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jcsfwkd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 是否为空（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本读属性顾名思义，就是用来判断<b>“剪裁区域类”</b>对象是否为空。</p>
+	
+	<p align="left"><img border="0" src="hb_images/431.png" ></p>
+	<p align="left">&nbsp;</p>
+	<p align="left">调用方式：<b>“剪裁区域类变量.是否为空”</b></p>
+	<p align="left">具体可参看下图中的代码。</p>
+	<p align="left">&nbsp;</p>
+	<p align="left"><img border="0" src="hb_images/432.png" ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

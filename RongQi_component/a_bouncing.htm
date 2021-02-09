@@ -1,0 +1,162 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		
+			<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >果冻滚动容器<span>(可收缩)</span></h6></li>
+		<ol id="new1">
+			<li><blockquote><a href="#gdgdrq">1.本类说明</a></blockquote></li>
+			<li><blockquote><a href="#gdzcjt">2.支持滚动监听(写)</a></blockquote></li>
+			<li><blockquote><a href="#gdgdwzgb">3.滚动位置改变(事件)</a></blockquote></li>
+			<li><blockquote><a href="#gdphgd">4.平滑滚动内容</a></blockquote></li>
+			<li><blockquote><a href="#gdphgdnr">5.平滑滚动内容到</a></blockquote></li>
+			<li><blockquote><a href="#gdswgd">6.首尾滚动</a></blockquote></li>
+		</ol>
+	</ol>
+</ul>
+</div>	
+
+<a name="gdgdrq"></a>
+<p align="left">
+<h2>果冻滚动容器实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<br/>
+<blockquote>
+ <p align="left">本组件和普通的<a href="a_Heng.htm"><b>“横向滚动容器”</b></a>，用法基本是一致的。</p>
+    <p align="left">不同之处在于，当容器内的组件无法滚动时，再次滚动的时候会产生一种弹性的动画效果。</p>
+    <p align="left"><font color="#F70408">注意：本组件位于<strong><b>“果冻滚动容器”</b></strong>模块中，欲使用本组件需添加其模块。</font></p>
+	<p align="left"><img border="0" src="bouncing_images/1.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">界面设计如下图：</p>
+<blockquote>
+    <p align="left">1、拖放一个<b>“按钮1”</b>组件，在此组件下放置一个<b>“果冻滚动容器”</b>组件，设置组件尺寸为匹配父组件尺寸。</p>
+    <p align="left">2、在<b>“果冻滚动容器”</b>组件内拖放一个<b>“线性布局器”</b>组件，设置组件尺寸为匹配父。</p>
+    <p align="left">3、在<b>“线性布局器”</b>组件内拖放N个按钮，使其内容有滚动效果。</p>
+	<p align="left"><img border="0" src="bouncing_images/2.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">最终可以看到<b>“果冻滚动容器”</b>内的组件不仅具有滚动效果，同时也具有一种弹性动画效果。</p>
+	<p align="left"><img border="0" src="bouncing_images/3.gif" ></p>
+	</blockquote>	
+<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p><a name="gdzcjt"></a>
+<font style="font-size: 12pt; font-weight:700">● 支持滚动监听(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 滚动位置改变(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“支持滚动监听（写）”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">调用本属性设置为真，可实现监听<b>“滚动位置改变”</b>事件。</p>
+	<p align="left"><img border="0" src="bouncing_images/4.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“滚动位置改变（事件）”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">设置<b>“滚动位置改变”</b>属性为真的时候，本事件会被触发。</p>
+	<p align="left"><img border="0" src="bouncing_images/5.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、<b>“按钮1”</b>被点击后，设置<b>“支持滚动监听”</b>属性值为真。</p>
+    <p align="left">2、添加<b>“滚动位置改变”</b>事件，读取<b>“当前垂直位置”</b>显示在标题上。</p>
+	<p align="left"><img border="0" src="bouncing_images/6.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击之前，无论如何滚动容器，都无法实现标题显示位置信息。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，滚动容器时窗口标题会显示<b>“当前垂直位置”</b>。</p>
+	<p align="left"><img border="0" src="bouncing_images/7.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	<a name="gdphgd"></a>
+<font style="font-size: 12pt; font-weight:700">● 平滑滚动内容</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法可实现增量滚动指定像素距离。</p>
+	<p align="left"><img border="0" src="bouncing_images/8.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">调用本方法增量滚动100像素的距离。</p>
+	<p align="left"><img border="0" src="bouncing_images/9.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">最终可以看到当前滚动容器增量滚动了100像素的距离。</p>
+	<p align="left"><img border="0" src="bouncing_images/10.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	<a name="gdphgdnr"></a>
+<font style="font-size: 12pt; font-weight:700">● 平滑滚动内容到</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">调用本方法可滚动内容到指定像素距离。</p>
+	<p align="left"><img border="0" src="bouncing_images/11.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后调用本方法滚动到100像素位置。</p>
+	<p align="left"><img border="0" src="bouncing_images/12.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到，无论滚动容器在什么位置，点击<b>“按钮1”</b>后都会回到100像素位置。</p>
+	<p align="left"><img border="0" src="bouncing_images/13.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	<a name="gdswgd"></a>
+<font style="font-size: 12pt; font-weight:700">● 首尾滚动</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">调用本方法可进行收尾滚动。</p>
+    <p align="left">参数提供-1向上滚动头部，提供1向下滚动到尾部。</p>
+	<p align="left"><img border="0" src="bouncing_images/14.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">调用本方法滚动到尾部。</p>
+	<p align="left"><img border="0" src="bouncing_images/15.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后执行本方法可滚动到尾部。</p>
+	<p align="left"><img border="0" src="bouncing_images/16.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

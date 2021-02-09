@@ -1,0 +1,209 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		
+		 <li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new3')" >一.照相机<span>(可收缩)</span></h6></li>
+		<ol id="new3">
+    		<li><blockquote><a href="#zhaoxiangji">1.准备工作</a></blockquote></li>
+			<li><blockquote><a href="#zxjzxj">2.置相机</a></blockquote></li>
+			<li><blockquote><a href="#zxjzxj">3.取前置摄像头ID</a></blockquote></li>
+			<li><blockquote><a href="#zxjzxj">4.取后置摄像头ID</a></blockquote></li>
+			<li><blockquote><a href="#pszp">5.拍摄照片</a></blockquote></li>
+			<li><blockquote><a href="#zxjzxj">6.置画面方向</a></blockquote></li>
+			<li><blockquote><a href="#zhmfxgsxt">7.置画面方向跟随系统</a></blockquote></li>
+			<li><blockquote><a href="#zxjzxj">8.开始自动对焦</a></blockquote></li>
+		
+			<li><blockquote><a href="#kqsgd">9.开启闪光灯</a></blockquote></li>
+			<li><blockquote><a href="#gbsgd">10.关闭闪光灯</a></blockquote></li>
+			<li><blockquote><a href="#qhqhsxt">11.切换前后摄像头</a></blockquote></li>
+			<li><blockquote><a href="#pszp">12.照片拍摄完毕(事件)</a></blockquote></li>
+			<li><blockquote><a href="#zxjzxj">13.自动对焦完毕(事件)</a></blockquote></li>
+		</ol>
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>照相机组件实例讲解</h2> 
+	<p><strong>作者：创世魂</strong></p>
+	
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font>	
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">打开窗口设计器，从上到下依次拖放<b>“按钮1”</b>，<b>“按钮2”</b>和<b>“照相机1”</b>。</p>
+	<p align="left">然后设置<b>“照相机1”</b>的高度宽度类型为<b>“匹配父组件高/宽度”</b>。</p>
+	<p align="left">设置完毕后保存布局即可。</p>
+	<p align="left"><font color="#DB1114">注意：本组件位于<strong>“多媒体功能支持”</strong>模块中。</font></p>
+	<p align="left"><img border="0" src="zhao_images/57a.png" ></p>
+</blockquote>	
+	
+		<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="zxjzxj"></a>
+<font style="font-size: 12pt; font-weight:700">● 置相机</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 取后置摄像头ID</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 取前置摄像头ID</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 置画面方向</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 开始自动对焦</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 自动对焦完毕(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“置相机”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法的作用就是用来设置哪一个摄像头显示画面。</p>
+	<p align="left">可通过<b>“取前/后置摄像头ID”</b>方法获取id，写到参数中即可。</p>
+	<p align="left">如果调用本方法，默认显示后置摄像头画面。</p>
+	<p align="left"><img border="0" src="zhao_images/58.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“取后置摄像头ID”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法的作用就是取出后置摄像头ID，用于照相机显示后摄像头画面。</p>
+	<p align="left"><b>“取前置摄像头ID”</b>方法即取出前置摄像头ID。</p>
+	<p align="left"><img border="0" src="zhao_images/59.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“置画面方向”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">设置当前照相机显示画面方向，常用数值为90，即屏幕竖屏。</p>
+	<p align="left"><img border="0" src="zhao_images/60.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“开始自动对焦”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">设置相机对焦，通过本方法可让相机画面变清晰。</p>
+	<p align="left">对焦完毕后会触发<b>“自动对焦完毕”</b>事件。</p>
+	<p align="left"><img border="0" src="zhao_images/61.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“自动对焦完毕(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过<b>“结果”</b>参数可以判断当前照相机是否对焦成功。</p>
+	<p align="left"><img border="0" src="zhao_images/62.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，调用<b>“置相机”</b>方法设置参数为<b>“照相机1.取后置摄像头ID()”</b>。</p>
+	<p align="left">根据需求，也可以选择设置前置摄像头。</p>
+	<p align="left">随后依次调用<b>“置画面方向”</b>和<b>“开始自动对焦”</b>方法。</p>
+	<p align="left">最后添加<b>“照相机_自动对焦完毕”</b>事件，指定来源对象后，判断<b>“结果”</b>参数即可。</p>
+	<p align="left">注意：本类需要使用真机测试，模拟器无法启动摄像头。</p>
+	<p align="left"><img border="0" src="zhao_images/63.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">点击<b>“按钮1”</b>后，当前显示画面会变清晰，并且会提示<b>“对焦完毕”</b>。</p>
+	<p align="left"><img border="0" src="zhao_images/57.png" >
+    </p>
+</blockquote>
+	
+	
+	
+		<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="pszp"></a>
+<font style="font-size: 12pt; font-weight:700">● 拍摄照片</font><br>
+<font style="font-size: 12pt; font-weight:700">● 照片拍摄完毕(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“拍摄照片”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法的作用就是用来拍摄照片。</p>
+	<p align="left"><img border="0" src="zhao_images/64.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“照片拍摄完毕(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">执行<b>“拍摄照片”</b>后会触发本事件，拍照成功后会从<b>“照片”</b>参数返回照片的字节数据。</p>
+	<p align="left"><img border="0" src="zhao_images/65.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，依次执行<b>“开始自动对焦”</b>和<b>“拍摄照片”</b>方法。</p>
+	<p align="left">然后添加<b>“照相机_照片拍摄完成”</b>事件。</p>
+	<p align="left">指定来源对象后，通过<b>“取外部存储空间根目录”</b>方法取出存储卡路径。</p>
+	<p align="left">最后使用<b>“写出文件”</b>方法保存<b>“照片”</b>数据。 </p>
+	
+	<p align="left"><img border="0" src="zhao_images/66.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">左图：<b>“按钮1”</b>被点击后，首先会进行对焦，随后会执行拍照，照片保存成功后会弹出提示。</p>
+    <p align="left">右图：打开手机文件管理器，就可以看到拍摄的照片。</p>
+	<p align="left"><img border="0" src="zhao_images/67.png" >
+		&nbsp;&nbsp;&nbsp;
+		<img border="0" src="zhao_images/68.png" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="zhmfxgsxt"></a>
+<font style="font-size: 12pt; font-weight:700">● 置画面方向跟随系统</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可以设置当前相机画面跟随系统相机显示画面。</p>
+	<p align="left">参数值直接填写<b>“本对象”</b>即可。</p>
+	<p align="left"><img border="0" src="zhao_images/69.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，调用本方法就可以设置跟随系统。</p>
+	<p align="left"><img border="0" src="zhao_images/70.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="kqsgd"></a><a name="gbsgd"></a><a name="qhqhsxt"></a>
+<font style="font-size: 12pt; font-weight:700">● 开启闪光灯</font><br>
+<font style="font-size: 12pt; font-weight:700">● 关闭闪光灯</font><br>
+<font style="font-size: 12pt; font-weight:700">● 切换前后摄像头</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">以上三个方法就是字面上的意思,用来开启闪光灯，关闭闪光灯，以及切换前后摄像头。</p>
+	<p align="left">直接通过<b>“照相机1”</b>调用上面方法即可实现对应功能。</p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

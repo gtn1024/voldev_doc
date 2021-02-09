@@ -1,0 +1,187 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.GIF动画框<span>(可收缩)</span></h6></li>
+		<ol id="new1">
+			<li><blockquote><a href="#gifdonghua">1.准备工作</a></blockquote></li>
+			<li><blockquote><a href="#zdhzy">2.置动画资源</a></blockquote></li>
+			<li><blockquote><a href="#dhdxdx">3.动画对象(读写)</a></blockquote></li>
+			<!-- <li><blockquote><a href="#dhscdx">4.动画时长(读写)</a></blockquote></li> -->
+			<li><blockquote><a href="#dqdhztdx">4.当前动画状态(读写)</a></blockquote></li>
+			<li><blockquote><a href="#dhzy">5.动画资源(写)</a></blockquote></li>
+			<li><blockquote><a href="#dhzy">6.动画资源2(写)</a></blockquote></li>
+			<li><blockquote><a href="#dhzy">7.动画资源3(写)</a></blockquote></li>
+		</ol>
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>GIF动画框实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+
+<p align="left">&nbsp;</p><a name="gifdonghua"></a>
+<h2>一、GIF动画框</h2>
+<p align="left">&nbsp;</p>
+	
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font>	
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">打开启动类界面设计器，设计如下界面。</p>
+	<p align="left">从上到下依次是<b>“按钮1”</b>、<b>“按钮2”</b>和<b>“GIF动画框1”</b>。</p>
+	<p align="left">注意：本组件<b>“并没有”</b>继承<b>“图片框”</b>的所有方法。</p>
+	<p align="left"><font color="#F30F12">注意：本组件位于<strong>“杂类窗口组件1”</strong>模块中。</font></p>
+	<p align="left"><img border="0" src="img_images/44.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="zdhzy"></a>
+<font style="font-size: 12pt; font-weight:700">● 置动画资源</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法共有一个参数，通过字节数组载入GIF图片。</p>
+	<p align="left"><img border="0" src="img_images/45.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">调用<b>“读入文件”</b>方法，将存储卡根目录存储的gif图片转换为字节数组。</p>
+	<p align="left">调用当前方法读取即可。</p>
+	<p align="left"><img border="0" src="img_images/46.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img_images/47.gif" >
+    </p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="dhdxdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 动画对象(读写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">界面准备：</p>
+<blockquote>
+	<p align="left">从上到下依次是<b>“按钮1”</b>、<b>“按钮2”</b>、<b>“GIF动画框1”</b>和<b>“GIF动画框2”</b>。</p>
+	<p align="left">然后设置<b>“GIF动画框”</b>的高度和宽度分别为100DP。</p>
+	<p align="left"><img border="0" src="img_images/48.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“动画对象(写)”</b>帮助文档： </p>
+<blockquote>
+	<p align="left">本写属性可通过<b>“动画图像类”</b>来载入GIF图片。</p>
+	<p align="left">同名读属性即读取当前动画对象。</p>
+	<p align="left"><img border="0" src="img_images/49.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">调用<b>“动画图像类.创建自字节数组2()”</b>方法，可通过字节数组创建当前对象。</p>
+	<p align="left">创建当前对象后，赋值给<b>“动画对象”</b>属性即可。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，调用<b>“GIF动画框1.动画对象”</b>读属性直接赋值给<b>“GIF动画框2.动画对象”</b>写属性。</p>
+	<p align="left">就可以实现<b>“GIF动画框2”</b>的图片和<b>“GIF动画框1”</b>的图片一致。</p>
+	<p align="left"><img border="0" src="img_images/50.png" >
+    </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img_images/51.gif" >
+    </p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="dqdhztdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 当前动画状态(读写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“当前动画状态(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本写属性值为逻辑型，如果为真表示停止播放动画，如果为假则继续播放。</p>
+	<p align="left">同名读属性即读取当前动画状态。</p>
+	<p align="left"><img border="0" src="img_images/54.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，给当前GIF动画框设置gif图片。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，设置当前写属性为<b>“取反(GIF动画框1.当前动画状态)”</b>。</p>
+	<p align="left"><b>“取反”</b>的作用翻转逻辑值。</p>
+	<p align="left"><img border="0" src="img_images/53.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img_images/55.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="dhzy"></a>
+<font style="font-size: 12pt; font-weight:700">● 动画资源(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 动画资源2(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 动画资源3(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">以上三个属性效果最终一致，此处讲解<b>“动画资源(写)”</b>属性。</p>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性的作用通过<b>“可绘制资源”</b>载入GIF图片。</p>
+	<p align="left"><img border="0" src="img_images/56.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">定义<b>“可绘制资源”</b>变量，导入一张GIF图片，最后将<b>“GIF图片”</b>变量赋值给当前属性即可。</p>
+	<p align="left"><img border="0" src="img_images/57.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img_images/58.gif" >
+    </p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

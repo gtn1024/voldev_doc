@@ -1,0 +1,255 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new10')" >全屏侧滑布局器<span>(可收缩)</span></h6></li>
+		<ol id="new10">
+			<li><blockquote><a href="#qpchbjq">1.准备工作</a></blockquote></li>
+			<li><blockquote><a href="#Qbzk">2.被展开(事件)</a></blockquote></li>
+			<li><blockquote><a href="#Qbzk">3.被关闭(事件)</a></blockquote></li>
+			<li><blockquote><a href="#Qbzk">4.被滑动(事件)</a></blockquote></li>
+			<li><blockquote><a href="#Qszzydcys">5.主页淡出颜色(写)</a></blockquote></li>
+			<li><blockquote><a href="#Qzcdcys">6.左侧淡出颜色(写)</a></blockquote></li>
+			<li><blockquote><a href="#Qzcdcys">7.视差距离(写)</a></blockquote></li>
+			<li><blockquote><a href="#Qkfhd">8.可否滑动(读)</a></blockquote></li>
+			<li><blockquote><a href="#Qsfbz">9.关闭</a></blockquote></li>
+			<li><blockquote><a href="#Qsfbz">10.展开</a></blockquote></li>
+			<li><blockquote><a href="#Qsfbz">11.是否被展开</a></blockquote></li>
+		</ol>	
+		
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>全屏侧滑布局器实例讲解</h2> <a name="qpchbjq"></a>
+<p><strong>作者：创世魂</strong></p>
+	<p align="left">&nbsp;</p>
+		<font style="font-size: 12pt; font-weight:700">● 辅助说明</font><br/>
+     	<blockquote>
+		<p align="left"><font color="#F70408">注意：本类位于<strong>“杂类窗口组件1”</strong>模块中，必须添加此模块才能使用。</font></p>
+	</blockquote>	
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font>	
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>	
+<blockquote>
+	<p align="left">1、本组件只能两个容器，左边为<b>“左侧布局”</b>右边的为<b>“首页布局”</b>。</p>
+	<p align="left">2、本组件任意位置都可手势操作弹出侧滑。</p>
+	<p align="left"><img src="chrq_images/63.png"></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">界面设计如下图：</p>	
+<blockquote>
+	<p align="left">1、在<b>“扩展容器组件”</b>中找到<b>“全屏侧滑布局器”</b>，将其拖放到设计器中，设置组件高度宽度为匹配父。</p>
+	<p align="left">2、嵌套一个线性布局器组件，并同样设置组件高度宽度为匹配父。</p>
+	<p align="left">3、此时可开始布局首页。</p>
+	<p align="left"><img src="chrq_images/64.png"></p>
+	<p align="left">4、首页布局完毕后，拖放一个线性布局器在<b>“首页布局”</b>的前面，起名<b>“左侧布局”</b>，并设置宽度。</p>
+	<p align="left">5、此时可开始布局左侧布局。</p>
+	<p align="left"><img src="chrq_images/65.png"></p>
+	<p align="left">6、最终布局完毕后，结构如下图所示。</p>
+	<p align="left"><img src="chrq_images/66.png"></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>	
+<blockquote>
+	<p align="left">保存布局后，设置<b>“左侧布局”</b>的背景色，方便区分。</p>
+	<p align="left"><img src="chrq_images/67.png"></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图（GIF）：</p>	
+<blockquote>
+	<p align="left"><img src="chrq_images/68.gif"></p>
+</blockquote>	
+<p align="left">&nbsp;</p>	
+<a name="Qbzk"></a>
+<font style="font-size: 12pt; font-weight:700">● 被展开(事件)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 被关闭(事件)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 被滑动(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“被展开(事件)”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">当布局被展开后会触发本事件，参数返回的是<b>“首页布局”</b>。</p>
+	<p align="left"><img border="0" src="chrq_images/69.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“被关闭(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">当布局被关闭的时候触发本事件，参数所返回的布局为<b>“首页布局”</b>。</p>
+	<p align="left"><img border="0" src="chrq_images/70.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“被滑动(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">当侧滑容器处于被滑动状态的时候，会触发本事件。</p>
+	<p align="left">参数1：返回首页布局。</p>
+	<p align="left">参数2：偏移量0-1之间，被展开后数值为1，关闭后数值为0。</p>
+	<p align="left"><img border="0" src="chrq_images/71.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">分别添加以上三个事件，并执行操作。</p>
+	<p align="left"><img border="0" src="chrq_images/72.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">最终可看到当侧滑容器被展开和关闭时，首页布局颜色会发生变化，并且偏移量也会显示在窗口标题上。</p>
+	<p align="left"><img border="0" src="chrq_images/73.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="Qszzydcys"></a>
+<font style="font-size: 12pt; font-weight:700">● 主页淡出颜色(写)</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可设置主页布局的淡出颜色，默认为透明的白色。</p>
+	<p align="left">注意：并非真个布局都会变色。</p>
+	<p align="left"><img border="0" src="chrq_images/74.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，设置本属性为红色。</p>
+	<p align="left"><img src="chrq_images/75.png" border="0" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最后可看到<b>“按钮1”</b>点击前后，主页布局发生变化。</p>
+	<p align="left"><img border="0" src="chrq_images/76.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="Qzcdcys"></a>
+<font style="font-size: 12pt; font-weight:700">● 视差距离(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 左侧淡出颜色(写)</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“视差距离(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本属性可设置，当侧滑布局被关闭后，布局内容左侧的距离。</p>
+	<p align="left">如果处于滑动过程中，可以看到左侧布局内容会有移动动画效果。</p>
+	<p align="left"><img border="0" src="chrq_images/77.png" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“左侧淡出颜色(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性用来设置左侧布局淡出颜色。</p>
+	<p align="left">注意：务必为<b>“视差距离”</b>设置一个值，本属性才有效。</p>
+	<p align="left"><img border="0" src="chrq_images/78.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，设置<b>“视差距离”</b>属性值为<b>“50”</b>像素，并设置<b>“左侧淡出颜色”</b>为红色。</p>
+	<p align="left"><img border="0" src="chrq_images/79.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">最终可看到<b>“按钮1”</b>点击前后，左侧布局的状态发生变化。</p>
+	<p align="left"><img border="0" src="chrq_images/80.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="Qkfhd"></a>
+<font style="font-size: 12pt; font-weight:700">● 可否滑动(读)</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本属性可判断当前侧滑容器是否可以滑动。</p>
+	<p align="left">返回真表示可以滑动，否则返回假。</p>
+	<p align="left"><img border="0" src="chrq_images/81.png" > </p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，调用本属性判断返回值即可。</p>
+	<p align="left"><img border="0" src="chrq_images/82.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">最终弹出<b>“可滑动”</b>证明侧滑容器可正常使用。</p>
+	<p align="left"><img border="0" src="chrq_images/83.gif" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>	
+<a name="Qsfbz"></a>
+<font style="font-size: 12pt; font-weight:700">● 展开</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 关闭</font><br>
+<font style="font-size: 12pt; font-weight:700">● 是否被展开</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“展开”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">调用本方法可展开侧滑容器。</p>
+	<p align="left"><img border="0" src="chrq_images/84.png" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“关闭”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">调用本方法可关闭侧滑容器。</p>
+	<p align="left"><img border="0" src="chrq_images/85.png" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“是否被展开”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">调用本方法可判断侧滑容器是否被展开，返回真表示展开。</p>
+	<p align="left"><img border="0" src="chrq_images/87.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，执行<b>“是否被展开()”</b>方法判断返回值，并执行侧滑容器对应操作。</p>
+	<p align="left"><b>“按钮2”</b>被点击，执行同样的操作。</p>
+	<p align="left"><img border="0" src="chrq_images/86.png" > </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">最终可看到，两个按钮被点击后，侧滑容器可以被展开和关闭。</p>
+	<p align="left"><img border="0" src="chrq_images/87.gif" >
+    </p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

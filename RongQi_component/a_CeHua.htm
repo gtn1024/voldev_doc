@@ -1,0 +1,414 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new8')" >侧滑容器<span>(可收缩)</span></h6></li>
+		<ol id="new8">
+			<li><blockquote><a href="#cehuabuju">1.准备工作</a></blockquote></li>
+			<li><blockquote><a href="#Czydcys">2.主页淡出颜色(写)</a></blockquote></li>
+			<li><blockquote><a href="#Csdms">3.锁定模式(写)</a></blockquote></li>
+			<li><blockquote><a href="#Cguanbi">4.展开</a></blockquote></li>
+			<li><blockquote><a href="#Cguanbi">5.关闭</a></blockquote></li>
+			<li><blockquote><a href="#Czkbj">6.展开布局</a></blockquote></li>
+			<li><blockquote><a href="#Czkbj">7.关闭布局</a></blockquote></li>
+			<li><blockquote><a href="#Cgbsybj">8.关闭所有布局</a></blockquote></li>
+			<li><blockquote><a href="#Csfzk">9.是否已展开</a></blockquote></li>
+			<li><blockquote><a href="#Cqbjsdms">10.取布局锁定模式</a></blockquote></li>
+			<li><blockquote><a href="#Cqbjsdms">11.置布局锁定模式</a></blockquote></li>
+			<li><blockquote><a href="#Czfxsdms">12.置方向锁定模式</a></blockquote></li>
+			<li><blockquote><a href="#Czfxsdms">13.取方向锁定模式</a></blockquote></li>
+			<li><blockquote><a href="#Csfyzkbj">14.是否已展开布局</a></blockquote></li>
+			<li><blockquote><a href="#Cjrchbj">15.加入侧滑布局</a></blockquote></li>
+			<li><blockquote><a href="#Czkbj">16.被关闭(事件)</a></blockquote></li>
+			<li><blockquote><a href="#Czkbj">17.被展开(事件)</a></blockquote></li>
+			<li><blockquote><a href="#Cbhdsj">18.被滑动(事件)</a></blockquote></li>
+		</ol>
+		
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>侧滑容器组件实例讲解</h2> <a name="cehuabuju"></a>
+<p><strong>作者：创世魂</strong></p>
+
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 辅助说明</font><br/>
+     	<blockquote>
+		<p align="left"><font color="#F70408">注意：本类位于<strong>“杂类窗口组件1”</strong>模块中，必须添加此模块才能使用。</font></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+	
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font>	
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">打开<b>“侧滑容器”</b>的帮助页，仔细阅读以下内容。</p>
+	<p align="left">务必注意第1、2条的信息。</p>
+
+	<p align="left"><img border="0" src="chrq_images/1.png" > </p>
+	<p align="left">打开界面设计器，设计如下信息。</p>
+	<p align="left">1、在<b>“扩展容器组件”</b>里面找到侧滑容器，拖放到设计器中，并设置其组件的高度宽度为<b>“匹配父”</b>。</p>
+	<p align="left">2、在此组件内拖放一个<b>“线性布局器”</b>同样设置其组件的高度宽度为<b>“匹配父”</b>。</p>
+	<p align="left"><img src="chrq_images/2.png"  border="0" > </p>
+	
+
+	<p align="left">3、修改布局器的名字为<b>“首页布局”</b>。</p>
+	<p align="left">4、此时可开始设计首页布局，例如：放置一个按钮。</p>
+	<p align="left"><img src="chrq_images/3.png"  border="0" > </p>
+
+	<p align="left">5、设计完首页布局后，将其宽度随意设置一个数值，保留右侧空白区域。</p>
+	<p align="left">6、放置两个线性布局器，分别起名<b>“左侧布局”</b>和<b>“右侧布局”</b>，并设置<b>“子布局侧滑方向”</b>属性，以及其宽度尺寸。</p>
+	<p align="left">7、设置完成后，就可以开始设计<b>“左侧布局”</b>和<b>“右侧布局”</b>的内容。</p>
+	<p align="left"><img src="chrq_images/4.png"  border="0" > </p>
+	
+	<p align="left">8、最后保存布局，修改布局颜色以便区分。</p>
+	<p align="left"><img src="chrq_images/5.png"  border="0" > </p>
+	
+	<p align="left">9、运行效果如下图（GIF）</p>
+	<p align="left">设计完毕后的布局，默认就直接支持从屏幕最左侧或最后侧滑出布局内容。</p>
+	<p align="left">注意：部分全面屏手机因设置全面屏手势的缘故，可能侧滑位置有所不同。</p>
+	<p align="left">以小米手机为例，想要侧滑出以下内容，必须要在屏幕上半部分的左侧进行侧滑。</p>
+	<p align="left">没有开启全面屏手势的手机，只要是屏幕最左/右侧的位置都可以侧滑出来。</p>
+	<p align="left"><img src="chrq_images/6.gif"  border="0" > </p>
+</blockquote>	
+<p align="left">&nbsp;</p>	
+<a name="Czydcys"></a>
+<font style="font-size: 12pt; font-weight:700">● 主页淡出颜色(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可设置布局侧滑时,主页布局被什么颜色覆盖,默认为一种带有透明度的黑色。</p>
+	<p align="left"><img border="0" src="chrq_images/7.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后调用本属性，设置颜色为白色。</p>
+	<p align="left"><img border="0" src="chrq_images/8.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">侧滑后首页就会呈现白色。</p>
+	<p align="left"><img border="0" src="chrq_images/9.gif" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>	
+<a name="Csdms"></a>
+<font style="font-size: 12pt; font-weight:700">● 锁定模式(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">设置本属性后，可以将侧滑容器的侧滑方式锁定。</p>
+	<p align="left">如果两种侧滑布局都存在，则都会锁定。</p>
+	<p align="left">调用方式：<b>“侧滑容器锁定模式.XXX”</b></p>
+	<p align="left"><img border="0" src="chrq_images/10.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后执行本属性设置属性值为<b>“侧滑容器锁定模式.锁定关闭”</b>。</p>
+	<p align="left">设置此属性后，将无法通过手势开启侧滑，只能调用<b>“展开()”</b>方法展开侧滑。</p>
+	<p align="left"><img border="0" src="chrq_images/11.png" ></p>
+</blockquote>
+
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	
+	<p align="left">最终可看到，通过手势侧滑无法打开侧滑布局。</p>
+	<p align="left"><img border="0" src="chrq_images/12.gif" >  </p>
+</blockquote>
+<p align="left">&nbsp;</p>	
+<a name="Cguanbi"></a>
+<font style="font-size: 12pt; font-weight:700">● 展开</font><br>
+<font style="font-size: 12pt; font-weight:700">● 关闭</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“展开”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，调用本方法可直接展开侧滑容器，展开方向有参数1决定。</p>
+	<p align="left">参数1：调用方式<b>“侧滑容器滑动方向.XX”</b>。</p>
+	<p align="left">参数2：是否执行动画，默认为真，可忽略。</p>
+	<p align="left"><img border="0" src="chrq_images/13.png" ></p>
+</blockquote>	<p align="left">&nbsp;</p>
+<p align="left"><b>“关闭”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，调用本方法课关闭侧滑容器，关闭方向由参数1决定。</p>
+	<p align="left">参数1：调用方式<b>“侧滑容器滑动方向.XX”</b>。</p>
+	<p align="left">参数2：是否带关闭动画，默认为真可忽略。</p>
+	<p align="left"><img border="0" src="chrq_images/14.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后调用<b>“展开()”</b>方法展开左侧布局。</p>
+	<p align="left"><b>“按钮2”</b>被点击后调用<b>“关闭()”</b>方法关闭左侧布局。 </p>
+	<p align="left"><img border="0" src="chrq_images/15.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可以看到当<b>“按钮1”</b>被点击后左侧布局会被打开。</p>
+	<p align="left"><b>“左侧布局”</b>中的按钮被点击后，左侧布局会关闭。</p>
+	<p align="left"><img border="0" src="chrq_images/16.gif" > </p>
+</blockquote>
+<p align="left">&nbsp;</p>	
+<a name="Czkbj"></a>
+<font style="font-size: 12pt; font-weight:700">● 展开布局</font><br>
+<font style="font-size: 12pt; font-weight:700">● 关闭布局</font><br>
+<font style="font-size: 12pt; font-weight:700">● 被展开(事件)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 被关闭(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“展开布局”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法和<b>“展开()”</b>不同之处在于，本方法操作的参数是<b>“线性布局器”</b>。</p>
+	<p align="left"><img border="0" src="chrq_images/17.png" ></p>
+</blockquote>	<p align="left">&nbsp;</p>
+<p align="left"><b>“关闭布局”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法和<b>“关闭()”</b>不同之处在于，本方法操作的参数是<b>“线性布局器”</b>。</p>
+	<p align="left"><img border="0" src="chrq_images/18.png" ></p>
+</blockquote>	<p align="left">&nbsp;</p>
+<p align="left"><b>“被展开(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">当侧滑容器被展开后会触发本事件，返回被展开的布局器组件。</p>
+	<p align="left"><img border="0" src="chrq_images/19.png" ></p>
+</blockquote>	<p align="left">&nbsp;</p>
+<p align="left"><b>“被关闭(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">当侧滑容器被关闭后会触发本事件，返回被关闭后的布局器组件。</p>
+	<p align="left"><img border="0" src="chrq_images/20.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、<b>“按钮1”</b>被点击后，调用<b>“展开布局()”</b>方法展开右侧布局。</p>
+	<p align="left">2、<b>“按钮3”</b>被点击后，调用<b>“关闭布局()”</b>方法关闭。</p>
+	<p align="left">3、分别添加<b>“被展开”</b>、<b>“被关闭”</b>事件，在事件下判断布局对象并弹出对应提示。</p>
+	<p align="left"><img border="0" src="chrq_images/21.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可以看到当布局被展开和关闭的时候，对应的提示也弹出。</p>
+	<p align="left"><img border="0" src="chrq_images/22.gif" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<a name="Cgbsybj"></a>
+<font style="font-size: 12pt; font-weight:700">● 关闭所有布局</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">调用本方法,无论左侧布局还是右侧布局都可以进行关闭，此方法适合不知道哪个布局被打开时使用。</p>
+	<p align="left"><img border="0" src="chrq_images/23.png" ></p>
+</blockquote>		
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮2”</b>和<b>“按钮3”</b>被点击后分别调用本方法，进行关闭操作。</p>
+	<p align="left"><img border="0" src="chrq_images/24.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最后可以看到，两个布局都被正常关闭。 </p>
+	<p align="left"><img border="0" src="chrq_images/25.gif" > </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<a name="Csfzk"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否已展开</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可判断指定方向的侧滑容器是否被打开。</p>
+	<p align="left">参数1：调用方式<b>“侧滑容器滑动方向.XX”</b>。</p>
+	<p align="left"><img border="0" src="chrq_images/26.png" ></p>
+</blockquote>		
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后调用本方法判断左侧布局。</p>
+	<p align="left"><img border="0" src="chrq_images/27.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最后可看到左侧布局提示被关闭。</p>
+	<p align="left"><img border="0" src="chrq_images/28.gif" > </p>
+</blockquote><p align="left">&nbsp;</p>	
+<a name="Cqbjsdms"></a>
+<font style="font-size: 12pt; font-weight:700">● 取布局锁定模式</font><br>
+<font style="font-size: 12pt; font-weight:700">● 置布局锁定模式</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“取布局锁定模式”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本方法可取出指定布局的锁定模式。</p>
+	<p align="left">注意：参数只能填写左侧布局或者右侧布局。</p>
+	<p align="left"><img border="0" src="chrq_images/29.png" ></p>
+</blockquote>	<p align="left">&nbsp;</p>
+<p align="left"><b>“置布局锁定模式”</b>帮助文档：</p>
+<blockquote>
+	<p align="left"> 通过本方法可设置指定布局的侧滑锁定模式。</p>
+	<p align="left">参数1：填写要锁定的布局，只能是左侧或者右侧布局。</p>
+	<p align="left">参数2：调用方式<b>“侧滑容器锁定模式.XXX”</b>。</p>
+	<p align="left"><img border="0" src="chrq_images/30.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，调用<b>“置布局锁定模式()”</b>方法锁定左侧布局，并随后调用<b>“取布局锁定模式()”</b>方法判断左侧布局。</p>
+	<p align="left"><img border="0" src="chrq_images/31.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最后可看到弹出提示<b>“已经锁定关闭,用户无法通过滑动来展开”</b>，证明锁定成功。</p>
+	<p align="left"><img border="0" src="chrq_images/32.gif" > </p>
+</blockquote><p align="left">&nbsp;</p>	
+<a name="Czfxsdms"></a>
+<font style="font-size: 12pt; font-weight:700">● 置方向锁定模式</font><br>
+<font style="font-size: 12pt; font-weight:700">● 取方向锁定模式</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“置方向锁定模式”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法和<b>“置布局锁定模式()”</b>方法不同之处在于，本方法是通过<b>“侧滑容器滑动方向”</b>来进行锁定。</p>
+	<p align="left">参数1：调用方式<b>“侧滑容器锁定模式.XX”</b>。</p>
+	<p align="left">参数2：调用方式<b>“侧滑容器滑动方向.XX”</b>。</p>
+	<p align="left"><img border="0" src="chrq_images/33.png" ></p>
+</blockquote>	<p align="left">&nbsp;</p>
+<p align="left"><b>“取方向锁定模式”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">调用本方法可判断指定侧滑方向的锁定模式。</p>
+	<p align="left">返回值为<b>“侧滑容器锁定模式”</b>类。</p>
+	<p align="left"><img border="0" src="chrq_images/34.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，锁定左侧布局为展开，随后调用<b>“取方向锁定模式()”</b>判断其锁定模式。</p>
+	<p align="left"><img border="0" src="chrq_images/35.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终设置锁定模式为展开后首先会展开左侧布局，并弹出<b>“已锁定展开,无法通过滑动来关闭”</b>。</p>
+	<p align="left"><img border="0" src="chrq_images/36.gif" > </p>
+</blockquote><p align="left">&nbsp;</p>	
+<a name="Csfyzkbj"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否已展开布局</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“是否已展开”</b>方法不同之处在于，本方法的参数是<b>“线性布局器”</b>。</p>
+	<p align="left">参数1：提供左侧或者右侧容器的布局器名称。</p>
+	<p align="left"><img border="0" src="chrq_images/37.png" ></p>
+</blockquote>		
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后调用本方法判断<b>“左侧布局”</b>，并弹出对应提示。</p>
+	<p align="left"><img border="0" src="chrq_images/38.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终弹出<b>“没有展开”</b>。</p>
+	<p align="left"><img border="0" src="chrq_images/39.gif" > </p>
+</blockquote><p align="left">&nbsp;</p>	
+<a name="Cjrchbj"></a>
+<font style="font-size: 12pt; font-weight:700">● 加入侧滑布局</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本方法可动态添加侧滑容器。</p>
+	<p align="left">如果已经在设计器里面添加过，则不能使用本方法，否则会引起软件崩溃。</p>
+	<p align="left">所以想要使用本方法务必保证界面设计器里面没有添加过侧滑组件。</p>
+	<p align="left">参数1：要添加的侧滑容器组件，必须为线性布局器。</p>
+	<p align="left">参数2：调用方式<b>“侧滑容器滑动方向.XXX”</b>。</p>
+	<p align="left"><img border="0" src="chrq_images/40.png" ></p>
+</blockquote>		
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、新建一个方法（Ctrl+M），起名为<b>“创建左侧布局”</b>，并填写返回值<b>“线性布局器”</b>。</p>
+	<p align="left">2、定义一个类型为<b>“线性布局器”</b>和<b>“文本框”</b>的变量，用作侧滑容器的组件，并设置文本框的属性信息。</p>
+	<p align="left">3、设置<b>“左侧布局”</b>的尺寸，将文本框添加到左侧布局中。</p>
+	<p align="left">4、最后设置文本框的尺寸，并返回<b>“左侧布局”</b>。</p>
+	<p align="left"><img border="0" src="chrq_images/41.png" ></p>
+	<p align="left">5、添加<b>“通知_被创建”</b>虚拟方法，调用<b>“加入侧滑布局()”</b>方法，填写对应参数，创建左侧侧滑容器。</p>
+	<p align="left">6、<b>“按钮1”</b>被点击后展开左侧容器。</p>
+	<p align="left"><img border="0" src="chrq_images/42.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可以看到动态创建的左侧布局被弹出。</p>
+	<p align="left"><img border="0" src="chrq_images/43.gif" > </p>
+</blockquote><p align="left">&nbsp;</p>	
+<a name="Cbhdsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 被滑动(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，当侧滑容器开始滑动的时候会不断触发本事件，直到滑动结束才会停止。</p>
+	<p align="left"><img border="0" src="chrq_images/44.png" ></p>
+</blockquote>		
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"> 1、调用<b>“展开()”</b>方法展开左侧容器。</p>
+	<p align="left"> 2、调添加<b>“被滑动”</b>事件后首先取出<b>“屏幕度量信息类”</b>对象，通过此对象来获取屏幕宽度高度信息。</p>
+	<p align="left">3、通过<b>“首页布局”</b>调用<b>“置布局位置()”</b>方法，在滑动过程中实时设置首页布局位置。</p>
+	<blockquote>
+		<p align="left">置布局位置共四个参数，说明如下：</p>
+		<p align="left">参数1：提供移动后的左边位置。</p>
+		<p align="left">参数2：提供移动后的顶边位置</p>
+		<p align="left">参数3：提供移动后的右边位置。</p>
+		<p align="left">参数4：提供移动后的下面位置。</p>
+		<p align="left">因本事件会不断触发直到侧滑完毕，所以以上参数会不断更新，以实现不同的移动效果。</p>
+	</blockquote>	
+	
+	<p align="left"><img border="0" src="chrq_images/45.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到，在侧滑容器被展开后，首页布局整体跟随向右移动。</p>
+	<p align="left"><img border="0" src="chrq_images/46.gif" > </p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

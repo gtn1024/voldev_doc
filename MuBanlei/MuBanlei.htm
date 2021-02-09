@@ -1,0 +1,1755 @@
+
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>数据处理</h4></li>
+	<ol>
+    		<li><blockquote><a href="#zbgz">1.准备工作</a></blockquote></li>     
+            <li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.哈希表模板类 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+            <li><blockquote><a href="#hxbmbl">1.本类说明</a></blockquote></li>  
+		  <li><blockquote><a href="#wbddxhxbl">2.文本到对象哈希表类</a></blockquote></li>
+           <li><blockquote><a href="#wbdwbhxbl">3.文本到文本哈希表类</a></blockquote></li>
+             <li><blockquote><a href="#hxbcj">4.创建</a></blockquote></li>
+            <li><blockquote><a href="#hxbzr">5.置入</a></blockquote></li>
+            <li><blockquote><a href="#hxbdq">6.读取</a></blockquote></li>
+            <li><blockquote><a href="#hxbzsfcz">7.值是否存在</a></blockquote></li>
+            <li><blockquote><a href="#hxbgjzsfcz">8.关键字是否存在</a></blockquote></li>
+            <li><blockquote><a href="#hxbqcys">9.取成员数</a></blockquote></li>
+            <li><blockquote><a href="#hxbqshj">10.取数据集</a></blockquote></li>
+            <li><blockquote><a href="#hxbfz">11.复制</a></blockquote></li>
+            <li><blockquote><a href="#hxbsfwk">12.是否为空</a></blockquote></li>
+            <li><blockquote><a href="#hxbsc">13.删除</a></blockquote></li>
+            <li><blockquote><a href="#hxbqc">14.清除</a></blockquote></li>
+		</ol>	
+		<!--<li><a href="#wjdxczl">一.文件读写操作类</a></li>-->
+        <li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new2')" >二.哈希表项模板类<span>(可收缩)</span></h6></li>
+		<ol id="new2">
+    		<li><blockquote><a href="#haxibiaoxiang">1.本类说明</a></blockquote></li>
+            <li><blockquote><a href="#wbddxhxbxl">2.文本到对象哈希表项类</a></blockquote></li>
+            <li><blockquote><a href="#wbdwbhxbxl">3.文本到文本哈希表项类</a></blockquote></li>
+            <li><blockquote><a href="#hxbxszz">4.设置值</a></blockquote></li>
+            <li><blockquote><a href="#hxbxqz">5.取值</a></blockquote></li>
+            <li><blockquote><a href="#hxbxqgjz">6.取关键字</a></blockquote></li>
+   
+		</ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new3')" >三.集合模板类<span>(可收缩)</span></h6></li>
+		<ol id="new3">
+			<li><blockquote><a href="#jihemuban">1.本类说明</a></blockquote></li>
+            <li><blockquote><a href="#wbddxhxbxjhl">2.文本到对象哈希表项集合类</a></blockquote></li>
+             <li><blockquote><a href="#wbddxhxbxsjjl">3.文本到对象哈希表项数据集类</a></blockquote></li>
+            <li><blockquote><a href="#wbdwbhxbxjhl">4.文本到文本哈希表项集合类</a></blockquote></li>
+            <li><blockquote><a href="#dwbhxbxsjjl">5.文本到文本哈希表项数据集类</a></blockquote></li>
+            <li><blockquote><a href="#wbsjjl">6.文本数据集类</a></blockquote></li>
+            <li><blockquote><a href="#wbjhl">7.文本集合类</a></blockquote></li>
+            <li><blockquote><a href="#jhtjcy">8.添加成员</a></blockquote></li>
+            <li><blockquote><a href="#jhtjcy2">9.添加成员2</a></blockquote></li>           
+            <li><blockquote><a href="#jhsfwk">10.是否为空</a></blockquote></li>           
+            <li><blockquote><a href="#jhsfbh">11.是否包含</a></blockquote></li>           
+            <li><blockquote><a href="#jhsfbh2">12.是否包含2</a></blockquote></li>           
+            <li><blockquote><a href="#jhqcys">13.取成员数</a></blockquote></li>           
+            <li><blockquote><a href="#jhdsz">14.到数组</a></blockquote></li>           
+            <li><blockquote><a href="#jhsczdcy">15.删除指定成员</a></blockquote></li>           
+            <li><blockquote><a href="#jhsczdcy2">16.删除指定成员2</a></blockquote></li>           
+            <li><blockquote><a href="#jhsczdcy3">17.删除指定成员3</a></blockquote></li>           
+            <li><blockquote><a href="#jhscsycy">18.删除所有成员</a></blockquote></li>           
+            
+		</ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new4')" >四.枚举器模板类<span>(可收缩)</span></h6></li>
+		<ol id="new4">
+        
+           <li><blockquote><a href="#mjqmbl">1.本类说明</a></blockquote></li>
+          <li><blockquote><a href="#ddxmjql">2.文本到对象哈希表项枚举器类</a></blockquote></li>
+          <li><blockquote><a href="#dwbmjql">3.文本到文本哈希表项枚举器类</a></blockquote></li>
+          <li><blockquote><a href="#wbmjql">4.文本枚举器类</a></blockquote></li>
+          <li><blockquote><a href="#mjqsfyxycy">5.是否有下一成员</a></blockquote></li>
+           <li><blockquote><a href="#mjqdxycy">6.到下一成员</a></blockquote></li>
+           <li><blockquote><a href="#mjqsccy">7.删除当前成员</a></blockquote></li>
+		</ol>	
+		
+		
+			<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new5')" >五.哈希集模板类<span>(可收缩)</span></h6></li>
+		<ol id="new5">
+        
+           <li><blockquote><a href="#hxjmbl">1.本类说明</a></blockquote></li>
+          <li><blockquote><a href="#wbhxjl">2.文本哈希集类</a></blockquote></li>
+          <li><blockquote><a href="#hxjcj">3.创建</a></blockquote></li>
+          <li><blockquote><a href="#hxjjr">4.加入</a></blockquote></li>
+          <li><blockquote><a href="#hxjsfcz">5.是否存在</a></blockquote></li>
+           <li><blockquote><a href="#hxjfz">6.复制</a></blockquote></li>
+           <li><blockquote><a href="#hxjsc">7.删除</a></blockquote></li>
+           <li><blockquote><a href="#hxjqc">8.清除</a></blockquote></li>
+		</ol>	
+		
+		
+		
+			<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new6')" >六.列表模板类<span>(可收缩)</span></h6></li>
+		<ol id="new6">
+        
+           <li><blockquote><a href="#lbmbl">1.本类说明</a></blockquote></li>
+          <li><blockquote><a href="#wblbl">2.文本列表类</a></blockquote></li>
+          <li><blockquote><a href="#lbcrcy">3.插入成员</a></blockquote></li>
+          <li><blockquote><a href="#lbcrcy2">4.插入成员2</a></blockquote></li>
+          <li><blockquote><a href="#lbthcy">5.替换成员</a></blockquote></li>
+           <li><blockquote><a href="#lbczcy">6.查找成员</a></blockquote></li>
+           <li><blockquote><a href="#lbdzcy">7.倒找成员</a></blockquote></li>
+           <li><blockquote><a href="#lbqcy">8.取成员</a></blockquote></li>
+           <li><blockquote><a href="#lbsczdwzcy">9.删除指定位置成员</a></blockquote></li>
+           <li><blockquote><a href="#lbsczdfwcy">10.删除指定范围成员</a></blockquote></li>
+           <li><blockquote><a href="#lbscjlbmjq">11.创建列表枚举器</a></blockquote></li>
+ 
+		</ol>	
+		
+		
+		
+		
+			<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new7')" >七.列表枚举器模板类<span>(可收缩)</span></h6></li>
+		<ol id="new7">
+        
+           <li><blockquote><a href="#lbmjql">1.本类说明</a></blockquote></li>
+          <li><blockquote><a href="#wblbmjql">2.文本列表枚举器类</a></blockquote></li>
+          <li><blockquote><a href="#lbmjqcrcy">3.插入成员</a></blockquote></li>
+          <li><blockquote><a href="#lbmjqsfys">4.是否有上一成员</a></blockquote></li>
+          <li><blockquote><a href="#lbmjqdsycy">5.到上一成员</a></blockquote></li>
+           <li><blockquote><a href="#lbmjqqscysyz">6.取上一成员索引值</a></blockquote></li>
+           <li><blockquote><a href="#lbmjqxycy">7.取下一成员索引值</a></blockquote></li>
+           <li><blockquote><a href="#lbmjthdqcy">8.替换当前成员</a></blockquote></li>
+           
+		</ol>	
+		
+		
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new8')" >八.数组列表模板类<span>(可收缩)</span></h6></li>
+		<ol id="new8">
+        
+           <li><blockquote><a href="#shuzuliebiao">1.本类说明</a></blockquote></li>
+          <li><blockquote><a href="#wenbenshuzu">2.文本数组类</a></blockquote></li>
+          <li><blockquote><a href="#scdyrl">3.删除多余容量</a></blockquote></li>
+          <li><blockquote><a href="#qbzxrl">4.确保最小容量</a></blockquote></li>
+       
+		</ol>	
+	
+
+
+	</ol>
+</ul>
+</div>
+
+
+<p align="left">
+<h2>常用模板类处理讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+  
+     
+<font style="font-size: 12pt; font-weight:700">● 帮助说明</font><br/>
+<br/>
+
+<blockquote>
+<p align="left">本篇教程中针对各种数据进行处理。</p>
+<p align="left">包含<strong>“哈希表”</strong>，<strong>“列表”</strong>，<strong>“枚举器”</strong>，<strong>“数组”</strong>等各种数据处理。</p>
+<p align="left">具体看本教程右侧树型列表。</p>
+ <!-- <p align="left"><img border="0" src="images/1.png" ></p>-->
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font><br/>
+<p align="left">&nbsp;</p>
+
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">打开窗口设计器，分别拖放<b>“按钮”</b>和<b>“编辑框”</b>，给按钮起名<b>“按钮1”</b>。</p>
+    <p align="left">编辑框的<b>“组件宽度类型”</b>和<b>“组件高度类型”</b>分别设置为<b>“匹配父组件宽度”</b>和<b>“匹配内容高度”</b>。</p>
+	<p align="left"><img border="0" src="images/3.png" ></p>
+    <p align="left">最后点击<b>“确定”</b>，右键<b>“按钮”</b>，添加<b>“按钮_被单击”</b>接收事件方法。</p> 
+	<p align="left">添加完毕后，顺便利用<b>“如果”</b>指定<b>“来源对象==按钮1”</b>。</p>
+    <p align="left"><img border="0" src="images/4.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="hxbmbl"></a>
+<h2>一、哈希表模板类</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">1、在本教程中有<b>“两个子类”</b>继承自本类，共用本类中的所有方法。</p>
+	<p align="left">2、注意<b>“所有模板类”</b>不支持直接调用，需要通过<b>“子类”</b>才能调用模板类中的方法。</p>
+  <p align="left">3、本模板类，总共有<b>“三个模板类型”</b>，可看图内的模板类型的简单说明。</p>
+	<p align="left"><b>哈希表基本概念：</b>哈希表（也叫散列表），是根据<b>“关键码值”</b>而直接进行访问的数据结构。</p>
+	<p align="left">也就是说，它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做<b>“散列函数”</b>，存放记录的数组叫做<b>“哈希表”</b>。</p>
+	<p align="left"><img border="0" src="images/2.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="wbddxhxbl"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本到对象哈希表类</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">1、本类继承自<b>“哈希表模板类”</b>，那么本类也就是<b>“哈希表模板类”</b>的子类。</p>
+	<p align="left">2、通过本类，可以去调用<b>“哈希表模板类”</b>也就是<b>“父类”</b>的所有方法。</p>
+	<p align="left">3、通过<b>“所设置值”</b>可以看到，本类有<b>“文本型，对象类”</b>和<b>“文本到对象哈希表项数据集类”</b>三个数据类型。</p>
+	<p align="left">4、这三个数据类型分别对应<b>“哈希表模板类”</b>中的三个模板类型。</p>
+	<p align="left">也就是说：<b>“模板类型1”</b>实际的数据类型为<b>“文本型”</b>，凡是在本类中遇到<b>“模板类型1”</b>的就表示是<b>“文本型”</b>数据。</p>
+	<p align="left"><b>“模板类型2”</b>对应<b>“对象类”</b>。</p>
+	<p align="left"><b>“模板类型3”</b>对应<b>“文本到对象哈希表项数据集类”</b>。</p>
+	<p align="left"><img border="0" src="images/5.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="wbdwbhxbl"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本到文本哈希表类</font><br/>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">本类同样也是继承自<b>“哈希表模板类”</b>，可使用<b>“哈希表模板类”</b>的所有方法。</p>
+	<p align="left">不同之处是<b>“模板类型”</b>对应的的实际数据类型不同。</p>
+	<p align="left">在本类中<b>“模板类型1和2”</b>都表示<b>“文本型”</b>，<b>“模板类型3”</b>表示<b>“文本到文本哈希表项数据集类”</b>。</p>
+<p align="left"><img border="0" src="images/6.png" ></p>
+   
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<p align="left">以下开始讲解<b>“哈希表模板类”</b>中的各个方法如何使用。</p>
+<p align="left">以上类除了<b>“模板类型”</b>代表的数据类型不同之外，其它用法基本一致。</p>
+	<p align="left">此处以<b>“文本到文本哈希表类”</b>举例。</p>
+<p align="left">&nbsp;</p>
+<a name="hxbcj"></a><a name="hxbzr"></a><a name="hxbdq"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 置入</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 读取</font><br/>	
+<p align="left">&nbsp;</p>
+<p align="left">以上为三个为关联方法，这里统一讲解。</p>
+<p align="left"><b>“创建”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">执行本方法后，会创建一个当前对象，对象的<b>“容量”</b>跟参数内设定的<b>“容量”</b>有关系。</p>
+    <p align="left">如果填写<b>“10”</b>，那么本对象中只能容纳<b>“10个”</b>成员。</p>
+    <p align="left"><img border="0" src="images/7.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left"><strong>"置入"</strong>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法的作用就是给创建好的<b>“哈希表模板类”</b>，设置成员数值。</p>
+	<p align="left">成员有两个部分组成，分别是<b>“关键字”</b>和<b>“要设置的值对象”</b>，有点类似于程序配置项。</p>
+	<p align="left">注意：如果<b>“关键字”</b>已经存在，则会覆盖原来的<b>“值对象”</b>，并且还会将原来的值返回。</p>
+	
+	<p align="left"><img border="0" src="images/8.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><strong>"读取"</strong>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法的作用就是通过<b>“关键字”</b>读取设置的<b>“值”</b>，并且将值返回。</p>
+	
+	<p align="left"><img border="0" src="images/9.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、定义两个变量，类型分别为<b>“文本到文本哈希表类”</b>和<b>“文本型”</b>，前者注意要设置参考。</p>
+    <p align="left">2、随后利用<b>“创建”</b>方法，创建对象后赋值给定义的<b>“哈希表”</b>变量。</p>
+	<p align="left">3、通过本类中关于<b>“模板类型”</b>的描述可以得知，此处的<b>“模板类型1、2”</b>均是文本型数据（其它方法不再讲解）。</p>
+	<p align="left">3、在调用<b>“置入”</b>方法时，参数直接填写文本即可。</p>
+    <p align="left">4、然后赋值给<b>“前一个值”</b>变量。</p>    
+	<p align="left">注意：此处的<b>“前一个值”</b>只有在<b>“关键字”</b>存在的时候，本变量才有返回值，否则返回的是空对象。</p>
+    <p align="left">5、因在此之前没有进行过任何<b>“置入”</b>操作，所以此处的<b>“前一个值”</b>变量，必然为<strong>空对象</strong>。</p>
+    <p align="left">6、最后可以调用<b>“读取”</b>方法，读取<b>“关键字”</b>显示在<b>“编辑框1”</b>中。</p>
+	<p align="left"><img border="0" src="images/10.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（gif）：</p>
+<blockquote>
+    <p align="left">点击<b>“按钮1”</b>后，成功将<b>“设置的值”</b>取出。</p>
+	<p align="left"><img border="0" src="images/10.gif" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+<a name="hxbzsfcz"></a>
+<font style="font-size: 12pt; font-weight:700">● 值是否存在</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">顾名思义，就是判断当前类中，是否已经存储了指定值。</p>
+<p align="left">返回<b>“真”</b>为存在，返回<b>“假”</b>为不存在。</p>    
+  <p align="left"><img border="0" src="images/11.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">依然需要创建当前<b>“哈希表”</b>对象，然后利用<b>“哈希表”</b>变量去调用<b>“值是否存在”</b>方法。</p>
+    <p align="left">在本代码的演示中，必然会返回<b>“假”</b>，提示<b>“不存在”</b>。</p>
+    <p align="left">因为并没有<b>“置入”</b>要检查的值。</p>
+	<p align="left"><img border="0" src="images/12.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果图：</p>
+<blockquote>
+  <p align="left">结果也确实是如此，点击<b>“按钮1”</b>后提示<b>“不存在”</b>。</p>
+	<p align="left"><img border="0" src="images/13.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="hxbgjzsfcz"></a>
+<font style="font-size: 12pt; font-weight:700">● 关键字是否存在</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本方法的作用就是用来检查当前对象的<b>“关键字”</b>是否存在。</p>
+	<p align="left">代码编写参考上一个方法，此处不再演示。</p>
+  
+    <p align="left"><img border="0" src="images/14.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="hxbqcys"></a>
+<font style="font-size: 12pt; font-weight:700">● 取成员数</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">顾名思义就是取出当前对象的<b>“成员数”</b>。</p>
+	<p align="left"><img border="0" src="images/15.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">依然是创建当前<b>“哈希表”</b>对象，成员数填写<b>“10”</b>。</p>
+<p align="left">然后调用<b>“置入”</b>方法置入一个成员后，最后调用<b>“取成员数”</b>方法读取成员数。</p>
+	<p align="left"><img border="0" src="images/16.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+<p align="left">可以看到最终的结果显示<b>“1”</b>，也就证明<b>“创建”</b>时填写的成员数，并不是最终的<b>“成员数量”</b>了。</p>
+	<p align="left">决定成员数量跟<b>“置入”</b>方法有关系。</p>
+	<p align="left"><img border="0" src="images/17.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+	<a name="hxbqshj"></a>
+	<font style="font-size: 12pt; font-weight:700">● 取数据集</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，本方法的作用会取出当前对象的<b>“数据集”</b>对象。</p>
+	<p align="left">通过上面关于本类的模板类型描述可以得知，<b>“模板类型3”</b>实际数据类型为<b>“文本到文本哈希表项数据集类”</b>。</p>
+  <p align="left">除此之外还有一个方法可以判断，点击<b>“模板类型3”</b>可以查看具体的类型。</p>
+	<p align="left"><img border="0" src="images/18.png" ></p>
+<p align="left">&nbsp;</p>
+	<p align="left">可以看到<b>“文本到文本哈希表类”</b>的<b>“实际类型”</b>为<b>“文本到文本哈希表项数据集类”</b>。</p>
+	
+	<p align="left"><img border="0" src="images/19.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、创建当前对象，然后随便置入两个成员。</p>
+	<p align="left">2、除此之外还需要定义一个类型为<b>“文本到文本哈希表项数据集类”</b>的变量，要设置参考。</p>
+	<p align="left">3、随后通过<b>“哈希表”</b>调用<b>“取数据集”</b>方法，赋值给定义的<b>“哈希表项”</b>变量。</p>
+	<p align="left">4、最后可以通过<b>“哈希表项”</b>调用<b>“取成员数”</b>方法获取成员数量。</p>
+	<p align="left"><img border="0" src="images/20.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果：</p>
+<blockquote>
+	<p align="left">执行<b>“按钮1”</b>编辑框内显示<b>“成员数2”</b>。</p>
+	<p align="left">证明通过本方法可以读取<b>“哈希表”</b>内的成员数量。</p>
+	<p align="left"><img border="0" src="images/21.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<a name="hxbfz"></a>
+<font style="font-size: 12pt; font-weight:700">● 复制</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，就是复制当前对象，并且返回创建一个新的对象。</p>
+	<p align="left">新的对象，拥有当前对象的所有数据。</p>
+	<p align="left"><img border="0" src="images/22.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、通过<b>“哈希表”</b>变量调用<b>“复制”</b>方法后。</p>
+	<p align="left">2、<b>“新哈希表”</b>必然拥有<b>“哈希表”</b>所有的成员数据。</p>
+	<p align="left"><img border="0" src="images/23.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">“按钮1”被点击后，通过新哈希表读取数据成功。</p>
+	<p align="left"><img border="0" src="images/23a.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<a name="hxbsfwk"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否为空</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，本方法就是用来判断当前对象<b>“是否为空”</b>。</p>
+	<p align="left"><img border="0" src="images/24.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接通过<b>“哈希表”</b>变量调用本方法，最后判断本方法的返回值即可。</p>
+	<p align="left"><img border="0" src="images/24a.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">不进行任何数据置入的情况下，本方法必然返回真。</p>
+	<p align="left"><img border="0" src="images/24b.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+	<a name="hxbsc"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，就是删除指定<b>“关键字”</b>。</p>
+	<p align="left">如果<b>“关键字”</b>存在会将<b>“当前值”</b>返回，否则返回空对象。</p>
+	<p align="left"><img border="0" src="images/25.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、创建当前<b>“哈希表”</b>对象，随便<b>“置入”</b>两个成员。</p>
+	<p align="left">2、调用<b>“删除”</b>方法，删除<b>“关键字1”</b>，赋值给<b>“返回值3”</b>变量。</p>
+	<p align="left">3、最后将<b>“返回值3”</b>和<b>“成员数”</b>都显示在编辑框中。</p>
+	<p align="left"><img border="0" src="images/26.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">成功取出被删除的关键字的值，除此之外成员数也减少了。</p>
+	<p align="left"><img border="0" src="images/27.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<a name="hxbqc"></a>
+<font style="font-size: 12pt; font-weight:700">● 清除</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，调用本方法后会<b>“清除”</b>当前<b>“哈希表”</b>的所有内容。</p>
+	<p align="left"><img border="0" src="images/28.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、创建当前对象后，置入一个成员，并取出成员数。</p>
+	<p align="left">2、调用“清除”方法后再次取出成员数。</p>
+	<p align="left"><img border="0" src="images/28a.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">清除后成员数将为0。</p>
+	<p align="left"><img border="0" src="images/28b.png" ></p>
+</blockquote>
+
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="haxibiaoxiang"></a>
+<h2>二、哈希表项模板类</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left">1、本模板类有两个<b>“模板类型”</b>和<b>“三个方法”</b>。</p>
+  <p align="left">2、本类同样也不能直接调用，需要通过<b>“子类”</b>来调用本类中的方法。</p>
+	<p align="left">3、在本教程中介绍<b>“两个子类”</b>，分别为<b>“文本到对象哈希表项类”</b>和<b>“文本到文本哈希表项类”</b>。</p>
+	<p align="left"><img border="0" src="images/29.png" >
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="wbddxhxbxl"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本到对象哈希表项类</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本方法继承自<b>“哈希表项模板类”</b>，可以使用它的所有方法。</p>
+	<p align="left">它的所设置值是<b>“文本型”</b>和<b>“对象类”</b>，分别对应<b>“模板类型1和2”</b>。</p>
+	
+	<p align="left"><img border="0" src="images/30.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="wbdwbhxbxl"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本到文本哈希表项类</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本类同样也继承自<b>“哈希表项模板类”</b>，不同之处是，它的所设置值是两个<b>“文本型”</b>。</p>
+<p align="left">也就表示在本类中<b>“模板类型1、2”</b>都表示<b>“文本型”</b>。</p>
+	<p align="left"><img border="0" src="images/31.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+	<p align="left">以上两个类除了<b>“模板类型”</b>代表的实际类型不同之外，基本用法一致。</p>
+	<p align="left">此处讲解<b>“文本到文本哈希表项类”</b>。</p>
+	<p align="left">&nbsp;</p>
+<a name="hxbxszz"></a>
+<a name="hxbxqz"></a>
+	<font style="font-size: 12pt; font-weight:700">● 设置值</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取值</font><br/>
+
+<p align="left">&nbsp;</p>
+	
+<p align="left"><b>“设置值”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，设置表项中<b>“关键字”</b>对应的值数据。</p>
+	<p align="left"><b>“模板类型2”</b>实际类型为<b>“文本型”</b>，所以代码编写时直接填写文本值即可。</p>
+	<p align="left"><img border="0" src="images/32.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“取值”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法的作用就是取出值，并返回。</p>
+	<p align="left"><img border="0" src="images/33.png" ></p>
+</blockquote>	
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、代码略微复杂，需要定义五个变量。</p>
+	<p align="left">2、类型分别为<b>“文本到文本哈希表类”</b>，<b>“文本到文本哈希表项类”</b>，<b>“文本到文本哈希表项数据集类”</b>、<b>“文本到文本哈希表项枚举器类”</b>和<b>“文本型”</b>。</p>
+	<p align="left">3、定义完毕后，前四个需要设置参考。</p>
+	<p align="left">4、首先需要创建<b>“哈希表”</b>对象，通过<b>“哈希表”</b>的<b>“置入”</b>方法添加一个<b>“关键字”</b>成员。</p>
+	<p align="left">5、通过<b>“哈希表”</b>调用<b>“取数据集”</b>赋值给<b>“哈希集”</b>变量。</p>
+	<p align="left">6、然后通过本变量调用<b>“创建枚举器”</b>赋值给<b>“表项枚举器”</b>变量。</p>
+	<p align="left">7、随后需要通过<b>“枚举器”</b>变量，调用<b>“是否有下一成员”</b>方法，判断是否有成员存在。</p>
+	<p align="left">此方法的作用是防止某些情况下，成员为空的时候报错。</p>
+	<p align="left">8、然后调用<b>“到下一成员”</b>方法赋值给<b>“哈希表项”</b>，这样我们就获得了<b>“哈希表项”</b>对象。</p>
+	<p align="left">9、通过<b>“哈希表项”</b>变量调用<b>“设置值”</b>，就可以为当前成员设置一个文本值。</p>
+
+	<p align="left">10、最后调用<b>“取值”</b>方法，就可以将设置的值取出。</p>
+	<p align="left"><img border="0" src="images/34.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>后，编辑框内就会显示设置的文本值。</p>
+	<p align="left"><img border="0" src="images/35.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="hxbxqgjz"></a>
+<font style="font-size: 12pt; font-weight:700">● 取关键字</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用就是读取出来<b>“置入”</b>方法填写的关键字名称。</p>
+	<p align="left"><img border="0" src="images/36.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在上一个方法的代码上简单修改即可。</p>
+	<p align="left"><img border="0" src="images/37.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">最终结果会在编辑框内显示<b>“置入”</b>方法置入的关键字名称。 </p>
+	<p align="left"><img border="0" src="images/37a.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="jihemuban"></a>
+<h2>三、集合模板类</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">在本类中，共有两个<b>“模板类型”</b>。</p>
+	<p align="left">本教程介绍了<b>“六个类”</b>继承自本类，共用本类中的所有方法。</p>
+	<p align="left">本类同样不能直接调用，需要通过<b>“子类”</b>去调用。</p>
+	<p align="left"><img border="0" src="images/38.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="wbddxhxbxjhl"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本到对象哈希表项集合类</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本类继承自<b>“集合模板类”</b>，可使用此类中所有方法。</p>
+<p align="left">通过<b>“所设置值”</b>可以看出，<b>“模板类型1、2”</b>的实际数据类型为<b>“文本到对象哈希表项类”</b>和<b>“文本到对象哈希表项枚举器类”</b>。</p>
+	<p align="left"><img border="0" src="images/39.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>	
+<a name="wbddxhxbxsjjl"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本到对象哈希表项数据集类</font><br/>	
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+
+	<p align="left">同样继承自<b>“集合模板类”</b>，继承了本类中所有的用法。</p>
+<p align="left">通过<b>“所设置值”</b>可以看出，<b>“模板类型1、2”</b>的实际数据类型为<b>“文本到对象哈希表项类”</b>和<b>“文本到对象哈希表项集合类”</b>。</p>
+	<p align="left">本类可通过<b>“文本到对象哈希表类”</b>中的<b>“取数据集”</b>方法创建本对象。</p>
+	<p align="left"><img border="0" src="images/40.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>	
+<a name="wbdwbhxbxjhl"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本到文本哈希表项集合类</font><br/>	
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">同样继承自<b>“集合模板类”</b>，不同之处在于。</p>
+<p align="left">通过<b>“所设置值”</b>可以看出，<b>“模板类型1、2”</b>的实际数据类型为<b>“文本到文本哈希表项类”</b>和<b>“文本到文本哈希表项枚举器类”</b>。</p>
+	<p align="left"><img border="0" src="images/41.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="dwbhxbxsjjl"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本到文本哈希表项数据集类</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本类的不同之处在于，<b>“模板类型1、2”</b>的实际数据类型为<b>“文本到文本哈希表项类”</b>和<b>“文本到文本哈希表项集合类”</b>。</p>
+	<p align="left">本类用法可参考<a href="#wbdwbhxbxl"><b>“文本到文本哈希表项类”</b></a>。</p>
+	<p align="left"><img border="0" src="images/42.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="wbsjjl"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本数据集类</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本类的不同之处在于，<b>“模板类型1、2”</b>的实际数据类型为<b>“文本型”</b>和<b>“文本集合类”</b>。</p>
+	<p align="left">本类的操作可以参考安卓文件操作实例中的<a href="a_file.htm#zwbjpzx"><b>“置文本集配置项”</b></a>方法。</p>
+	<p align="left"><img border="0" src="images/43.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<a name="wbjhl"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本集合类</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本类的不同之处在于，<b>“模板类型1、2”</b>的实际数据类型为<b>“文本型”</b>和<b>“文本枚举器类”</b>。</p>
+	<p align="left"><img border="0" src="images/44.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">以上<b>“六个类”</b>除了模板类型的实际数据类型不同之外，方法的调用基本一致。</p>
+<p align="left">此处举例<b>“文本集合类”</b>。</p>
+<p align="left">&nbsp;</p>
+<a name="jhtjcy"></a>
+	<a name="jhqcys"></a>
+<font style="font-size: 12pt; font-weight:700">● 添加成员</font><br/>
+	
+<font style="font-size: 12pt; font-weight:700">● 取成员数</font>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>“添加成员”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，给当前类添加一个成员，在本类中<b>“模板类型1”</b>实际类型为<b>“文本型”</b>。</p>
+	<p align="left">代码编写时，直接写文本即可。</p>
+	<p align="left">添加成功返回真，否则返回假。</p>
+	<p align="left"><img border="0" src="images/45.png" ></p>
+</blockquote>
+	
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>“取成员数”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，就是取出当前类的成员数量。</p>
+	<p align="left">返回值为一个<b>“整数型”</b>。</p>
+	<p align="left"><img border="0" src="images/46.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">1、<b>“按钮1”</b>被单击，定义两个变量设置参考，一个类型为<b>“文本集合类”</b>，另外一个类型为<b>“文本枚举器类”</b>。</p>
+	<p align="left">2、利用<b>“文本哈希集类.创建()”</b>方法，可以创建当前对象。</p>
+	<p align="left">3、调用<b>“添加成员”</b>方法，随便添加两个成员。</p>
+	<p align="left">4、调用<b>“取成员数”</b>方法，取出成员数量放到编辑框中。</p>
+	<p align="left">5、如果想要把所有的成员列举出来，需要利用<b>“创建枚举器”</b>方法。</p>
+	<p align="left">6、创建的枚举器赋值给<b>“枚举器”</b>变量。</p>
+	<p align="left">7、使用<b>“循环”</b>命令，将所有成员循环出来。</p>
+	<p align="left">8、其中<b>“到下一成员”</b>方法，可以将成员取出。</p>
+	
+	<p align="left"><img border="0" src="images/47.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+<p align="left">点击<b>“按钮1”</b>后编辑框内就会出现如下信息。</p>
+	<p align="left">成员数显示2，也就证明<b>“创建”</b>方法创建的数量，不代表真正的成员数。</p>
+	<p align="left"><img border="0" src="images/48.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="jhtjcy2"></a>
+<font style="font-size: 12pt; font-weight:700">● 添加成员2</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本方法的作用就是将指定<b>“集合模板类”</b>中的所有成员，添加到<b>“本模板类”</b>中。</p>
+	<p align="left">注意：只要有一个成员添加进去，就会<b>“返回真”</b>。</p>
+
+	<p align="left"><img border="0" src="images/49.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">只需要在上一个方法的代码中简单修改即可。</p>
+	<p align="left">1、定义两个<b>“文本集合类”</b>，分别创建它们，并且给分别添加成员。</p>
+	<p align="left">2、通过<b>“集合类1”</b>调用<b>“添加成员2”</b>方法，将<b>“集合类2”</b>写入参数中。</p>
+	<p align="left">3、最后将<b>“集合类1”</b>的<b>“所有成员”</b>输入。</p>
+	<p align="left"><img border="0" src="images/50.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+<p align="left">可以看到成功输出了两个成员，并且成员数也变成了2.</p>
+	<p align="left"><img border="0" src="images/51.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="jhsfwk"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否为空</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">顾名思义，就是用来判断当前类是否有数据，如果没有任何数据返回<b>“真”</b>，否则返回<b>“假”</b>。</p>
+
+	<p align="left"><img border="0" src="images/52.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接用<b>“如果”</b>命令去判断当前方法返回值即可。</p>
+	<p align="left"><img border="0" src="images/52a.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">如果在不设置任何内容的情况下，本方法必然返回真。</p>
+	<p align="left"><img border="0" src="images/52b.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="jhsfbh"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否包含</font><br/><a name="jhsfbh2"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否包含2</font>
+
+<p align="left">&nbsp;</p>
+<p align="left">以上两个方法都是用来判断<strong>“文本集合内”</strong>是否包含指定内容。</p>
+<p align="left">此处演示“是否包含”方法。</p>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">顾名思义，就是用来判断本对象中是否存在指定成员，如果存在返回<b>“真”</b>否则返回<b>“假”</b>。</p>
+	<p align="left">在本类中，参数2的<b>“模板类型1”</b>的实际数据类型为<b>“文本型”</b>，直接填写要判断文本即可。</p>
+	<p align="left"><img border="0" src="images/53.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">直接用“如果”判断当前方法的返回值即可。</p>
+	<p align="left"><img border="0" src="images/53a.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">当判断一个不存在集合中的成员时，本方法必然返回假。</p>
+	<p align="left"><img border="0" src="images/53b.png" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<a name="jhdsz"></a>
+<font style="font-size: 12pt; font-weight:700">● 到数组</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">1、本方法的作用是将当前对象，转换成数组，在本类中数组类型为<b>“文本型”</b>。</p>
+	<p align="left">2、<b>“参数2”</b>的缓冲数组对象的作用。</p>
+	<p align="left">3、如果<b>“缓冲数组”</b>的成员数<b>“大于等于”</b>本集合类类的成员数，则优先转入<b>“缓冲数组”</b>内，否则转换的数组会返回。</p>
+	<p align="left">例如：本集合类中有<b>“五个成员”</b>，而<b>“缓冲数组”</b>有超过五个成员，则放到转换后的数组放入缓冲数组内。</p>
+	<p align="left">假如说，缓冲数组成员只有<b>“两个”</b>，那么数组将会返回。</p>
+	<p align="left"><img border="0" src="images/55.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">1、创建两个<b>“文本型数组”</b>，其中一个设置成员数<b>“1”</b>。</p>
+	<p align="left">2、创建集合类后随便添加两个成员，然后使用<b>“到数组”</b>方法，将数组变量写入参数，并且赋值给一个数组变量。</p>
+	<p align="left">3、这样的情况下，最终的结果会赋值给<b>“文本数组”</b>，而缓冲文本数组内，并不会有任何数据。</p>
+	<p align="left">4、最后调用<b>“循环”</b>命令，将数组数据输出。</p>
+	<p align="left"><img border="0" src="images/56.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+<p align="left">点击<b>“按钮1”</b>可以看到两个成员成功输出，不过输出的顺序和添加时是相反的。</p>
+	
+	<p align="left"><img border="0" src="images/57.png" ></p>
+</blockquote>
+	
+	
+		<p align="left">&nbsp;</p>
+<a name="jhsczdcy"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除指定成员</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本方法顾名思义，就是删除指定成员，删除成功返回<b>“真”</b>，否则返回<b>“假”</b>。</p>
+<p align="left">在本类中，参数2直接填写要删除的文本成员即可。</p>
+	<p align="left"><img border="0" src="images/58.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+
+	<p align="left">1、创建<b>“集合类”</b>后，随便添加三个成员。</p>
+	<p align="left">2、然后调用<b>“删除指定成员”</b>方法，删除<b>“222”</b>。</p>
+	<p align="left">3、最后<b>“创建枚举器”</b>让所有成员输出到编辑框。</p>
+	<p align="left"><img border="0" src="images/59.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+<p align="left">点击<b>“按钮1”</b>可以看到，只输出了两个成员，<b>“222”</b>被删除。</p>
+
+	<p align="left"><img border="0" src="images/60.png" ></p>
+</blockquote>
+	
+	
+		<p align="left">&nbsp;</p>
+<a name="jhsczdcy2"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除指定成员2</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本方法的作用就是将<b>“集合1”</b>中所有<b>“集合2”</b>的成员全部删除。</p>
+	<p align="left">只要成功删除<b>“一个”</b>，则返回<b>“真”</b>。</p>
+	<p align="left"><img border="0" src="images/61.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">1、定义<strong>“集合类1”</strong>并循环添加10个成员。</p>
+<p align="left">2、定义<strong>“集合类2”</strong>并循环添加3个成员。</p>
+<p align="left">2、利用<strong>“集合类1”</strong>调用当前方法删除<strong>“集合类2”</strong>所拥有的所有成员。</p>
+<p align="left">4、最后取出<strong>“集合类1”</strong>的成员数量，用来验证删除结果。</p>
+	<p align="left"><img border="0" src="images/61a.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+<p align="left">最终结果得到<strong>“集合类1”</strong>的成员数为7，证明集合类1删除成员成功。</p>
+	<p align="left"><img border="0" src="images/61b.png" ></p>
+</blockquote>
+	
+	
+		<p align="left">&nbsp;</p>
+<a name="jhsczdcy3"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除指定成员3</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本方法的作用就是，删除<b>“集合1”</b>中所有<b>“集合2”</b>不存在的成员。</p>
+	<p align="left">例如：<b>“集合1”</b>有成员<b>“1、2、3”</b>，<b>“集合2”</b>有成员<b>“3、4、5”</b>。</p>
+	<p align="left">那么最终结果会将<b>“集合1”</b>中的<b>“1、2”</b>删除，因为它并不存在于<b>“集合2”</b>中。</p>
+	<p align="left"><img border="0" src="images/62.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">1、创建<strong>“集合类1”</strong>变量并添加三个成员。</p>
+<p align="left">2、创建<strong>“集合类2”</strong>变量并添加两个成员，其中一个成员在<strong>“集合类1”</strong>中存在。</p>
+<p align="left">3、调用当前方法删除<strong>“集合类2”</strong>中不存在的成员。</p>
+<p align="left">4、将删除后的<strong>“集合类1”</strong>转换为数组显示在编辑框中。</p>
+	<p align="left"><img border="0" src="images/62a.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+<p align="left">最终结果，集合类1中的成员只会剩下“3”。</p>
+	<p align="left"><img border="0" src="images/62b.png" ></p>
+</blockquote>
+	
+	
+		<p align="left">&nbsp;</p>
+<a name="jhscsycy"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除所有成员</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本方法的作用会将当前类中所有的成员删除，也就是进行了清空操作。</p>
+	<p align="left"><img border="0" src="images/63.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">1、定义<strong>“集合类1”</strong>变量，并添加一些成员。</p>
+	<p align="left">2、调用当前方法清除所有成员。</p>
+	<p align="left">3、取出成员数显示在编辑框中。</p>
+	<p align="left"><img border="0" src="images/63a.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+<p align="left">最终“集合类1”中成员数为0，证明成员被全部删除。</p>
+	<p align="left"><img border="0" src="images/63b.png" ></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="mjqmbl"></a>
+<h2>四、枚举器模板类</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助如下图：</p>
+<blockquote>
+	<p align="left">本类不能直接调用方法，需要通过<b>“子类”</b>来进行调用。</p>
+	<p align="left">本类中共有三个方法和一个模板类型。 </p>
+	<p align="left">在本教程中介绍三个类，分别为：<strong>“文本到对象哈希表项枚举器类”</strong>，<strong>“文本到文本哈希表项枚举器类”</strong>和<strong>“文本枚举器类”</strong>。 </p>
+
+	<p align="left"><img border="0" src="images/64.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+<a name="ddxmjql"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本到对象哈希表项枚举器类</font><br/>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">通过<b>“所设置值”</b>可以得出，本类中的<b>“模板类型1”</b>的实际数据类型为<b>“文本到对象哈希表项类”</b>。</p>
+    <p align="left">本类继承了<b>“枚举器模板类”</b>的所有方法。</p>
+    <p align="left">本类可参考<a href="#wbdwbhxbxl"><b>“文本到文本哈希表项类”</b></a>的用法。</p>
+ 
+    <p align="left"><img border="0" src="images/65.png" ></p>
+ 
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="dwbmjql"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本到文本哈希表项枚举器类</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过<b>“所设置值”</b>可以得出，本类中的<b>“模板类型1”</b>的实际数据类型为<b>“文本到文本哈希表项类”</b>。</p>
+    <p align="left">本类继承了<b>“枚举器模板类”</b>的所有方法。</p>
+    <p align="left">本类可参考<a href="#wbdwbhxbxl"><b>“文本到文本哈希表项类”</b></a>的用法。</p>
+	<p align="left"><img border="0" src="images/66.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="wbmjql"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本枚举器类</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+     <p align="left">通过<b>“所设置值”</b>可以得出，本类中的<b>“模板类型1”</b>的实际数据类型为<b>“文本型”</b>。</p>
+    <p align="left">本类同样继承了<b>“枚举器模板类”</b>的所有方法。</p>
+    <p align="left">本类可参考<a href="#jhtjcy"><b>“文本集合类”</b></a>的用法。</p>
+	<p align="left"><img border="0" src="images/67.png" >
+
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="mjqsfyxycy"></a>
+	<font style="font-size: 12pt; font-weight:700">● 是否有下一成员</font>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>  
+<p align="left">顾名思义，就是用来判断当前枚举器<b>“是否存在下一个成员”</b>。</p>
+	 <p align="left">本方法可参考<a href="#jhtjcy"><b>“文本集合类”</b></a>的用法。</p>
+	<p align="left"><img border="0" src="images/68.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+<a name="mjqdxycy"></a>
+<font style="font-size: 12pt; font-weight:700">● 到下一成员</font>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">顾名思义，本方法的作用就是返回下一个成员的数据。</p>
+	<p align="left">如果没有下一个成员，则返回空对象。</p>
+	<p align="left">假如，本方法是通过<b>“文本枚举器”</b>调用的，那么本方法中的<b>“模板类型1”</b>实际类型数据为<b>“文本型”</b>。</p>
+	<p align="left">本方法可参考<a href="#jhtjcy"><b>“文本集合类”</b></a>的用法。</p>
+	<p align="left"><img border="0" src="images/69.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="mjqsccy"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除当前成员</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">当调用<b>“到下一个成员”</b>方法后，那么下一个成员就是<b>“当前成员”</b>。</p>
+    <p align="left">如果此时调用当前方法，那么这个成员就会被删除。</p>
+    <p align="left">成功删除返回<b>“真”</b>失败返回<b>“假”</b>。</p>
+	<p align="left"><img border="0" src="images/70.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、创建文本集合类对象并添加三个成员。</p>
+    <p align="left">2、创建枚举器对象，并执行“到下一成员()”方法。</p>
+    <p align="left">3、删除当前成员后取出当前集合类的成员数。</p>
+	<p align="left"><img border="0" src="images/70a.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+    <p align="left">最终结果证明，集合类中被成功删除了一个成员。</p>
+	<p align="left"><img border="0" src="images/70b.png" ></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="hxjmbl"></a>
+<h2>五、哈希集模板类</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本模板类同样不同直接调用方法，需要通过<b>“子类”</b>来调用。</p>
+    <p align="left">可以看到本类共有<b>“两个”</b>模板类型和<b>“六个”</b>方法。</p>
+	<p align="left"><img border="0" src="images/71.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="wbhxjl"></a>
+<font style="font-size: 12pt; font-weight:700">●文本哈希集类</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	
+    <p align="left">可以看到，本类不仅继承自<b>“哈希集模板类”</b>同样也继承了<b>“集合模板类”</b>。</p>
+    <p align="left">重点讲解<b>“哈希集模板类”</b>的方法。</p>
+    <p align="left">通过<b>“所设置值”</b>可以知道，<b>“模板类型1、2”</b>的实际数据类型为<b>“文本型”</b>和<b>“文本数据集类”</b>。</p>
+	<p align="left"><img border="0" src="images/72.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="hxjcj"></a>
+	<a name="hxjjr"></a>
+	<a name="hxjsfcz"></a>
+<font style="font-size: 12pt; font-weight:700">●创建</font><br/>
+<font style="font-size: 12pt; font-weight:700">●加入</font><br/>	
+<font style="font-size: 12pt; font-weight:700">●是否存在</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“创建”</b>帮助文档如下图：</p>
+<blockquote>
+	
+    <p align="left">本方法的作用就是创建一个<b>“哈希集模板类”</b>对象。</p>
+    <p align="left"><b>“文本哈希集类”</b>是<b>“哈希集模板类”</b>的子类，所以可以通过本方法创建文本哈希集。</p>
+	<p align="left">参数直接填写要创建的成员数即可。</p>
+	<p align="left"><img border="0" src="images/73.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“加入”</b>帮助文档如下图：</p>
+<blockquote>
+	
+    <p align="left">给当前哈希集添加关键字对象，在本类中<b>“模板类型1”</b>的实际数据类型为<b>“文本型”</b>。</p>
+    <p align="left">所以参数直接写文本数据即可。</p>
+	<p align="left">成功加入返回真，失败返回假。</p>
+	<p align="left"><img border="0" src="images/74.png" ></p>
+</blockquote>	
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“是否存在”</b>帮助文档如下图：</p>
+<blockquote>
+	
+    <p align="left">本方法顾名思义，就是判断指定关键字是否存在。</p>
+	<p align="left"><img border="0" src="images/75.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	
+    <p align="left">1、首先创建两个变量，类型分别为<b>“文本哈希集类”</b>和<b>“文本枚举器类”</b>，并设置参考。</p>
+    <p align="left">2、调用<b>“创建”</b>方法创建本类，赋值给<b>“哈希集”</b>变量。</p>
+	<p align="left">3、调用<b>“加入”</b>方法加入一个关键字。</p>
+	<p align="left">4、调用<b>“是否存在”</b>判断是否加入成功。</p>
+	<p align="left">5、通过<b>“枚举器”</b>的<b>“到下一成员”</b>方法可以取出当前<b>“关键字”</b>。</p>
+	<p align="left"><img border="0" src="images/76.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	
+    <p align="left">可以看到点击<b>“按钮1”</b>后，弹出提示<b>“存在”</b>，并且编辑框内也显示了加入进去的<b>“关键字”</b>。</p>
+
+	<p align="left"><img border="0" src="images/77.gif" ></p>
+</blockquote>
+	
+	
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="hxjfz"></a>
+<font style="font-size: 12pt; font-weight:700">●复制</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	
+    <p align="left">顾名思义，就是将当前对象复制一份并返回。</p>
+    <p align="left">返回的对象，将会拥有当前对象所有的数据。</p>
+	<p align="left"><img border="0" src="images/78.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	
+    <p align="left">1、创建“哈希集”对象，并添加关键字。</p>
+    <p align="left">2、定义“哈希集2”变量，调用“哈希集.复制()”方法，赋值给此变量。</p>
+    <p align="left">3、利用“是否存在()”方法，判断“哈希集2”是否存在数据。</p>
+	<p align="left"><img border="0" src="images/78a.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	
+    <p align="left">哈希集2存在数据，证明复制成功。</p>
+	<p align="left"><img border="0" src="images/78b.png" ></p>
+</blockquote>
+	
+	
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="hxjsc"></a>
+<font style="font-size: 12pt; font-weight:700">●删除</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	
+    <p align="left">顾名思义，就是删除指定关键字。</p>
+    <p align="left">删除成功返回真，失败返回假。</p>
+	<p align="left"><img border="0" src="images/79.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	
+    <p align="left">创建当前对象后，<b>“加入”</b>三个关键字。</p>
+    <p align="left">然后调用<b>“删除”</b>方法删除其中一个。</p>
+    <p align="left">最后利用<b>“枚举器”</b>将所有成员枚举出来，显示在编辑框内。</p>
+	<p align="left"><img border="0" src="images/80.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	
+    <p align="left">可以看到只有两个关键字显示出来。</p>
+	<p align="left"><img border="0" src="images/81.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="hxjqc"></a>
+<font style="font-size: 12pt; font-weight:700">●清除</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是删除所有关键字。</p>
+	<p align="left"><img border="0" src="images/82.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、创建“哈希集”对象后，并添加关键字。</p>
+    <p align="left">2、调用“清除()”方法后，取出哈希集的成员数验证。</p>
+	<p align="left"><img border="0" src="images/82a.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+    <p align="left">最终结果证明，哈希集内所有成员被删除。</p>
+	<p align="left"><img border="0" src="images/82b.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="lbmbl"></a>
+<h2>六、列表模板类</h2>
+<p align="left">&nbsp;</p>
+
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+    <p align="left">本模板类共有<b>“3个模板类型”</b>和<b>“9个方法”</b>。</p>
+    <p align="left">本类同样不支持直接调用方法，需要通过子类调用本类中的方法。</p>
+
+	<p align="left"><img border="0" src="images/83.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="wblbl"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本列表类</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">可以看到本类不仅继承自<b>“列表模板类”</b>，同样也继承了<b>“集合模板类”</b>的方法。</p>
+	<p align="left">通过<b>“所设置值”</b>看看出本类中<b>“模板类型1、2、3”</b>实际数据类型分别为<b>“文本型”</b>，<b>“文本集合类”</b>和<b>“文本列表枚举器类”</b>。 </p>
+	<p align="left"><img border="0" src="images/84.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="lbcrcy"></a>
+<font style="font-size: 12pt; font-weight:700">● 插入成员</font><br/>
+	<a name="lbqcy"></a>
+<font style="font-size: 12pt; font-weight:700">● 取成员</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“插入成员”</b>帮助文档如下图：</p>
+<blockquote>
+ <p align="left">本方法的作用就是在<b>“指定索引位置”</b>插入成员。</p>
+	<p align="left">插入成功返回真，失败返回假，<b>“失败原因”</b>可看红框内的说明。</p>
+	<p align="left">参数3在本类中的实际数据类型为<b>“文本型”</b>。</p>
+    <p align="left"><img border="0" src="images/85.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“取成员”</b>帮助文档如下图：</p>
+<blockquote>
+ <p align="left">顾名思义，取出<b>“指定索引”</b>项的成员。</p>
+	<p align="left">如果指定索引不存在，程序会异常闪退。</p>
+    <p align="left"><img border="0" src="images/86.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+
+     <p align="left">1、<b>“文本列表类”</b>的创建，需要通过去定义一个<b>“文本数组类”</b>变量。</p>
+      <p align="left">2、然后将<b>“数组类”</b>赋值给<b>“列表类”</b>变量。</p>
+       <p align="left">3、调用<b>“插入成员”</b>方法，进行成员的添加操作，第一次插入索引值填写<b>“0”</b>。</p>
+       <p align="left">4、最后调用<b>“取成员”</b>方法，取出成员显示在<b>“编辑框”</b>中。</p>
+    
+	<p align="left"><img border="0" src="images/87.png" >
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">点击<b>“按钮1”</b>后，插入的成员就会显示在<b>“编辑框1”</b>内。</p>
+	<p align="left"><img border="0" src="images/88.png" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="lbcrcy2"></a>
+<font style="font-size: 12pt; font-weight:700">● 插入成员2</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+ <p align="left">本方法的不同之处在于，插入的成员是<b>“文本集合类”</b>。</p>
+    <p align="left">本方法会将<b>“集合类”</b>中的所有成员插入到当前列表类中。</p>
+    <p align="left">成功插入一个成员返回真，失败返回假。</p>
+    <p align="left">失败原因可看红框内的提示。</p>
+	<p align="left"><img border="0" src="images/89.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、首先需要定义<b>“文本集合类”</b>变量，创建当前集合类，然后添加成员。</p>
+    <p align="left">2、然后就是创建<b>“列表类”</b>的那一套代码，此处需要增加一个<b>“文本枚举器类”</b>变量。</p>
+    <p align="left">3、调用<b>“插入成员2”</b>方法，插入<b>“集合类”</b>变量。</p>
+    <p align="left">4、通过<b>“列表类”</b>创建枚举器，赋值给<b>“枚举器”</b>变量。</p>
+    <p align="left">5、利用<b>“循环”</b>方法将<b>“所有成员”</b>枚举出来验证结果。</p>
+	<p align="left"><img border="0" src="images/90.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">程序运行后点击<b>“按钮1”</b>，就可以看到<b>“集合类”</b>的成员和<b>“列表类”</b>的成员全部被枚举了出来。</p>
+    <p align="left">也就间接证明，<b>“集合类”</b>成功的插入到了<b>“列表类”</b>中。</p>
+    <p align="left"><img border="0" src="images/91.png" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="lbthcy"></a>
+<font style="font-size: 12pt; font-weight:700">● 替换成员</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是根据<b>“参数2”</b>指定的索引，替换成<b>“参数3”</b>的新成员。</p>
+  <p align="left">替换成功返回真，失败返回假。</p>
+	<p align="left"><img border="0" src="images/92.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、创建列表类对象后，随便插入三个成员。</p>
+	<p align="left">2、然后调用本方法，替换<b>“索引1”</b>的成员。</p>
+	<p align="left">3、创建<b>“枚举器”</b>，利用<b>“循环”</b>方法将所有成员枚举出来。</p>
+	<p align="left"><img border="0" src="images/93.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">最后结果可以看到<b>“222”</b>已经被替换成指定的文本。</p>
+	<p align="left"><img border="0" src="images/94.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="lbczcy"></a>
+<font style="font-size: 12pt; font-weight:700">● 查找成员</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法的作用就是从<b>“列表类”</b>中第一个成员开始<b>“查找成员”</b>。</p>
+	<p align="left">返回<b>“第一个”</b>被找到的成员索引位置，如果未找到返回<b>“-1”</b>。</p>
+	<p align="left"><img border="0" src="images/95.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">例如：代码中我们插入两个<b>“333”</b>。</p>
+    <p align="left">然后调用<b>“查找成员”</b>方法，去查找<b>“333”</b>。</p>
+	
+	<p align="left"><img border="0" src="images/96.png" ></p>
+</blockquote>
+
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+    <p align="left">点击<b>“按钮1”</b>后，最终的结果会返回<b>“位置1”</b>。</p>
+	<p align="left"><img border="0" src="images/97.png" ></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="lbdzcy"></a>
+<font style="font-size: 12pt; font-weight:700">● 倒找成员</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法和<b>“查找成员”</b>的不同之处在于，本方法是从最后一个成员开始向前查找。</p>
+	<p align="left">找到后返回成员索引位置，未找到<b>“返回-1”</b>。</p>
+	<p align="left">本方法代码可参考<b><a href="#lbczcy">“查找成员”</a></b>，此处不再详细讲解。</p>
+	<p align="left"><img border="0" src="images/98.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="lbsczdwzcy"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除指定位置成员</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法的作用就是删除<b>“指定索引”</b>的成员。</p>
+    <p align="left">参数2如果不填写，默认删除<b>“索引0”</b>。</p>
+    <p align="left">成功删除<b>“返回真”</b>，失败原因可以看<b>“红框”</b>内的说明。</p>
+
+	<p align="left"><img border="0" src="images/99.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、插入成员后直接调用本方法，但是不填写参数。</p>
+    <p align="left">2、创建<b>“枚举器”</b>，利用<b>“循环”</b>方法将所有成员输出到编辑框。</p>
+  
+
+	<p align="left"><img border="0" src="images/100.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+    <p align="left">最后可以看到，成员<b>“111”</b>并没有被输出，被成功删除。</p>
+
+	<p align="left"><img border="0" src="images/101.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="lbsczdfwcy"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除指定范围成员</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法和<b>“删除指定位置成员”</b>不同之处就是增加了一个<b>“删除成员数目”</b>参数。</p>
+    <p align="left">它的作用就是删除这个范围内的所有成员。</p>
+    <p align="left">成功删除<b>“返回真”</b>，失败<b>“返回假”</b>。</p>
+	<p align="left"><img border="0" src="images/102.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、创建“文本列表类”对象，并循环插入10个成员。</p>
+    <p align="left">2、调用当前方法删除指定范围的成员。</p>
+    <p align="left">3、转换成文本数组显示在编辑框中验证结果。</p>
+	<p align="left"><img border="0" src="images/102a.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+    <p align="left">最终结果证明指定范围的成员被删除成功。</p>
+	<p align="left"><img border="0" src="images/102b.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="lbscjlbmjq"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建列表枚举器</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是创建一个<b>“列表枚举器”</b>。</p>
+	<p align="left">通过枚举器类可以将列表内的所有成员枚举出来。</p>
+	<p align="left">本方法不再详细介绍，可以看下面的教程<a href="#wblbmjql"><b>“文本列表枚举器类”</b></a>中的操作。</p>
+	<p align="left">注意：<b>“列表枚举器类”</b>中的方法是从<b>“列表尾部”</b>向前枚举。</p>
+	<p align="left"><b>“参数2”</b>中的<b>“索引位置”</b>，通常情况下填写当前列表的<b>“成员数”</b>。</p>
+	<p align="left"><img border="0" src="images/103.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p><a name="lbmjql"></a>
+	<h2>七、列表枚举器模板类</h2>
+<p align="left">&nbsp;</p>	
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本模板类同样也需要通过<b>“子类”</b>来调用方法。</p>
+	<p align="left">本类中共有<b>“两个”</b>模板类型和<b>“六个”</b>方法。</p>
+	<p align="left"><img border="0" src="images/104.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="wblbmjql"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本列表枚举器类</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法是<b>“列表枚举器模板类”</b>子类，并且同样也继承了<b>“枚举器模板类”</b>的所有方法。</p>
+	<p align="left">通过<b>“所设置值”</b>可以看出，本类中<b>“模板类型1、2”</b>的实际数据类型为<b>“文本型”</b>和<b>“文本枚举器类”</b>。</p>
+	<p align="left">本类重点讲解<b>“列表枚举器模板类”</b>方法的使用。</p>
+	<p align="left"><img border="0" src="images/105.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+<a name="lbmjqsfys"></a><a name="lbmjqdsycy"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否有上一成员</font><br/>	
+<font style="font-size: 12pt; font-weight:700">● 到上一成员</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>“是否有上一成员”</b>帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法的作用就是用来判断，是否存在上一个成员。</p>
+	<p align="left">存在返回<b>“真”</b>，不存在返回<b>“假”</b>。</p>
+	<p align="left"><img border="0" src="images/106.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>“到上一成员”</b>帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法的作用就是将<b>“上一个成员”</b>取出并返回。</p>
+	<p align="left">如果上一个成员不存在，则返回<b>“空对象”</b>。</p>
+	<p align="left"><img border="0" src="images/107.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、创建列表类后插入成员。</p>
+	<p align="left">2、调用<b>“创建列表枚举器”</b>赋值给<b>“列表枚举器”</b>变量，参数内填写<b>“列表类”</b>的成员数。</p>
+	<p align="left">3、然后调用<b>“循环”</b>方法，将所有的成员取出，显示在编辑框内。</p>
+	<p align="left"><img border="0" src="images/108.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+    <p align="left">可以看到所有的成员全部取出，不过成员顺序并不是添加时的顺序。</p>
+	<p align="left"><img border="0" src="images/109.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="lbmjqcrcy"></a>
+<font style="font-size: 12pt; font-weight:700">● 插入成员</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，本方法的作用就是通过<b>“枚举器”</b>来插入成员。</p>
+	<p align="left">插入成功返回真，失败返回假。</p>
+	<p align="left">注意：如果插入失败，很有可能是当前对象不支持插入成员操作。</p>
+	<p align="left"><img border="0" src="images/110.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、在创建<b>“列表枚举器”</b>时，参数内填写<b>“1”</b>。</p>
+	<p align="left">2、插入成员的时候，就会插入到<b>“索引1”</b>这个位置。</p>
+	<p align="left">3、原来的索引<b>“1、2”</b>会依次自动后移一位。</p>
+	<p align="left">4、将<b>“索引1”</b>通过<b>“列表类.取成员”</b>方法取出。</p>
+	<p align="left"><img border="0" src="images/111.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+    <p align="left">最后可以看到，取出的成员是我们在代码中插入的成员。</p>
+	<p align="left"><img border="0" src="images/112.png" ></p>
+</blockquote>
+	
+
+<p align="left">&nbsp;</p>
+<a name="lbmjqqscysyz"></a>
+	<a name="lbmjqxycy"></a>
+<font style="font-size: 12pt; font-weight:700">● 取上一成员索引值</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取下一成员索引值</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">以上两个方法就是字面上的意思，取出<b>“上下成员索引”</b>。</p>
+	<p align="left">不过要注意的是，此处的<b>“取下一成员”</b>并不真的代表是下一个成员索引，实际上取出的是当前索引。</p>
+	<p align="left">例如：下方代码中<b>“创建列表枚举器”</b>填写的索引值是<b>“2”</b>。</p>
+	<p align="left"><b>“取上一索引值”</b>就会取出<b>“1”</b>，而<b>“取下一索引值”</b>时会取当前索引值<b>“2”</b>。</p>
+	<p align="left"><img border="0" src="images/113.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">最终结果也证明了这一点，下一索引其实是当前索引值。</p>
+	<p align="left"><img border="0" src="images/114.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="lbmjthdqcy"></a>
+<font style="font-size: 12pt; font-weight:700">● 替换当前成员</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是就<b>“当前索引”</b>处的成员进行<b>“替换”</b>。</p>
+	<p align="left">成功替换返回<b>“真”</b>，失败返回<b>“假”</b>。</p>
+	<p align="left">本方法有三个注意事项，可看<b>“红框”</b>内的详细说明。</p>
+	<p align="left"><img border="0" src="images/115.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、想要调用本方法，必须要调用<b>“到上一成员”</b>或者<b>“到下一成员”</b>方法。</p>
+	<p align="left">2、创建<b>“枚举器”</b>后，首先调用<b>“到上一成员”</b>，随后在调用本方法。</p>
+	<p align="left">3、最终结果就会替换<b>“索引1”</b>处的内容，可以利用<b>“取成员”</b>方法验证结果。</p>
+	<p align="left"><img border="0" src="images/116.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+    <p align="left">最终结果显示的正是被替换的文本。</p>
+	<p align="left"><img border="0" src="images/117.png" ></p>
+</blockquote>
+	
+	
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="shuzuliebiao"></a>
+	<h2>八、数组列表模板类</h2>
+<p align="left">&nbsp;</p>	
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">可以看到本模板类共有<b>“两个模板类型”</b>和<b>“两个方法”</b>。</p>
+	<p align="left">同样需要通过<b>“子类”</b>去调用这些方法。</p>
+	<p align="left"><img border="0" src="images/118.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<a name="wenbenshuzu"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本数组类</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">可以看到在本类中<b>“模板类型1、2”</b>的实际数据类型为<b>“文本型”</b>和<b>“文本列表类”</b>。</p>
+	<p align="left">本数组类，除了继承自<b>“数组列表模板类”</b>之外。</p>
+	<p align="left">同样还继承了<b>“列表模板类”</b>，<b>“集合模板类”</b>和<b>“可枚举模板类”</b>。</p>
+	<p align="left">这些类中的方法都可以调用。</p>
+	<p align="left">此处重点讲解<b>“数组列表模板类”</b>中方法的使用。</p>
+	<p align="left"><img border="0" src="images/119.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="scdyrl"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除多余容量</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过<b>“数组列表模板类”</b>添加成员时，程序<b>“申请内存”</b>是会默认多申请一些。</p>
+	<p align="left">例如：添加了<b>“1000个”</b>成员，理论上申请<b>“1000字节”</b>的内存足矣，但是程序默认会<b>“多申请200”</b>。</p>
+	<p align="left">调用此命令后，会将多申请的200清理掉。</p>
+	<p align="left">通常是在进行<b>“大批量”</b>的<b>“成员添加”</b>时使用，用来弥补内存不足的缺陷。</p>
+	<p align="left"><img border="0" src="images/120.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义<b>“文本数组类”</b>变量，名称随意。</p>
+	<p align="left">注意：此处<b>“不需要”</b>设置参考。</p>
+	<p align="left">然后通过<b>“数组类”</b>直接调用<b>“添加成员”</b>方法就可以进行成员添加操作。</p>
+<p align="left">继续调用本方法就可以清理多余的内存申请。</p>
+	<p align="left"><img border="0" src="images/122.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="qbzxrl"></a>
+<font style="font-size: 12pt; font-weight:700">● 确保最小容量</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法的作用就是提前<b>“指定好成员数目”</b>，防止在<b>“添加成员”</b>时频繁的<b>“申请内存”</b>。</p>
+	<p align="left"><img border="0" src="images/121.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">例如：你总共要添加<b>“100”</b>个成员，那就提前指定好容量为<b>“100”</b>。</p>
+	<p align="left">这样程序就不会频繁的去申请内存。</p>
+	<p align="left"><img border="0" src="images/123.png" ></p>
+</blockquote>
+	
+	
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

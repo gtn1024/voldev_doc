@@ -1,0 +1,462 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+
+</head>
+
+<body>
+
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>算术运算</h4></li>
+	<ol>
+    <ol>
+    			<li><blockquote><a href="#ssyszb">0.本类准备工作</a></blockquote></li>
+      </ol>          
+<li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'newsdown')" >一.数学运算类<span>(可收缩)</span></h6></li>
+		<ol id="newsdown">
+			<li><blockquote><a href="#qszjdz">1.取整数绝对值</a></blockquote></li>
+			<li><blockquote><a href="#qszjdz">2.取小数绝对值</a></blockquote></li>
+			<li><blockquote><a href="#qszjdz">3.取长整数绝对值</a></blockquote></li>
+            <li><blockquote><a href="#jhhsl">4.求余弦</a></blockquote></li>
+    		<li><blockquote><a href="#jhhsl">5.求反余弦</a></blockquote></li>
+    		<li><blockquote><a href="#jhhsl">6.求双曲余弦</a></blockquote></li>
+    		<li><blockquote><a href="#jhhsl">7.求正弦</a></blockquote></li>
+    		<li><blockquote><a href="#jhhsl">8.求反正弦</a></blockquote></li>
+    		<li><blockquote><a href="#jhhsl">9.求双曲正弦</a></blockquote></li>
+    		<li><blockquote><a href="#jhhsl">10.求正切</a></blockquote></li>
+            <li><blockquote><a href="#jhhsl">11.求反正切</a></blockquote></li>
+            <li><blockquote><a href="#jhhsl">12.求反正切2</a></blockquote></li>
+            <li><blockquote><a href="#jhhsl">13.求双曲正切</a></blockquote></li>
+            <li><blockquote><a href="#szqsl">14.四舍五入</a></blockquote></li>
+            <li><blockquote><a href="#szqsl">15.四舍五入到长整数</a></blockquote></li>
+            <li><blockquote><a href="#szqsl">16.舍入到较大整数</a></blockquote></li>
+            <li><blockquote><a href="#szqsl">17.舍入到较小整数</a></blockquote></li>
+            <li><blockquote><a href="#qzsl">18.求指数</a></blockquote></li>
+            <li><blockquote><a href="#qzsl">19.求指数ML</a></blockquote></li>
+            <li><blockquote><a href="#qzsl">20.求无偏指数</a></blockquote></li>
+            <li><blockquote><a href="#qzjsjxbc">21.求直角三角斜边长</a></blockquote></li>
+            <li><blockquote><a href="#jsys">22.计算余数</a></blockquote></li>
+            <li><blockquote><a href="#qzsl">23.求对数</a></blockquote></li>
+            <li><blockquote><a href="#qzsl">24.求对数10</a></blockquote></li>
+            <li><blockquote><a href="#qzsl">25.求对数1P</a></blockquote></li>
+            <li><blockquote><a href="#qdxsz">26.取较大整数</a></blockquote></li>
+            <li><blockquote><a href="#qdxsz">27.取较大小数</a></blockquote></li>
+            <li><blockquote><a href="#qdxsz">28.取较大长整数</a></blockquote></li>
+            <li><blockquote><a href="#qdxsz">29.取较小整数</a></blockquote></li>
+            <li><blockquote><a href="#qdxsz">30.取较小小数</a></blockquote></li>
+            <li><blockquote><a href="#qdxsz">31.取较小长整数</a></blockquote></li>
+            <li><blockquote><a href="#qfwzs">32.取范围整数</a></blockquote></li>
+            <li><blockquote><a href="#jsys">33.求次方</a></blockquote></li>
+            <li><blockquote><a href="#qsjsl">34.取整数随机数</a></blockquote></li>
+            <li><blockquote><a href="#qsjsl">35.取整数随机数1</a></blockquote></li>
+            <li><blockquote><a href="#qsjsl">36.取整数随机数2</a></blockquote></li>
+            <li><blockquote><a href="#qsjsl">37.取小数随机数</a></blockquote></li>
+            <li><blockquote><a href="#qsjsl">38.取小数随机数1</a></blockquote></li>
+            <li><blockquote><a href="#qsjsl">39.取小数随机数2</a></blockquote></li>
+            <li><blockquote><a href="#jszssf">40.计算指数缩放</a></blockquote></li>
+            <li><blockquote><a href="#qxsfh">41.取小数符号</a></blockquote></li>
+            <li><blockquote><a href="#qpfg">42.求平方根</a></blockquote></li>
+            <li><blockquote><a href="#qpfg">43.求立方根</a></blockquote></li>
+            <li><blockquote><a href="#qpfg">44.弧度到角度</a></blockquote></li>
+            <li><blockquote><a href="#qpfg">45.角度到弧度</a></blockquote></li>
+		</ol>
+	</ol>
+</ul>
+</div>
+
+<p align="left">
+<p align="left">
+<h2>算术运算实例讲解</h2>
+<p><b>作者：洫蜘蛛</b></p>
+<!--<p align="left">[<a href="object.htm">上一章</a>] [<a href="homeland.htm">下一章</a>]</p>-->
+<p align="left">&nbsp;</p>
+<a name="ssyszb"></a>
+<font style="font-size: 12pt; font-weight:700">● 准备工作：设计实例需求的界面布局。</font><br/>
+<p align="left"><b>启动类</b>的界面布局需求组件：<b>编辑框1</b>、<b>编辑框2</b>、<b>按钮1</b>。</p>
+<blockquote>
+
+<p align="left">修改两个编辑框的属性<b>&quot;内容纵向对齐&quot;</b>为<b>&quot;居中&quot;</b>、<b>&quot;组件宽度类型&quot;</b>为<b>&quot;匹配父组件宽度&quot;</b>。</p>
+<p align="left">修改按钮的属性<b>&quot;内容横向对齐&quot;</b>为<b>&quot;居中&quot;</b>、<b>&quot;内容纵向对齐&quot;</b>为<b>&quot;居中&quot;</b>、<b>&quot;文本&quot;</b>为<b>&quot;执行运算&quot;</b>。</p>
+<p align="left">最终界面布局如下图所示：</p>
+<p align="left"><img border="0" src="math_images/sxysl001.png" ></p>
+</blockquote>
+
+<p align="left">接收<b>&quot;启动类&quot;</b>的按钮被单击事件，如下图所示：</p>
+<blockquote>
+  <p align="left"><img border="0" src="math_images/sxysl002.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 数学运算实例界面设计总述</font><br/>
+<blockquote>
+<p align="left"><b>本类</b>所需界面如下图所示，界面布局从上到下依次是：  </p>
+<blockquote>
+	<p align="left"><b>编辑框1</b>、<b>编辑框2</b>和<b>按钮1</b>。</p>
+  	<p align="left"><img border="0" src="math_images/sxysl003.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="qszjdz"></a>
+<font style="font-size: 12pt; font-weight:700">● 取整数绝对值</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取小数绝对值</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取长整数绝对值</font><br/>
+
+<p align="left">以上命令用法完全一致，此处单独以<b>取整数绝对值</b>为例，帮助内容如图：</p>
+<blockquote>
+<p align="left"><img border="0" src="math_images/sxysl004.png"></p>
+<p align="left">参数数目为一个，返回值类型为<b>整数</b>。</p>
+<p align="left"><b>绝对值特性</b>：零和正数的绝对值是其本身，负数的绝对值是其相反数。</p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">以<b>取整数绝对值</b>为例，如下图：</p>
+<blockquote>
+<p align="left">定义一个类型为<b>整数</b>的变量（名称随意），用于接收<b>&quot;取整数绝对值&quot;</b>的返回值。</p>
+<p align="left">调用该命令，并且把返回值赋值给已定义的变量。</p>
+
+<p align="left">参数1：填写<b>&quot;<a href="j_text.htm#wbdzs">文本到整数</a>(编辑框1.内容)&quot;</b>。</p>
+<p align="left">最后调用<b>提示信息框</b>显示运算结果。</p>
+<p align="left"><img border="0" src="math_images/sxysl005.png" ></p>
+
+<p align="left">如果是<b>取小数绝对值</b>则变量类型为<b>小数</b>，转换命令为<b><a href="j_text.htm#wbdxs">文本到小数</a></b>；</p>
+<p align="left">如果是<b>取长整数绝对值</b>则变量类型为<b>长整数</b>，转换命令为<b><a href="j_text.htm#wbdczs">文本到长整数</a></b>。</p>
+</blockquote>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="math_images/sxysl006.png"></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="jhhsl"></a>
+<font style="font-size: 12pt; font-weight:700">● 求余弦</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 求反余弦</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 求双曲余弦</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 求正弦</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 求反正弦</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 求双曲正弦</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 求正切</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 求反正切</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 求反正切2</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 求双曲正切</font><br/>
+
+<p align="left">以上命令用法完全一致，此处单独以<b>求余弦</b>为例，帮助内容如图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="math_images/sxysl009.png" ></p>
+<p align="left">参数数目为一个，返回值类型为<b>小数</b>。</p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义一个类型为<b>小数</b>的变量（名称随意），用于接收<b>&quot;求余弦&quot;</b>的返回值。</p>
+<p align="left">调用该命令，并且把返回值赋值给已定义的变量。</p>
+
+<p align="left">参数1：填写<b>&quot;<a href="j_text.htm#wbdxs">文本到小数</a>(编辑框1.内容)&quot;</b>。</p>
+<p align="left">最后调用<b>提示信息框</b>显示运算结果。</p>
+<p align="left"><img border="0" src="math_images/sxysl010.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+<p align="left"><img border="0" src="math_images/sxysl011.png"></p>
+</blockquote>
+<p align="left"><font color="#ff0000"> <b>注意：</b></font><b>求反正切2</b>的参数数目为两个，它比<b>求反正切</b>稳定</p>
+
+<p align="left">&nbsp;</p>
+<a name="szqsl"></a>
+<font style="font-size: 12pt; font-weight:700">● 四舍五入</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 四舍五入到长整数</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 舍入到较大整数</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 舍入到较小整数</font><br/>
+
+<p align="left">以上命令用法一致，此处单独以<b>四舍五入</b>为例，帮助内容如图：</p>
+<blockquote>
+ <p align="left"><img border="0" src="math_images/sxysl015.png"></p>
+ <p align="left">参数数目为一个，返回值类型为<b>小数</b>。</p>
+</blockquote>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义一个类型为<b>整数</b>的变量（名称随意），用于接收<b>&quot;四舍五入&quot;</b>的返回值。</p>
+<p align="left">调用该命令，并且把返回值赋值给已定义的变量。</p>
+<p align="left">参数1：填写<b>&quot;<a href="j_text.htm#wbdxs">文本到小数</a>(编辑框1.内容)&quot;</b>。</p>
+<p align="left">最后调用<b>提示信息框</b>显示运算结果。</p>
+<p align="left"><img border="0" src="math_images/sxysl016.png"></p>
+</blockquote>
+<p align="left"><font color="#ff0000"> <b>注意：</b></font><b>四舍五入到长整数</b>的返回值类型为<b>长整数</b>，定义的变量类型需要修改为<b>长整数</b>。</p>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img src="math_images/sxysl017.png" border="0"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="qzsl"></a>
+<font style="font-size: 12pt; font-weight:700">● 求指数</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 求指数ML</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 求无偏指数</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 求对数</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 求对数10</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 求对数1P</font><br/>
+<p align="left">以上命令用法一致，此处单独以<b>求指数</b>为例，帮助内容如图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="math_images/sxysl018.png" ></p>
+  <p align="left">参数数目为一个，返回值类型为<b>小数</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义一个类型为<b>小数</b>的变量（名称随意），用于接收<b>&quot;求指数&quot;</b>的返回值。</p>
+<p align="left">调用该命令，并且把返回值赋值给已定义的变量。</p>
+<p align="left">参数1：填写<b>&quot;<a href="j_text.htm#wbdxs">文本到小数</a>(编辑框1.内容)&quot;</b>。</p>
+<p align="left">最后调用<b>提示信息框</b>显示运算结果。</p>
+<p align="left"><img border="0" src="math_images/sxysl019.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img src="math_images/sxysl020.png" border="0"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="qzjsjxbc"></a>
+<font style="font-size: 12pt; font-weight:700">● 求直角三角斜边长</font><br/>
+<p align="left"><b>该命令</b>帮助内容如图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="math_images/sxysl021.png" ></p>
+  <p align="left">参数数目为两个，返回值类型为<b>小数</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义一个类型为<b>小数</b>的变量（名称随意），用于接收<b>&quot;求指数&quot;</b>的返回值。</p>
+<p align="left">调用该命令，并且把返回值赋值给已定义的变量。</p>
+<p align="left">参数1：填写<b>&quot;<a href="j_text.htm#wbdxs">文本到小数</a>(编辑框1.内容)&quot;</b>。</p>
+<p align="left">参数2：填写<b>&quot;<a href="j_text.htm#wbdxs">文本到小数</a>(编辑框2.内容)&quot;</b>。</p>
+<p align="left">最后调用<b>提示信息框</b>显示运算结果。</p>
+<p align="left"><img border="0" src="math_images/sxysl022.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img src="math_images/sxysl023.png" border="0"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="jsys"></a>
+<font style="font-size: 12pt; font-weight:700">● 计算余数</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 求次方</font><br/>
+<p align="left">以上命令用法一致，此处单独以<b>计算余数</b>为例，帮助内容如图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="math_images/sxysl024.png" ></p>
+  <p align="left">参数数目为两个，返回值类型为<b>小数</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义一个类型为<b>小数</b>的变量（名称随意），用于接收<b>&quot;计算余数&quot;</b>的返回值。</p>
+<p align="left">调用该命令，并且把返回值赋值给已定义的变量。</p>
+<p align="left">参数1：填写<b>&quot;<a href="j_text.htm#wbdxs">文本到小数</a>(编辑框1.内容)&quot;</b>。</p>
+<p align="left">参数2：填写<b>&quot;<a href="j_text.htm#wbdxs">文本到小数</a>(编辑框2.内容)&quot;</b>。</p>
+<p align="left">最后调用<b>提示信息框</b>显示运算结果。</p>
+<p align="left"><img border="0" src="math_images/sxysl025.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img src="math_images/sxysl026.png" border="0"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="qdxsz"></a>
+<font style="font-size: 12pt; font-weight:700">● 取较大整数</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取较大小数</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取较大长整数</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取较小整数</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取较小小数</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取较小长整数</font><br/>
+<p align="left">以上命令用法一致，此处单独以<b>取较大整数</b>为例，帮助内容如图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="math_images/sxysl027.png" ></p>
+  <p align="left">参数数目为两个，返回值类型为<b>整数</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义一个类型为<b>整数</b>的变量（名称随意），用于接收<b>&quot;取较大整数&quot;</b>的返回值。</p>
+<p align="left">调用该命令，并且把返回值赋值给已定义的变量。</p>
+<p align="left">参数1：填写<b>&quot;<a href="j_text.htm#wbdzs">文本到整数</a>(编辑框1.内容)&quot;</b>。</p>
+<p align="left">参数2：填写<b>&quot;<a href="j_text.htm#wbdzs">文本到整数</a>(编辑框2.内容)&quot;</b>。</p>
+<p align="left">最后调用<b>提示信息框</b>显示运算结果。</p>
+<p align="left"><img border="0" src="math_images/sxysl028.png"></p>
+<p align="left">实际运用中请注意各个命令的参数类型和返回值类型。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img src="math_images/sxysl029.png" border="0"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="qfwzs"></a>
+<font style="font-size: 12pt; font-weight:700">● 取范围整数</font><br/>
+<p align="left"><b>该命令</b>帮助内容如图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="math_images/sxysl030.png" ></p>
+  <p align="left">参数数目为三个，返回值类型为<b>整数</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义一个类型为<b>整数</b>的变量（名称随意），用于接收<b>&quot;取范围整数&quot;</b>的返回值。</p>
+<p align="left">调用该命令，并且把返回值赋值给已定义的变量。</p>
+<p align="left">参数1：随意填写一个欲检查的整数，例如：<b>&quot;100&quot;</b>。</p>
+<p align="left">参数2：填写<b>&quot;<a href="j_text.htm#wbdzs">文本到整数</a>(编辑框1.内容)&quot;</b>。</p>
+<p align="left">参数3：填写<b>&quot;<a href="j_text.htm#wbdzs">文本到整数</a>(编辑框2.内容)&quot;</b>。</p>
+<p align="left">最后调用<b>提示信息框</b>显示运算结果。</p>
+<p align="left"><img border="0" src="math_images/sxysl031.png"></p>
+<p align="left">此命令的作用是检查某个整数是否在指定的整数范围内，返回值始终不会超出允许的范围。</p>
+<p align="left">如果被检查的整数在允许范围之内则直接返回被检查的整数值，否则返回允许范围内最接近被检查整数的值。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img src="math_images/sxysl032.png" border="0"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="qsjsl"></a>
+<font style="font-size: 12pt; font-weight:700">● 取整数随机数</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取整数随机数1</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取整数随机数2</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取小数随机数</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取小数随机数1</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取小数随机数2</font><br/>
+<p align="left">以上命令都是用于获取随机数，具体功能说明：</p>
+<blockquote>
+<p align="left"><b>取整数随机数</b>：返回一个小于或等于32767的随机整数。</p>
+<p align="left"><b>取整数随机数1</b>：返回一个小于或等于指定整数的随机整数，<b>参数1</b>指定最大允许值。</p>
+<p align="left"><b>取整数随机数2</b>：返回指定范围内的一个随机整数，<b>参数1</b>指定最小允许值，<b>参数2</b>指定最大允许值。</p>
+<p align="left"><b>取小数随机数</b>：返回一个大于或等于0并小于等于1的随机小数。</p>
+<p align="left"><b>取小数随机数1</b>：返回一个小于或等于指定小数的随机小数，<b>参数1</b>指定最大允许值。</p>
+<p align="left"><b>取小数随机数2</b>：返回指定范围内的一个随机小数，<b>参数1</b>指定最小允许值，<b>参数2</b>指定最大允许值。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">以<b>取整数随机数</b>为例，帮助内容如图：</p>
+
+<blockquote>
+  <p align="left"><img border="0" src="math_images/sxysl033.png" ></p>
+  <p align="left">此命令不需要提供参数，返回值类型为<b>整数</b>。</p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义一个类型为<b>整数</b>的变量（名称随意），用于接收<b>&quot;取整数随机数&quot;</b>的返回值。</p>
+<p align="left">调用该命令，并且把返回值赋值给已定义的变量。</p>
+<p align="left">最后调用<b>提示信息框</b>显示获取的随机整数。</p>
+<p align="left"><img border="0" src="math_images/sxysl034.png"></p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img src="math_images/sxysl035.png" border="0"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="jszssf"></a>
+<font style="font-size: 12pt; font-weight:700">● 计算指数缩放</font><br/>
+
+<p align="left"><b>该命令</b>帮助内容如图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="math_images/sxysl036.png" ></p>
+  <p align="left">参数数目为两个，返回值类型为<b>小数</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义一个类型为<b>小数</b>的变量（名称随意），用于接收<b>&quot;计算指数缩放&quot;</b>的返回值。</p>
+<p align="left">调用该命令，并且把返回值赋值给已定义的变量。</p>
+<p align="left">参数1：填写<b>&quot;<a href="j_text.htm#wbdxs">文本到小数</a>(编辑框1.内容)&quot;</b>。</p>
+<p align="left">参数2：填写<b>&quot;<a href="j_text.htm#wbdzs">文本到整数</a>(编辑框2.内容)&quot;</b>。</p>
+<p align="left">最后调用<b>提示信息框</b>显示运算结果。</p>
+<p align="left"><img border="0" src="math_images/sxysl037.png"></p>
+<p align="left">运算结果 = <b>参数1</b> * ( 2 ^ <b>参数2</b>)</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img src="math_images/sxysl038.png" border="0"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="qxsfh"></a>
+<font style="font-size: 12pt; font-weight:700">● 取小数符号</font><br/>
+
+<p align="left"><b>该命令</b>帮助内容如图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="math_images/sxysl039.png" ></p>
+  <p align="left">参数数目为一个，返回值类型为<b>小数</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义一个类型为<b>小数</b>的变量（名称随意），用于接收<b>&quot;取小数符号&quot;</b>的返回值。</p>
+<p align="left">调用该命令，并且把返回值赋值给已定义的变量。</p>
+<p align="left">参数1：填写<b>&quot;<a href="j_text.htm#wbdxs">文本到小数</a>(编辑框1.内容)&quot;</b>。</p>
+<p align="left">使用<b>如果</b>和<b>否则</b>语句判断小数的符号类型并且用<b>提示信息框</b>显示。</p>
+<p align="left"><img border="0" src="math_images/sxysl040.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img src="math_images/sxysl041.png" border="0"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="qpfg"></a>
+<font style="font-size: 12pt; font-weight:700">● 求平方根</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 求立方根</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 弧度到角度</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 角度到弧度</font><br/>
+
+<p align="left">以上命令用法一致，此处单独以<b>求平方根</b>为例，帮助内容如图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="math_images/sxysl042.png" ></p>
+  <p align="left">参数数目为一个，返回值类型为<b>小数</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义一个类型为<b>小数</b>的变量（名称随意），用于接收<b>&quot;求平方根&quot;</b>的返回值。</p>
+<p align="left">调用该命令，并且把返回值赋值给已定义的变量。</p>
+<p align="left">参数1：填写<b>&quot;<a href="j_text.htm#wbdxs">文本到小数</a>(编辑框1.内容)&quot;</b>。</p>
+<p align="left">最后调用<b>提示信息框</b>显示运算结果。</p>
+<p align="left"><img border="0" src="math_images/sxysl043.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img src="math_images/sxysl044.png" border="0"></p>
+</blockquote>
+
+</body>
+</html>

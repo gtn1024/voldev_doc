@@ -1,0 +1,202 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new13')" >一.音频录制器<span>(可收缩)</span></h6></li>
+		<ol id="new13">
+        
+           <li><blockquote><a href="#yplz">1.本类说明</a></blockquote></li>
+          <li><blockquote><a href="#ypkslz">2.开始录制</a></blockquote></li>
+          <li><blockquote><a href="#yptzlz">3.停止录制</a></blockquote></li>
+          <li><blockquote><a href="#qwavxx">4.取WAV头信息</a></blockquote></li>
+          <li><blockquote><a href="#zzlzd">5.正在录制（读）</a></blockquote></li>
+           <li><blockquote><a href="#lzyks">6.录制已开始（事件）</a></blockquote></li>
+           <li><blockquote><a href="#lzyjs">7.录制已结束（事件）</a></blockquote></li>
+           <li><blockquote><a href="#ypddsj">8.得到数据（事件）</a></blockquote></li>
+		</ol>	
+        
+		
+	</ol>
+</ul>
+</div>	
+
+<p align="left">
+<h2>音频录制器实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+
+<p align="left">&nbsp;</p>	
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">通过本类中的方法可以制作一个录音机软件。</p>
+<p align="left"><font color="#F70408">注意：本类位于<strong>“多媒体功能支持”</strong>模块中，必须添加此模块才能使用。</font></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>	
+<a name="ypkslz"></a>
+<font style="font-size: 12pt; font-weight:700">● 开始录制</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，调用本方法后将开始录制音频。</p>
+	<p align="left">参数1：指定输出文件名，如果忽略此参数，需要在<b>“得到数据”</b>事件下处理音频录制数据。</p>
+	<p align="left">如果指定的文件存在，将会进行覆盖。</p>
+	<p align="left">参数2：指定录制的声音来源，调用方法<b>“媒体录制音频源.XXX”</b>,本参数可忽略。</p>
+	<p align="left">参数3：采样率，忽略即可。</p>
+	<p align="left">参数4：通过<b>“声道录制模式.XXX”</b>来指定，本参数有默认值可以忽略。</p>
+	<p align="left">参数5：通过<b>“音频数据模式.XXX”</b>来指定，本参数有默认值可以忽略。</p>
+	<p align="left">调用本方法后必然会触发<b>“录制已开始”</b>事件和一系列<b>“得到数据”</b>事件，录制完毕后还会触发<b>“录制已结束”</b>事件。</p>
+    <p align="left"><img src="mt_images/300.png" width="682" height="774" border="0" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>	
+<a name="yptzlz"></a>
+<font style="font-size: 12pt; font-weight:700">● 停止录制</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，调用本方法会停止录制，本方法会触发<b>“录制已结束”</b>事件。</p>
+    <p align="left"><img border="0" src="mt_images/301.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>	
+<a name="zzlzd"></a>
+<font style="font-size: 12pt; font-weight:700">● 正在录制（读）</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">调用本方法可判断当前是否处于录制状态，正在录制返回真，否则返回假。</p>
+    <p align="left"><img border="0" src="mt_images/302.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>	
+<a name="lzyks"></a>
+<font style="font-size: 12pt; font-weight:700">● 录制已开始（事件）</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">调用<b>“开始录制”</b>后，本事件会触发一次。</p>
+    <p align="left"><img border="0" src="mt_images/303.png" ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>	
+<a name="lzyjs"></a>
+<font style="font-size: 12pt; font-weight:700">● 录制已结束（事件）</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当调用<b>“停止录制”</b>或录制过程中出现错误时，本事件会触发。</p>
+    <p align="left"><img border="0" src="mt_images/304.png" ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>	
+<a name="ypddsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 得到数据（事件）</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">调用<b>“开始录制”</b>后，本事件会不断的触发。</p>
+	<p align="left">调用<b>“停止录制”</b>或录制过程中出现错误时，本事件才会停止。</p>
+	<p align="left">如果：<b>“开始录制”</b>方法，并没有指定文件路径，那么此事件的<b>“音频数据”</b>可以获得本次录制的数据。</p>
+	<p align="left"><b>“音频数据尺寸”</b>参数，即<b>“音频数据”</b>参数的尺寸。</p>
+    <p align="left"><img border="0" src="mt_images/305.png" ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>	
+<a name="qwavxx"></a>
+<font style="font-size: 12pt; font-weight:700">● 取WAV头信息</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法为高级方法，知道即可无需深入了解，不再详细介绍。</p>
+	<p align="left">头信息：可以理解为文件格式信息。</p>
+    <p align="left"><img border="0" src="mt_images/306.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">界面准备如下图：</p>
+<blockquote>
+	<p align="left">打开界面设计器，放一个<b>“按钮”</b>和<b>“文本框”</b>。</p>
+	<p align="left">文本框宽度设置为<b>“匹配父组件”</b>宽度。</p>
+    <p align="left"><img border="0" src="mt_images/307.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+	<p align="left">保存布局后，新增两个变量，分别为<b>“音频录制器”</b>和<b>“启动时间”</b>。</p>
+	<p align="left">然后在<b>“按钮1”</b>被单击下，判断是否正在录制。</p>
+	<p align="left">如果处于录制状态，就执行<b>“停止录制”</b>方法。</p>
+	<p align="left">否则就执行<b>“开始录制”</b>方法。</p>
+	<p align="left">此处的<b>“取当前毫秒时间()”</b>也就是取时间戳，赋值给<b>“启动时间”</b>后用来记录录制时长。</p>
+    <p align="left"><img border="0" src="mt_images/308.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+	<p align="left">右键<b>“音频录制器”</b>选择事件接收方法。</p>
+    <p align="left"><img border="0" src="mt_images/309.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（3）：</p>
+<blockquote>
+	<p align="left">分别添加这三个接收事件。</p>
+    <p align="left"><img border="0" src="mt_images/310.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（4）：</p>
+<blockquote>
+  <p align="left">添加完毕后，在<b>“录制已开始”</b>和<b>“得到数据”</b>事件下填写如下代码。</p>
+	<p align="left"><b>“取当前毫秒时间()”</b>减去<b>“启动时间”</b>变量，就可以得到当前录制的<b>“总毫秒数”</b>。</p>
+	<p align="left">继续<b>“除1000”</b>就可以得到录制秒。</p>
+	<p align="left"><img border="0" src="mt_images/311.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（5）：</p>
+<blockquote>
+	<p align="left">然后在<b>“录制已结束”</b>事件下，分别判断<b>“结束原因”</b>弹出对应提示。</p>
+    <p align="left"><img border="0" src="mt_images/312.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可以看到，点击<b>“开始录制”</b>后，文本框内开始读秒计时。</p>
+	<p align="left">结束录制后，打开文件管理器就可以看到被录制的音频文件。</p>
+    <p align="left"><img border="0" src="mt_images/313.gif" ></p>
+</blockquote>
+		
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

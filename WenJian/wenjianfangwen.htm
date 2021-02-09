@@ -1,0 +1,535 @@
+
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+
+</head>
+
+<body>
+
+<div class="xuanfu">
+
+  
+<ul class="menu">
+
+
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'newsbaodu')" >一.文件访问类<span>(可收缩)</span></h6></li>
+		<ol id="newsbaodu">
+        <li><blockquote><a href="#">0.文件访问类准备</a></blockquote></li>
+			<li><blockquote><a href="#wjfw_cj">1.创建</a></blockquote></li>
+			<li><blockquote><a href="#wjfw_cj2">2.创建2</a></blockquote></li>
+			<li><blockquote><a href="#wjfw_drsj">3.读入数据</a></blockquote></li>
+            <li><blockquote><a href="#wjfw_drsj2">4.读入数据2</a></blockquote></li>
+    		<li><blockquote><a href="#wjfw_gb">5.关闭</a></blockquote></li>
+    		<li><blockquote><a href="#wjfw_qdqdxwz">6.取当前读写位置</a></blockquote></li>
+    		<li><blockquote><a href="#wjfw_qscdx">7.取输出对象</a></blockquote></li>
+    		<li><blockquote><a href="#wjfw_qsrdx">8.取输入对象</a></blockquote></li>
+    		<li><blockquote><a href="#wjfw_qwjcz">9.取文件尺寸</a></blockquote></li>
+    		<li><blockquote><a href="#wjfw_zdqdxwz">10.置当前读写位置</a></blockquote></li>
+            <li><blockquote><a href="#wjfw_zwjcc">11.置文件尺寸</a></blockquote></li>
+		</ol>								
+	</ol>
+
+  
+</ul>
+
+</div>
+
+<p align="left">
+<h2>文件访问类操作实例讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 辅助说明</font><br/>
+     	<blockquote style="color: #E91C1F">
+		<p align="left">注意：从安卓10（API29）开始（安卓11彻底禁止），谷歌针对安卓文件系统进行了大修改，逐渐开始禁止软件操作存储卡目录。</p>
+		<p align="left">其目的是为了规范软件本身文件管理，防止软件滥用文件创建功能和软件隐私保护，防止被第三方不法软件获取软件数据。</p>
+        <p align="left">所有软件只能操作私有数据目录，对私有目录内容进行读写。</p>   
+        <p align="left">在火山中即使用<a href="neichu.htm#qnbsysjbm">“取内部私有数据目录()”</a>和<a href="waichu.htm#qwbsysjzml">“取外部私有数据子目录()”</a>，取出操作目录来进行文件读写操作。</p>   
+	</blockquote>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 首先需要了解一下<b>“状态类”</b>和<b>“文件打开方式”</b></font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>“状态类”</b>如下图：</p>
+<blockquote>
+<p align="left">打开<b>“状态类”</b>帮助内容，可以看到它有<b>“四个”</b>常量，每个常量代表不同的意思，具体看红色箭头指的位置说明。</p>
+<p align="left">常量调用方式<b>“类名.”</b>+<b>“常量名”</b>即可。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wjfw_ztl.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>“文件打开方式”</b>如下图：</p>
+<blockquote>
+<p align="left">本类也有<b>“四个常量”</b>，具体作用和说明看图上的文字说明。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wjfw_wjdkfs.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+<a name="wjfw_cj"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到它有<b>“两个参数”</b>，其中一个参数正是上面提到的<b>“文件打开方式”</b>。</p>
+<p align="left">本方法的返回值则是<b>“文件访问类”</b>。</p>
+
+<p align="left">顾名思义：本方法的作用就是创建一个<b>“文件访问类”</b>对象，然后根据这个对象进行各种各样的操作。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wjfw_cj.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">代码编写也很简单。</p>
+<p align="left"><b>“参数一”</b>和<b>“参数二”</b>根据自己的<b>“实际需求”</b>填写自己需要的内容。</p>
+
+<p align="left">注意：<b>“文件打开方式”</b>后面的小数点不要忘记了。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wjfw_cj1.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+<a name="wjfw_cj2"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建2方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">可以看到它和<b>“创建”</b>不同之处在于，本方法的<b>“参数一”</b>是<b>“文件名类”</b>。</p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wjfw_cj2.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">代码编写的时候，将<b>“要操作的文件”</b>创建成<b>“文件名类”</b>。</p>
+<p align="left">最后把定义的<b>“文件名类”</b>变量，放入<b>“参数1”</b>即可，这就就可以创建一个<b>“文件访问类”</b>出来。 </p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wjfw_cj22.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="wjfw_drsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 读入数据方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">可以看到有<b>“五个”</b>参数。</p>
+<p align="left">参数一：要操作的<b>“文件访问类”</b>对象。</p>
+<p align="left">参数二：用来存储数据的<b>“字节数组”</b>。</p>
+<p align="left">参数三：从<b>“字节数组”</b>的哪个位置开始存数据。</p>
+<p align="left">参数四：从<b>“文件对象”</b>里面读取多长的数据。</p>
+<p align="left">参数五：保存最终读取状态。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wjfw_drsj.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图： </p>
+<blockquote>
+<p align="left">本代码编写起来较为复杂。</p>
+<p align="left">例如：我们要读取一个图片需要这么做。</p><br/>
+<p align="left">第一：定义四个变量。</p>
+	<blockquote>
+    	<p align="left">1.文件尺寸变量：用来存储要读入的<b>“文件尺寸”</b>。</p>
+        <p align="left">2.文件访问类变量：存储<b>“文件访问类”</b>。</p>
+        <p align="left">3.状态对象：保存最终<b>“状态”</b>。</p>
+        <p align="left">4.字节数组：临时存放要读入的<b>“文件字节”</b>数组。</p>
+        <br/>
+    </blockquote>
+<p align="left">第二：首先需要用<b>“文件名类”</b>的<b>“创建”</b>方法，取出<b>“文件尺寸”</b></p>
+<p align="left">（无需定义<b>“文件名类”</b>变量，直接在<b>“创建”</b>最后输入<b>“点”</b>加<b>“方法名”</b>即可），最后赋值给<b>“尺寸”</b>变量。</p>
+<p align="left">第三：用<b>“文件访问类”</b>创建一个<b>“文件访问类”</b>变量，因是读入图片，所以<b>“打开方式”</b>选择<b>“只读”</b>就可以了。</p>
+<p align="left">第三：我们需要将定义的<b>“字节数组”</b>，创建一个<b>“成员数”</b>（可以理解为容量），这个容量数据就是<b>“强转整数”</b>后的<b>“文件尺寸”</b>。</p><br/>
+<p align="left">第四：<b>“读入数据”</b>填写，因为是动态调用，所以<b>“参数一”</b>忽略不写，也<b>“不用逗号”</b>分隔。</p>
+	<blockquote>
+    	<p align="left">参数2：写定义的<b>“字节数组”</b>变量</p>
+        <p align="left">参数3：完整的读入一个图片，所以这里写<b>“0”</b>。</p>
+        <p align="left">参数4：输入定义<b>“文件尺寸”</b>变量。</p>
+        <p align="left">参数5：输入定义的<b>“状态”</b>变量</p><br/>
+    </blockquote>
+<p align="left">如果所有操作结束后，注意一定要使用<b>“关闭”</b>方法，将创建的<b>“文件访问”</b>对象关闭。</p>
+<p align="left">最后用<b>“图片框”</b>的<b>“置图片数据”</b>方法将<b>“字节数组”</b>载入进来。</p>
+<p align="left"></p>
+  <p align="left"><img border="0" src="wj_images/wjfw_drsj_dm.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行后如下图：</p>
+<blockquote>
+<p align="left">成功读取<b>“移动后.png”</b>图片，读取状态也提示<b>“成功”</b>。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wjfw_drsj_yx.png"></p>
+</blockquote>
+
+
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="wjfw_drsj2"></a>
+<font style="font-size: 12pt; font-weight:700">● 读入数据2方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">本方法和<b>“读入数据”</b>的区别就是，本方法少了位置和长度参数。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wjfw_drsj2.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图： </p>
+<blockquote>
+<p align="left">虽然参数少了<b>“两个”</b>，但是代码编写也和<b>“读入数据”</b>基本一致。</p>
+<p align="left">唯一不同之处也就是<b>“读入数据2”</b>少写两个参数（红框内），<b>“字节数组”</b>后直接就是<b>“状态对象”</b>。</p>
+
+<p align="left"></p>
+  <p align="left"><img border="0" src="wj_images/wjfw_drsj2_dm.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行后如下图：</p>
+<blockquote>
+<p align="left">和<b>“读入数据”</b>一样，成功读取。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wjfw_drsj_yx.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="wjfw_gb"></a>
+<font style="font-size: 12pt; font-weight:700">● 关闭方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">顾名思义，就是关闭一个创建的<b>“文件访问类”</b>对象。</p>
+<p align="left">当一个<b>“文件访问”</b>操作结束后，必须使用本方法关闭。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wjfw_gb.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="wjfw_gb"></a>
+<font style="font-size: 12pt; font-weight:700">● 关闭方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">顾名思义，就是关闭一个创建的"文件访问类"对象。</p>
+<p align="left">当一个"文件访问"操作结束后，必须使用本方法关闭。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wjfw_gb.png" ></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="wjfw_qdqdxwz"></a>
+<font style="font-size: 12pt; font-weight:700">● 取当前读写位置方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">顾名思义，判断一个文件的当前<b>“读写”</b>到哪个位置了，返回一个长整数值。</p>
+<p align="left">失败会返回给<b>“状态类”</b>对象。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wjfw_qdqdxwz.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">代码编写很简单，创建两个变量。</p>
+<p align="left">创建<b>“文件访问类”</b>对象，然后有本方法去<b>“读取”</b>文件对象的<b>“读写位置”</b>。</p>
+<p align="left">最后<b>“到文本”</b>赋值给<b>“编辑框2”</b>显示出来。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wjfw_qdqdxwz_dm.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行后如下图：</p>
+<blockquote>
+<p align="left">因当前没有对<b>“移动后.png”</b>进行任何读写操作，所以<b>“返回0”</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wjfw_qdqdxwz_yx.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="wjfw_qscdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 取输出对象方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">作用就是利用创建的<b>“文件访问类”</b>返回一个<b>“数据输出类”</b>来进行<b>“写文件”</b>操作。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wjfw_qscdx.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">例如：我们保存<b>“编辑框2”</b>的内容到<b>“编辑框1”</b>的路径，需要这么写。</p>
+<p align="left">创建<b>“三个”</b>如下图所示的变量（注意参考）。</p>
+<p align="left">创建<b>“文件访问类”</b>然后用本方法，赋值给<b>“数据输出类”</b>变量。</p>
+<p align="left">最后用<b>“数据输出类”</b>的方法<b>“写UTF文本”</b>写<b>“编辑框2”</b>的内容，状态对象写入到第二个参数即可。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wjfw_qscdx_dm.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">左图：运行结果成功写出。</p>
+<p align="left">右图：文件管理器内也看到了对应的文件。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wjfw_qscdx_yx.png" >
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img border="0" src="wj_images/wjfw_qscdx_jg.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="wjfw_qsrdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 取输入对象方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">本方法和<b>“取输出对象”</b>基本一样，不同之处就是本方法返回的是<b>“数据输入类”</b>。</p>
+<p align="left">利用<b>“数据输入类”</b>可以进行<b>“读取数据”</b>操作。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wjfw_qsrdx.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">代码编写和<b>“取输出对象”</b>基本没区别，就是将<b>“数据输出类”</b>改成了<b>“数据输入类”</b> 。</p>
+<p align="left"><b>“写UTF文本”</b>改成了<b>“读UTF文本”</b>，最后用<b>“提示信息框”</b>弹出。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wjfw_qsrdx_dm.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+<p align="left">成功将<b>“取输出对象”</b>写的文件内容<b>“读取”</b>出来。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wjfw_qsrdx_yx.png" ></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="wjfw_qwjcz"></a>
+<font style="font-size: 12pt; font-weight:700">● 取文件尺寸方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">顾名思义就是取一个<b>“文件访问类”</b>对象的尺寸，返回一个<b>“长整数”</b>值。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wjfw_qwjcc.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">代码编写也很简单，创建<b>“文件访问类”</b>后，直接用本方法<b>“取文件尺寸”</b>即可，<b>“状态对象”</b>参数有默认值，根据实际需求决定是否填写。</p>
+<p align="left">最后<b>“到文本”</b>赋值<b>“编辑框2”</b>即可。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wjfw_qwjcc_dm.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+<p align="left">成功取出文件尺寸。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wjfw_qwjcc_yx.png" ></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="wjfw_zdqdxwz"></a>
+<font style="font-size: 12pt; font-weight:700">● 置当前读写位置方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">顾名思义，就是设置当前<b>“读写位置<b>“，并且返回一个<b>“逻辑值”</b>判断是否设置成功。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wjfw_zdqdxwz.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">创建后直接用本方法<b>“置读写位置”</b>即可，这里的参数随意输入了一个<b>“10”</b>，最后也可以用<b>“取当前读写位置”</b>方法判断是否成功。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wjfw_zdqdxwz_dm.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+<p align="left">返回的<b>“当前读写位置”</b>也是<b>“10”</b>，证明写入<b>“位置”</b>成功。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wjfw_zdqdxwz_yx.png" ></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="wjfw_zwjcc"></a>
+<font style="font-size: 12pt; font-weight:700">● 置文件尺寸方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">通俗理解就是将文件变大，并且不影响文件正常读取！</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wjfw_zwjcc.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">创建<b>“文件访问类”</b>后，用本方法置入一个<b>“100”</b>字节。</p>
+<p align="left">随后可以用<b>“取输入对象”</b>的<b>“读utf文本”</b>方法，将文本读取赋值给<b>“编辑框2”</b>显示。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wjfw_zwjcc_dm.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+<p align="left">上面我们<b>“取文件尺寸”</b>的时候得知<b>“火山文件.txt”</b>是<b>“29字节”</b>，这里执行<b>“置入尺寸”</b>后依然可以<b>“成功读取”</b>。</p>
+<p align="left">右图：<b>“文件管理器”</b>内文件尺寸也变成了<b>“100字节”</b></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wjfw_zwjcc_yx.png" >
+  
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img border="0" src="wj_images/wjfw_zwjcc_jg.png" ></p>
+</blockquote>
+
+</body>
+</html>

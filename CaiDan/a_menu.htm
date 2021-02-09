@@ -1,0 +1,1044 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>菜单</h4></li>
+	<ol>
+        <li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'newsdown')" >一.菜单<span>(可收缩)</span></h6></li>
+		<ol id="newsdown">
+            <li><blockquote><a href="#cd_jrcdx">1.加入菜单项</a></blockquote></li>
+            <li><blockquote><a href="#cd_jrcdx2">2.加入菜单项2</a></blockquote></li>
+			<li><blockquote><a href="#cd_czcdx">3.查找菜单项</a></blockquote></li>
+	    <li><blockquote><a href="#cd_gbcd">4.关闭菜单</a></blockquote></li>
+    		<li><blockquote><a href="#cd_sccdx">5.删除菜单项</a></blockquote></li>
+    		<li><blockquote><a href="#cd_scsycdx">6.删除所有菜单项</a></blockquote></li>
+		</ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'newsleiji')" >二.菜单项<span>(可收缩)</span></h6></li>
+		<ol id="newsleiji">
+			<li><blockquote><a href="#cd_id">1.ID（读）</a></blockquote></li>
+			<li><blockquote><a href="#cd_btx">2.标题（写）</a></blockquote></li>
+			<li><blockquote><a href="#cd_btd">3.标题（读）</a></blockquote></li>
+            
+    		<li><blockquote><a href="#cd_kbxzx">4.可被选中（写）</a></blockquote></li>
+    		<li><blockquote><a href="#cd_kbxzd">5.可被选中（读）</a></blockquote></li>
+    		<li><blockquote><a href="#cd_ksx">6.可视（写）</a></blockquote></li>
+    		<li><blockquote><a href="#cd_ksd">7.可视（读）</a></blockquote></li>
+    		<li><blockquote><a href="#cd_xkx">8.许可（写）</a></blockquote></li>
+            <li><blockquote><a href="#cd_xkd">9.许可（读）</a></blockquote></li>
+			<li><blockquote><a href="#cd_xzx">10.选中（写）</a></blockquote></li>
+			<li><blockquote><a href="#cd_xzd">11.选中（读）</a></blockquote></li>
+		</ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'newsbaodu')" >三.菜单项信息<span>(可收缩)</span></h6></li>
+		<ol id="newsbaodu">
+
+	    <li><blockquote><a href="#cd_cdxid">1.菜单项ID</a></blockquote></li>
+			<li><blockquote><a href="#cd_cdxbt">2.菜单项标题</a></blockquote></li>
+			<li><blockquote><a href="#cd_cdxxzzt">3.菜单项选中状态</a></blockquote></li>
+		</ol>	
+        
+        <li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'newscompile')" >四.菜单信息<span>(可收缩)</span></h6></li>
+	  <ol id="newscompile">
+  <!--      <li><blockquote><a href="#wjfm_wjfwl">0.文件访问类准备</a></blockquote></li>-->
+			<li><blockquote><a href="#cdxx_cdxsz">1.菜单项数组</a></blockquote></li>
+			<li><blockquote><a href="#cdxx_jrcdx">2.加入菜单项</a></blockquote></li>
+			<li><blockquote><a href="#cdxx_scsycdx">3.删除所有菜单项</a></blockquote></li>
+            <li><blockquote><a href="#cdxx_sfwk">4.是否为空</a></blockquote></li>
+		</ol>	
+        
+        <li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'e_res')" >五.上下文菜单<span>(可收缩)</span></h6></li>
+	  <ol id="e_res">
+    		<li><blockquote><a href="#cd_zbgz">0.准备工作</a></blockquote></li>
+			
+			<li><blockquote><a href="#cd_ztbbt">1.置头部标题</a></blockquote></li>
+		 
+            <li><blockquote><a href="#cd_ztbtb">2.置头部图标</a></blockquote></li>
+             <li><blockquote><a href="#cd_ztbst">3.置头部视图</a></blockquote></li>
+            <li><blockquote><a href="#cd_qscdt">4.清除菜单头</a></blockquote></li>
+		</ol>	
+        
+        							
+	</ol>
+</ul>
+</div>
+
+
+
+<p align="left">
+<h2>菜单操作实例讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 菜单操作准备工作</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">准备工作1：</p>
+<blockquote>
+<p align="left">放一个<b>“线性布局器”</b>，右侧属性设置<b>“横向布局”</b>。</p>
+<p align="left"><b>“线性布局器”</b>内放置两个<b>“按钮”</b>。</p>
+<p align="left">最后<b>“线性布局器”</b>的外侧，放一个文本框。</p>
+<p align="left"><font color="#F70408">注意：菜单操作位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>	
+
+  <p align="left"><img border="0" src="cd_images/1.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">准备工作2：</p>
+<blockquote>
+<p align="left">保存<b>“布局”</b>后，在<b>“代码编辑器”</b>界面如下图所示，分别给<b>“按钮1”</b>和<b>“按钮2”</b>，这是<b>“按钮”</b>的<b>“内容”</b>（也就是标题）。</p>
+<p align="left">为了方便区分，可以给<b>“文本框”</b>设置一个<b>“白色”</b>背景。</p>
+<p align="left">黄色箭头指向的按钮，可以弹出<b>“颜色选择器”</b>，不需要手动输入<b>“颜色值”</b>。</p>
+<p align="left">&nbsp;</p>
+<p align="left"><img border="0" src="cd_images/2.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">准备工作3：</p>
+<blockquote>
+<p align="left"><b>“右键”</b>选择<b>“启动类窗口”</b>虚拟方法。</p>
+
+<p align="left">&nbsp;</p>
+<p align="left"><img border="0" src="cd_images/3.png" ></p>
+<p align="left">&nbsp;</p>
+<p align="left">选择<b>“通知_初始化选项菜单”</b>，点击<b>“添加”</b></p>
+<p align="left">&nbsp;</p>
+<p align="left"><img border="0" src="cd_images/4.png" ></p>
+
+<p align="left">&nbsp;</p>
+<p align="left">添加后会自动在<b>“代码编辑区”</b>出现如下图所示的<b>“表格”</b>代码。</p>
+<p align="left">&nbsp;</p>
+<p align="left"><img border="0" src="cd_images/5.png" ></p>
+
+<p align="left">&nbsp;</p>
+<p align="left">重新打开<b>“启动类窗口”</b>虚拟方法，选择<b>“通知_菜单项被选择”</b>，点击<b>“添加”</b>。</p>
+<p align="left">&nbsp;</p>
+<p align="left"><img border="0" src="cd_images/6.png" ></p>
+
+<p align="left">&nbsp;</p>
+<p align="left">添加后会自动生成<b>“如下图”</b>所示的<b>“表格代码”</b>。</p>
+<p align="left">&nbsp;</p>
+<p align="left"><img border="0" src="cd_images/7.png" ></p>
+
+<p align="left">&nbsp;</p>
+<p align="left">重新打开<b>“启动类窗口”</b>虚拟方法，选择<b>“通知_初始化组件上下文菜单”</b>，点击<b>“添加”</b>。</p>
+<p align="left">&nbsp;</p>
+<p align="left"><img border="0" src="cd_images/8.png" ></p>
+
+<p align="left">&nbsp;</p>
+<p align="left">添加后会自动生成<b>“如下图”</b>所示的<b>“表格代码”</b>。</p>
+<p align="left">&nbsp;</p>
+<p align="left"><img border="0" src="cd_images/9.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="cd_jrcdx"></a>
+<h2>一、菜单</h2>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 加入菜单项</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">打开后可以看到<b>“本方法”</b>有四个参数和一个<b>“菜单项”</b>返回值，并且<b>“本方法”</b>也支持<b>“动态调用”</b>。</p>
+    <p align="left">参数4：有默认值<b>“-1”</b>，并且有<b>“三个”</b>整数值可以填写，分别代表<b>“不同的意思”</b>。</p>
+	<p align="left"><img border="0" src="cd_images/10.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">我们在<b>“通知_初始化选项菜单”</b>方法下，可以利用<b>“本方法”</b>添加<b>“菜单”</b>。</p>
+    <p align="left">这里不需要<b>“创建变量”</b>，因为本<b>“虚拟方法”</b>有<b>“菜单”</b>参数，直接用<b>“选项菜单”</b>加本方法名即可添加。</p>
+    <p align="left">无论是<b>“变量”</b>形式调用，还是下面的<b>“参数”</b>形式调用，均属于<b>“动态调用”</b>。</p>
+  <p align="left">动态调用<b>“参数1”</b>可以省略不写，也不用<b>“逗号”</b>隔开。</p>
+  <p align="left">所以下图代码直接输入<b>“参数2的ID值”</b>。</p>
+    <p align="left">在<b>“菜单2”</b>可以设置一个<b>“参数4”</b>为选中状态。</p>
+	<p align="left"><img border="0" src="cd_images/11.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">左图：可以看到<b>“左上角”</b>有三个点的<b>“按钮”</b>，这个就是<b>“菜单”</b>按钮。</p>
+    <p align="left">右图：点击后就成功的<b>“显示菜单”</b>，并且<b>“菜单2”</b>也是<b>“选中”</b>状态。</p>
+	<p align="left"><img border="0" src="cd_images/12.png" >
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img border="0" src="cd_images/13.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">设置<b>“菜单”</b>被选择事件：</p>
+<blockquote>
+	<p align="left">在<b>“通知_菜单项被选择”</b>虚拟方法下。</p>
+    <p align="left">用<b>“如果”</b>判断<b>“是否为上下文菜单”</b>等于<b>“假”</b>。</p>
+    <p align="left">最后用参数<b>“所选择菜单项.标题”</b>就可以取出<b>“被单击选择”</b>菜单的标题。</p>
+	<p align="left">
+    <img border="0" src="cd_images/13a.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="cd_jrcdx2"></a>
+<font style="font-size: 12pt; font-weight:700">● 加入菜单项2</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">打开后可以看到<b>“本方法”</b>只有<b>“两个”</b>参数，没有返回值。</p>
+	<p align="left"><img border="0" src="cd_images/14.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">依然是<b>“通知_初始化选项菜单”</b>方法下。</p>
+    <p align="left">创建一个<b>“菜单信息”</b>变量，然后利用<b>“本变量”</b>来进行<b>“菜单添加”</b>工作。</p>
+    <p align="left">随便加入<b>“三个菜单”</b>后，利用<b>“菜单”</b>的<b>“加入菜单项2”</b>方法。</p> <p align="left">把创建的<b>“菜单信息”</b>变量名称写入<b>“参数”</b>，就可以创建这些<b>“菜单”</b>。</p>
+	<p align="left"><img border="0" src="cd_images/15.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">点击<b>“菜单按钮”</b>后就成功的<b>“显示菜单”</b>，并且<b>“菜单信息3”</b>也是<b>“选中”</b>状态。</p>
+	<p align="left"><img border="0" src="cd_images/16.png" >
+    </p>
+</blockquote>
+
+<a name="cd_czcdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 查找菜单项</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">打开后可以看到<b>“本方法”</b>有<b>“两个”</b>参数，和一个<b>“菜单项”</b>返回值。</p>
+    <p align="left">不存在会返回<b>“空对象”</b>。</p>
+	<p align="left"><img border="0" src="cd_images/17.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">首先我们需要在<b>“成员变量”</b>中定义一个<b>“菜单”</b>变量设置<b>“参考”</b>。</p>
+    <p align="left">然后在<b>“通知_初始化选项菜单”</b>的虚拟方法中，随便加入几个菜单。</p>
+    <p align="left">最后把参数<b>“选项菜单”</b>赋值给定义的<b>“菜单1”</b>成员变量。</p>
+	<p align="left"><img border="0" src="cd_images/18.png" ></p>
+    
+    <p align="left">创建<b>“按钮_被单击”</b>接收事件，在事件内指定来源对象<b>“按钮1”</b>。</p>
+    <p align="left">定义<b>“菜单项”</b>变量，设置参考。</p>
+    <p align="left">然后用定义的<b>“菜单1”</b>成员变量，使用本方法<b>“查找菜单项”</b>，例如：我们这里查找<b>“3”</b>。</p>
+    <p align="left">最后可以用<b>“菜单项变量”</b>来取出查找到的<b>“菜单项”</b>的标题。</p>
+	<p align="left"><img border="0" src="cd_images/18a.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">点击<b>“按钮1”</b>成功找到<b>“菜单3”</b>。</p>
+	<p align="left"><img border="0" src="cd_images/19.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="cd_gbcd"></a>
+<font style="font-size: 12pt; font-weight:700">● 关闭菜单</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">可以看到只有一个<b>“参数”</b>，没有<b>“返回值”</b>。</p>
+    <p align="left">顾名思义就是关闭一个打开的<b>“菜单”</b>。</p>
+	<p align="left"><img border="0" src="cd_images/20.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码如下图：</p>
+<blockquote>
+    <p align="left">我们直接在<b>“查找菜单项”</b>的基础上，把<b>“按钮”</b>被单击下的改成<b>“关闭菜单”</b>即可。</p>
+	<p align="left"><img border="0" src="cd_images/21.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="cd_sccdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除菜单项</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">可以看到有<b>“两个”</b>参数，没有<b>“返回值”</b>。</p>
+    <p align="left">顾名思义，就是<b>“删除”</b>指定<b>“ID”</b>的菜单项。</p>
+	<p align="left"><img border="0" src="cd_images/22.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">我们只需要把<b>“关闭菜单”</b>的代码改成<b>“删除菜单项”</b>即可。</p>
+    <p align="left">因是动态调用，所以<b>“参数1”</b>不用写，直接写<b>“参数二”</b>，这里我<b>“删除ID2”</b>。</p>
+	<p align="left"><img border="0" src="cd_images/23.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">执行后打开菜单，会发现<b>“菜单2”</b>已经被<b>“删除”</b>了。</p>
+	<p align="left"><img border="0" src="cd_images/24.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="cd_scsycdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除所有菜单项</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">可以看到只有<b>“一个参数”</b>，没有<b>“返回值”</b>，如果<b>“动态”</b>调用本方法，这个参数可以直接忽略。</p>
+    <p align="left">顾名思义就是删除所有项目，清空菜单。</p>
+	<p align="left"><img border="0" src="cd_images/25.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">我们只需要在<b>“删除菜单项”</b>的基础上，把代码改成<b>“删除所有菜单项”</b>即可。</p>
+	<p align="left"><img border="0" src="cd_images/26.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="cd_id"></a>
+<h2>二、菜单项</h2>
+
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● ID</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法是<b>“属性读方法”</b>，虽然可以看到一个<b>“参数”</b>，但是通常情况下这个参数都是直接<b>“省略”</b>即可。</p>
+    <p align="left">顾名思义，就是读指定<b>“菜单项”</b>的ID值。</p>
+	<p align="left"><img border="0" src="cd_images/27.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">例如：我们使用<b>“菜单1”</b>新增一个菜单出来。</p>
+    <p align="left">然后直接用<b>“菜单项变量.ID”</b>就可以直接取出<b>“ID值”</b>（注意属性读写方法均没有括号）</p>
+	<p align="left"><img border="0" src="cd_images/28.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">执行后成功返回<b>“新加入菜单”</b>的<b>“ID”</b>。</p>
+	<p align="left"><img border="0" src="cd_images/29.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="cd_btx"></a>
+<font style="font-size: 12pt; font-weight:700">● 标题（写）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">上面说了，<b>“属性读写”</b>均没有括号，所以这里的<b>“参数”</b>直接忽略。</p>
+    <p align="left"><b>“写方法”</b>类似于赋值形式，直接<b>“等号”</b>加<b>“参数二”</b>即可。</p>
+	<p align="left"><img border="0" src="cd_images/30.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">例如：我们查找<b>“菜单3”</b>。</p>
+    <p align="left">查找后直接用属性<b>“标题”</b>后面直接跟着<b>“等号”</b>和<b>“字符串”</b>就可以。</p>
+	<p align="left"><img border="0" src="cd_images/31.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">执行后打开菜单，会发现菜单的<b>“初始值”</b>已经被修改了。</p>
+	<p align="left"><img border="0" src="cd_images/32.png" >
+    </p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="cd_btd"></a>
+<font style="font-size: 12pt; font-weight:700">● 标题（读）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left"><b>“属性读方法”</b>直接返回标题。</p>
+	<p align="left"><img border="0" src="cd_images/33.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">例如：我们查找<b>“菜单2”</b>。</p>
+    <p align="left">找到后直接用<b>“菜单项变量.标题”</b>就可以取出标题。</p>
+	<p align="left"><img border="0" src="cd_images/34.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">执行后打开菜单，成功把<b>“菜单标题”</b>取出。</p>
+	<p align="left"><img border="0" src="cd_images/35.png" >
+    </p>
+</blockquote>
+
+
+
+
+<p align="left">&nbsp;</p>
+<a name="cd_kbxzx"></a>
+<font style="font-size: 12pt; font-weight:700">● 可被选中（写）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就算设置一个菜单项是否可以选中。</p>
+	<p align="left"><img border="0" src="cd_images/42.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">例如：我们设置<b>“菜单1”</b>可以选中，查找到<b>“菜单1”</b>的菜单项后直接设置<b>“本属性”</b>等于<b>“真”</b>即可。</p>
+	<p align="left"><img border="0" src="cd_images/43.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">执行后<b>“按钮1”</b>后，可以发现<b>“菜单1”</b>出现了选择模式。</p>
+	<p align="left"><img border="0" src="cd_images/44.png" >
+    </p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="cd_kbxzd"></a>
+<font style="font-size: 12pt; font-weight:700">● 可被选中（读）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是<b>“读取”</b>一个菜单项，是否有选中功能。</p>
+	<p align="left"><img border="0" src="cd_images/45.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">我们<b>“菜单项”</b>变量放到<b>“如果”</b>外面。</p>
+    <p align="left">然后<b>“按钮1”</b>判断<b>“菜单3”</b>，<b>“按钮2”</b>判断<b>“菜单2”</b>。</p>
+	<p align="left"><img border="0" src="cd_images/46.png" >
+
+    
+    </p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">左图：点击<b>“按钮1”</b>提示<b>“菜单3”</b>可以被选中。</p>
+    <p align="left">右图：点击<b>“按钮2”</b>，因<b>“菜单2”</b>初始化的时候并没有设置<b>“选中”</b>，所以这里只会提示<b>“不可选中”</b>。</p>
+	<p align="left"><img border="0" src="cd_images/47.png" >
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img border="0" src="cd_images/47a.png" >
+    </p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="cd_ksx"></a>
+<font style="font-size: 12pt; font-weight:700">● 可视（写）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，写指定<b>“菜单项”</b>的<b>“是否可视”</b>。</p>
+	<p align="left"><img border="0" src="cd_images/48.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">例如：我们查找<b>“菜单3”</b>。</p>
+    <p align="left">找到后直接<b>“菜单项变量.可视&nbsp;=&nbsp;假”</b>即可。</p>
+	<p align="left"><img border="0" src="cd_images/49.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">执行后打开菜单，会发现<b>“菜单三”</b>成功隐藏。</p>
+	<p align="left"><img border="0" src="cd_images/50.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="cd_ksd"></a>
+<font style="font-size: 12pt; font-weight:700">● 可视（读）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是<b>“读取”</b>菜单项的<b>“可视状态”</b>。</p>
+	<p align="left"><img border="0" src="cd_images/51.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">我们把<b>“变量”</b>和<b>“查菜单”</b>结果都放在<b>“如果”</b>的外面。</p>
+    <p align="left"><b>“按钮1”</b>被点击直接判断<b>“是否可视”</b>。</p>
+    <p align="left"><b>“按钮2”</b>判断之前我们设置一个<b>“假”</b>，然后进行判断<b>“是否可视”</b>。</p>
+    <p align="left"></p>
+	<p align="left"><img border="0" src="cd_images/52.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">左图：点击<b>“按钮1”</b>后提示<b>“菜单2”</b>可视。</p>
+    <p align="left">右图：点击<b>“按钮2”</b>后则会提示<b>“菜单2”</b>看不见。</p>
+	<p align="left"><img border="0" src="cd_images/53.png" >
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img border="0" src="cd_images/53a.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="cd_xkx"></a>
+<font style="font-size: 12pt; font-weight:700">● 许可（写）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是设置指定<b>“菜单项”</b>是否可用（可以理解为<b>“是否被禁止”</b>点击）。</p>
+	<p align="left"><img border="0" src="cd_images/54.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接指定<b>“来源对象”</b>然后<b>“变量名.许可=假”</b>即可。</p>
+	<p align="left"><img border="0" src="cd_images/55.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">执行后打开菜单，会发现<b>“菜单2”</b>已经被<b>“禁止”</b>使用了。</p>
+	<p align="left"><img border="0" src="cd_images/56.png" >
+    </p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="cd_xkd"></a>
+<font style="font-size: 12pt; font-weight:700">● 许可（读）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是判断指定<b>“菜单项”</b>是否被禁止。</p>
+	<p align="left"><img border="0" src="cd_images/57.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">直接用<b>“如果”</b>命令判断即可，注意是<b>“双等号”</b>。</p>
+	<p align="left"><img border="0" src="cd_images/58.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">执行后<b>“按钮1”</b>后，会提示<b>“可以选择”</b>，证明<b>“菜单三”</b>并没有被禁止。</p>
+	<p align="left"><img border="0" src="cd_images/59.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="cd_xzx"></a>
+<font style="font-size: 12pt; font-weight:700">● 选中（写）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，设置指定<b>“菜单项”</b>是否被选中。</p>
+    <p align="left">注意：前提必须保证<b>“可被选中”</b>属性等于<b>“真”</b>，或者<b>“加入菜单项”</b>的时候，<b>“菜单项选中状态”</b>的参数不为<b>“-1”</b>。</p>
+	<p align="left"><img border="0" src="cd_images/60.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接<b>“查找菜单项”</b>最后设置是否被选中即可。</p>
+	<p align="left"><img border="0" src="cd_images/61.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">执行<b>“按钮1”</b>后，可以看到<b>“菜单三”</b>的选中状态已经不见了。</p>
+	<p align="left"><img border="0" src="cd_images/62.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="cd_xzd"></a>
+<font style="font-size: 12pt; font-weight:700">● 选中（读）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，读取指定<b>“菜单项”</b>是否被选中。</p>
+	<p align="left"><img border="0" src="cd_images/63.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接用<b>“如果”</b>进行判断即可。</p>
+	<p align="left"><img border="0" src="cd_images/64.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">因<b>“菜单三”</b>创建的时候就设置了<b>“选中”</b>，所以执行后<b>“菜单三”</b>是<b>“选中状态”</b>。</p>
+	<p align="left"><img border="0" src="cd_images/65.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="cd_cdxid"></a>
+<h2>三、菜单项信息</h2>
+<p align="left">&nbsp;</p>
+
+
+<font style="font-size: 12pt; font-weight:700">● 菜单项ID</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">打开帮助内容，可以看到这是一个<b>“整数”</b>的<b>“变量值”</b>，用来设置<b>“菜单项”</b>的<b>“id”</b>。</p>
+	<p align="left"><img border="0" src="cd_images/66.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">依然是<b>“按钮被单击”</b>事件下面填写，创建一个<b>“菜单项信息”</b>变量。</p>
+    <p align="left">然后<b>“变量名”</b>+<b>“菜单项ID”</b>=您要设置的菜单项id。</p>
+    <p align="left">此id不能和<b>“初始化”</b>中的菜单<b>“id”</b>重复。</p>
+    <p align="left">然后将整个<b>“变量值”</b>填入<b>“加入菜单项”</b>的参数中。</p>
+	<p align="left"><img border="0" src="cd_images/67.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">执行按钮后，可以看到新的<b>“菜单”</b>也成功创建。</p>
+	<p align="left"><img border="0" src="cd_images/68.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="cd_cdxbt"></a>
+<font style="font-size: 12pt; font-weight:700">● 菜单项标题</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">它和<b>“菜单项ID”</b>一样，是一个<b>“成员变量值”</b>。</p>
+	<p align="left"><img border="0" src="cd_images/69.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">使用方法和<b>“菜单项ID”</b>一样，您也可以同时在这里设置<b>“菜单项ID”</b>。</p>
+	<p align="left"><img border="0" src="cd_images/70.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">点击<b>“按钮1”</b>后，新的菜单成功添加。</p>
+	<p align="left"><img border="0" src="cd_images/71.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="cd_cdxxzzt"></a>
+<font style="font-size: 12pt; font-weight:700">● 菜单项选中状态</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">它和<b>“菜单项ID”</b>一样，是一个<b>“成员变量”</b>。</p>
+	<p align="left"><img border="0" src="cd_images/72.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">用法和<b>“菜单项ID”</b>一样，您也可以同时设置<b>“标题”</b>和<b>“ID”</b>，根据实际需求填写。</p>
+	<p align="left"><img border="0" src="cd_images/73.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">新的菜单成功创建，并且选中状态存在。</p>
+	<p align="left"><img border="0" src="cd_images/74.png" >
+    </p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p><a name="cdxx_cdxsz"></a>
+<h2>四、菜单信息</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 菜单项数组</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">它是一个<b>“成员变量”</b>。</p>
+	<p align="left"><img border="0" src="cd_images/75.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">设置一个<b>“菜单信息”</b>变量和<b>“菜单项信息”</b>变量。</p>
+    <p align="left">然后<b>“菜单项信息”</b>分别设置好<b>“id、标题、选中状态”</b>。</p>
+  <p align="left">随后就可以用上<b>“菜单项数组”</b>变量，利用<b>“数组”</b>的添加成员方法，可以吧<b>“菜单项信息”</b>添加进去。<br>
+  <p align="left">最后可以利用<b>“菜单1”</b>的<b>“加入菜单项2”</b>的方法添加菜单。</p>
+<br>
+
+	<p align="left"><img border="0" src="cd_images/76.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">可以看到<b>“新的标题”</b>成功添加，并且也设置的选中状态。</p>
+	<p align="left"><img border="0" src="cd_images/77.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="cdxx_jrcdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 加入菜单项</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">可以看到本方法和<b>“菜单”</b>的<b>“加入菜单项”</b>基本没区别。</p>
+    <p align="left">不同之处就是本方法是新建了一个菜单，并且不需要进行菜单初始化就可以创建。</p>
+	<p align="left"><img border="0" src="cd_images/78.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">创建一个<b>“菜单信息”</b>变量，然后直接用本方法<b>“加入菜单”</b>即可。</p>
+    <p align="left">因为是<b>“新菜单”</b>所以这里的<b>“id值”</b>自己随便定，只要保证<b>“新菜单”</b>内的<b>“id值”</b>不重复即可。</p>
+    <p align="left">最后可以利用<b>“组件”</b>的弹出菜单功能，进行菜单的<b>“弹出”</b>。</p>
+	<p align="left"><img border="0" src="cd_images/79.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">可以看到<b>“按钮1”</b>点击后<b>“按钮2”</b>下面会弹出菜单，如果绑定的是<b>“图片”</b>就会在<b>“图片”</b>上弹出菜单。</p>
+	<p align="left"><img border="0" src="cd_images/80.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="cdxx_scsycdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除所有菜单项</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是<b>“删除所有菜单”</b>。</p>
+	<p align="left"><img border="0" src="cd_images/81.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">例如，我们随便创建几个菜单，然后调用<b>“本方法”</b>。</p>
+	<p align="left"><img border="0" src="cd_images/82.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">可以看到点击<b>“按钮1”</b>，菜单<b>“不会弹出”</b>，也就间接证明，菜单被全部删除。</p>
+	<p align="left"><img border="0" src="cd_images/83.gif" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="cdxx_sfwk"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否为空</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是判断菜单是否为空。</p>
+	<p align="left"><img border="0" src="cd_images/84.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在<b>“按钮1”</b>下面添加菜单，<b>“按钮2”</b>下面不添加任何菜单。</p>
+	<p align="left"><img border="0" src="cd_images/85.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">左图：点击<b>“按钮1”</b>就会提示有菜单。</p>
+    <p align="left">右图：点击<b>“按钮2”</b>提示没有。</p>
+	<p align="left"><img border="0" src="cd_images/86a.png" >
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img border="0" src="cd_images/86b.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p><a name="cd_zbgz"></a>
+<h2>五、上下文菜单</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+    <p align="left">我们在<b>“通知_初始化组件上下文菜单”</b>虚拟方法下面，随便添加几个<b>“上下文菜单”</b>。</p>
+    <p align="left"><b>“上下文菜单”</b>添加的方法和其它<b>“菜单”</b>添加方法没区别。</p>
+	<p align="left"><img border="0" src="cd_images/87_zb1.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+    <p align="left">我们在<b>“通知_被创建”</b>方法下<b>“开启上下文菜单支持”</b>，参数填写我们早就设置好的<b>“文本框1”</b>。</p>
+	<p align="left"><img border="0" src="cd_images/87_zb2.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行如下图：</p>
+<blockquote>
+    <p align="left">运行后长按<b>“文本框1”</b>就可以弹出<b>“上下文菜单”</b>。</p>
+    <p align="left">备注：不同<b>“安卓系统”</b>弹出的<b>“位置”</b>和<b>“样式”</b>可能有所差别。</p>
+	<p align="left"><img border="0" src="cd_images/87_zb3.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+<a name="cd_ztbbt"></a>
+<font style="font-size: 12pt; font-weight:700">● 置头部标题</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是给<b>“上下文菜单”</b>设置一个标题。</p>
+	<p align="left"><img border="0" src="cd_images/90.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在加菜单的结尾用<b>“本方法”</b>添加标题即可。</p>
+    <p align="left"><b>备注：</b><b>“菜单标题”</b>只能在<b>“上下文菜单初始化”</b>的时候进行设置。</p>
+	<p align="left"><img border="0" src="cd_images/91.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">运行后长按<b>“文本框1”</b>菜单成功弹出，并且<b>“标题”</b>也显示出来了。</p>
+	<p align="left"><img border="0" src="cd_images/92.png" >
+    </p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+<a name="cd_ztbtb"></a>
+<font style="font-size: 12pt; font-weight:700">● 置头部图标</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，给<b>“头部菜单”</b>增加一个图标。</p>
+	<p align="left"><img border="0" src="cd_images/96.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义一个类型为<b>“可绘制资源”</b>的局部变量，黄色圈内的<b>“按钮”</b>点击选择一个<b>“图片”</b>，注意必须保证是<b>“字母”</b>名称。</p>
+    <p align="left">然后利用<b>“本方法”</b>，设置图标即可，本方法并不会清除<b>“菜单标题”</b>。</p>
+    <p align="left">本方法同样只能在<b>“菜单初始化”</b>这里调用。</p>
+	<p align="left"><img border="0" src="cd_images/97.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">运行后可以看到<b>“菜单标题”</b>的前面多了一个设置的<b>“图标”</b>。</p>
+	<p align="left"><img border="0" src="cd_images/98.png" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="cd_ztbst"></a>
+<font style="font-size: 12pt; font-weight:700">● 置头部视图</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">可以看到有两个参数，顾名思义就是给<b>“菜单头部”</b>设置一个<b>“组件”</b>，并且支持动态调用。</p>
+	<p align="left"><img border="0" src="cd_images/93.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义一个类型为"按钮"的局部变量，属性名写<b>“内容”</b>属性值填写<b>“按钮标题”</b>。</p>
+    <p align="left">然后利用"本方法"把<b>“新按钮”</b>填入参数内即可。</p>
+	<p align="left"><img border="0" src="cd_images/94.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">运行后可以看到设置的<b>“菜单标题”</b>消失，取而代之的是一个<b>“按钮”</b>。</p>
+    <p align="left">备注：本方法<b>“安卓高版本”</b>无效（已知：安卓8.0无效）。</p>
+	<p align="left"><img border="0" src="cd_images/95.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="cd_qscdt"></a>
+<font style="font-size: 12pt; font-weight:700">● 清除菜单头</font><br/>
+<br/>
+<blockquote>
+    <p align="left">本方法顾名思义，就是清除菜单头部信息（标题或图标）。</p>
+    <p align="left">调用方式和前几方法的一样。</p>
+    <p align="left">但是因<b>“本方法”</b>不能在外部调用，所以存在的意义不大，因此不做讲解。</p>
+    <p align="left">&nbsp;</p>
+ 
+</blockquote>
+
+</body>
+</html>

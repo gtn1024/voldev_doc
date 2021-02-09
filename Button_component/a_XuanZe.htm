@@ -1,0 +1,307 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+	
+	
+	
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>组合按钮基础类</h4></li>
+	<ol>
+    		<li><blockquote><a href="#zbgz">1.准备工作</a></blockquote></li>   
+            <li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.组合按钮基础类 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+            <li><blockquote><a href="#zuheanniu">1.本类说明</a></blockquote></li>  
+            <li><blockquote><a href="#zuheanniu">2.单选框</a></blockquote></li>  
+            <li><blockquote><a href="#zuheanniu">3.多选框</a></blockquote></li>  
+            <li><blockquote><a href="#mndj">4.模拟单击</a></blockquote></li> 
+             <li><blockquote><a href="#zanbj">5.置按钮背景</a></blockquote></li>
+            <li><blockquote><a href="#fzxzzt">6.翻转选中状态</a></blockquote></li>
+            <li><blockquote><a href="#xzdx">7.选中（读写）</a></blockquote></li>
+            <li><blockquote><a href="#anbjx">8.按钮背景（写）</a></blockquote></li>
+            <li><blockquote><a href="#xzztbgbsj">9.选中状态被改变（事件）</a></blockquote></li>
+			 <li><blockquote><a href="#duoge">10.正确使用多个单选框</a></blockquote></li>
+		</ol>	
+	
+	</ol>
+</ul>
+</div>
+
+
+<p align="left">
+<h2>组合按钮基础类(多选/单选)操作实例讲解</h2><a name="zbgz"></a>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 辅助说明</font><br/>
+     <blockquote>
+	<p align="left"><font color="#F70408">本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+	</blockquote>	
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font><br/>
+<p align="left">&nbsp;</p>
+
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">打开窗口设计器，拖放两个<b>“按钮”</b>，一个<b>“单选框”</b>。</p>
+    <p align="left">分别设置标题<b>“按钮1、按钮2”</b>和<b>“单选框1”</b>。</p>
+	<p align="left"><img src="xz_images/2.png" border="0" ></p><br>
+    <p align="left">保存布局后，右键<b>“按钮”</b>选择<b>“添加事件接收方法”</b>。</p> 
+	<p align="left">然后去添加<b>“按钮_被单击”</b>事件。</p>
+	<p align="left">最终达到如图所示的效果。</p>
+    <p align="left"><img border="0" src="xz_images/3.png" ></p>
+
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<h2>一、组合按钮基础类</h2>
+<p align="left">&nbsp;</p>
+<a name="zuheanniu"></a>
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">本类是一个<b>“基础类”</b>，并不能直接使用。</p>
+	<p align="left">本类需要通过<b>“单选框”</b>或<b>“多选框”</b>等组件调用本类中的方法。</p>
+	<p align="left">此处主要讲解<b>“单选框”</b>调用。</p>
+	<p align="left">可通过<a href="../View_basis/a_ctrl_base.htm"><b>“窗口组件”</b></a>的基础类中的<a href="../View_basis/a_ctrl_base.htm#bjsx"><b>“背景色”</b></a>，<a href="../View_basis/a_ctrl_base.htm#bjsx"><b>“背景图”</b></a>等属性调整当前单选框的背景色和背景图。</p>
+	<p align="left">可通过<a href="../Text_component/a_ctrl_text.htm"><b>“文本框”</b></a>组件中的<a href="../Text_component/a_ctrl_text.htm#nrdx"><b>“内容（读写）”</b></a>属性，调整文本框组件的标题。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="mndj"></a>
+<font style="font-size: 12pt; font-weight:700">● 模拟单击</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">顾名思义，本方法就是用来模拟一个单机，并且会发送<b>“单选框被单击”</b>事件。</p>
+	<p align="left"><img border="0" src="xz_images/4.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+	<p align="left">右键点击单选框，选择<b>“添加事件接收方法”</b>，添加<b>“单选框被单击”</b>事件。</p>
+	<p align="left"><img border="0" src="xz_images/5.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+  <p align="left">在<b>“按钮被单击”</b>事件下，指定<b>“来源对象”</b>为<b>“按钮1”</b>。</p>
+  <p align="left">然后调用本方法即可。</p>
+  <p align="left">随后在添加的被单击事件下，弹出一个提示框做演示。</p>
+  <p align="left">注意：单选框是基于按钮的，所有基于按钮的都不需要调用<b>“支持单击”</b>属性。</p>
+
+	<p align="left"><img border="0" src="xz_images/6.png" ></p>
+</blockquote>
+
+	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可以看到<b>“按钮1”</b>被点击后，单选框自动选中，并且触发了<b>“单选框_被单击”</b>事件。</p>
+	<p align="left"><img border="0" src="xz_images/7.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="zanbj"></a>
+<font style="font-size: 12pt; font-weight:700">● 置按钮背景</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，设置当前<b>“单选框”</b>的按钮图片。</p>
+	<p align="left">可通过<b>“载入可绘制资源”</b>方法将<b>“可绘制资源”</b>转换为<b>“可绘制对象类”</b>。</p>
+	<p align="left"><img border="0" src="xz_images/8.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义<b>“可绘制资源”</b>变量，导入一张图片。</p>
+	<p align="left">然后将<b>“载入可绘制资源(图片)”</b>放入本方法的参数中即可。</p>
+	<p align="left"><img border="0" src="xz_images/9.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可以看到<b>“按钮1”</b>被点击后，单选框文本前的按钮变成了导入的图片。</p>
+	<p align="left"><img border="0" src="xz_images/10.gif" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="tjzjzf"></a>
+<font style="font-size: 12pt; font-weight:700">● 翻转选中状态</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，本方法的作用，可以用来翻转当前按钮的选择状态。</p>
+	<p align="left">如果是<b>“单选框”</b>调用，那么只能从<b>“未选中”</b>状态翻转为<b>“选中状态”</b>。</p>
+	<p align="left"><b>“多选框”</b>可随意的翻转选中状态，不受影响。</p>
+	<p align="left"><img border="0" src="xz_images/11.png" ></p>
+</blockquote>
+
+	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在<b>“按钮1”</b>被点击后调用本方法即可。</p>
+	<p align="left"><img border="0" src="xz_images/12.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可以看到<b>“按钮1”</b>被点击后，单选框立刻变成选中状态。</p>
+	<p align="left">但是选中之后，并不能继续翻转选中状态。</p>
+	<p align="left">如果想要调整为<b>“未选中”</b>状态，需要使用<b>“选中”</b>属性。</p>
+	<p align="left"><img border="0" src="xz_images/13.gif" ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="xzdx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 选中（读写）</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“选中(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本属性可设置当前按钮是否处于选中状态。</p>
+	<p align="left">属性值为真表示选中，否则相反。</p>
+	<p align="left"><img border="0" src="xz_images/14.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“选中(读)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本读属性的作用就是来读取当前按钮的选择状态。</p>
+	<p align="left">返回真表示选中，否则相反。</p>
+	<p align="left"><img border="0" src="xz_images/15.png" ></p>
+</blockquote>
+	
+
+	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后调用<b>“选中”</b>写属性，属性值填写<b>“取反(单选框1.选中)”</b>。</p>
+	<p align="left"><b>“取反”</b>的作用为，翻转逻辑值。</p>
+	<p align="left">如果当前逻辑值为真，则返回假，否则返回真。</p>
+	<p align="left">此处用在这里，可以实现<b>“翻转选中状态”</b>。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，判断当前<b>“选中”</b>读属性的返回值，然后弹出对应提示即可。</p>
+	<p align="left"><img border="0" src="xz_images/16.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可以看到<b>“按钮1”</b>被点击，会翻转当前选中状态。</p>
+	<p align="left">并且<b>“选中”</b>后也可以进行翻转。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，当前的选中状态也都成功读取。</p>
+	<p align="left"><img border="0" src="xz_images/17.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="anbjx"></a>
+<font style="font-size: 12pt; font-weight:700">● 按钮背景（写）</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本写属性和<b>“置按钮背景”</b>一样，都是用来设置当前按钮的背景。</p>
+	<p align="left"><img border="0" src="xz_images/18.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义<b>“可绘制资源”</b>变量，导入一张图片。</p>
+	<p align="left">然后调用本属性，将<b>“背景”</b>写入属性值即可。</p>
+
+	<p align="left"><img border="0" src="xz_images/19.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可以看到<b>“按钮1”</b>被单击后，单选框的图片发生了变化。</p>
+	<p align="left">可通过修改<b>“按钮背景”</b>的方式，来自定义选择按钮。</p>
+	<p align="left"><img border="0" src="xz_images/20.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="znrdqfs"></a>
+<font style="font-size: 12pt; font-weight:700">● 选中状态被改变（事件）</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">在当前选择框，选中状态发生改变后会发送本事件。</p>
+	<p align="left">参数<b>“当先选中状态”</b>返回真表示当前选中，否则返回假。</p>
+	<p align="left"><img border="0" src="xz_images/21.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在<b>“按钮1”</b>被点击下，调用<b>“选中”</b>写属性，设置属性值为真。</p>
+	<p align="left">在<b>“选中状态被改变”</b>时间下，判断<b>“当先选中状态”</b>的返回值是否为真。</p>
+	<p align="left">然后弹出对应提示即可。</p>
+	<p align="left"><img border="0" src="xz_images/22.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可以看到<b>“按钮1”</b>被点击后，弹出了提示<b>“选中”</b>。</p>
+	<p align="left">证明<b>“选中状态被改变”</b>事件被触发。</p>
+	<p align="left"><img border="0" src="xz_images/23.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="duoge"></a>
+<font style="font-size: 12pt; font-weight:700">● 正确使用多个单选框</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">如果当前窗口需要使用多个单选框时，需要使用一个叫做<b>“单选组合框”</b>的容器组件。</p>
+	<p align="left">放好容器组件后，在容器组件内放置多个单选框。</p>
+	<p align="left"><img src="xz_images/23.png" width="742" height="598" border="0" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">只有使用了<b>“单选组合框”</b>容器，多个单选框的时候才能正常切换。</p>
+	
+	<p align="left"><img border="0" src="xz_images/23a.gif" ></p>
+</blockquote>
+
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

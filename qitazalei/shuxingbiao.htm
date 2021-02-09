@@ -1,0 +1,105 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		
+		
+        <li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new10')" >一.属性表类<span>(可收缩)</span></h6></li>
+		<ol id="new10">
+           <li><blockquote><a href="#sxzsxz">1.置属性值</a></blockquote></li>
+          <li><blockquote><a href="#sxzsxz">2.取属性值</a></blockquote></li>
+          <li><blockquote><a href="#sxqsysxmc">3.取所有属性名称</a></blockquote></li>
+		</ol>	
+		
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>属性表类实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+
+<p align="left">&nbsp;</p>
+<a name="sxzsxz"></a>
+<font style="font-size: 12pt; font-weight:700">● 置属性值</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取属性值</font>
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>“置属性值”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法可用来保存一些数据。</p>
+	<p align="left">参数1：提供对象自身，动态调用时省略。</p>
+	<p align="left">参数2：填写要保存的属性名。</p>
+	<p align="left">参数3：填写要保存的属性值，保存后可通过<b>“属性名”</b>取出本值。</p>
+	<p align="left">参数4：省略保留空对象即可。</p>
+	<p align="left"><img border="0" src="img/323.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“取属性值”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法的主要作用是，通过指定的<b>“属性名”</b>取出对应保存的<b>“属性值”</b>。</p>
+	<p align="left"><img border="0" src="img/324.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义类型为<b>“属性表类”</b>的成员变量。</p>
+	<p align="left"><img border="0" src="img/325a.png" ></p>
+	<p align="left">2、<b>“按钮1”</b>被点击后，调用<b>“置属性值()”</b>方法，保存一串文本数据。</p>
+	<p align="left">3、<b>“按钮2”</b>被点击后，调用<b>“取属性值()”</b>方法，取出<b>“属性名”</b>对应的属性值，赋值给<b>“编辑框1”</b>的内容。</p>
+	<p align="left"><img border="0" src="img/325.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/326.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="sxqsysxmc"></a>
+	<font style="font-size: 12pt; font-weight:700">● 取所有属性名称</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">如果当前属性表对象中存储了很多个属性名，通过本方法可以取出所有的属性名。</p>
+<p align="left">返回值为<b>“文本数据集类”</b>，该类继承了<a href="#jihemuban"><b>“集合模板类”</b></a>。</p>
+    <p align="left"><img border="0" src="img/327.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">1、<b>“按钮1”</b>被点击后，调用<b>“置属性值()”</b>方法设置多个属性值。</p>
+<p align="left">2、<b>“按钮2”</b>被点击后，调用<b>“取所有属性名称()”</b>方法，赋值给<b>“文本数据集类”</b>变量。</p>
+<p align="left">3、调用<a href="#jhdsz"><b>“到数组()”</b></a>方法转换成数组，利用<a href="j_array.htm#szdwb"><b>“数组到文本()”</b></a>方法转换成文本显示在编辑框中。</p>
+    <p align="left"><img border="0" src="img/328.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+    <p align="left"><img border="0" src="img/329.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

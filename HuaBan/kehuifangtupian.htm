@@ -1,0 +1,184 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		
+		 <li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new9')" >一.可回放图片类<span>(可收缩)</span></h6></li>
+		<ol id="new9">
+			<li><blockquote><a href="#kehuifang">1.本类说明</a></blockquote></li>  
+			<li><blockquote><a href="#clzcj">2.从流中创建</a></blockquote></li>  
+    		<li><blockquote><a href="#khfxdl">3.写到流</a></blockquote></li>
+    		<li><blockquote><a href="#khfksjl">4.开始记录</a></blockquote></li>
+    		<li><blockquote><a href="#khfjsjl">5.结束记录</a></blockquote></li>
+			<li><blockquote><a href="#khfczcj">6.复制创建</a></blockquote></li>
+    		<li><blockquote><a href="#kkhfhf">7.回放</a></blockquote></li>
+    		<li><blockquote><a href="#khfjlkd">8.记录宽度</a></blockquote></li>
+    		<li><blockquote><a href="#hkfjlgd">9.记录高度</a></blockquote></li>
+   		</ol>
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>可回放图片类实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+  	<p align="left">本类的作用可以理解为一个录像机。</p>
+  	<p align="left">通过本录像机，可以记录一些复杂的绘制操作。</p>
+  	<p align="left">调用本类中<b>“回放”</b>方法可以重复使用这个复杂的操作。</p>
+	<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+	<p align="left"><img border="0" src="hb_images/553.png" >
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="clzcj"></a>
+	<a name="khfxdl"></a>
+	<a name="khfksjl"></a>
+		<a name="khfjsjl"></a>
+	<font style="font-size: 12pt; font-weight:700">● 开始记录</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 结束记录</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 写到流</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 从流中创建</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">以上四个方法为关联方法，这里统一讲解。</p>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“开始记录”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法的作用可以理解为<b>“摄像机”</b>，通过本方法可以开始记录一切的绘制操作。</p>
+	<p align="left">调用本方法后，如果不再进行记录，可调用<b>“结束记录”</b>方法结束录制。</p>
+	<p align="left">结束录制后，本方法所放回的<b>“画板类”</b>将不能再被使用。</p>
+	<p align="left">另外就是通过返回的<b>“画板类”</b>进行任何绘制操作时，所绘制的内容并不会显示在画板上。</p>
+	<p align="left">可通过<b>“回放”</b>方法显示绘制的内容。</p>
+	<p align="left"><img border="0" src="hb_images/554.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“结束记录”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，就是结束当前对象的录制。</p>
+	<p align="left">调用本方法是，务必保证已经吊用过<b>“开始记录”</b>方法。</p>
+	<p align="left"><img border="0" src="hb_images/555.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“写到流”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法的作用，可以将录制的内容，保存在<b>“输出流”</b>对象中。</p>
+	<p align="left">如果想要从流对象中读取出来，需要调用<b>“从流中创建”</b>方法。</p>
+	<p align="left"><img border="0" src="hb_images/556.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“从流中创建”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法是将<b>“写到流”</b>中保存的内容读取出来，返回<b>“可绘制图片类”</b>对象。</p>
+	<p align="left"><img border="0" src="hb_images/557.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义<b>“画笔类”</b>变量，设置颜色属性为白色。</p>
+	<p align="left">2、定义四个变量，分别为<b>“可回放图片类”</b>，<b>“画板类”</b>和<b>“字节数组输出流/输入流”</b>，注意设置参考。</p>
+	<p align="left">3、通过<b>“可回放图片”</b>调用<b>“开始记录”</b>方法，记录当前画板的高度和宽度，并赋值给<b>“画板”</b>变量。</p>
+	<p align="left">4、通过<b>“画板”</b>变量调用<b>“画矩形”</b>绘制一个矩形（并不会立刻显示在画板上）。</p>
+	<p align="left">5、调用<b>“结束记录”</b>，结束整个录制。</p>
+	<p align="left">7、通过<b>“字节数组输出流”</b>创建流对象赋值给定义的变量。</p>
+	<p align="left">8、调用<b>“写到流”</b>方法将内容保存在<b>“输出流对象”</b>中。</p>
+	<p align="left">9、通过<b>“字节数组输入流.创建”</b>方法创建对象赋值给<b>“输入流对象”</b>。</p>
+	<p align="left">本方法中的<b>“输出流对象.取已写入数据()”</b>可以将<b>“输出流”</b>中的数据转换成<b>“字节数组”</b>。</p>
+	<p align="left">10、调用<b>“从流中创建”</b>方法创建<b>“可回放图片类”</b>对象赋值给定义的<b>“可回放图片”</b>变量。</p>
+	<p align="left">11、最后调用<b>“画可回放图片”</b>方法，可以将<b>“可回放图片”</b>变量中存储的数据绘制出来。</p>
+	<p align="left"><img border="0" src="hb_images/558.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最后成功绘制一个矩形出来。</p>
+	<p align="left"><img border="0" src="hb_images/559.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="khfczcj"></a>
+	<font style="font-size: 12pt; font-weight:700">● 复制创建</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用，就是从已知的<b>“可回放图片类”</b>复制一份并返回一个新的<b>“可回放图片类”</b>。</p>
+	<p align="left">并且所有的数据会一同复制过来。</p>
+	<p align="left">调用方法<b>“可回放图片类.复制创建()”</b>，不再演示，大家自行测试。</p>
+	<p align="left"><img border="0" src="hb_images/560.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="kkhfhf"></a>
+	<font style="font-size: 12pt; font-weight:700">● 回放</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用就是将录制的内容绘制出来。</p>
+	<p align="left"><img border="0" src="hb_images/561.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">还是本类最开始时的那一套代码，我们把最后一个方法改成<b>“可回放图片.回放()”</b></p>
+	<p align="left">参数内填写<b>“异步绘制帧”</b>中的<b>“画板对象”</b>参数，同样也可以进行绘制操作。</p>
+	<p align="left"><img border="0" src="hb_images/562.png" ></p>
+</blockquote>	
+
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="khfjlkd"></a>
+	<a name="hkfjlgd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 记录宽度（读）</font><br/>
+	
+	<font style="font-size: 12pt; font-weight:700">● 记录高度（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">以上两个为读属性，作用就是用来读取<b>“开始记录”</b>时填写的两个参数值。</p>
+	<p align="left">调用方式：<b>“可回放图片变量.记录XX”</b></p>
+</blockquote>
+	
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

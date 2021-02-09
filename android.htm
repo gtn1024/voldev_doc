@@ -1,0 +1,923 @@
+﻿<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<script language="JavaScript" type="text/javascript" src="script/doc_head.js"></script>
+
+<h3 align="center">安卓程序开发手册</h3>
+
+<blockquote>
+	<h4><a name="res"></a>一. 如何使用安卓资源</h4>
+	<blockquote>
+		<h5>1. 安卓资源及其种类:</h5>
+		<blockquote>
+			<p>安卓资源为直接打包进所编译的结果APK文件,在运行时可以直接取用的资源数据(类似于Windows EXE程序中的资源).</p>
+			<p>安卓资源分为很多种类,具体查看方法为: 打开任意一个火山安卓程序工程,然后双击打开&quot;<b>系统/基本类/安卓基本类</b>&quot;过滤器下的&quot;<b>a_res.v</b>&quot;源文件:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b123.png" width="271" height="599"></p>
+			</blockquote>
+			<p>查看其中定义的相关类的继承结构,即可得知安卓资源的分类结构如下:</p>
+			<p><b>注: </b>对于普通用户来说,仅需要了解和使用最常用的&quot;<b>文本资源</b>&quot;以及&quot;<b>可绘制资源</b>&quot;中的&quot;<b>图片可绘制资源</b>&quot;即可,其它的可以忽略.</p>
+			<blockquote>
+				<p><b>安卓资源:</b></p>
+				<blockquote>
+					<p><b>文件资源:</b> 通过文件来提供相关数据的资源.</p>
+					<blockquote>
+						<p><b>1. </b>属性动画资源</p>
+						<p><b>2. </b>居间动画资源</p>
+						<p><b>3. </b>颜色表资源</p>
+						<p><b>4. </b>可绘制资源: 记录绘制图像时所使用数据的文件资源. 
+							其子类别请在系统帮助中查看&quot;系统库/火山.安卓.基本/可绘制对象&quot;分类,具体这些资源的说明和用法如果感兴趣可以阅读该分类中对应类的注释.</p>
+						<blockquote>
+							<p>图片可绘制资源: 记录图片数据的文件资源</p>
+							<p>颜色可绘制资源</p>
+							<p>动画可绘制资源</p>
+							<p>梯度可绘制资源</p>
+							<p>状态列表可绘制资源</p>
+							<p>裁剪可绘制资源</p>
+							<p>多层可绘制资源</p>
+							<p>级别列表可绘制资源</p>
+							<p>嵌入式可绘制资源</p>
+							<p>缩放可绘制资源</p>
+						</blockquote>
+						<p><b>5. </b>菜单资源</p>
+						<p><b>6. </b>原始数据资源</p>
+						<p><b>7. </b>XML数据资源</p>
+					</blockquote>
+					<p><b>值资源:</b> 使用值文本来提供相关数据的资源.</p>
+					<blockquote>
+						<p><b>可设置值资源:</b> 可以直接通过对应火山常量/变量的初始值来提供资源值文本的资源.</p>
+						<blockquote>
+							<p><b>8. </b>文本资源: 记录一段文本的值资源</p>
+							<p><b>9. </b>逻辑值资源</p>
+							<p><b>10. </b>颜色值资源</p>
+							<p><b>11. </b>尺寸值资源</p>
+							<p><b>12. </b>整数值资源</p>
+						</blockquote>
+						<p><b>13. </b>ID值资源</p>
+						<p><b>14. </b>数组资源</p>
+					</blockquote>
+				</blockquote>
+			</blockquote>
+			<p>其中带有数字系列标识的为真实存在的资源类别.</p>
+		</blockquote>
+		<h6>&nbsp;</h6>
+		<h5>2. 如何定义和使用安卓资源:</h5>
+		<blockquote>
+			<p><b><font face="微软雅黑">● </font>定义安卓图片资源的方法为:</b></p>
+			<blockquote>
+				<p><b>1. </b>在数据类型为&quot;可绘制资源&quot;类的常量/变量的初始值中提供相关图片文件名(见下面例图中的&quot;图片资源常量1&quot;和&quot;图片资源变量1&quot;定义);</p>
+				<p><b>2. </b>为数据类型匹配&quot;可绘制资源&quot;类的属性直接提供相关图片文件名属性值(见下面例图中&quot;变量1&quot;的&quot;测试属性2&quot;属性值,此处同时定义和使用了图片资源).</p>
+				<p>安卓编译器会自动收集所有被使用到的用户图片资源,并将其编译进目的APK文件中去.</p>
+				<p>&nbsp;</p>
+			</blockquote>
+			<p><b><font face="微软雅黑">● </font>使用安卓图片资源的方法为:</b></p>
+			<blockquote>
+				<p><b>1. </b>在程序中任何可以匹配&quot;可绘制资源&quot;数据类型的位置均可使用,包括属性表和程序语句;</p>
+				<p><b>2. </b>可以通过&quot;资源管理器&quot;类中定义的&quot;载入可绘制资源&quot;全局方法来载入所指定的图片资源,获得载入后的&quot;可绘制对象类&quot;对象实例.</p>
+			</blockquote>
+			<p>&nbsp;</p>
+			<p><b><font face="微软雅黑">● </font>定义安卓文本资源的方法为:</b></p>
+			<blockquote>
+				<p><b>1. </b>在数据类型为&quot;文本资源&quot;类的常量/变量的初始值中提供相关文本内容(见下面例图中的&quot;文本资源常量1&quot;和&quot;文本资源变量1&quot;定义);</p>
+				<p><b>2. </b>为数据类型匹配&quot;文本资源&quot;类的属性直接提供相关文本属性值(见下面例图中&quot;变量1&quot;的&quot;测试属性1&quot;属性值,此处同时定义和使用了文本资源).</p>
+				<p>安卓编译器会自动收集所有被使用到的用户文本资源,并将其编译进目的APK文件中去.</p>
+				<p>&nbsp;</p>
+			</blockquote>
+			<p><b><font face="微软雅黑">● </font>使用安卓文本资源的方法为:</b></p>
+			<blockquote>
+				<p><b>1. </b>在程序中任何可以匹配&quot;文本资源&quot;数据类型的位置均可使用,包括属性表和程序语句;</p>
+				<p><b>2. </b>可以通过&quot;资源管理器&quot;类中定义的&quot;取文本资源&quot;全局方法来获取指定文本资源所对应的文本内容.</p>
+				<p>&nbsp;</p>
+			</blockquote>
+			<p><b>注:</b> 
+				以上对安卓图片资源的定义和使用方法适用于所有&quot;<b>文件资源</b>&quot;,而对安卓文本资源的定义和使用方法适用于所有&quot;<b>可设置值资源</b>&quot;.</p>
+			<p>&nbsp;</p>
+			<p>例图:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b124.png" width="835" height="836"></p>
+				<p>&nbsp;</p>
+			</blockquote>
+		</blockquote>
+		<h5><a name="auto_apply"></a>3. 如何定义能够自适应设备环境的安卓资源:</h5>
+		<blockquote>
+			<p>本节内容普通用户稍微了解一下即可,无需深入.</p>
+			<p>安卓资源有个特点,就是能够根据当前程序所运行的设备环境自动提供相关的匹配数据.也就是说,一个安卓资源可以同时准备有多份数据,然后在运行时根据当前设备环境的具体情况来提供最合适的那一份.</p>
+			<p>&nbsp;</p>
+			<h6><a name="dev_mark"></a>1. 安卓修饰符:</h6>
+			<blockquote>
+				<p>我们首先需要了解&quot;<b>安卓修饰符</b>&quot;的概念:</p>
+				<blockquote>
+					<p>安卓修饰符是一段文本,其用作指定一个特定的设备环境,为安卓资源提供数据时可以通过安卓修饰符来指定其将应用到的特定设备环境.</p>
+					<p>&nbsp;</p>
+				</blockquote>
+				<p>请执行系统中的&quot;工具-&gt;安卓修饰符建立器&quot;菜单项:</p>
+				<blockquote>
+					<p>
+					<img border="0" src="images/b129.png" width="777" height="566"></p>
+				</blockquote>
+				<p>所弹出的对话框中提供了很多设备特性,随意选择几个,然后点击&quot;生成安卓修饰符&quot;按钮. 譬如:</p>
+				<blockquote>
+					<p>
+					<img border="0" src="images/b130.png" width="775" height="566"></p>
+				</blockquote>
+				<p>此修饰符文本&quot;en-large-land&quot;就对应了语言类型为&quot;英语&quot;,屏幕大小类型为&quot;大&quot;,屏幕旋转方向为&quot;横向&quot;的设备环境.</p>
+				<p>我们可以利用此工具生成自己所需要的适用于任意指定设备环境的安卓修饰符文本.</p>
+			</blockquote>
+			<p>&nbsp;</p>
+			<h6>2. 如何为一个安卓&quot;文件资源&quot;准备多份数据:</h6>
+			<blockquote>
+				<p>我们打开随系统附带的例程解决方案&quot;samples\samples.vsln&quot;,在里面找到&quot;其它/自适应_多语言&quot;项目,双击打开其中的&quot;main.v&quot;源文件.</p>
+				<blockquote>
+					<p>
+					<img border="0" src="images/b125.png" width="263" height="166"></p>
+				</blockquote>
+				<p>查看其中的以下代码:</p>
+				<blockquote>
+					<p>
+					<img border="0" src="images/b126.png" width="630" height="84"></p>
+				</blockquote>
+				<p>由于&quot;图片框&quot;组件的&quot;图片&quot;属性的数据类型为&quot;可绘制资源&quot;(见下图), 
+					根据我们前面的描述,&quot;pic-zh.png&quot;定义并使用了一个安卓图片资源,其图片文件名为&quot;pic-zh.png&quot;.</p>
+				<blockquote>
+					<p>
+					<img border="0" src="images/b127.png" width="636" height="139"></p>
+				</blockquote>
+				<p>&quot;pic-zh.png&quot;文件名为一个特殊格式,其中包含了指定该资源数据在哪种设备环境下使用的安卓修饰符&quot;zh&quot;,具体格式为: 
+					&quot;文件名前缀 + 减号 + 安卓修饰符 + 文件名后缀&quot;.</p>
+				<p>那么,安卓修饰符&quot;zh&quot;是什么意思呢? 
+					我们再次打开&quot;工具-&gt;安卓修饰符建立器&quot;菜单项,然后选择语言种类为&quot;中文&quot;,点击&quot;生成安卓修饰符&quot;按钮:</p>
+				<blockquote>
+					<p>
+					<img border="0" src="images/b131.png" width="777" height="563"></p>
+				</blockquote>
+				<p>可以看到,安卓修饰符&quot;zh&quot;代表了语言种类为&quot;中文&quot;的设备环境,也就是说,所提供的&quot;pic-zh.png&quot;图片文件仅在设备的当前语言为&quot;中文&quot;时才会使用.</p>
+				<p>那么,该程序中是否还为此图片资源提供了其它的数据呢? 我们看一下&quot;a_res.v&quot;中&quot;文件资源&quot;类的注释:</p>
+				<blockquote>
+					<p>
+					<img border="0" src="images/b128.png" width="1153" height="295"></p>
+				</blockquote>
+				<p>其中的&quot;条目1&quot;详细阐述了如何搜寻文件资源其它数据的算法,我们将编辑光标移进&quot;图片&quot;属性的属性值列,然后点击其右边的按钮:</p>
+				<blockquote>
+					<p>
+					<img border="0" src="images/b132.png" width="732" height="78"></p>
+				</blockquote>
+				<p>可以看到在同一目录下还有另外一个名为&quot;pic-en.png&quot;的文件:</p>
+				<blockquote>
+					<p>
+					<img border="0" src="images/b133.png" width="298" height="113"></p>
+				</blockquote>
+				<p>对于&quot;en&quot;安卓修饰符,我们采用前面的方法同样可以知道: 安卓修饰符&quot;en&quot;代表了语言种类为&quot;英文&quot;的设备环境.</p>
+				<p>到此就很清楚了,我们为这个图片资源准备了两份数据,分别是在中文设备环境下使用的&quot;pic-zh.png&quot;,及在英文设备环境下使用的&quot;pic-en.png&quot;.</p>
+				<p>我们只需要指定资源数据所适用的设备环境即可,具体的运行时切换工作由安卓操作系统自动完成.也就是说,在中文设备下这个图片资源将自动使用&quot;pic-zh.png&quot;,在英文设备下这个图片资源将自动使用&quot;pic-en.png&quot;.</p>
+			</blockquote>
+			<p>&nbsp;</p>
+			<h6>3. 如何为一个安卓&quot;可设置值资源&quot;准备多份数据:</h6>
+			<blockquote>
+				<p>我们查看&quot;自适应_多语言&quot;项目&quot;main.v&quot;源程序的以下部分:</p>
+				<blockquote>
+					<p>
+					<img border="0" src="images/b134.png" width="1084" height="307"></p>
+				</blockquote>
+				<p>由上图可以看到,&quot;文件资源&quot;是通过在文件名中附加安卓修饰符来指定其所应用到的设备,而&quot;可设置值资源&quot;是通过&quot;<b>@安卓.值资源</b>&quot;属性来指定其所应用到的设备(在&quot;@安卓.值资源&quot;属性名后 
+				+ 句点 + 所欲指定的修饰符文本),譬如上图中的&quot;@安卓.值资源.en&quot;即用作指定在英文设备下&quot;程序标题&quot;文本资源的文本内容.</p>
+				<p>可以同时提供多个&quot;@安卓.值资源&quot;属性来同时指定在不同设备下的值资源内容,如:</p>
+				<blockquote>
+					<p>
+					<img border="0" src="images/b135.png" width="1134" height="86"></p>
+				</blockquote>
+				<p>同上所述,我们只需要指定&quot;可设置值资源&quot;数据所适用的设备环境即可,具体的运行时切换工作由安卓操作系统自动完成,也就是说,在英文设备下&quot;程序标题&quot;文本资源的文本内容为&quot;My 
+				Application&quot;,在其它设备下将自动切换为&quot;我的程序&quot;.</p>
+				<p>&nbsp;</p>
+			</blockquote>
+			<p>附&quot;自适应_多语言&quot;项目在不同语言设备下的运行界面截图:</p>
+			<blockquote>
+				<table border="1" style="border-collapse: collapse" width="54%">
+					<tr>
+						<td bgcolor="#CCCBDB" align="center" width="40%"><b>中文设备</b></td>
+						<td bgcolor="#CCCBDB" align="center" width="40%"><b>英文设备</b></td>
+					</tr>
+					<tr>
+						<td width="40%">
+						<p align="center">
+						<img border="0" src="images/b136.jpg" width="378" height="672"></td>
+						<td width="40%">
+						<p align="center">
+						<img border="0" src="images/b137.jpg" width="378" height="672"></td>
+					</tr>
+				</table>
+			</blockquote>
+			<p>&nbsp;</p>
+		</blockquote>
+		<h5>4. 使用大尺寸图片资源的注意事项:</h5>
+		<blockquote>
+			<p>如果你的程序中所使用的图片尺寸较大,需要注意安卓应用程序存在如下限制:</p>
+			<blockquote>
+				<p>安卓操作系统给每个应用程序只分配了一定量的图片存储空间(8M左右),如果超出这个限制,在加载图片的时候就会报内存溢出运行时错误(Out 
+					Of Memmory),从而中断退出程序.</p>
+			</blockquote>
+			<p>如下图的程序,如果&quot;test.png&quot;图片尺寸过大(注意此处的&quot;尺寸&quot;不是指图片文件本身的尺寸,而是指图片的宽度和高度),将有可能出现上述错误,导致应用程序中断退出:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b138.png" width="541" height="67"></p>
+			</blockquote>
+			<p>比较妥善的解决方案为,如果您的图片尺寸过大,请采用如下方式使用:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b139.png" width="637" height="383"></p>
+			</blockquote>
+			<p>&quot;位图可绘制对象类&quot;的&quot;从资源创建&quot;方法支持在载入图片数据的同时进行采样压缩,这样就可以避免占用过多的内存,导致载入出错.具体请参见该方法的注释.</p>
+			<p>以上内容了解一下即可.</p>
+			<p>&nbsp;</p>
+		</blockquote>
+	</blockquote>
+	<h4><a name="layout"></a>二. 如何设计安卓界面布局</h4>
+	<blockquote>
+		<h5>1. 窗口类及如何启动其界面布局设计器</h5>
+		<blockquote>
+			<p>任何直接/间接基础类为系统类&quot;<b>窗口</b>&quot;的类即为<b>窗口类</b>:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b140.png" width="315" height="96"></p>
+			</blockquote>
+			<p>
+			每个窗口类定义了一个安卓窗口,在其代码范围(包括其中的所有成员定义)内任何一个位置点击鼠标右键,选择&quot;设计xxx的界面布局&quot;菜单项即可启动该窗口类的界面布局设计器:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b141.png" width="475" height="489"></p>
+			</blockquote>
+			<p>注意,如果该菜单项为灰色不可用状态,请检查以下几项:</p>
+			<blockquote>
+				<p><b>A.</b> 右键所点击位置是否位于该窗口类的代码范围内;</p>
+				<p><b>B.</b> 该窗口类所处源文件是否被加入了项目中:</p>
+				<blockquote>
+					<p>
+					<img border="0" src="images/b142.png" width="757" height="298"></p>
+				</blockquote>
+				<p><b>C. </b>该窗口类所处项目内是否加入了系统基本类库(即是否存在&quot;Java基本类&quot;和&quot;安卓基本类&quot;过滤器):</p>
+				<blockquote>
+					<p>
+					<img border="0" src="images/b143.png" width="357" height="665"></p>
+				</blockquote>
+				<p>只有满足以上条件,才能启动该窗口类的界面布局设计器.</p>
+				<p>
+				正常情况下,任何火山安卓项目中的源文件必定能满足此要求,但是如果直接打开某个不位于项目中的源文件,该条件将无法满足,此时应该先将其加入到某个
+				火山项目中后再打开.</p>
+				<p>以上条件是否满足的一个很简单验证方法为: 
+				右键单击基础类&quot;窗口&quot;,所弹出的菜单项&quot;跳到窗口定义位置&quot;为可用状态即表示前面的条件被满足,此时必定可以启动该窗口类的界面布局设计器.</p>
+				<blockquote>
+					<p>
+					<img border="0" src="images/b144.png" width="548" height="494"></p>
+					<p>&nbsp;</p>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+		<h5>2. 窗口界面布局设计器结构及操作说明</h5>
+		<blockquote>
+			<p>单击&quot;设计xxx的界面布局&quot;菜单项即可启动该窗口类的界面布局设计器:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b145.png" width="958" height="737"></p>
+			</blockquote>
+			<p>点击&quot;布局内容&quot;按钮切换到布局内容夹后:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b146.png" width="958" height="738"></p>
+			</blockquote>
+			<p>在上图中,标注了界面设计器的各个组成部分.</p>
+			<p>下面为界面设计器组成部件及相关操作说明信息:</p>
+			<p>&nbsp;</p>
+			<blockquote>
+				<h6>1. 相关操作快捷方式</h6>
+				<blockquote>
+					<p><b>A. </b>在设计器中任何位置:</p>
+					<blockquote>
+						<p>Ctrl+Z: 撤销;</p>
+						<p>Ctrl+Y: 重做.</p>
+					</blockquote>
+					<p><b><a name="layout_oper"></a>B. </b>在&quot;设计预览区&quot;或&quot;当前布局内容框&quot;:</p>
+					<blockquote>
+						<p>Alt+Enter: 跳转到所选中组件的属性表;</p>
+						<p>Delete: 删除;</p>
+						<p>Ctrl+C: 复制;</p>
+						<p>Ctrl+V: 粘贴进去(目标组件为容器组件时) / 粘贴到前方(目标组件为非容器组件时);</p>
+						<p>Ctrl+Shift+V: 粘贴到后方;</p>
+						<p>Ctrl+Alt+V: 粘贴到前方;</p>
+						<p>鼠标左键单击: 选中所指定组件,同时取消先前所选择组件;</p>
+						<p>Shift+鼠标左键单击: 同时选中多个组件;</p>
+						<p>Ctrl+鼠标左键单击: 翻转所指定组件的当前选中状态;</p>
+						<p>
+						鼠标左键按下可以拖动当前被选中组件的位置,拖动时同时按下Shift键为复制拖动,拖动过程中按下ESC键或鼠标右键则取消拖动.</p>
+					</blockquote>
+					<p>&nbsp;</p>
+				</blockquote>
+				<h6>2. 状态提示框</h6>
+				<blockquote>
+					<p>用作提供当前操作的相关状态文本信息</p>
+				</blockquote>
+				<p>&nbsp;</p>
+				<h6>3. 组件工具箱</h6>
+				<blockquote>
+					<p>组件工具箱中列出了所有可以加入到窗口布局中的组件.</p>
+					<p><b>A. </b>组件分为两类: &quot;<b>非容器组件</b>&quot;和&quot;<b>容器组件</b>&quot;,容器组件内可以加入其它子组件,非容器组件则不能.</p>
+					<blockquote>
+						<p>点击组件工具箱底部的&quot;基本容器组件&quot;按钮即可切换到容器组件夹:</p>
+						<blockquote>
+							<p>
+							<img border="0" src="images/b147.png" width="212" height="585"></p>
+						</blockquote>
+					</blockquote>
+					<p><b>B. </b>
+					有些容器组件不支持加入子组件(如列表框,表格等),还有些容器组件中只能加入一个子组件(如横向滚动容器,纵向滚动容器等),如果您在操作时发现新的组件无法加入到所指定容器组件中,就需要检查这方面的原因;</p>
+					<p><b>C. </b>
+					组件工具箱中的可用组件是系统自动从当前项目的用户和系统源文件中(直接/间接基础类为&quot;窗口组件&quot;的类)提取出来的,如果您自己开发的组件未能被列入到组件工具箱中,请在界面布局设计器启动后立即查看&quot;状态提示框&quot;中的内容,里面会有详细
+					的载入失败错误原因提示;</p>
+					<p><b>D. </b>
+					因为上一条中的原因,如果组件工具箱中的组件缺失或者没有,请检查您的项目中是否加入了安卓基本类库中的相关系统源文件:</p>
+					<blockquote>
+						<p>
+						<img border="0" src="images/b148.png" width="341" height="419"></p>
+					</blockquote>
+					<p><b>E. </b>将工具箱中的组件加入到窗口布局中的方法:</p>
+					<blockquote>
+						<p>直接将所欲加入的组件从工具箱中拖动到&quot;设计预览区&quot;或者&quot;当前布局内容框&quot;内的指定位置即可.</p>
+						<p>
+						拖动到当前布局内容框中时如果同时按下Ctrl键,可以拖到目标组件的内部(目标组件为容器组件时)或后面(目标组件为非容器组件时),否则默认为始终拖到目标组件的前面.</p>
+					</blockquote>
+					<p>&nbsp;</p>
+				</blockquote>
+				<h6>4. 设计预览区</h6>
+				<blockquote>
+					<p>提供当前布局的预览状态,预览时所使用尺寸由&quot;预览尺寸调节框&quot;决定.在预览区中可以进行的操作见前面的&quot;<a href="#layout_oper">相关操作快捷方式</a>&quot;节.</p>
+				</blockquote>
+				<p>&nbsp;</p>
+				<h6>5. 预览尺寸调节框</h6>
+				<blockquote>
+					<p>该组合框用作设置当前设计预览区的预览尺寸.</p>
+					<p><font color="#FF0000"><b>注意</b>:</font> 
+					窗口布局预览尺寸仅在预览时使用,对于窗口布局结果数据没有任何影响.</p>
+					<p>
+					组合框中已经内置了大部分常用尺寸,如果其中没有您所需要的尺寸,可以使用&quot;&lt;管理自定义尺寸...&gt;&quot;项目自行定义
+					添加.</p>
+				</blockquote>
+				<p>&nbsp;</p>
+				<h6>6. 当前布局内容框</h6>
+				<blockquote>
+					<p>当前布局内容框中列出了当前布局中的所有组件及其层次结构,在其中所可以进行的操作见前面的&quot;<a href="#layout_oper">相关操作快捷方式</a>&quot;节.</p>
+				</blockquote>
+				<p>&nbsp;</p>
+				<h6>7. 被选中组件提示框</h6>
+				<blockquote>
+					<p>在该提示框中列出了当前所有被选中组件的名称.</p>
+				</blockquote>
+				<p>&nbsp;</p>
+				<h6><a name="control_attr"></a>8. 被选中组件属性表</h6>
+				<blockquote>
+					<p>用作显示和修改当前所有被选中组件的属性.</p>
+					<p>每个组件的属性分为两类,一种是组件自身的属性,另一种是组件所处的父组件要求其提供的属性.前一类属性称为&quot;<b>自有属性</b>&quot;,后一类属性称为&quot;<b>布局属性</b>&quot;.</p>
+					<p><b>注意:</b> 具体有哪些布局属性由组件所处父组件而不是组件自身来决定.</p>
+					<p>如编辑框组件的自身属性:</p>
+					<blockquote>
+						<p>
+						<img border="0" src="images/b153.png" width="273" height="493"></p>
+					</blockquote>
+					<p>当编辑框组件位于&quot;线性布局器&quot;组件内时的布局属性:</p>
+					<blockquote>
+						<p>
+						<img border="0" src="images/b154.png" width="258" height="274"></p>
+					</blockquote>
+					<p>注: 可以使用连续两个英文双引号&quot;&quot;作为文本属性的内容以强制提供空文本属性值(属性内容为空表示使用默认属性值).</p>
+				</blockquote>
+				<p>&nbsp;</p>
+				<h6><a name="layout_list"></a>9. 已有布局列表框</h6>
+				<blockquote>
+					<p>窗口布局设计器支持在同一个窗口布局中同时设计用作匹配多种目标设备环境的布局数据(相关概念见前面的&quot;<a href="#auto_apply">如何定义能够自适应设备环境的安卓资源</a>&quot;章节).</p>
+					<p>在此列表框中,可以复制建立针对指定安卓修饰符的布局数据,该布局数据只会在安卓程序当前运行的设备环境匹配此<a href="#dev_mark">安卓修饰符</a>时才会被
+					自动使用. 
+					如:</p>
+					<blockquote>
+						<p>
+						<img border="0" src="images/b152.png" width="311" height="229"></p>
+					</blockquote>
+					<p>其中的&quot;en-large&quot;是一个<a href="#dev_mark">安卓修饰符</a>,用作指定该布局数据所应用到的设备环境.该修饰符是一个组合修饰符,其中的&quot;en&quot;表示为英文设备,&quot;large&quot;表示为大屏幕设备.</p>
+				</blockquote>
+			</blockquote>
+			<p>&nbsp;</p>
+			<p><font face="微软雅黑">● </font>当窗口布局设计完毕按下确定按钮后,所设计的布局数据将被加入到对应窗口类中,譬如以下窗口布局:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b149.png" width="326" height="483"></p>
+			</blockquote>
+			<p>在按下确定按钮之后,将在对应窗口类中加入以下代码:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b150.png" width="653" height="160"></p>
+			</blockquote>
+			<p>具体打开所隐藏属性值的弹出菜单项为&quot;杂类-&gt;显示/隐藏属性值&quot;.</p>
+			<p>所有在窗口设计器中设计的布局数据均存放在这些成员变量及其&quot;@安卓.窗口.布局&quot;属性值中,因此可以直接复制/移动/修改这些代码.</p>
+			<p>如果同时设计了可应用到多种设备的布局数据(譬如<a href="#layout_list">前面</a>所提到的),将会加入类似以下代码:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b151.png" width="644" height="239"></p>
+			</blockquote>
+			<p>&quot;@安卓.窗口.布局.en-large&quot;属性为&quot;&quot;@安卓.窗口.布局&quot;属性的扩展,后面附加了所对应的<a href="#dev_mark">安卓修饰符</a>.</p>
+			<p>&nbsp;</p>
+		</blockquote>
+		<h5>3. 相对布局方式</h5>
+		<blockquote>
+			<p>
+			如果您开发过Windows程序,就一定知道,设计Windows程序窗口界面时采用的是绝对布局方式(即精确指定某个组件在窗口中所处的位置和尺寸),但是这种布局方式在安卓系统下是行不通的,这是为什么呢?</p>
+			<p>道理很简单: Windows程序界面的显示设备只有一种: 
+			电脑屏幕,并且各种屏幕的DPI(每英寸像素数)和物理尺寸相差无几,而安卓程序界面的显示设备却是千千万万,其设备显示屏的DPI和物理尺寸可能相差很大,譬如电视机上可以运行安卓程序,手机上可以运行安卓程序,甚至只有很小屏幕的随声听/运动手环上也可以运行安卓程序,此时使用绝对布局方式将是一个噩梦,你根本无法设计出可以同时在各种安卓设备上正常显示的窗口界面.</p>
+			<p>由于以上原因,安卓程序采用的是相对布局方式,也就是说,某个组件的实际位置和尺寸是与其周边组件相关的.</p>
+			<p>注: 
+			虽然无法使用以前开发Windows程序所习惯的绝对布局方式会让您觉得有点麻烦,但是
+			相对程序的环境可适应性及后续维护工作量,您最终会觉得这点麻烦是很值得的,而且您很快就能发现,相对布局方式也很容易学习.</p>
+			<p>&nbsp;</p>
+		</blockquote>
+		<h5>4. 线性布局器</h5>
+		<blockquote>
+			<p>线性布局器是相对布局器中最常用的一种,它将其中的所有子组件按照所指定的布局方向(横向/纵向)顺序排列.</p>
+			<p>
+			通过同时使用具有不同布局方向的线性布局器,我们可以非常简单方便地设计出所需要的窗口界面,并且所设计出来的窗口界面对各种安卓设备屏幕的适应性都很好.</p>
+			<p><font face="微软雅黑">● </font>布局方向为&quot;纵向&quot;的线性布局器使用示例:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b155.png" width="319" height="476"></p>
+				<p>上图中的线性布局器内顺序加入了&quot;文本框&quot;,&quot;编辑框&quot;,&quot;按钮&quot;3个组件,可以看到,它们在线性布局器中是
+				按纵向顺序排列的.</p>
+				<p>&nbsp;</p>
+			</blockquote>
+			<p><font face="微软雅黑">● </font>布局方向为&quot;横向&quot;的线性布局器使用示例:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b156.png" width="321" height="483"></p>
+				<p>上图是同样的组件在布局方向为&quot;横向&quot;的线性布局器中的排列效果.</p>
+				<p>&nbsp;</p>
+			</blockquote>
+			<p><font face="微软雅黑">● </font>可以将横/纵向线性布局器混合起来使用,这样就可以达到组件既可以纵向排列,也可以横向排列
+			的目的. 如:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b157.png" width="324" height="483"></p>
+			</blockquote>
+			<p>&nbsp;</p>
+			<p>线性布局器的<a href="#control_attr">自有属性</a>有这些:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b158.png" width="256" height="116"></p>
+			</blockquote>
+			<p>线性布局器要求其中的子组件所提供的<a href="#control_attr">布局属性</a>有这些:</p>
+			<blockquote>
+				<p>
+				<img border="0" src="images/b159.png" width="245" height="274"></p>
+			</blockquote>
+			<p>下面一一进行讲述.</p>
+			<p>&nbsp;</p>
+			<h6>A. 自有属性:</h6>
+			<blockquote>
+				<h6>1. 布局方向</h6>
+				<blockquote>
+					<p>可以为&quot;<b>横向布局</b>&quot;和&quot;<b>纵向布局</b>&quot;两种属性值,用作指定
+					线性布局器具体的布局方向.</p>
+					<p>这个属性在前面已经讲述过了.</p>
+				</blockquote>
+				<p>&nbsp;</p>
+				<h6><a name="remain_space_total_weight"></a>2.<b> </b>剩余空间总权重</h6>
+				<blockquote>
+					<p>什么是&quot;<b>剩余空间</b>&quot;,对于纵向线性布局器来说,就是其纵向空间尚未被填满的尺寸. 如:</p>
+					<blockquote>
+						<p>
+						<img border="0" src="images/b160.png" width="322" height="482"></p>
+					</blockquote>
+					<p>对于横向线性布局器来说,就是其横向空间尚未被填满的尺寸. 如:</p>
+					<blockquote>
+						<p>
+						<img border="0" src="images/b161.png" width="322" height="485"></p>
+					</blockquote>
+					<p>既然我们知道了什么是&quot;剩余空间&quot;,那么&quot;剩余空间总权重&quot;属性也就很好理解了:</p>
+					<blockquote>
+						<p>&quot;<b>剩余空间总权重</b>&quot;就是用作代表线性布局器当前剩余空间尺寸的一个权重值,该值可以是任意大于0的整数(一般使用100用作计算百分比),用作和线性布局器需要其中子组件提供的&quot;<a href="#remain_space_weight">剩余空间权重</a>&quot;布局属性结合起来,为每个子组件
+						指定其在剩余空间中的分配比例,比例值等于子组件提供的&quot;<a href="#remain_space_weight">剩余空间权重</a>&quot;属性值除于线性布局器的&quot;剩余空间总权重&quot;属性值.</p>
+					</blockquote>
+					<p>是不是仍然有点不理解? 不要紧,先了解一下就好,我们在下面讲解&quot;<a href="#remain_space_weight">剩余空间权重</a>&quot;布局属性的时候再详细
+					讲述.</p>
+				</blockquote>
+				<p>&nbsp;</p>
+				<h6>3. 内容横/纵向对齐</h6>
+				<blockquote>
+					<p>这个属性很好理解,就是用作对线性布局器中的所有子组件内容进行对齐定位.</p>
+					<p>注意: 本属性无法对所指定的单个子组件进行对齐定位,如有此要求,请使用对应子组件的&quot;<a href="#control_align">横向和纵向对齐</a>&quot;布局属性.</p>
+					<p>譬如我们将&quot;内容横向对齐&quot;和&quot;内容纵向对齐&quot;属性值均设置为&quot;居中&quot;:</p>
+					<blockquote>
+						<p>
+						<img border="0" src="images/b162.png" width="957" height="699"></p>
+					</blockquote>
+				</blockquote>
+			</blockquote>
+			<p>&nbsp;</p>
+			<h6>B. 布局属性</h6>
+			<blockquote>
+				<h6>1. 左/右/顶/底外边距</h6>
+				<blockquote>
+					<p>
+					这个属性很好理解,就是为布局器中的子组件在其四周加入所指定的外边距,譬如我们在上图中的布局中为&quot;按钮1&quot;组件加入属性值为50的左和顶外边距后的效果如下:</p>
+					<blockquote>
+						<p>
+						<img border="0" src="images/b163.png" width="952" height="700"></p>
+					</blockquote>
+				</blockquote>
+				<h6>&nbsp;</h6>
+				<h6><a name="control_size_type"></a>2. 组件宽度和高度类型</h6>
+				<blockquote>
+					<p>这两个属性很重要,它们用作确认组件的宽度/高度尺寸值.</p>
+					<p>以下以&quot;组件宽度类型&quot;属性进行讲述,&quot;组件高度类型&quot;除了尺寸方向不同,其它方面与&quot;组件宽度类型&quot;完全一致.</p>
+					<p>&quot;组件宽度类型&quot;属性值可以为三个常量之一: </p>
+					<blockquote>
+						<p><b>A. </b>匹配内容宽度</p>
+						<blockquote>
+							<p>组件的宽度等于其中内容的宽度. 
+							譬如文本框的宽度等于其中文本的宽度,各种布局器的宽度等于其中所有子组件内容的宽度,等等.</p>
+							<p>下图为在横向线性布局器中两个宽度类型均为此属性值的文本框和按钮的设计和实际效果:</p>
+							<blockquote>
+								<table border="1" style="border-collapse: collapse" width="100%">
+									<tr>
+										<td align="center" bgcolor="#E0F0F0" width="50%">
+										<b>设计效果</b></td>
+										<td align="center" bgcolor="#E0F0F0" width="50%">
+										<b>实际效果</b></td>
+									</tr>
+									<tr>
+										<td align="center" width="50%">
+										<img border="0" src="images/b164.png" width="695" height="440"></td>
+										<td align="center" width="50%">
+										<img border="0" src="images/b165.png" width="269" height="486"></td>
+									</tr>
+								</table>
+							</blockquote>
+							<p>&nbsp;</p>
+						</blockquote>
+						<p><b><a name="match_parent"></a>B.</b> 匹配父组件宽度</p>
+						<blockquote>
+							<p>组件的宽度等于其父组件的宽度减去组件左侧的位置. 也就是说,组件的右侧将与父组件的右侧对齐.</p>
+							<p><b>注意:</b> 
+							在一个容器组件中,只能有一个而且只能是最后一个子组件的宽度类型可以设置此为属性值,否则将导致其它子组件被排列到容器组件的右侧外部从而无法看到.</p>
+							<p>下图为将上图布局中按钮组件的宽度类型设置为此属性值后的设计和实际效果:</p>
+							<blockquote>
+								<table border="1" style="border-collapse: collapse" width="100%">
+									<tr>
+										<td bgcolor="#E0F0F0" align="center" width="50%">
+										<b>设计效果</b></td>
+										<td bgcolor="#E0F0F0" align="center" width="50%">
+										<b>实际效果</b></td>
+									</tr>
+									<tr>
+										<td align="center" width="50%">
+										<img border="0" src="images/b166.png" width="689" height="484"></td>
+										<td align="center" width="50%">
+										<img border="0" src="images/b167.png" width="272" height="480"></td>
+									</tr>
+								</table>
+							</blockquote>
+							<p>&nbsp;</p>
+						</blockquote>
+						<p><b><a name="size_specified"></a>C.</b> 直接指定</p>
+						<blockquote>
+							<p>
+							本属性值用作直接指定组件的宽度尺寸,一般用作和剩余空间分配算法(见后面关于&quot;<a href="#remain_space_weight">剩余空间权重</a>&quot;布局属性的讲述)配合使用以实现基于比例为单位的伪绝对布局.</p>
+							<p>
+							注意:</p>
+							<blockquote>
+								<p><b>1. </b>
+								除了前述用途或用作分隔的&quot;空白框&quot;组件外,本属性值很少单独使用,因为它将造成程序界面对不同设备屏幕的适应性变差;</p>
+								<p><b>2. </b>&quot;<a href="#control_size_type">组件宽度/高度类型</a>&quot;属性被设置为此属性值后,需要
+								同时在对应的&quot;组件宽度/高度值&quot;属性中指定具体的尺寸值.</p>
+							</blockquote>
+						</blockquote>
+					</blockquote>
+					<p>&nbsp;</p>
+				</blockquote>
+				<h6><a name="control_align"></a>3. 横向和纵向对齐</h6>
+				<blockquote>
+					<p>本布局属性用作指定组件在其所处线性布局器中的横/纵向对齐方式.</p>
+					<p><b>注意:</b> 
+					如果组件所处线性布局器的布局方向为横向,则只能指定组件的纵向对齐方式,如果线性布局器布局方向为纵向,则只能指定组件的横向对齐方式.</p>
+					<p>下图为一个横向线性布局器中具有各种对齐方式组件的设计和实际效果:</p>
+					<blockquote>
+						<table border="1" style="border-collapse: collapse" width="100%">
+							<tr>
+								<td bgcolor="#E0F0F0" align="center" width="50%">
+								<b>设计效果</b></td>
+								<td bgcolor="#E0F0F0" align="center" width="50%">
+								<b>实际效果</b></td>
+							</tr>
+							<tr>
+								<td align="center" width="50%">
+								<img border="0" src="images/b168.png" width="320" height="485"></td>
+								<td align="center" width="50%">
+								<img border="0" src="images/b169.png" width="268" height="478"></td>
+							</tr>
+						</table>
+					</blockquote>
+				</blockquote>
+			</blockquote>
+			<p>&nbsp;</p>
+			<blockquote>
+				<h6><a name="remain_space_weight"></a>4. 剩余空间权重</h6>
+				<blockquote>
+					<p>我们在前面讲述了什么是&quot;剩余空间&quot;以及&quot;<a href="#remain_space_total_weight">剩余空间总权重</a>&quot;属性,也讲述了组件的&quot;剩余空间权重&quot;属性值除于其所处线性布局器的&quot;<a href="#remain_space_total_weight">剩余空间总权重</a>&quot;属性值为该组件在线性布局器剩余空间尺寸中的分配比例.</p>
+					<p>下面我们以先前的一张图作为例子进行讲述:</p>
+					<blockquote>
+						<p>
+						<img border="0" src="images/b160.png" width="322" height="482"></p>
+					</blockquote>
+					<p>
+					我们现在将&quot;文本框1&quot;的&quot;剩余空间权重&quot;属性值设置为50,将&quot;编辑框1&quot;的&quot;剩余空间权重&quot;属性值设置为30,当前布局将成为以下效果:</p>
+					<blockquote>
+						<p>
+						<img border="0" src="images/b170.png" width="322" height="480"></p>
+					</blockquote>
+					<p>因为线性布局器的&quot;<a href="#remain_space_total_weight">剩余空间总权重</a>&quot;属性值默认为100,那么根据为以上组件所设置的&quot;剩余空间权重&quot;属性值进行除法运算,可以很容易的得到&quot;文本框1&quot;的高度上将附加剩余空间
+					高度尺寸的50%,&quot;编辑框1&quot;的高度上将附加剩余空间高度尺寸的30%,剩余空间高度尺寸还剩下20%未被分配,其位于最后一个组件&quot;按钮1&quot;的下方.</p>
+					<p>注意:</p>
+					<blockquote>
+						<p><b>1. </b>如果线性布局器内存在&quot;<a href="#control_size_type">组件宽度/高度类型</a>&quot;属性值为&quot;<a href="#match_parent">匹配父组件宽度/高度</a>&quot;的直接子组件,那么由于线性布局器所有剩余空间都将被该子组件所占用,本算法将无法取得效果;</p>
+						<p><b>2. </b>如果使用剩余空间权重来进行布局,而相关组件的&quot;<a href="#control_size_type">组件宽度/高度类型</a>&quot;属性
+						值不为&quot;<a href="#size_specified">直接指定</a>&quot;,那么所具体分配的空间还会受到这些组件的自身宽度/高度分配算法的影响,如果要去除这些影响,请参考下一节;</p>
+						<p><b>3. </b>横向线性布局器的此属性效果与纵向线性布局器的一致,只不过两者剩余空间的尺寸&#39;方向不同而已.</p>
+						<p>&nbsp;</p>
+					</blockquote>
+				</blockquote>
+				<p><font face="微软雅黑">● </font>使用&quot;<a href="#control_size_type">组件宽度/高度类型</a>&quot;属性的&quot;<a href="#size_specified">直接指定</a>&quot;属性值与剩余空间分配算法配合实现基于比例的伪绝对布局的方法:</p>
+				<blockquote>
+					<p>
+					下图布局中有3个按钮,它们具有不同的字体大小,其中&quot;我的按钮1&quot;的&quot;文本字体尺寸&quot;属性值为20,&quot;我的按钮2&quot;的&quot;文本字体尺寸&quot;属性值为30,&quot;我的按钮3&quot;的&quot;文本字体尺寸&quot;属性值为40. 
+					该布局的设计和实际效果分别为:</p>
+					<blockquote>
+						<table border="1" style="border-collapse: collapse" width="100%">
+							<tr>
+								<td bgcolor="#E0F0F0" align="center" width="50%">
+								<b>设计效果</b></td>
+								<td bgcolor="#E0F0F0" align="center" width="50%">
+								<b>实际效果</b></td>
+							</tr>
+							<tr>
+								<td align="center" width="50%">
+								<img border="0" src="images/b171.png" width="319" height="477"><p>
+								注意: &quot;文本字体尺寸&quot;属性在设计时不支持预览</td>
+								<td align="center" width="50%">
+								<img border="0" src="images/b172.png" width="270" height="480"></td>
+							</tr>
+						</table>
+					</blockquote>
+					<p>现在我们有一个要求,就是将每个按钮的高度尺寸都设置为一样,但是不能直接指定其高度值,因为这种方法无法适应各种设备.</p>
+					<p>
+					我们可以将每个按钮的&quot;剩余空间权重&quot;属性值设置为同一个固定值(譬如30)来指定为其附加相同尺寸的剩余空间,但是现在有一个问题,就是每个按钮的
+					自身高度因为其文本字体尺寸的不同而不同,而这个高度值我们无法预知,因此只是简单地设置&quot;剩余空间权重&quot;属性值是无法达到我们的要求的.</p>
+					<p>
+					见下方左图,3个按钮的高度明显不一致(右图中为正确的高度尺寸):</p>
+					<blockquote>
+						<p>
+						<img border="0" src="images/b175.png" width="270" height="480">
+								<img border="0" src="images/b174.png" width="273" height="480"></p>
+					</blockquote>
+					<p>
+					为了屏蔽掉按钮的内容对其高度的影响,我们把所有按钮的高度值直接指定为0或者某个固定值(该固定值可以用作指定按钮的最小高度),这样在同一设备屏幕上该线性布局器的剩余空间尺寸就是一个固定值了,然后再同时设置按钮的&quot;剩余空间权重&quot;属性值,就可以达到我们的目的.</p>
+					<p>下图为修改后布局的设计和实际效果:</p>
+					<blockquote>
+						<table border="1" style="border-collapse: collapse" width="100%">
+							<tr>
+								<td bgcolor="#E0F0F0" align="center" width="50%">
+								<b>设计效果</b></td>
+								<td bgcolor="#E0F0F0" align="center" width="50%">
+								<b>实际效果</b></td>
+							</tr>
+							<tr>
+								<td align="center" width="50%">
+								<img border="0" src="images/b173.png" width="657" height="490"></td>
+								<td align="center" width="50%">
+								<img border="0" src="images/b174.png" width="273" height="480"></td>
+							</tr>
+						</table>
+					</blockquote>
+					<p>&nbsp;</p>
+					<p>
+					根据上述算法,我们可以很轻易地将某个子组件的位置和尺寸指定为一个基于线性布局器空间尺寸的明确比例值,如果组件之间存在空白区域,我们可以使用&quot;空白框&quot;组件来进行填充.</p>
+					<p>&nbsp;</p>
+				</blockquote>
+				<p><font face="微软雅黑">● </font>下面提供一些常用布局的设计方法与实际效果(具体例程请参见系统安装目录的“samples\samples.vsln”解决方案中的&quot;<b>复杂窗口布局展示</b>&quot;项目):</p>
+				<blockquote>
+					<p><b>1.</b> 复杂工作区布局</p>
+					<blockquote>
+						<table border="1" style="border-collapse: collapse" width="100%">
+							<tr>
+								<td bgcolor="#E0F0F0" align="center" width="50%">
+								<b>设计效果</b></td>
+								<td bgcolor="#E0F0F0" align="center" width="50%">
+								<b>实际效果</b></td>
+							</tr>
+							<tr>
+								<td align="center" width="50%">
+								<img border="0" src="images/b176.png" width="388" height="539"></td>
+								<td align="center" width="50%">
+								<img border="0" src="images/b177.png" width="270" height="480"></td>
+							</tr>
+							<tr>
+								<td align="center" width="100%" colspan="2">
+								<p align="left">布局组件说明:</p>
+								<blockquote>
+									<table border="1" style="border-collapse: collapse" width="100%">
+										<tr>
+											<td width="5%" bgcolor="#E0F0F0">
+											图示序号</td>
+											<td width="10%" align="center" bgcolor="#E0F0F0">
+											组件类型</td>
+											<td align="center" bgcolor="#E0F0F0">
+											组件属性表</td>
+										</tr>
+										<tr>
+											<td width="5%" align="center">1</td>
+											<td width="10%">文本框</td>
+											<td>文本 = &quot;标题内容&quot;<p>剩余空间权重 = 100</td>
+										</tr>
+										<tr>
+											<td width="5%" align="center">2</td>
+											<td width="10%">按钮</td>
+											<td>文本 = &quot;处理按钮&quot;</td>
+										</tr>
+										<tr>
+											<td width="5%" align="center">3</td>
+											<td width="10%">线性布局器</td>
+											<td>布局方向 = 横向布局<p>剩余空间总权重 = 100</p>
+											<p>组件宽度类型 = 匹配父组件宽度</td>
+										</tr>
+										<tr>
+											<td width="5%" align="center">4</td>
+											<td width="10%">按钮</td>
+											<td>文本 = &quot;右上工作区&quot;<p>组件宽度类型 = 匹配父组件宽度</td>
+										</tr>
+										<tr>
+											<td width="5%" align="center">5</td>
+											<td width="10%">按钮</td>
+											<td>文本 = &quot;右下工作区&quot;<p>组件宽度类型 = 匹配父组件宽度</p>
+											<p>组件高度类型 = 匹配父组件高度</td>
+										</tr>
+										<tr>
+											<td width="5%" align="center">6</td>
+											<td width="10%">按钮</td>
+											<td>文本 = &quot;左侧工作区&quot;<p>组件高度类型 = 匹配父组件高度</p>
+											<p>剩余空间权重 = 30</td>
+										</tr>
+										<tr>
+											<td width="5%" align="center">7</td>
+											<td width="10%">线性布局器</td>
+											<td>布局方向 = 纵向布局<p>组件高度类型 = 匹配父组件高度</p>
+											<p>剩余空间权重 = 70</td>
+										</tr>
+										<tr>
+											<td width="5%" align="center">8</td>
+											<td width="10%">线性布局器</td>
+											<td>布局方向 = 横向布局<p>剩余空间总权重 = 100</p>
+											<p>组件宽度类型 = 匹配父组件宽度</p>
+											<p>剩余空间权重 = 100</td>
+										</tr>
+										<tr>
+											<td width="5%" align="center">9</td>
+											<td width="10%">空白框</td>
+											<td>组件高度类型 = 直接指定<p>组件高度值 = 20</td>
+										</tr>
+										<tr>
+											<td width="5%" align="center">10</td>
+											<td width="10%">线性布局器</td>
+											<td>布局方向 = 横向布局<p>剩余空间总权重 = 100</p>
+											<p>组件宽度类型 = 匹配父组件宽度</td>
+										</tr>
+										<tr>
+											<td width="5%" align="center">11</td>
+											<td width="10%">按钮</td>
+											<td>文本 = &quot;处理按钮&quot;</td>
+										</tr>
+										<tr>
+											<td width="5%" align="center">12</td>
+											<td width="10%">空白框</td>
+											<td>剩余空间权重 = 100</td>
+										</tr>
+										<tr>
+											<td width="5%" align="center">13</td>
+											<td width="10%">按钮</td>
+											<td>文本 = &quot;确定&quot;</td>
+										</tr>
+										<tr>
+											<td width="5%" align="center">14</td>
+											<td width="10%">按钮</td>
+											<td>文本 = &quot;取消&quot;</td>
+										</tr>
+									</table>
+								</blockquote>
+								</td>
+							</tr>
+						</table>
+					</blockquote>
+					<p>&nbsp;</p>
+					<p><b>2.</b> 表格布局</p>
+					<blockquote>
+						<table border="1" style="border-collapse: collapse" width="100%">
+							<tr>
+								<td bgcolor="#E0F0F0" align="center" width="50%">
+								<b>设计效果</b></td>
+								<td bgcolor="#E0F0F0" align="center" width="50%">
+								<b>实际效果</b></td>
+							</tr>
+							<tr>
+								<td align="center" width="50%">
+								<img border="0" src="images/b178.png" width="389" height="480"></td>
+								<td align="center" width="50%">
+								<img border="0" src="images/b179.png" width="270" height="480"></td>
+							</tr>
+							<tr>
+								<td align="center" width="100%" colspan="2">
+								<p align="left">布局组件说明:</p>
+								<blockquote>
+									<table border="1" style="border-collapse: collapse" width="100%">
+										<tr>
+											<td width="5%" bgcolor="#E0F0F0">
+											图示序号</td>
+											<td width="10%" align="center" bgcolor="#E0F0F0">
+											组件类型</td>
+											<td align="center" bgcolor="#E0F0F0">
+											组件属性表</td>
+										</tr>
+										<tr>
+											<td width="5%" align="center">1</td>
+											<td width="10%">线性布局器</td>
+											<td>布局方向 = 横向布局<p>剩余空间总权重 = 100</p>
+											<p>剩余空间权重 = 20</p>
+											<p>组件宽度类型 = 匹配父组件宽度</td>
+										</tr>
+										<tr>
+											<td width="5%" align="center">2</td>
+											<td width="10%">按钮</td>
+											<td>文本 = &quot;0&quot; -&gt; &quot;9&quot;<p>剩余空间权重 = 30</p>
+											<p>组件宽度类型 = 直接指定</p>
+											<p>组件宽度值 = 0</p>
+											<p>组件高度类型 = 匹配父组件高度</td>
+										</tr>
+										<tr>
+											<td width="5%" align="center">3</td>
+											<td width="10%">空白框</td>
+											<td>剩余空间权重 = 5<p>组件宽度类型 = 直接指定</p>
+											<p>组件宽度值 = 0</td>
+										</tr>
+										<tr>
+											<td width="5%" align="center">4</td>
+											<td width="10%">空白框</td>
+											<td>剩余空间权重 = 6<p>组件高度类型 = 直接指定</p>
+											<p>组件高度值 = 0</td>
+										</tr>
+										<tr>
+											<td width="5%" align="center">5</td>
+											<td width="10%">按钮</td>
+											<td>文本 = &quot;=&quot;<p>剩余空间权重 = 65</p>
+											<p>组件宽度类型 = 直接指定</p>
+											<p>组件宽度值 = 0</p>
+											<p>组件高度类型 = 匹配父组件高度</td>
+										</tr>
+										<tr>
+											<td align="center" colspan="3">
+											<p align="left">&nbsp;注意: 
+											布局中具有相同类型和属性的组件只列出了其中的一个</td>
+										</tr>
+									</table>
+								</blockquote>
+								</td>
+							</tr>
+						</table>
+					</blockquote>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+</blockquote>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">--- 完 ---</p>
+<script language="JavaScript" type="text/javascript" src="script/doc_foot.js"></script>
+</body>
+
+
+</html>

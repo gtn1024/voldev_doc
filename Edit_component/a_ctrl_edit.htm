@@ -1,0 +1,519 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>编辑框组件</h4></li>
+	<ol>
+    		<li><blockquote><a href="#zbgz">1.准备工作</a></blockquote></li>   
+            <li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.编辑框 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+            <li><blockquote><a href="#bianjik">1.本类说明</a></blockquote></li>  
+            <li><blockquote><a href="#gbdwbw">2.光标到文本尾</a></blockquote></li> 
+             <li><blockquote><a href="#xzqbwb">3.选择全部文本</a></blockquote></li>
+            <li><blockquote><a href="#xzwb">4.选择文本</a></blockquote></li>
+		   <li><blockquote><a href="#znrsrlx">5.置内容输入类型</a></blockquote></li>
+            <li><blockquote><a href="#qnrsrlx">6.取内容输入类型</a></blockquote></li>
+            <li><blockquote><a href="#cysrlxx">7.常用输入类型（写）</a></blockquote></li>
+            <li><blockquote><a href="#gbsfkjdx">8.光标是否可见（读写）</a></blockquote></li>
+            <li><blockquote><a href="#srfxxdx">9.输入法选项（读写）</a></blockquote></li>
+            <li><blockquote><a href="#zcanjtx">10.支持按键监听（写）</a></blockquote></li>
+            <li><blockquote><a href="#ajsrsj">11.按键输入（事件）</a></blockquote></li>
+		    <li><blockquote><a href="#zcjdgbjt">12.支持焦点改变监听（写）</a></blockquote></li>
+            <li><blockquote><a href="#zjjdgbsj">13.组件焦点被改变（事件）</a></blockquote></li>
+		   <li><blockquote><a href="#nrgbjt">14.支持内容改变监听(写)</a></blockquote></li>
+            <li><blockquote><a href="#nrgbjt">15.内容被改变(事件)</a></blockquote></li>
+            <li><blockquote><a href="#gbwz">16.光标位置(读写)</a></blockquote></li>
+            <li><blockquote><a href="#xianshi">17.显示输入法</a></blockquote></li>
+            <li><blockquote><a href="#yyincang">17.隐藏输入法</a></blockquote></li>
+            <li><blockquote><a href="#butan">18.启动不弹出输入法</a></blockquote></li>
+		</ol>	
+	</ol>
+</ul>
+</div>
+
+<p align="left"><a name="zbgz"></a>   
+<h2>编辑框组件操作实例讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+
+	
+<font style="font-size: 12pt; font-weight:700">● 说明</font><br/>
+<br/>
+<blockquote>
+	<p align="left">本组件，继承了<a href="../Text_component/a_ctrl_text.htm"><b>“文本框”</b></a>和<a href="../View_basis/a_ctrl_base.htm"><b>“窗口组件”</b></a>的所有方法。</p>
+	<p align="left"><font color="#F70408">本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="zbgz"></a>
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font><br/>
+<p align="left">&nbsp;</p>
+
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">打开窗口设计器，拖放两个<b>“按钮”</b>和两个<b>“编辑框”</b>。</p>
+    <p align="left">分别起名<b>“按钮1”</b>、<b>“按钮2”</b>、<b>“编辑框1”</b>和<b>“编辑框2”</b>。</p>
+	<p align="left"><img src="edit_images/2.png" border="0" ></p><br>
+    <p align="left">保存布局后，右键<b>“按钮”</b>选择<b>“添加事件接收方法”</b>。</p> 
+	<p align="left">然后去添加<b>“按钮_被单击”</b>事件。</p>
+	<p align="left">最终达到如图所示的效果。</p>
+    <p align="left"><img border="0" src="edit_images/3.png" ></p>
+
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="bianjik"></a>
+<h2>一、编辑框</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left"><b>“编辑框”</b>组件，此组件的作用可用来显示和编辑文本。</p>
+	<p align="left">可通过<b>“窗口组件”</b>的基础类中的<b>“背景色”</b>，<b>“背景图”</b>等属性调整当前文本框的背景色和背景图。</p>
+	<p align="left">如果想要调整<b>“内容”</b>可通过继承自<b>“文本框”</b></a>的<b>“内容”</b>属性进行调整。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="gbdwbw"></a>
+<font style="font-size: 12pt; font-weight:700">● 光标到文本尾</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本方法可以将当前编辑框内的<b>“光标”</b>，移动到编辑框内容的尾部。</p>
+	<p align="left"><img border="0" src="edit_images/4.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接通过<b>“编辑框1”</b>调用当前方法即可。</p>
+	<p align="left"><img border="0" src="edit_images/5.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，可以看到当前编辑框的光标跑到了内容的尾部。</p>
+	<p align="left"><img border="0" src="edit_images/6.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="xzqbwb"></a>
+<font style="font-size: 12pt; font-weight:700">● 选择全部文本</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，本方法的作用就是用来选择编辑框的全部文本。</p>
+	<p align="left"><img border="0" src="edit_images/7.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接通过<b>“编辑框1”</b>调用当前方法即可。</p>
+	<p align="left"><img border="0" src="edit_images/8.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>后，就可以看到<b>“编辑框1”</b>的内容被全部选择。</p>
+	<p align="left"><img border="0" src="edit_images/9.gif" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="xzwb"></a>
+<font style="font-size: 12pt; font-weight:700">● 选择文本</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法通过两个参数值，可以选择指定区域的文本。</p>
+	<p align="left"><img border="0" src="edit_images/10.png" ></p>
+</blockquote>
+
+	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">首先可调用<b>“内容”</b>属性设置内容。</p>
+	<p align="left">然后调用当前方法，填写想要选区的区域参数即可。</p>
+	<p align="left"><img border="0" src="edit_images/11.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最后可以看到<b>“火山”</b>两个字被选中。</p>
+	<p align="left"><img border="0" src="edit_images/12.gif" ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="znrsrlx"></a><a name="cysrlxx"></a>
+<font style="font-size: 12pt; font-weight:700">● 置内容输入类型</font><br>
+<font style="font-size: 12pt; font-weight:700">● 常用输入类型（写）</font>
+<p align="left">&nbsp;</p>
+	<p align="left">以上两个都是用来设置当前编辑框的输入类型。</p>
+	<p align="left">前者是通过<b>“输入类型.XXX”</b>来指定参数，后者是通过<b>“常用输入类型.XXX”</b>来指定属性值。</p>
+	<p align="left">此处举例<b>“置内容输入类型”</b>。</p>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法只有一个参数，通过<b>“输入类型.XXX”</b>指定当前的输入类型。</p>
+	<p align="left">注意：从此方法开始，下面的方法都是继承自<b>“文本框”</b>的方法。</p>
+	<p align="left"><img border="0" src="edit_images/13.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在<b>“按钮1”</b>被点击下，调用本方法，参数填写为<b>“输入类型.数字”</b>。</p>
+	<p align="left"><img border="0" src="edit_images/14.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>后，可以看到当前编辑框无法输入任何字母汉字。</p>
+	<p align="left">但是输入数字不受影响。</p>
+	<p align="left"><img border="0" src="edit_images/15.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="qnrsrlx"></a>
+<font style="font-size: 12pt; font-weight:700">● 取内容输入类型</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，本方法的作用就是用来读取当前的<b>“输入类型”</b>。</p>
+	<p align="left">返回值为<b>“输入类型.XXX”</b>的常量值。</p>
+	<p align="left"><img border="0" src="edit_images/16.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，设置输入类型为<b>“输入类型.数字”</b>。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，判断当前方法的返回值是否为<b>“输入类型.数字”</b>。</p>
+	<p align="left">然后弹出对应的提示。</p>
+	<p align="left"><img border="0" src="edit_images/17.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">默认点击<b>“按钮2”</b>会提示<b>“其它类型”</b>。</p>
+	<p align="left">点击<b>“按钮1”</b>后重新点击<b>“按钮2”</b>会提示<b>“数字”</b>。</p>
+	<p align="left"><img border="0" src="edit_images/18.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="gbsfkjdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 光标是否可见（读写）</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“光标是否可见（写）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，设置当前组件光标是否可见。</p>
+	<p align="left">属性值为真表示可见，否则相反。</p>
+	<p align="left">注意：设置为假后，即使点击编辑框，光标也不会出现。</p>
+	<p align="left"><img border="0" src="edit_images/19.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“光标是否可见（读）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">读取当前的光标是否可见。</p>
+	<p align="left">返回真表示可见，否则返回假。</p>
+	<p align="left"><img border="0" src="edit_images/20.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">利用<b>“取反”</b>方法，将当前读属性赋值给写属性。</p>
+	<p align="left"><img border="0" src="edit_images/21.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可以看到<b>“按钮1”</b>被点击后，光标会消失，并且点击编辑框，光标也不会出现。</p>
+	<p align="left">只有重新点击<b>“按钮1”</b>光标才会出现。</p>
+	<p align="left"><img border="0" src="edit_images/22.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="srfxxdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 输入法选项（写）</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">通过本属性可以设置输入法的<b>“回车键”</b>按钮标题。</p>
+  <p align="left">调用方式：<b>“输入法选项.XXX”</b>。</p>
+  <p align="left"><img border="0" src="edit_images/23.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">想要使用本属性，必须将当前编辑框的模式设置为<b>“单行模式”</b>。</p>
+	<p align="left">然后才能调整<b>“输入法选项”</b>，例如：此处调整为<b>“输入法选项.搜索”</b>。</p>
+  <p align="left"><img border="0" src="edit_images/24.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+  <p align="left">当点击<b>“按钮1”</b>后，触摸<b>“编辑框1”</b>弹出输入法后。</p>
+  <p align="left">可以看到原<b>“回车键”</b>的位置，标题修改为了<b>“搜索”</b>。</p>
+  <p align="left">注意：模拟器默认不支持弹出输入法，本属性需要使用真机测试。</p>
+  <p align="left"><img border="0" src="edit_images/25.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="zcanjtx"></a><a name="ajsrsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 支持按键监听（写）</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 按键输入（事件）</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“支持按键监听（写）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本属性可以设置当前组件是否开启按键监听。</p>
+	<p align="left">属性值设置为真则开启监听，否则不监听。</p>
+	<p align="left">开启后会发送<b>“按键输入”</b>事件。</p>
+	<p align="left">注意：本属性继承自<b>“窗口组件”</b>基础类，以下属性事件均继承自本类。</p>
+	<p align="left"><img border="0" src="edit_images/26.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“按键输入（事件）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">将<b>“支持按键监听”</b>属性值设置为真后将发送本事件。</p>
+	<p align="left">通过<b>“按键事件类”</b>参数可以指定按键。</p>
+	<p align="left"><img border="0" src="edit_images/27.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在<b>“按钮1”</b>被点击下，设置<b>“支持按键监听”</b>的属性值为<b>“真”</b>。</p>
+	<p align="left">添加<b>“编辑框_按键输入”</b>事件。</p>
+	<p align="left">指定来源对象后，通过<b>“按键输入事件”</b>参数判断是否为<b>“CTRL键”</b>被按下。</p>
+	<p align="left">如果是ctrl键被按下，就在编辑框添加内容。</p>
+	<p align="left"><img border="0" src="edit_images/28.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">当点击<b>“按钮1”</b>后，如果当前手机外接了键盘。</p>
+	<p align="left">那么此时按下<b>“ctrl键”</b>，编辑框内必然会添加指定的内容。</p>
+<p align="left"><img border="0" src="edit_images/29.gif" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="zcjdgbjt"></a>
+<a name="zjjdgbsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 支持焦点改变监听（写）</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 组件焦点被改变（事件）</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“支持焦点改变监听（写）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性值设置为<b>“真”</b>则监听<b>“组件焦点被改变”</b>事件，设置为<b>“假”</b>则不监听。</p>
+	<p align="left"><img border="0" src="edit_images/30.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“组件焦点被改变（事件）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">将<b>“支持焦点改变监听”</b>属性值设置为真后将发送本事件。</p>
+	<p align="left">通过<b>“是否获得焦点”</b>参数可判断当前组件的焦点是否存在。</p>
+	<p align="left"><img border="0" src="edit_images/31.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在<b>“按钮1”</b>被点击下，设置<b>“支持焦点改变监听”</b>的属性值为<b>“真”</b>。</p>
+  <p align="left">添加<b>“编辑框_组件焦点被改变”</b>事件。</p>
+	<p align="left">判断来源对象后，继续判断<b>“是否获得焦点”</b>参数的返回值即可。</p>
+	<p align="left">最后在对应的编辑框输入对应的内容。</p>
+	<p align="left"><img border="0" src="edit_images/32.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">当点击<b>“按钮1”</b>后，去点击<b>“编辑框2”</b>，此时编辑框2必然会获得焦点。</p>
+	<p align="left">并且对应的编辑框也增加了指定的内容。</p>
+<p align="left"><img border="0" src="edit_images/33.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="nrgbjt"></a>
+<font style="font-size: 12pt; font-weight:700">● 支持内容改变监听（写）</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 内容被改变（事件）</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“支持内容改变监听（写）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">只有将本属性设置为真，才能发送<strong>“内容被改变”</strong>事件。</p>
+	<p align="left"><img border="0" src="edit_images/1.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“内容被改变（事件）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">当设置“支持内容改变监听=真”后，当编辑框的内容发送改变时会触发本事件。</p>
+	<p align="left"><img border="0" src="edit_images/62.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、在编辑框的属性栏设置“支持内容改变监听=真”。</p>
+	<p align="left">2、添加“编辑框_内容被改变”事件，弹出提示。</p>
+	<p align="left"><img border="0" src="edit_images/63.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可以看到当编辑框内容被改变后，会弹出提示。</p>
+<p align="left"><img border="0" src="edit_images/64.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="gbwz"></a>
+<font style="font-size: 12pt; font-weight:700">● 光标位置(读写)</font>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助页如下图：</p>
+<blockquote>
+	<p align="left">本属性的属性值为整数，填写要设置的光标位置即可。</p>
+	<p align="left">注意：必须编辑框有焦点的情况下才能设置光标位置，并且还要保证设置的位置不能超过文本长度。</p>
+	<p align="left"><img border="0" src="edit_images/65.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、给编辑框提前设置内容。</p>
+	<p align="left">2、当按钮被点击后，分别执行设置和读取光标位置属性。</p>
+	<p align="left"><img border="0" src="edit_images/66.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可看到光标位置被修改。</p>
+<p align="left"><img border="0" src="edit_images/66.gif" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="xianshi"></a>
+<font style="font-size: 12pt; font-weight:700">● 显示输入法</font>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助页如下图：</p>
+<blockquote>
+    <p align="left">1、本方法继承自<strong>“输入法管理类”</strong>，需要通过输入法管理类来实现显示输入法。</p>
+    <p align="left">2、本方法支持动态调用，动态调用时忽略参数1，直接填写参数2即可。</p>
+	<p align="left"><img border="0" src="edit_images/67.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、<strong>“输入法管理类”</strong>的创建需要通过<strong>“获取系统服务(安卓环境.输入法服务)”</strong>方法来实现。</p>
+	<p align="left">2、获取后要强制转换成<strong>“输入法管理类”</strong>，才能赋值给定义的输入法变量。</p>
+	<p align="left">3、最后判断“输入法”不等于空对象后，才可以进行输入法显示工作。</p>
+	<p align="left"><img border="0" src="edit_images/68.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">当按钮被点击后，输入法将会被显示出来。</p>
+<p align="left"><img border="0" src="edit_images/69.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="yyincang"></a>
+<font style="font-size: 12pt; font-weight:700">● 隐藏输入法</font>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助页如下图：</p>
+<blockquote>
+    <p align="left">本方法同样输入“输入法管理类”的方法，用法和显示输入法基本一致。</p>
+	<p align="left"><img border="0" src="edit_images/70.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、首先获取输入法服务，获取后判断是否获取成功。</p>
+	<p align="left">2、调用“输入法.隐藏输入法()”就可以对输入法进行隐藏操作。</p>
+	<p align="left"><img border="0" src="edit_images/71.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">按钮被点击后，输入法将被隐藏。</p>
+<p align="left"><img border="0" src="edit_images/72.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="butan"></a>
+<font style="font-size: 12pt; font-weight:700">● 启动不弹出输入法</font>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">部分手机存在软件启动后会<strong>弹出输入法</strong>或编辑框光标闪烁的问题。</p>
+	<p align="left">利用<strong>“隐藏输入法()”</strong>方法也无法解决。</p>
+	<p align="left">下面给出完美的解决方案，让软件启动后不弹出输入法，甚至光标也不会在编辑框中闪烁。</p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">1、在“启动类”设置属性名<strong>“@安卓.附加清单”</strong>，属性值填写<strong>“常用窗口附加清单.不改变软键盘状态”</strong>。</p>
+  <p align="left">2、在<strong>“通知_被创建”</strong>虚拟方法下，取出窗口容器组件，设置<strong>“可获得焦点=真”</strong>和<strong>“支持布局完毕监听=真”</strong>。</p>
+	<p align="left">3、<strong>“可获得焦点”</strong>作用，是让窗口容器可以获得焦点。</p>
+	<p align="left">4、<strong>“支持布局完毕监听”</strong>属性是用来监听布局完毕，因为只有布局完毕后才能使用<strong>“获得焦点()”</strong>方法。</p>
+	<p align="left">5、最后给<strong>“窗口容器”</strong>变量挂接事件，挂接后才能触发事件。</p>
+	<p align="left"><img border="0" src="edit_images/73.png" ></p>
+	<p align="left">&nbsp;</p>
+	<p align="left">4、添加<strong>“窗口容器组件_布局完毕”</strong>事件，通过<strong>“标记值”</strong>判断来源。</p>
+	<p align="left">5、最后通过<strong>“来源对象.获得焦点()”</strong>将焦点转移给窗口容器，这样编辑框就不会在软件运行后显示输入法和光标了。</p>
+	<p align="left"><img border="0" src="edit_images/74.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可看到当软件启动后，并没有弹出输入法，并且编辑框也没有光标在闪烁。</p>
+<p align="left"><img border="0" src="edit_images/75.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

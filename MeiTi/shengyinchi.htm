@@ -1,0 +1,315 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new10')" >一.声音池类<span>(可收缩)</span></h6></li>
+		<ol id="new10">
+           <li><blockquote><a href="#shengyin">1.本类说明</a></blockquote></li>
+          <li><blockquote><a href="#jzyp">2.加载音频</a></blockquote></li>
+          <li><blockquote><a href="#jzyp2">3.加载音频2</a></blockquote></li>
+          <li><blockquote><a href="#syxj">4.新建</a></blockquote></li>
+           <li><blockquote><a href="#sybf">5.播放</a></blockquote></li>
+			<li><blockquote><a href="#syzt">6.暂停</a></blockquote></li>        
+           <li><blockquote><a href="#syhf">7.恢复</a></blockquote></li>
+           <li><blockquote><a href="#syqbzt">8.全部暂停</a></blockquote></li>
+           <li><blockquote><a href="#syqbhf">9.全部恢复</a></blockquote></li>
+           <li><blockquote><a href="#syzyxj">10.置优先级</a></blockquote></li>
+           <li><blockquote><a href="#syzxhms">11.置循环模式</a></blockquote></li>
+           <li><blockquote><a href="#syzsd">12.置速度</a></blockquote></li>
+           <li><blockquote><a href="#syzyl">13.置音量</a></blockquote></li>
+           <li><blockquote><a href="#sytz">14.停止</a></blockquote></li>
+           <li><blockquote><a href="#syxz">15.卸载声音</a></blockquote></li>
+           <li><blockquote><a href="#sysf">16.释放</a></blockquote></li>
+     
+		</ol>	
+		
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>声音池类实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<font style="font-size: 12pt; font-weight:700">● 辅助说明</font><br/>
+<br/>
+<blockquote>
+<p align="left"><font color="#F70408">注意：本类位于<strong>“多媒体功能支持”</strong>模块中，必须添加此模块才能使用。</font></p>
+</blockquote>
+<p align="left">&nbsp;</p>	
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">简单来说，本方法的作用通常用作播放<b>“游戏提示音”</b>或者其它类型的<b>“短音效”</b>提示。</p>
+	<p align="left">通过本类播放音乐，最多也就能播放五六秒，即使是再长的音乐，也只会播放最开始的五六秒钟。</p>
+	<p align="left">需要注意的是，本类中有两个ID值。</p>
+	<p align="left">一个是由<b>“加载音频/加载音频2”</b>返回的<b>“声音ID”</b>。</p>
+	<p align="left">另外一个是由<b>“播放”</b>返回的<b>“声音流ID”</b>。</p>
+	<p align="left">通过<b>“声音流ID”</b>可以控制当前音乐的一些属性：例如，是否循环播放等等。</p>
+	<p align="left"><img border="0" src="mt_images/173.png" ></p>
+</blockquote>	
+
+	<p align="left">&nbsp;</p>
+<a name="syxj"></a>
+<font style="font-size: 12pt; font-weight:700">● 新建</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法共有<b>“三个”</b>参数和<b>“一个”</b>返回值。</p>
+    <p align="left">参数1：设定最大声音数，此数值并不是越大越好，通常情况下填写10以内的数字即可。</p>
+    <p align="left">参数2：具体音频类型值参考<b>“音频类型.XXX”</b>.</p>
+    <p align="left">参数3：没有意义的参数，忽略即可。</p>
+	<p align="left"><img border="0" src="mt_images/174.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="jzyp2"></a>
+<font style="font-size: 12pt; font-weight:700">● 加载音频2</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本方法可以加载音频，加载音频后才能执行<b>“播放”</b>方法。</p>
+    <p align="left">返回值为<b>“音频ID”</b>，如果音频ID为0，则加载失败。</p>
+    <p align="left">加载失败原因有两种：第一：音频资源命名不正确，二：并非标准的声音文件。</p>
+    <p align="left">参数3：优先级别，本参数忽略即可。</p>
+    <p align="left">如果要加载本地音频请使用<a href="#jzyp"><b>“加载音频”</b></a>方法。</p>
+	<p align="left"><img border="0" src="mt_images/175.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<a name="sybf"></a>
+<font style="font-size: 12pt; font-weight:700">● 播放</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">可以看到本方法共有七个参数，动态调用时<b>“参数1”</b>省略。</p>
+  <p align="left">参数2：填写由<b>“加载音频”</b>返回的id值。</p>
+    <p align="left">其它参数，如果没有这些需求，忽略即可。</p>
+    <p align="left">注意：本方法会返回一个<b>“音频ID”</b>，返回值必定不为0，如果返回0表示播放失败。</p>
+	<p align="left"><img border="0" src="mt_images/176.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="syzsd"></a>
+<font style="font-size: 12pt; font-weight:700">● 置速度</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本方法可以调整指定音频的播放速度。</p>
+    <p align="left">参数2：填写由<b>“播放”</b>方法返回的音频ID。</p>
+  <p align="left">参数3：不建议超过2，低于0.5。</p>
+    <p align="left"><font color="#F9070B">注意：</font>本方法只有在声音正在播放时有效，声音播放完毕后此设置无效。</p>
+    <p align="left">所有的设置声音的方法均是如此，不再重复说明。</p>
+	<p align="left"><img border="0" src="mt_images/177.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="syzt"></a>
+<font style="font-size: 12pt; font-weight:700">● 暂停</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过<b>“播放”</b>返回的声音流ID，来暂停当前声音的播放。</p>
+    <p align="left">如果要继续播放可调用<b>“恢复”</b>方法。</p>
+    <p align="left">务必保证当前声音正在播放，否则本方法无效。</p>
+	<p align="left"><img border="0" src="mt_images/178.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<a name="syhf"></a>
+<font style="font-size: 12pt; font-weight:700">● 恢复</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">恢复指定<b>“声音流ID”</b>的音频，务必保证此音频正在播放，否则本方法无效。</p>
+	<p align="left"><img border="0" src="mt_images/179.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="syxz"></a>
+<font style="font-size: 12pt; font-weight:700">● 卸载声音</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，从整个声音池中删除指定的声音。</p>
+    <p align="left">删除后，该声音将无法继续播放。</p>
+	<p align="left"><img border="0" src="mt_images/180.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">界面准备如下图：</p>
+<blockquote>
+    <p align="left">拖放一个<b>“线性布局容器”</b>，其布局方向设置为<b>“横向”</b></p>
+    <p align="left">随后在布局器内放四个按钮，分别修改标题为：播放，暂停，恢复，卸载。</p>
+	<p align="left"><img border="0" src="mt_images/181.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+    <p align="left">保存布局后，新增三个变量，分别为<b>“声音池1”</b>，<b>“声音ID”</b>和<b>“流ID”</b>。</p>
+    <p align="left">注意，声音池类变量要设置参考。</p>
+	<p align="left"><img border="0" src="mt_images/182.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+    <p align="left">需要在<a href="a_win.htm#tzbcj"><b>“通知_被创建”</b></a>事件下，定义一个<b>“原始数据资源”</b>变量，点击按钮导入一个标准的音频文件。</p>
+  <p align="left">然后调用<b>“声音池类.新建”</b>方法，建立声音池对象，赋值给定义的<b>“声音池1”</b>变量。</p>
+	<p align="left">通过当前<b>“声音池1”</b>变量，即可调用<b>“加载音频2”</b>方法加载音频。</p>
+	<p align="left">参数内直接填写定义的<b>“音频1”</b>变量即可。</p>
+	<p align="left">最后将<b>“加载音频2”</b>赋值给<b>“声音ID”</b>即可。</p>
+	<p align="left"><img border="0" src="mt_images/183.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（3）：</p>
+<blockquote>
+    <p align="left">随后在<b>“按钮_被单击”</b>事件下，分别判断这四个按钮被点击，然后执行对应的方法。</p>
+	<p align="left">注意：<b>“播放”</b>方法的参数调用的是<b>“声音ID”</b>并非<b>“流ID”</b>，千万不要写错。</p>
+	<p align="left"><b>“流ID”</b>是由播放方法返回的，并且必定不为0.</p>
+	<p align="left">通过<b>“流ID”</b>可设置当前音频播放速度。</p>
+	<p align="left"><img border="0" src="mt_images/184.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+    <p align="left">图文教程只能演示到这种地步，具体细节大家自行测试。</p>
+	<p align="left"><img border="0" src="mt_images/185.gif" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="jzyp"></a>
+<font style="font-size: 12pt; font-weight:700">● 加载音频</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可以加载本地音频，返回值同样为非0的整数值。</p>
+	<p align="left">如果返回0，表示加载失败。</p>
+	<p align="left">本地路径可通过：<b>“取外部存储空间根目录().取文件名()”</b>获取。</p>
+	<p align="left">参数3忽略即可。</p>
+	<p align="left">调用方法直接将本类例子中的<b>“加载音频2”</b>方法替换为本方法即可。</p>
+	<p align="left"><img border="0" src="mt_images/186.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<a name="syzyxj"></a>
+<font style="font-size: 12pt; font-weight:700">● 置优先级</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">本方法根据<b>“声音流ID”</b>设定当前音频的优先级，当有N多个音频播放时，本音频优先播放。</p>
+	<p align="left">调用方法：声音池1.置优先级(流ID,1).</p>
+	<p align="left">务必保证参数2中的<b>“声音流ID”</b>正确。</p>
+	<p align="left"><img border="0" src="mt_images/187.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<a name="syzxhms"></a>
+<font style="font-size: 12pt; font-weight:700">● 置循环模式</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本方法可以设置当前音频进行循环播放。</p>
+	<p align="left">调用方法:声音池1.置循环模式(流ID,-1)。</p>
+	<p align="left">参数3：有三种循环模式，根据实际需求填写即可。</p>
+	<p align="left"><img border="0" src="mt_images/188.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>
+<a name="syzyl"></a>
+<font style="font-size: 12pt; font-weight:700">● 置音量</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本方法可以设置当前音频的音量。</p>
+	<p align="left">调用方法：声音池1.置音量(流id,1,1)。</p>
+	<p align="left">参数3、4为左右声道，根据自己的需求填写何时的数值即可。</p>
+	<p align="left"><img border="0" src="mt_images/189.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="syqbzt"></a>
+<font style="font-size: 12pt; font-weight:700">● 全部暂停</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">顾名思义，如果当前声音池有N个声音在播放，调用本方法可暂停全部声音的播放。</p>
+	<p align="left">调用方法：声音池1.全部暂停()。</p>
+	<p align="left"><img border="0" src="mt_images/190.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<a name="syqbhf"></a>
+<font style="font-size: 12pt; font-weight:700">● 全部恢复</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">恢复被暂停的声音，恢复后继续从暂停位置开始播放。</p>
+	<p align="left">调用方法：声音池1.全部恢复()。</p>
+	<p align="left"><img border="0" src="mt_images/191.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<a name="sytz"></a>
+<font style="font-size: 12pt; font-weight:700">● 停止</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本方法可以停止当前音频的播放。</p>
+	<p align="left">停止后可调用<b>“播放”</b>方法重新播放。</p>
+	<p align="left">调用方法：声音池1.停止(流ID)。</p>
+	<p align="left"><img border="0" src="mt_images/192.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<a name="sysf"></a>
+<font style="font-size: 12pt; font-weight:700">● 释放</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本方法可以释放掉当前对象占用的所有资源。</p>
+	<p align="left">如果不使用当前对象后，建议调用本方法释放资源。</p>
+	<p align="left">调用方法：声音池1.释放()。</p>
+	<p align="left"><img border="0" src="mt_images/193.png" ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

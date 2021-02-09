@@ -1,0 +1,100 @@
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="../../images/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<p align="left"><b><font style="font-size: 14pt">一步一步跟我学写火山视窗程序</font></b></p>
+<p align="left">[<a href="step1.htm">上一章</a>] [<a href="step3.htm">下一章</a>]</p>
+<p align="left">&nbsp;</p>
+<p align="left">我们继续从上一个程序开始讲解，这次我们加入一个载入新窗口的功能。</p>
+<p align="left">&nbsp;</p>
+<p align="left">1、打开上一章完成的项目，然后我们按下“<b>Ctrl+I”</b>快捷键（或者弹出菜单：“<b>插入-&gt;插入特定内容</b>”），选择其中的“<b>窗口</b>”项目，点击“<b>添加</b>”插入到程序中：</p>
+<blockquote>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/s13.png" width="504" height="404"></p>
+	</blockquote>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">2、然后在所创建的“<b>窗口1</b>”类上点击鼠标右键选择“<b>设计窗口1的界面布局”</b>菜单项：</p>
+<blockquote>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/s16.png" width="391" height="446"></p>
+	</blockquote>
+	<p align="left">将窗口标题设置为“<b>一个新窗口</b>”，并将窗口尺寸调小一些以和<b>我的主窗口</b>区别，如图：</p>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/s17.png" width="1041" height="615"></p>
+	</blockquote>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">3、在先前的“<b>我的主窗口</b>”类上点击鼠标右键选择“<b>设计我的主窗口的界面布局</b>”菜单项在该布局中加入一个按钮，将其标题设置为“<b>载入新窗口</b>”，如图：</p>
+<blockquote>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/s14.png" width="1043" height="611"></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+</blockquote>
+<p align="left">4、在界面设计器中双击该“<b>载入新窗口</b>”按钮，或者在右下角选择“<b>按钮.被单击</b>”事件，将对应的事件接收方法加入程序中：</p>
+<blockquote>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/s15.png" width="1043" height="617"></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+</blockquote>
+<p align="left">5、到此一步后结果程序应该为以下样子：</p>
+<blockquote>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/s18.png" width="690" height="421"></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+</blockquote>
+<p align="left">6、将光标移动到第15行，输入以下语句行内容：</p>
+<blockquote>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/s19.png" width="564" height="278"></p>
+	</blockquote>
+	<p align="left">具体输入方法为（输入过程中可以使用首拼或全拼输入字）：</p>
+	<blockquote>
+		<p align="left"><b>A、</b>将光标移动到第15行，输入“<b>如果(来源对象==按钮1)</b>&quot;,然后回车。此语句的作用是用来判断所单击的按钮到底是哪一个（虽然我们目前只有一个，但是万一以后新增了按钮呢，所以正规的写法应该这样）；</p>
+		<p align="left"><b>B、</b>然后按下“<b>Ctrl+L</b>”快捷键插入一个新的局部变量，在变量名中填入“<b>我的新窗口</b>”，类型中填入“<b>窗口1</b>”，这样就定义了一个“<b>窗口1</b>”的对象实例变量；</p>
+		<blockquote>
+			<p align="left">
+			注意：和其它编程语言不同，火山视窗程序里面的窗口是一个类，因此可以通过定义其多个对象实例来同时创建多个该窗口类的界面窗口，而不是只能载入一个。</p>
+		</blockquote>
+		<p align="left"><b>C、</b>在刚才新增的局部变量行上按下“<b>Shift+Insert</b>&quot;快捷键向下插入一个空白语句行，然后输入：“<b>我的新窗口.创建对话框 
+		()</b>”，即完成了本段程序的输入。</p>
+	</blockquote>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">7、下面我们按下<b>F5</b>键运行刚才编写的程序，然后单击“<b>载入新窗口</b>”按钮，可以看到我们所设计的新窗口被载入显示了：</p>
+<blockquote>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/s20.png" width="495" height="323"></p>
+		<p align="left">&nbsp;</p>
+	</blockquote>
+	<p align="left">[<a href="step1.htm">上一章</a>] [<a href="step3.htm">下一章</a>]</p>
+</blockquote>
+
+</body>
+
+</html>

@@ -1,0 +1,457 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.语言区域类<span>(可收缩)</span></h6></li>
+		<ol id="new1">
+        
+           <li><blockquote><a href="#yuyanquyu">1.本类说明</a></blockquote></li>
+          <li><blockquote><a href="#ycj">2.创建</a></blockquote></li>
+          <li><blockquote><a href="#ycj2">3.创建2</a></blockquote></li>
+          <li><blockquote><a href="#ycj3">4.创建3</a></blockquote></li>
+          <li><blockquote><a href="#yqbtxswb">5.取变体显示文本</a></blockquote></li>
+           <li><blockquote><a href="#ybtxswb">6.变体显示文本</a></blockquote></li>
+           <li><blockquote><a href="#yqgjxswb">7.取国家显示文本</a></blockquote></li>
+           <li><blockquote><a href="#yqxswb">8.取显示文本</a></blockquote></li>
+           <li><blockquote><a href="#yqyhsxqy">9.取用户首选区域</a></blockquote></li>
+           <li><blockquote><a href="#yqyyxswb">10.取语言显示文本</a></blockquote></li>
+           <li><blockquote><a href="#ysfxt">11.是否相同</a></blockquote></li>
+           <li><blockquote><a href="#yqsygjdm">12.取所有国家代码</a></blockquote></li>
+           
+           <li><blockquote><a href="#qsyaz">13.取所有安装区域</a></blockquote></li>
+           <li><blockquote><a href="#qsyyy">14.取所有语言代码</a></blockquote></li>
+           <li><blockquote><a href="#hqyyqy">15.获取已有区域信息</a></blockquote></li>
+           <li><blockquote><a href="#guojia">16.IS03国家代码（读）</a></blockquote></li>
+           <li><blockquote><a href="#yuyan">17.IS03语言代码（读）</a></blockquote></li>
+           <li><blockquote><a href="#bianti">18.变体代码（读）</a></blockquote></li>
+           <li><blockquote><a href="#gjdm">19.国家代码（读）</a></blockquote></li>
+           <li><blockquote><a href="#gjxswb">20.国家显示文本（读）</a></blockquote></li>
+           <li><blockquote><a href="#xswb">21.显示文本（读）</a></blockquote></li>
+           <li><blockquote><a href="#yydm">22.语言代码（读）</a></blockquote></li>
+           <li><blockquote><a href="#yyxswb">23.语言显示文本（读）</a></blockquote></li>
+    
+		</ol>	
+		
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>语言区域类实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>	
+<a name="yuyanquyu"></a>
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">本类的主要作用就是系统语言区域的相关操作。</p>
+	<p align="left">在画板操作中有一个关于本类的实际应用：<a href="../HuaBan/huabi.htm#yyqyx"><b>“画笔类.语言区域（写）”</b></a></p>
+
+</blockquote>	
+
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="ycj"></a><a name="yuyan"></a><a name="xswb"></a>
+<a name="yydm"></a>
+<a name="yyxswb"></a>	
+<font style="font-size: 12pt; font-weight:700">● 创建</font><br/>
+
+<font style="font-size: 12pt; font-weight:700">● IS03语言代码（读） </font><br/>
+
+<font style="font-size: 12pt; font-weight:700">● 语言代码（读） </font><br/>	
+<font style="font-size: 12pt; font-weight:700">● 显示文本（读） </font><br/>
+<font style="font-size: 12pt; font-weight:700">● 语言显示文本（读） </font><br/>		
+<p align="left">&nbsp;</p>
+<p align="left">以上为关联方法，此处统一讲解。</p>
+<p align="left">&nbsp;</p>	
+<p align="left"><b>“创建”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">顾名思义，本方法的作用就是创建一个<b>“语言区域类”</b>对象。</p>
+	
+	<p align="left">关于参数中的<b>“语言代码”</b>它是一种国际语言标准。</p>
+	<p align="left">例如：中文<b>“两字母”</b>的语言代码为<b>“zh”</b>，法文则是<b>“fr”</b>。</p>
+	<p align="left">详情可看<a href="https://baike.baidu.com/item/语言代码/6594123" target="_blank"><b>“语言代码百度百科”</b></a>。</p>
+	<p align="left"><img border="0" src="img/127.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“IS03语言代码（读）”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本读属性的作用，是用来读取当前对象中存储的<b>“3字母”</b>长的<b>“ISO语言代码”</b>。</p>
+	<p align="left">例如：中文的3字母长的语言言代码为<b>“zho”</b>。</p>
+	<p align="left">不存在返回<b>“空文本”</b>。</p>
+	<p align="left"><img border="0" src="img/128.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“语言代码（读）”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本读属性的作用，就是用来读取当前存储的<b>“两字母”</b>的ISO语言代码。</p>
+<p align="left">不存在返回<b>“空文本”</b>。</p>
+	<p align="left"><img border="0" src="img/129.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“显示文本（读）”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本读属性的作用就是，读取当前语言代码的显示文本。</p>
+	<p align="left">例如：设置的语言代码为<b>“zh”</b>，那么调用本属性读取后就会显示<b>“中文”</b>。</p>
+	 <p align="left">调用本属性，就等同于调用<b>“取显示文本(取用户首选区域())”</b>。</p>
+	<p align="left">不存在返回<b>“空文本”</b>。</p>
+	<p align="left"><img border="0" src="img/130.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“语言显示文本（读）”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本属性和上一个属性类似。</p>
+    <p align="left">调用本属性，就等同于调用<b>“取语言显示文本(取用户首选区域())”</b>。</p>
+	<p align="left">不存在返回<b>“空文本”</b>。</p>
+	<p align="left"><img border="0" src="img/131.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">定义<b>“语言区域类”</b>变量，设置参考。</p>
+	<p align="left">然后调用<b>“创建”</b>方法，创建中文语言区域对象。</p>
+	<p align="left">最后通过<b>“语言”</b>变量调用各个属性，就可以读取对应的代码和显示文本。</p>
+	<p align="left"><img border="0" src="img/132.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">最终结果如下图：</p>
+<blockquote>
+    
+	<p align="left"><img border="0" src="img/133.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="ycj2"></a><a name="guojia"></a>
+		<a name="gjdm"></a><a name="gjxswb"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建2</font><br/>
+<font style="font-size: 12pt; font-weight:700">● IS03国家代码（读） </font><br/>
+<font style="font-size: 12pt; font-weight:700">● 国家代码（读） </font><br/>
+<font style="font-size: 12pt; font-weight:700">● 国家显示文本（读） </font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">以上四个此处统一讲解。</p>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“创建2”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本方法可同时创建<b>“语言代码”</b>和<b>“国家代码”</b>。</p>
+	<p align="left"><b>“国家代码”</b>也是一种国际标准代码，有<b>“两字母”</b>和<b>“3字母”</b>的区别。</p>
+	<p align="left">例如：中国的国家代码为大写的<b>“CN”</b>，法国则是<b>“FR”</b>，其它国家代码大家可自行百度。</p>
+	<p align="left">本方法创建时需填写<b>“2字母”</b>的代码。</p>
+	<p align="left"><img border="0" src="img/134.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“IS03国家代码（读）”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本读属性的作用是用来，读取当前对象中存储的<b>“3字母”</b>的国家代码。</p>
+	<p align="left">例如：中国的三字母国家代码为<b>“CHN”</b>。</p>
+	<p align="left">不存在返回空文本。</p>
+	
+	
+	<p align="left"><img border="0" src="img/135.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“国家代码（读）”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">读取当前对象的<b>“两字母”</b>国家代码。</p>
+	<p align="left">不存在返回空文本。</p>
+	<p align="left"><img border="0" src="img/136.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“国家显示文本（读）”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">通俗理解，本方法就是用来读取当前国家的名字。</p>
+	<p align="left">例如：创建时填写的<b>“CN”</b>，此属性就会返回<b>“中国”</b>。</p>
+	<p align="left"><img border="0" src="img/137.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">调用<b>“创建2”</b>方法，创建中文语言代码和中国国家代码。</p>
+	<p align="left">随后调用相对于的属性，读取对应的数据。</p>
+	<p align="left">这里额外读取一下<b>“显示文本”</b>。</p>
+	<p align="left"><img border="0" src="img/138.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+    <p align="left">最终可以看到<b>“国家代码”</b>等信息全部显示出来。</p>
+	<p align="left"><b>“显示文本”</b>属性也发生了改变，语言名称后增加了国家名。</p>
+	<p align="left"><img border="0" src="img/139.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="ycj3"></a><a name="ybtxswb"></a><a name="bianti"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建3</font><br/>
+
+<font style="font-size: 12pt; font-weight:700">● 变体显示文本</font><br/>	
+
+<font style="font-size: 12pt; font-weight:700">● 变体代码（读） </font><br/>	
+<p align="left">&nbsp;</p>	
+<p align="left">以上三个此处统一讲解。</p>	
+<p align="left">&nbsp;</p>		
+<p align="left"><b>“创建3”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本方法的不同之处，就是多了一个<b>“变体代码”</b>。</p>
+	<p align="left">变体代码并非标准的代码，而是可以自定义的文本。</p>
+	<p align="left">本参数，可以理解为区域性的语言。</p>
+	<p align="left">例如：北京话，天津话，上海话等等……</p>
+	<p align="left"><img border="0" src="img/140.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“变体显示文本”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本方法的作用，就是用来读取本对象中的<b>“变体代码”</b>。</p>
+	<p align="left">如果不存在，返回空文本。</p>
+	<p align="left">调用本方法，等同于调用<b>“取变体显示文本(取用户首选区域())”</b></p>
+	<p align="left"><img border="0" src="img/141.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“变体代码（读）”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本读属性的作用同上。</p>
+	<p align="left"><img border="0" src="img/142.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">调用<b>“创建3”</b>去创建当前对象。</p>
+	<p align="left">参数3这里，可以填写<b>“北京”</b>，当然也可以填写其它的地区。</p>
+	<p align="left">然后依次调用<b>“变体代码”</b>，<b>“变体显示文本()”</b>。</p>
+	<p align="left">最后再调用<b>“显示文本”</b>，此时会将完整的<b>“语言”</b>，<b>“国家”</b>和<b>“变体”</b>全部显示出来。</p>
+	<p align="left"><img border="0" src="img/143.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/144.png" ></p>
+</blockquote>
+		
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="yqyhsxqy"></a>
+<font style="font-size: 12pt; font-weight:700">● 取用户首选区域</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法的作用就是用来读取手机系统当前设置的<b>“语言类”</b>。</p>
+	<p align="left">因用户可能会随时更改系统语言，所以本方法必须随用随取，不要提前保存。</p>
+	<p align="left"><img border="0" src="img/145.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">直接通过<b>“语言区域类”</b>对象来调用本方法即可。</p>
+	<p align="left">调用了本方法后，可以在后面直接调用<b>“显示文本”</b>读属性，就可以读取当前系统的<b>“语言”</b>。</p>
+	<p align="left"><img border="0" src="img/146.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/147.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<a name="yqbtxswb"></a>
+<font style="font-size: 12pt; font-weight:700">● 取变体显示文本 </font><br/>	
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">简单来说，本方法的作用和<a href="#ycj3"><b>“变体显示文本”</b></a>一致，只是所写的代码不同而已。</p>
+	<p align="left"><img border="0" src="img/148.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">可以看到，本方法调用了<b>“语言区域类.取用户首选区域()”</b>.</p>
+    <p align="left">通过这样的方式才能够获取到<b>“变体文本”</b>，此处不再演示结果。</p>
+	<p align="left"><img border="0" src="img/149.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="yqgjxswb"></a>
+<font style="font-size: 12pt; font-weight:700">● 取国家显示文本</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法和<b>“取变体显示文本”</b>一致，也有一个同样的参数，当然代码编写也同样一致。</p>
+	<p align="left">最终的结果会取出<b>“国家名称”</b>，此处不再详细讲解。</p>
+	<p align="left"><img border="0" src="img/150.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="yqxswb"></a><a name="yqyyxswb"></a>
+<font style="font-size: 12pt; font-weight:700">● 取显示文本</font><br/>
+	
+<font style="font-size: 12pt; font-weight:700">● 取语言显示文本</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">以上两个方法同样如此，不再详细介绍。</p>
+</blockquote>
+
+
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="ysfxt"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否相同</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是判断两个<b>“语言类”</b>是否相同。</p>
+	<p align="left">相同返回<b>“真”</b>，否则<b>“返回假”</b>。</p>
+	<p align="left"><img border="0" src="img/151.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<blockquote>
+    <p align="left">代码参考如下，最终结果必然会提示<b>“不相同”</b>。</p>
+	<p align="left"></p>
+	<p align="left"><img border="0" src="img/152.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="yqsygjdm"></a>
+<font style="font-size: 12pt; font-weight:700">● 取所有国家代码</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法的作用就是取出<b>“所有的国家代码”</b>，返回一个<b>“文本数组”</b>。</p>
+	<p align="left">注意：本方法取出的是<b>“2字母”</b>的国家代码。</p>
+	<p align="left"><img border="0" src="img/153.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">定义一个<b>“文本型[]”</b>数组变量，和一个<b>“计次”</b>的整数变量。</p>
+	<p align="left">然后调用本方法赋值给数组变量。</p>
+	<p align="left">最后利用<b>“循环”</b>方法取出<b>“所有国家代码”</b>显示到<b>“编辑框1”</b>中。</p>
+	<p align="left"><img border="0" src="img/154.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+    <p align="left">可以看到有非常多的国家代码被取出，每一个代码都代表着一个国家。</p>
+	<p align="left"><img border="0" src="img/155.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="qsyaz"></a>
+<font style="font-size: 12pt; font-weight:700">●  取所有安装区域</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法的作用就是取出所有的语言，并返回给一个<b>“语言区域类”</b>数组对象。</p>
+	
+	<p align="left"><img border="0" src="img/156.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">代码和<b>“取所有国家代码”</b>一致，都可以利用<b>“循环”</b>方法取出自己想取出的数据。</p>
+	<p align="left"><img border="0" src="img/157.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+    <p align="left">可以看到，最终取出了各种国家语言。</p>
+	<p align="left"><img border="0" src="img/158.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="qsyyy"></a>
+<font style="font-size: 12pt; font-weight:700">● 取所有语言代码 </font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+    <p align="left">本方法的作用就是用来取出所有的<b>“语言代码”</b>，代码编写参考上一个方法，此处不再详细介绍。</p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="hqyyqy"></a>
+<font style="font-size: 12pt; font-weight:700">● 获取已有区域信息 </font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法是通过<b>“已有语言区域类型”</b>中定义的常量值来创建<b>“语言区域类”</b>对象。</p>
+	<p align="left">具体有那些已有类型，可以点击<b>“已有语言区域类型”</b>查看。</p>
+	<p align="left"><img border="0" src="img/159.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">例如：参数中填写<b>“已有语言区域类型.法语_加拿大”</b>。</p>
+	<p align="left">然后可以调用<b>“显示文本”</b>看最终结果。</p>
+	<p align="left"><img border="0" src="img/160.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+    <p align="left">最后可以看到显示<b>“法文(加拿大)”</b>。</p>
+    <p align="left">当然也可以调用<b>“国家代码”</b>读属性，去读取加拿大的国家代码。</p>
+	<p align="left"><img border="0" src="img/161.png" ></p>
+</blockquote>
+	
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

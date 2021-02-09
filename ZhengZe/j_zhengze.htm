@@ -1,0 +1,597 @@
+
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>正则表达式支持</h4></li>
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.正则表达式类<span>(可收缩)</span></h6></li>
+		<ol id="new1">
+           <li><blockquote><a href="#zzfg">1.编译</a></blockquote></li>
+          <li><blockquote><a href="#zzfg">2.正则分割</a></blockquote></li>
+          <li><blockquote><a href="#zzsfwqpp">3.是否完全匹配</a></blockquote></li>
+          <li><blockquote><a href="#zzcjppq">4.创建匹配器</a></blockquote></li>
+          <li><blockquote><a href="#zzbdswb">5.表达式文本(读)</a></blockquote></li>
+		</ol>
+ <li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new2')" >二.正则匹配器类<span>(可收缩)</span></h6></li>
+		<ol id="new2">
+           <li><blockquote><a href="#zzcjppq">1.全部替换</a></blockquote></li>
+          <li><blockquote><a href="#cqyscz">2.从区域首查找</a></blockquote></li>
+          <li><blockquote><a href="#cqyscz">3.取匹配文本段</a></blockquote></li>
+          <li><blockquote><a href="#czdwzkscz">4.从指定位置查找</a></blockquote></li>
+          <li><blockquote><a href="#qppwbqswz">5.取匹配文本段起始位置</a></blockquote></li>
+          <li><blockquote><a href="#qppwbqswz">6.取匹配文本段结束位置</a></blockquote></li>
+          <li><blockquote><a href="#zzqzppz">7.取子匹配组</a></blockquote></li>
+          <li><blockquote><a href="#qzppzqswz">8.取子匹配组起始位置</a></blockquote></li>
+          <li><blockquote><a href="#qzppzqswz">9.取子匹配组结束位置</a></blockquote></li>
+          <li><blockquote><a href="#zzczxyg">10.查找下一个</a></blockquote></li>
+          <li><blockquote><a href="#zzczxyg">11.已到文本尾</a></blockquote></li>
+          <li><blockquote><a href="#zzwbyyth">12.文本引用替换</a></blockquote></li>
+          <li><blockquote><a href="#zthsppwb">13.替换首匹配文本</a></blockquote></li>
+          <li><blockquote><a href="#ztjwwb">14.添加尾文本</a></blockquote></li>
+          <li><blockquote><a href="#ztjthwb">15.添加替换文本</a></blockquote></li>
+          <li><blockquote><a href="#zzbds">16.置表达式</a></blockquote></li>
+          <li><blockquote><a href="#zzchongzhi">17.重置</a></blockquote></li>
+          <li><blockquote><a href="#chognzhi2">18.重置2</a></blockquote></li>
+          <li><blockquote><a href="#zczxdqy">19.重置限定区域</a></blockquote></li>
+          <li><blockquote><a href="#zczxdqy">20.限定区域起始位置</a></blockquote></li>
+          <li><blockquote><a href="#zczxdqy">21.限定区域结束位置</a></blockquote></li>
+          <li><blockquote><a href="#zzzppzs">22.子匹配组数(读)</a></blockquote></li>
+		</ol>		
+		
+	</ol>
+</ul>
+</div>
+
+
+<p align="left">
+<h2>正则表达式操作实例讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+<a name="zbgz"></a>    
+     
+<font style="font-size: 12pt; font-weight:700">● 帮助说明</font><br/>
+<br/>
+<blockquote>
+<p align="left">本教程针对正则表达式各种操作进行了讲解说明。</p>
+<p align="left">本教程所有方法均位于<strong>“正则表达式支持”</strong>模块中。</p>
+ <!-- <p align="left"><img border="0" src="img/1.png" ></p>-->
+</blockquote>	
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="zzfg"></a>
+<h2>一、正则表达式类</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 编译</font><br>
+<font style="font-size: 12pt; font-weight:700">● 正则分割</font>
+	<p align="left"></p>
+<p align="left"><b>“编译”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过<a href="https://baike.baidu.com/item/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/1700215"><b>“正则表达式文本”</b></a>创建表达式对象，失败返回空对象。</p>
+	<p align="left">注意：只有创建了当前<b>“正则表达式类”</b>对象后，才能对指定文本进行正则操作。</p>
+	<p align="left">参数1：填写正则表达式文本，务必保证正确，否则会创建失败。</p>
+	<p align="left">参数2：调用方式<b>“正则匹配标志.XXX”</b>，根据实际需求填写匹配标志即可。</p>
+	<p align="left"><img border="0" src="img/334.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“正则分割”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过<b>“编译()”</b>方法创建的正则对象调用本方法，即可实现正则分割，返回分割后的文本数组。</p>
+	<p align="left">参数1：动态调用时忽略本参数。</p>
+	<p align="left">参数2：填写要分割的文本。</p>
+	<p align="left">参数3：填写0表示匹配全部，否则代表匹配次数。</p>
+	<p align="left"><img border="0" src="img/335.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义类型为<b>“正则表达式类”</b>变量，勾选参考。调用<b>“编译()”</b>方法赋值给此变量。</p>
+	<p align="left">2、参数中填写<b>“[\u4e00-\u9fa5]+”</b>表示匹配中文。</p>
+	<p align="left">3、 通过<b>“正则对象”</b>调用<b>“正则分割()”</b>方法，分割带有中文的字符串，赋值给定义的文本数组变量。</p>
+	<p align="left">4、 最后通过<b>“数组到文本()”</b>方法，将其转换成文本显示在编辑框中。</p>
+	<p align="left"><img border="0" src="img/336.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/337.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="zzsfwqpp"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否完全匹配</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本方法可判断<b>“正则表达式”</b>是否能完全匹配<b>“输入的文本”</b>。</p>
+    <p align="left">完全匹配返回真，否则返回假。</p>
+    <p align="left">参数1：填写正则表达式文本。</p>
+    <p align="left">参数2：填写要匹配的文本。</p>
+	<p align="left"><img border="0" src="img/338.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、调用<b>“是否完全匹配()”</b>方法赋值给定义的逻辑变量。</p>
+    <p align="left">2、通过判断逻辑变量反馈对应结果。</p>
+	<p align="left"><img border="0" src="img/339.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+    <p align="left">例程中的参数1的<b>“正则表达式”</b>的意思是匹配中文字符。</p>
+    <p align="left">而参数2输入的字符中带有除中文外的其它字符，因此此处编辑框内容显示<b>“有多余内容”</b>。</p>
+	<p align="left"><img border="0" src="img/340.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="zzbdswb"></a>
+<font style="font-size: 12pt; font-weight:700">● 表达式文本(读)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+     <p align="left">通过本读属性可读取<b>“编译()”</b>方法中输入的表达式文本。</p>
+	<p align="left"><img border="0" src="img/341.png" >
+    </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+     <p align="left">1、调用<b>“编译()”</b>方法，随便编译一个正则表达式。</p>
+     <p align="left">2、调用<b>“表达式文本”</b>读属性，将编译的表达式文本取出，显示在编辑框中。</p>
+	<p align="left"><img border="0" src="img/342.png" >
+    </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/343.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="zzcjppq"></a>
+	<font style="font-size: 12pt; font-weight:700">● 创建匹配器</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 全部替换</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“创建匹配器”</b>帮助文档：</p>
+<blockquote>  
+<p align="left">通过本方法可创建正则表达式的匹配器对象，用于对指定文本进行匹配，返回正则匹配器对象。</p>
+<p align="left">参数1：提供正则表达式对象，动态调用时省略。</p>
+<p align="left">参数2：提供要匹配的文本。</p>
+<p align="left">注意：本方法必须调用<b>“编译()”</b>方法返回<b>“正则表达式类”</b>对象后才能调用本方法。</p>
+	<p align="left"><img border="0" src="img/344.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“全部替换”</b>帮助文档：</p>
+<blockquote>  
+<p align="left">本方法通过<b>“创建匹配器()”</b>方法返回匹配器对象后才能调用本方法。</p>
+<p align="left">作用是用来对匹配文本进行替换。</p>
+<p align="left">例如：匹配一串文本中所有的中文字符，调用本方法替换成<b>“1”</b>，最后所有的中文都将替换成<b>“1”</b>。</p>
+	<p align="left"><img border="0" src="img/345.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>  
+<p align="left">1、调用<b>“编译()”</b>方法，编译一个正则表达式对象。</p>
+<p align="left">2、通过编译好的正则表达式对象，调用<b>“创建匹配器()”</b>方法，创建一个匹配器对象。</p>
+<p align="left">3、最后通过<b>“匹配对象”</b>调用<b>“全部替换()”</b>方法，赋值给编辑框1的内容。</p>
+	<p align="left"><img border="0" src="img/346.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>  
+<p align="left">指定文本字符串的所有中文字符都将替换成指定文本。</p>
+	<p align="left"><img border="0" src="img/347.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="cqyscz"></a>
+<h2>二、正则匹配器类</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 从区域首查找</font><br>
+<font style="font-size: 12pt; font-weight:700">● 取匹配文本段</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“从区域首查找”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，如果未指定限定区域，则从指定文本的首部开始查找。</p>
+<p align="left">找到返回真，未找到返回假。</p>
+	<p align="left"><img border="0" src="img/348.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“取匹配文本段”</b>帮助文档：</p>
+<blockquote>
+<p align="left">通过本方法可取出找到的文本。</p>
+	<p align="left"><img border="0" src="img/349.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left"> 1、通过<b>“编译()”</b>方法创建正则表达式对象。</p>
+<p align="left"> 2、调用<b>“创建匹配器()”</b>方法创建指定文本的匹配对象。</p>
+<p align="left"> 3、判断<b>“从区域首查找()”</b>方法的返回值是否等于真，如果等于则调用<b>“取匹配文本段()”</b>取出匹配文本。</p>
+	<p align="left"><img border="0" src="img/350.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/351.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<a name="czdwzkscz"></a>
+<font style="font-size: 12pt; font-weight:700">● 从指定位置查找</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，从指定文本开始匹配。</p>
+    <p align="left">返回真表示找到匹配文本，返回假表示没有找到。</p>
+	<p align="left"><img border="0" src="img/352.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">在<a href="#cqyscz"><b>“从区域首查找()”</b></a>方法代码基础上修改成本方法，并填写一个索引参数即可。</p>
+	<p align="left"><img border="0" src="img/353.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+    <p align="left">索引3的位置为字母<b>“b”</b>，因此返回<b>“软”</b>字。</p>
+	<p align="left"><img border="0" src="img/354.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="qppwbqswz"></a>
+<font style="font-size: 12pt; font-weight:700">● 取匹配文本段起始位置</font><br>
+<font style="font-size: 12pt; font-weight:700">● 取匹配文本段结束位置</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过以上两个方法可以取出匹配文本的起始和结束位置。</p>
+    <p align="left">注意：未处于匹配状态将会返回-1。</p>
+	<p align="left"><img border="0" src="img/355.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、调用<b>“编译()”</b>方法创建正则表达式对象。</p>
+    <p align="left">2、调用<b>“创建匹配器()”</b>方法创建匹配器对象。</p>
+    <p align="left">3、调用<b>“从指定位置查找()”</b>方法，开始匹配文本。</p>
+    <p align="left">4、将找到的<b>“起始和结束”</b>位置显示在<b>“编辑框1”</b>中。</p>
+	<p align="left"><img border="0" src="img/356.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+    <p align="left">索引值从0开始，因此匹配到第一个中文字符后，起始位置为<b>“1”</b>结束位置为<b>“2”</b>。</p>
+	<p align="left"><img border="0" src="img/357.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="zzqzppz"></a>
+<font style="font-size: 12pt; font-weight:700">● 取子匹配组</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">当匹配文本成组出现时，通过本方法可取出组中的子文本。</p>
+    <p align="left">索引值0：取出要匹配的文本。</p>
+    <p align="left">索引值1：取出第一个子文本，剩下的以此类推。</p>
+    <p align="left">注意：索引值必须<b>“大于0”</b>小于<b>“子匹配组数”</b>属性值。</p>
+	<p align="left"><img border="0" src="img/358.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、调用<b>“编译()”</b>方法创建正则表达式对象（注：<b>“(.*?)”</b>为通配符，匹配任意字符）。</p>
+    <p align="left">2、调用<b>“创建匹配器()”</b>方法创建匹配器对象。</p>
+    <p align="left">3、调用<b>“从区域首查找()”</b>方法，开始匹配文本。</p>
+    <p align="left">4、最后调用<b>“取子匹配组()”</b>方法取出所有索引的子文本。 </p>
+	<p align="left"><img border="0" src="img/359.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/360.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="qzppzqswz"></a>
+<font style="font-size: 12pt; font-weight:700">● 取子匹配组起始位置</font><br>
+<font style="font-size: 12pt; font-weight:700">● 取子匹配组结束位置</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">以上两个方法用于取出匹配组文本的<b>“开始和结束”</b>位置。</p>
+	<p align="left"><img border="0" src="img/361.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">在上一个方法的基础上增加以上两个方法即可。</p>
+	<p align="left"><img border="0" src="img/362.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/363.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="zzzppzs"></a>
+<font style="font-size: 12pt; font-weight:700">● 子匹配组数(读)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本读属性用于取出匹配组数（即匹配到的子文本数量）。</p>
+	<p align="left"><img border="0" src="img/395.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、编译正则表达式创建正则对象。</p>
+    <p align="left">2、创建匹配器对象。</p>
+    <p align="left">3、调用当前读属性取出自匹配组数。</p>
+	<p align="left"><img border="0" src="img/396.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/397.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="zzczxyg"></a>
+<font style="font-size: 12pt; font-weight:700">● 查找下一个</font><br>
+<font style="font-size: 12pt; font-weight:700">● 已到文本尾</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“查找下一个”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">通过本方法可查找下一个文本匹配段，返回真表示找到了，否则返回假。</p>
+	<p align="left"><img border="0" src="img/364.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“已到文本尾”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">通过本方法可判断当前匹配是否已经到了文本尾部，返回真表示达到尾部。</p>
+	<p align="left"><img border="0" src="img/365.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、创建表达式对象后创建匹配器对象。</p>
+    <p align="left">2、调用<b>“从指定位置查找()”</b>方法，取出被匹配的文本。</p>
+    <p align="left">3、虽然提供的匹配文本只有一个中文字符，但是仍然需要调用<b>“查找下一个()”</b>方法移动匹配位置。</p>
+    <p align="left">4、最后调用<b>“已到文本尾()”</b>方法，判断是否到文本尾部。</p>
+	<p align="left"><img border="0" src="img/366.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/367.gif" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<a name="zzwbyyth"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本引用替换</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法可将指定文本进行转义处理，返回处理后的文本。</p>
+	<p align="left"><img border="0" src="img/368.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">调用本方法对<b>“$10”</b>进行转义处理后显示在编辑框1中。</p>
+	<p align="left"><img border="0" src="img/369.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/370.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="zthsppwb"></a>
+<font style="font-size: 12pt; font-weight:700">● 替换首匹配文本</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本方法可对匹配到的首个文本进行替换，替换成参数中的指定文本。</p>
+    <p align="left">返回替换后的结果文本。</p>
+	<p align="left"><img border="0" src="img/371.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、创建正则表达式对象。</p>
+    <p align="left">2、通过创建的正则对象，创建匹配器对象。</p>
+    <p align="left">3、判断<b>“从区域首查找()”</b>方法的返回值是否等于真，然后调用<b>“替换首匹配文本()”</b>方法，进行文本替换。</p>
+	<p align="left"><img border="0" src="img/372.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图： </p>
+<blockquote>
+	<p align="left">最后会将原文本中的<b>“火”</b>替换成<b>“1”</b>。</p>
+	<p align="left"><img border="0" src="img/373.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="ztjwwb"></a>
+<font style="font-size: 12pt; font-weight:700">● 添加尾文本</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法的作用就是将<b>“创建匹配器()”</b>方法中的<b>“输入文本”</b>添加到指定文本缓冲区的尾部。</p>
+    <p align="left">添加后返回一个新的文本缓冲区对象。</p>
+	<p align="left"><img border="0" src="img/374.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、通过一个表达式文本创建正则对象。</p>
+    <p align="left">2、通过正则对象创建匹配器。</p>
+    <p align="left">3、定义类型为<b>“安全文本缓冲区”</b>的变量勾选参考，调用<b>“创建安全文本缓冲区()”</b>方法赋值给定义的变量。</p>
+    <p align="left">4、再次定义一个类型为<b>“安全文本缓冲区”</b>的变量，勾选参考。</p>
+    <p align="left">5、将<b>“缓冲区”</b>变量填写到<b>“添加尾文本()”</b>的参数中，并赋值给<b>“缓冲区2”</b>变量。</p>
+    <p align="left">6、最后通过<b>“缓冲区2”</b>调用<b>“取子文本2()”</b>方法取出缓冲区中的文本，赋值给编辑框。</p>
+	<p align="left"><img border="0" src="img/375.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图： </p>
+<blockquote>
+	<p align="left"><img border="0" src="img/376.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="ztjthwb"></a>
+<font style="font-size: 12pt; font-weight:700">● 添加替换文本</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">简单来说就是匹配到文本后，对匹配文本进行替换，并添加到文本缓冲对象中。</p>
+    <p align="left">注意：当前匹配文本后面的文本不会添加到缓冲对象中。</p>
+    <p align="left">例如：<b>“123火abc”</b>进行正则匹配中文，匹配到<b>“火”</b>替换成<b>“山”</b>，并添加到文本缓冲区中。</p>
+    <p align="left">最终从文本缓冲区中取文本只会取出<b>“123山”</b>，<b>“abc”</b>并不会添加到文本缓冲区中。</p>
+	<p align="left"><img border="0" src="img/377.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">按照上述例如编写例程进行实践操作，针对<b>“123火abc”</b>进行匹配中文操作。</p>
+    <p align="left">1、定义<b>“正则匹配器类”</b>变量，调用<b>“编译().创建匹配器()”</b>方法赋值给此变量，参数填写上述例如中的数据。</p>
+    <p align="left">2、定义<b>“安全文本缓冲区”</b>变量，将此变量加入<b>“添加替换文本()”</b>方法的参数中，并且指定替换文本。</p>
+    <p align="left">3、调用<b>“文本缓冲.取子文本2()”</b>方法取出缓冲区中的文本赋值给编辑框1的内容。</p>
+	<p align="left"><img border="0" src="img/378.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/379.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><strong>如何实现将尾文本一起返回？</strong></p>
+<blockquote>
+	<p align="left">其实很简单，只需要利用<b>“添加尾文本()”</b>方法即可实现。 </p>
+	<p align="left">如下图所示：</p>
+	<p align="left"><img border="0" src="img/380.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/381.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="zzbds"></a>
+<font style="font-size: 12pt; font-weight:700">● 置表达式</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本方法可重置正则表达式。</p>
+    <p align="left">例如：表达式对象原为匹配中文字符，通过此方法可修改成匹配英文字母或者其它内容。</p>
+	<p align="left"><img border="0" src="img/382.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、编译表达式创建匹配器对象，匹配<b>“输入文本”</b>中的<b>“中文字符”</b>。</p>
+    <p align="left">2、调用<b>“置表达式()”</b>方法重置表达式，匹配英文字母。</p>
+    <p align="left">3、查找下一个后，调用<b>“取匹配文本段()”</b>方法取出匹配文本。</p>
+	<p align="left"><img border="0" src="img/383.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/384.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="zzchongzhi"></a>
+<font style="font-size: 12pt; font-weight:700">● 重置</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本方法会重置当前匹配状态。</p>
+    <p align="left">下次调用<b>“查找下一个()”</b>时，会从头开始匹配。</p>
+	<p align="left"><img border="0" src="img/385.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、创建表达式匹配中文。</p>
+    <p align="left">2、匹配两次后调用<b>“重置()”</b>方法，再次匹配会从头开始。</p>
+	<p align="left"><img border="0" src="img/386.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/387.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="chognzhi2"></a>
+<font style="font-size: 12pt; font-weight:700">● 重置2</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法和<b>“重置()”</b>不同之处在于，本方法可以重置<b>“输入文本”</b>。</p>
+	<p align="left"><img border="0" src="img/388.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">将<b>“重置()”</b>方法修改为<b>“重置2()”</b>并填写参数即可。</p>
+	<p align="left"><img border="0" src="img/389.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图： </p>
+<blockquote>
+	<p align="left"><img border="0" src="img/390.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="zczxdqy"></a>
+<font style="font-size: 12pt; font-weight:700">● 重置限定区域</font><br>
+<font style="font-size: 12pt; font-weight:700">● 限定区域起始/结束位置</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“重置限定区域”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">通过本方法可以限定匹配区域。</p>
+    <p align="left">参数2、3分别填写起始和结束位置，索引从0开始。</p>
+	<p align="left"><img border="0" src="img/391.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“限定区域起始/结束位置(读)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">以上两个读属性，可以读取限定区域起始和结束位置。</p>
+	<p align="left"><img border="0" src="img/392.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、创建正则表达式匹配中文。</p>
+    <p align="left">2、调用<b>“重置限定区域()”</b>方法，限定匹配区域。</p>
+    <p align="left">3、查找下一个取出匹配文本和限定区域的起始/结束位置。</p>
+	<p align="left"><img border="0" src="img/393.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/394.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

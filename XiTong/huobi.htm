@@ -1,0 +1,271 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new2')" >一.货币信息类<span>(可收缩)</span></h6></li>
+		<ol id="new2">
+           <li><blockquote><a href="#hbxxl">1.本类说明</a></blockquote></li>
+          <li><blockquote><a href="#hbcjzqy">2.创建自区域</a></blockquote></li>
+          <li><blockquote><a href="#hbcjzhbdm">3.创建自货币代码</a></blockquote></li>
+          <li><blockquote><a href="#hbqkyhbjh">4.取可用货币集合</a></blockquote></li>
+           <li><blockquote><a href="#hbqzdqymc">5.取指定区域名称</a></blockquote></li>
+           <li><blockquote><a href="#hbqzdqyfh">6.取指定区域符号</a></blockquote></li>
+           <li><blockquote><a href="#hbxiaoshu">7.小数位(读)</a></blockquote></li>
+           <li><blockquote><a href="#hbszdm">8.数字代码(读)</a></blockquote></li>
+           <li><blockquote><a href="#hbcjzqy">9.显示文本(读)</a></blockquote></li>
+           <li><blockquote><a href="#hbcjzhbdm">10.符号(读)</a></blockquote></li>
+           <li><blockquote><a href="#hbhbdm">11.货币代码(读)</a></blockquote></li>
+		</ol>	
+		
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>货币信息类实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+<a name="hbxxl"></a>
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>	
+	<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">本类和<a href="#yuyanquyu"><b>“语言区域类”</b></a>类似，由其ISO 4217货币代码识别货币信息。</p>
+	<p align="left">
+访问<a href="http://www.iso.org/iso/home/standards/currency_codes.htm">(http://www.iso.org/iso/home/standards/currency_codes.htm)</a>了解更多信息.</p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<a name="hbcjzqy"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建自区域</font><br/>	
+<font style="font-size: 12pt; font-weight:700">● 显示文本(读)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“创建自区域”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过<a href="#yuyanquyu"><b>“语言区域类”</b></a>创建当前货币信息对象，失败返回空对象。</p>
+	<p align="left"><img border="0" src="img/266.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“显示文本(读)”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">本读属性的作用，将当前货币对象转换成<b>“货币名称”</b>。</p>
+	<p align="left">例如：当前手机为中文，将显示<b>“人民币”</b>。</p>
+	<p align="left"><img border="0" src="img/267.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">1、定义类型为<b>“货币信息类”</b>的变量，勾选参考。</p>
+	<p align="left">2、调用<b>“创建自区域()”</b>方法创建当前对象，参数填写<a href="#yqyhsxqy"><b>“语言区域类.取用户首选区域()”</b></a>。</p>
+	<p align="left">3、调用<b>“显示文本”</b>读属性，读取当前货币名称。</p>
+	<p align="left"><img border="0" src="img/268.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="img/269.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="hbcjzhbdm"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建自货币代码</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 符号(读)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“创建自货币代码”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法是通过<a href="https://baike.baidu.com/item/%E8%B4%A7%E5%B8%81%E4%BB%A3%E7%A0%81/7467182" target="_blank"><b>“货币代码”</b></a>创建当前货币信息。</p>
+	<p align="left">货币代码指一国货币在交易中为了方便而使用的代码。</p>
+	<p align="left">一般以三个大写的英文字母表示，其中前两个字一般代表国名，后一个字一般代表货币名。</p>
+	<p align="left">例如：人民币为<b>“CNY”</b>，美元为<b>“USD”</b>。</p>
+	<p align="left">创建失败返回空对象。</p>
+	<p align="left"><img border="0" src="img/270.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“符号(读)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本属性可读取货币符号。</p>
+	<p align="left">例如：人民币为<b>“￥”</b>，美元为<b>“$”</b>。</p>
+	<p align="left"><img border="0" src="img/271.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义类型为<b>“货币信息类”</b>的变量，勾选参考。</p>
+	<p align="left">2、调用<b>“创建自货币代码()”</b>方法创建当前对象。</p>
+	<p align="left">3、调用<b>“符号”</b>读属性，读取货币符号。</p>
+	<p align="left"><img border="0" src="img/272.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/273.png" ></p>
+</blockquote>
+
+	
+<p align="left">&nbsp;</p>
+<a name="hbqkyhbjh"></a>
+<font style="font-size: 12pt; font-weight:700">● 取可用货币集合</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可取出所有货币信息，返回值类型为<b>“货币数据集类”</b>，本类继承自<a href="#jihemuban"><b>“集合模板类”</b></a>。</p>
+	<p align="left"><img border="0" src="img/274.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义类型为<b>“货币数据集类”</b>变量，勾选参考，调用当前方法赋值给此变量。</p>
+	<p align="left">2、定义类型为<b>“货币枚举器类”</b>变量，勾选参考，调用<b>“创建枚举器()”</b>方法赋值给此变量。</p>
+	<p align="left">3、利用<b>“判断循环()”</b>判断是否有下一个成员。</p>
+	<p align="left">4、定义<b>“货币信息类”</b>变量，调用<b>“取下一成员()”</b>强转类型后赋值给当前变量。</p>
+	<p align="left">5、调用<b>“货币信息.显示文本”</b>可取出所有的货币名称。</p>
+	<p align="left"><img border="0" src="img/275.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">当前所有可用的货币名称显示在编辑框中。</p>
+	<p align="left"><img border="0" src="img/276.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="hbqzdqymc"></a>
+<font style="font-size: 12pt; font-weight:700">● 取指定区域名称</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">通过本方法可取出<b>“指定语言环境”</b>下本货币对象所使用的货币名称。 </p>
+	<p align="left">注意：本方法需要<b>“安卓4.4.2”</b>才可以执行。</p>
+	<p align="left"><img border="0" src="img/277.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">1、通过货币代码创建当前货币对象。</p>
+	<p align="left">2、通过用户首选语言区域，取出当前货币代码的货币显示名称。</p>
+	<p align="left"><img border="0" src="img/278.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/279.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="hbqzdqyfh"></a>
+<font style="font-size: 12pt; font-weight:700">● 取指定区域符号</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本方法和<b>“取指定区域名称”</b>类似，不同之处为，本方法是用来取出货币符号。</p>
+	<p align="left"><img border="0" src="img/280.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">1、通过货币代码创建当前货币对象。</p>
+  <p align="left">2、通过用户首选语言区域，取出当前货币代码的货币符号。</p>
+	<p align="left"><img border="0" src="img/281.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/282.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="hbxiaoshu"></a>
+<font style="font-size: 12pt; font-weight:700">● 小数位(读)</font>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">每种货币都有属于自己的小数位，即货币保留几位小数。</p>
+    <p align="left">例如：人民币保留两位小数，欧元也是两位，日元为零。</p>
+    <p align="left">注意：本属性需要<b>“安卓7.0”</b>才可以执行。</p>
+  <p align="left"><img border="0" src="img/283.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">1、通过货币代码创建当前<b>“货币信息类”</b>对象。</p>
+    <p align="left">2、调用当前属性读取当前货币对象的小数位。</p>
+	<p align="left"><img border="0" src="img/284.png" ></p>
+</blockquote>
+		
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/285.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="hbszdm"></a>
+<font style="font-size: 12pt; font-weight:700">● 数字代码(读)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left"><b>“ISO 4217”</b>是国际标准化组织推出的<b>“货币及基金代码之表示法”</b></p>
+     <p align="left">每个货币有二种代码，就是常用的三位字母代码和较少用的三位数字代码。</p>
+  <p align="left">本读属性的作用就是取出三位数的数字代码。</p>
+     <p align="left">注意：本属性需要安卓7.0才可以执行。</p>
+	<p align="left"><img border="0" src="img/286.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">1、通过字母货币代码创建当前货币对象。</p>
+     <p align="left">2、调用当前属性读取对应的数字代码。</p>
+	<p align="left"><img border="0" src="img/287.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/288.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="hbhbdm"></a>
+<font style="font-size: 12pt; font-weight:700">● 货币代码(读)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本属性的作用，用来读取当前货币对象的<b>“字母货币代码”</b>。</p>
+	<p align="left"><img border="0" src="img/289.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+     <p align="left">1、通过<b>“取用户首选区域”</b>创建当前货币对象。</p>
+  <p align="left">2、调用当前属性读取对应的字母货币代码。</p>
+	<p align="left"><img border="0" src="img/290.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/291.png" ></p>
+</blockquote>
+
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,647 @@
+
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.JSON对象类 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+            <li><blockquote><a href="#">1.本类说明</a></blockquote></li>  
+		  <li><blockquote><a href="#jsondwb">2.置入小数值</a></blockquote></li>
+		  <li><blockquote><a href="#jsondwb">3.到可读文本</a></blockquote></li>
+           <li><blockquote><a href="#jsonzrzsz">4.置入整数值</a></blockquote></li>
+             <li><blockquote><a href="#jsonzrzsz">5.置入文本值</a></blockquote></li>
+            <li><blockquote><a href="#jsonzrzsz">6.置入逻辑值</a></blockquote></li>
+            <li><blockquote><a href="#jsonzrzsz">7.置入长整数值</a></blockquote></li>
+			<li><blockquote><a href="#jsondxz">8.置入对象值</a></blockquote></li>
+            <li><blockquote><a href="#jsonzrsj">9.取小数值</a></blockquote></li>
+            <li><blockquote><a href="#jsonzrsj">10.取整数值</a></blockquote></li>
+            <li><blockquote><a href="#jsonzrsj">11.取文本值</a></blockquote></li>
+            <li><blockquote><a href="#jsonzrsj">12.取逻辑值</a></blockquote></li>
+            <li><blockquote><a href="#jsonzrsj">13.取长整数值</a></blockquote></li>
+            <li><blockquote><a href="#jsonzrsj">14.创建自文本数据</a></blockquote></li>
+            <li><blockquote><a href="#jsonquzhi">15.取值</a></blockquote></li>
+            <li><blockquote><a href="#jsonqdxz">16.取对象值</a></blockquote></li>
+            <li><blockquote><a href="#chengyuanshu">17.成员数(读)</a></blockquote></li>
+            <li><blockquote><a href="#cjzsz1">18.创建自数组</a></blockquote></li>
+            <li><blockquote><a href="#jscjzjxdx">19.创建自解析对象</a></blockquote></li>
+            <li><blockquote><a href="#jsondsz">20.到JSON数组</a></blockquote></li>
+            <li><blockquote><a href="#jsonwbzy">21.文本转义</a></blockquote></li>
+            <li><blockquote><a href="#sfyyzdsj">22.是否拥有指定数据</a></blockquote></li>
+            <li><blockquote><a href="#jsonyczddx">23.移除指定对象</a></blockquote></li>
+            <li><blockquote><a href="#jsonzhuijia">24.追加指定值</a></blockquote></li>
+            <li><blockquote><a href="#jsonjianming">25.键名枚举器</a></blockquote></li>
+            <li><blockquote><a href="#jsonpanduan">26.判断键值类型</a></blockquote></li>
+		</ol>		
+	</ol>
+</ul>
+</div>
+
+<p align="left">
+<h2>JSON对象类操作实例讲解</h2><a name="zbgz"></a> <a name="jsonduixiang"></a>  
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 帮助说明</font><br/>
+<br/>
+<blockquote>
+<p align="left">本类位于<strong>“JSON数据访问支持”</strong>模块中。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<h2>一、JSON对象类</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">JSON是一种轻量级的数据交换格式，可以理解为易语言当中的<b>“写配置项”</b>功能。</p>
+	<p align="left">当然JSON功能要更多,可以多层嵌套存储一些复杂的数据。</p>
+	<p align="left">JSON的存储要使用<b>“键名”</b>和<b>“键值”</b>，大致数据格式如下图。 </p><br>
+	<p align="left">1、以精易网页助手2.66版本为准。</p>
+	<blockquote>
+	<p align="left">图左：为<strong>JOSN对象类</strong>文本代码。</p>
+	<p align="left">图右：为解析到树形框后显示效果，更加方便理解JSON格式。</p>
+	</blockquote>
+	<p align="left">2、<strong>JSON对象类</strong>标准格式为以<strong>“{”</strong>开始，最终以<strong>“}”</strong>结尾。</p>
+	<blockquote><p align="left">键名：用英文双引号包含。</p>
+	  <p align="left">键值：可以使用<strong>“文本”</strong>，<strong>“整数”</strong>，<strong>“小数”</strong>，<strong>“长整数”</strong>，<strong>“逻辑”</strong>（true为真、false为假）</p>
+	  <p align="left">以及<strong>“对象键值”</strong>（可使用json对象类或json数组类当键值）。</p>
+	</blockquote>
+	<p align="left">3、利用精易网页助手解析到树型框后（图右），凡是以<strong>“象”</strong>文字开始的代表为<strong>“JSON对象类”</strong>。</p>
+	<blockquote>
+	<p align="left">以<strong>“组”</strong>文字开始的代表为<strong>“JSON数组类”</strong>。 </p>
+	</blockquote>	
+	
+	<p align="left"></p>
+	<p align="left"><img border="0" src="images/162.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<a name="jsondwb"></a>
+<font style="font-size: 12pt; font-weight:700">● 到可读文本</font><br>
+<font style="font-size: 12pt; font-weight:700">● 置入小数值</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">“到可读文本”帮助文档：</p>
+<blockquote>
+	<p align="left">本方法可将json对象转换为可读的文本数据。</p>
+	<p align="left">参数1：填写要操作的json对象，通过变量名调用本方法时不需要写本参数。</p>
+	<p align="left">参数2：填写json文本缩进的空格数。</p>
+	<p align="left"><img border="0" src="images/185.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+	<p align="left">“置入小数值”帮助文档：</p>
+<blockquote>
+	<p align="left">将某个小数值置入到当前JSON对象类中，失败返回空对象。</p>
+	<p align="left"><img border="0" src="images/1.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义类型为<b>“JSON对象类”</b>变量，调用<b>“置入小数值()”</b>方法置入一个小数。</p>
+	<p align="left">通过“JSON对象”变量调用“到可读文本()”方法，将json转换成文本显示在编辑框中。</p>
+	<p align="left"><img border="0" src="images/186.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="images/187.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+	
+	
+<a name="jsonzrzsz"></a>
+<font style="font-size: 12pt; font-weight:700">● 置入整数值</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 置入文本值</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 置入逻辑值</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 置入长整数值</font>
+<p align="left">&nbsp;</p>
+<p align="left">以上几个方法就是用于置入不同类型的数据到JSON对象中。</p>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+   <p align="left">1、定义类型为“JSON对象类”的变量。</p>
+   <p align="left">2、分别调用以上方法置入数据。</p>
+   <p align="left">3、出了“到可读文本()”方法外，“到文本()”方法也可以将json转换成文本显示。</p>
+	<p align="left"><img border="0" src="images/165.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+
+	<p align="left"><img border="0" src="images/163.png" ></p>
+</blockquote>
+   <p align="left">&nbsp;</p>	
+<a name="jsondxz"></a>
+<font style="font-size: 12pt; font-weight:700">● 置入对象值</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">通过本方法可将一个“JSON对象类”或者“JSON数组类”放入当前对象内嵌套。</p>
+  <p align="left">本方法失败返回空对象。</p>
+	<p align="left"><img border="0" src="images/167.png" ></p>
+</blockquote>
+	
+   <p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义名称为“对象1”的json变量，置入一些数据。</p>
+	<p align="left">2、定义名称为“对象2”的变量，置入普通数据后，可调用“置入对象值()”方法将“对象1”置入当前JSON中。</p>
+<p align="left"><img border="0" src="images/169.png" ></p>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">可看到当JSON对象类被嵌套后，依然存在首尾“{}”符号。</p>
+	<p align="left"><img border="0" src="images/166.png" ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p><a name="jsonzrsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 取小数值</font>、
+<font style="font-size: 12pt; font-weight:700">● 取整数值</font>、
+<font style="font-size: 12pt; font-weight:700">● 取文本值</font>、
+<font style="font-size: 12pt; font-weight:700">● 取逻辑值</font>、
+<font style="font-size: 12pt; font-weight:700">● 取长整数值</font>	
+<p align="left">&nbsp;</p>
+<p align="left">以上几个方法用法一致，不同之处就是要取的类型不同，此处举例“取文本值()”方法。</p>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“取文本值”</b>帮助文档：</p>
+<blockquote>
+   <p align="left">通过本方法可取出指定<b>“键名”</b>的<b>“键值”</b>，如果不存在将返回默认值。</p>
+	<p align="left"><img border="0" src="images/164.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 创建自文本数据</font><br>	
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过<b>“json文本数据”</b>创建当前对象，如果创建失败返回<b>“空对象”</b>。</p>
+    <p align="left"><img border="0" src="images/178.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">准备如下JSON文本数据：</p>
+<blockquote>
+	<p align="left" style="color: #F31B1F">{<br>
+	  &quot;键名1&quot;:&quot;键值1&quot;,<br>
+	  &quot;键名2&quot;:&quot;键值2&quot;<br>
+    }</p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、首先定义名称为“json数据”的常量值，将准备的json文本导入。</p>
+	<p align="left">2、调用“创建自文本数据()”方法创建当前json对象。</p>
+	<p align="left">3、最后调用“取文本值()”方法取出指定键名的键值。</p>
+	<p align="left"><img border="0" src="images/2.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="images/3.png" ></p>
+</blockquote>		
+	<a name="jsonquzhi"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 取值</font>
+  <p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当指定键值的目标类型不确定时，可通过本方法取出对象数据。</p>
+	<p align="left">取出的对象类数据可通过“到文本()”方法直接将其转换成要取的数据。</p>
+	<p align="left"><img border="0" src="images/168.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">准备如下JSON文本：</p>
+<blockquote>
+	<p align="left" style="color: #F11D21">{<br>
+	  &quot;键名1&quot;:111<br>
+    }</p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义常量导入准备好的JSON文本数据。</p>
+	<p align="left">2、调用“创建自文本数据()”方法创建json对象。</p>
+	<p align="left">3、最后调用“取值()”取出数据后强制“到文本()”显示在编辑框。</p>
+	<p align="left"><img border="0" src="images/4.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="images/5.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<a name="jsonqdxz"></a>
+<font style="font-size: 12pt; font-weight:700">● 取对象值</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">调用本方法可取出JSON数据中指定“键名”的“JSON对象类”。</p>
+    <p align="left"><img border="0" src="images/171.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">准备一段存在嵌套JSON对象的JSON文本：</p>
+<blockquote>
+	<p align="left" style="color: #ED1115">{<br>
+&nbsp;&nbsp;&quot;键名1&quot;:&quot;键值1&quot;,<br>
+&nbsp;&nbsp;&quot;嵌套对象&quot;:{<br>
+&nbsp;&nbsp;&quot;嵌套1&quot;:&quot;嵌套键值&quot;<br>
+&nbsp;&nbsp;}<br>
+}</p>
+
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义文本型的常量值导入json文本。</p>
+	<p align="left">2、创建JSON对象后可直接调用“取对象值()”方法取出出被嵌套的JSON对象。</p>
+	<p align="left">3、最后转换成文本显示在编辑框。</p>
+    <p align="left"><img border="0" src="images/6.png" ></p>
+
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left"><img border="0" src="images/7.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="chengyuanshu"></a>
+<font style="font-size: 12pt; font-weight:700">● 成员数(读)</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可取出当前json对象的成员数。 </p> 
+  	<p align="left"><img border="0" src="images/174.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、<b>“按钮1”</b>被点击后，设置三个json键名。</p>
+	<p align="left">2、<b>“按钮2”</b>被点击后，调用当前属性取出成员数。</p>
+	<p align="left"><img border="0" src="images/175.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="images/176.gif" ></p>
+</blockquote>
+
+<a name="cjzsz1"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 创建自数组</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法可通过指定的键名数组，创建一个新的JSON对象类。</p>
+    <p align="left"><img border="0" src="images/177.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">准备JSON数据：</p>
+<blockquote>
+	<p align="left" style="color:#F31B1F">{<br>
+&nbsp;&nbsp;&quot;1&quot;:&quot;键值1&quot;,<br>
+&nbsp;&nbsp;&quot;2&quot;:&quot;键值2&quot;,<br>
+&nbsp;&nbsp;&quot;3&quot;:&quot;键值3&quot;<br>
+}</p>
+   
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义文本常量将准备的JSON文本放入初始值中。</p>
+	<p align="left">2、定义“键名数组”，数组成员分别是“1”、“2”。</p>
+	<p align="left">3、将json文本创建JSON对象后继续根据“键名数组”创建JSON对象。</p>
+	<p align="left">4、最后将创建的JSON对象显示在编辑框中。</p>
+  <p align="left"><img border="0" src="images/8.png" ></p>
+ 
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终结果，键名“3”和对应的键值都不存在，证明键名数组创建成功。</p>
+    <p align="left"><img border="0" src="images/9.png" ></p>
+</blockquote>
+	
+
+<p align="left">&nbsp;</p>
+<a name="jscjzjxdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建自解析对象</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本方法可通过<b>“JSON解析类”</b>创建当前JSON对象，失败返回空对象。</p>
+	<p align="left"><img border="0" src="images/181.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">JSON数据准备：</p>
+<blockquote>
+	<p align="left" style="color: #EF1115">{<br>
+&nbsp;&nbsp;&quot;1&quot;:&quot;one&quot;,<br>
+&nbsp;&nbsp;&quot;2&quot;:&quot;two&quot;,<br>
+	&nbsp;&nbsp;&quot;3&quot;:&quot;three&quot;}
+  </p>
+
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">1、定义<b>“JSON文本”</b>常量值，将json文本放入初始值中。</p>
+	<p align="left">2、定义<b>“JSON对象类”</b>变量，勾选参考。</p>
+	<p align="left">3、通过<b>“JSON解析类.创建自文本()”</b>创建JSON解析对象，将创建的对象填入<b>“创建自解析对象()”</b>方法中。</p>
+	<p align="left">4、通过<b>“JSON”</b>变量取文本值即可取出json键值，用来验证是否创建成功。</p>
+	<p align="left"><img border="0" src="images/182.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="images/184.gif" ></p>
+</blockquote>
+	
+
+	<p align="left">&nbsp;</p>
+	<a name="jsondsz"></a>
+<font style="font-size: 12pt; font-weight:700">● 到JSON数组</font><br/>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用是通过<b>“JSON键名数组”</b>取出所对应的<b>“键值数组”</b>并返回。</p>
+	<p align="left">转换失败返回空对象。</p>
+	<p align="left"><img border="0" src="images/188.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">JSON数据准备：</p>
+<blockquote>
+	<p align="left">准备如下图所示的JSON文本：JSON对象类嵌套JSON数组类，数组中嵌套三组JSON对象类。</p>
+	<p align="left" style="color: #F22024">{ <br>
+	  &quot;名称&quot;:&quot;JSON测试&quot;,<br>
+	  &quot;数组名称&quot;:[<br>
+	 &nbsp;&nbsp; {<br>
+	 &nbsp;&nbsp; &quot;名称&quot;:&quot;火山软件&quot;,<br>
+	 &nbsp;&nbsp; &quot;网址&quot;:&quot;Voldev&quot;<br>
+	 &nbsp;&nbsp; },<br>
+	 &nbsp;&nbsp; {<br>
+	 &nbsp;&nbsp; &quot;名称&quot;:&quot;火山软件&quot;,<br>
+	 &nbsp;&nbsp; &quot;网址&quot;:&quot;Voldev&quot;<br>
+	 &nbsp;&nbsp; },<br>
+	 &nbsp;&nbsp; {<br>
+	 &nbsp;&nbsp; &quot;名称&quot;:&quot;火山软件&quot;,<br>
+	&nbsp;&nbsp;  &quot;网址&quot;:&quot;Voldev&quot;<br>
+	 &nbsp;&nbsp; } <br>
+	  ] <br>
+	  }
+		
+		
+		</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><strong>本方法较难理解，拆解成两部分讲解。</strong></p>
+<p align="left">&nbsp;</p>
+<p align="left"><strong>第一部分：</strong></p>	
+<blockquote>
+	<p align="left">1、定义<b>“键名数组”</b>变量，初始值填写两个成员的文本数组。</p>
+	<p align="left">2、定义基础类为<b>“JSON数组类”</b>的变量，通过<b>“JSON数组类.创建自数组()”</b>方法赋值给此变量。</p>
+	<p align="left">到此完成<b>“JSON键名数组创建”</b>。</p>
+	<p align="left">3、定义<b>“JSON文本”</b>常量值，导入JSON数据。</p>
+	<p align="left">4、定义两个变量，类型分别为<b>“JSON对象类”</b>和<b>“JSON数组类”</b>。</p>
+	<p align="left">5、通过<b>“JSON文本”</b>创建<b>“JSON对象”</b>。</p>
+	<p align="left">6、调用当前方法，取出键名数组对应的键值数组，并转换成可读文本。</p>
+	<p align="left"><img border="0" src="images/190.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果（1）：</p>
+<blockquote>
+	<p align="left">最终转换出来的数据并没有<b>“键名数组”</b>中的两个键名，但是取出了对应的键值。</p>
+	<p align="left"><img border="0" src="images/191.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left"><strong>下面进行第二部分，取出所有键值。</strong></p>
+<p align="left">&nbsp;</p>
+<p align="left"><strong>第二部分：</strong></p>	
+<blockquote>
+	<p align="left">1、使用<b>“//”</b>屏蔽<b>“到可读文本()”</b>方法。</p>
+	<p align="left">2、通过<b>“JSON数组.取文本值(0)”</b>，取出的就是<b>“名称”</b>的键值。</p>
+	<p align="left">3、<b>“数组名称”</b>的键值是数组，所以需要使用<b>“循环()”</b>方法取出。</p>
+	<p align="left"><img border="0" src="images/192.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果（2）：</p>
+<blockquote>
+	<p align="left">所有的键值将从json数据中取出。</p>
+	<p align="left"><img border="0" src="images/193.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<a name="jsonwbzy"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本转义</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可将带有转义符的文本，将转义符一同输出并返回，同时会增加引号。</p>
+	<p align="left"><img border="0" src="images/194.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“\n”</b>为换行符，通过本方法可将<b>“\n”</b>直接返回。</p>
+	<p align="left"><img border="0" src="images/195.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">最终返回结果会自动添加引号。</p>
+	<p align="left"><img border="0" src="images/196.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+	<a name="sfyyzdsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否拥有指定数据</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可以判断JSON数据中是否存在指定<b>“键名”</b>。</p>
+	<p align="left">存在返回真，不存在返回假。</p>
+	<p align="left"><img border="0" src="images/197.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">JSON数据准备：</p>
+<blockquote>
+	<p align="left" style="color: #F42226">
+		{<br/>
+		"火山":"VolDev",<br/>
+		"平台":"voldp"<br/>
+		}
+	
+	</p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义文本常量，导入准备的JSON数据。</p>
+	<p align="left">2、定义类型为<b>“JSON对象类”</b>的变量，勾选参考。</p>
+	<p align="left">3、<b>“按钮1”</b>被点击后，创建JSON对象，判断<b>“火山”</b>是否存在。</p>
+	<p align="left">4、<b>“按钮2”</b>被点击后，创建JSON对象，故意判断一个不存在的键名<b>“123”</b>。</p>
+	<p align="left"><img border="0" src="images/199.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="images/200.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<a name="jsonyczddx"></a>
+<font style="font-size: 12pt; font-weight:700">● 移除指定对象</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可移除当前JSON对象内的指定键值，并返回当前键值。</p>
+	<p align="left"><img border="0" src="images/201.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">JSON数据准备：</p>
+<blockquote>
+	<p align="left" style="color: #F41417">
+	{<br>
+ &nbsp;&nbsp;  "1":"键值1",<br>
+ &nbsp;&nbsp; "2":"键值2",<br>
+ &nbsp;&nbsp; "3":"键值3",<br>
+&nbsp;&nbsp;  "4":"键值4",<br>
+&nbsp;&nbsp;  "5":"键值5"<br>
+ }
+	</p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义<b>“json文本”</b>常量，导入json数据。</p>
+	<p align="left">2、定义类型为<b>“JSON对象类”</b>的变量，勾选参考，通过<b>“JSON文本”</b>创建当前对象。</p>
+	<p align="left">3、调用当前方法移除<b>“3”</b>，到文本转换后可取出<b>“3”</b>对应的<b>“键值”</b>。</p>
+	<p align="left">4、最后将当前对象转换为可读文本。</p>
+	<p align="left"><img border="0" src="images/203.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="images/204.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+	<a name="jsonzhuijia"></a>
+<font style="font-size: 12pt; font-weight:700">● 追加指定值</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可以给指定键名追加新的键值，追加后的键值后，原键值将会转换为数组类型。</p>
+	<p align="left">如果追加的键名不存在，将在原json数据的基础上添加新的键名和键值。</p>
+	<p align="left"><img border="0" src="images/205.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义<b>“JSON文本”</b>常量，导入json数据（当前JSON数据与上一个方法相同）。</p>
+	<p align="left">2、通过JSON文本创建JSON对象，调用<b>“追加指定值()”</b>方法追加数据。</p>
+	<p align="left">3、最后转换成可读文本。</p>
+	<p align="left"><img border="0" src="images/206.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">左图：给已有的<b>“键值”</b>追加<b>“新的键值”</b>。</p>
+  <p align="left">右图：给不存在的键名追加数据。</p>
+	<p align="left"><img border="0" src="images/207.png" ><img border="0" src="images/208.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="jsonjianming"></a>
+<font style="font-size: 12pt; font-weight:700">● 键名枚举器</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可创建<b>“文本枚举器类”</b>取出所有json数据的所有键名。</p>
+	<p align="left"><img border="0" src="images/209.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义<b>“JSON文本”</b>常量，导入json数据（当前JSON数据与上一个方法相同）。</p>
+	<p align="left">2、通过JSON文本创建JSON对象。</p>
+	<p align="left">3、调用当前方法创建<b>“枚举器”</b>。</p>
+	<p align="left">4、利用<b>“判断循环()”</b>方法，循环取出所有成员。</p>
+	<p align="left"><img border="0" src="images/210.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="images/211.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="jsonpanduan"></a>
+<font style="font-size: 12pt; font-weight:700">● 判断键值类型</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">说明：</p>
+<blockquote>
+  <p align="left">在JSON数据操作中，可能会遇到复杂的JSON嵌套，有些可能是未知类型。</p>
+	<p align="left">通过以上学习的知识，来实现通过<b>“键名”</b>如何判断当前键值是什么类型，从而做出对应的操作。</p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">准备JSON文本：</p>
+<blockquote>
+	<p align="left">从上到下键值类型依次为：文本，整数，json对象类，json数组类。</p>
+	<p align="left" style="color: #F41C20">
+	{<br>
+&nbsp;&nbsp;"1":"文本",<br>
+&nbsp;&nbsp;"2":10086,<br>
+&nbsp;&nbsp;"3":{<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"3a":"3a键值"<br>
+ &nbsp;&nbsp;},<br>
+&nbsp;&nbsp;"4":[<br>
+  &nbsp;&nbsp;&nbsp;"数组1","数组2"<br>
+  &nbsp;&nbsp;] <br>
+}
+	</p>
+
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义<b>“JSON文本”</b>常量，导入JSON数据。 </p>
+	<p align="left">2、通过<b>“JSON文本”</b>创建JSON对象。</p>
+	<p align="left">3、创建键名枚举器，循环枚举所有键名。 </p>
+	<p align="left">4、调用<b>“取值()”</b>方法，取出键值对象，依次判断是否属于指定类型。</p>
+	<p align="left">5、 如果属于指定类型，将对应内容添加到编辑框中。</p>
+	<p align="left"><img border="0" src="images/213.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+  <p align="left">最终结果和原JSON数据实际类型一致。</p>
+	<p align="left"><img border="0" src="images/214.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

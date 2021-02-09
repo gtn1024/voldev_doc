@@ -1,0 +1,1907 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		
+		  <li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new3')" >一.画板类<span>(可收缩)</span></h6></li>
+		<ol id="new3">
+			<li><blockquote><a href="#huabanlei">1.本类说明</a></blockquote></li>  
+    		<li><blockquote><a href="#hbtc">2.填充</a></blockquote></li>
+            <li><blockquote><a href="#hbtcys">3.填充颜色</a></blockquote></li>
+			<li><blockquote><a href="#tcys2">4.填充颜色2</a></blockquote></li>
+            <li><blockquote><a href="#ycys3">5.填充颜色3</a></blockquote></li>
+            <li><blockquote><a href="#tcys4">6.填充颜色4</a></blockquote></li>
+            <li><blockquote><a href="#hwb">7.画文本</a></blockquote></li>
+            <li><blockquote><a href="#hwbqj">8.画文本区间</a></blockquote></li>
+            <li><blockquote><a href="#hwbqj2">9.画文本区间2</a></blockquote></li>
+            <li><blockquote><a href="#hwbqj3">10.画文本区间3</a></blockquote></li>
+            <li><blockquote><a href="#hd">11.画点</a></blockquote></li>
+            <li><blockquote><a href="#hypd">12.画一批点</a></blockquote></li>
+            <li><blockquote><a href="#hypd2">13.画一批点2</a></blockquote></li>
+            <li><blockquote><a href="#hzx">14.画直线</a></blockquote></li>
+            <li><blockquote><a href="#hypzx">15.画一批直线</a></blockquote></li>
+            <li><blockquote><a href="#hypzx2">16.画一批直线2</a></blockquote></li>
+            <li><blockquote><a href="#hjx">17.画矩形</a></blockquote></li>
+            <li><blockquote><a href="#hjx2">18.画矩形2</a></blockquote></li>
+            <li><blockquote><a href="#hjx3">19.画矩形3</a></blockquote></li>
+            <li><blockquote><a href="#hy">20.画圆</a></blockquote></li>
+            <li><blockquote><a href="#hty">21.画椭圆</a></blockquote></li>
+            <li><blockquote><a href="#hyh">22.画圆弧</a></blockquote></li>
+            <li><blockquote><a href="#hyjjxx">23.画圆角矩形</a></blockquote></li>
+            <li><blockquote><a href="#hwt">24.画位图</a></blockquote></li>
+            <li><blockquote><a href="#hwtdjx">25.画位图到矩形</a></blockquote></li>
+            <li><blockquote><a href="#hwtdjx2">26.画位图到矩形2</a></blockquote></li>
+     
+            <li><blockquote><a href="#hkhftp">27.画可回放图片</a></blockquote></li>
+            <li><blockquote><a href="#hkhftpdjx">28.画可回放图片到矩形</a></blockquote></li>
+            <li><blockquote><a href="#hkhftpdjx2">29.画可回放图片到矩形2</a></blockquote></li>
+            <li><blockquote><a href="#hlx">30.画路径</a></blockquote></li>
+            <li><blockquote><a href="#yljhwb">31.沿路径画文本</a></blockquote></li>
+            <li><blockquote><a href="#yljhwbqj">32.沿路径画文本区间</a></blockquote></li>
+            <li><blockquote><a href="#zrjcjx">33.置入剪裁矩形</a></blockquote></li>
+            <li><blockquote><a href="#zrjcjx2">34.置入剪裁矩形2</a></blockquote></li>
+            <li><blockquote><a href="#qdqjcjx">35.取当前剪裁矩形</a></blockquote></li>
+            <li><blockquote><a href="#zrjclx">36.置入剪裁路径</a></blockquote></li>
+            <li><blockquote><a href="#zrjcqy">37.置入剪裁区域</a></blockquote></li>
+            <li><blockquote><a href="#zrjcxsjx">38.置入剪裁小数矩形</a></blockquote></li>
+            <li><blockquote><a href="#zrjcxsjx2">39.置入剪裁小数矩形2</a></blockquote></li>
+            <li><blockquote><a href="#jxjccs">40.矩形剪裁测试</a></blockquote></li>
+            <li><blockquote><a href="#jxjccs2">41.矩形剪裁测试2</a></blockquote></li>
+            <li><blockquote><a href="#ljjccs">42.路径剪裁测试</a></blockquote></li>
+            <li><blockquote><a href="#zhjcjx">43.组合剪裁矩形</a></blockquote></li>
+            <li><blockquote><a href="#jhjclj">44.组合剪裁路径</a></blockquote></li>
+            <li><blockquote><a href="#zhjcqy">45.组合剪裁区域</a></blockquote></li>
+            <li><blockquote><a href="#zyjcxsjx">46.组合剪裁小数矩形</a></blockquote></li>
+            <li><blockquote><a href="#zyjcxsjx">47.组合剪裁小数矩形2</a></blockquote></li>
+            <li><blockquote><a href="#cycqjz">48.乘于错切矩阵</a></blockquote></li>
+            <li><blockquote><a href="#cypyjz">49.乘于平移矩阵</a></blockquote></li>
+            <li><blockquote><a href="#cysfjz">50.乘于缩放矩阵</a></blockquote></li>
+            <li><blockquote><a href="#cysfjz2">51.乘于缩放矩阵2</a></blockquote></li>
+            <li><blockquote><a href="#cyxzjz">52.乘于旋转矩阵</a></blockquote></li>
+            <li><blockquote><a href="#cyxzjz2">53.乘于旋转矩阵2</a></blockquote></li>
+            <li><blockquote><a href="#cwtcj">54.从位图创建</a></blockquote></li>
+            <li><blockquote><a href="#jzhwt">55.矩阵画位图</a></blockquote></li>
+            <li><blockquote><a href="#dqjcjxd">56.当前剪裁矩形（读）</a></blockquote></li>
+            <li><blockquote><a href="#dqzhjzx">57.当前转换矩阵（写）</a></blockquote></li>
+            <li><blockquote><a href="#hzglqx">58.绘制过滤器（写）</a></blockquote></li>
+            <li><blockquote><a href="#hzglqd">59.绘制过滤器（读）</a></blockquote></li>
+            <li><blockquote><a href="#mdx">60.密度（写）</a></blockquote></li>
+            <li><blockquote><a href="#mdd">61.密度（读）</a></blockquote></li>
+            <li><blockquote><a href="#mdwtx">62.目的位图（写）</a></blockquote></li>
+            <li><blockquote><a href="#sfbzctmd">63.是否不支持透明（读）</a></blockquote></li>
+            <li><blockquote><a href="#sfqyyjjsd">64.是否启用硬件加速（读）</a></blockquote></li>
+            <li><blockquote><a href="#sbcztsm">65.所保存状态数目（读）</a></blockquote></li>
+            <li><blockquote><a href="#zdkhzwtgdd">66.最大可绘制位图高度（读）</a></blockquote></li>
+            <li><blockquote><a href="#zdkhzwtkdd">67.最大可绘制位图宽度（读）</a></blockquote></li>
+            <li><blockquote><a href="#hzcgdd">68.绘制层高度（读）</a></blockquote></li>
+            <li><blockquote><a href="#hzckdd">69.绘制层宽度（读）</a></blockquote></li>
+
+		</ol>
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>画板类实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+	<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">本类的主要作用就是用来进行各种各样的绘制操作。</p>
+		<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>	
+<p align="left">&nbsp;</p>
+<a name="hbtc"></a>
+	<font style="font-size: 12pt; font-weight:700">● 填充</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	
+	<p align="left">本方法支持动态调用，有两个参数。</p>
+	<p align="left">参数1：填写要操作的<b>“画板类”</b>，动态调用时<b>“参数1不写”</b>。</p>
+	<p align="left">参数2：填写定义的<b>“画笔类”</b>变量。</p>
+	<p align="left">本方法的作用，就是在画板内绘制一个无限大的矩形，但是比<b>“画矩形”</b>方法要快。</p>
+	<p align="left">如果当前画板没有设置当前剪裁区域，则会填充全部。</p>
+	<p align="left"><img border="0" src="hb_images/32.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在<b>“异步绘制帧”</b>事件下，利用<b>“画板对象”</b>参数去调用本方法，参数直接填写定义的<b>“画笔”</b>变量即可。</p>
+	<p align="left"><img border="0" src="hb_images/33.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">可以看到执行<b>“按钮1”</b>后，整个画板变成了<b>“白色”</b>。</p>
+	<p align="left">这是因为定义的<b>“画笔变量”</b>，<b>“颜色”</b>属性设置的是白色。</p>
+	<p align="left"><img border="0" src="hb_images/34.gif" ></p>
+</blockquote>
+	
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hbtcys"></a>
+	<font style="font-size: 12pt; font-weight:700">● 填充颜色</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法支持动态调用，可以看到有两个参数，参数1依旧是要操作的<b>“画板类”</b>。</p>
+	<p align="left">参数2：填写要填充的颜色值，可以使用<b>“颜色类”</b>中定义的常量。</p>
+	<p align="left">也可以使用<b>“0xFF”</b>加十六进制的颜色值。</p>
+	<p align="left">填充的颜色会覆盖其它形式填充的颜色或位图。</p>
+	<p align="left">如果没有设置<b>“剪裁区域”</b>，则会填充全部。</p>
+	
+	<p align="left"><img border="0" src="hb_images/35.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在<b>“异步绘制帧”</b>下利用<b>“画板对象”</b>调用本方法即可。</p>
+	<p align="left"><img border="0" src="hb_images/36.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">执行<b>“按钮1”</b>后，整个画板会变成设置的<b>“黄色”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/37.gif" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="tcys2"></a>
+	<font style="font-size: 12pt; font-weight:700">● 填充颜色2</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“填充颜色”</b>不同之处就是多了一个<b>“图像混合方式”</b>。</p>
+	<p align="left"><b>“图像混合方式”</b>是一种数字图像合成算法，内置了多种常量可供调用，知道即可无需深入了解。</p>
+	<p align="left">可以指定填充时混合方式，调用方式<b>“图像混合方式.XXXX”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/38.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">首先执行一次<b>“填充颜色”</b>，填充红色。</p>
+	<p align="left">随后利用本方法，填充蓝色，并且指定<b>“图像混合方式.添加”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/39.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+  <p align="left">运行程序后，最终显示的颜色不是红色也不是蓝色。</p>
+  <p align="left">而是变成了两种颜色相加的颜色。</p>
+	<p align="left"><img border="0" src="hb_images/40.gif" ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="ycys3"></a>
+	<font style="font-size: 12pt; font-weight:700">● 填充颜色3</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法颜色填充算法采用的是<b>“源图像覆盖”</b>方式。</p>
+	<p align="left">使用本方法填充颜色，支持<b>“透明度”</b>设置和<b>“红黄蓝”</b>三种颜色的单独设置。最大值255，最小值0.</p>
+	<p align="left"><img border="0" src="hb_images/41.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">例如：全部填写255就可以进行不透明的白色填充。</p>
+	<p align="left"><img border="0" src="hb_images/42.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>后画板就会变成白色。</p>
+	<p align="left"><img border="0" src="hb_images/43.gif" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="tcys4"></a>
+	<font style="font-size: 12pt; font-weight:700">● 填充颜色4</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法同样支持动态调用，和<b>“填充颜色3”</b>不同之处就是，本方法不支持设定透明度。</p>
+	
+  <p align="left"><img border="0" src="hb_images/44.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">例如：参数全部填写255，就是填充白色。</p>
+	<p align="left">如果全部填写0，就表示填充黑色。</p>
+	<p align="left"><img border="0" src="hb_images/45.png" ></p>
+</blockquote>	
+
+	
+<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hwb"></a>
+	<font style="font-size: 12pt; font-weight:700">● 画文本</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法支持动态调用，有五个参数。</p>
+	<p align="left">绘制的文本对齐方式，根据<b>“文本对齐方式”</b>属性进行设置，默认是左对齐。</p>
+	<p align="left">参数中的<b>“横坐标”</b>表示文本距离<b>“左边”</b>的位置。<b>“纵坐标”</b>表示距离<b>“顶边”</b>的位置。</p>
+	<p align="left"><img border="0" src="hb_images/46.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“画笔”</b>变量的颜色属性，支持直接设置<b>“颜色类”</b>中的颜色常量。</p>
+	<p align="left"><b>“字体尺寸”</b>属性，可以设置绘制文本的字体大小。</p>
+	<p align="left">直接在<b>“异步绘制帧”</b>中调用本方法，给参数分别填入对应的数据。</p>
+	<p align="left"><img border="0" src="hb_images/47.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">执行<b>“按钮1”</b>后，画板上就会出现<b>“火山软件开发平台”</b>，并且颜色是白色。</p>
+	<p align="left">左边和顶边的距离，也都是参数内填写的距离。</p>
+	<p align="left"><img border="0" src="hb_images/48.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hwbqj"></a>
+	<font style="font-size: 12pt; font-weight:700">● 画文本区间</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“画文本”</b>不同之处在于，多了两个<b>“首尾索引”</b>参数。</p>
+	<p align="left">注意：尾索引所处的文本，并不会取出。</p>
+	<p align="left"><img border="0" src="hb_images/49.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在<b>“异步绘制帧”</b>方法下调用本方法，其它的不变，增加一个<b>“首尾索引”</b>参数。</p>
+	<p align="left">注意：文本索引值从0开始。</p>
+	<p align="left"><img border="0" src="hb_images/50.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>后，画板内只会绘制<b>“软件”</b>两个字。</p>
+	<p align="left"><img border="0" src="hb_images/51.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hwbqj2"></a>
+	<font style="font-size: 12pt; font-weight:700">● 画文本区间2</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“画文本区间”</b>不同之处在于，本方法绘制的是<b>“字符串类”</b>。</p>
+	
+  <p align="left"><img border="0" src="hb_images/52.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义一个<b>“字符串类”</b>变量，设置参考。</p>
+	<p align="left">可以利用<b>“文本到字符串”</b>方法转换文本为<b>“字符串”</b>。</p>
+	<p align="left">最后将<b>“字符串”</b>变量写入参数对应位置。</p>
+	<p align="left"><img border="0" src="hb_images/53.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>后，成功取出<b>“火山”</b>两个字，并且绘制在画板上。</p>
+	<p align="left"><img border="0" src="hb_images/54.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hwbqj3"></a>
+	<font style="font-size: 12pt; font-weight:700">● 画文本区间3</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“画文本区间2”</b>不同之处在于，<b>“参数4”</b>变成了<b>“字符[]”</b>。</p>
+	<p align="left"><b>“参数6”</b>变成了字符数目。</p>
+	<p align="left"><img border="0" src="hb_images/55.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义类型为<b>“字符[]”</b>的字符数组变量，设置初始值。</p>
+	<p align="left"><b>“参数4”</b>填写定义的<b>“字符数组”</b>变量，<b>“参数6”</b>填写一个4。</p>
+	<p align="left">注意：因动态调用的关系，参数1<b>“画板类”</b>被省略。</p>
+	<p align="left"><img border="0" src="hb_images/56.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>后，画板上就会绘制出<b>“山软件开”</b>四个字符。</p>
+	<p align="left"><img border="0" src="hb_images/57.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 画点</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法支持动态调用，有四个参数。</p>
+	<p align="left"><b>“参数2、3”</b>设置横纵坐标，<b>“参数4”</b>填写定义的<b>“画笔类”</b>变量。</p>
+	<p align="left">画点有两种形状：圆点和方点。可以通过<b>“画笔类”</b>的<b>“点形状”</b>属性来指定。</p>
+	<p align="left">如果不指定<b>“点形状”</b>默认是方形。</p>
+	<p align="left">通过<b>“笔划宽度”</b>和<b>“笔划像素宽度”</b>都可以指定<b>“点”</b>的直径。</p>
+	<p align="left">两种属性的区别在于，前者为DP单位，后者是像素单位。</p>
+	<p align="left">备注：关于DP单位说明，可以看<b>“尺寸单位.DP”</b>的帮助文档。</p>
+	<p align="left"><img border="0" src="hb_images/58.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义一个新的<b>“画笔类”</b>变量，分别设置<b>“颜色”</b>、<b>“笔划宽度”</b>和<b>“点形状”</b>。</p>
+	<p align="left">第一个<b>“画笔类”</b>变量，只定义<b>“颜色”</b>和<b>“笔划像素宽度”</b>。</p>
+	<p align="left">随后在<b>“异步绘制帧”</b>中执行<b>“画点”</b>方法，分别用不同的画笔类。</p>
+	<p align="left"><img border="0" src="hb_images/59.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>后，正方形的点和圆形的点均全部画出。</p>
+	<p align="left"><img border="0" src="hb_images/60.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hypd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 画一批点</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“画点”</b>的区别就是，本方法一次性可以画<b>“一批点”</b>。同样支持设置<b>“圆点”</b>。</p>
+	<p align="left"><b>“参数2”</b>由原来的坐标变成了<b>“浮点小数数组”</b>。数组中<b>“每两个”</b>成员代表一个<b>“横纵坐标”</b>位置。</p>
+	<p align="left">所以填写的<b>“浮点小数”</b>内成员，必须为<b>“双数”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/61.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">首先定义一个<b>“小数[]”</b>数组变量，设置一个<b>“双成员数”</b>的初始值。</p>
+	<p align="left">随后利用<b>“浮点小数数组.从小数数组创建()”</b>方法，创建浮点小数，参数填写定义的小数变量即可。</p>
+	<p align="left">最后将<b>“画笔”</b>变量填入参数。</p>
+	<p align="left"><img border="0" src="hb_images/62.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">执行<b>“按钮1”</b>后，会以一次性出来一批点。</p>
+	<p align="left"><img border="0" src="hb_images/63.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hypd2"></a>
+	<font style="font-size: 12pt; font-weight:700">● 画一批点2</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“画一批点”</b>不同之处在于，本方法增加了<b>“起始成员索引”</b>和<b>“所绘制点数目”</b>两个参数。</p>
+	<p align="left">如果使用本方法，必须要要保证浮点小数<b>“数组成员数”</b>大于<b>“起始成员索引+所绘制数目*2”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/64.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">照抄<b>“画一批点”</b>的代码，方法名修改为本方法，增加两个参数。</p>
+	<p align="left">参数内分别填写<b>“1”</b>和<b>“2”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/65.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终结果，执行<b>“按钮1”</b>后会按照参数中指定的，画两个点。</p>
+	<p align="left">点的坐标位置也是从<b>“40”</b>开始。</p>
+	<p align="left"><img border="0" src="hb_images/66.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hzx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 画直线</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法只是动态调用，有六个参数。</p>
+	<p align="left">因本方法涉及不到填充，所以<b>“画笔类”</b>的<b>“笔划类型”</b>属性会被忽略。</p>
+	<p align="left"><img border="0" src="hb_images/67.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在<b>“异步绘制帧”</b>下，利用<b>“画板对象”</b>调用本方法。</p>
+	<p align="left">将你想要画位置的坐标分别写入，最后一个参数填写定义的<b>“画笔”</b>变量。</p>
+	<p align="left">如果想要调整<b>“直线”</b>的<b>“颜色和粗细”</b>可以通过画笔类的<b>“颜色”</b>和<b>“笔划像素宽度”</b>属性调整。</p>
+	<p align="left"><img border="0" src="hb_images/68.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>后成功画出一条竖着的直线。</p>
+	<p align="left"><img border="0" src="hb_images/69.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hypzx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 画一批直线</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“画一批点”</b>方法大同小异，不同之处在于<b>“画线”</b>需要四个成员。</p>
+
+	<p align="left"><img border="0" src="hb_images/70.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">和<b>“画一批点”</b>方法一致，定义小数变量，设置初始值。</p>
+	<p align="left">最后利用<b>“浮点小数数组.从小数数组创建”</b>方法，创建浮点数组。</p>
+	<p align="left"><img border="0" src="hb_images/71.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">数组内设置了12个成员，因此画出来3条线。</p>
+	<p align="left"><img border="0" src="hb_images/72.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hypzx2"></a>
+	<font style="font-size: 12pt; font-weight:700">● 画一批直线2</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“画一批点2”</b>基本相同，不同之处在于本方法数组成员数量的公式，最后结尾需要<b>“乘4”</b>。</p>
+	<p align="left">必须要保证数组成员数量大于计算公式的结果。</p>
+	<p align="left"><img border="0" src="hb_images/73.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">代码编写和<b>“画一批点2”</b>也基本相同，起始索引填写<b>“3”</b>，数目填写<b>“2”</b>。</p>
+	<p align="left">表示从数组的<b>“第四个成员”</b>开始，<b>“画两条”</b>直线。</p>
+	<p align="left"><img border="0" src="hb_images/74.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>成功显示两条直线，坐标分别如下、</p>
+	<p align="left"><img border="0" src="hb_images/75.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hjx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 画矩形</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法支持动态调用，顾名思义，就是根据<b>“指定坐标”</b>位置绘制一个<b>“矩形”</b>。</p>
+	<p align="left">因绘制矩形是固定的高度宽度，所以<b>“画笔类”</b>的<b>“笔划宽度”</b>和<b>“笔划像素宽度”</b>属性都将被省略。</p>
+	<p align="left"><img border="0" src="hb_images/76.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">例如：在<b>“异步绘制帧”</b>帧下调用本方法。</p>
+	<p align="left">前面两个坐标参数填写0，这样绘制的矩形就会紧贴着画板的左上角。</p>
+	<p align="left">后面<b>“两个坐标”</b>相同，这样就会绘制出来一个正方形，正方形的颜色跟<b>“画笔类”</b>定义的<b>“颜色”</b>属性有关系。</p>
+	
+	<p align="left"><img border="0" src="hb_images/77.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">上面的一些方法中，已经将<b>“画笔类”</b>的颜色定义为<b>“白色”</b>，所以此时显示的是<b>“白色”</b>的正方形。</p>
+	<p align="left"><img border="0" src="hb_images/78.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hjx2"></a>
+	<font style="font-size: 12pt; font-weight:700">● 画矩形2</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“画矩形”</b>不同支持在于，本方法是通过<b>“矩形类”</b>进行绘制。</p>
+	<p align="left">通常情况下使用的是，矩形类的<b>“上、下、左、右”</b>四个属性。</p>
+	<p align="left"><img border="0" src="hb_images/79.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在<b>“异步绘制帧”</b>方法下，定义一个<b>“矩形类”</b>变量，分别设置<b>“上下左右”</b>四个属性。</p>
+	<p align="left">上：矩形<b>“顶边”</b>到<b>“画板顶部”</b>的距离。</p>
+	<p align="left">下：矩形<b>“底边”</b>到<b>“画板顶部”</b>的距离。</p>
+	<p align="left">左：矩形<b>“左边”</b>到<b>“画板左边”</b>的距离。</p>
+	<p align="left">右：矩形<b>“右边”</b>到<b>“画板左边”</b>的距离。</p>
+	<p align="left"><img border="0" src="hb_images/80.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>后一个<b>“长300高100”</b>的矩形被画出。</p>
+	<p align="left"><img border="0" src="hb_images/81.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hjx3"></a>
+	<font style="font-size: 12pt; font-weight:700">● 画矩形3</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“画矩形2”</b>不同之处在于<b>“小数矩形类”</b>的<b>“上、下、左、右”</b>属性支持小数值。</p>
+	<p align="left"><img border="0" src="hb_images/82.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义<b>“小数矩形类”</b>变量，它的<b>“上下左右”</b>属性支持填写小数。</p>
+	<p align="left">运行效果参考<b>“画矩形2”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/83.png" ></p>
+</blockquote>	
+
+	
+	
+<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hy"></a>
+	<font style="font-size: 12pt; font-weight:700">● 画圆</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法支持动态调用，顾名思义就是在<b>“画板”</b>上利用<b>“画笔类”</b>定义的颜色，绘制一个实心的圆形。</p>
+	<p align="left">本方法共有<b>“五个”</b>参数，动态调用时<b>“参数1”</b>省略不写。</p>
+	<p align="left">因本方法是绘制实心圆，所以<b>“画笔类”</b>的<b>“笔划像素宽度”</b>属性会被忽略。</p>
+	<p align="left">注意：如果绘制的半径小于等于0，则不会进行绘制。</p>
+	<p align="left">坐标和半径单位为像素。</p>
+	<p align="left"><img border="0" src="hb_images/84.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在<b>“异步绘制帧”</b>下通过<b>“画板对象”</b>参数调用本方法即可。</p>
+	<p align="left">例如：横纵坐标全部填写<b>“200”</b>，半径填写<b>“100”</b>，最后将<b>“画笔”</b>变量写入参数。</p>
+	<p align="left"><img border="0" src="hb_images/85.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>后就会画一个<b>“直径为200”</b>像素的正圆。</p>
+	<p align="left">圆形距离左边和顶边的位置均是<b>“100像素”</b>。</p>
+	<p align="left">因安卓屏幕DPI的问题，最终圆的物理大小可能跟例子中大小有误差，但像素值一致。</p>
+	<p align="left"><img border="0" src="hb_images/86.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hty"></a>
+	<font style="font-size: 12pt; font-weight:700">● 画椭圆</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法代码编写参考<b>“画矩形3”</b>，这里不再讲解。</p>
+	<p align="left"><img border="0" src="hb_images/87.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hyh"></a>
+	<font style="font-size: 12pt; font-weight:700">● 画圆弧</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法支持动态调用，顾名思义就是画一个圆弧。</p>
+	<p align="left">依然需要指定<b>“小数矩形类”</b>的<b>“上下左右”</b>四个属性。</p>
+	<p align="left">注意：</p>
+	<p align="left">1、如果起始角度=0，则从3点钟方向开始顺时针绘制。</p>
+	<p align="left">2、<b>“弧长角度”</b>大于等于360，则会绘制整个圆形。如果小于360，扇形的角度等于此度数。</p>
+	<p align="left">3、<b>“参数5”</b>如果设置为<b>“真”</b>则会绘制一个扇形，否则将把起始点和结束点进行直线连接绘制半圆形状。</p>
+	<p align="left"><img border="0" src="hb_images/88.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“小数矩形类”</b>的作用是指定一个椭圆的坐标位置。</p>
+	<p align="left">而画的<b>“圆弧”</b>会在这个椭圆<b>“坐标位置”</b>之内进行绘制。</p>
+	<p align="left">例如：起始角度参数<b>“填写0”</b>，弧长角度<b>“填写200”</b>.</p>
+	<p align="left"><b>“是否连接到中心”</b>参数填写<b>“真”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/89.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终结果，左图：从<b>“3点钟”</b>的位置<b>“开始绘制”</b>，绘制了一个角度为<b>“200”</b>的扇形。</p>
+	<p align="left">如果填写<b>“360”</b>，将会绘制一个完整的圆形。</p>
+	<p align="left">右图：<b>“是否连接到中心”</b>填写为<b>“假”</b>的效果。</p>
+	<p align="left"><img border="0" src="hb_images/90.png" >
+	
+	<img border="0" src="hb_images/91.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hyjjxx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 画圆角矩形</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法有<b>“五个”</b>参数，顾名思义就是绘制一个圆角矩形。</p>
+	<p align="left">矩形的大小跟<b>“小数矩形类”</b>的<b>“上下左右”</b>参数有关系。</p>
+	<p align="left">圆角的弧度跟<b>“横向半径”</b>和<b>“纵向半径”</b>有关系。</p>
+	<p align="left"><img border="0" src="hb_images/92.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">依然是需要定义一个<b>“小数矩形类”</b>变量，设置<b>“上下左右”</b>的参数。</p>
+	<p align="left">写入<b>“小数矩形”</b>变量到参数，填写圆角部分的横向和纵向半径最后将<b>“画笔”</b>变量，写到最后一个参数。</p>
+	<p align="left">注意：因绘制圆角矩形属于填充操作，因此<b>“画笔像素宽度”</b>属性此时会忽略。</p>
+	<p align="left"><img border="0" src="hb_images/93.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">运行后点击<b>“按钮1”</b>就会出来一个圆角矩形.</p>
+	<p align="left">因为<b>“纵向半径”</b>和<b>“横向半径”</b>不相同，所以这里的<b>“圆角矩形”</b>有些变形。</p>
+	<p align="left">并不是大家常看到圆角矩形样式。</p>
+	<p align="left"></p>
+	<p align="left"><img border="0" src="hb_images/94.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hwt"></a>
+	<font style="font-size: 12pt; font-weight:700">● 画位图</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法有<b>“五个”</b>参数，顾名思义就是在画板上绘制一个位图，也就是画图片。</p>
+	<p align="left">通过<b>“参数2”</b>的<b>“位图类”</b>可以导入图片。</p>
+	<p align="left">图片的坐标通过<b>“参数3和4”</b>进行指定。</p>
+	<p align="left">最后依然是<b>“画笔类”</b>，本类可以为<b>“空对象”</b>，不需要指定任何属性。</p>
+	<p align="left">注意：横坐标位置表示图片左上角距离<b>“画板左边”</b>的<b>“像素”</b>距离。</p>
+	<p align="left">纵坐标自然就是距离顶部的位置。</p>
+	<p align="left">如果图片的<b>“密度”</b>和<b>“画板对象的密度”</b>不相同，则本方法会自动进行<b>“缩放位图”</b>基于<b>“画板密度”</b>进行绘制。</p>
+	<p align="left">密度的单位DPI。</p>
+	<p align="left"><img border="0" src="hb_images/95.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义类型<b>“画笔类”</b>的成员变量，可以不用写任何属性值。</p>
+	<p align="left">在<b>“异步绘制帧”</b>事件下，定义两个变量，类型分别为<b>“可绘制资源”</b>和<b>“位图类”</b>。</p>
+	<p align="left">给<b>“可绘制资源”</b>导入张图片，必须保证名称不能有中文。</p>
+	<p align="left">随后利用<b>“位图类.从资源创建（）”</b>方法，将<b>“位图资源”</b>变量，写入参数中。</p>
+	<p align="left">最后利用本方法画<b>“位图类”</b>，指定坐标，画笔变量写入参数。</p>
+	<p align="left"><img border="0" src="hb_images/96.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>后，指定的图片就会在画板上绘制出来。</p>
+	<p align="left"><img border="0" src="hb_images/97.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hwtdjx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 画位图到矩形</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法支持动态调用，本命命令可以通俗理解为。</p>
+	<p align="left">将指定的图片进行剪裁，剪裁的坐标由<b>“参数3”</b>提供。</p>
+	<p align="left">剪裁后放入<b>“参数4”</b>的坐标中，并且会以充满的形式放入。</p>
+	<p align="left">也就是说，不管剪裁的图片有多大，最终的大小以<b>“参数4”</b>坐标提供的大小为准。</p>
+	<p align="left">参数5：画笔类可以为空对象。</p>
+	<p align="left"><img border="0" src="hb_images/98.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义画笔类变量，可以不设置任何参数。</p>
+	<p align="left">随后在<b>“异步绘制帧”</b>中定义四个变量，类型分别为<b>“可绘制资源”</b>、<b>“位图类”</b>和两个<b>“矩形类”</b>。位图类设置参考。</p>
+	<p align="left"><b>“位图资源”</b>变量导入一张图片，然后给两个矩形类分别设置<b>“上下左右”</b>的属性。</p>
+	<p align="left">随后，依然是需要利用<b>“位图类.从资源创建”</b>方法，创建位图类，赋值给<b>“位图类变量”</b>。</p>
+	<p align="left">最后将所有的变量依次写入本方法的参数内。</p>
+	<p align="left"><img border="0" src="hb_images/99.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>后，右图的<b>“原图图片”</b>进行剪裁后会放到画板<b>“指定坐标”</b>位置。</p>
+	<p align="left">并且剪裁的图片的高度宽度会自动缩放适应坐标。</p>
+	<p align="left">注意：不同DPI设备最终显示效果可能有所不同。</p>
+	<p align="left"><img border="0" src="hb_images/100.png" >&nbsp;&nbsp;&nbsp;<img border="0" src="hb_images/100a.jpg" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hwtdjx2"></a>
+	<font style="font-size: 12pt; font-weight:700">● 画位图到矩形2</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“画位图到矩形”</b>基本相同，不同之处在于本方法的目的矩形位置为<b>“小数矩形类”</b>。</p>
+	<p align="left">代码编写参考<b>“画位图到矩形”</b>方法即可。</p>
+	<p align="left"><img border="0" src="hb_images/101.png" ></p>
+</blockquote>
+	
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hkhftp"></a>
+	<font style="font-size: 12pt; font-weight:700">● 画可回放图片</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法支持动态调用，通过已知的<b>“可回放图片类”</b>来进行内容绘制。</p>
+	<p align="left">关于<a href="#kehuifang"><b>“可回放图片类”</b></a>详细说明请看跳转到该类查看。</p>
+	<p align="left"><img border="0" src="hb_images/108.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义<b>“画笔类”</b>变量，设置<b>“颜色”</b>属性为<b>“白色”</b>。</p>
+	<p align="left">随后在<b>“异步绘制帧”</b>事件下定义两个变量，分别为<b>“可回放图片类”</b>和<b>“画板类”</b>，画板变量设置参考。</p>
+	<p align="left">随后去调用<b>“图片类.开始记录()”</b>方法，记录一个区域，并赋值给定义的<b>“画板”</b>变量。</p>
+	<p align="left">然后通过<b>“画板”</b>变量调用<b>“画圆”</b>方法绘制一个圆形。</p>
+	<p align="left">紧接着需要调用<b>“图片类.结束记录”</b>，方法来结束<b>“可回放图片类”</b>的录制。</p>
+	<p align="left">注意：整个录制过程中出现的<b>“任何绘制操作”</b>，都<b>“不会立刻显示”</b>在画板上。</p>
+	<p align="left">最后调用<b>“画板对象.画可回放图片”</b>时参数填写<b>“图片类”</b>变量，这时候绘制操作才会生效。</p>
+
+	<p align="left"><img border="0" src="hb_images/109.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终成功绘制了一个圆形出来。</p>
+	<p align="left"><img border="0" src="hb_images/110.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hkhftpdjx"></a>
+	
+	<font style="font-size: 12pt; font-weight:700">● 画可回放图片到矩形</font><br/>
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“画可回放图片”</b>的区别是，本方法增加了一个<b>“矩形类”</b>参数。</p>
+	<p align="left"><b>“矩形类”</b>的使用可参看本类中的<a href="#hjx2"><b>“画矩形2”</b></a>方法。</p>
+	<p align="left">此处不再详细讲解。</p>
+	<p align="left"><img border="0" src="hb_images/111.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+	<a name="hkhftpdjx2"></a>
+	<font style="font-size: 12pt; font-weight:700">● 画可回放图片到矩形2</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法增加了一个<b>“小数矩形类”</b>参数。</p>
+	<p align="left"><b>“小数矩形类”</b>的使用可参看本类中的<a href="#hjx3"><b>“画矩形3”</b></a>方法。</p>
+	<p align="left">此处不再详细讲解。</p>
+	<p align="left"><img border="0" src="hb_images/112.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hlx"></a>
+<a name="yljhwb"></a>
+	<font style="font-size: 12pt; font-weight:700">● 画路径</font><br/>
+	
+	<font style="font-size: 12pt; font-weight:700">● 沿路径画文本</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">以上为两个关联方法，这里统一讲解。</p>
+	<p align="left"><b>“画路径”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法支持动态调用，总共有三个参数。</p>
+	<p align="left">具体的路径绘制需要通过<a href="#hzglql"><b>“绘制路径类”</b></a>指定路径。</p>
+	<p align="left">绘制的颜色等属性，依然是通过<b>“画笔类”</b>定义。</p>
+	<p align="left"><img border="0" src="hb_images/117.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“画路径”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法支持动态调用，有<b>“六个参数”</b>。</p>
+	<p align="left">参数1：依然是所提供的画板类对象，动态调用时<b>“参数1忽略”</b>。</p>
+	<p align="left">参数2：提供在哪条路径类上绘制文本。</p>
+	<p align="left">参数3：如果为<b>“0”</b>则从路径起点开始绘制文本，如果<b>“填写10”</b>，将会距离起点<b>“10像素”</b>的位置开始绘制。</p>
+	<p align="left">参数4：<b>“等于0”</b>文本将会绘制在线条上。<b>“大于0”</b>绘制在线条下方，<b>“小于0”</b>绘制在上方，单位像素。</p>
+	<p align="left">参数5：提供想要绘制的文本。</p>
+	<p align="left">参数6：提供定义的画笔类变量。</p>
+	<p align="left"><img border="0" src="hb_images/118.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">首先依然是定义<b>“画笔类”</b>变量，设置三个属性分别为<b>“颜色”</b>，<b>“笔划类型”</b>，<b>“字体像素尺寸”</b>。</p>
+	<p align="left">然后在<b>“异步绘制帧”</b>下定义<b>“绘制路径类”</b>变量。</p>
+	<p align="left">随后调用<b>“绘制路径.加直线到”</b>方法，绘制线段。</p>
+	<p align="left">它的两个参数分别为：<b>“结束点横向坐标”</b>和<b>“结束点纵向坐标”</b>。</p>
+	<p align="left">连续添加两条直线，随后调用<b>“画路径”</b>方法，根据<b>“绘制路径”</b>类提供的结束点坐标，去绘制路径。</p>
+	<p align="left">最后调用<b>“沿路径画文本”</b>方法，给路径添加一段文本。</p>
+	<p align="left"><img border="0" src="hb_images/119.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>就会出现如图所示的路径，并且路径上方还有一段文本。</p>
+	<p align="left">绘制路径如果不指定起始点位置，默认从画板<b>“左上角”</b>开始绘制。</p>
+	<p align="left">线段的结束点，<b>“加直线到”</b>方法定义的一致。</p>
+	<p align="left">所绘制的文本也偏移了指定的距离。</p>
+	<p align="left"><img border="0" src="hb_images/120.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="yljhwbqj"></a>
+	<font style="font-size: 12pt; font-weight:700">● 沿路径画文本区间</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“沿路径画文本”</b>基本相同，不同之处在于，本方法绘制的是<b>“字符数组”</b>。</p>
+	<p align="left">并且可以指定<b>“首字符索引”</b>和<b>“字符数目”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/121.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">我们只需要在<b>“沿路径画文本”</b>方法的基础上稍作修改。</p>
+	<p align="left">增加一个<b>“字符数组”</b>变量，利用<b>“文本到字符数组”</b>方法转换文本为字符数组，赋值给变量。</p>
+	<p align="left">最后将<b>“字符数组”</b>变量写入参数。</p>
+	<p align="left"><b>“首字符索引”</b>和<b>“字符数目”</b>参数，填写的是<b>“2和3”</b>。</p>
+	<p align="left">意思就是说，从第二个字符索引，取出三个字符。</p>
+	<p align="left"><img border="0" src="hb_images/122.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>后，路径绘制成功，文字也是取的指定文本。</p>
+	<p align="left"><img border="0" src="hb_images/123.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+
+<a name="zrjcjx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 置入剪裁矩形</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法有五个参数，后四个均为坐标位置，单位像素。</p>
+	<p align="left">本方法可以通俗理解为，将当前画布剪裁一个区域出来。</p>
+	<p align="left">进行一些操作时尽在当前设置的区域内操作，不会影响区域外的效果（例如:<b>“填充颜色”</b>）。</p>
+	<p align="left"><img border="0" src="hb_images/151.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">例如：先执行<b>“填充颜色”</b>方法去填充一个<b>“红色”</b>。</p>
+	<p align="left">最后调用<b>“置入剪裁矩形”</b>方法，在画布左上角设置一个矩形区域。</p>
+	<p align="left">最后，继续执行一个<b>“填充颜色”</b>方法。</p>
+	<p align="left"><img border="0" src="hb_images/152.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终的效果，点击<b>“按钮1”</b>后，红色的背景下，左上角会有一个黄色的矩形区域。</p>
+	<p align="left"><img border="0" src="hb_images/153.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="zrjcjx2"></a>
+	<font style="font-size: 12pt; font-weight:700">● 置入剪裁矩形2</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“置入剪裁矩形”</b>不同之处在于，本方法利用的是<b>“矩形类”</b>创建一个矩形区域。</p>
+	<p align="left"><img border="0" src="hb_images/154.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接定义一个<b>“矩形类”</b>变量，分别设置<b>“上下左右四个属性即可。</p>
+	<p align="left">本方法运行效果和<b>“置入剪裁矩形”</b>效果一致，因此不再演示。</p>
+	<p align="left"><img border="0" src="hb_images/155.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="qdqjcjx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 取当前剪裁矩形</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，就是取出来当前裁剪的矩形，如果矩形存在则放入<b>“矩形类”</b>参数中。</p>
+	<p align="left">通过<b>“矩形类”</b>的<b>“上下左右”</b>四个读属性可以读取坐标值。</p>
+	<p align="left"><img border="0" src="hb_images/156.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">本方法的使用很简单，直接将本方法写到<b>“置入剪裁矩形”</b>后面即可，就可以将定义的<b>“剪裁矩形”</b>取出。</p>
+	<p align="left">当然需要定义一个<b>“矩形类”</b>变量，来承载这个矩形数据。</p>
+	<p align="left">随后通过调用<b>“矩形.上、下、左、右”</b>四个读属性，可以读取矩形的四个坐标。</p>
+	<p align="left"><b>“到文本”</b>转换为文本型，然后相加，最后提供给<b>“提示框”</b>演示结果。</p>
+	<p align="left"><img border="0" src="hb_images/157.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">提示框成功弹出坐标位置，证明本方法执行成功。</p>
+	<p align="left"><img border="0" src="hb_images/158.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="zrjclx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 置入剪裁路径</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法顾名思义，就是通过路径创建一个剪裁区域出来。</p>
+	<p align="left">返回值与<b>“置入剪裁矩形”</b>一致。</p>
+	<p align="left"><img border="0" src="hb_images/159.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">首先定义一个<b>“绘制路径类”</b>变量。</p>
+	<p align="left">随后依然是<b>“填充颜色”</b>，然后利用<b>“绘制路径”</b>变量，添加两条直线。</p>
+	<p align="left">随后调用本方法，将变量写入参数。</p>
+	<p align="left">最后填充一个黄色。</p>
+	<p align="left"><img border="0" src="hb_images/160.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>开始绘制后，就会在红色的画板上，出现一个黄色的三角形。</p>
+	<p align="left"><img border="0" src="hb_images/161.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="zrjcqy"></a>
+	<font style="font-size: 12pt; font-weight:700">● 置入剪裁区域</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法顾名思义，就是通过<b>“剪裁区域类”</b>创建一个剪裁区域出来。</p>
+	<p align="left">返回值与<b>“置入剪裁矩形”</b>一致。</p>
+	<p align="left"><img border="0" src="hb_images/162.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义一个类型为<b>“剪裁区域类”</b>变量，设置参考。</p>
+	<p align="left">随后调用<b>“剪裁区域类.从矩形创建”</b>方法，可以创建一个矩形的剪裁区域出来。</p>
+	<p align="left">将整个方法赋值给<b>“剪裁区域”</b>变量，随后将变量写入<b>“置入剪裁区域”</b>方法的参数中。</p>
+	<p align="left">最后的填充一个黄色。</p>
+	<p align="left">本方法运行效果和<b>“置入剪裁矩形”</b>效果一致，因此不再演示。</p>
+	<p align="left"><img border="0" src="hb_images/163.png" ></p>
+</blockquote>	
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="zrjcxsjx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 置入剪裁小数矩形</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法与<b>“置入剪裁矩形”</b>不同之处在于，本方法的位置坐标，支持填写<b>“小数”</b>。</p>
+	<p align="left">代码编写参考<a href="#zrjcjx"><b>“置入剪裁矩形”</b></a>。</p>
+	<p align="left"><img border="0" src="hb_images/164.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="zrjcxsjx2"></a>
+	<font style="font-size: 12pt; font-weight:700">● 置入剪裁小数矩形2</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法与<b>“置入剪裁矩形2”</b>不同之处，本方法的参数是<b>“小数矩形类”</b>，支持设置<b>“小数”</b>。</p>
+	<p align="left">代码编写参考<a href="#zrjcjx2"><b>“置入剪裁矩形2”</b></a>。</p>
+	<p align="left"><img border="0" src="hb_images/165.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jxjccs"></a>
+	<font style="font-size: 12pt; font-weight:700">● 矩形剪裁测试</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法有六个参数，通俗来讲，它可以判断指定的矩形区域，是否和<b>“剪裁区域”</b>相交。</p>
+	<p align="left">返回<b>“真”</b>表示<b>“不相交”</b><p>
+	<p align="left"><img border="0" src="hb_images/166.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">创建一个<b>“剪裁区域”</b>，然后利用本方法填写坐标，判断坐标内的区域是否和<b>“剪裁区域”</b>相交。</p>
+	<p align="left">最后一个参数，根据实际需求填写，通常填写<b>“假”</b>即可。</p>
+	<p align="left">最后判断本方法的返回值，是否等于真。</p>
+	<p align="left"><img border="0" src="hb_images/167.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>开始绘制后，提示<b>“不相交”</b>。</p>
+	<p align="left">证明本方法中输入的坐标的确与<b>“剪裁矩形”</b>不相交。</p>
+	<p align="left">如果输入一个相交的数值，必然会返回<b>“假”</b>提示<b>“相交”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/168.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jxjccs2"></a>
+	<font style="font-size: 12pt; font-weight:700">● 矩形剪裁测试2</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“矩形剪裁测试”</b>不同之处在于，本方法是通过<b>“小数矩形类”</b>设置坐标。</p>
+	<p align="left">前面的多个方法中均运用到了小数矩形类，这里不再详细讲解。</p>
+	<p align="left"><img border="0" src="hb_images/169.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="ljjccs"></a>
+	<font style="font-size: 12pt; font-weight:700">● 路径剪裁测试</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用就是检测一个<b>“路径区域”</b>，是否和<b>“剪裁区域”</b>相交。</p>
+	<p align="left">返回<b>“真”</b>表示不相交，返回<b>“假”</b>表示相交。</p>
+	<p align="left">注意：极个别情况下，<b>“不相交”</b>也会返回<b>“假”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/170.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">首先执行<b>“填充颜色”</b>方法，填充一个红色背景，随后设置一个剪裁区域。</p>
+	<p align="left">定义一个<b>“绘制路径类”</b>变量，利用变量去添加一个矩形的路径。</p>
+	<p align="left">通过填写的坐标数值可以看出，<b>“它与剪裁矩形”</b>处于<b>“相交状态”</b>。</p>
+	<p align="left">随后调用<b>“路径剪裁测试”</b>方法，检测是否相交。</p>
+	<p align="left"><img border="0" src="hb_images/171.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>后会提示相交，证明本方法判断成功，没有出现低概率的判断失败的情况。</p>
+	<p align="left"><img border="0" src="hb_images/172.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="zhjcjx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 组合剪裁矩形</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法支持动态调用，总共有<b>“三个”</b>参数。</p>
+	<p align="left">参数1：设置要操作的画板类对象（动态调用时省略）。</p>
+	<p align="left">参数2：当前<b>“剪裁区域”</b>和要组合的<b>“矩形类”</b>。</p>
+	<p align="left">参数3：剪裁区域和矩形的组合方式，调用方式<b>“剪裁区域组合方式.XXXX”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/173.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">填充背景色后，设置一个剪裁矩形。</p>
+	<p align="left">随后定义一个<b>“矩形类”</b>变量，分别设置<b>“上下左右”</b>四个属性值。</p>
+	<p align="left">随后通过<b>“画板对象”</b>调用<b>“组合剪裁矩形”</b>方法。</p>
+	<p align="left">参数2：填写<b>“矩形变量”</b>。</p>
+	<p align="left">参数3：组合模式使用<b>“剪裁区域组合方式.相交”</b>。</p>
+	<p align="left">最后剪裁区域填充黄色。</p>
+	<p align="left"><img border="0" src="hb_images/174.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>后，最终结果并不是绘制<b>“剪裁矩形”</b>，也不是绘制<b>“矩形类”</b>。</p>
+	<p align="left">而是绘制两者相交的区域。</p>
+	<p align="left"><img border="0" src="hb_images/175.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jhjclj"></a>
+	<font style="font-size: 12pt; font-weight:700">● 组合剪裁路径</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“组合剪裁矩形”</b>不同之处在于，本方法是对<b>“绘制路径类”</b>进行组合。</p>
+	<p align="left"><b>“绘制路径类”</b>的创建参考<a href="#zrjclx"><b>“置入剪裁路径”</b></a>，此处不再详细讲解。</p>
+	<p align="left">代码编写参考<a href="#zhjcjx"><b>“组合剪裁矩形”</b></a>。</p>
+	<p align="left"><img border="0" src="hb_images/176.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="zhjcqy"></a>
+	<font style="font-size: 12pt; font-weight:700">● 组合剪裁区域</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“组合剪裁矩形”</b>不同之处在于，本方法是对<b>“剪裁区域类”</b>进行组合。</p>
+	<p align="left"><b>“剪裁区域类”</b>的创建参考<a href="#zrjcqy"><b>“置入剪裁区域”</b></a>，此处不再详细讲解。</p>
+	<p align="left">代码编写参考<a href="#zhjcjx"><b>“组合剪裁矩形”</b></a>。</p>
+	<p align="left"><img border="0" src="hb_images/177.png" ></p>
+</blockquote>
+	
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="zyjcxsjx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 组合剪裁小数矩形</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“组合剪裁矩形”</b>不同之处在于，本方法是对<b>“四个小数”</b>坐标形成的<b>“矩形”</b>进行组合。</p>
+	<p align="left">代码编写参考<a href="#zhjcjx"><b>“组合剪裁矩形”</b></a>，此处不再进行详细讲解。</p>
+	<p align="left"><img border="0" src="hb_images/178.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+	<a name="zyjcxsjx2"></a>
+	<font style="font-size: 12pt; font-weight:700">● 组合剪裁小数矩形2</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“组合剪裁小数矩形”</b>不同之处在于，本方法是对<b>“小数矩形类”</b>进行组合。</p>
+	<p align="left">代码编写参考<a href="#zhjcjx"><b>“组合剪裁矩形”</b></a>，此处不再进行详细讲解。</p>
+	<p align="left"><b>“小数矩形类”</b>的创建参考<a href="#hjx3"><b>“画矩形3”</b></a>。</p>
+	<p align="left"><img border="0" src="hb_images/179.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="cycqjz"></a>
+	<font style="font-size: 12pt; font-weight:700">● 乘于错切矩阵</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法支持动态调用，有三个参数。</p>
+	<p align="left">第一个参数依然是要操作的画板类对象。</p>
+	<p align="left">参数2、3，可以理解为切斜角度，均为tan值。</p>
+	<p align="left">比如要切斜<b>“45度”</b>，<b>“tan45=1”</b>，参数内<b>“填写1”</b>即表示倾斜45度。</p>
+	<p align="left">帮助文档内的乘法公式，知道即可无需深入了解。</p>
+	<p align="left"><img border="0" src="hb_images/180.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图（1）：</p>
+<blockquote>
+	<p align="left">定义三个<b>“画笔类”</b>变量，分别设置<b>“白色，红色，绿色”</b>，<b>“笔划类型”</b>设置<b>“描边”</b>。</p>
+	<p align="left">设置<b>“描边”</b>后，就可以绘制空心矩形。</p>
+	<p align="left"><img border="0" src="hb_images/181.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图（2）：</p>
+<blockquote>
+	<p align="left">在<b>“异步绘制帧”</b>方法下，首先调用<b>“画矩形”</b>方法填充一个白色的矩形。</p>
+	<p align="left">随后调用<b>“乘于错切矩阵”</b>，参数1填写<b>“0”</b>，参数2填写<b>“1”</b>。</p>
+	<p align="left">这样填写就表示<b>“纵向倾斜45度”</b>。</p>
+	<p align="left">随后我们继续调用<b>“画矩形”</b>方法，此时绘制的矩形就是切斜后的矩形。</p>
+	<p align="left">画笔类参数使用<b>“画笔2”</b>，绘制红色矩形。</p>
+	<p align="left">重复<b>“乘于错切矩形”</b>，随后继续调用<b>“画矩形”</b>。</p>
+	<p align="left">此时矩形的绘制，会基于红色矩形进行绘制。</p>
+	<p align="left"><img border="0" src="hb_images/182.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">可以看到<b>“白色矩形”</b>位于左上角是一个正方形。</p>
+	<p align="left"><b>“红色矩形”</b>左侧不变右侧下移，倾斜了<b>“45度”</b>。</p>
+	<p align="left">但是<b>“绿色矩形”</b>此时看上去并不像是切斜了45度，但是矩形切斜位置处于对角线。</p>
+	<p align="left">红色矩形是由白色矩形切斜而来，白色矩形是90度直角。</p>
+	<p align="left">虽然<b>“绿色矩形”</b>是基于<b>“红色矩形”</b>进行绘制，但是参考的还是白色矩形的直角角度。</p>
+	<p align="left">倾斜45度就是对半分，所以此刻绿色矩形将红色进行了对半分。</p>
+	<p align="left"><img border="0" src="hb_images/183.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="cypyjz"></a>
+	<font style="font-size: 12pt; font-weight:700">● 乘于平移矩阵</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法通俗理解，就是对矩形进行平移操作。</p>
+	<p align="left">参数2：表示矩形距离画板左边的位置。</p>
+	<p align="left">参数3：表示矩形距离画板顶边的位置。</p>
+	<p align="left"><img border="0" src="hb_images/184.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">保留<b>“乘于错切矩阵”</b>方法中的<b>“画笔”</b>变量。</p>
+	<p align="left">调用<b>“画矩形”</b>方法，绘制一个白色矩形，作为参考。</p>
+	<p align="left">随后执行<b>“乘于平移矩阵”</b>方法，两个参数分别填写<b>“50,100”</b>。</p>
+	<p align="left">然后继续执行一个<b>“画矩形”</b>方法。</p>
+	<p align="left"><img border="0" src="hb_images/185.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">我们可以看到，白色矩形位于<b>“左上角”</b>，而绘制的<b>“红色矩形”</b>进行了一定距离的偏移。</p>
+	<p align="left">而这个偏移的数值，其实就是<b>“乘于平移矩阵”</b>内填写的参数数值。</p>
+	<p align="left"><b>“乘于平移矩阵”</b>的作用，如坐标所示，其实并不是让矩形发生了偏移，而是<b>“起点坐标”</b>发生了偏移。</p>
+	<p align="left">也就是说调用本方法后，绘制任何矩形时，都会以这个偏移后的坐标作为起点进行绘制。</p>
+	<p align="left"><img border="0" src="hb_images/186.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="cysfjz"></a>
+	<font style="font-size: 12pt; font-weight:700">● 乘于缩放矩阵</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，建立一个<b>“缩放矩阵”</b>，用来对指定内容进行缩放操作。</p>
+	<p align="left">参数2、3：填写的数值大于1扩大。小于1缩小。等于1不变。</p>
+	<p align="left">例如：填写0.5缩小一半。</p>
+	<p align="left">本方法可用作于<b>“图片查看器”</b>，通过手势操作，按照一定比例进行放大和缩小图片。</p>
+	<p align="left"><img border="0" src="hb_images/187.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在<b>“乘于平移矩阵”</b>代码的基础上，将<b>“平移”</b>改为<b>“缩放”</b>。</p>
+	<p align="left">两个参数都填写<b>“0.5”</b>，表示缩小一倍。</p>
+	<p align="left"><img border="0" src="hb_images/188.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>开始绘制后，可以看到<b>“红色矩形”</b>明显小了一倍。</p>
+	<p align="left"><img border="0" src="hb_images/189.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="cysfjz2"></a>
+	<font style="font-size: 12pt; font-weight:700">● 乘于缩放矩阵2</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“乘于缩放矩阵”</b>不同之处在于，多了两个缩放中心的坐标参数。</p>
+	<p align="left"><img border="0" src="hb_images/190.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">例如：两个<b>“缩放中心坐标”</b>，分别填写<b>“50”</b>，就表示从<b>“白色矩形”</b>的中心位置进行缩放。</p>
+	<p align="left"><img border="0" src="hb_images/191.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>开始绘制后，可以看到<b>“红色矩形”</b>缩放后位于<b>“白色矩形”</b>中心位置。</p>
+	<p align="left"><img border="0" src="hb_images/192.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="cyxzjz"></a>
+	<font style="font-size: 12pt; font-weight:700">● 乘于旋转矩阵</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用就是创建一个旋转矩阵，用作绘制图像的旋转。</p>
+	<p align="left">参数2：提供的旋转角度，会以顺时针方向旋转。</p>
+	<p align="left"><img border="0" src="hb_images/193.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">依然还是这一套代码。</p>
+	<p align="left">直接在本方法内，填写想要旋转的角度即可。</p>
+	<p align="left">例如：填写<b>“45”</b>度。</p>
+	<p align="left"><img border="0" src="hb_images/194.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>开始绘制后，红色的矩形进行了顺时针旋转45度的操作。</p>
+	<p align="left"><img border="0" src="hb_images/195.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="cyxzjz2"></a>
+	<font style="font-size: 12pt; font-weight:700">● 乘于旋转矩阵2</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法与<b>“乘于旋转矩阵”</b>不同之处在于，本方法支持旋转中心坐标的设置。</p>
+	<p align="left">参数3、4用来设置旋转中心的<b>“横纵坐标”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/196.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在参数内填写想要作为<b>“旋转中心”</b>的<b>“横纵坐标”</b>即可。</p>
+	<p align="left">例如：这里全部填写100。</p>
+	<p align="left"><img border="0" src="hb_images/198.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">因矩形的高度和宽度都是一百，所以填写坐标为一百后，旋转中心就移动到了矩形的右下角。</p>
+	<p align="left"><img border="0" src="hb_images/197.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="cwtcj"></a>
+	<font style="font-size: 12pt; font-weight:700">● 从位图创建</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用是通过<b>“位图类”</b>创建一个<b>“画板对象”</b>，本画板对象的所有绘制操作，将会在<b>“位图”</b>上进行。</p>
+	<p align="left">也就是说不会显示在当前画板上，除非调用了<b>“画位图”</b>等方法才会显示出来。</p>
+	<p align="left">另外，位图对象的<b>“易变模式”</b>必须为真。</p>
+	<p align="left"><img border="0" src="hb_images/199.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义画笔类变量，分别设置<b>“颜色”</b>，<b>“变化类型”</b>和<b>“像素宽度”</b>属性。</p>
+	<p align="left">在<b>“异步绘制帧”</b>方法下定义三个变量，分别为<b>“位图类”</b>，<b>“可绘制资源”</b>和<b>“画板类”</b>，注意要设置参考。</p>
+	<p align="left">首先通过<b>“从资源创建”</b>创建位图对象，赋值给变量。</p>
+	<p align="left">然后调用<b>“位图变量”</b>的<b>“复制创建”</b>方法，设置当前的<b>“易变模式”</b>为真，然后赋值给当前对象。</p>
+	<p align="left">接下来就可以利用<b>“从位图创建”</b>方法，创建画板赋值给<b>“画板”</b>变量。</p>
+	<p align="left">随后通过画板绘制一个矩形，此矩形的绘制就是基于当前的<b>“位图对象”</b>进行，绘制过程是看不见的。</p>
+	<p align="left">最后只有了调用<b>“画位图”</b>方法，绘制操作才能出现在画板上。</p>
+	<p align="left"><img border="0" src="hb_images/200.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">导入的位图图片多了一个白色的外边框。</p>
+	<p align="left"><img border="0" src="hb_images/201.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="jzhwt"></a>
+	<font style="font-size: 12pt; font-weight:700">● 矩阵画位图</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法支持动态调用，总共有四个参数。</p>
+	<p align="left">它的作用就是将指定的<b>“位图类”</b>绘制到指定的<b>“矩阵类”</b>中。</p>
+	<p align="left">另外<b>“画笔类”</b>可以<b>“不定义变量”</b>，直接填写<b>“空对象”</b>即可。</p>
+	<p align="left"><img border="0" src="hb_images/202.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在<b>“异步绘制帧”</b>方法下，定义三个变量，类型分别为<b>“位图类”</b>，<b>“可绘制资源”</b>和<b>“矩阵类”</b>。</p>
+	<p align="left">其中<b>“位图类”</b>设置参考，给<b>“可绘制资源”</b>导入一张图。</p>
+	<p align="left">调用<b>“位图类.从资源创建()”</b>方法，参数填写图片变量，赋值给定义的<b>“位图类变量”</b>。</p>
+	<p align="left">随后调用<b>“矩阵.乘于平移矩阵”</b>方法，创建一个矩阵对象。</p>	
+	<p align="left">最后执行<b>“矩阵画位图”</b>，将变量填写参数内即可。</p>
+	
+	<p align="left"><img border="0" src="hb_images/203.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>开始绘制后，成功在画板指定矩阵内绘制了导入的图片。</p>
+	<p align="left"><img border="0" src="hb_images/204.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="dqjcjxd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 当前剪裁矩形（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法与<b>“取当前剪裁矩形”</b>不同之处在于，本方法是直接返回<b>“矩形类”</b>变量。</p>
+	<p align="left">通过矩形类的<b>“上下左右”</b>四个属性可以取出坐标值。</p>
+	<p align="left"><b>“矩形类”</b>的使用可参考<a href="#qdqjcjx"><b>“取当前剪裁矩形”</b></a>方法。</p>
+	<p align="left"><img border="0" src="hb_images/205.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="dqzhjzx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 当前转换矩阵（写）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本写属性的作用，就是用来设置当前转换矩阵。</p>
+	<p align="left"><img border="0" src="hb_images/206.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义<b>“画笔类”</b>变量，<b>“颜色”</b>属性设置白色。</p>
+	<p align="left">在<b>“异步绘制帧”</b>方法下，定义<b>“矩阵类”</b>变量。</p>
+	<p align="left">首先调用<b>“矩阵.乘于平移矩阵”</b>方法，两个参数全部填写100.</p>
+	<p align="left">然后使用本属性设置<b>“当前转换矩阵”</b>为定义的<b>“矩阵”</b>变量。</p>
+	<p align="left">随后我们调用<b>“画板对象.乘于平移矩阵”</b>方法，两个参数也填写100。</p>
+	<p align="left">最后执行一个<b>“画矩形”</b>方法，此时矩形的绘制，距离左边和顶边的距离会是200。</p>
+	<p align="left"><img border="0" src="hb_images/207.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>开始绘制后，左边和顶边都是200像素的距离。</p>
+	<p align="left"><img border="0" src="hb_images/208.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hzglqx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 绘制过滤器（写）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">它的作用就是在绘制图形或者图片时，使用过滤器进行过滤一些不想要的东西。</p>
+	<p align="left">例如：绘制图片时产生的锯齿。</p>
+	<p align="left"><a href="#hzglql"><b>“绘制过滤器类”</b></a>中有两个方法，用作过滤不同的东西。</p>
+	<p align="left"><img border="0" src="hb_images/209.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在<b>“异步绘制帧”</b>事件下，定义两个变量，分别为<b>“位图类”</b>和可绘制资源”</b>，用作创建<b>“位图”</b>对象。</p>
+	<p align="left">随后利用<b>“乘于旋转矩阵”</b>方法旋转图片，最后调用<b>“画位图”</b>绘制图片。</p>
+	<p align="left">接下来使用<b>“绘制过滤器”</b>写属性，等号右侧填写<b>“绘制过滤器类.创建反锯齿过滤器()”</b>方法。</p>
+	<p align="left">赋值此方法后，图片就有了反锯齿的属性，然后调用<b>“画位图”</b>绘制图片。</p>
+	<p align="left"><img border="0" src="hb_images/210.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终结果第一次绘制，可以看到图片有明显的<b>“锯齿”</b>痕迹。</p>
+	<p align="left">第二次绘制，可以明显的看到，锯齿都消失不见。</p>
+	<p align="left"><img border="0" src="hb_images/211.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hzglqd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 绘制过滤器（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，就是返回设置的<b>“绘制过滤器类”</b>对象。</p>
+	<p align="left">调用方式：<b>“异步绘制帧”</b>事件下的调用方式<b>“画板对象.绘制过滤器”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/212.png" ></p>
+</blockquote>
+
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="mdx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 密度（写）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性是用来设置画板的密度，用来绘图时计算缩放系数。</p>
+	<p align="left">密度设置后，画板的默认密度将不再被使用。</p>
+	<p align="left"><img border="0" src="hb_images/215.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义两个变量，类型分别为<b>“位图类”</b>和<b>“可绘制资源”</b>。</p>
+	<p align="left">其中<b>“位图类”</b>设置参考，可绘制资源导入一张图片。</p>
+	<p align="left">随后调用<b>“位图类.从资源创建”</b>方法，赋值给<b>“位图”</b>变量。</p>
+	<p align="left">随后利用<b>“密度”</b>写属性，分别写两个密度值，分别调用画位图方法。</p>
+	<p align="left"><img border="0" src="hb_images/216.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">密度为100的图片，明显比密度为200的，小一倍。</p>
+	<p align="left"><img border="0" src="hb_images/217.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="mdd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 密度（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，就是读取当前画板的<b>“密度值”</b>。</p>
+	<p align="left">如果没有设置过，则返回0。</p>
+	<p align="left"><img border="0" src="hb_images/218.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在需要读取的地方，放入本<b>“读属性”</b>即可。</p>
+	<p align="left">例如:这里直接读取密度值，赋值给<b>“提示框”</b>显示结果。</p>
+	<p align="left"><img border="0" src="hb_images/219.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">因之前没有设置密度值，所以点击<b>“按钮1”</b>后，会提示<b>“当前密度：0”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/220.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="mdwtx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 目的位图（写）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本<b>“写属性”</b>和<a href="#cwtcj"><b>“画板类.从位图创建()”</b></a>方法有些类似。</p>
+	<p align="left">它们的目的都是<b>“将绘制操作”</b>在位图上进行，而不显示在画板上。</p>
+	<p align="left">同样适用本属性必须保证，位图对象的<b>“易变模式”</b>为真。</p>
+	<p align="left"><img border="0" src="hb_images/221.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接照抄<b>“从位图创建”</b>的代码，然后简单修改即可实现本属性的应用。</p>
+	<p align="left">此处不再详细解释。</p>
+	<p align="left"><img border="0" src="hb_images/222.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="sfbzctmd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 是否不支持透明（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，就是判断当前绘制层是否支持透明。</p>
+	<p align="left">返回<b>“真”</b>不支持透明，返回<b>“假”</b>支持透明。</p>
+	<p align="left">在<b>“不支持透明”</b>的情况下，可以使用<b>“保存绘制层”</b>方法进入一个新的离屏绘制层，进行绘制透明图像的操作。</p>
+	<p align="left"><img border="0" src="hb_images/224.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在<b>“按钮1”</b>被单击<b>“高级画板1.开始绘制”</b>的属性下面，增加一个<b>“高级画板1.像素格式”</b>属性。</p>
+	<p align="left">并且给其属性设置<b>“图像像素格式.透明”</b>，这样当前绘制层就会支持透明。</p>
+	<p align="left">在<b>“异步绘制帧”</b>事件下，可以通过<b>“画板对象.是否不支持透明”</b>来判断当前的绘制层是否支持透明。</p>
+	<p align="left">最后弹出对应的结果。</p>
+	<p align="left"><img border="0" src="hb_images/225.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终结果就是<b>“支持透明”</b>。</p>
+	<p align="left">如果我们在<b>“按钮1”</b>被单击下，设置<b>“图像像素格式.不透明”</b>。</p>
+	<p align="left">那么点击<b>“按钮1”</b>后肯定会弹出<b>“不支持透明”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/226.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="sfqyyjjsd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 是否启用硬件加速（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本<b>“读属性”</b>顾名思义，判断当前画板是否启用<b>“硬件加速”</b>进行绘制操作。</p>
+	<p align="left"><b>“硬件加速”</b>即充分利用手机硬件来进行加速操作。</p>
+	<p align="left">注意：画板的部分绘制操作，需要关闭加速才能进行绘制。</p>
+	<p align="left">启用硬件加速的方法：<b>“高级画板1.硬件加速=真”</b>即可启用。</p>
+
+	<p align="left"><img border="0" src="hb_images/227.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在需要进行判断的位置，填写本属性进行判断即可。</p>
+	<p align="left">本方法不再进行结果演示。</p>
+	<p align="left"><img border="0" src="hb_images/228.png" ></p>
+</blockquote>	
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="sbcztsm"></a>
+	<font style="font-size: 12pt; font-weight:700">● 所保存状态数目（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">红色方块内的为重点。</p>
+	<p align="left">用户每次调用<b>“保存状态”</b>或<b>“保存绘制层”</b>等保存方法时，都会<b>“计数+1”</b>。</p>
+	<p align="left">当调用<b>“恢复状态”</b>或<b>“恢复状态到”</b>方法时，就会弹出保存的绘制层并且<b>“总状态数-1”</b>。</p>
+	<p align="left">本方法的作用就是读取<b>“所有保存”</b>且<b>“未弹出”</b>的<b>“保存状态数”</b>。</p>
+	<p align="left">注意：默认状态数会有一个。</p>
+	<p align="left"><img border="0" src="hb_images/229.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在需要读取的地方，填写本<b>“读属性”</b>即可。</p>
+	<p align="left">例如：我这里执行<b>“到文本”</b>将状态数目转换为文本，提供给提示框显示。</p>
+	<p align="left">注意：我这里并没有进行任何保存状态的操作。</p>
+	<p align="left"><img border="0" src="hb_images/230.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最后结果点击<b>“按钮1”</b>开始绘制后，提示<b>“1”</b>，也就是说状态数默认为1。</p>
+	<p align="left">如果你在本属性之前执行了<b>“保存状态”</b>方法，那么此时必然会提示<b>“2”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/231.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="zdkhzwtgdd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 最大可绘制位图高度（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本读属性，可以返回当前画板最大的可绘制<b>“高度”</b>。</p>
+	<p align="left">超过返回值尺寸的位图，可以进行限制绘制。</p>
+	<p align="left">如果在<b>“异步绘制帧”</b>方法下调用，直接使用<b>“画板对象.最大可绘制位图高度”</b>即可。</p>
+	<p align="left"><img border="0" src="hb_images/232.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="zdkhzwtkdd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 最大可绘制位图宽度（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本读属性，可以返回当前画板最大的可绘制<b>“宽度”</b>。</p>
+	<p align="left">超过返回值尺寸的位图，可以进行限制绘制。</p>
+	<p align="left">调用方法同上。</p>
+	<p align="left"><img border="0" src="hb_images/233.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hzcgdd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 绘制层高度（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本<b>“读属性”</b>用来读取当前绘制层的<b>“高度”</b>。</p>
+	<p align="left">注意：<b>“绘制层高度”</b>并不等于<b>“画板高度”</b>。</p>
+	<p align="left">如果在<b>“异步绘制帧”</b>方法下调用，直接使用<b>“画板对象.绘制层高度”</b>即可。</p>
+	<p align="left"><img border="0" src="hb_images/234.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hzckdd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 绘制层宽度（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本<b>“读属性”</b>用来读取当前绘制层的<b>“宽度”</b>。</p>
+	<p align="left">注意：<b>“绘制层宽度”</b>同样也不等于<b>“画板宽度”</b>。</p>
+	<p align="left">调用方式同上。</p>
+	<p align="left"><img border="0" src="hb_images/235.png" ></p>
+</blockquote>
+
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

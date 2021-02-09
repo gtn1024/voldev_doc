@@ -1,0 +1,274 @@
+
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>加解密操作支持</h4></li>
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.加解密类<span>(可收缩)</span></h6></li>
+		<ol id="new1">
+           <li><blockquote><a href="#jjmzbgz">1.准备工作</a></blockquote></li>
+       li><blockquote><a href="#aesjiami">2.AES加密</a></blockquote></li>
+          <li><blockquote><a href="#aesjiami">3.AES解密</a></blockquote></li>
+           <li><blockquote><a href="#desjiajiemi">4.DES加密</a></blockquote></li>
+           <li><blockquote><a href="#desjiajiemi">5.DES解密</a></blockquote></li>
+           <li><blockquote><a href="#desjiajiemi">6.RC4加密</a></blockquote></li>
+			<li><blockquote><a href="#desjiajiemi">7.RC4解密</a></blockquote></li>
+           <li><blockquote><a href="#rsajiami">8.RSA加密</a></blockquote></li>
+           <li><blockquote><a href="#rsajiami">9.RSA解密</a></blockquote></li>
+           <li><blockquote><a href="#jjmszqm">10.数字签名</a></blockquote></li>
+           <li><blockquote><a href="#jjmszqm">11.签名验证</a></blockquote></li>
+		</ol>	
+		
+	</ol>
+</ul>
+</div>
+<p align="left">
+<h2>加解密操作实例讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+<a name="zbgz"></a>    
+     <a name="jjmzbgz"></a>
+<font style="font-size: 12pt; font-weight:700">● 帮助说明</font><br/>
+<br/>
+<blockquote>
+<p align="left">本教程针对各种加解密进行了讲解说明。</p>
+<p align="left">所有方法均位于：<strong>“数据处理支持1”</strong>模块中。</p>
+ <!-- <p align="left"><img border="0" src="img/1.png" ></p>-->
+</blockquote>	
+
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	
+<h2>一、加解密类</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">界面准备：</p>
+<blockquote>
+    <p align="left">准备如下图所示的界面。</p>
+    <p align="left">依次为：<b>“编辑框1”</b>，<b>“按钮1”</b>，<b>“编辑框2”</b>，<b>“按钮2”</b>和<b>“编辑框3”</b>。</p>
+	<p align="left"><img border="0" src="img/292.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="aesjiami"></a>
+<font style="font-size: 12pt; font-weight:700">● AES加密</font><br/>
+<font style="font-size: 12pt; font-weight:700">● AES解密</font>
+<p align="left">&nbsp;</p>
+<p align="left"><font color="#EF1216"><strong>注意：如果要和其它编程语言通用，请使用“AES加解密类”</strong></font></p>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“AES加密”</b>帮助文档：</p>
+<blockquote>
+	<p align="left"><b>“AES加密”</b>中文全称<b>“高级加密标准”</b>，在密码学中又称为<b>“Rijndael加密法”</b>。</p>
+	<p align="left">加解密过程通过相同的密码来进行。</p>
+	<p align="left">参数1：填写要加密的字节数组。</p>
+	<p align="left">参数2：填写加密密码。</p>
+	<p align="left">参数3、4：谨慎使用，如果不会操作保留空对象即可，否则可能会导致加密后无法解密等情况发生。</p>
+	<p align="left">注意：加密后会返回<b>“字节数组”</b>，可通过<b>“Base64类”</b>进行编码后显示成文本。</p>
+	<p align="left">或者通过<b>“字节数组到十六进制文本()”</b>方法进行转换成文本显示。</p>
+	<p align="left"><img border="0" src="img/297.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“AES解密”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本方法可对AES进行解密，务必保证<b>“参数2”</b>填写的密码和<b>“加密密码”</b>一致。</p>
+	<p align="left">解密失败返回空对象。</p>
+	<p align="left"><img border="0" src="img/298.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	  <p align="left"> <b>“按钮1”</b>被点击：</p>
+	<blockquote>
+    <p align="left">1、定义类型为<b>“字节[]”</b>的变量，调用<b>“AES加密()”</b>方法，加密<b>“编辑框1”</b>的内容，赋值给定义的变量。</p>
+    <p align="left">2、调用<b>“字节数组到十六进制文本()”</b>方法，将加密后的数据转换为文本显示。</p>
+	</blockquote>	
+    <p align="left"> <b>“按钮2”</b>被点击：</p>
+	<blockquote>
+    <p align="left">1、因采用的十六进制编码，首先需要调用<b>“十六进制文本到字节数组()”</b>方法进行解码。</p>
+    <p align="left">2、将解码后的字节变量，放入<b>“AES解密()”</b>方法的参数1中。</p>
+    <p align="left">3、最后调用<b>“字节数组到文本()”</b>才能完成解密。</p>
+	</blockquote>	
+	<p align="left"><img border="0" src="img/299.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/300.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="desjiajiemi"></a>
+<font style="font-size: 12pt; font-weight:700">● DES加密/解密</font><br/>
+<font style="font-size: 12pt; font-weight:700">● RC4加密/解密</font>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+    <p align="left">以上两个加解密算法和<b>“AES加密/解密”</b>用法一致，都是通过相同密码进行，但内部算法不同。</p>
+    <p align="left"><a href="https://baike.baidu.com/item/RC4"><b>“DES”</b></a>中文全称为<b>“数据加密标准”</b>，是一种使用密钥加密的块算法。</p>
+    <p align="left"><a href="https://baike.baidu.com/item/DES"><b>“RC4”</b></a>中文全称为<b>“流加密算法”</b>，曾经是TLS(安全传输层协议)采用的算法之一。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">将<b>“AES加密/解密”</b>修改成<b>“DES加密/解密”</b>或<b>“RC4加密/解密”</b>即可。</p>
+	<p align="left"><img border="0" src="img/301.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+<p align="left">左图：DES加密/解密结果。</p>
+	<p align="left">右图：RC4加密/解密结果。</p>
+	<p align="left"><img border="0" src="img/302.png" ><img border="0" src="img/303.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<a name="rsajiami"></a>
+<font style="font-size: 12pt; font-weight:700">● RSA加密</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● RSA解密</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+<p align="left"><a href="https://baike.baidu.com/item/RSA%E7%AE%97%E6%B3%95/263310?fromtitle=RSA&fromid=210678&fr=aladdin">RSA加密算法</a>是一种非对称加密算法，即加密和解密需要不同的秘钥来进行，分为公钥和私钥。</p>
+<p align="left">如果使用<b>“公钥”</b>加密，必须要用<b>“私钥”</b>才能解密。</p>
+<p align="left">相反如果使用<b>“私钥”</b>加密，必须要用<b>“公钥”</b>才能解密。</p>
+<p align="left">首先讲解如何生成<b>“公钥”</b>和<b>“私钥”</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“生成RSA密钥对”</b>帮助文档：</p>
+<blockquote>
+<p align="left">通过本方法可生成RSA算法所需要的<b>“公钥和私钥”</b>信息，这些信息存储在<b>“秘钥对”</b>中。</p>
+<p align="left">参数<b>“秘钥位”</b>只能填写<b>“1024、2048、4096”</b>。</p>
+	<p align="left"><img border="0" src="img/308.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“秘钥对”</b>帮助文档：</p>
+<blockquote>
+<p align="left">打开返回对象后，可看到当前对象只有两个读属性，分别为<b>“公钥和私钥”</b>。</p>
+<p align="left">点击对象属性可查看属性详细信息。</p>
+	<p align="left"><img border="0" src="img/309.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“公/私钥”</b>帮助文档：</p>
+<blockquote>
+<p align="left">公钥：返回<b>“公钥类”</b>对象。</p>
+<p align="left">私钥：返回<b>“私钥类”</b>对象。</p>
+	<p align="left"><img border="0" src="img/310.png" >&nbsp;&nbsp;<img border="0" src="img/310a.png" ></p>
+	<p align="left">&nbsp;</p>
+	<p align="left">无论是<b>“私钥类”</b>还是<b>“私钥类”</b>，打开帮助文档都可以看到<b>“取秘钥编码数据()”</b>方法。</p>
+	<p align="left">通过此方法可以将<b>“公/私钥”</b>转换成字节数组。</p>
+	<p align="left"><img border="0" src="img/311.png" ><img border="0" src="img/312.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“公/私钥”</b>代码编写如下图：</p>
+<blockquote>
+<p align="left">1、定义类型为<b>“秘钥对”</b>的变量，调用<b>“生成RSA秘钥对()”</b>方法赋值给此变量。</p>
+<p align="left">2、分别通过<b>“公/私钥”</b>读属性，继续调用<b>“取秘钥编码数据()”</b>取出<b>“公/私钥”</b>字节数据。</p>
+<p align="left">3、最后必须通过<b>“Base64编码至文本()”</b>方法，将其转换为文本显示。</p>
+	<p align="left"><img border="0" src="img/313.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“公/私钥”</b>运行效果如下图：</p>
+<blockquote>
+<p align="left">将生成的公钥和私钥文本存储起来备用。</p>
+	<p align="left"><img border="0" src="img/314.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“RSA加/解密”</b>代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击：</p>
+	<blockquote>
+    <p align="left">1、定义类型为<b>“公钥类”</b>的变量，勾选参考。</p>
+    <p align="left">2、定义类型为<b>“文本型”</b>的变量，将准备好的<b>“公钥文本”</b>填入初始值中。</p>
+    <p align="left">3、调用<b>“公钥类.创建自文本()”</b>方法，创建公钥对象赋值给定义的变量。</p>
+    <p align="left">4、调用<b>“RSA加密()”</b>方法，通过<b>“公钥对象”</b>进行加密，加密后赋值给<b>“加密结果”</b>字节数组。</p>
+    <p align="left">5、最后通过<b>“字节数组到十六进制文本()”</b>方法，将其转换成文本数据显示在<b>“编辑框2”</b>中。</p>
+	</blockquote>	
+    <p align="left"><b>“按钮2”</b>被点击：</p>
+    <blockquote>
+    <p align="left">1、解密操作和加密类似，首先通过<b>“私钥文本”</b>创建<b>“私钥类”</b>对象。</p>
+    <p align="left">2、调用<b>“RSA解密()”</b>方法，通过私钥对象，对<b>“编辑框2”</b>的内容进行解密。</p>
+    <p align="left">3、利用<b>“字节数组到文本()”</b>方法可将解密结果转换成文本显示出来。</p>
+	</blockquote>
+	<p align="left"><img border="0" src="img/315.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“RSA加/解密”</b>运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/316.gif" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<a name="jjmszqm"></a>
+<font style="font-size: 12pt; font-weight:700">● 数字签名</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 签名验证</font>
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>“数字签名”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">通过本方法可将指定字节数组，进行签名（加密），返回签名后数据。</p>
+    <p align="left">参数1：提供要签名(加密)的数据。</p>
+    <p align="left">参数2：提供公钥或私钥对象，如果签名用公钥，验证签名则需要使用私钥。</p>
+    <p align="left">参数3：提供摘要算法，签名和验证务必保持一致，否则会验证失败。</p>
+	<p align="left"><img border="0" src="img/317.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“签名验证”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">通过本方法可验证<b>“签名后数据”</b>与<b>“原数据”</b>是否一致。</p>
+    <p align="left">参数1：提供要验证的字节数组。</p>
+    <p align="left">参数2：提供<b>“数字签名()”</b>方法返回的签名文本。</p>
+    <p align="left">参数3：提供公钥或私钥对象，如果签名用公钥，验证签名则需要使用私钥。。</p>
+    <p align="left">参数4：提供摘要算法，务必和<b>“数字签名()”</b>方法一致，否则会验证失败。。</p>
+	<p align="left"><img border="0" src="img/318.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击：</p>
+	<blockquote>
+	  <p align="left">1、通过<b>“公钥文本”</b>创建公钥类对象。</p>
+		<p align="left">2、通过创建的<b>“公钥对象”</b>，将<b>“编辑框1”</b>的内容进行签名后显示在<b>“编辑框2”</b>的内容。</p>
+	</blockquote>	
+	<p align="left"><b>“按钮2”</b>被点击：</p>
+	<blockquote>
+	  <p align="left">1、通过<b>“私钥文本”</b>创建私钥类对象。</p>
+	  <p align="left">2、创建的<b>“私钥对象”</b>对比<b>“编辑框2”</b>的内容和<b>“编辑框1”</b>是否相等。</p>
+	</blockquote>
+	<p align="left"><img border="0" src="img/319.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/320.gif" ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

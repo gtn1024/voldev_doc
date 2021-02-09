@@ -1,0 +1,588 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+			<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >高级兼容编辑框<span>(可收缩)</span></h6></li>
+		<ol id="new1">
+			<li><blockquote><a href="#gjjrbjk">1.本类说明</a></blockquote></li>
+			<li><blockquote><a href="#tjyzgz">2.添加验证规则</a></blockquote></li>
+			<li><blockquote><a href="#tjyzgz">3.高级编辑框验证基础类</a></blockquote></li>
+			<li><blockquote><a href="#tjyzgz">4.验证是否合法(虚拟)</a></blockquote></li>
+			<li><blockquote><a href="#tjyzgz">5.置错误提示内容</a></blockquote></li>
+			<li><blockquote><a href="#tjyzgz">6.启用实时验证(写)</a></blockquote></li>
+			<li><blockquote><a href="#dsjdzdyz">7.丢失焦点自动验证(写)</a></blockquote></li>
+			<li><blockquote><a href="#dsjdzdyz">8.错误颜色(写)</a></blockquote></li>
+			<li><blockquote><a href="#bjkyznr">9.验证内容</a></blockquote></li>
+			<li><blockquote><a href="#bqcyzgz">10.清除验证规则</a></blockquote></li>
+			<li><blockquote><a href="#gjxhxys">11.下划线颜色(写)</a></blockquote></li>
+			<li><blockquote><a href="#gjnrys">12.内容颜色(写)</a></blockquote></li>
+			<li><blockquote><a href="#gjnrysb">13.内容颜色表(写)</a></blockquote></li>
+			<li><blockquote><a href="#gjycxhx">14.隐藏下划线(写)</a></blockquote></li>
+			<li><blockquote><a href="#qydhslxs">15.启用单行省略显示(写)</a></blockquote></li>
+			<li><blockquote><a href="#gqyqcan">16.启用清除按钮(写)</a></blockquote></li>
+			<li><blockquote><a href="#zxdbwbh">17.最小底部文本行(写)</a></blockquote></li>
+			<li><blockquote><a href="#zxdbwbh">18.辅助文本内容(写)</a></blockquote></li>
+			<li><blockquote><a href="#zxdbwbh">19.辅助文本颜色(写)</a></blockquote></li>
+			<li><blockquote><a href="#bzxzfs">20.最小字符数(写)</a></blockquote></li>
+			<li><blockquote><a href="#bzxzfs">21.最大字符数(写)</a></blockquote></li>
+			<li><blockquote><a href="#gtsnrys">22.提示内容颜色(写)</a></blockquote></li>
+			<li><blockquote><a href="#dibuwbcc">23.底部文本尺寸(写)</a></blockquote></li>
+			<li><blockquote><a href="#shizxsfznr">24.始终显示辅助内容(写)</a></blockquote></li>
+			<li><blockquote><a href="#fudongts">25.浮动提示内容(写)</a></blockquote></li>
+			<li><blockquote><a href="#fudongts">26.浮动提示文本尺寸(写)</a></blockquote></li>
+			<li><blockquote><a href="#fudongts">27.浮动提示文本颜色(写)</a></blockquote></li>
+			<li><blockquote><a href="#fudongts">28.浮动标签类型(写)</a></blockquote></li>
+			<li><blockquote><a href="#szxsfdts">29.始终显示浮动提示(写)</a></blockquote></li>
+			<li><blockquote><a href="#qyfdbqdh">30.启用浮动标签动画(写)</a></blockquote></li>
+			<li><blockquote><a href="#jibenys">31.基本颜色(写)</a></blockquote></li>	
+		</ol>
+	</ol>
+</ul>
+</div>		
+
+
+<p align="left"><a name="gjjrbjk"></a>
+<h2>高级兼容编辑框实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<br/>
+<blockquote>
+ <p align="left">通过本组件可快速实现一个带浮动提示，错误验证的编辑框，使用本组件必须使用<b>“兼容窗口”</b>。</p>
+    <p align="left"><font color="#F70408">注意：本组件位于<strong><b>“高级兼容编辑框组件”</b></strong>模块中，欲使用本组件需添加其模块。</font> </p>
+	<p align="left"><img border="0" src="MaterialEdit_images/1.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">界面设计如下图：</p>
+<blockquote>
+    <p align="left">引用<b>“高级兼容编辑框组件”</b>模块后，在<b>“扩展组件”</b>中可找到此组件。</p>
+    <p align="left">依次拖放组件：<b>“按钮1”</b>、<b>“高级兼容编辑框1”</b>和<b>“编辑框1”</b>。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/2.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码如下图：</p>
+<blockquote>
+    <p align="left">保存布局后，代码效果如下。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/3.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">可看到<b>“高级兼容编辑框”</b>的<b>“提示文本”</b>和<b>“下划线”</b>默认都是黑色。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/4.png" ></p>
+	</blockquote>	
+<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+<a name="tjyzgz"></a>
+<font style="font-size: 12pt; font-weight:700">● 添加验证规则</font> <br>
+<font style="font-size: 12pt; font-weight:700">● 高级编辑框验证基础类</font> <br>
+<font style="font-size: 12pt; font-weight:700">● 验证是否合法(虚拟)</font> <br>
+<font style="font-size: 12pt; font-weight:700">● 置错误提示内容</font> <br>
+<font style="font-size: 12pt; font-weight:700">● 启用实时验证(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“添加验证规则”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本方法可为编辑框添加验证规则，验证内容是否合法。</p>
+    <p align="left">验证规则由<b>“高级编辑框验证基础类”</b>实现。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/5.png" ></p>
+	</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“高级编辑框验证基础类”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">在此帮助页中可以看到该类存在<b>“虚拟方法”</b>。</p>
+    <p align="left">证明需要定义新的类并添加<b>“验证是否合法”</b>虚拟方法来实现验证规则。</p>
+    <p align="left">除此之外还有一个<b>“置错误提示内容”</b>方法，用于显示错误内容。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/6.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“验证是否合法(虚拟)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">可看到本虚拟方法共有两个参数，一个逻辑返回值。</p>
+    <p align="left">参数1：返回当前编辑框的内容，用作读取内容验证判断。</p>
+    <p align="left">参数2：用于判断当前编辑框是否为空。</p>
+    <p align="left">本方法返回真表示合法，否则不合法。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/7.png" ></p>
+	</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“置错误提示内容”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本方法只要一个文本型参数，用于设置编辑框内容输入错误时，显示的错误文本。</p>
+    <p align="left">注意：错误文本位于编辑框下方位置。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/8.png" ></p>
+	</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“启用实时验证(写)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本属性继承自<b>“高级兼容编辑框”</b>，用于是否开启编辑框实时验证。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/9.png" ></p>
+	</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、新建一个类，类名填写<b>“编辑框验证”</b>，基础类填写<b>“高级编辑框验证基础类”</b>。</p>
+    <p align="left">2、添加<b>“验证是否合法”</b>虚拟方法，并将虚拟方法自带的返回值注释或删除。</p>
+    <p align="left">3、利用<b>“如果”</b>判断内容不为空的时候开始验证内容是否等于<b>“123”</b>。</p>
+    <p align="left">4、如果等于<b>“123”</b>就返回真，否则在代码最后面调用<b>“置错误提示内容()”</b>方法，并返回假。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/10.png" ></p>
+	<br/>
+	<p align="left">5、给<b>“高级兼容编辑框”</b>增加属性<b>“启用实时验证”</b>，属性值填写真。</p>
+	<p align="left">6、添加<b>“通知_被创建”</b>虚拟方法，定义局部变量<b>“验证器”</b>，类型务必和定义的类名保持一致。</p>
+	<p align="left">7、最后调用<b>“添加验证规则()”</b>方法，将<b>“验证器”</b>变量填入参数中即可。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/11.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到只有文本内容为<b>“123”</b>的时候才不会显示错误提示。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/12.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	<a name="dsjdzdyz"></a>
+<font style="font-size: 12pt; font-weight:700">● 丢失焦点自动验证(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 错误颜色(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“丢失焦点自动验证(写)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">当调用<a href="#tjyzgz"><b>“添加验证规则()”</b></a>开启验证规则后，可通过本属性设置丢失焦点自动验证。</p>
+    <p align="left">属性值为真则开启，否则关闭。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/13.png" ></p>
+	</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“错误颜色(写)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">通过本属性可设置错误提示的文本颜色。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/14.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">在<b>“高级兼容编辑框1”</b>的属性栏中分别增加以上两个属性，并设置对应的属性值。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/15.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">最终可看到丢失焦点后，不仅编辑框进行了自动验证而且颜色错误颜色更改为黄色。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/15.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	<a name="bjkyznr"></a>
+<font style="font-size: 12pt; font-weight:700">● 验证内容</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">当调用<a href="#tjyzgz"><b>“添加验证规则()”</b></a>开启验证规则后，可通过本方法可主动验证内容是否合法。</p>
+    <p align="left">返回真表示合法，否则不合法。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/16.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后，调用本方法验证并弹出不同的信息框。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/17.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="MaterialEdit_images/18.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+	<a name="bqcyzgz"></a>
+<font style="font-size: 12pt; font-weight:700">● 清除验证规则</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本方法可清除所有的验证规则。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/19.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后调用本方法清除。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/20.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可看到<b>“按钮1”</b>被点击前，还可以正常的验证内容，点击后验证被清除。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/21.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	
+	<a name="gjxhxys"></a>
+<font style="font-size: 12pt; font-weight:700">● 下划线颜色(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本属性可设置编辑框下划线的颜色。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/22.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后修改本属性为<b>“颜色类.红色”</b>。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/23.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到编辑框下划线被修改为红色。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/24.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	
+	<a name="gjnrys"></a>
+<font style="font-size: 12pt; font-weight:700">● 内容颜色(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本属性可设置编辑框内容颜色。</p>
+    <p align="left">注意：请不要使用父类中的<b>“文本颜色”</b>属性。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/25.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后调用本属性，设置属性值为<b>“颜色类.红色”</b>。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/26.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到编辑框颜色被修改为了红色。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/27.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	
+	<a name="gjnrysb"></a>
+<font style="font-size: 12pt; font-weight:700">● 内容颜色表(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本属性可以给内容颜色设置一个状态颜色表，用于不同状态下显示不同颜色。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/28.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、定义类型为<b>“状态到颜色表”</b>的变量，属性值设置两种状态颜色。</p>
+    <p align="left">2、通过<b>“颜色表类”</b>创建定义的状态颜色。</p>
+    <p align="left">3、将创建的颜色表赋值给<b>“内容颜色表”</b>属性。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/29.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到编辑框内容获得焦点前后的颜色不同。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/30.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	
+	<a name="gjycxhx"></a>
+<font style="font-size: 12pt; font-weight:700">● 隐藏下划线(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义通过本属性可隐藏编辑框的下划线。</p>
+    <p align="left">属性值提供真则隐藏，否则显示。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/31.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后调用本属性设置属性值为真。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/32.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到高级兼容编辑框的下划线被隐藏。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/33.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	
+	<a name="qydhslxs"></a>
+<font style="font-size: 12pt; font-weight:700">● 启用单行省略显示(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">启用本属性后，如果文本过长会在编辑框底部显示一个省略号。</p>
+    <p align="left">注意：必须开启<a href="a_ctrl_text.htm#dhmsdx"><b>“单行模式”</b></a>才有效。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/34.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后，启用<b>“单行模式=真”</b>并启用<b>“启用单行省略显示=真”</b>，随后设置<b>“内容”</b>属性。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/35.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到启用本属性后，拖动编辑框内容时，在编辑框左下角可以看到一个省略号。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/36.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	
+	<a name="gqyqcan"></a>
+<font style="font-size: 12pt; font-weight:700">● 启用清除按钮(写) </font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义通过本属性可让编辑框显示一个清除按钮，点击清除按钮可清空编辑框内容。</p>
+    <p align="left">属性值为真则显示，为假则不显示。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/37.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后设置本属性值为真。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/38.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到编辑框出现清除按钮，并且点击后内容会清空。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/39.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	
+	<a name="zxdbwbh"></a>
+<font style="font-size: 12pt; font-weight:700">● 最小底部文本行(写)</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 辅助文本内容(写)</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 辅助文本颜色(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“最小底部文本行(写)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本属性的作用是用来设置编辑框底部文本的显示行数。</p>
+    <p align="left">注意：编辑框底部的文本又被称为辅助文本。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/40.png" ></p>
+	</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“辅助文本内容(写)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本属性可设置辅助文本的内容。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/41.png" ></p>
+	</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“辅助文本颜色(写)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本属性可用来设置辅助文本显示的颜色。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/42.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、在<b>“高级兼容编辑框1”</b>的属性栏填写<b>“辅助文本内容”</b>和<b>“辅助文本颜色”</b>分别设置这两个属性的属性值。</p>
+    <p align="left">2、<b>“按钮1”</b>被点击后，设置<b>“最小底部文本行=2”</b>，显示两行辅助文本。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/43.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到辅助文本由三行变成了两行。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/44.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	
+	<a name="bzxzfs"></a>
+<font style="font-size: 12pt; font-weight:700">● 最小字符数(写)</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 最大字符数(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“最小字符数(写)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">通过本属性可设置编辑框的最小字符数。</p>
+    <p align="left">如果输入的内容长度小于此属性值，则会自动触发编辑框验证，自动修改下划线颜色。</p>
+    <p align="left">注意：属性值为0则不限制，如果不设置本属性默认不限制。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/45.png" ></p>
+	</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“最大字符数(写)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">通过本属性可用来设置编辑框最大字符数，为0则不限制。</p>
+    <p align="left">如果输入的内容长度超过此属性值，则自动触发编辑框验证，修改下划线颜色。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/47.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">在<b>“高级兼容编辑框1”</b>的属性栏设置<b>“最新字符数”</b>为2，设置<b>“最大字符数”</b>为4。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/46.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终结果可看到当编辑框内容长度小于<b>“2”</b>大于<b>“4”</b>的时候都会触发编辑框验证。</p>
+	<p align="left">并且在编辑框右下角还有字符长度提示。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/48.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	
+	<a name="gtsnrys"></a>
+<font style="font-size: 12pt; font-weight:700">● 提示内容颜色(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">调用本属性可实现修改<b>“提示文本”</b>的颜色。</p>
+    <p align="left">注意：修改提示文本颜色只能使用本属性实现，不能使用父类的<b>“提示文本颜色”</b>属性。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/49.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">在<b>“高级兼容编辑框1”</b>的属性栏分别填写<b>“提示文本”</b>和<b>“提示内容颜色”</b>属性，并设置属性值。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/50.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">软件运行后可以看到<b>“提示内容颜色”</b>被修改成了白色。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/51.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	
+	<a name="dibuwbcc"></a>
+<font style="font-size: 12pt; font-weight:700">● 底部文本尺寸(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本属性可调整底部文本的字体尺寸，单位像素。</p>
+    <p align="left">注意：底部文本又称辅助文本。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/52.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、在<b>“高级兼容编辑框1”</b>的属性栏设置辅助文本内容和颜色。</p>
+    <p align="left">2、<b>“按钮1”</b>被点击后调整底部文本尺寸为30像素。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/53.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到底部文本尺寸明显变大。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/54.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	
+	<a name="shizxsfznr"></a>
+<font style="font-size: 12pt; font-weight:700">● 始终显示辅助内容(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过此属性可让辅助文本一直处于显示状态。</p>
+    <p align="left">提示：默认情况下高级兼容编辑框失去焦点后，辅助文本会隐藏。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/55.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后，设置本属性值为真。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/56.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可以看到<b>“按钮1”</b>单击前后，辅助文本呈现出不同的状态。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/57.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	
+	<a name="fudongts"></a>
+<font style="font-size: 12pt; font-weight:700">● 浮动提示内容(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 浮动提示文本尺寸(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 浮动提示文本颜色(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 浮动标签类型(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“浮动提示内容(写)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">通过本属性设置浮动提示内容，本内容位于编辑框左上方位置。</p>
+    <p align="left">注意：本内容默认不会主动显示，在编辑框输入内容后才会显示出来。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/58.png" ></p>
+	</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“浮动提示文本尺寸(写)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">通过本属性用来设置浮动内容的文本尺寸，单位像素。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/59.png" ></p>
+	</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“浮动提示文本颜色(写)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本属性用于设置浮动内容颜色，属性值可使用<b>“颜色类”</b>中定义的常量值，例如：颜色类.黄色。</p>
+    <p align="left">注意：预设值本属性必须将<b>“浮动标签类型”</b>属性设置为<b>“高亮模式”</b>。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/60.png" ></p>
+	</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“浮动标签类型(写)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本属性用于设置浮动类型，调用方式：高级编辑框浮动标签类型.XXX。</p>
+    <p align="left">在属性表中，直接下拉选择即可。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/61.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">在<b>“高级兼容编辑框1”</b>中分别填写以上属性名并写上对应的属性值。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/62.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到当编辑框输入内容时，浮动内容会显示出来并且是黄色。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/63.gif" > </p>
+</blockquote><p align="left">&nbsp;</p>	
+	<a name="szxsfdts"></a>
+<font style="font-size: 12pt; font-weight:700">● 始终显示浮动提示(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本属性可实现一直显示浮动提示。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/64.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后，设置本属性值为真。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/65.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到浮动提示被直接显示出来。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/66.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	
+	<a name="qyfdbqdh"></a>
+<font style="font-size: 12pt; font-weight:700">● 启用浮动标签动画(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本属性可以控制浮动提示是否开启<b>“显示/隐藏”</b>动画。</p>
+    <p align="left">注意：本属性默认为开启动画状态。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/67.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后设置本属性为假，关闭动画。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/68.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到<b>“按钮1”</b>被单击后，浮动内容的显示动画消失。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/68.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	
+	<a name="jibenys"></a>
+<font style="font-size: 12pt; font-weight:700">● 基本颜色(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本属性可设置高级兼容编辑框的基本颜色，设置的颜色会偏暗。</p>
+    <p align="left">注意：基本颜色包含三种颜色，如下图所示。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/69.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后，设置基本颜色为白色。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/70.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到基本的颜色都变成了白色。</p>
+	<p align="left"><img border="0" src="MaterialEdit_images/71.gif" > </p>
+</blockquote><p align="left">&nbsp;</p>	
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

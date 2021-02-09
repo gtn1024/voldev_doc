@@ -1,0 +1,148 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+			<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >加载动画框<span>(可收缩)</span></h6></li>
+		<ol id="new1">
+			<li><blockquote><a href="#jzdhk">1.本类说明</a></blockquote></li>
+			<li><blockquote><a href="#jzxs">8.显示</a></blockquote></li>
+			<li><blockquote><a href="#jzyc">9.隐藏</a></blockquote></li>
+			<li><blockquote><a href="#jzdhyangshi">2.动画样式(写)</a></blockquote></li>
+			<li><blockquote><a href="#jzdhys">3.动画颜色(写)</a></blockquote></li>
+			
+		</ol>
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left"><a name="jzdhk"></a>
+<h2>加载动画框实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<br/>
+<blockquote>
+ <p align="left">通过本组件可快速实现一个带各种动画效果的组件,用于异步加载数据时填充空白页。</p>
+    <p align="left"><font color="#F70408">注意：本组件位于<strong><b>“加载动画框”</b></strong>模块中，欲使用本组件需添加其模块。</font> </p>
+	<p align="left"><img border="0" src="Loading_images/1.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">界面设计如下图：</p>
+<blockquote>
+    <p align="left">引用<b>“加载动画框”</b>模块后，在<b>“扩展组件”</b>中可找到此组件。</p>
+    <p align="left">随后将其拖放到界面设计器中。</p>
+	<p align="left"><img border="0" src="Loading_images/2.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码如下图：</p>
+<blockquote>
+    <p align="left">保存布局后，代码效果如下。</p>
+	<p align="left"><img border="0" src="Loading_images/3.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">本组件默认效果为三个不停改变大小的小圆点。</p>
+    <p align="left">如果想要改变动画效果的大小，直接设置组件尺寸即可。</p>
+	<p align="left"><img border="0" src="Loading_images/4.gif" ></p>
+	</blockquote>	
+<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p><a name="jzxs"></a>
+<font style="font-size: 12pt; font-weight:700">● 显示</font><br>
+<font style="font-size: 12pt; font-weight:700">● 隐藏</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“显示”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本方法可显示当前组件。</p>
+    <p align="left">本方法等同于调用：<b>“加载动画框1.可视=组件可视状态.可视”</b>。</p>
+	<p align="left"><img border="0" src="Loading_images/5.png" ></p>
+	</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“隐藏”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">调用本方法可隐藏组件。</p>
+    <p align="left">本方法等同于调用：<b>“加载动画框1.可视=组件可视状态.完全隐藏”</b>。</p>
+	<p align="left"><img border="0" src="Loading_images/6.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、定义类型为<b>“逻辑型”</b>的成员变量，因组件默认是显示状态，所以需要设置初始值为假。</p>
+    <p align="left">2、<b>“按钮1”</b>被点击后，判断<b>“动画隐藏”</b>的逻辑值，并执行是否显示等操作。</p>
+    <p align="left">从而实现按钮点击后，既可以隐藏又可以显示的状态。 </p>
+	<p align="left"><img border="0" src="Loading_images/7.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终看到<b>“加载动画框”</b>在显示和隐藏之间切换。</p>
+	<p align="left"><img border="0" src="Loading_images/8.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	<a name="jzdhyangshi"></a>
+<font style="font-size: 12pt; font-weight:700">● 动画样式(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本属性可设置动画样式，代码调用方式：加载动画框样式.XXX，共有28种样式可以选择。</p>
+    <p align="left">注意：本属性目前只能在<b>“通知_被创建”</b>虚拟方法下调用或者成员变量的属性值中调用。</p>
+	<p align="left"><img border="0" src="Loading_images/9.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">在<b>“加载动画框1”</b>成员变量的属性名位置填写<b>“动画样式”</b>，属性值填写<b>“翻转方块”</b>。</p>
+	<p align="left"><img border="0" src="Loading_images/10.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><b>“翻转方块”</b>效果如下图。</p>
+	<p align="left"><img border="0" src="Loading_images/11.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	<a name="jzdhys"></a>
+<font style="font-size: 12pt; font-weight:700">● 动画颜色(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本属性可修改动画效果的颜色。</p>
+    <p align="left">可使用<b>“颜色类”</b>中定义的常量值。</p>
+	<p align="left"><img border="0" src="Loading_images/12.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后，调用本属性设置颜色为红色。</p>
+	<p align="left"><img border="0" src="Loading_images/13.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终颜色被修改为红色。</p>
+	<p align="left"><img border="0" src="Loading_images/14.gif" ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

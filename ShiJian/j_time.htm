@@ -1,0 +1,633 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+
+</head>
+
+<body>
+
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>时间操作</h4></li>
+	<ol>
+    <ol>
+    			<li><blockquote><a href="#ssyszb">0.本类准备工作</a></blockquote></li>
+      </ol>          
+<li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'shijianlei')" >一.时间类<span>(可收缩)</span></h6></li>
+		<ol id="shijianlei">
+			<li><blockquote><a href="#sjlqhf">1.在后方</a></blockquote></li>
+			<li><blockquote><a href="#sjlqhf">2.在前方</a></blockquote></li>
+            <li><blockquote><a href="#sjlbj">2.比较</a></blockquote></li>
+		</ol>
+<li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'rililei')" >二.日历类<span>(可收缩)</span></h6></li>
+		<ol id="rililei">
+			<li><blockquote><a href="#rllqsj">1.取时间</a></blockquote></li>
+			<li><blockquote><a href="#rllzsj">2.置时间</a></blockquote></li>
+            <li><blockquote><a href="#rlljzd">3.加字段</a></blockquote></li>
+            <li><blockquote><a href="#rllqhf">4.在后方</a></blockquote></li>
+            <li><blockquote><a href="#rllqhf">5.在前方</a></blockquote></li>
+            <li><blockquote><a href="#rllbj">6.比较</a></blockquote></li>
+            <li><blockquote><a href="#rllqbqc">7.全部清除</a></blockquote></li>
+            <li><blockquote><a href="#rllqczdzd">8.清除指定字段</a></blockquote></li>
+            <li><blockquote><a href="#rllqzdz">9.取字段值</a></blockquote></li>
+            <li><blockquote><a href="#rllqdxzdz">10.取实际最大字段值</a></blockquote></li>
+            <li><blockquote><a href="#rllqdxzdz">11.取较大最大字段值</a></blockquote></li>
+            <li><blockquote><a href="#rllqdxzdz">12.取较小最大字段值</a></blockquote></li>
+            <li><blockquote><a href="#rllqdxzdz">13.取实际最小字段值</a></blockquote></li>
+            <li><blockquote><a href="#rllqdxzdz">14.取较大最小字段值</a></blockquote></li>
+            <li><blockquote><a href="#rllqdxzdz">15.取较小最小字段值</a></blockquote></li>
+            <li><blockquote><a href="#rllqxqddyt">16.取星期的第一天</a></blockquote></li>
+            <li><blockquote><a href="#rllzxqddyt">17.置星期的第一天</a></blockquote></li>
+            <li><blockquote><a href="#rllqhmsj">18.取毫秒时间</a></blockquote></li>
+            <li><blockquote><a href="#rllzhmsj">19.置毫秒时间</a></blockquote></li>
+            <li><blockquote><a href="#rllgxwdqsj">20.更新为当前时间</a></blockquote></li>
+            <li><blockquote><a href="#rllzdsfbsz">21.字段是否被设置</a></blockquote></li>
+            <li><blockquote><a href="#rllzzdz">22.置字段值</a></blockquote></li>
+            <li><blockquote><a href="#rllzrqsj">23.置日期</a></blockquote></li>
+            <li><blockquote><a href="#rllzrqsj">24.置全部时间</a></blockquote></li>
+            <li><blockquote><a href="#rllsjsx">25.年</a></blockquote></li>
+            <li><blockquote><a href="#rllsjsx">26.月</a></blockquote></li>
+            <li><blockquote><a href="#rllsjsx">27.日</a></blockquote></li>
+            <li><blockquote><a href="#rllsjsx">28.时</a></blockquote></li>
+            <li><blockquote><a href="#rllsjsx">29.分</a></blockquote></li>
+            <li><blockquote><a href="#rllsjsx">30.秒</a></blockquote></li>
+            <li><blockquote><a href="#rllsfwrn">31.是否为闰年</a></blockquote></li>
+            <li><blockquote><a href="#rlldgswb">32.到格式文本</a></blockquote></li>
+            <li><blockquote><a href="#rlljxgswb">33.解析格式文本</a></blockquote></li>
+	  </ol>
+	</ol>
+</ul>
+</div>
+
+<p align="left">
+<p align="left">
+<h2>时间操作实例讲解</h2>
+<p><b>作者：洫蜘蛛</b></p>
+<!--<p align="left">[<a href="object.htm">上一章</a>] [<a href="homeland.htm">下一章</a>]</p>-->
+<p align="left">&nbsp;</p>
+<a name="ssyszb"></a>
+<font style="font-size: 12pt; font-weight:700">● 准备工作：设计实例需求的界面布局。</font><br/>
+<p align="left"><b>启动类</b>的界面布局需求组件：<b>编辑框1</b>、<b>按钮1</b>。</p>
+<blockquote>
+
+<p align="left">修改编辑框的属性<b>&quot;内容纵向对齐&quot;</b>为<b>&quot;居中&quot;</b>、<b>&quot;组件宽度类型&quot;</b>为<b>&quot;匹配父组件宽度&quot;</b>。</p>
+<p align="left">修改按钮的属性<b>&quot;内容横向对齐&quot;</b>为<b>&quot;居中&quot;</b>、<b>&quot;内容纵向对齐&quot;</b>为<b>&quot;居中&quot;</b>、<b>&quot;文本&quot;</b>为<b>&quot;执行&quot;</b>。</p>
+<p align="left">最终界面布局如下图所示：</p>
+<p align="left"><img border="0" src="time_images/sjcz000.png" ></p>
+</blockquote>
+
+<p align="left">接收<b>&quot;启动类&quot;</b>的按钮被单击事件，如下图所示：</p>
+<blockquote>
+  <p align="left"><img border="0" src="time_images/sjcz001.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 时间操作实例界面设计总述</font><br/>
+<blockquote>
+<p align="left"><b>本类</b>所需界面如下图所示，界面布局从上到下依次是：  </p>
+<blockquote>
+	<p align="left"><b>编辑框1</b>和<b>按钮1</b>。</p>
+  	<p align="left"><img border="0" src="time_images/sjcz002.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="sjlqhf"></a>
+<font style="font-size: 12pt; font-weight:700">● 在后方</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 在前方</font><br/>
+<p align="left">以上命令用法一致，此处单独以<b>在后方</b>为例，帮助内容如图：</p>
+<blockquote>
+<p align="left"><img border="0" src="time_images/sjcz003.png"></p>
+<p align="left">参数数目为两个，返回值类型为<b>逻辑型</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">在<b>启动类</b>定义一个类型为<b>时间类</b>的类成员变量：启动时间。</p>
+<p align="left">在<b>按钮_被单击</b>事件下定义一个类型为<b>时间类</b>的局部变量：当前时间。</p>
+<p align="left">调用<b>该命令</b>并判断返回值是否为<b>真</b>。</p>
+<p align="left">参数1：填写<b>局部变量</b>&quot;当前时间&quot;。</p>
+<p align="left">参数2：填写<b>类成员变量</b>&quot;启动时间&quot;。</p>
+<p align="left">最后调用<b>提示信息框</b>显示结果。</p>
+<p align="left"><img border="0" src="time_images/sjcz004.png" ></p>
+<p align="left">时间类通常用于储存时间数据，在对象被创建的时候会自动使用当前时间初始化内容。</p>
+</blockquote>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="time_images/sjcz005.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="sjlbj"></a>
+<font style="font-size: 12pt; font-weight:700">● 比较</font><br/>
+<p align="left">帮助内容如图：</p>
+<blockquote>
+<p align="left"><img border="0" src="time_images/sjcz006.png"></p>
+<p align="left">参数数目为两个，返回值类型为<b>整数</b>。</p>
+<p align="left">用法请参考：<a href="#sjlqhf"><b>时间类.在后方</b></a></p>
+<p align="left">两者区别在于本命令返回的类型是整数型，不同数值表示不同的结果。</p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="rllqsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 取时间</font><br/>
+<p align="left">帮助内容如图：</p>
+<blockquote>
+<p align="left"><img border="0" src="time_images/sjcz007.png"></p>
+<p align="left">没有参数，返回值类型为<b>时间类</b>，返回本对象当前记录的实际数据。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义一个类型为<b>日历类</b>的变量：时间操作。</p>
+<p align="left">定义一个类型为<b>时间类</b>的变量：当前时间。</p>
+<p align="left">调用<b>该命令</b>并把返回值赋值给变量：当前时间</p>
+<p align="left">调用<b><a href="#rlldgswb">日历类.到格式文本()</a></b>将时间转换为文本以查看结果。</p>
+<p align="left"><img border="0" src="time_images/sjcz008.png" ></p>
+<p align="left">本段代码执行后，编辑框1的内容将会设置为当前时间文本</p>
+</blockquote>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="time_images/sjcz009.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="rllzsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 置时间</font><br/>
+<p align="left">帮助内容如图：</p>
+<blockquote>
+<p align="left"><img border="0" src="time_images/sjcz010.png"></p>
+<p align="left">参数数目为一个，没有返回值。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义一个类型为<b>日历类</b>的变量：时间操作。</p>
+<p align="left">定义一个类型为<b>时间类</b>的变量：当前时间。</p>
+<p align="left">调用<b>该命令</b>。</p>
+<p align="left">参数1：填写<b>局部变量</b>&quot;当前时间&quot;。</p>
+<p align="left">调用<b><a href="#rlldgswb">日历类.到格式文本()</a></b>将时间转换为文本以查看结果。</p>
+<p align="left"><img border="0" src="time_images/sjcz011.png" ></p>
+<p align="left">本段代码执行后，编辑框1的内容将会设置为当前时间文本</p>
+</blockquote>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="time_images/sjcz012.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="rlljzd"></a>
+<font style="font-size: 12pt; font-weight:700">● 加字段</font><br/>
+<p align="left">帮助内容如图：</p>
+<blockquote>
+<p align="left"><img border="0" src="time_images/sjcz013.png"></p>
+<p align="left">参数数目为三个，没有返回值。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">在<b>启动类</b>定义一个类型为<b>日历类</b>的类成员变量。</p>
+<p align="left">调用<b>该命令</b>。</p>
+<p align="left">参数1：填写<b>日历字段类型.年</b>，也可以是其他日历字段类型，但是不能为<b>地区偏移值</b>或<b>夏令时偏移值</b>。</p>
+<p align="left">参数2：填写任意整数，例如<b>&quot;1&quot;</b>。</p>
+<p align="left">参数3：填写<b>&quot;真&quot;</b>。</p>
+<p align="left">调用<b><a href="#rlldgswb">日历类.到格式文本()</a></b>将时间转换为文本以查看结果。</p>
+<p align="left"><img border="0" src="time_images/sjcz014.png" ></p>
+<p align="left">每次点击按钮，日历类记录的时间将被增加1年。</p>
+</blockquote>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="time_images/sjcz015.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="rllqhf"></a>
+<font style="font-size: 12pt; font-weight:700">● 在后方</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 在前方</font><br/>
+<p align="left">以上命令用法一致，此处单独以<b>在后方</b>为例，帮助内容如图：</p>
+<blockquote>
+<p align="left"><img border="0" src="time_images/sjcz016.png"></p>
+<p align="left">参数数目为一个，返回值类型为<b>逻辑型</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">在<b>启动类</b>定义一个类型为<b>日历类</b>的类成员变量：启动日历</p>
+<p align="left">在<b>按钮被单击</b>事件下定义一个类型为<b>日历类</b>的局部变量：当前日历</p>
+<p align="left">调用<b>该命令</b>并判断返回值是否为<b>真</b>。</p>
+<p align="left">参数1：填写局部变量&quot;启动日历&quot;</p>
+<p align="left">调用<b>提示信息框</b>显示判断结果。</p>
+<p align="left"><img border="0" src="time_images/sjcz017.png" ></p>
+<p align="left">判断当前日历记录的时间是否在启动日历记录的时间之后。</p>
+</blockquote>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="time_images/sjcz018.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="rllbj"></a>
+<font style="font-size: 12pt; font-weight:700">● 比较</font><br/>
+<p align="left">帮助内容如图：</p>
+<blockquote>
+<p align="left"><img border="0" src="time_images/sjcz019.png"></p>
+<p align="left">参数数目为一个，返回值类型为<b>整数</b>。</p>
+<p align="left">用法请参考：<a href="#rllqhf"><b>日历类.在后方</b></a></p>
+<p align="left">两者区别在于本命令返回的类型是整数型，不同数值表示不同的结果。</p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="rllqbqc"></a>
+<font style="font-size: 12pt; font-weight:700">● 全部清除</font><br/>
+<p align="left">帮助内容如图：</p>
+<blockquote>
+<p align="left"><img border="0" src="time_images/sjcz020.png"></p>
+<p align="left">没有参数，没有返回值。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">在<b>启动类</b>定义一个类型为<b>日历类</b>的类成员变量：启动日历</p>
+<p align="left">调用<b>启动日历</b>所属类<b>该命令</b>。</p>
+<p align="left">调用<b><a href="#rlldgswb">日历类.到格式文本()</a></b>将时间转换为文本以查看结果。</p>
+<p align="left"><img border="0" src="time_images/sjcz021.png" ></p>
+<p align="left">执行后，因为字段全部被清除，编辑框1的内容将被设置为默认时间：1970年01月01日 00时00分00秒。</p>
+</blockquote>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="time_images/sjcz022.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="rllqczdzd"></a>
+<font style="font-size: 12pt; font-weight:700">● 清除指定字段</font><br/>
+<p align="left">帮助内容如图：</p>
+<blockquote>
+<p align="left"><img border="0" src="time_images/sjcz023.png"></p>
+<p align="left">参数数目为一个，没有返回值。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">在<b>启动类</b>定义一个类型为<b>日历类</b>的类成员变量：启动日历</p>
+<p align="left">调用<b>启动日历</b>所属类<b>该命令</b>。</p>
+<p align="left">参数1：填写&quot;<b>日历字段类型.月</b>&quot;，也可以填写其他日历字段类型。</p>
+<p align="left">调用<b><a href="#rlldgswb">日历类.到格式文本()</a></b>将时间转换为文本以查看结果。</p>
+<p align="left"><img border="0" src="time_images/sjcz024.png" ></p>
+<p align="left">执行后，因为月份字段被清除，编辑框1中显示的时间内容月份为默认值：1月。</p>
+</blockquote>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="time_images/sjcz025.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="rllqzdz"></a>
+<font style="font-size: 12pt; font-weight:700">● 取字段值</font><br/>
+<p align="left">帮助内容如图：</p>
+<blockquote>
+<p align="left"><img border="0" src="time_images/sjcz026.png"></p>
+<p align="left">参数数目为一个，返回值类型为<b>整数</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">在<b>启动类</b>定义一个类型为<b>日历类</b>的类成员变量：启动日历</p>
+<p align="left">在按钮被单击事件定义一个类型为<b>整数</b>的局部变量：当前月份</p>
+<p align="left">调用<b>启动日历</b>所属类<b>该命令</b>，并把返回值赋值给变量：<b>当前月份</b>。</p>
+<p align="left">参数1：填写&quot;<b>日历字段类型.月</b>&quot;，也可以填写其他日历字段类型。</p>
+<p align="left">通过如果语句判断是否获得正确值并调用<b>提示信息框</b>显示结果。</p>
+<p align="left"><img border="0" src="time_images/sjcz027.png" ></p>
+<p align="left">执行后，提示信息框将显示当前时间的月份。</p>
+</blockquote>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="time_images/sjcz028.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="rllqdxzdz"></a>
+<font style="font-size: 12pt; font-weight:700">● 取实际最大字段值</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取较大最大字段值</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取较小最大字段值</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取实际最小字段值</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取较大最小字段值</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取较小最小字段值</font><br/>
+
+<p align="left">以上命令用法一致，此处单独以<b>取实际最大字段值</b>为例，帮助内容如图：</p>
+<blockquote>
+<p align="left"><img border="0" src="time_images/sjcz029.png"></p>
+<p align="left">参数数目为一个，返回值类型为<b>整数</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">在<b>启动类</b>定义一个类型为<b>日历类</b>的类成员变量：启动日历</p>
+<p align="left">在按钮被单击事件定义一个类型为<b>整数</b>的局部变量：本月上限</p>
+<p align="left">调用<b>启动日历</b>所属类<b>该命令</b>，并把返回值赋值给变量：<b>本月上限</b>。</p>
+<p align="left">参数1：填写&quot;<b>日历字段类型.日</b>&quot;，也可以填写其他日历字段类型。</p>
+<p align="left">最后调用<b>提示信息框</b>显示结果。</p>
+<p align="left"><img border="0" src="time_images/sjcz030.png" ></p>
+<p align="left">执行后，提示信息框将显示当前月份的最大日。</p>
+</blockquote>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="time_images/sjcz031.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="rllqxqddyt"></a>
+<font style="font-size: 12pt; font-weight:700">● 取星期的第一天</font><br/>
+<p align="left">帮助内容如图：</p>
+<blockquote>
+<p align="left"><img border="0" src="time_images/sjcz032.png"></p>
+<p align="left">没有参数，返回值类型为<b>整数</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">在<b>启动类</b>定义一个类型为<b>日历类</b>的类成员变量：启动日历</p>
+<p align="left">在按钮被单击事件定义一个类型为<b>整数</b>的局部变量：起始工作日</p>
+<p align="left">调用<b>启动日历</b>所属类<b>该命令</b>，并把返回值赋值给变量：<b>起始工作日</b>。</p>
+<p align="left">最后调用<b>提示信息框</b>显示结果。</p>
+<p align="left"><img border="0" src="time_images/sjcz033.png" ></p>
+<p align="left">执行后，提示信息框将显示当前地区每周的第一天。</p>
+</blockquote>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="time_images/sjcz034.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="rllzxqddyt"></a>
+<font style="font-size: 12pt; font-weight:700">● 置星期的第一天</font><br/>
+<p align="left">帮助内容如图：</p>
+<blockquote>
+<p align="left"><img border="0" src="time_images/sjcz035.png"></p>
+<p align="left">参数数目为一个，没有返回值。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">在<b>启动类</b>定义一个类型为<b>日历类</b>的类成员变量：启动日历</p>
+<p align="left">调用<b>启动日历</b>所属类<b>该命令</b>。</p>
+<p align="left">参数1：填写整数，取值范围：1~7。</p>
+<p align="left"><img border="0" src="time_images/sjcz036.png" ></p>
+<p align="left">运行后点击按钮1则改变<b>启动日历</b>每周的起始工作日。</p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="rllqhmsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 取毫秒时间</font><br/>
+<p align="left">帮助内容如图：</p>
+<blockquote>
+<p align="left"><img border="0" src="time_images/sjcz037.png"></p>
+<p align="left">没有参数，返回值类型为<b>长整数</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">在<b>启动类</b>定义一个类型为<b>日历类</b>的类成员变量：启动日历</p>
+<p align="left">在按钮被单击事件定义一个类型为<b>长整数</b>的局部变量：当前时间戳</p>
+<p align="left">调用<b>启动日历</b>所属类<b>该命令</b>，并把返回值赋值给变量：<b>当前时间戳</b>。</p>
+<p align="left">最后调用<b>提示信息框</b>显示结果。</p>
+<p align="left"><img border="0" src="time_images/sjcz038.png" ></p>
+</blockquote>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="time_images/sjcz039.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="rllzhmsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 置毫秒时间</font><br/>
+<p align="left">帮助内容如图：</p>
+<blockquote>
+<p align="left"><img border="0" src="time_images/sjcz040.png"></p>
+<p align="left">参数数目为一个，没有返回值。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">在<b>启动类</b>定义一个类型为<b>日历类</b>的类成员变量：启动日历</p>
+<p align="left">调用<b>启动日历</b>所属类<b>该命令</b>。</p>
+<p align="left">参数1：填写任意长整数，例如&quot;1527541014890&quot;</p>
+<p align="left">调用<b><a href="#rlldgswb">日历类.到格式文本()</a></b>将时间转换为文本以查看结果。</p>
+<p align="left"><img border="0" src="time_images/sjcz041.png" ></p>
+<p align="left">运行后点击按钮1，编辑框1的内容将被设置为：2018年05月29日 04时56分54秒</p>
+</blockquote>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="time_images/sjcz042.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="rllgxwdqsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 更新为当前时间</font><br/>
+<p align="left">帮助内容如图：</p>
+<blockquote>
+<p align="left"><img border="0" src="time_images/sjcz043.png"></p>
+<p align="left">没有参数，没有返回值。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">在<b>启动类</b>定义一个类型为<b>日历类</b>的类成员变量：启动日历</p>
+<p align="left">调用<b>启动日历</b>所属类<b>该命令</b>。</p>
+<p align="left">调用<b><a href="#rlldgswb">日历类.到格式文本()</a></b>将时间转换为文本以查看结果。</p>
+<p align="left"><img border="0" src="time_images/sjcz044.png" ></p>
+<p align="left">运行后点击按钮1，编辑框1的内容将被设置为当前时间。</p>
+</blockquote>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="time_images/sjcz042.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="rllzdsfbsz"></a>
+<font style="font-size: 12pt; font-weight:700">● 字段是否被设置</font><br/>
+<p align="left">帮助内容如图：</p>
+<blockquote>
+<p align="left"><img border="0" src="time_images/sjcz045.png"></p>
+<p align="left">参数数目为一个，返回值类型为<b>逻辑型</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">在<b>启动类</b>定义一个类型为<b>日历类</b>的类成员变量：启动日历</p>
+<p align="left">调用<b>启动日历</b>所属类<b>该命令</b>。</p>
+<p align="left">参数1：填写&quot;<b>日历字段类型.月</b>&quot;，也可以填写其他日历字段类型。</p>
+<p align="left">通过如果语句判断字段是否已设置。</p>
+<p align="left"><img border="0" src="time_images/sjcz046.png" ></p>
+<p align="left">运行后点击按钮1,将会提示月份字段是否已设置。</p>
+</blockquote>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="time_images/sjcz047.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="rllzzdz"></a>
+<font style="font-size: 12pt; font-weight:700">● 置字段值</font><br/>
+<p align="left">帮助内容如图：</p>
+<blockquote>
+<p align="left"><img border="0" src="time_images/sjcz048.png"></p>
+<p align="left">参数数目为两个，没有返回值。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">在<b>启动类</b>定义一个类型为<b>日历类</b>的类成员变量：启动日历</p>
+<p align="left">调用<b>启动日历</b>所属类<b>该命令</b>。</p>
+<p align="left">参数1：填写&quot;<b>日历字段类型.日</b>&quot;，也可以填写其他日历字段类型。</p>
+<p align="left">参数2：填写参数1字段值允许范围内的整数，例如：&quot;<b>1</b>&quot;。</p>
+<p align="left">调用<b><a href="#rlldgswb">日历类.到格式文本()</a></b>将时间转换为文本以查看结果。</p>
+<p align="left"><img border="0" src="time_images/sjcz049.png" ></p>
+<p align="left">运行后点击按钮1,编辑框1中的内容将被设置为当前时间并固定为&quot;01日&quot;。</p>
+</blockquote>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="time_images/sjcz050.png"></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="rllzrqsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 置日期</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 置全部时间</font><br/>
+<p align="left">以上命令用法差不多，此处单独以<b>置日期</b>为例，帮助内容如图：</p>
+<blockquote>
+<p align="left"><img border="0" src="time_images/sjcz051.png"></p>
+<p align="left">参数数目为三个，没有返回值。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">在<b>启动类</b>定义一个类型为<b>日历类</b>的类成员变量：启动日历</p>
+<p align="left">调用<b>启动日历</b>所属类<b>该命令</b>。</p>
+<p align="left">参数1：填写任意合法年份，例如：&quot;<b>2000</b>&quot;。</p>
+<p align="left">参数2：填写任意合法月份，例如：&quot;<b>6</b>&quot;。</p>
+<p align="left">参数3：填写任意合法日，例如：&quot;<b>6</b>&quot;。</p>
+<p align="left">调用<b><a href="#rlldgswb">日历类.到格式文本()</a></b>将时间转换为文本以查看结果。</p>
+<p align="left"><img border="0" src="time_images/sjcz052.png" ></p>
+<p align="left">运行后点击按钮1,编辑框1的内容将被设置为：&quot;2000年06月06日&quot;。</p>
+<p align="left"><b>置日期</b>只能设置年、月、日，如果使用<b>置全部时间</b>则还可以设置时、分、秒。</p>
+</blockquote>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="time_images/sjcz053.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="rllsjsx"></a>
+<font style="font-size: 12pt; font-weight:700">● 年</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 月</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 日</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 时</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 分</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 秒</font><br/>
+
+<p align="left">以上方法为<b>属性</b>，直接对<b>日历类</b>对象记录的时间赋值。</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">在<b>启动类</b>定义一个类型为<b>日历类</b>的类成员变量：启动日历</p>
+<p align="left">对<b>启动日历</b>所属类的属性进行赋值。</p>
+<p align="left">调用<b><a href="#rlldgswb">日历类.到格式文本()</a></b>将时间转换为文本以查看结果。</p>
+<p align="left"><img border="0" src="time_images/sjcz055.png" ></p>
+<p align="left">运行后点击按钮1,编辑框1中的内容将会设置为&quot;2016年05月06日 07时08分09秒&quot;。</p>
+</blockquote>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="time_images/sjcz056.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="rllsfwrn"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否为闰年</font><br/>
+<p align="left">帮助内容如图：</p>
+<blockquote>
+<p align="left"><img border="0" src="time_images/sjcz057.png"></p>
+<p align="left">参数数目为一个，返回值类型为<b>逻辑型</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">在<b>启动类</b>定义一个类型为<b>日历类</b>的类成员变量：启动日历</p>
+<p align="left">调用<b>启动日历</b>所属类<b>该命令</b>。</p>
+<p align="left">参数1：填写任意合法年份，例如：&quot;<b>2000</b>&quot;。</p>
+<p align="left">通过如果语句判断并显示是否为闰年。</p>
+<p align="left"><img border="0" src="time_images/sjcz058.png" ></p>
+<p align="left">运行后点击按钮1,如果为闰年将提示&quot;真&quot;，否则提示&quot;假&quot;。</p>
+</blockquote>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="time_images/sjcz059.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="rlldgswb"></a>
+<font style="font-size: 12pt; font-weight:700">● 到格式文本</font><br/>
+<p align="left">帮助内容如图：</p>
+<blockquote>
+<p align="left"><img border="0" src="time_images/sjcz060.png"></p>
+<p align="left">参数数目为一个，返回值类型为<b>文本型</b>。</p>
+<p align="left">输出格式：</p>
+<p align="left"><img border="0" src="time_images/sjcz061.png"></p>
+<p align="left"><b>日历类</b>中也内置了一些常用的格式：</p>
+<p align="left"><img border="0" src="time_images/sjcz062.png"></p>
+<p align="left">引用方法：日历类.常用格式*** ，例如：&quot;日历类.常用格式3&quot;</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">在<b>启动类</b>定义一个类型为<b>日历类</b>的类成员变量：启动日历</p>
+<p align="left">调用<b>启动日历</b>所属类<b>该命令</b>并将返回值赋值给<b>编辑框1.内容</b>。</p>
+<p align="left">参数1：填写任意合法格式或直接使用内置格式，例如：&quot;<b>日历类.常用格式3</b>&quot;。</p>
+<p align="left"><img border="0" src="time_images/sjcz063.png" ></p>
+<p align="left">运行后点击按钮1,编辑框1中的内容将被设置为格式化后的时间文本。</p>
+</blockquote>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="time_images/sjcz064.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="rlljxgswb"></a>
+<font style="font-size: 12pt; font-weight:700">● 解析格式文本</font><br/>
+<p align="left">帮助内容如图：</p>
+<blockquote>
+<p align="left"><img border="0" src="time_images/sjcz065.png"></p>
+<p align="left">参数数目为两个，返回值类型为<b>逻辑型</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">在<b>启动类</b>定义一个类型为<b>日历类</b>的类成员变量：启动日历</p>
+<p align="left">调用<b>启动日历</b>所属类<b>该命令</b>。</p>
+<p align="left">参数1：填写任意合法格式或直接使用内置格式，例如：&quot;<b>日历类.常用格式3</b>&quot;。</p>
+<p align="left">参数2：填写需要解析的文本格式时间，例如：&quot;<b>2000年06月01日 12时13分14秒</b>&quot;。</p>
+<p align="left">注意：<b>参数2</b>的文本内容必须符合<b>参数1</b>所填写的格式，具体格式参考：<a href="#rlldgswb">到格式文本()</a>。</p>
+<p align="left">通过如果语句判断是否解析成功。</p>
+<p align="left"><img border="0" src="time_images/sjcz066.png" ></p>
+<p align="left">运行后点击按钮1，如果解析成功，时间数据将写入到<b>启动日历</b>。</p>
+</blockquote>
+<p align="left">运行效果展示图：</p>
+<blockquote>
+  <p align="left"><img border="0" src="time_images/sjcz067.png"></p>
+</blockquote>
+
+</body>
+</html>

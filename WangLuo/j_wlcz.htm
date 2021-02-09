@@ -1,0 +1,252 @@
+
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.URL类<span>(可收缩)</span></h6></li>
+		<ol id="new1">
+			<li><blockquote><a href="#uchuangjian">1.创建</a></blockquote></li>
+			<li><blockquote><a href="#uchuangjian2">2.创建2</a></blockquote></li>
+			<li><blockquote><a href="#udakail">3.打开流</a></blockquote></li>
+			<li><blockquote><a href="#udklj">4.打开连接</a></blockquote></li>
+			<li><blockquote><a href="#uchuangjian">5.主机名(读)</a></blockquote></li>
+			<li><blockquote><a href="#uchuangjian2">6.主机名和端口(读)</a></blockquote></li>
+			<li><blockquote><a href="#urlxieyi">7.协议(读)</a></blockquote></li>
+			<li><blockquote><a href="#urlxieyi">8.文件(读)</a></blockquote></li>
+			<li><blockquote><a href="#urlxieyi">9.查询(读)</a></blockquote></li>
+			<li><blockquote><a href="#urlxieyi">10.端口(读)</a></blockquote></li>
+			<li><blockquote><a href="#urlxieyi">11.默认端口(读)</a></blockquote></li>
+			<li><blockquote><a href="#urlxieyi">12.路径(读)</a></blockquote></li>
+			<li><blockquote><a href="#urlxieyi">13.锚点(读)</a></blockquote></li>
+			<li><blockquote><a href="#uzybsfd">14.资源标识符(读)</a></blockquote></li>
+		</ol>
+        
+			
+	</ol>
+</ul>
+</div>
+
+
+<p align="left">
+<h2>URL类操作实例讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+	<p align="left">&nbsp;</p>
+<h2>一、URL类</h2>
+
+<p align="left">&nbsp;</p>
+	<p align="left">本类可实现解析URL连接内容，也可以通过<b>“打开连接()”</b>方法获取URL更多信息数据。</p>
+	<p align="left"><font color="#F70408">注意：本类位于<strong>“Java基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+	<p align="left">&nbsp;</p>
+<a name="uchuangjian"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建</font><br>
+<font style="font-size: 12pt; font-weight:700">● 主机名(读)</font>
+		<p align="left">&nbsp;</p>
+<p align="left"><b>“创建”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本方法可创建URL对象。</p>
+	<p align="left">参数1：提供地址协议，如<b>“HTTP”</b>或<b>“FTP”</b>等。</p>
+	<p align="left">参数2：提供主机名，通常为网址，如<b>“www.voldp.com”</b>。</p>
+	<p align="left">参数3、4可省略。</p>
+	<p align="left"><img border="0" src="url_images/1.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“主机名(读)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本读属性可读取URL类中的主机名。</p>
+	<p align="left"><img border="0" src="url_images/2.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、<b>“按钮1”</b>被点击后，定义类型为<b>“URL类”</b>的变量勾选参考。</p>
+	<p align="left">2、创建URL对象后，调用<b>“主机名”</b>读属性读取主机名。</p>
+	<p align="left"><img border="0" src="url_images/3.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="url_images/4.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<a name="uchuangjian2"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建2</font><br>
+<font style="font-size: 12pt; font-weight:700">● 主机名和端口(读)</font>
+		<p align="left">&nbsp;</p>
+<p align="left"><b>“创建2”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法和<b>“创建()”</b>方法不同之处在于，本方法直接提供规范的URL文本即可。</p>
+	<p align="left">如果提供的参数文本不规范，将返回空对象。</p>
+	<p align="left"><img border="0" src="url_images/5.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“主机名和端口(读)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本读属性可获取当前<b>“主机名+端口号”</b>。</p>
+	<p align="left"><img border="0" src="url_images/6.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义类型为<b>“URL类”</b>的变量，调用<b>“创建2”</b>创建对象后赋值给此变量。</p>
+	<p align="left">2、调用<b>“主机名和端口”</b>属性读取此内容。</p>
+	<p align="left"><img border="0" src="url_images/7.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="url_images/8.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<a name="urlxieyi"></a>
+<font style="font-size: 12pt; font-weight:700">● 协议(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 文件(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 查询(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 端口(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 默认端口(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 路径(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 锚点(读)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">以上几个属性分别用来解析url地址不同内容。</p>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="url_images/9.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">协议：会取出当前URL地址的协议<b>“http”</b>。</p>
+	<p align="left">文件：会取出URL地址端口后，除去锚点外的所有内容。</p>
+	<p align="left">查询：会取出问号后的内容。</p>
+	<p align="left">端口：取出当前地址端口，如果没有写，则返回默认端口。</p>
+	<p align="left">默认端口：取出默认端口，http的默认端口为80，ftp默认端口21。</p>
+	<p align="left">路径：<b>“文件”</b>中的查询去除，留下的就是路径。</p>
+	<p align="left">锚点：井号后的内容就是锚点内容。</p>
+	<p align="left"><img border="0" src="url_images/10.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p> 
+	<a name="uzybsfd"></a>
+<font style="font-size: 12pt; font-weight:700">● 资源标识符(读)</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档（1）： </p>
+<blockquote>
+	<p align="left">通过本属性可取出<b>“java资源标识符类”</b>对象。</p>
+	<p align="left"><img border="0" src="url_images/11.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档（2）：</p>
+<blockquote>
+	<p align="left">打开<b>“java资源标识符类”</b>的帮助文档，可看到当前类中也存在很多属性。</p>
+	<p align="left">通过这些属性也可以取出URL地址中的一些数据。</p>
+	<p align="left"><img border="0" src="url_images/12.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">分别利用<b>“资源标识符”</b>取出主机名称，主机端口和协议。</p>
+	<p align="left"><img border="0" src="url_images/13.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图： </p>
+<blockquote>
+	<p align="left"><img border="0" src="url_images/14.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+	<a name="udakail"></a>
+<font style="font-size: 12pt; font-weight:700">● 打开流</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法的返回值<b>“输入流”</b>可取出网页源码或网络图片数据。</p>
+	<p align="left"><img border="0" src="url_images/15.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、通过一个网址创建<b>“URL类”</b>对象。</p>
+	<p align="left">2、调用<b>“打开流()”</b>方法赋值给定义的<b>“输入流”</b>变量。</p>
+	<p align="left">3、定义<b>“缓冲对象”</b>字节数组，用于存放网页字节数据。</p>
+	<p align="left">4、循环调用<b>“输入流对象.读入数据()”</b>方法，持续读取网页字节数组。</p>
+	<p align="left">5、在循环方法内，将读取的字节数组转换成文本显示在编辑框中。</p>
+	<p align="left"><img border="0" src="url_images/16.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，网页完整的源码将显示在编辑框中。</p>
+	<p align="left">如果不循环调用<b>“读入数据()”</b>方法，则只会读取一部分源码。</p>
+	<p align="left"><img border="0" src="url_images/17.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="udklj"></a>
+<font style="font-size: 12pt; font-weight:700">● 打开连接</font>
+		<p align="left">&nbsp;</p>
+<p align="left"><b>“打开连接”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本方法可获取<b>“URL连接类”</b>对象，通过此对象可进行更加高级的网络操作。</p>
+	<p align="left">例如：读取UA协议头，cookies等信息。</p>
+	<p align="left"><img src="url_images/18.png"> </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“URL连接类.内容类型(读)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本属性可取出指定网址的内容类型。</p>
+	<p align="left">如果为未知类型，将会返回空对象。</p>
+	<p align="left"><img src="url_images/19.png"> </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、通过指定网址创建当前URL类对象。</p>
+	<p align="left">2、调用<b>“打开连接()”</b>方法，赋值给定义的<b>“URL连接类”</b>变量。</p>
+	<p align="left">3、调用<b>“内容类型”</b>属性取出网页类型。</p>
+	<p align="left"><img border="0" src="url_images/20.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="url_images/21.png" ></p>
+</blockquote>
+	
+	
+	
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

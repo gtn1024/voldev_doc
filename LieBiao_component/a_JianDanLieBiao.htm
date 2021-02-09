@@ -1,0 +1,861 @@
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+	
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>简单列表框组件</h4></li>
+	<ol>
+			<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.简单列表框<span>(可收缩)</span></h6></li>
+		<ol id="new1">
+            <li><blockquote><a href="#jdlbk">1.准备工作</a></blockquote></li> 
+			<li><blockquote><a href="#jdcrlbx">2.适配器(读)</a></blockquote></li>
+			<!-- 简单列表适配器 -->
+			<li><blockquote><a href="#jdcrlbx">3.插入列表项</a></blockquote></li>
+            <li><blockquote><a href="#jdcrlbx">4.插入列表项2</a></blockquote></li>
+            <li><blockquote><a href="#jdyxzk1">5.有选择框(写)</a></blockquote></li>
+            <li><blockquote><a href="#jdyxzk1">6.选中状态被改变(事件)</a></blockquote></li>
+            <li><blockquote><a href="#jdyxzk">7.标题字体尺寸(写)</a></blockquote></li>
+            <li><blockquote><a href="#jdyxzk">8.标题字体类型(写)</a></blockquote></li>
+            <li><blockquote><a href="#jdyxzk">9.标题字体风格(写)</a></blockquote></li>
+            <li><blockquote><a href="#jdyxzk">10.脚注字体尺寸(写)</a></blockquote></li> 
+            <li><blockquote><a href="#jdyxzk">11.脚注字体类型(写)</a></blockquote></li>
+			<li><blockquote><a href="#jdyxzk">12.脚注字体风格(写)</a></blockquote></li>
+			<!-- 列表框基础类 -->
+			<li><blockquote><a href="#jdfgtgd">13.分隔条高度(写)</a></blockquote></li> 
+            <li><blockquote><a href="#jdtxfgt">14.图像分隔条(写)</a></blockquote></li>
+            <li><blockquote><a href="#jdymfgt">15.页眉分隔条(写)</a></blockquote></li>
+            <li><blockquote><a href="#jdymfgt">16.页脚分隔条(写)</a></blockquote></li>
+            <li><blockquote><a href="#jdtxfgt">17.颜色分隔条(写)</a></blockquote></li>
+            <li><blockquote><a href="#jdzdkgdl">18.最大可滚动量(读)</a></blockquote></li>
+            <li><blockquote><a href="#jdtjymst">19.添加页眉视图</a></blockquote></li>
+            <li><blockquote><a href="#jdtjymst">20.删除页眉视图</a></blockquote></li> 
+            <li><blockquote><a href="#jdtjymst">21.添加页脚视图</a></blockquote></li>
+            <li><blockquote><a href="#jdtjymst">22.删除页脚视图</a></blockquote></li> 
+            <li><blockquote><a href="#jdqymsts">23.取页眉视图数</a></blockquote></li>
+            <li><blockquote><a href="#jdqymsts">24.取页脚视图数</a></blockquote></li>
+            <li><blockquote><a href="#jdxdgd">25.相对滚动</a></blockquote></li>
+            <li><blockquote><a href="#jdxzxmbdw">26.选择项目并定位</a></blockquote></li>
+            <li><blockquote><a href="#jdxzsxm">27.选择首项目</a></blockquote></li>
+			<!-- 列表组件基础类 -->
+            <li><blockquote><a href="#jdcdbkstx">28.从底部开始填写(读写)</a></blockquote></li>
+            <li><blockquote><a href="#jdyxksgd">29.允许快速滚动(读写)</a></blockquote></li>
+            <li><blockquote><a href="#jdyhgdt">30.圆滑滚动条(写)</a></blockquote></li>
+            <li><blockquote><a href="#jdszxskdgdq">31.始终显示快速滚动器(写)</a></blockquote></li>
+            <li><blockquote><a href="#jdzsms">32.转述模式(写)</a></blockquote></li>
+            <li><blockquote><a href="#jdtxxzq">33.图像选择器(写)</a></blockquote></li>
+            <li><blockquote><a href="#jdtxxzq">34.颜色选择器(写)</a></blockquote></li>
+            <li><blockquote><a href="#jdsdmcl">35.扫动摩擦力(写)</a></blockquote></li>
+            <li><blockquote><a href="#jdsdsdblxs">36.扫动速度比例系数(写)</a></blockquote></li>
+            <li><blockquote><a href="#jdqzdzbcxm">37.取指定坐标处项目</a></blockquote></li>
+            <li><blockquote><a href="#jdgbydjl">38.滚动一段距离</a></blockquote></li>
+            <li><blockquote><a href="#jdgbdzdxm">39.滚动到指定项目</a></blockquote></li>
+            <li><blockquote><a href="#jdgbdzdxm">40.滚动到指定项目2</a></blockquote></li>
+            <li><blockquote><a href="#jdgbdzdxm">41.滚动到指定项目3</a></blockquote></li>
+            <li><blockquote><a href="#jdgbdzdxm">42.滚动到指定项目4</a></blockquote></li>
+            <li><blockquote><a href="#jdshanchu">43.删除所有项目</a></blockquote></li>
+            <li><blockquote><a href="#jdzksyxm">44.展开所有项目(写)</a></blockquote></li>
+			 <!-- <li><blockquote><a href="#jdcxzjnfhdjd">16.呈现组件能否获得焦点(读写)</a></blockquote></li> -->
+            <li><blockquote><a href="#jdqt">45.其它</a></blockquote></li>
+			<!-- 
+			适配器组件基础类
+			适配器模板类
+			适配器基础类
+			
+			窗口容器组件
+			窗口组件
+			-->
+		</ol>	
+			 
+         
+
+	</ol>
+</ul>
+</div>	 
+<p align="left">
+<h2>简单列表框组件操作实例讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p><p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">打开启动类<b>“界面设计器”</b>，设计如下界面。</p>
+    <p align="left">从上到下依次是<b>“按钮1”</b>、<b>“简单列表框1”</b>。</p>
+	<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+	<p align="left"><img src="jdlb_images/2.png" border="0" ></p>
+
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="jdcrlbx"></a>
+<font style="font-size: 12pt; font-weight:700">● 适配器(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 插入列表项</font><br>
+<font style="font-size: 12pt; font-weight:700">● 插入列表项2</font>
+
+	
+<p align="left">&nbsp;</p>
+<p align="left"><b>“适配器(读)”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">通过本属性可返回<b>“简单列表适配器”</b>，列表框中项目内容的操作均位于本适配器中。</p>
+	<p align="left"><img border="0" src="jdlb_images/3.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“插入列表项”</b>帮助文档：</p>
+<blockquote>
+  <p align="left"><b>“插入列表项”</b>和<b>“插入列表项2”</b>方法用法一致，此处讲解<b>“插入列表项”</b>。</p>
+  <p align="left">本方法位于<b>“简单列表适配器”</b>中，共有八个参数。</p>
+  <p align="left">参数1：提供列表框标题文本，类型为<b>“文本型”</b>。</p>
+  <p align="left">参数2：提供列表框引导图像，类型为<b>“可绘制对象类”</b>。</p>
+  <p align="left">参数3：设置标题文本颜色，可使用颜色类中定义的常量值。</p>
+  <p align="left">参数4：设置标题是否加粗。</p>
+  <p align="left">参数5：提供脚注文本。</p>
+  <p align="left">参数6：设置脚注文本颜色。</p>
+  <p align="left">参数7：如果列表框显示了选择框，本参数可设置选择框是否被选中。</p>
+  <p align="left">参数8：欲插入的索引位置。</p>
+	<p align="left"><img border="0" src="jdlb_images/4.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义可绘制资源变量，导入一张图片。</p>
+	<p align="left">2、调用<b>“适配器”</b>读属性可调用<b>“插入列表项()”</b>方法，依次填写对应参数即可。</p>
+	<p align="left"><img border="0" src="jdlb_images/5.png" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">多次点击会不断的添加列表项。</p>
+	<p align="left"><img border="0" src="jdlb_images/6.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+
+<a name="jdyxzk"></a>
+<font style="font-size: 12pt; font-weight:700">● 标题字体尺寸(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 标题字体类型(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 标题字体风格(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 脚注字体尺寸(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 脚注字体类型(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 脚注字体风格(写)</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">以上六个属性位于<b>“简单列表适配器”</b>中，分别用来设置<b>“标题和脚注”</b>的字体信息。</p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、在<b>“简单列表框1”</b>属性栏，分别通过适配器调用以上属性。</p>
+	<p align="left">2、<b>“按钮1”</b>被点击后插入列表项。</p>
+	<p align="left">注意：<b>“字体风格”</b>和<b>“字体类型”</b>二选一即可。</p>
+	<p align="left"><img border="0" src="jdlb_images/7.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">明显可以看到<b>“标题和脚注”</b>字体变大。</p>
+	<p align="left"><img border="0" src="jdlb_images/8.gif" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+
+<a name="jdyxzk1"></a>
+<font style="font-size: 12pt; font-weight:700">● 有选择框(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 选中状态被改变(事件)</font>
+		<p align="left">&nbsp;</p>
+<p align="left"><b>“有选择框(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性用来设置当前列表框是否显示选择框。</p>
+	<p align="left">属性值为真则显示，为假则不显示。</p>
+	<p align="left"><img border="0" src="jdlb_images/9.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“选中状态被改变(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">当列表框多选框被选择后将触发本事件。</p>
+	<p align="left">注意：务必执行<b>“挂接事件(简单列表框变量.适配器)”</b>方法。</p>
+	<p align="left"><img border="0" src="jdlb_images/10.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+	<p align="left">定义类型为<b>“简单列表框适配器”</b>变量，右键选择<b>“添加事件接收方法”</b>。</p>
+	<p align="left"><img border="0" src="jdlb_images/11.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+	<p align="left">选择<b>“选中状态被改变”</b>，点击添加。</p>
+	<p align="left"><img border="0" src="jdlb_images/12.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（3）：</p>
+<blockquote>
+	<p align="left">1、指定来源对象。</p>
+	<p align="left">2、定义<b>“简单列表项”</b>变量，勾选参考。</p>
+	<p align="left">3、通过<b>“适配器.取项目()”</b>方法，取出列表项赋值给定义的变量。</p>
+	<p align="left">4、通过列表项变量可判断当前选择框是否被选中。</p>
+	<p align="left">注意：<b>“取项目”</b>方法继承自<b>“适配器模板类”</b>，关于本模板类的更多方法可参考<a href="a_ctrl_layout.htm#txgxm"><b>“图像堆叠器”</b></a>。</p>
+	<p align="left"><img border="0" src="jdlb_images/13.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（4）：</p>
+<blockquote>
+	<p align="left">1、<b>“按钮1”</b>被点击后，执行<b>“插入列表项”</b>方法。</p>
+	<p align="left">2、添加<a href="a_win.htm#tzbcj"><b>“通知_被创建”</b></a>虚拟方法，执行<b>“挂接事件”</b>和<b>“有选择框”</b>属性。</p>
+	<p align="left"><img border="0" src="jdlb_images/14.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可看到选择框被改变后，会弹出对应信息框。</p>
+	<p align="left"><img border="0" src="jdlb_images/15.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<a name="jdfgtgd"></a>
+<font style="font-size: 12pt; font-weight:700">● 分隔条高度(写)</font><br>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性用来设置分隔条高度，单位像素。</p>
+	<p align="left">注意：本属性继承自<b>“列表框基础类”</b>。</p>
+	<p align="left"><img border="0" src="jdlb_images/16.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在<b>“简单列表框1”</b>属性栏，设置<b>“分隔条高度”</b>属性为10像素。</p>
+	<p align="left"><b>“按钮1”</b>被点击后，一次插入两个项目。</p>
+	<p align="left"><img border="0" src="jdlb_images/17.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可看到两个列表项之间出现了一个非常明显的分隔条。</p>
+	<p align="left"><img border="0" src="jdlb_images/18.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="jdtxfgt"></a>
+<font style="font-size: 12pt; font-weight:700">● 图像分隔条(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 颜色分隔条(写)</font>
+		<p align="left">&nbsp;</p>
+<p align="left"><b>“图像分隔条(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性用来设置图像分隔条，属性值为可绘制资源。</p>
+	<p align="left">注意：本属性会覆盖<b>“颜色分隔条”</b>。</p>
+	<p align="left"><img border="0" src="jdlb_images/19.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“颜色分隔条(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性的属性值为整数，可使用颜色类中定义的常量值。</p>
+	<p align="left">注意：本属性会覆盖<b>“图像分隔条”</b>和<b>“分隔条高度”</b>属性。</p>
+	<p align="left"><img border="0" src="jdlb_images/20.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、在<b>“简单列表框1”</b>的属性栏设置这两个属性其中之一即可。</p>
+	<p align="left">2、<b>“按钮1”</b>被点击后，插入两个列表项。</p>
+	<p align="left"><img border="0" src="jdlb_images/21.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="jdlb_images/22.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="jdtjymst"></a>
+<font style="font-size: 12pt; font-weight:700">● 添加页眉视图</font><br>
+<font style="font-size: 12pt; font-weight:700">● 删除页眉视图</font><br>
+<font style="font-size: 12pt; font-weight:700">● 添加页脚视图</font><br>
+<font style="font-size: 12pt; font-weight:700">● 删除页脚视图</font>
+		<p align="left">&nbsp;</p>
+	<p align="left">页眉：即列表框首部。</p>
+	<p align="left">页脚：即列表框尾部。</p>
+	<p align="left">此处举例<b>“添加/删除页眉视图”</b>。</p>
+	<p align="left">&nbsp;</p>
+<p align="left">界面准备：</p>
+<blockquote>
+	<p align="left">在原界面的基础上，增加一个<b>“按钮2”</b>。</p>
+	<p align="left"><img border="0" src="jdlb_images/27.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“添加页眉视图”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本方法可在列表框首部添加一些自定义组件。</p>
+	<p align="left">参数1：提供一个容器组件，例如<b>“线性布局器”</b>。</p>
+	<p align="left">参数2：指定本组件是否可被选择，通常情况下保持默认值即可。</p>
+	<p align="left">注意：本方法可多次执行，添加多个页眉。</p>
+	<p align="left"><img border="0" src="jdlb_images/23.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“删除页眉视图”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">删除一个已有的页眉视图。</p>
+	<p align="left"><img border="0" src="jdlb_images/24.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写(1)：</p>
+<blockquote>
+<p align="left">在<b>“通知_被创建”</b>虚拟方法下，循环添加10个列表项。</p>
+	<p align="left"><img border="0" src="jdlb_images/25.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写(2)：</p>
+<blockquote>
+<p align="left">1、<b>“按钮1”</b>被点击下，定义<b>“线性布局器”</b>和<b>“文本框”</b>变量，分别并设置其属性。</p>
+	<p align="left">2、将<b>“文本框1”</b>添加到<b>“线性布局器1”</b>中。</p>
+	<p align="left">3、调用<b>“添加页眉视图”</b>方法，将<b>“线性布局器1”</b>放入参数中即可。</p>
+	<p align="left">4、<b>“按钮2”</b>被点击后，利用<b>“查找子组件”</b>方法，找出线性布局器，将其放入<b>“删除页眉视图”</b>参数中。</p>
+	<p align="left"><img border="0" src="jdlb_images/26.png" ></p>
+</blockquote>
+		
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="jdlb_images/25.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="jdqymsts"></a>
+<font style="font-size: 12pt; font-weight:700">● 取页眉视图数</font><br>
+<font style="font-size: 12pt; font-weight:700">● 取页脚视图数</font>
+		<p align="left">&nbsp;</p>
+		<p align="left">此处演示<b>“取页眉视图数”</b>方法。</p>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">页眉可添加多个，通过本方法可返回当前页眉数量。</p>
+	<p align="left"><img border="0" src="jdlb_images/28.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在上一个实例的代码基础上简单修改即可。</p>
+	<p align="left"><b>“按钮2”</b>被点击后执行当前方法读取页眉数量。</p>
+	<p align="left"><img border="0" src="jdlb_images/29.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="jdlb_images/30.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="jdymfgt"></a>
+<font style="font-size: 12pt; font-weight:700">● 页眉分隔条(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 页脚分隔条(写)</font>
+		<p align="left">&nbsp;</p>
+		<p align="left">此处演示<b>“页眉分隔条”</b>写属性。</p>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，用来设置页眉是否显示分隔条。</p>
+	<p align="left">属性值为真则显示，否则相反。</p>
+	<p align="left">注意：如果不设置本属性，默认显示分隔条。</p>
+	<p align="left"><img border="0" src="jdlb_images/31.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在<b>“简单列表框1”</b>属性栏，增加本属性，设置其属性值即可。</p>
+	<p align="left"><img border="0" src="jdlb_images/32.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">左图：属性值为真的效果。</p>
+	<p align="left">右图：属性值为假的效果。</p>
+	<p align="left"><img border="0" src="jdlb_images/33.png" >&nbsp;&nbsp;<img border="0" src="jdlb_images/34.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="jdfgtgd"></a>
+<font style="font-size: 12pt; font-weight:700">● 最大可滚动量(读)</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本读属性可读取当前列表框滚动条的最大可滚动次数。</p>
+	<p align="left"><img border="0" src="jdlb_images/35.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接调用当前属性读取即可。</p>
+	<p align="left"><img border="0" src="jdlb_images/36.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="jdlb_images/37.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="jdxdgd"></a>
+<font style="font-size: 12pt; font-weight:700">● 相对滚动</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可滚动指定项目数，滚动时会有滚动特效。</p>
+	<p align="left">注意：大于0则向前滚动，小于0则向后滚动。</p>
+	<p align="left"><img border="0" src="jdlb_images/38.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、在<b>“通知_被创建”</b>下循环插入30个列表项。</p>
+	<p align="left">2、<b>“按钮1”</b>被点击后，执行本方法滚动10个项目。</p>
+	<p align="left"><img border="0" src="jdlb_images/39.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可看到本方法会有滚动特效。</p>
+	<p align="left"><img border="0" src="jdlb_images/40.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="jdxzxmbdw"></a>
+<font style="font-size: 12pt; font-weight:700">● 选择项目并定位</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可跳转到指定索引位置。</p>
+	<p align="left">参数1：提供要跳转的索引位置。</p>
+	<p align="left">参数2：可设置定位偏移距离，单位像素。</p>
+	<p align="left">注意：本方法无滚动特效。</p>
+	<p align="left"><img border="0" src="jdlb_images/41.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后调用本方法，填写对应参数即可。</p>
+	<p align="left"><img border="0" src="jdlb_images/42.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="jdlb_images/43.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="jdxzsxm"></a>
+<font style="font-size: 12pt; font-weight:700">● 选择首项目</font><br>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可直接跳转到首项目，并且设置的页眉视图也会跳过。</p>
+	<p align="left"><img border="0" src="jdlb_images/44.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接调用本方法即可。</p>
+	<p align="left"><img border="0" src="jdlb_images/45.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="jdlb_images/46.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="jdcdbkstx"></a>
+<font style="font-size: 12pt; font-weight:700">● 从底部开始填写(读写)</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">设置是否从列表框底部开始填写项目。</p>
+	<p align="left">属性值为真，则从顶部开始填写，否则从底部开始。</p>
+	<p align="left">同名读属性，即读取当前是否从底部开始填写。</p>
+	<p align="left">本属性继承自<b>“列表组件基础类”</b>。</p>
+	<p align="left">注意：务必设置列表框的高度，否则本属性无效。</p>
+	<p align="left"><img border="0" src="jdlb_images/47.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">界面准备：</p>
+<blockquote>
+	<p align="left">设计如下界面，从上到下依次是：<b>“按钮1”</b>、<b>“按钮2”</b>和<b>“简单列表框1”</b>。</p>
+	<p align="left">设置简单列表框的<b>“高/宽度”</b>分别为<b>“匹配父组件高/宽度”</b>。</p>
+	<p align="left"><img border="0" src="jdlb_images/48.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，设置<b>“从底部开始填写”</b>属性值为<b>“取反(简单列表框1.从底部开始填写)”</b>。</p>
+	<p align="left"><b>“按钮2”</b>被点击后插入列表项。</p>
+	<p align="left"><img border="0" src="jdlb_images/49.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="jdlb_images/50.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="jdyxksgd"></a>
+<font style="font-size: 12pt; font-weight:700">● 允许快速滚动(读写)</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">如果本属性值为真，则会显示一个快速滚动滑块，否则不显示。</p>
+	<p align="left">同名读属性，即读取当前是否显示快速滚动滑块。</p>
+	<p align="left">注意：此属性显示的快速滚动滑块，不操作界面时会自动隐藏。</p>
+	<p align="left"><img border="0" src="jdlb_images/51.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“通知_被创建”</b>下，循环插入100个项目。</p>
+	<p align="left"><b>“按钮1”</b>被点击下，设置本属性值为<b>“取反(简单列表框1.允许快速滚动)”</b>。</p>
+	<p align="left"><img border="0" src="jdlb_images/52.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="jdlb_images/53.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="jdyhgdt"></a>
+<font style="font-size: 12pt; font-weight:700">● 圆滑滚动条(写)</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">如果本属性值为真，则<b>“滚动条高度”</b>会随着<b>“列表项高度”</b>的改变而发生改变。</p>
+	<p align="left">如果本属性值为假，则<b>“滚动条高度”</b>不会发生任何改变。</p>
+	<p align="left"><img border="0" src="jdlb_images/54.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在<b>“通知_被创建”</b>下，插入两个图片高度不一致的列表项。</p>
+	<p align="left"><b>“按钮1”</b>和<b>“按钮2”</b>被单击，分别设置本属性值为<b>“真”</b>和<b>“假”</b>。</p>
+	<p align="left"><img border="0" src="jdlb_images/55.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">按钮1点击后，右侧滚动条会发生变形。</p>
+	<p align="left">按钮2点击后，滚动条会固定不变。</p>
+	<p align="left"><img border="0" src="jdlb_images/56.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="jdszxskdgdq"></a>
+<font style="font-size: 12pt; font-weight:700">● 始终显示快速滚动器(写)</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">属性值为真，则始终显示快速滚动器，并且<b>“允许快速滚动”</b>属性将自动设置为真。</p>
+	<p align="left">如果属性值为假，快速滚动条依然会显示，但如果不操作界面则会自动隐藏。</p>
+	<p align="left"><img border="0" src="jdlb_images/57.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后设置其属性值为真。</p>
+	<p align="left"><img border="0" src="jdlb_images/58.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="jdlb_images/59.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="jdzsms"></a>
+<font style="font-size: 12pt; font-weight:700">● 转述模式(写)</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性用来设置，列表是否始终滚动在最底部。</p>
+	<p align="left">属性值调用方式：列表框转述模式.XXX。</p>
+	<p align="left"><img border="0" src="jdlb_images/60.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，设置属性值为<b>“列表框转述模式.始终”</b>，随后添加列表项。</p>
+	<p align="left"><img border="0" src="jdlb_images/61.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可看到列表框始终位于底部。</p>
+	<p align="left"><img border="0" src="jdlb_images/62.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="jdtxxzq"></a>
+<font style="font-size: 12pt; font-weight:700">● 图像选择器(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 颜色选择器(写)</font>
+		<p align="left">&nbsp;</p>
+<p align="left"><b>“图像选择器(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性用来设置，列表项被选择后使用的显示什么图像。</p>
+	<p align="left">注意：本属性会覆盖<b>“颜色选择器”</b>属性。</p>
+	<p align="left"><img border="0" src="jdlb_images/63.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“颜色选择器(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性用来设置选中后显示什么颜色。</p>
+	<p align="left">注意：本属性会覆盖<b>“图像选择器”</b>属性。</p>
+	<p align="left"><img border="0" src="jdlb_images/64.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后设置<b>“图像选择器”</b>属性。</p>
+	<p align="left"><b>“按钮2”</b>被点击后设置<b>“颜色选择器”</b>属性。</p>
+	<p align="left"><img border="0" src="jdlb_images/65.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="jdlb_images/66.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="jdsdmcl"></a>
+<font style="font-size: 12pt; font-weight:700">● 扫动摩擦力(写)</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">提供的属性值数值越大，则列表项的惯性滚动速度越慢。</p>
+	<p align="left"><img border="0" src="jdlb_images/67.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">此处提供属性值100.</p>
+	<p align="left"><img border="0" src="jdlb_images/68.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">当<b>“按钮1”</b>被点击后，列表项已无法使用惯性滚动。</p>
+	<p align="left"><img border="0" src="jdlb_images/69.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="jdsdsdblxs"></a>
+<font style="font-size: 12pt; font-weight:700">● 扫动速度比例系数(写)</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">简单来说，本属性就是用来设置惯性滑动时的速度，默认值为1。</p>
+	<p align="left">数值越大速度越快。</p>
+	<p align="left"><img border="0" src="jdlb_images/70.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">设置属性值为5。</p>
+	<p align="left"><img border="0" src="jdlb_images/71.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，可看到惯性滚动速度明显变快。</p>
+	<p align="left"><img border="0" src="jdlb_images/72.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="jdqzdzbcxm"></a>
+<font style="font-size: 12pt; font-weight:700">● 取指定坐标处项目</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法可取出屏幕指定坐标位置的项目索引。</p>
+	<p align="left"><img border="0" src="jdlb_images/73.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在当前方法中，填写屏幕坐标即可。</p>
+	<p align="left"><img border="0" src="jdlb_images/74.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="jdlb_images/75.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="jdgbydjl"></a>
+<font style="font-size: 12pt; font-weight:700">● 滚动一段距离</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可让列表框滚动一段距离。</p>
+	<p align="left">参数1：要滚动的距离，单位像素。</p>
+	<p align="left">参数2：滚动耗时，单位毫秒。</p>
+	<p align="left"><img border="0" src="jdlb_images/76.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">执行本方法填写对应参数即可。</p>
+	<p align="left"><img border="0" src="jdlb_images/77.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="jdlb_images/78.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="jdgbdzdxm"></a>
+<font style="font-size: 12pt; font-weight:700">● 滚动到指定项目</font><br>
+<font style="font-size: 12pt; font-weight:700">● 滚动到指定项目2</font><br>
+<font style="font-size: 12pt; font-weight:700">● 滚动到指定项目3</font><br>
+<font style="font-size: 12pt; font-weight:700">● 滚动到指定项目4</font>
+		<p align="left">&nbsp;</p>
+		<p align="left">以上四个方法都是滚动项目，此处演示<b>“滚动到指定项目”</b>。</p>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法可滚动项目到指定索引位置。</p>
+	<p align="left"><img border="0" src="jdlb_images/79.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在参数中填写想要滚动的项目索引即可。</p>
+	<p align="left"><img border="0" src="jdlb_images/80.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="jdlb_images/81.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="jdshanchu"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除所有项目</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，删除所有列表项。</p>
+	<p align="left">注意：本方法继承自<b>“适配器基础类”</b>，需要通过<b>“适配器”</b>读属性访问。</p>
+	<p align="left"><img border="0" src="jdlb_images/87.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后。执行本方法即可。</p>
+	<p align="left"><img border="0" src="jdlb_images/88.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="jdlb_images/89.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="jdzksyxm"></a>
+<font style="font-size: 12pt; font-weight:700">● 展开所有项目(写)</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性用于<b>“滚动容器”</b>嵌套列表框无法展开项目时使用。</p>
+	<p align="left">设置属性值为真，则展开所有列表项。</p>
+	<p align="left">注意：本属性无法动态设置。</p>
+	<p align="left">例如：通过按钮点击后动态调整。</p>
+	<p align="left"><img border="0" src="jdlb_images/82.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">界面准备：</p>
+<blockquote>
+	<p align="left">在<b>“纵向滚动容器”</b>内放置<b>“简单列表框1”</b>。</p>
+	<p align="left">分别设置这两个组件的<b>“高/宽度”</b>类型为<b>“匹配父组件高/宽度”</b>。</p>
+	<p align="left"><img border="0" src="jdlb_images/83.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在成员变量属性栏设置当前属性值为真。</p>
+	<p align="left"><img border="0" src="jdlb_images/84.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">左图：属性值设置为真的效果，列表项正常显示。</p>
+	<p align="left">右图：不设置本属性或属性值为假的效果，列表项显示不正常。</p>
+	<p align="left"><img border="0" src="jdlb_images/85.gif" >&nbsp;&nbsp;<img border="0" src="jdlb_images/86.gif" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>
+<a name="jdqt"></a>
+<font style="font-size: 12pt; font-weight:700">● 其它</font>
+		<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">本组件除了上述方法外，还继承了<a href="a_ctrl_layout.htm#txms"><b>“适配器组件基础类”</b></a>，<a href="a_ctrl_layout.htm#tcrxm"><b>“适配器模板类”</b></a>和<a href="a_ctrl_layout.htm#tscxm"><b>“适配器基础类”</b></a>。</p>
+	<p align="left">以上三个类可参考<a href="a_ctrl_layout.htm#txddq"><b>“图像堆叠器组件”</b></a>。</p>
+</blockquote>
+
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

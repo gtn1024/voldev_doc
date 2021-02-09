@@ -1,0 +1,365 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.图片框<span>(可收缩)</span></h6></li>
+		<ol id="new1">
+            <li><blockquote><a href="#tpk">1.准备工作</a></blockquote></li> 
+			<li><blockquote><a href="#tupianx">2.图片(写)</a></blockquote></li>
+			<!-- <li><blockquote><a href="#txjbx">3.图像级别(写)</a></blockquote></li> -->
+			
+			<li><blockquote><a href="#nbjjqdx">3.内边距剪切(读写)</a></blockquote></li> 
+		    <li><blockquote><a href="#tptmddx">4.图片透明度(读写)</a></blockquote></li>
+            <li><blockquote><a href="#zdkzkd">5.最大扩展宽度(读写)</a></blockquote></li>
+            <li><blockquote><a href="#zdkzkd">6.最大扩展高度(读写)</a></blockquote></li>
+            <!-- <li><blockquote><a href="#hzjzdx">7.绘制矩阵(读写)</a></blockquote></li> -->
+			
+            <li><blockquote><a href="#sffsdx">7.缩放方式(读写)</a></blockquote></li>
+            <li><blockquote><a href="#bjzsydx">8.边界自适应(读写)</a></blockquote></li>
+            <li><blockquote><a href="#ysglqdx">9.颜色过滤器(读写)</a></blockquote></li>
+			<li><blockquote><a href="#ztp">10.置图片</a></blockquote></li>
+            <li><blockquote><a href="#ztpsj">11.置图片数据</a></blockquote></li>
+			<li><blockquote><a href="#zhitpwt">12.置图片位图</a></blockquote></li>
+            <li><blockquote><a href="#qutp">13.取图片</a></blockquote></li>
+		    <li><blockquote><a href="#qcysglq">14.清除颜色过滤器</a></blockquote></li> 
+			<li><blockquote><a href="#zysglq">15.置颜色过滤器</a></blockquote></li>
+		</ol>	
+		
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>图片框实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+
+<p align="left">&nbsp;</p>
+		<font style="font-size: 12pt; font-weight:700">● 辅助说明</font><br/>
+     	<blockquote>
+		<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+	</blockquote>	
+<p align="left">&nbsp;</p>
+  
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">打开启动类<strong>“界面设计器”</strong>，设计如下界面。</p>
+    <p align="left">从上到下依次是<b>“按钮1”</b>、<b>“按钮2”</b>和<b>“图片框1”</b>。</p>
+	<p align="left"><img src="img_images/2.png" border="0" ></p><br>
+    <p align="left">保存布局后，右键<b>“按钮”</b>选择添加事件接收方法。</p> 
+	<p align="left">然后去添加<b>“按钮_被单击”</b>事件。</p>
+	<p align="left">最终达到如图所示效果。</p>
+    <p align="left"><img border="0" src="img_images/3.png" ></p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="tupianx"></a>
+<font style="font-size: 12pt; font-weight:700">● 图片(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">本写属性的作用就是给当前<b>“图片框”</b>设置图片。</p>
+  <p align="left">属性值为<b>“可绘制资源”</b>，设置本属性需要定义<b>“可绘制资源”</b>变量并设置初始值。</p>
+	<p align="left"><img border="0" src="img_images/4.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在<b>“按钮1”</b>被点击下，定义<b>“可绘制资源”</b>变量，导入一张图片。</p>
+	<p align="left">然后设置本属性值为<b>“图片资源”</b>即可。</p>
+	<p align="left"><img border="0" src="img_images/5.png" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，当前图片框会填充导入的图片。</p>
+	<p align="left">注意：在未设置图片框<b>“高/宽度”</b>的情况下导入图片，图片框的<b>“高/宽度”</b>由图片的<b>“高/宽度”</b>决定。</p>
+	<p align="left"><img border="0" src="img_images/6.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="nbjjqdx"></a>
+<a name="sffsdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 内边距剪切(读写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 缩放方式(读写)</font>
+		<p align="left">&nbsp;</p>
+<p align="left"><b>“内边距剪切(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性值为真，可以裁剪掉显示在内边距上的图片。</p>
+	<p align="left">务必要设置<b>“图片框1.缩放方式 = 图片缩放方式.缩放剪切居中 ”</b>本属性才能有效。</p>
+	<p align="left">同名读属性，即读取当前是否设置了<b>“内边距剪切”</b>。</p>
+	<p align="left"><img border="0" src="img_images/7.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“缩放方式(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性可以设置图片的缩放方式，通过<b>“图片缩放方式.XXX”</b>来指定。</p>
+	<p align="left"><img border="0" src="img_images/8.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">界面准备：</p>
+<blockquote>
+	<p align="left">打开界面设计器，设置图片框的高度和宽度，具体数值随意。</p>
+	<p align="left">设置完毕后保存布局。</p>
+	<p align="left"><img border="0" src="img_images/9.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，给当前<b>“图片框”</b>设置一张图片。</p>
+	<p align="left">注意：导入的图片必须为长方形，不然会没有效果。</p>
+	<p align="left">随后依次设置<a href="a_ctrl_base.htm#znbj"><b>“内边距”</b></a>和<b>“缩放方式”</b>。</p>
+	<p align="left"><b>“按钮2”</b>被单击后，设置<b>“内边距剪切”</b>属性为<b>“取反(图片框1.内边距剪切)”</b>。</p>
+	<p align="left"><b>“取反”</b>方法的作用，翻转逻辑值。</p>
+	<p align="left"><img border="0" src="img_images/10.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>后，图片框会加载导入的图片。</p>
+	<p align="left">因设置了<b>“图片缩放”</b>的关系，图片左右内边距并无效果。</p>
+	<p align="left">但是当点击<b>“按钮2”</b>后，内边距内的图片将会进行裁剪，再次点击恢复原样。</p>
+	<p align="left"><img border="0" src="img_images/11.gif" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="cjxtsq2"></a>
+<font style="font-size: 12pt; font-weight:700">● 图片透明度(读写)</font>
+		<p align="left">&nbsp;</p>
+<p align="left"><b>“图片透明度(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法是给当前导入的图片设置<b>“透明度”</b>。</p>
+	<p align="left">注意：并非图片框的透明度。</p>
+	<p align="left">同名读属性，即读取当前图片透明度。</p>
+	<p align="left"><img border="0" src="img_images/12.png" ></p>
+</blockquote>
+
+	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击，给当前窗口设置<b>“背景图”</b>，方便区分图片是否透明。</p>
+	<p align="left">随后依次设置<b>“图片”</b>和<b>“图片透明度”</b>。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，读取当前图片透明度。。</p>
+	<p align="left"><img border="0" src="img_images/13.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可看到当前图片框透明到了背景图。</p>
+	<p align="left"><img border="0" src="img_images/14.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="zdkzkd"></a>
+<font style="font-size: 12pt; font-weight:700">● 最大扩展宽度(读写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 最大扩展高度(读写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 边界自适应(读写)</font>	
+<p align="left">&nbsp;</p>
+<p align="left">以上两个方法用法一致，此处讲解<b>“最大扩展宽度”</b>。</p>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“最大扩展宽度(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性类似于给当前组件设置<b>“宽度”</b>。</p>
+	<p align="left">不同之处在于，想要使用本属性生效，必须设置<b>“边界自适应”</b>属性为真，<a href="a_ctrl_base.htm#qxqkd"><b>“置需求宽度”</b></a>方法设置为<b>“窗口组件.等于内容尺寸”</b>。</p>
+	<p align="left">同名读属性，即读取当前最大扩展宽度。</p>
+	<p align="left"><img border="0" src="img_images/15.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“边界自适应(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">设置本属性值为真，可保持图片纵横比不变，否则相反。</p>
+	<p align="left"><img border="0" src="img_images/17.png" ></p>
+</blockquote>
+
+	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击，依次设置<b>“图片”</b>，<b>“边界自适应”</b>，<b>“置需求宽度”</b>和<b>“最大扩展宽度”</b>方法。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，读取当前最大扩展宽度。</p>
+	<p align="left"><img border="0" src="img_images/16.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img_images/17.gif" ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="ysglqdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 颜色过滤器(读写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">颜色过滤器（写）帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本属性可设置当前颜色过滤器。</p>
+	<p align="left">本属性可参看<a href="a_canvas.htm#yanseguolvqi"><b>“高级画板-颜色过滤器类”</b>。</a></p>
+	<p align="left">注意：设置本属性后将覆盖<b>“置颜色过滤器”</b>方法。</p>
+	<p align="left"><img border="0" src="img_images/18.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="zysglq"></a>
+<a name="qcysglq"></a>
+<font style="font-size: 12pt; font-weight:700">● 置颜色过滤器</font><br>
+<font style="font-size: 12pt; font-weight:700">● 清除颜色过滤器</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“置颜色过滤器”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">设置当前图片框的颜色过滤器，可以理解为一种图像处理算法。</p>
+	<p align="left">参数1：可以通过<b>“颜色类”</b>中定义的常量值指定。</p>
+	<p align="left">参数2：可通过<b>“图像混合方式.XXX”</b>指定。</p>
+	<p align="left"><img border="0" src="img_images/19.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“清除颜色过滤器”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，清除设置的颜色过滤器。</p>
+	<p align="left"><img border="0" src="img_images/26.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，设置图片数据后，直接调用本方法即可。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，调用<b>“清除颜色过滤器”</b>方法即可。</p>
+	<p align="left"><img border="0" src="img_images/20.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img_images/21.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="ztp"></a>
+<a name="qutp"></a>
+<font style="font-size: 12pt; font-weight:700">● 置图片</font><br>
+<font style="font-size: 12pt; font-weight:700">● 取图片</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“置图片”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本方法可以给当前图片框设置图片。</p>
+	<p align="left">参数<b>“可绘制对象类”</b>可通过<b>“载入可绘制资源()”</b>方法将<b>“可绘制资源”</b>转换成当前对象。</p>
+	<p align="left"><img border="0" src="img_images/22.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“取图片”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本方法可以取出当前图片框设置的图片对象。</p>
+	<p align="left"><img border="0" src="img_images/23.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，将<b>“载入可绘制资源(图片资源)”</b>方法填入<b>“置图片”</b>的参数即可。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，可通过<b>“取图片”</b>方法给其它组件设置同样的图片对象。</p>
+
+	<p align="left"><img border="0" src="img_images/24.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img_images/25.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="ztpsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 置图片数据</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">通过本方法可以载入<b>“字节数组”</b>图片。</p>
+  <p align="left">如果填写空对象，表示清除图片框内容。</p>
+  <p align="left"><img border="0" src="img_images/27.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">取出存储卡图片路径后，通过<b>“读入文件”</b>方法可以给当前图片框设置图片。</p>
+  <p align="left"><img border="0" src="img_images/28.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+  <p align="left"><img border="0" src="img_images/29.gif" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="zhitpwt"></a>
+<font style="font-size: 12pt; font-weight:700">● 置图片位图</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过<b>“位图类”</b>给当前图片框设置图片。</p>
+	<p align="left"><img border="0" src="img_images/30.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">本方法只需要在<b>“置图片数据”</b>的基础上简单修改即可。</p>
+	<p align="left">定义<b>“位图类”</b>变量设置参考。</p>
+	<p align="left">调用<b>“位图类.从文件创建”</b>方法，赋值给<b>“位图变量”</b>。</p>
+	<p align="left">最后将位图变量填入<b>“置图片位图”</b>的参数中即可。</p>
+	<p align="left"><img border="0" src="img_images/31.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+<p align="left"><img border="0" src="img_images/29.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

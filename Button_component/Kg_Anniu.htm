@@ -1,0 +1,136 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+	
+	
+	
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>开关按钮组件</h4></li>
+	<ol>
+	
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new3')" >一.开关按钮<span>(可收缩)</span></h6></li>
+		<ol id="new3">
+			<li><blockquote><a href="#kaiguananniu">1.本类说明</a></blockquote></li>
+            <li><blockquote><a href="#zkganbj">2.置开关按钮背景</a></blockquote></li>
+             <li><blockquote><a href="#dktswbdx">3.打开提示文本（读写）</a></blockquote></li>
+
+            <li><blockquote><a href="#gbtswbdx">4.关闭提示文本（读写）</a></blockquote></li>
+            <li><blockquote><a href="#kganbjdx">5.开关按钮背景（写）</a></blockquote></li>
+             
+        
+		</ol>
+		
+
+	</ol>
+</ul>
+</div>
+
+
+
+<p align="left">
+<h2>开关按钮组件操作实例讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+<h2>一、开关按钮</h2>
+<p align="left">&nbsp;</p>
+<a name="kaiguananniu"></a>
+	<font style="font-size: 12pt; font-weight:700">● 本类说明</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left">本类和<b>“开关”</b>一样，可以实现一个开关的效果，但样式不同。</p>
+  <p align="left">本组件不能通过<b>“内容”</b>属性修改标题。</p>
+  <p align="left">本组件同样也继承了<b>“组合按钮基础类”</b>的所有方法。</p>
+	<p align="left"><font color="#F70408">本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+</blockquote>
+	<font style="font-size: 12pt; font-weight:700">● 界面准备</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">设置两个按钮和一个<b>“开关按钮”</b>，然后保存当前布局。</p>
+	<blockquote>
+
+	<p align="left"><img border="0" src="kgann_images/43.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="zkganbj"></a>
+	<a name="kganbjdx"></a>
+
+	
+	<font style="font-size: 12pt; font-weight:700">● 置开关按钮背景</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 开关按钮背景（写）</font>
+	
+
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“置开关按钮背景”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，本方法的作用就是用来设置当前<b>“开关按钮”</b>的背景图像。/p>
+<p align="left">类型为<b>“可绘制对象类”</b>，可以通过<b>“载入可绘制资源()”</b>方法进行转换。</p>
+	<p align="left"><img border="0" src="kgann_images/44.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“开关按钮背景（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">本写属性和<b>“置开关按钮背景”</b>方法不同之处在于，本属性的属性值为<b>“可绘制资源”</b>。</p>
+	<p align="left"><img border="0" src="kgann_images/45.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击后定义<b>“可绘制资源”</b>变量，导入一张图片。</p>
+<p align="left">然后调用<b>“置开关按钮背景”</b>方法，参数值直接填写<b>“载入可绘制资源(开关1)”</b>即可。</p>
+<p align="left"><b>“按钮2”</b>被点击后，同样也定义一个可绘制资源变量。</p>
+<p align="left">此处可以直接将变量名写入<b>“开关按钮背景”</b>的属性值中，无需进行任何转换。</p>
+	<p align="left"><img border="0" src="kgann_images/46.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可以看到<b>“开关按钮”</b>就是一个按钮的样子，点击后<b>“开关按钮”</b>的标题会发生变化。</p>
+	<p align="left">无论是<b>“按钮1”</b>点击还是<b>“按钮2”</b>点击，当前开关按钮的背景都会被修改，并且互相会覆盖对方。</p>
+	<p align="left"><img border="0" src="kgann_images/47.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	
+<a name="zkganbj"></a>
+	<a name="kganbjdx"></a>
+
+	
+	<font style="font-size: 12pt; font-weight:700">● 打开提示文本（读写）</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 关闭提示文本（读写）</font>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">以上两个读写属性和<a href="#dktswbdx"><b>“开关”</b></a>中的同名方法效果一致。</p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

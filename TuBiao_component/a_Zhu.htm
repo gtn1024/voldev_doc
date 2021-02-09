@@ -1,0 +1,212 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new5')" >一.柱状图<span>(可收缩)</span></h6></li>
+		<ol id="new5">
+			<li><blockquote><a href="#">1.准备工作</a></blockquote></li>
+			<li><blockquote><a href="#zztcj">2.图表数据创建</a></blockquote></li>
+			<li><blockquote><a href="#zzttbsj">3.图表数据(写)</a></blockquote></li>
+			<li><blockquote><a href="#zztznrbxz">4.值内容被选中(事件)</a></blockquote></li>
+			<!-- 柱状图数据类 -->
+			<li><blockquote><a href="#zzttbsj">5.创建</a></blockquote></li>
+			<li><blockquote><a href="#zhuzzlb">6.柱子列表(写)</a></blockquote></li>
+			<li><blockquote><a href="#zhuzikuandu">7.柱子宽度系数(写)</a></blockquote></li>
+			<!-- 图表组件基础类 -->
+			<!-- 图表数据基础类 -->
+		</ol>
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>柱状图组件实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p> 
+<font style="font-size: 12pt; font-weight:700">● 教程说明</font><br/>
+<br/>
+	<blockquote>
+	<p align="left"><font color="#F30F12">注意：本组件位于<strong>“图表类窗口组件”</strong>模块中。</font></p>
+ </blockquote>
+	<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 详细例程</font><br/>
+<br/><blockquote>
+	<p align="left">可打开火山安装目录下<b>“samples\samples.vsln”</b>解决方案。 </p>
+	<p align="left">位于<b>“窗口及组件->图表系列组件”</b>分类下。</p>
+	<p align="left"><img src="chart_images/0.png" border="0" ></p>
+	 </blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<h2>一、柱状图</h2>
+<p align="left">&nbsp;</p>
+	
+
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">打开启动类<b>“界面设计器”</b>，设计如下界面。</p>
+    <p align="left">依次是<b>“按钮1”</b>和<b>“柱状图1”</b>。 </p>
+	<p align="left"><img src="chart_images/125.png" border="0" ></p>
+
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="zztcj"></a>
+<font style="font-size: 12pt; font-weight:700">● 图表数据创建</font>
+
+	
+<p align="left">&nbsp;</p>
+<p align="left">折线图创建方法如下：</p>
+<blockquote>
+  <p align="left">共需七个类，分别是<b>“图表柱子列表类”</b>、<b>“图表柱子数组类”</b>、<b>“图表柱状节点值列表类”</b>，<b>“图表柱状节点值数组类”</b>。</p>
+  <p align="left"><b>“图表柱状节点值类”</b>，<b>“图表柱子类”</b>和<b>“柱状图数据类”</b>。</p>
+  <p align="left">作用分别如下：</p>
+  <p align="left">1、图表柱子列表类：用于存储<b>“柱子”</b>数据。</p>
+  <p align="left">2、图表柱子数组类：用于创建<b>“图表柱子列表类”</b>。</p>
+  <p align="left">3、图表柱状节点值列表类：用于存储<b>“柱子节点”</b>数据。</p>
+  <p align="left">4、图表柱状节点值数组类：用于创建<b>“图表柱状节点值列表类”</b>。</p>
+  <p align="left">5、图表柱状节点值类：用于创建<b>“节点值”</b>数据。</p>
+  <p align="left">6、图表柱子类： 通过<b>“节点列表”</b>创建<b>“柱子”</b>，创建的<b>“柱子”</b>需要加入到<b>“柱子列表”</b>。</p>
+  <p align="left">7、柱状图数据类：通过<b>“柱子列表”</b>创建最终的<b>“柱状图数据”</b>。</p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<a name="zzttbsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 图表数据(写)</font><br>	
+<font style="font-size: 12pt; font-weight:700">● 创建</font>	
+<p align="left">&nbsp;</p>
+<p align="left"><b>“图表数据(写)”</b>帮助文档：</p>	
+<blockquote>
+	<p align="left">本属性用于设置当前柱状图图表数据，属性值类型为<b>“柱状图数据类”</b>。</p>
+	<p align="left"><img src="chart_images/126.png"  ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“图表柱状节点值类.创建”</b>帮助文档：</p>	
+<blockquote>
+	<p align="left">通过本方法可创建柱状图节点值。</p>
+	<p align="left"><img src="chart_images/127.png"  ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“图表柱子类.创建”</b>帮助文档：</p>	
+<blockquote>
+	<p align="left">本方法的作用是用来创建柱子对象。</p>
+	<p align="left"><img src="chart_images/128.png"  ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“柱状图数据类.创建”</b>帮助文档：</p>	
+<blockquote>
+	<p align="left">通过本方法可创建完整的柱子数据。</p>
+	<p align="left"><img src="chart_images/129.png"  ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、创建<b>“图表柱子列表类”</b>，用于存储柱子数据。</p>
+	<p align="left">2、循环创建<b>“柱子节点”</b>和<b>“柱子列表”</b>。</p>
+	<p align="left">3、通过<b>“柱子列表”</b>创建柱子数据，赋值给<b>“图表数据”</b>属性。</p>
+	<p align="left"><img border="0" src="chart_images/130.png" ></p>
+</blockquote>	
+		
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)： </p>
+<blockquote>
+	<p align="left">注意：柱状图在不设置任何数据的情况下，默认存在四个柱子。</p>
+	<p align="left"><img border="0" src="chart_images/131.gif" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<a name="zztznrbxz"></a>
+<font style="font-size: 12pt; font-weight:700">● 值内容被选中(事件)</font>	
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，当柱子被选中后会触发本事件。</p>
+	<p align="left">参数1：返回柱子索引。</p>
+	<p align="left">参数2：返回子柱子索引。</p>
+	<p align="left">参数3：通过<b>“值对象”</b>可取出当前柱子值。</p>
+	<p align="left"><img border="0" src="chart_images/132.png" ></p>
+</blockquote>		
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加<b>“柱状图_值内容被选中”</b>事件，弹出索引和柱子值。</p>
+	<p align="left"><img border="0" src="chart_images/133.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)： </p>
+<blockquote>
+	<p align="left"><img border="0" src="chart_images/134.gif" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<a name="zhuzzlb"></a>
+<font style="font-size: 12pt; font-weight:700">● 柱子列表(写)</font>	
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性同创建方法，用于创建<b>“柱状图数据”</b>。</p>
+	<p align="left"><img border="0" src="chart_images/135.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">本属性和<b>“创建”</b>方法二选一，使用本属性时注意不要勾选参考。</p>
+	<p align="left">运行效果同<a href="#zzttbsj"><b>“创建”</b></a>方法一致。</p>
+	<p align="left"><img border="0" src="chart_images/136.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<a name="zhuzikuandu"></a>
+<font style="font-size: 12pt; font-weight:700">● 柱子宽度系数(写)</font>	
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性继承自<b>“柱状图数据类”</b>，用于设置柱子宽度。</p>
+	<p align="left">属性值位于<b>“0-1”</b>之间，数值越小，柱子宽度越小。</p>
+	<p align="left"><img border="0" src="chart_images/137.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">设置本属性值为0.1。</p>
+	<p align="left"><img border="0" src="chart_images/138.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left"><img border="0" src="chart_images/139.gif"></p>
+</blockquote>
+	
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

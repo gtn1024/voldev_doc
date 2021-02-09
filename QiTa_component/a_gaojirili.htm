@@ -1,0 +1,1166 @@
+
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>高级日历组件模块</h4></li>
+	<ol>
+			<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new2')" >一.高级日历组件<span>(可收缩)</span></h6></li>
+		<ol id="new2">
+			<li><blockquote><a href="#rlblsm">1.本类说明</a></blockquote></li>
+			<li><blockquote><a href="#rlqpxs">2.全屏显示(读写)</a></blockquote></li>
+			<li><blockquote><a href="#rlqtylwbs">3.其他阳历文本色(写)</a></blockquote></li>
+			<li><blockquote><a href="#rlqtylwbs">4.刷新绘制</a></blockquote></li>
+			<li><blockquote><a href="#rlqtyyinliwbs">5.其他月阴历文本色(写)</a></blockquote></li>
+			<li><blockquote><a href="#dqyglwbs">6.当前月阳历文本色(写)</a></blockquote></li>
+			<li><blockquote><a href="#dqynlwbs">7.当前月阴历文本色(写)</a></blockquote></li>
+			<li><blockquote><a href="#dqryangliwbs">8.当前日阳历文本色(写)</a></blockquote></li>
+			<li><blockquote><a href="#dqryinliliwbs">9.当前日阴历文本色(写)</a></blockquote></li>
+			<li><blockquote><a href="#xzylwbs">10.选中阳历文本色(写)</a></blockquote></li>
+			<li><blockquote><a href="#xzyinlwbs">11.选中阴历文本色(写)</a></blockquote></li>
+			<li><blockquote><a href="#rlxzbjs">12.选中背景色(写)</a></blockquote></li
+			<li><blockquote><a href="#rlqhdh">13.切换动画(写)</a></blockquote></li>
+			<li><blockquote><a href="#rlzsrms">14.周首日模式(写)</a></blockquote></li>
+			<li><blockquote><a href="#rlkfgd">15.日历可否滚动(写)</a></blockquote></li>
+			<li><blockquote><a href="#zhoulikgd">16.周历可否滚动(写)</a></blockquote></li>
+			<li><blockquote><a href="#rlxgd">17.日历项高度(写)</a></blockquote></li>
+			<li><blockquote><a href="#rqtcms">18.日期填充模式(写)</a></blockquote></li>
+			<li><blockquote><a href="#yanglwbcc">19.阳历文本尺寸(写)</a></blockquote></li>
+			<li><blockquote><a href="#yinlwbcc">20.阴历文本尺寸(写)</a></blockquote></li>
+			<li><blockquote><a href="#zrqlbd">21.周日期列表(读)</a></blockquote></li>
+			<li><blockquote><a href="#zrqlbd">22.月日期列表(读)</a></blockquote></li>
+			<li><blockquote><a href="#rlnyr">23.年(读)</a></blockquote></li>
+			<li><blockquote><a href="#rlnyr">24.月(读)</a></blockquote></li>
+			<li><blockquote><a href="#rlnyr">25.日(读)</a></blockquote></li>
+			<li><blockquote><a href="#rlxsgd">26.向上滚动</a></blockquote></li>
+			<li><blockquote><a href="#rlxsgd">27.月份被改变(事件)</a></blockquote></li>
+			<li><blockquote><a href="#rlxxgd">28.向下滚动</a></blockquote></li>
+			<li><blockquote><a href="#zxqlys">29.置星期栏颜色</a></blockquote></li>
+			<li><blockquote><a href="#zxqlys">30.更新星期栏</a></blockquote></li>
+			<li><blockquote><a href="#gdzdqr">31.滚动至当前日</a></blockquote></li>
+			<li><blockquote><a href="#rlgdzdrq">32.滚动至指定日期</a></blockquote></li>
+			<li><blockquote><a href="#rlzwbys">33.置文本颜色</a></blockquote></li>
+			<li><blockquote><a href="#zxzyanse">34.置选中颜色</a></blockquote></li>
+			<li><blockquote><a href="#szxzfw">35.置限制范围</a></blockquote></li>
+			<li><blockquote><a href="#szxzfw">36.日期被选中(事件)</a></blockquote></li>
+			<li><blockquote><a href="#zhiqhdh">37.置切换动画</a></blockquote></li>
+			<li><blockquote><a href="#zhiqhdh">38.日历动画基础类</a></blockquote></li>
+			<li><blockquote><a href="#zhiqhdh">39.向左滑动(虚拟)</a></blockquote></li>
+			<li><blockquote><a href="#zhiqhdh">40.向右滑动(虚拟)</a></blockquote></li>
+			<li><blockquote><a href="#rlrqbcan">41.日期被长按(事件)</a></blockquote></li>
+			<li><blockquote><a href="#hzrlwbsj">42.绘制日历文本(事件)</a></blockquote></li>
+			<li><blockquote><a href="#huizhirlxz">43.绘制日历选中项(事件)</a></blockquote></li>
+			<li><blockquote><a href="#stbgbsj">44.视图被改变(事件)</a></blockquote></li>
+			<li><blockquote><a href="#rlzkrl">45.展开日历</a></blockquote></li>
+			<li><blockquote><a href="#rlzkrl">46.是否已展开日历</a></blockquote></li>
+		</ol>
+		
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new3')" >二.日历信息类<span>(可收缩)</span></h6></li>
+		<ol id="new3">
+			<li><blockquote><a href="#cjrlxx">1.创建</a></blockquote></li>
+			<li><blockquote><a href="#cjrlxx">2.二十四节气(读)</a></blockquote></li>
+			<li><blockquote><a href="#rinongli">3.农历年(读)</a></blockquote></li>
+			<li><blockquote><a href="#rinongli">4.农历月(读)</a></blockquote></li>
+			<li><blockquote><a href="#rinongli">5.农历日(读)</a></blockquote></li>
+			<li><blockquote><a href="#rinongli">6.农历日文本(读)</a></blockquote></li>
+			<li><blockquote><a href="#nonglijr">7.农历节日(读)</a></blockquote></li>
+			<li><blockquote><a href="#zhousy">8.周索引(读)</a></blockquote></li>
+			<li><blockquote><a href="#zhousy">9.是否为周末(读)</a></blockquote></li>
+			<li><blockquote><a href="#tiangan">10.天干(读)</a></blockquote></li>
+			<li><blockquote><a href="#tiangan">11.地支(读)</a></blockquote></li>
+			<li><blockquote><a href="#sfwrunnian">12.是否为闰年(读)</a></blockquote></li>
+			<li><blockquote><a href="#rlbyts">13.本月天数(读)</a></blockquote></li>
+			<li><blockquote><a href="#shengxiao">14.生肖(读)</a></blockquote></li>
+			<li><blockquote><a href="#yangli">15.阳历节日(读)</a></blockquote></li>
+			<li><blockquote><a href="#qnlzts">16.取农历月总天数</a></blockquote></li>
+			<li><blockquote><a href="#qyfhz">17.取月份汉字</a></blockquote></li>
+		</ol>
+	
+		
+	</ol>
+</ul>
+</div>	
+
+<p align="left">&nbsp;</p><a name="rlblsm"></a>
+<h2>一、高级日历组件</h2>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 本模块说明</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">通过使用本模块可以非常方便实现很好看的日历组件界面。</p>
+	<p align="left">注：欲使用日历组件必须配置<font color="#F50004"><b>“高级日历组件”</b></font>模块。</p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">界面设计：</p>
+<blockquote>
+    <p align="left">配置模块后，在<b>“扩展组件”</b>分类下可以找到<b>“高级日历框”</b>组件，并将其拖放到界面设计器中。</p>
+	<p align="left"><img border="0" src="gaojirili_images/1.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+    <p align="left">日历不需要任何设置，就可以直接运行显示出来。</p>
+    <p align="left">下图是日历运行默认样式，所有的颜色信息均可以自行修改。</p>
+	<p align="left"><img border="0" src="gaojirili_images/2.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="rlqpxs"></a>
+<font style="font-size: 12pt; font-weight:700">● 全屏显示(读写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">高级日历组件显示时，无论组件多大，日历显示区域是一个固定的尺寸。</p>
+    <p align="left">本属性设置为真，可以将日历显示区域填满整个日历组件。</p>
+    <p align="left">同名读属性则用来读取是否设置了全屏显示。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/1.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后，设置本属性值为<b>“取反”</b>后的当前属性。</p>
+    <p align="left">这样就可以实现按钮被点击后，在<b>“全屏显示”</b>和<b>“非全屏显示”</b>之间切换。</p>
+	<p align="left"><img border="0" src="gaojirili_images/3.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="gaojirili_images/4.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="rlqtylwbs"></a>
+<font style="font-size: 12pt; font-weight:700">● 其他阳历文本色(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 刷新绘制</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“其他阳历文本色（写）”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">在日历框中，除了会显示当前月份外，还会显示上月结束的日期和下月开始的日期。</p>
+  <p align="left">本属性的作用就是来设置上月和下月日期的阳历（公历）月份的颜色。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/2.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“刷新绘制”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">在日历框中只要是颜色的修改和设置，都需要调用本方法进行刷新。</p>
+  <p align="left">如果是批量设置颜色，可以在批量设置颜色后调用一次即可。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/3.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后，设置本属性值为黄色，并调用<b>“刷新绘制()”</b>方法刷新。</p>
+	<p align="left"><img border="0" src="gaojirili_images/5.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">最终结果可以看到，上月和下月的公历颜色变成了黄色。</p>
+	<p align="left"><img border="0" src="gaojirili_images/6.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="rlqtyyinliwbs"></a>
+<font style="font-size: 12pt; font-weight:700">● 其他月阴历文本色(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">本属性的作用是用来设置其他月的阴历（农历）文本色。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/4.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后，设置其它阴历文本色为黄色。</p>
+	<p align="left"><img border="0" src="gaojirili_images/7.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">最终结果可以看到其他月的农历颜色设置为了黄色。</p>
+	<p align="left"><img border="0" src="gaojirili_images/8.png" ></p>
+</blockquote>	<p align="left">&nbsp;</p>
+<a name="dqyglwbs"></a>
+<font style="font-size: 12pt; font-weight:700">● 当前月阳历文本色(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">本属性用来设置当前月的阳历（公历）文本色。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/5.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后，执行本属性设置颜色为红色。</p>
+	<p align="left"><img border="0" src="gaojirili_images/9.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">最终可以看到公历被设置成红色。</p>
+	<p align="left"><img border="0" src="gaojirili_images/10.png" ></p>
+</blockquote>	<p align="left">&nbsp;</p>
+<a name="dqynlwbs"></a>
+<font style="font-size: 12pt; font-weight:700">● 当前月阴历文本色(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">本属性可以用来设置当前月的阴历（农历）文本颜色。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/6.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后执行本属性，设置颜色为红色。</p>
+	<p align="left"><img border="0" src="gaojirili_images/11.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">最终结果可以看到，当前月的农历变成了红色。</p>
+	<p align="left"><img border="0" src="gaojirili_images/12.png" ></p>
+</blockquote>	<p align="left">&nbsp;</p>
+<a name="dqryangliwbs"></a>
+<font style="font-size: 12pt; font-weight:700">● 当前日阳历文本色(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">通过本属性可设置今日阳历（公历）的文本色。</p>
+  <p align="left">注意：并非选中日期。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/7.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后，设置本属性为黄色，并刷新绘制。</p>
+	<p align="left"><img border="0" src="gaojirili_images/13.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终可以看到今日阳历被修改为了黄色。</p>
+	<p align="left"><img border="0" src="gaojirili_images/14.gif" ></p>
+</blockquote>	<p align="left">&nbsp;</p>
+<a name="dqryinliliwbs"></a>
+<font style="font-size: 12pt; font-weight:700">● 当前日阴历文本色(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">通过本属性可以设置今日阴历（农历）的文本色。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/8.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后调用本属性设置其属性值为黄色。</p>
+	<p align="left"><img border="0" src="gaojirili_images/15.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终结果可以可看到阴历被修改为黄色。</p>
+	<p align="left"><img border="0" src="gaojirili_images/16.gif" ></p>
+</blockquote>	<p align="left">&nbsp;</p>
+<a name="xzylwbs"></a>
+<font style="font-size: 12pt; font-weight:700">● 选中阳历文本色(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本属性来设置选中日期的阳历（公历）文本色。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/9.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后，设置当前属性为黄色。</p>
+	<p align="left"><img border="0" src="gaojirili_images/17.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终可以看到选中阳历的颜色被修改为黄色。</p>
+	<p align="left"><img border="0" src="gaojirili_images/18.gif" ></p>
+</blockquote>	<p align="left">&nbsp;</p>
+<a name="xzyinlwbs"></a>
+<font style="font-size: 12pt; font-weight:700">● 选中阴历文本色(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">通过本属性可以设置选中的阴历文本色。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/10.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后设置其属性颜色为黄色，并刷新。</p>
+	<p align="left"><img border="0" src="gaojirili_images/19.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终结果可以看到，选中的阴历颜色被修改。</p>
+	<p align="left"><img border="0" src="gaojirili_images/20.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="rlxzbjs"></a>
+<font style="font-size: 12pt; font-weight:700">● 选中背景色(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">本属性用来设置选中的背景色。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/11.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后设置其属性颜色为黄色。</p>
+	<p align="left"><img border="0" src="gaojirili_images/21.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终可以看到选中的背景色被修改为黄色。</p>
+	<p align="left"><img border="0" src="gaojirili_images/22.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<a name="rlqhdh"></a>
+<font style="font-size: 12pt; font-weight:700">● 切换动画(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本属性可以设置日历切换日期时的切换动画，默认为立体动画。</p>
+  <p align="left">属性值调用方式：页面切换动画.XXX。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/12.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后设置本属性值为<b>“页面切换动画.缩放动画”</b>。</p>
+	<p align="left"><img border="0" src="gaojirili_images/23.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终可以看到当前日历切换动画被修改。</p>
+	<p align="left">注意：如果切换动画失效或者日历不显示，可以调用<b>“刷新绘制()”</b>方法刷新。</p>
+	<p align="left"><img border="0" src="gaojirili_images/24.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<a name="rlzsrms"></a>
+<font style="font-size: 12pt; font-weight:700">● 周首日模式(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">本属性的作用是用来设置日历周首日，大部分日历默认都是从周日开始计算。</p>
+  <p align="left">属性值调用方式：周首日模式.XXX。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/13.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后设置本属性的属性值为<b>“周首日模式.周一起始”</b>。</p>
+	<p align="left"><img border="0" src="gaojirili_images/25.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终结果日历成功的从周一开始显示。</p>
+	<p align="left"><img border="0" src="gaojirili_images/26.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<a name="rlkfgd"></a>
+<font style="font-size: 12pt; font-weight:700">● 日历可否滚动(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">通过本属性可以设置当前日历框可否通过手势滑动翻页。</p>
+  <p align="left">属性值为真则可以手势滑动翻页，为假否则不可以。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/14.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后设置本属性为假。</p>
+	<p align="left"><img border="0" src="gaojirili_images/27.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终结果可以看到手势滑动翻页失效。</p>
+	<p align="left"><img border="0" src="gaojirili_images/28.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<a name="rlxgd"></a>
+<font style="font-size: 12pt; font-weight:700">● 日历项高度(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">本属性可用来设置日历中日期格子的高度，单位像素。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/15.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后调用本属性设置为100像素。</p>
+	<p align="left"><img border="0" src="gaojirili_images/29.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终结果可以看到高度发生了明显的变化。</p>
+	<p align="left"><img border="0" src="gaojirili_images/30.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<a name="rqtcms"></a>
+<font style="font-size: 12pt; font-weight:700">● 日期填充模式(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">通过本属性可以设置当前日期填充模式，决定日期显示模式。</p>
+  <p align="left">例如：设置属性值为<b>“日期填充模式.当前月”</b>,则不会在当前月显示上月结束日期和下个月开始日期.</p>
+  <p align="left">高级日历框在不设置本属性的情况下默认为<b>“日期填充模式.固定”</b>。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/16.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后调用当前属性，设置属性值为<b>“日期填充模式.当前月”</b>。</p>
+	<p align="left"><img border="0" src="gaojirili_images/31.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终结果可以看到，当前月的上一月和下一月的日期消失。</p>
+	<p align="left"><img border="0" src="gaojirili_images/32.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<a name="yanglwbcc"></a>
+<font style="font-size: 12pt; font-weight:700">● 阳历文本尺寸(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">通过本属性可设置当前日历框的阳历文本尺寸，单位是SP。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/17.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后调用当前属性设置其文本尺寸为20SP。</p>
+	<p align="left"><img border="0" src="gaojirili_images/33.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终结果可以明显看到<b>“阳历文本尺寸”</b>变大。</p>
+	<p align="left"><img border="0" src="gaojirili_images/34.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<a name="yinlwbcc"></a>
+<font style="font-size: 12pt; font-weight:700">● 阴历文本尺寸(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">通过本属性可以设置当前阴历文本尺寸，单位SP。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/18.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击设置当前属性值为20SP。</p>
+	<p align="left"><img border="0" src="gaojirili_images/35.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终结果可以明显看到阴历文本尺寸变大。</p>
+	<p align="left"><img border="0" src="gaojirili_images/36.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<a name="zrqlbd"></a>
+<font style="font-size: 12pt; font-weight:700">● 周日期列表(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 月日期列表(读)</font>
+<p align="left">&nbsp;</p>
+<p align="left">周日期列表：用于获取当前日期所处周的所有日历信息。</p>
+<p align="left">月日期列表：用于获取当前日期所处月的所有日历信息。</p>
+<p align="left">此处演示<b>“周日期列表”</b>用法，月日期列表用法雷同。</p>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">本读属性用于获取周日历信息，返回<b>“日历信息列表类”</b>，本类是一个模板类。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/19.png" ></p>
+	<p align="left">&nbsp;</p>
+	<p align="left">在<b>“日历信息列表类”</b>中，共有三个模板。</p>
+	<p align="left">其三个模板类型分别对应的实际数据类型为<b>“日历信息类”</b>，<b>“日历信息集合类”</b>和<b>“日历信息枚举器类”</b>。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/20.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+
+    <p align="left">1、在成员变量中增加一个<b>“文本框1”</b>。</p>
+    <p align="left">2、调用<b>“周日期列表”</b>读属性，赋值给定义的<b>“周信息”</b>变量。</p>
+    <p align="left">3、循环取出<b>“周信息”</b>的所有成员，赋值给定义的<b>“日历信息类”</b>变量。</p>
+    <p align="left">4、通过<b>“日历信息”</b>就可以取出<b>“月日”</b>信息，最后将其显示在文本框中。</p>
+	<p align="left"><img border="0" src="gaojirili_images/37.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终结果当前周的所有日期将会显示在文本框中。</p>
+	<p align="left"><img border="0" src="gaojirili_images/38.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<a name="rlnyr"></a>
+<font style="font-size: 12pt; font-weight:700">● 年(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 月(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 日(读)</font>
+<p align="left">&nbsp;</p>
+<p align="left">以上三个读属性用于读取今天的日期，返回值为整数。</p>
+<p align="left">注意：并非选中日期。</p>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后，分别调用三个读属性进行<b>“到文本()”</b>转换，将其显示到标题中。</p>
+	<p align="left"><img border="0" src="gaojirili_images/39.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="gaojirili_images/40.png" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<a name="rlxsgd"></a>
+<font style="font-size: 12pt; font-weight:700">● 向上滚动</font><br>
+<font style="font-size: 12pt; font-weight:700">● 月份被改变(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“向上滚动”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">如果当前日历为周显示模式，则滚动到上周，否则滚动到上月。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/21.png" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“月份被改变(事件)”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">月份发生改变的时候，会触发本事件。</p>
+  <p align="left">参数返回切换后的年月。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/22.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、<b>“按钮1”</b>被点击后调用本方法滚动到上月。</p>
+    <p align="left">2、添加<b>“月份被改变”</b>事件，将新的年月显示在标题上。</p>
+	<p align="left"><img border="0" src="gaojirili_images/41.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终可以看到月份被切换。</p>
+	<p align="left"><img border="0" src="gaojirili_images/42.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<a name="rlxxgd"></a>
+<font style="font-size: 12pt; font-weight:700">● 向下滚动</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">本方法的作用和<b>“向上滚动”</b>正好相反。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/23.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后，执行本方法向下滚动。</p>
+	<p align="left"><img border="0" src="gaojirili_images/43.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终可以看到日历翻到下一月。</p>
+	<p align="left"><img border="0" src="gaojirili_images/44.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<a name="zxqlys"></a>
+<font style="font-size: 12pt; font-weight:700">● 置星期栏颜色</font><br>
+<font style="font-size: 12pt; font-weight:700">● 更新星期栏</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“置星期栏颜色”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">通过本方法可以设置日历星期栏的颜色，共有三个参数，可以设置背景色，文本色和分割线颜色。</p>
+  <p align="left">注意：本方法并不能立即更新颜色值。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/24.png" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“更新星期栏”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">本方法本执行后可以更新设置的星期栏颜色。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/25.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后，执行<b>“置星期栏颜色”</b>和<b>“更新星期栏”</b>两个方法后就可以设置颜色。</p>
+	<p align="left"><img border="0" src="gaojirili_images/45.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终结果可以看到星期栏颜色发生变化。</p>
+	<p align="left"><img border="0" src="gaojirili_images/46.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<a name="gdzdqr"></a>
+<font style="font-size: 12pt; font-weight:700">● 滚动至当前日</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本方法可滚动到今天所在日期。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/26.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后执行本方法滚动。</p>
+	<p align="left"><img border="0" src="gaojirili_images/47.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终可以看到无论选择什么日期，<b>“按钮1”</b>点击后都会定位今天日期。</p>
+	<p align="left"><img border="0" src="gaojirili_images/48.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="rlgdzdrq"></a>
+<font style="font-size: 12pt; font-weight:700">● 滚动至指定日期</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本方法可以滚动到指定日期。</p>
+  <p align="left">参数1、3：填写要滚动到的年月日。</p>
+  <p align="left">参数4：设置滚动时是否有动画，默认为真。</p>
+  <p align="left">注意：参数4的动画效果在当前月切换时无效。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/27.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后执行本方法滚动到2019年11月20日。</p>
+	<p align="left"><img border="0" src="gaojirili_images/49.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终成功滚动到指定日期。</p>
+	<p align="left"><img border="0" src="gaojirili_images/50.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<a name="rlzwbys"></a>
+<font style="font-size: 12pt; font-weight:700">● 置文本颜色</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">通过本方法可同时设置<b>“当前日”</b>、<b>“当前月份”</b>和<b>“其他月份”</b>的文本颜色。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/28.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后执行本方法设置颜色后，务必调用<b>“刷新绘制()”</b>方法刷新。</p>
+	<p align="left"><img border="0" src="gaojirili_images/51.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终可以看到颜色都被修改。</p>
+	<p align="left"><img border="0" src="gaojirili_images/52.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<a name="zxzyanse"></a>
+<font style="font-size: 12pt; font-weight:700">● 置选中颜色</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本方法可修改选中日期的颜色。 </p>
+  <p align="left">参数1:选中日期的背景色。</p>
+  <p align="left">参数2:选中日期的公历文本色。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/29.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后执行本方法修改颜色即可。</p>
+	<p align="left"><img border="0" src="gaojirili_images/53.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终可以看到选中日期的颜色被修改成指定颜色。</p>
+	<p align="left">如果想要颜色被立即修改，需调用<b>“刷新绘制()”</b>方法。</p>
+	<p align="left"><img border="0" src="gaojirili_images/54.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<a name="szxzfw"></a>
+<font style="font-size: 12pt; font-weight:700">● 置限制范围</font><br>
+<font style="font-size: 12pt; font-weight:700">● 日期被选中(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“置限制范围”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">通过本方法可限定日历框的显示范围，超出范围的将无法选中，超出的月份将无法查看。</p>
+  <p align="left">参数1、3：设置最小显示年月日。</p>
+  <p align="left">参数4、6：设置最大显示年月日。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/30.png" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“日期被选中(事件)”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">当日期被选择后会触发本事件。</p>
+  <p align="left">参数1：返回日历信息类，通过本类可获取年月日等数据。</p>
+  <p align="left">参数2：可以判断是否为用户点击选择。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/31.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、<b>“按钮1”</b>被点击后执行本方法限制日期在11月10日到20日之间，超出此日期的将无法选中可查看。</p>
+    <p align="left">2、添加<b>“日期被选中”</b>事件，取出年月日显示在标题上。</p>
+	<p align="left"><img border="0" src="gaojirili_images/55.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图<a href="gaojirili_images/56.gif" title="查看图片" target="_blank">(GIF)</a> ：</p>
+<blockquote>
+	<p align="left">可以看到，当<b>“按钮1”</b>被点击后，超出范围的日期将无法选中，并且也无法查看其他月。</p>
+	<p align="left"><img border="0" src="gaojirili_images/56.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<a name="zhiqhdh"></a>
+<font style="font-size: 12pt; font-weight:700">● 置切换动画</font><br>
+<font style="font-size: 12pt; font-weight:700">● 日历动画基础类</font><br>
+<font style="font-size: 12pt; font-weight:700">● 向左滑动(虚拟)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 向右滑动(虚拟)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“置切换动画”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">通过本方法可设置日历框的切换动画，与<b>“切换动画”</b>写属性不同的地方在于，本方法可以自定义动画。</p>
+  <p align="left">如果参数设置空对象，日历框的动画效果会变成平移效果。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/32.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“日历动画基础类”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">通过本类可设置自定义动画效果，该类中有两个虚拟方法，用于设置不同方向的切换动画。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/33.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“向左滑动(虚拟)”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">通过本虚拟方法可设置向左滑动的动画效果。</p>
+  <p align="left">参数1：返回所操作的日历框组件，通过设置本参数的尺寸等信息可以让日历框呈现不同的动画效果。</p>
+  <p align="left">参数2：本参数范围是0到1之间，滑动日历过程中本参数会从小到大不断更新。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/34.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“向右滑动(虚拟)”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">顾名思义，向右滑动会触发本虚拟方法。</p>
+  <p align="left">参数1：与<b>“向左滑动”</b>的参数1一致。</p>
+  <p align="left">参数2：本参数的范围是从1到0，并且滑动过程中是从大大小不断更新本参数。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/35.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、定义类型为<b>“日历动画基础类”</b>的类，起名<b>“日历动画”</b>。</p>
+    <p align="left">2、添加<b>“向左滑动”</b>虚拟方法，并设置参数1的垂直位置为100。</p>
+    <p align="left">3、滑动完毕后需要将其组件归位，这里可以判断<b>“当前位置>0.8”</b>的时候就让其组件<b>“垂直位置”</b>归位。</p>
+    <p align="left">4、添加<b>“向右滑动”</b>虚拟方法，和<b>“向左滑动”</b>进行雷同操作。</p>
+  <p align="left"><img border="0" src="gaojirili_images/57.png" ></p>
+  <p align="left">&nbsp;</p>
+	<p align="left">5、<b>“按钮1”</b>被点击后调用<b>“置切换动画()”</b>方法，参数填写<b>“新建对象(日历动画)”</b>即可。</p>
+	<p align="left">注意:此处的<b>“日历动画”</b>的名称必须和定义类的名称一致。</p>
+	<p align="left"><img border="0" src="gaojirili_images/58.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left"><img border="0" src="gaojirili_images/59.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<a name="rlrqbcan"></a>
+<font style="font-size: 12pt; font-weight:700">● 日期被长按(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图： </p>
+<blockquote>
+  <p align="left">顾名思义，当日期被长按后会触发本事件。</p>
+  <p align="left">参数1：通过此参数可以取出年月日等信息。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/36.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">添加<b>“日期被长按”</b>事件，并取出<b>“月，日”</b>显示。</p>
+	<p align="left"><img border="0" src="gaojirili_images/60.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">当日期被长按后，月日会成功提示。</p>
+	<p align="left"><img border="0" src="gaojirili_images/61.gif" > </p>
+</blockquote><p align="left">&nbsp;</p>
+<a name="hzrlwbsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 绘制日历文本(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">当日期开始绘制的时候会触发本事件，如果要自行绘制日期信息，本事件务必返回1。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/37.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、添加<b>“绘制日历文本”</b>接收事件。</p>
+    <p align="left">2、定义两个类型为<b>“画笔类”</b>的变量，设置不同的颜色，用于绘制不同内容。</p>
+    <p align="left">3、定义<b>“横纵坐标”</b>整数变量，用于存储绘制坐标。</p>
+    <p align="left">4、通过<b>“日历信息.属于当前月”</b>读属性,来判断是否为当前月或其他月，从而调用<b>“画文本()”</b>绘制不同内容。</p>
+    <p align="left">5、最后返回值务必返回1。</p>
+	<p align="left"><img border="0" src="gaojirili_images/62.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="gaojirili_images/63.png" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<a name="gdzdqr"></a>
+<font style="font-size: 12pt; font-weight:700">● 绘制日历选中项(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">当日历选中项开始绘制的时会触发本事件，如果要自行绘制选中项，本事件务必返回1。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/38.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">本事件的操作方式和<b>“绘制日历文本”</b>事件用法基本一致。</p>
+    <p align="left">计算坐标后执行<b>“画圆()”</b>方法，可以绘制一个圆形的背景色。</p>
+	<p align="left"><img border="0" src="gaojirili_images/64.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left"><img border="0" src="gaojirili_images/65.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<a name="stbgbsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 视图被改变(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">当日历视图在周日历和月日历之间切换时会触发本事件。</p>
+  <p align="left">参数返回是否为月视图。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/39.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">界面设计如下图：</p>
+<blockquote>
+    <p align="left">想要实现周日历和月日历切换，必须满足以下条件。</p>
+    <p align="left">1、底层布局必须为<b>“高级日历布局器”</b>。</p>
+    <p align="left">2、在<b>“高级日历框”</b>组件下务必添加一个<b>“纵向滚动容器”</b>。</p>
+	<p align="left"><img border="0" src="gaojirili_images/66.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">添加本事件后判断<b>“是否为月视图”</b>，从而修改窗口标题。</p>
+	<p align="left"><img border="0" src="gaojirili_images/67.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">通过手势上下滑动可完成月日历和周日历的切换。</p>
+	<p align="left">注：模拟器中就是鼠标点击后上下滑动。</p>
+	<p align="left"><img border="0" src="gaojirili_images/68.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<a name="rlzkrl"></a>
+<font style="font-size: 12pt; font-weight:700">● 展开日历</font><br>
+<font style="font-size: 12pt; font-weight:700">● 是否已展开日历</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“展开日历”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">调用本方法可以进行展开成月日历或收缩成周日历操作。</p>
+  <p align="left">参数1：提供真则展开成月日历，否则收缩为周日历。</p>
+  <p align="left">参数2：设置动画时长，默认300毫秒。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/40.png" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“是否已展开日历”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">调用本方法可判断当前日历是否为月日历。</p>
+  <p align="left">返回真为月日历，返回假则为周日历。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/41.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后判断是否展开日历，通过返回值来决定调用是否显示月历。</p>
+	<p align="left"><img border="0" src="gaojirili_images/69.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终可以看到<b>“按钮1”</b>被点击后，高级日历框会在周历和月历之间切换。</p>
+	<p align="left"><img border="0" src="gaojirili_images/70.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<a name="zhoulikgd"></a>
+<font style="font-size: 12pt; font-weight:700">● 周历可否滚动(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">通过本属性可以设置周历框是否支持滚动切换周。</p>
+  <p align="left">注意：欲使用本属性必须将日历框显示模式修改为周日历才可以使用。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/42.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后设置本属性值为假。</p>
+	<p align="left"><img border="0" src="gaojirili_images/72.gif" ><img border="0" src="gaojirili_images/71.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终可以看到当<b>“按钮1”</b>被点击后，周历框将无法滑动切换。</p>
+	<p align="left">&nbsp;</p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="cjrlxx"></a>
+<h2>二、日历信息类</h2>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 创建</font><br>
+<font style="font-size: 12pt; font-weight:700">● 二十四节气</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“创建”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">顾名思义，通过指定的年月日可创建当前<b>“日期信息类”</b>对象。</p>
+    <p align="left">通过返回的对象可以进行更多的操作。</p>
+    <p align="left">例如：取二十四节气等。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/43.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“二十四节气(读)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本属性可读取当前对象中存储的二十四解析。</p>
+    <p align="left">如果不存在将返回空文本。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/44.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、定义<b>“日历信息类”</b>变量勾选参考。</p>
+    <p align="left">2、定义<b>“文本框1”</b>组件，用来显示节气。</p>
+    <p align="left">3、<b>“按钮1”</b>被点击后调用<b>“创建()”</b>方法创建<b>“2019年11月22日”</b>的日期对象。</p>
+    <p align="left">4、调用<b>“二十四节气”</b>读属性读取节气显示在文本框1上。</p>
+	<p align="left"><img border="0" src="gaojirili_images/73.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="gaojirili_images/74.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	<a name="rinongli"></a>
+<font style="font-size: 12pt; font-weight:700">● 农历年(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 农历月(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 农历日(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 农历日文本(读)</font><p align="left">&nbsp;</p>
+<p align="left">以上四个读属性,就是用来读取当前日历对象内存储的农历日期。</p>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、<b>“按钮1”</b>被点击调用<b>“创建()”</b>方法,创建日历信息对象。</p>
+    <p align="left">2、分别调用四个读属性读取后显示在文本框中。</p>
+	<p align="left"><img border="0" src="gaojirili_images/75.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图： </p>
+<blockquote>
+	<p align="left"><img border="0" src="gaojirili_images/76.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	<a name="nonglijr"></a>
+<font style="font-size: 12pt; font-weight:700">● 农历节日(读)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本读属性用来取出农历节日，如果所指定的日期中没有农历节日，则返回空文本。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/45.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后创建当前日历对象，随后调用当前属性读取农历节日。</p>
+	<p align="left"><img border="0" src="gaojirili_images/78.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="gaojirili_images/77.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	<a name="zhousy"></a>
+<font style="font-size: 12pt; font-weight:700">● 周索引(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 是否为周末(读)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“周索引”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">通过本属性可读取当前日历信息对象中的是周几。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/46.png" ></p>
+	</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“是否为周末”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">通过本属性可读取当前日历信息对象是否为周末。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/47.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、<b>“按钮1”</b>被点击后创建当前日历信息对象。</p>
+    <p align="left">2、判断是否为周末后读取周索引。</p>
+	<p align="left"><img border="0" src="gaojirili_images/79.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图： </p>
+<blockquote>
+	<p align="left"><img border="0" src="gaojirili_images/80.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	<a name="tiangan"></a>
+<font style="font-size: 12pt; font-weight:700">● 天干(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 地支(读)</font>
+<p align="left">&nbsp;</p>
+<p align="left">以上两个属性用来读取当前日历对象中的天干地支信息。</p>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、<b>“按钮1”</b>被点击后创建日历信息对象。</p>
+    <p align="left">2、分别调用天干、地支读属性将其显示在文本框中。</p>
+	<p align="left"><img border="0" src="gaojirili_images/81.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="gaojirili_images/82.png" ></p>
+</blockquote><p align="left">&nbsp;</p>	<a name="sfwrunnian"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否为闰年(读)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本属性可判断当前是否为闰年。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/48.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>点击创建日历信息对象后，调用本属性判断是否为闰年。</p>
+	<p align="left"><img border="0" src="gaojirili_images/83.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="gaojirili_images/84.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	<a name="rlbyts"></a>
+<font style="font-size: 12pt; font-weight:700">● 本月天数(读)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">调用本属性可读取当前日历信息对象中的月份总天数，返回值为整数。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/49.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击创建对象后，调用本属性读取天数。</p>
+	<p align="left"><img border="0" src="gaojirili_images/85.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="gaojirili_images/86.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	<a name="shengxiao"></a>
+<font style="font-size: 12pt; font-weight:700">● 生肖(读)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">调用本属性可读取当前对象内年份的生肖信息。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/50.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击创建对象后调用本属性读取生肖。 </p>
+	<p align="left"><img border="0" src="gaojirili_images/87.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="gaojirili_images/88.png" ></p>
+</blockquote><p align="left">&nbsp;</p>	<a name="yangli"></a>
+<font style="font-size: 12pt; font-weight:700">● 阳历节日(读)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本属性可读取公历节日信息，如果没有返回空文本。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/51.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后读取<b>“1月1日”</b>的公历节日。</p>
+	<p align="left"><img border="0" src="gaojirili_images/89.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="gaojirili_images/90.png" ></p>
+</blockquote><p align="left">&nbsp;</p>	<a name="qnlzts"></a>
+<font style="font-size: 12pt; font-weight:700">● 取农历月总天数(读)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本方法可读取指定农历总天数。</p>
+    <p align="left">参数1、2：依次填写正确的年月即可。</p>
+    <p align="left">注：本方法为静态方法，可直接通过<b>“日历信息类”</b>调用本方法。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/52.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后调用本方法读取<b>“2020年1月”</b>的总天数。</p>
+	<p align="left"><img border="0" src="gaojirili_images/91.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="gaojirili_images/92.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	<a name="qyfhz"></a>
+<font style="font-size: 12pt; font-weight:700">● 取月份汉字(读)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本方法可将<b>“1”</b>转换成<b>“一”</b>、<b>“2”</b>转换成<b>“二”</b>以此类推。</p>
+    <p align="left">注:本方法为静态方法，可直接通过<b>“日历信息类”</b>调用。</p>
+	<p align="left"><img border="0" src="gaojirili_images/help/53.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后调用本方法取出转换后的汉字文本。</p>
+	<p align="left"><img border="0" src="gaojirili_images/93.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="gaojirili_images/94.png" ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

@@ -1,0 +1,484 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		  <li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new3')" >一.折线图<span>(可收缩)</span></h6></li>
+		<ol id="new3">
+    		<li><blockquote><a href="#">1.准备工作</a></blockquote></li>
+    		<li><blockquote><a href="#zxcjt">2.图表数据创建</a></blockquote></li>
+    		<li><blockquote><a href="#ztbsj">3.图表数据(写)</a></blockquote></li>
+			<li><blockquote><a href="#zznrtlxz">4.值内容被选中(事件)</a></blockquote></li>
+			<!-- 折线图数据类 -->
+    		<li><blockquote><a href="#ztbsj">5.创建</a></blockquote></li>
+    		<li><blockquote><a href="#zzxlb">6.折线列表(写)</a></blockquote></li>
+			<!-- 图表数据基础类 -->
+    		<li><blockquote><a href="#zzxlb1">7.左侧轴线(写)</a></blockquote></li>
+    		<li><blockquote><a href="#zzxlb1">8.右侧轴线(写)</a></blockquote></li>
+    		<li><blockquote><a href="#zzxlb1">9.底部轴线(写)</a></blockquote></li>
+    		<li><blockquote><a href="#zzxlb1">10.顶部轴线(写)</a></blockquote></li>
+    		<li><blockquote><a href="#zxcj">11.创建</a></blockquote></li>
+    		<li><blockquote><a href="#zxcj">12.置标签值</a></blockquote></li>
+    		<li><blockquote><a href="#zxcj">13.值对象列表(写)</a></blockquote></li>
+    		<li><blockquote><a href="#zxcj">14.文本尺寸(写)</a></blockquote></li>
+			
+			
+			<!-- 图表组件基础类 -->
+			<li><blockquote><a href="#bzcsjdhjt">15.支持数据动画监听(写)</a></blockquote></li> 
+			<li><blockquote><a href="#zxjzdh">16.折线加载动画</a></blockquote></li> 
+            <li><blockquote><a href="#bzcgd">17.支持滚动(读写)</a></blockquote></li>
+            <li><blockquote><a href="#bzcsf">18.支持缩放(读写)</a></blockquote></li>
+		   <li><blockquote><a href="#bzdsfjb">19.最大缩放级别(写)</a></blockquote></li> 
+            <li><blockquote><a href="#bsflb">20.缩放类型(写)</a></blockquote></li>
+            <li><blockquote><a href="#bsfjb">21.缩放级别(读)</a></blockquote></li>
+            <li><blockquote><a href="#bzcsjdhjt">22.置动画目标值</a></blockquote></li>
+            <li><blockquote><a href="#bzcsjdhjt">23.开始数据载入动画2</a></blockquote></li>
+            <li><blockquote><a href="#bzcsjdhjt">24.数据加载动画已开始(事件)</a></blockquote></li>
+            <li><blockquote><a href="#bzcsjdhjt">25.数据加载动画已结束(事件)</a></blockquote></li>
+            <li><blockquote><a href="#bzcsjdhjt">26.视图区域改变(事件)</a></blockquote></li>
+		
+		</ol>
+		
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>折线图组件实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p> 
+<font style="font-size: 12pt; font-weight:700">● 教程说明</font><br/>
+<br/>
+	<blockquote>
+	<p align="left"><font color="#F30F12">注意：本组件位于<strong>“图表类窗口组件”</strong>模块中。</font></p>
+ </blockquote>
+	<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 详细例程</font><br/>
+<br/><blockquote>
+	<p align="left">可打开火山安装目录下<b>“samples\samples.vsln”</b>解决方案。 </p>
+	<p align="left">位于<b>“窗口及组件->图表系列组件”</b>分类下。</p>
+	<p align="left"><img src="chart_images/0.png" border="0" ></p>
+	 </blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<h2>一、折线图</h2>
+<p align="left">&nbsp;</p>
+	
+  
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">打开启动类<b>“界面设计器”</b>，设计如下界面。</p>
+    <p align="left">依次是<b>“按钮1”</b>和<b>“折线图1”</b>。 </p>
+	<p align="left"><img src="chart_images/78.png" border="0" ></p>
+
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="zxcjt"></a>
+<font style="font-size: 12pt; font-weight:700">● 图表数据创建</font>
+
+	
+<p align="left">&nbsp;</p>
+<p align="left">折线图创建方法如下：</p>
+<blockquote>
+  <p align="left">共需七个类，分别是<b>“图表节点值列表类”</b>、<b>“图表节点值数组类”</b>、<b>“图表折线列表类”</b>，<b>“图表折线数组类”</b>。</p>
+  <p align="left"><b>“图表节点值类”</b>，<b>“图表折线类”</b>和<b>“折线图数据类”</b>。</p>
+  <p align="left">作用分别如下：</p>
+  <p align="left">1、图表节点值列表类：用于存储<b>“折线”</b>的<b>“节点”</b>数据。</p>
+  <p align="left">2、图表节点值数组类：用于创建<b>“图表节点值列表类”</b>。</p>
+  <p align="left">3、图表折线列表类：用于存储<b>“折线”</b>数据。</p>
+  <p align="left">4、图表折线数组类：用于创建<b>“图表折线列表类”</b>。</p>
+  <p align="left">5、图表节点值类：用于创建<b>“节点值”</b>数据。</p>
+  <p align="left">6、图表折线类： 通过<b>“节点列表”</b>创建<b>“折线列表”</b>。</p>
+  <p align="left">7、折线图数据类：通过定义好的<b>“折线列表”</b>创建<b>“折线图数据”</b>。</p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="ztbsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 图表数据(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 创建</font>
+
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“图表数据(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本属性可绘制折线图，属性值为<b>“折线图数据类”</b>。</p>
+	<p align="left"><img border="0" src="chart_images/79.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“图表节点值类.创建”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法用于创建<b>“节点值”</b>数据。</p>
+	<p align="left">参数1：提供节点值的X坐标。</p>
+	<p align="left">参数2：提供节点值的Y坐标。</p>
+	<p align="left"><img border="0" src="chart_images/80.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“图表折线类.创建”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法通过<b>“节点列表”</b>创建<b>“折线数据”</b>。</p>
+	<p align="left"><img border="0" src="chart_images/81.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“折线图数据类.创建”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法通过<b>“折线列表”</b>创建<b>“折线图数据”</b>。</p>
+	<p align="left"><img border="0" src="chart_images/82.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、创建用于存储<b>“节点数据”</b>和<b>“折线数据”</b>的列表类对象。</p>
+	<p align="left">2、利用循环方法可一次性创建多个节点数据。</p>
+	<p align="left">3、通过<b>“节点列表”</b>创建<b>“折线数据”</b>，将折线数据添加进<b>“折线列表”</b>内。</p>
+	<p align="left">4、创建折线图数据，绘制折线图。</p>
+	<p align="left"><img border="0" src="chart_images/83.png" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">注意：折线图在不设置任何数据的情况下，默认存在四个节点数据。</p>
+	<p align="left"><img border="0" src="chart_images/84.gif" ></p>
+</blockquote>
+
+
+	<p align="left">&nbsp;</p>
+	<a name="zznrtlxz"></a>
+<font style="font-size: 12pt; font-weight:700">● 值内容被选中(事件)</font>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当前值内容被选中后触发本事件。</p>
+	<p align="left">参数1：返回所点击的折线索引（折线图可添加多条折线，因此存在索引值）。</p>
+	<p align="left">参数2：返回所点击的点索引。</p>
+	<p align="left">参数3：通过<b>“图表节点值类”</b>可取出横纵坐标。</p>
+	<p align="left"><img border="0" src="chart_images/85.png" ></p>
+</blockquote>
+
+
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="chart_images/86.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left"><img border="0" src="chart_images/87.gif" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<a name="zzxlb"></a>
+<font style="font-size: 12pt; font-weight:700">● 折线列表(写)</font>
+	
+	<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">本属性和<a href="qqpzlb"><b>“气泡图->气泡值列表”</b></a>属性用法一致。</p>
+	<p align="left">使用本属性后将无需使用<b>“折线图数据类.创建”</b>方法。</p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<a name="zzxlb1"></a>
+<font style="font-size: 12pt; font-weight:700">● 左侧轴线(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 右侧轴线(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 底部轴线(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 顶部轴线(写)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">以上四个属性继承自<b>“折线图数据类”</b>，用于设置图表四边的轴线，此处演示<b>“左侧”</b>和<b>“底部”</b>轴线。</p>
+	<p align="left">注意：需要配合下面四个方法使用。</p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<a name="zxcj"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建</font><br>
+<font style="font-size: 12pt; font-weight:700">● 置标签值</font><br>
+<font style="font-size: 12pt; font-weight:700">● 值对象列表(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 文本尺寸(写)</font><br>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“图表轴线值类.创建”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法用于创建<b>“轴线值”</b>，参数类型为<b>“小数”</b>。</p>
+	<p align="left"><img border="0" src="chart_images/88.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“图表轴线值类.置标签值”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本方法可设置<b>“轴线文本”</b>。</p>
+	<p align="left"><img border="0" src="chart_images/89.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“图表轴线类.值对象列表(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本写属性用于设置<b>“轴列表数据”</b>。</p>
+	<p align="left"><img border="0" src="chart_images/90.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“图表轴线类.文本尺寸(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性用于设置<b>“轴文本大小”</b>。</p>
+	<p align="left"><img border="0" src="chart_images/91.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义<b>“图表轴线值列表类”</b>，创建用于存储坐标值的列表数据。</p>
+	<p align="left">2、定义<b>“姓名数组”</b>和<b>“计次2”</b>，循环创建X轴值，并添加到<b>“坐标值列表”</b>中。</p>
+	<p align="left">3、设置X轴的<b>“值对象列表”</b>属性为<b>“坐标值列表”</b>，并设置<b>“文本尺寸”</b>。</p>
+	<p align="left">4、将<b>“X轴”</b>赋值给<b>“底部轴线”</b>属性。</p>
+	<p align="left">5、最后定义<b>“图表轴线类”</b>变量，赋值给<b>“左侧轴线”</b>设置Y轴。</p>
+	<p align="left">注意：以上代码必须书写在<b>“创建”</b>方法后，<b>“图表数据”</b>属性之前（即黄框范围内）。</p>
+	<p align="left"><img border="0" src="chart_images/92.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="chart_images/93.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<a name="bzcsjdhjt"></a>
+<font style="font-size: 12pt; font-weight:700">● 置动画目标值</font><br>
+<font style="font-size: 12pt; font-weight:700">● 开始数据载入动画2</font><br>
+<font style="font-size: 12pt; font-weight:700">● 支持数据动画监听(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 数据加载动画已开始(事件)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 数据加载动画已结束(事件)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">动画载入折线图，共有两种效果。</p>
+	<p align="left">第一：轴线动画。</p>
+	<p align="left">第二：折线图动画。</p>
+	<p align="left">此处演示<b>“轴线动画”</b>。</p>
+	<p align="left">注意：两种动画效果不能共存。</p>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“置动画目标值”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">想要实现折线图出现动画效果，务必使用本方法设置坐标值。</p>
+	<p align="left">注意：本方法继承自<b>“图表节点值类”</b>。</p>
+	<p align="left"><img border="0" src="chart_images/94.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“开始数据载入动画2”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">必须调用本方法，动画才能载入。</p>
+	<p align="left">参数值单位为毫秒。</p>
+	<p align="left"><img border="0" src="chart_images/95.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“支持数据动画监听(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">必须调用本属性监听，否则动画无法加载。</p>
+	<p align="left">注意：本属性继承自<b>“图表组件基础类”</b>。</p>
+	<p align="left"><img border="0" src="chart_images/96.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“数据加载动画已开始(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">当动画开始后会触发本事件。</p>
+	<p align="left"><img border="0" src="chart_images/97.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“数据加载动画已结束(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">动画结束后会触发本事件。</p>
+	<p align="left"><img border="0" src="chart_images/98.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在原来代码的基础上简单修改即可。</p>
+	<p align="left">1、在<b>“节点数据”</b>循环方法下，定义<b>“图表节点值类”</b>变量。</p>
+	<p align="left">2、通过<b>“节点值”</b>调用<b>“置动画目标值”</b>方法，填写对应参数。</p>
+	<p align="left">3、最后调用<b>“节点列表”</b>的添加成员方法。</p>
+	<p align="left"><img border="0" src="chart_images/99.png" ></p>
+	<p align="left"></p>
+	<p align="left">4、在<b>“折线图1”</b>属性栏增加<b>“支持数据动画监听”</b>，属性值为<b>“真”</b>。</p>
+	<p align="left">5、<b>“按钮1”</b>被点击下，调用<b>“开始载入数据动画2”</b>方法，参数填写1200毫秒。</p>
+	<p align="left"><img border="0" src="chart_images/100.png" ></p>
+	<p align="left"></p>
+	<p align="left">6、分别添加<b>“数据加载动画已开始”</b>和<b>“数据加载动画已结束”</b>事件，弹出对应提示。</p>
+	<p align="left"><img border="0" src="chart_images/101.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最后可以看到，轴线出现加载动画。</p>
+	<p align="left"><img border="0" src="chart_images/100.gif" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+	<a name="zxjzdh"></a>
+<font style="font-size: 12pt; font-weight:700">● 折线加载动画</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">想要实现折线加载动画也很简单，增加一条固定值的折线即可。</p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在原来代码的基础上简单修改即可。</p>
+	<p align="left">1、定义两个<b>“图表节点值列表类”</b>变量，分别利用新建对象创建其对象。</p>
+	<p align="left">2、<b>“动画节点值”</b>创建时使用<b>“节点列表1”</b>添加成员。</p>
+	<p align="left">3、<b>“固定节点值”</b>创建时使用<b>“节点列表2”</b>添加成员。</p>
+	<p align="left">4、两段代码的不同之处在于<b>“循环”</b>方法内的调用不同（图内箭头标识处）。</p>
+	<p align="left"><img border="0" src="chart_images/102.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最后可以看到，折线出现动画。</p>
+	<p align="left"><img border="0" src="chart_images/103.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<a name="bzcgd"></a>
+<font style="font-size: 12pt; font-weight:700">● 支持滚动(读写)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“支持滚动(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性用来设置当前图表是否跟随手势滚动显示。</p>
+	<p align="left">如果不设置本属性，默认为真。</p>
+	<p align="left">同名读属性，即判断当前图表是否开启了滚动。</p>
+	<p align="left">注意：本属性继承自<b>“图表组件基础类”</b>。</p>
+	<p align="left"><img border="0" src="chart_images/104.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接判断本属性，然后设置开启和关闭状态。</p>
+	<p align="left"><img border="0" src="chart_images/105.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">双击图表和进行放大操作，放大后即可进行手势滚动。</p>
+	<p align="left">点击<b>“按钮1”</b>后可开启和关闭手势滚动操作。</p>
+	<p align="left"><img border="0" src="chart_images/106.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<a name="bzcsf"></a>
+<font style="font-size: 12pt; font-weight:700">● 支持缩放(读写)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“支持缩放(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，用来设置当前图表是否支持缩放。</p>
+	<p align="left">同名读属性，用来读取当前组件是否支持缩放。</p>
+	<p align="left">提示：<b>“双击图表”</b>或<b>“双指反方向滑动”</b>可实现缩放效果。</p>
+	<p align="left"><img border="0" src="chart_images/107.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接判断本属性的返回值，然后执行对应写属性即可。</p>
+	<p align="left"><img border="0" src="chart_images/108.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="chart_images/109.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<a name="bzdsfjb"></a>
+<font style="font-size: 12pt; font-weight:700">● 最大缩放级别(写)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，本属性可设置图表的最大缩放级别，参数类型为小数。</p>
+	<p align="left"><img border="0" src="chart_images/110.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">设置属性值为<b>“1.5”</b>，即最小缩放1.5倍。</p>
+	<p align="left">如果属性值设置为<b>“1”</b>，则无缩放效果。</p>
+	<p align="left"><img border="0" src="chart_images/111.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="chart_images/112.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<a name="bsflb"></a>
+<font style="font-size: 12pt; font-weight:700">● 缩放类型(写)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，设置当前图表缩放类型。</p>
+	<p align="left">属性值调用方式：图表组件缩放类型.XXX。</p>
+	<p align="left">如果在属性栏，直接选择类型即可。</p>
+	<p align="left"><img border="0" src="chart_images/113.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在属性栏设置本属性，选择<b>“横向缩放”</b>。</p>
+	<p align="left"><img border="0" src="chart_images/114.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到本图表只能进行横向缩放。</p>
+	<p align="left"><img border="0" src="chart_images/115.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<a name="bsfjb"></a>
+<font style="font-size: 12pt; font-weight:700">● 缩放级别(读)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，本属性可读取当前图表的缩放级别，返回值为小数。</p>
+	<p align="left"><img border="0" src="chart_images/116.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接通过<b>“折线图1”</b>调用本属性即可。</p>
+	<p align="left"><img border="0" src="chart_images/117.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="chart_images/118.gif" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,380 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>对话框操作</h4></li>
+	<ol>
+    <li><blockquote><a href="#zbgz">0.准备工作</a></blockquote></li>     
+			<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new8')" >一.提示对话框类<span>(可收缩)</span></h6></li>
+		<ol id="new8">
+			<li><blockquote><a href="#tscjlbdhk">1.创建列表对话框</a></blockquote></li>
+            <li><blockquote><a href="#tscjdxdhk">2.创建单选列表对话框</a></blockquote></li>
+            <li><blockquote><a href="#tscjduoxdhk">3.创建多选列表对话框</a></blockquote></li>
+			  <li><blockquote><a href="#tscjtsdhk">4.创建提示对话框</a></blockquote></li>
+			  <li><blockquote><a href="#tszan">5.置按钮</a></blockquote></li>
+            <li><blockquote><a href="#tszbtzj">6.置标题组件</a></blockquote></li>
+             <li><blockquote><a href="#tszzj">7.置组件</a></blockquote></li>
+			  <li><blockquote><a href="#tszzj2">8.置组件2</a></blockquote></li>
+			  <li><blockquote><a href="#tsnr">9.内容（写）</a></blockquote></li>
+            <li><blockquote><a href="#tstb">10.图标（写）</a></blockquote></li>
+             <li><blockquote><a href="#tsxmbxz">11.项目被选中（事件）</a></blockquote></li>
+			  <li><blockquote><a href="#tsanniubeidanji">12.按钮被单击（事件）</a></blockquote></li>
+			  <li><blockquote><a href="#tsdxxmbxz">13.多选项目被选中（事件）</a></blockquote></li>
+		</ol>	
+			
+			
+        
+ 							
+	</ol>
+</ul>
+</div>
+
+
+<p align="left">
+<h2>提示对话框类操作实例讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+<a name="zbgz"></a>    
+     
+<font style="font-size: 12pt; font-weight:700">● 帮助说明</font><br/>
+<br/>
+<blockquote>
+  
+<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 准备一个界面</font><br/>
+<p align="left">&nbsp;</p>
+
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">打开窗口设计器，放两个<b>“按钮”</b>，右侧属性文本分别起名<b>“按钮1”</b>和<b>“按钮2”</b>。</p>
+	<p align="left"><img border="0" src="dhk_images/2.png" ></p>
+    <p align="left">保存布局后，右键<b>“按钮”</b>，添加<b>“按钮被单击事件接收方法”</b>，添加完毕后<b>如下图</b>所示。</p>
+    <p align="left"><img border="0" src="dhk_images/02.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<a name="tscjlbdhk"></a>
+<a name="tsxmbxz"></a>
+<h2>一、提示对话框类</h2>
+<p align="left">&nbsp;</p>
+
+
+<font style="font-size: 12pt; font-weight:700">● 创建列表对话框</font><br/>
+
+<font style="font-size: 12pt; font-weight:700">● 项目被选中（事件）</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">以上两个为关联方法，放在一起讲解。</p>
+<p align="left"><b>“创建列表对话框”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">顾名思义，就是创建一个列表形式的对话框，并返回<b>“提示对话框类”</b>。</p>
+    <p align="left">参数1：通常填写<b>“本对象”</b>即可。</p>
+    <p align="left">参数2：填写文本数组。</p>
+	<p align="left"><img border="0" src="dhk_images/106.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">"项目被选中（事件）"帮助文档：</p>
+<blockquote>
+	<p align="left">注意：调用了<b>“创建列表对话框”</b>和<b>“创建单选列表对话框”</b>都会触发本事件。</p>
+    <p align="left">返回选中的<b>“项目索引”</b>。</p>
+	<p align="left"><img border="0" src="dhk_images/107.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+    <p align="left">定义一个类型为<b>“提示对话框类”</b>的成员变量，设置参考。</p>
+	<p align="left">在<b>“按钮1”</b>被单击下，定一个类型为<b>“文本型[]”</b>的数组变量，设置数组初始值。</p>
+    <p align="left">创建<b>“列表对话框”</b>，填入定义的<b>“文本数组”</b>变量，最后赋值给定义的<b>“提示对话框”</b>变量。</p>
+    <p align="left">然后<b>“挂接事件”</b>最后利用<b>“显示”</b>方法显示对话框。</p>
+    <p align="left"><img border="0" src="dhk_images/108.png" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+    <p align="left">按照老方法鼠标右键<b>“提示对话框类”</b>后添加<b>“项目被选中”</b>接收事件。</p>
+    <p align="left">添加之后，到文本转换<b>“被选中的项目索引”</b>，方便演示结果。</p>
+	<p align="left"><img border="0" src="dhk_images/109.png" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可以看到<b>“弹出对话框”</b>后，随便选中一个项目，就会立刻返回<b>“项目索引”</b>，对话框也会被关闭。</p>
+	<p align="left"><img border="0" src="dhk_images/110.gif" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="tscjdxdhk"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建单选列表对话框</font><br/>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">本方法和<b>“单选列表对话框类”</b>大同小异，不同之处就是调用方式不一样。</p>
+        <p align="left">本方法的的调用方式<b>“提示对话框类.创建单选列表对话框 (,,)”</b></p>
+        <p align="left">代码编写参考<a href="#dxcjbxs"><b>“单选列表对话框类”</b></a>，这里不再进行讲解。</p>
+ 
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="tscjduoxdhk"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建多选列表对话框</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+        <p align="left">调用方式：<b>“提示对话框类.创建多选列表对话框 (,,)”</b>.</p>
+        <p align="left">代码编写参考<a href="#duocjbxs"><b>“多选列表对话框类”</b></a>，这里不再进行讲解。</p>
+ 
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="tscjtsdhk"></a>
+<a name="tszan"></a>
+<a name="tsnr"></a>
+<a name="tsanniubeidanji"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建提示对话框</font><br/>
+
+<font style="font-size: 12pt; font-weight:700">● 置按钮</font><br/>
+
+<font style="font-size: 12pt; font-weight:700">● 内容（写）</font><br/>
+
+<font style="font-size: 12pt; font-weight:700">● 按钮被单击（事件）</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">因<b>“创建提示对话框”</b>默认是没有任何内容的，只有一个灰色透明的遮罩层，所以这里一次性讲解四个方法。</p>
+<p align="left"><b>“创建提示对话框”</b>帮助：</p>
+<blockquote>
+<p align="left">只有一个<b>“窗口”</b>参数，顾名思义创建并返回当前提示对话框类。</p>
+    <p align="left">利用本类，可以创建一个带有<b>“三个按钮”</b>的信息框。</p>
+    <p align="left"><img border="0" src="dhk_images/111.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><b>"置按钮"</b>帮助：</p>
+
+<blockquote>
+<p align="left">给空的"提示对话框"添加"按钮"，具体按钮类型可以点击"对话框按钮类型"查看。</p>
+<p align="left">按钮类型调用方式："对话框按钮类型.XXX"。</p>
+<p align="left">最多可以设置"三个按钮"，按钮位置"不可调整"，它处于对话框的下面（和"信息框"按钮位置相同）。</p>
+    <p align="left"><img border="0" src="dhk_images/112.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><b>"内容（写）"</b>帮助：</p>
+<blockquote>
+<p align="left">写属性，顾名思义给对话框设置一段文本内容。</p>
+    <p align="left"><img border="0" src="dhk_images/113.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><b>"按钮被单击（事件）"</b>帮助：</p>
+<blockquote>
+<p align="left">对话框<b>“按钮”</b>被点击后发送此事件，并且会返回<b>“对话框按钮类型”</b>参数。</p>
+    <p align="left"><img border="0" src="dhk_images/114.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写（1）</b>：</p>
+<blockquote>
+    <p align="left">在<b>“按钮1”</b>被单击下，一次性添加三个<b>“置按钮”</b>方法，分别设置不同的<b>“标题”</b>和<b>“按钮类型”</b>。</p>
+    <p align="left">随后可以设置一个<b>“标题”</b>属性，本属性继承自<b>“对话框类”</b>。</p>
+	<p align="left">然后设置提示对话框<b>“内容”</b>属性。</p>
+    <p align="left">最后<b>“挂接事件”</b>后，<b>“显示”</b>当前对话框。</p>
+    <p align="left"><img border="0" src="dhk_images/115.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写（2）</b>：</p>
+<blockquote>
+	<p align="left">添加<b>“提示对话框类_按钮被单击”</b>接收事件，老方法右键<b>“成员变量”</b>里的<b>“类名”</b>就可以添加。</p>
+    <p align="left">添加后，指定<b>“来源对象”</b>后分别判断返回的<b>“按钮类型”</b>。</p>
+    <p align="left">最后执行<b>“提示框”</b>方法。</p>
+	<p align="left"><img border="0" src="dhk_images/116.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">点击<b>“按钮1”</b>后可以看到弹出了一个带有<b>“三个按钮”</b>的信息框。</p>
+    <p align="left">并且对应的<b>“按钮事件”</b>也全部执行。</p>
+	<p align="left"><img border="0" src="dhk_images/117.gif" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="tszbtzj"></a>
+<font style="font-size: 12pt; font-weight:700">● 置标题组件</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是给当前<b>“对话框”</b>设置一个<b>“自定义标题”</b>。</p>
+	<p align="left">只有一个火山<b>“窗口组件”</b>参数。</p>
+    <p align="left"><img border="0" src="dhk_images/118.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写</b>：</p>
+<blockquote>
+	<p align="left">我们在原代码的基础上增加一些代码。</p>
+	<p align="left">定义一个类型为<b>“按钮”</b>的局部变量，设置<b>“按钮标题”</b>。</p>
+    <p align="left">然后利用<b>“本方法”</b>添加<b>“按钮”</b>到标题。</p>
+    <p align="left">随后可以通过<b>“挂接事件”</b>，来挂接<b>“按钮被单击”</b>事件，标记值写1。</p>
+    <p align="left">最后可以通过<b>“否则”</b>来判断标记值是否等于<b>“1”</b>。</p>
+    <p align="left">如果相等，就表示<b>“标题按钮”</b>被点击。</p>
+
+    <p align="left"><img border="0" src="dhk_images/119.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>运行效果</b>：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>弹出<b>“信息框”</b>可以看到，标题变成了一个<b>“按钮”</b>，并且覆盖了最开始设置的<b>“标题文本”</b>。</p>
+    <p align="left">点击<b>“标题按钮”</b>后，对应的<b>“提示框”</b>也成功弹出。</p>
+    <p align="left"><img border="0" src="dhk_images/120.gif" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="tszzj"></a>
+<a name="tszzj2"></a>
+<font style="font-size: 12pt; font-weight:700">● 置组件</font><br/>
+
+<font style="font-size: 12pt; font-weight:700">● 置组件2</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">以上两个方法都是给<b>“对话框添加组件”</b>：<b>“置组件”</b>不能设置外边距，<b>“置组件2”</b>可以设置外边距。</p>
+<p align="left">这里举例<b>“置组件2”</b>说明。</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">可以看到有<b>“五个”</b>参数。</p>
+    <p align="left">参数1：要添加的窗口组件。</p>
+    <p align="left">参数2到5分别设置：左、顶、右、底边距，不设置默认为0。</p>
+	<p align="left"><img border="0" src="dhk_images/121.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+	<p align="left">依然在原来代码的基础上进行修改。</p>
+    <p align="left">增加三个组件变量，分别为<b>“线性布局器”</b>，<b>“文本框”</b>和<b>“编辑框”</b>。</p>
+    <p align="left">给<b>“文本框”</b>设置一个标题，<b>“编辑框”</b>设置一个<b>“ID”</b>和<b>“常用输入类型”</b>。</p>
+    <p align="left">随后<b>“布局器”</b>添加<b>“文本框”</b>和<b>“编辑框”</b>组件，然后设置编辑框宽度<b>“填满父组件”</b>。</p>
+    <p align="left">最后利用<b>“置组件2”</b>添加<b>“布局器”</b>，随后分别设置<b>“外边距”</b>。</p>
+
+    <p align="left"><img border="0" src="dhk_images/122.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+	<p align="left"><b>“提示对话框_按钮被单击”</b>接收事件下，判断<b>“确认”</b>按钮被点击。</p>
+    <p align="left">创建一个类型为<b>“编辑框”</b>的变量，设置参考，因为这里不需要创建编辑框组件。</p>
+<p align="left">利用<b>“查找组件()”</b>方法，去查找<b>“编辑框的ID”</b>（本方法继承自<b>“对话框类”</b>）。</p>
+<p align="left">查找后强转为<b>“编辑框”</b>组件，赋值给定义的<b>“编辑框1”</b>变量。</p>
+<p align="left">最后可以利用<b>“编辑框1.内容”</b>读属性，读取编辑框内容。</p>
+    <p align="left"><img border="0" src="dhk_images/123.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可以看到<b>“按钮1”</b>点击后，弹出了一个带有<b>“编辑框、文本框”</b>的<b>“提示对话框”</b>。</p>
+    <p align="left">并且大家可以看到，对话框自身<b>“文本内容”</b>并没有被添加的组件覆盖。</p>
+    <p align="left">在<b>“编辑框”</b>内输入的文本也变成了<b>“密码模式”</b>，并且点击<b>“确定”</b>后可以取出密码。</p>
+	<p align="left"><img border="0" src="dhk_images/124.gif" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="tstb"></a>
+<font style="font-size: 12pt; font-weight:700">● 图标（写）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+
+<blockquote>
+    <p align="left">本<b>“图标写属性”</b>和其它类的用法一致，这里不再进行讲解。</p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="tsdxxmbxz"></a>
+<font style="font-size: 12pt; font-weight:700">● 多选项目被选中（事件）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">只有调用<b>“创建多选列表对话框”</b>的时候，<b>“本事件”</b>才会触发。</p>
+	<p align="left">注意：本事件<b>“不会返回所有项目”</b>的选中状态，只会返回<b>“当前选择”</b>的项目。</p>
+    <p align="left"><img border="0" src="dhk_images/125.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+	<p align="left">定义一个<b>“文本数组”</b>变量和<b>“逻辑数组”</b>变量，设置初始值后分别写入参数。</p>
+    <p align="left">具体参数说明可参看：<a href="#duocjbxs"><b>“多选列表对话框类”</b></a></p>
+    <p align="left">最后<b>“挂接事件”</b>。</p>
+	<p align="left"><img border="0" src="dhk_images/126.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+	<p align="left">添加<b>“提示对话框类_多选项目被选中”</b>的接收事件。</p>
+    <p align="left">为了方便演示，我这里判断<b>“是否选中=真”</b>，并且执行了对应的操作。</p>
+	<p align="left"><img border="0" src="dhk_images/127.png" ></p>
+   
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果（GIF）：</p>
+<blockquote>
+	<p align="left">大家可以看到，我随便选择了一个项目后，对应的<b>“项目索引”</b>和<b>“选中状态”</b>立刻<b>“返回”</b>。</p>
+	<p align="left"><img border="0" src="dhk_images/128.gif" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p><p align="left">&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+	
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>简单表格组件</h4></li>
+	<ol>
+			 
+            <li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new2')" >一.简单表格 <span>(可收缩)</span></h6></li>
+	  <ol id="new2">
+			<li><blockquote><a href="#">1.准备工作</a></blockquote></li>
+			<li><blockquote><a href="#jbspq">2.适配器(读)</a></blockquote></li>
+			<!-- 简单表格适配器 -->
+			<li><blockquote><a href="#jbspq">3.插入单元</a></blockquote></li>
+			<li><blockquote><a href="#jbspq">4.插入单元2</a></blockquote></li>
+			<li><blockquote><a href="#jbbtztccx">5.标题字体尺寸(写)</a></blockquote></li>
+			<li><blockquote><a href="#jbbtztccx">6.标题字体类型(写)</a></blockquote></li>
+			<li><blockquote><a href="#jbbtztccx">7.标题字体风格(写)</a></blockquote></li>
+			<!-- 表格基础类 -->
+			<li><blockquote><a href="#jbspqls">8.列数(写)</a></blockquote></li>
+			<li><blockquote><a href="#jbspqls">9.垂直间距(写)</a></blockquote></li>
+			<li><blockquote><a href="#jbsqspjj">10.需求水平间距(写)</a></blockquote></li>
+			<li><blockquote><a href="#jbsjlk">11.实际列宽(读)</a></blockquote></li>
+			<li><blockquote><a href="#jbsjlk">12.实际水平间距(读)</a></blockquote></li>
+			<li><blockquote><a href="#jbxdgd">13.相对滚动</a></blockquote></li>
+			<li><blockquote><a href="#jbqt">14.其它</a></blockquote></li>
+			<!-- 列表组件基础类 -->
+			
+			<!-- 
+			适配器组件基础类
+			适配器模板类
+			适配器基础类
+			-->
+		</ol>	
+	
+	</ol>
+</ul>
+</div>	 
+	
+
+
+	
+
+<p align="left">
+<h2>简单表格组件操作实例讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p> 
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font>	
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">打开启动类<b>“界面设计器”</b>，设计如下界面。</p>
+	<p align="left">从上到下依次是：<b>“按钮1”</b>和<b>“简单表格1”</b>。</p>
+	<p align="left">注意：简单表格并非Excel表格，它只是表格样式的组件，可用于<b>“图标导航”</b>制作。</p>
+	<p align="left">本组件的使用方式和<b>“简单列表框”</b>类似，不同之处是多了<b>“列数”</b>的概念。</p>
+	<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+	<p align="left"><img src="jdbg_images/90.png" border="0" ></p>
+</blockquote>	
+
+<p align="left">&nbsp;</p>	
+<a name="xzzzjsykjqz"></a>
+<font style="font-size: 12pt; font-weight:700">● 适配器(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 插入单元</font><br>
+<font style="font-size: 12pt; font-weight:700">● 插入单元2</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“插入单元”</b>和<b>“插入单元2”</b>效果一致，此处演示<b>“插入单元2”</b>。</p>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“适配器(读)”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">本读属性返回<b>“简单表格适配器”</b>，表格单元项操作都位于本适配器中。</p>
+	<p align="left"><img border="0" src="jdbg_images/91.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“插入单元2”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">顾名思义，在指定位置插入一个单元格。</p>
+	<p align="left">参数1：提供要插入的标题文本。</p>
+	<p align="left">参数2：提供要插入的图像。</p>
+	<p align="left">参数3：标题是否加粗，默认为假。</p>
+	<p align="left">参数4：设置标题文本颜色，可使用颜色类中定义的常量值。</p>
+	<p align="left">参数5：欲插入的位置，默认为-1。</p>
+	<p align="left"><img border="0" src="jdbg_images/92.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击下，定义<b>“可绘制资源”</b>变量。</p>
+	<p align="left">随后通过<b>“适配器”</b>调用<b>“插入单元2”</b>方法。</p>
+	<p align="left"><img border="0" src="jdbg_images/93.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">如果没有设置<b>“列数”</b>，简单表格默认为<b>“1列”</b>。</p>
+	<p align="left"><img border="0" src="jdbg_images/94.gif" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>	
+<a name="jbbtztccx"></a>
+<font style="font-size: 12pt; font-weight:700">● 标题字体尺寸(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 标题字体类型(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 标题字体风格(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">以上四个属性，用于设置单元格文本字体，需通过<b>“适配器”</b>属性调用。</p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">在属性栏分别通过<b>“适配器”</b>调用这三个属性。</p>
+	<p align="left">注意：<b>“字体类型”</b>和<b>“字体风格”</b>根据需求二选一即可。</p>
+	<p align="left"><img border="0" src="jdbg_images/95.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left"><img border="0" src="jdbg_images/96.gif" >
+  </p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>	
+<a name="jbspqls"></a>
+	<font style="font-size: 12pt; font-weight:700">● 列数(写)</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 垂直间距(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“列数(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本属性可设置简单表格列数，提供<b>“-1”</b>自动分配。</p>
+	<p align="left">不设置本属性，默认1列。</p>
+	<p align="left"><img border="0" src="jdbg_images/97.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“垂直间距(写)”</b>帮助文档： </p>
+<blockquote>
+	<p align="left">通过本属性来设置行间距，单位像素。</p>
+	<p align="left"><img border="0" src="jdbg_images/98.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“通知_被创建”</b>虚拟方法下，循环添加10个单元格。</p>
+	<p align="left"><b>“按钮1”</b>被点击后，依次设置这两个属性。</p>
+	<p align="left"><img border="0" src="jdbg_images/99.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left"><img border="0" src="jdbg_images/100.gif" >
+  </p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>	
+<a name="jbsqspjj"></a>
+	<font style="font-size: 12pt; font-weight:700">● 需求水平间距(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，本属性用来设置水平间距（即列间距），单位像素。</p>
+	<p align="left">注意：务必设置<b>“列数”</b>属性，本属性才能生效。</p>
+	<p align="left"><img border="0" src="jdbg_images/101.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left"><b>“简单表格1”</b>属性栏设置<b>“列数”</b>属性值为3。</p>
+  <p align="left"><b>“按钮1”</b>被点击后，设置水平间距为100像素。</p>
+	<p align="left"><img border="0" src="jdbg_images/102.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left"><img border="0" src="jdbg_images/103.gif" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>	
+<a name="jbsjlk"></a>
+	<font style="font-size: 12pt; font-weight:700">● 实际列宽(读)</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 实际水平间距(读)</font>
+	
+<p align="left">&nbsp;</p>
+<p align="left"><b>“实际列宽(读)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，读取当前表格组件实际列宽。</p>
+	<p align="left"><img border="0" src="jdbg_images/104.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“实际水平间距(读)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性读取当前表格实际水平间距，即两个单元格之间的间距。</p>
+	<p align="left"><img border="0" src="jdbg_images/105.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后分别读取这两个属性值。</p>
+	<p align="left"><img border="0" src="jdbg_images/106.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">图中看似两个单元格之间有间距，实际上是因为单元格内容未铺满整个单元格的缘故。</p>
+	<p align="left">单元格和单元格之间默认并无间距，如想设置间距可通过<b>“需求水平间距”</b>属性进行设置。</p>
+	<p align="left"><img border="0" src="jdbg_images/107.png" >
+    </p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>	
+<a name="jbxdgd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 相对滚动</font>
+	
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">向前或者向后滚动指定项目数。</p>
+	<p align="left"><img border="0" src="jdbg_images/108.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，执行本方法向后滚动20个项目。</p>
+	<p align="left"><img border="0" src="jdbg_images/109.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left"><img border="0" src="jdbg_images/110.gif" >
+    </p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>	
+<a name="jbqt"></a>
+	<font style="font-size: 12pt; font-weight:700">● 其它</font>
+	
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left">本组件除了上述方法外，还继承了<a href="a_ctrl_layout.htm#txms"><b>“适配器组件基础类”</b></a>，<a href="a_ctrl_layout.htm#tcrxm"><b>“适配器模板类”</b></a>和<a href="a_ctrl_layout.htm#tscxm"><b>“适配器基础类”</b></a>。</p>
+	<p align="left">以上三个类可参考<a href="a_ctrl_layout.htm#txddq"><b>“图像堆叠器组件”</b></a>。</p>
+	<p align="left">除此之外还继承了<a href="#jdcdbkstx"><b>“列表组件基础类”</b></a>。</p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

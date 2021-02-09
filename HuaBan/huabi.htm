@@ -1,0 +1,1491 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		
+		  <li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new4')" >一.画笔类<span>(可收缩)</span></h6></li>
+		<ol id="new4">
+			<li><blockquote><a href="#huabilei">1.本类说明</a></blockquote></li>  
+    		<li><blockquote><a href="#ysx">2.颜色（写）</a></blockquote></li>
+            <li><blockquote><a href="#ysd">3.颜色（读）</a></blockquote></li>
+			<li><blockquote><a href="#ysglqx">4.颜色过滤器（写）</a></blockquote></li>
+            <li><blockquote><a href="#ysglqd">5.颜色过滤器（读）</a></blockquote></li>
+            <li><blockquote><a href="#bhjtzx">6.笔划尖头值（写）</a></blockquote></li>
+            <li><blockquote><a href="#bhjtzd">7.笔划尖头值（读）</a></blockquote></li>
+            <li><blockquote><a href="#bhkdx">8.笔划宽度（写）</a></blockquote></li>
+            <li><blockquote><a href="#bhkdd">9.笔划宽度（读）</a></blockquote></li>
+            <li><blockquote><a href="#bhlxx">10.笔划类型（写）</a></blockquote></li>
+            <li><blockquote><a href="#bhlxd">11.笔划类型（读）</a></blockquote></li>
+            <li><blockquote><a href="#bhxdkdx">12.笔划像素宽度（写）</a></blockquote></li>
+            <li><blockquote><a href="#hbxdkdd">13.笔划像素宽度（读）</a></blockquote></li>
+            <li><blockquote><a href="#bzx">14.标志（写）</a></blockquote></li>
+            <li><blockquote><a href="#bzd">15.标志（读）</a></blockquote></li>
+            <li><blockquote><a href="#cyztx">16.常用字体（写）</a></blockquote></li>
+            <li><blockquote><a href="#ztx">17.字体（写）</a></blockquote></li>
+            <li><blockquote><a href="#ztd">18.字体（读）</a></blockquote></li>
+            <li><blockquote><a href="#ztccx">19.字体尺寸（写）</a></blockquote></li>
+            <li><blockquote><a href="#ztccd">20.字体尺寸（读）</a></blockquote></li>
+            <li><blockquote><a href="#ztxsccx">21.字体像素尺寸（写）</a></blockquote></li>
+            <li><blockquote><a href="#ztxsccd">22.字体像素尺寸（读）</a></blockquote></li>
+            <li><blockquote><a href="#ztsygdd">23.字体上沿高度（读）</a></blockquote></li>
+            <li><blockquote><a href="#ztxygdd">24.字体下沿高度（读）</a></blockquote></li>
+            <li><blockquote><a href="#zxswbx">25.子像素文本（写）</a></blockquote></li>
+            <li><blockquote><a href="#zxswbd">26.子像素文本（读）</a></blockquote></li>
+            <li><blockquote><a href="#ctxwbx">27.穿透线文本（写）</a></blockquote></li>
+            <li><blockquote><a href="#ctxwbd">28.穿透线文本（读）</a></blockquote></li>
+            <li><blockquote><a href="#stwbx">29.粗体文本（写）</a></blockquote></li>
+            <li><blockquote><a href="#stwbd">30.粗体文本（读）</a></blockquote></li>
+            <li><blockquote><a href="#xhxwbx">31.下划线文本（写）</a></blockquote></li>
+            <li><blockquote><a href="#xhxwbd">32.下划线文本（读）</a></blockquote></li>
+            <li><blockquote><a href="#dxzx">33.点形状（写）</a></blockquote></li>
+            <li><blockquote><a href="#dxzd">34.点形状（读）</a></blockquote></li>
+            <li><blockquote><a href="#ddx">35.抖动（写）</a></blockquote></li>
+            <li><blockquote><a href="#ddd">36.抖动（读）</a></blockquote></li>
+            <li><blockquote><a href="#fjcx">37.反锯齿（写）</a></blockquote></li>
+            <li><blockquote><a href="#fjcd">38.反锯齿（读）</a></blockquote></li>
+            <li><blockquote><a href="#ljxgx">41.路径效果（写）</a></blockquote></li>
+            <li><blockquote><a href="#ljxgd">42.路径效果（读）</a></blockquote></li>
+            <li><blockquote><a href="#tmdx">43.透明度（写）</a></blockquote></li>
+            <li><blockquote><a href="#tmdd">44.透明度（读）</a></blockquote></li>
+            <li><blockquote><a href="#txhhx">45.图像混合（写）</a></blockquote></li>
+            <li><blockquote><a href="#tjhjjd">46.推荐行间距（读）</a></blockquote></li>
+            <li><blockquote><a href="#wtglx">47.位图过滤（写）</a></blockquote></li>
+            <li><blockquote><a href="#wtgld">48.位图过滤（读）</a></blockquote></li>
+            <li><blockquote><a href="#wbdqfs">49.文本对齐方式（写）</a></blockquote></li>
+            <li><blockquote><a href="#wbdqfsd">50.文本对齐方式（读）</a></blockquote></li>
+            <li><blockquote><a href="#wbhxqxxsx">51.文本横向倾斜系数（写）</a></blockquote></li>
+            <li><blockquote><a href="#wbhxqxxsd">52.文本横向倾斜系数（读）</a></blockquote></li>
+            <li><blockquote><a href="#wbhxsfbx">53.文本横向缩放比（写）</a></blockquote></li>
+            <li><blockquote><a href="#wbhxsfbd">54.文本横向缩放比（读）</a></blockquote></li>
+            <li><blockquote><a href="#xtljxzx">55.线条连接形状（写）</a></blockquote></li>
+            <li><blockquote><a href="#xljlxzd">56.线条连接形状（读）</a></blockquote></li>
+     
+            <li><blockquote><a href="#yyqyx">57.语言区域（写）</a></blockquote></li>
+            <li><blockquote><a href="#yyqyd">58.语言区域（读）</a></blockquote></li>
+            <li><blockquote><a href="#zsqx">59.着色器（写）</a></blockquote></li>
+            <li><blockquote><a href="#zsqd">60.着色器（读）</a></blockquote></li>
+            <li><blockquote><a href="#hblzys">61.置颜色</a></blockquote></li>
+            <li><blockquote><a href="#zyyc">62.置阴影层</a></blockquote></li>
+            <li><blockquote><a href="#hblcz">63.重置</a></blockquote></li>
+            <li><blockquote><a href="#zfdzzglq">64.置浮雕遮罩过滤器</a></blockquote></li>
+            <li><blockquote><a href="#zmhzzglq">65.置模糊遮罩过滤器</a></blockquote></li>
+            <li><blockquote><a href="#csdhwz">66.测算断行位置</a></blockquote></li>
+            <li><blockquote><a href="#csdhwz2">67.测算断行位置2</a></blockquote></li>
+            <li><blockquote><a href="#csdhwz3">68.测算断行位置3</a></blockquote></li>
+            <li><blockquote><a href="#hblfz">69.复制</a></blockquote></li>
+            <li><blockquote><a href="#hblfzcj">70.复制创建</a></blockquote></li>
+            <li><blockquote><a href="#hblfzlj">71.复制路径</a></blockquote></li>
+            <li><blockquote><a href="#hbqczzglq">72.清除遮罩过滤器</a></blockquote></li>
+            <li><blockquote><a href="#hbqlyyc">73.清理阴影层</a></blockquote></li>
+            <li><blockquote><a href="#hbqwbbjjx">74.取文本边界矩形</a></blockquote></li>
+            <li><blockquote><a href="#qwbbjjx2">75.取文本边界矩形2</a></blockquote></li>
+            <li><blockquote><a href="#qwbbjjx3">76.取文本边界矩形3</a></blockquote></li>
+            <li><blockquote><a href="#qwbkd">77.取文本宽度</a></blockquote></li>
+            <li><blockquote><a href="#qwbkd2">78.取文本宽度2</a></blockquote></li>
+            <li><blockquote><a href="#qwbkd3">79.取文本宽度3</a></blockquote></li>
+			<li><blockquote><a href="#qwblj">80.取文本路径</a></blockquote></li>
+            <li><blockquote><a href="#qwblj3">81.取文本路径2</a></blockquote></li>
+            <li><blockquote><a href="#qwblj3">82.取文本路径3</a></blockquote></li>
+            <li><blockquote><a href="#qwbzfkd">83.取文本字符宽度</a></blockquote></li>
+            <li><blockquote><a href="#qwbzfkd2">84.取文本字符宽度2</a></blockquote></li>
+            <li><blockquote><a href="#qwbzfkd3">85.取文本字符宽度3</a></blockquote></li>
+            <li><blockquote><a href="#qztxx">86.取字体信息</a></blockquote></li>
+            <li><blockquote><a href="#qztzsxx">87.取字体整数信息</a></blockquote></li>
+		</ol>
+		
+		
+	</ol>
+</ul>
+</div>	
+<p align="left">
+<h2>画笔类实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+  	<p align="left">本类的主要作用就是提供各种绘制参数。</p>
+	<p align="left">例如：<b>“笔划颜色”</b>，<b>“宽度”</b>，<b>“字体大小”</b>等属性的调整。</p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>	
+<p align="left">&nbsp;</p>
+<a name="ysx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 颜色（写）</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">以上多个方法中均使用了<b>“画笔类”</b>的<b>“颜色”</b>写属性，这里不再进行详细讲解。</p>
+	
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="ysd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 颜色（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本<b>“读属性”</b>，顾名思义就是用来读取当前画笔设置的颜色值。</p>
+	<p align="left">调用方式<b>“画笔变量.颜色”</b>就可以读取。</p>
+	<p align="left"><img border="0" src="hb_images/236.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="ysglqx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 颜色过滤器（写）</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">设置当前<b>“画笔类变量”</b>颜色过滤器属性。</p>
+	<p align="left">代码编写可参考<a href="#yanseguolvqi"><b>“颜色过滤器类”</b></a>帮助文档。</p>
+</blockquote>	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="ysglqd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 颜色过滤器（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本读属性的作用，就是用来读取当前<b>“画笔类变量”</b>设置的颜色过滤器。</p>
+	<p align="left">应用场景：比如<b>“画笔1”</b>设置了一个<b>“颜色过滤器”</b>，<b>“画笔2”</b>想要拥有<b>“相同的过滤器”</b>。</p>
+	<p align="left">可以直接写<b>“画笔2.颜色过滤器=画笔1.颜色过滤器”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/240.png" ></p>
+</blockquote>
+	
+
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="bhjtzx"></a>
+	<a name="xtljxzx"></a>
+	<a name="bhlxx"></a>
+	<a name="bhxdkdx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 笔划尖头值（写）</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 线条连接形状（写）</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 笔划像素宽度（写）</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 笔划类型（写）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">以上为四个关联属性，这里统一讲解。</p>
+	<p align="left"><b>“笔划尖头值”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性只有当<b>“线条链接形状”</b>属性值为<b>“尖头”</b>时有效。</p>
+	<p align="left">注意：<b>“笔划类型”</b>为<b>“填充”</b>本属性无效。</p>
+	<p align="left">属性值为<b>“小数”</b>，填写的<b>“数值越小”</b>效果越明显。</p>
+	<p align="left"><img border="0" src="hb_images/243.png" ></p>
+</blockquote>
+	<p align="left"><b>“线条连接形状”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，用来设置两个线条之间连接处的形状。</p>
+	<p align="left">通过<b>“线条链接类型”</b>进行设置。</p>
+	<p align="left">本类型共有三个常量值，分别是<b>“尖头”</b>，<b>“圆头”</b>，<b>“斜角”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/244.png" ></p>
+</blockquote>
+	<p align="left"><b>“笔划像素宽度”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，就是调整笔划的像素宽度。</p>
+	<p align="left">另外注意：<b>“笔划类型”</b>设置为<b>“填充”</b>，本属性无效。</p>
+	<p align="left"><img border="0" src="hb_images/245.png" ></p>
+</blockquote>
+	<p align="left"><b>“笔划类型”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，它的作用就是用来设置笔划类型。</p>
+	<p align="left">通过<b>“笔划绘制类型”</b>进行设置，总共有三个常量。</p>
+	<p align="left">分别是<b>“描边”</b>，<b>“描边且填充”</b>，<b>“填充”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/246.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">首先定义<b>“画笔类”</b>变量，分别需要设置<b>“五个”</b>属性值。 </p>
+	<p align="left">笔划像素宽度：控制线条粗细，只有足够粗<b>“笔划尖头值”</b>才能有效果。</p>
+	<p align="left">线条连接形状：此处设置<b>“尖头”</b>即可。</p>
+	<p align="left">笔划尖头值：填写1.5</p>
+	<p align="left">颜色：填写<b>“颜色类.白色”</b>。</p>
+	<p align="left">笔划类型：此处需要设置<b>“描边”</b>。</p>
+		
+<p align="left">&nbsp;</p>
+		
+	<p align="left">随后在<b>“异步绘制帧”</b>方法下，利用<b>“绘制路径类”</b>绘制两条直线，设置一个<b>“起始点”</b>。</p>
+	<p align="left">然后调用<b>“封闭当前轮廓”</b>方法，封闭路径，形成一个<b>“三角形”</b>。</p>
+	<p align="left">最后使用<b>“画路径”</b>方法进行绘制即可。</p>
+	<p align="left"><img border="0" src="hb_images/247.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>开始绘制后，就会出现如下图所示的<b>“三角形”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/248.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="bhjtzd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 笔划尖头值（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本<b>“读属性”</b>顾名思义，就是用来读取设置的<b>“笔划尖头值”</b>，返回值为小数。</p>
+	<p align="left">调用方式：在需要用到的地方写上<b>“画笔变量.笔划尖头值”</b>即可。</p>
+	<p align="left">注意：这里<b>“画笔变量”</b>是你自己定义的<b>“画笔类”</b>的<b>“变量名称”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/249.png" ></p>
+</blockquote>
+	<a name="xljlxzd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 线条连接形状（读）</font><br/>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本<b>“读属性”</b>顾名思义，就是用来读取设置的<b>“线条连接形状”</b>。</p>
+	<p align="left">调用方式可参考<a href="#bhjtzd"><b>“笔划尖头值”</b></a>。</p>
+	<p align="left"><img border="0" src="hb_images/249a.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hbxdkdd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 笔划像素宽度（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，返回当前设置的<b>“笔划像素宽度”</b>。</p>
+	<p align="left">调用方式可参考<a href="#bhjtzd"><b>“笔划尖头值”</b></a>。</p>
+	<p align="left"><img border="0" src="hb_images/252.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="bhlxd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 笔划类型（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">返回当前所设置的<b>“笔划设置类型”</b>。</p>
+	<p align="left">调用方式可参考<a href="#bhjtzd"><b>“笔划尖头值”</b></a>。</p>
+	<p align="left"><img border="0" src="hb_images/253.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="bhkdx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 笔划宽度（写）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性和<b>“笔划像素宽度”</b>属性基本一致，不同之处就是，本属性的<b>“属性值”</b>单位为<b>“DP”</b>。</p>
+	<p align="left">有关<b>“DP”</b>单位说明，可以看<b>“尺寸单位.DP”</b>常量值。</p>
+	<p align="left">具体位于<b>“系统库-->安卓基本-->辅助类-->尺寸单位”</b>。</p>
+	<p align="left">调用方式可参考<a href="#bhjtzd"><b>“笔划尖头值”</b></a>。</p>
+	<p align="left"><img border="0" src="hb_images/250.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+	<a name="bhkdd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 笔划宽度（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，读取当前设置的<b>“笔划宽度”</b>属性。</p>
+	<p align="left">调用方式可参考<a href="#bhjtzd"><b>“笔划尖头值”</b></a>。</p>
+	<p align="left"><img border="0" src="hb_images/251.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="bzx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 标志（写）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">设置画笔类的<b>“标志”</b>，标注状态为<b>“画笔标志类”</b>中的常量置。</p>
+	<p align="left">在<b>“画笔标志类”</b>中有九个常量值。</p>
+	<p align="left">分别为：</p>
+	<p align="left"><b>“下划线文本”</b>，<b>“位图过滤”</b>，<b>“反锯齿”</b>，<b>“子像素文本”</b>，<b>“抖动”</b>，<b>“穿透线文本”</b>，<b>“粗体文本”</b>，<b>“线性文本”</b>和<b>“设备字间距文本”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/254.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义<b>“画笔类”</b>变量，设置<b>“颜色”</b>和<b>“标志”</b>属性。</p>
+	<p align="left">这里，标志属性举例：<b>“下划线文本”</b>。</p>
+	<p align="left">最后在<b>“异步绘制帧”</b>下面调用<b>“画文本”</b>方法绘制文本。</p>
+	<p align="left"><img border="0" src="hb_images/255.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终结果，绘制的文本带有<b>“下划线”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/256.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="bzd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 标志（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，返回当前设置的标志值，均为<b>“画笔标志类”</b>中的常量值。</p>
+	<p align="left">调用方式可参考<a href="#bhjtzd"><b>“笔划尖头值”</b></a>。</p>
+	<p align="left"><img border="0" src="hb_images/257.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="cyztx"></a>
+	<a name="ctxwbx"></a>
+	<a name="ztxsccx"></a>
+	<a name="stwbx"></a>
+		<a name="xhxwbx"></a>
+	<a name="ztccx"></a>
+	 <a name="ztx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 常用字体（写）</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 穿透线文本（写）</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 字体像素尺寸（写）</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 字体尺寸（写）</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 粗体文本（写）</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 下划线文本（写）</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 字体（写）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">以上方法统一讲解。</p>
+	<p align="left"><b>“常用字体”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性值为<b>“常用字体类型”</b>，共有五个常量。</p>
+	<p align="left">分别为：<b>“无衬线字体”</b>，<b>“有衬线字体”</b>，<b>“等宽字体”</b>，<b>“通常”</b>和<b>“通常粗体”</b>。</p>
+	<p align="left">注意：本属性设置后会覆盖<b>“字体”</b>属性。</p>
+	<p align="left"><img border="0" src="hb_images/258.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“穿透线文本”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性值为<b>“逻辑型”</b>，设置为<b>“真”</b>表示有文字上会有<b>“穿透线”</b>。</p>
+	<p align="left">默认值为<b>“假”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/259.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“字体像素尺寸”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本写属性用来设置文本字体大小，单位为<b>“像素”</b>。</p>
+	<p align="left">注意：本属性设置后会覆盖<b>“字体尺寸”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/260.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“字体尺寸”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性和<b>“字体像素尺寸”</b>不同之处在于，本属性的单位为<b>“SP”</b>。</p>
+  <p align="left">具体位于<b>“系统库-->安卓基本-->辅助类-->尺寸单位”</b>。</p>
+	<p align="left">注意：本属性设置后会覆盖<b>“字体像素尺寸”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/261.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“粗体文本”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，将文本加粗显示。</p>
+	<p align="left">属性值为<b>“真”</b>则加粗，否则不加粗，默认为<b>“假”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/262.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“下划线文本”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义设置<b>“文本”</b>是否有下划线，<b>“真”</b>则有，相反则没有。</p>
+	<p align="left">默认值为<b>“假”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/263.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“字体”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">属性值为<b>“字体类”</b>，通过本类可以给绘制的文字改变<b>“字体”</b>。</p>
+	<p align="left">注意：本属性将会覆盖<b>“常用字体”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/264.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写（1）：</p>
+<blockquote>
+	<p align="left">定义七个画笔类变量，除了<b>“颜色”</b>属性一致外，分别额外设置以上讲到的属性值。</p>
+	<p align="left">注意：此处<b>“画笔7”</b>没有设置<b>“字体”</b>属性，是因为<b>“字体”</b>写属性不支持在表格中设置。</p>
+	<p align="left"><img border="0" src="hb_images/265.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写（2）：</p>
+<blockquote>
+	<p align="left">在<b>“按钮_被单击”</b>事件下，定义一个<b>“文件名类”</b>变量，设置参考。</p>
+	<p align="left">随后利用<a href="j_file.htm#wjm_cj3"><b>“文件名类.创建3”</b></a>方法，去创建文件名类对象，赋值给定义的变量。</p>
+	<p align="left">注意：<b>“字体.ttf”</b>文件，是我提前下载好，放到手机存储内的字体文件。</p>
+	<p align="left">最后，利用<b>“字体类.从文件名类创建”</b>方法，创建<b>“字体类”</b>变量赋值给<b>“字体”</b>属性。</p>
+	<p align="left"><img border="0" src="hb_images/266.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写（3）：</p>
+<blockquote>
+	<p align="left">调用<b>“画文本”</b>方法，分别绘制七行文本，使用不同的<b>“画笔类变量”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/267.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">不同的字体样式按照<b>“画笔类”</b>的属性分别生效。</p>
+	<p align="left"><img border="0" src="hb_images/268.png" ></p>
+</blockquote>
+	
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="ztd"></a>
+	<a name="ctxwbd"></a>
+	<a name="ztxsccd"></a>
+	<a name="ztccd"></a>
+	<a name="xhxwbd"></a>
+		<a name="stwbd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 穿透线文本（读）</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 字体像素尺寸（读）</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 字体尺寸（读）</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 粗体文本（读）</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 下划线文本（读）</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 字体（读）</font><br/>
+
+<p align="left">&nbsp;</p>
+	
+<blockquote>
+	<p align="left">以上全部为<b>“读属性”</b>返回对应的<b>“写属性”</b>设置的值。</p>
+	<p align="left">不再进行详细讲解。</p>
+	<p align="left">调用方式可参考<a href="#bhjtzd"><b>“笔划尖头值”</b></a>。</p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="ztsygdd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 字体上沿高度（读）</font><br/>
+<p align="left">&nbsp;</p>
+		<p align="left">上沿下沿概念：</p>
+<blockquote>
+	<p align="left">画板绘制文字时，最上方和最下方都有一定的空隙。</p>
+	<p align="left"><b>“基线”</b>大概就位于如图所示的位置。</p>
+	<p align="left"><b>“上沿高度”</b>就是从<b>“基线”</b>到<b>“上沿”</b>的距离，结果是一个负数。</p>
+	<p align="left"><b>“下沿高度”</b>就是从<b>“基线”</b>到<b>“下沿”</b>的距离，结果是一个整数。</p>
+	<p align="left"><img border="0" src="hb_images/269a.png" ></p>
+</blockquote>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">返回指定<b>“画笔类”</b>的<b>“字体上沿高度”</b>。</p>
+	<p align="left">结果是一个负值的小数。</p>
+	<p align="left"><img border="0" src="hb_images/269.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义<b>“画笔类”</b>变量，设置<b>“颜色”</b>，<b>“常用字体”</b>，<b>“尺寸”</b>等一些改变字体的属性。</p>
+	<p align="left">随后在<b>“异步绘制帧”</b>方法下绘制文本，利用<b>“本属性”</b>就可以取出上沿高度置。</p>
+	<p align="left"><img border="0" src="hb_images/270.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="hb_images/271.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="ztxygdd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 字体下沿高度（读）</font><br/>
+<p align="left">&nbsp;</p>
+
+<blockquote>
+	<p align="left">顾名思义，本属性用来读取<b>“下沿高度值”</b>，不再进行详细讲解。</p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="zxswbx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 子像素文本（写）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性的属性值为逻辑型。</p>
+	<p align="left">如果属性值设置为<b>“真”</b>，将有助于文本在LCD屏幕上的显示效果。</p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="zxswbd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 子像素文本（读）</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">本<b>“读属性”</b>的返回值为逻辑型，返回<b>“真”</b>表示已经设置，相反没设置。</p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="dxzx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 点形状（写）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本写属性顾名思义，就是用来设置<b>“点”</b>或<b>“线条两端端点”</b>的形状。</p>
+	<p align="left">调用方式：点形状类型.XXX。</p>
+	<p align="left">共有三个常量值，分别为<b>“无”</b>，<b>“圆头”</b>和<b>“方头”</b>。</p>
+	<p align="left">本方法在<a href="#hd"><b>“画点”</b></a>方法中进行了演示，这里不再演示。</p>
+	<p align="left"><img border="0" src="hb_images/272.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="dxzd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 点形状（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性为<b>“读属性”</b>顾名思义，读取当前<b>“点形状”</b>。</p>
+	<p align="left">调用方式：<b>“画笔变量.点形状”</b>。返回值为<b>“点形状类型”</b>。</p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="ddx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 抖动（写）</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">本写属性的属性值为<b>“逻辑型”</b>，填写<b>“真”</b>为抖动，<b>“假”</b>为不抖动。</p>
+	<p align="left">在实际的应用场景中，<b>“抖动”</b>更多的作用是在<b>“图像降低色彩深度”</b>绘制时，避免出现大片的<b>“色带与色块”</b>。</p>
+	<p align="left">不过对于现在而言，<b>“抖动”</b>属性已经没有那么实用。</p>
+	<p align="left">因为现在的安卓的绘制，默认的色彩深度已经是32位的 ARGB_8888 ，效果已经足够清晰了。</p>
+	<p align="left">因此不做详细的介绍。</p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="ddd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 抖动（读）</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">返回当前是否设置了<b>“抖动”</b>属性。</p>
+	<p align="left">调用方式：<b>“画笔变量.抖动”</b>，返回<b>“真”</b>表示设置了。</p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="fjcx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 反锯齿（写）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本写属性的作用，就是用来消除绘图时产生的<b>“锯齿”</b>。</p>
+	<p align="left">属性值设置<b>“真”</b>就可以消除锯齿。</p>
+	<p align="left"><img border="0" src="hb_images/273.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义<b>“画笔类”</b>变量，设置<b>“颜色”</b>属性和<b>“反锯齿”</b>属性。</p>
+	<p align="left">反锯齿设置为<b>“真”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/274.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">左图：没有设置反锯齿的效果，可以看到黄色箭头处有明显的<b>“锯齿”</b>痕迹。</p>
+	<p align="left">右图：设置<b>“反锯齿”</b>为<b>“真”</b>的效果，可以看到锯齿消失。</p>
+	<p align="left"><img border="0" src="hb_images/275.png" >
+	&nbsp;&nbsp;<img border="0" src="hb_images/275a.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="fjcd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 反锯齿（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本<b>“读属性”</b>的作用，就是用来读取当前是否设置了<b>“反锯齿”</b>。</p>
+	<p align="left">调用方式<b>“画笔变量.反锯齿”</b>，设置了返回<b>“真”</b>，没设置返回<b>“假”</b>。</p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="ljxgx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 路径效果（写）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性顾名思义，就是用来设置路径的效果。</p>
+	<p align="left">例如：可以用它绘制<b>“虚线”</b>路径。</p>
+	<p align="left"><img border="0" src="hb_images/276.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义<b>“画笔类”</b>变量，设置<b>“颜色”</b>和<b>“笔划类型”</b>。</p>
+	<p align="left">随后在<b>“异步绘制帧”</b>方法下，定义两个变量，分别为<b>“绘制路径类”</b>和<b>“小数[]”</b>。</p>
+	<p align="left">小数数组变量设置一串初始值。</p>
+	<p align="left">调用<b>“加直线到”</b>方法，添加两条直线形成一个路径。</p>
+	<p align="left">随后给<b>“画笔1.路径效果”</b>赋值<b>“路径效果类.创建破折效果()”</b>。</p>
+	<p align="left">本方法就是用来给路径设置<b>“虚线”</b>效果，</p>
+	<p align="left">需要调用<b>“浮点小数数组.从小数数组创建()”</b>方法将<b>“小数数组”</b>转换为<b>“浮点小数数组”</b>。</p>
+	<p align="left">最后调用<b>“画路径”</b>方法绘制路径。</p>
+	<p align="left"><img border="0" src="hb_images/277.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>开始绘制后，就会出现一个<b>“虚线效果”</b>的路径。</p>
+	<p align="left"><img border="0" src="hb_images/278.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="ljxgd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 路径效果（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本<b>“读属性”</b>返回设置的<b>“路径效果类”</b>，如果不存在，返回空对象。</p>
+	<p align="left">调用方式：<b>“画笔变量.路径效果”</b>。</p>
+	<p align="left">应用场景：<b>“画笔1”</b>设置了一个路径效果，画笔2想要使用同样的效果。</p>
+	<p align="left">可以直接写<b>“画笔2.路径效果=画笔1.路径效果”</b>。</p>
+	<p align="left">此处就用到了<b>“画笔1.路径效果”</b>读属性。</p>
+	<p align="left"><img border="0" src="hb_images/279.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="tmdx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 透明度（写）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">写属性，用来设置透明度，范围是<b>“0-255”</b>。</p>
+	<p align="left"><b>“0”</b>为完全透明，<b>“255”</b>为完全不透明。 </p>
+	<p align="left"><img border="0" src="hb_images/280.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义<b>“画笔类”</b>变量，<b>“颜色”</b>设置<b>“白色”</b>，<b>“透明度”</b>设置<b>“100”</b>。</p>
+	<p align="left">在<b>“异步绘制帧”</b>方法下，填充一个红色的背景。</p>
+	<p align="left">在红色背景上画一个白色的矩形。</p>
+	<p align="left"><img border="0" src="hb_images/281.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，可以明显看到<b>“白色”</b>的矩形变透明了。</p>
+	<p align="left"><img border="0" src="hb_images/282.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="tmdd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 透明度（读）</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">顾名思义，读取设置的透明度。</p>
+	<p align="left">调用方式：<b>“画笔变量.透明度”</b>就可以读取透明度。</p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="txhhx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 图像混合（写）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">使用本属性，通过调用<b>“图像混合方式.XXX”</b>可以设置图像的混合模式。</p>
+	<p align="left"><b>“图像混合方式”</b>总共有18个常量值，提供不同的图像混合算法。</p>
+	<p align="left"><img border="0" src="hb_images/283.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义两个画笔类变量，分别设置不同的颜色。</p>
+	<p align="left">随后给<b>“画笔2”</b>设置<b>“图像混合”</b>属性值为<b>“清零”</b>。</p>
+	<p align="left">然后在<b>“异步绘制帧”</b>下，填充背景色做参考后，绘制两个矩形。</p>
+	<p align="left"><img border="0" src="hb_images/284.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最后结果可以看到，绿色的矩形是黑色的，颜色被<b>“图像混合”</b>属性清零。</p>
+	<p align="left">其它常量值，大家可以自行实验。</p>
+	<p align="left"><img border="0" src="hb_images/285.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="tjhjjd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 推荐行间距（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">根据当前字体的相关参数设置，推荐最佳行间距，单位为像素。</p>
+	<p align="left">调用方式：<b>“画笔变量.推荐行间距”</b>。</p>
+	<p align="left">应用场景：例如，需要绘制一大段的文本，此时就需要用到行间距，可以使用本<b>“读属性”</b>设置行间距。</p>
+	<p align="left"><img border="0" src="hb_images/286.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="wtglx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 位图过滤（写）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本<b>“写属性”</b>可用于绘制图片进行反锯齿操作。</p>
+	<p align="left"><img border="0" src="hb_images/287.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义<b>“画笔类”</b>变量，设置本属性值为<b>“真”</b>。</p>
+	<p align="left">在<b>“异步绘制帧”</b>下定义两个变量，分别为<b>“位图类”</b>和<b>“可绘制资源”</b>。</p>
+	<p align="left"><b>“位图类”</b>依然需要设置<b>“参考”</b>，<b>“可绘制资源”</b>导入一张图片。</p>
+	<p align="left">随后创建<b>“缩放矩阵”</b>，进行放大操作。</p>
+	<p align="left">利用<b>“位图类.从资源创建（）”</b>方法，创建图片资源赋值给<b>“位图”</b>变量。</p>
+	<p align="left">最后调用<b>“画位图”</b>方法绘制位图，填写对应参数。</p>
+	<p align="left"><img border="0" src="hb_images/288.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">左图：<b>“没有设置”</b>本属性值的效果。</p>
+	<p align="left">右图：设置本属性值为<b>“真”</b>的效果。</p>
+	<p align="left"><img border="0" src="hb_images/289.png" >&nbsp;&nbsp;
+	<img border="0" src="hb_images/289a.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="wtgld"></a>
+	<font style="font-size: 12pt; font-weight:700">● 位图过滤（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，读取当前类是否设置了位图过滤。</p>
+	<p align="left">设置返回<b>“真”</b>，没有设置返回<b>“假”</b>。</p>
+	<p align="left">调用方式：在需要用到的地方填写<b>“画笔变量.位图过滤”</b>即可。</p>
+</blockquote>
+	
+
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="wbdqfs"></a>
+	<a name="wbhxsfbx"></a>
+<a name="wbhxqxxsx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 文本对齐方式（写）</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 文本横向倾斜系数（写）</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 文本横向缩放比（写）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">以上三个写属性统一讲解</p>
+	<p align="left"><b>“文本对齐方式”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性设置的并非绘制文本的对齐方式，而是<b>“画笔”</b>位于文本的<b>“哪一侧”</b>。</p>
+	<p align="left">属性值通过<b>“文本绘制水平对齐方式”</b>类设置，内有三个常量。</p>
+	<p align="left">分别为<b>“居左”</b>，<b>“居右”</b>和<b>“居中”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/290.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“文本横向倾斜系数”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性可以用来设置文本字体为<b>“斜体”</b>，默认值为<b>“0”</b>不倾斜。</p>
+	<p align="left">数值越大切斜度越大。</p>
+	<p align="left"><img border="0" src="hb_images/291.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“文本横向缩放比”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">针对绘制的文本进行横向拉伸，默认值为<b>“1”</b>，即不拉伸。</p>
+	<p align="left">属性值填写<b>“大于1”</b>的拉伸，<b>“小于1”</b>的缩放。</p>
+	<p align="left"><img border="0" src="hb_images/292.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写（1）：</p>
+<blockquote>
+	<p align="left">定义三个<b>“画笔类”</b>变量，分别设置统一的<b>“颜色”</b>和<b>“字体尺寸”</b>属性值。</p>
+	<p align="left">随后给<b>“画笔2”</b>和<b>“画笔3”</b>分别设置<b>“文本横向切斜系数”</b>和<b>“文本很想缩放比”</b>，并且填写一个属性值。</p>
+	<p align="left"><img border="0" src="hb_images/293.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写（2）：</p>
+<blockquote>
+	<p align="left">在<b>“异步绘制帧”</b>方法下，调用<b>“画笔1.文本对齐方式”</b>写属性，设置其属性为<b>“居左”</b>对齐。</p>
+	<p align="left">随后调用<b>“画文本”</b>方法，重复两次将<b>“居左，居中，居右”</b>全部绘制出来。</p>
+	<p align="left">继续调用<b>“画文本”</b>方法，将<b>“画笔2”</b>和<b>“画笔3”</b>都使用上。</p>
+	<p align="left"><img border="0" src="hb_images/294.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>开始会之后，就会生成如下效果的文字。</p>
+	<p align="left">注意：这里的<b>“居左居右”</b>是<b>“画笔”</b>，并非文本。</p>
+	<p align="left"><img border="0" src="hb_images/295.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+	<a name="wbhxsfbd"></a>
+<a name="wbdqfsd"></a>
+		<a name="wbhxqxxsd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 文本对齐方式（读）</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 文本横向倾斜系数（读）</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 文本横向缩放比（读）</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">以上三个读属性，作用就是来读取设置的属性值。</p>
+	<p align="left">调用方式：<b>“画笔变量.”</b>+"对应的属性值"</p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="yyqyx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 语言区域（写）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">设置绘制文本所使用的<b>“语言区域”</b>。</p>
+	<p align="left">本属性也较为重要，因为<b>“中文”</b>和<b>“日文”</b>某些字符基于相同的编码，但是字体形状也有所差异。</p>
+	<p align="left">默认绘制文本，使用的是当前系统语言。</p>
+	<p align="left">如果你知道接下来要绘制的文本为<b>“日文”</b>，那么建议将<b>“语言区域”</b>设置为<b>“日文”</b>。</p>
+	<p align="left">通过属性值<b>“语言区域类”</b>可以进行创建语言区域的操作。</p>
+	<p align="left">本属性不支持在表格中填写。</p>
+	<p align="left"><img border="0" src="hb_images/296.png" ></p>
+</blockquote>
+	
+
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">通过<b>“语言区域类.创建”</b>方法，创建<b>“中文”</b>语言，赋值给<b>“画笔1.语言区域”</b>写属性。</p>
+	<p align="left">这样就表示<b>“中文”</b>语言区域创建成功。</p>
+	<p align="left">部分语言区域代码：中文<b>“zh”</b>，英文<b>“en”</b>，日文<b>“ja”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/297.png" ></p>
+</blockquote>	
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="yyqyd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 语言区域（读）</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">顾名思义，读取设置的语言区域，返回<b>“语言区域类”</b>对象。</p>
+	<p align="left">调用方法：<b>“画笔变量.语言区域类”</b>。</p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="zsqx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 着色器（写）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">着色器概念：</p>
+	<p align="left">我们在用安卓中的绘制各种图形时，可以通过本属性设置画板的着色器。</p>
+	<p align="left">着色器可以用来绘制出多彩的图形，也可以给指定形状进行贴图。</p>
+	<p align="left">本属性值<b>“不能”</b>在表格代码<b>“属性框”</b>中定义，需要写文本代码定义。</p>
+	<p align="left"><img border="0" src="hb_images/298.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">首先依然需要定义<b>“画笔类”</b>变量。</p>
+	<p align="left">随后在<b>“异步绘制帧”</b>下，定义<b>“位图类”</b>变量设置参考。</p>
+	<p align="left">还需要定义一个<b>“可绘制资源”</b>变量，随便导入一张图片。</p>
+	<p align="left">然后通过<b>“位图类.从资源创建”</b>方法创建位图类对象，赋值给<b>“位图”</b>变量。</p>
+	<p align="left">然后调用<b>“着色器类.创建位图着色器（）”</b>方法，分别填入对应的参数，赋值给<b>“着色器”</b>写属性。</p>
+	<p align="left">最后执行<b>“画矩形”</b>方法。</p>
+	<p align="left"><img border="0" src="hb_images/299.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">结果就是绘制的矩形，针对导入的图片进行了<b>“镜像贴图”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/300.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="zsqd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 着色器（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，读取当前设置的<b>“着色器类”</b>。</p>
+	<p align="left">调用方式：<b>“画笔变量.着色器”</b></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hblzys"></a>
+	<a name="hblcz"></a>
+	<a name="zyyc"></a>
+	<font style="font-size: 12pt; font-weight:700">● 置颜色</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 置阴影层</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 重置</font><br/>
+    <p align="left"></p>
+	<p align="left">以上三个方法统一讲解，从此处开始，下面的所有均为各种方法，不再有读写属性。</p>
+	<p align="left"><b>“置颜色”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法和<b>“颜色”</b>写属性效果一致，用来设置画笔的颜色。</p>
+	<p align="left">不同之处在于，本方法可以分别设置<b>“红绿蓝”</b>三个颜色的分量，并且还可以设置<b>“透明度”</b>参数。</p>
+	<p align="left">参数数值范围有效值都是<b>“0到255”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/301.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“置阴影层”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">使用此方法后可以理解为给绘制的<b>“指定图形”</b>或者<b>“文字”</b>增加阴影效果。</p>
+	<p align="left">注意：如果模糊半径填写0，则会删除阴影层。</p>
+	<p align="left"><img border="0" src="hb_images/302.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“重置”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，重置所有属性值。</p>
+	<p align="left"><img border="0" src="hb_images/303.png" ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义<b>“画笔类”</b>变量，然后在<b>“异步绘制帧”</b>方法下写对应的方法。</p>
+	<p align="left">填充白色背景，设置字号方便参考。</p>
+	<p align="left">然后调用<b>“置颜色”</b>方法，透明度设置<b>“255”</b>表示不透明，红色分量设置<b>“255”</b>，表示大红色，另外两个设置<b>“0”</b>。</p>
+	<p align="left">随后调用一个<b>“画文本”</b>方法，继续调用<b>“置阴影层”</b>方法，设置阴影层。</p>
+	<p align="left">这里<b>“阴影层”</b>绘制的<b>“文本颜色”</b>，依然是最开始设置的红色。</p>
+	<p align="left">最后调用<b>“重置”</b>方法，然后继续执行<b>“画文本”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/304.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>开始绘制后，会出现如图所示的三行文本。</p>
+	<p align="left"><img border="0" src="hb_images/305.png" ></p>
+</blockquote>
+	
+
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="zfdzzglq"></a>
+	<font style="font-size: 12pt; font-weight:700">● 置浮雕遮罩过滤器</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法通俗理解，就是用来给指定图形或者图片增加<b>“浮雕效果”</b>。</p>
+	<p align="left">注意：本方法使用时，必须保证<b>“硬件加速”</b>属性为<b>“关闭”</b>状态。</p>
+	<p align="left">本方法共有七个参数，除第一个参数外，其余六个均是设置各种数值。</p>
+	<p align="left"><img border="0" src="hb_images/306.png" ></p>
+	<p align="left">&nbsp;</p>
+	<p align="left">坐标轴大概如下图所示的模样。</p>
+	<p align="left"><img border="0" src="hb_images/306a.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义<b>“画笔类”</b>变量，设置颜色为<b>“灰色”</b>。</p>
+	<p align="left">随后在<b>“异步绘制帧”</b>事件下，调用<b>“画笔1.置浮雕遮罩过滤器”</b>方法。</p>
+	<p align="left">在方法内填写合适的参数值。</p>
+	<p align="left">最后执行一个<b>“画圆”</b>方法，展示设置的效果。</p>
+	<p align="left"><img border="0" src="hb_images/307.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">绘制的圆增加了浮雕效果，大家可以自己调整对应的参数感受变化。</p>
+	<p align="left"><img border="0" src="hb_images/308.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="zmhzzglq"></a>
+	<font style="font-size: 12pt; font-weight:700">● 置模糊遮罩过滤器</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，给绘制的图片增加<b>“模糊遮罩”</b>效果。</p>
+	<p align="left">本方法同样需要保证<b>“硬件加速”</b>处于关闭状态。</p>
+	<p align="left">通过<b>“遮罩模糊方式”</b>来指定模糊效果，调用方式：<b>“遮罩模糊方式.XXX”</b></p>
+	<p align="left"><img border="0" src="hb_images/309.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义<b>“画笔类”</b>变量，随后依然还是<b>“创建位图对象”</b>那一套的方法。</p>
+	<p align="left">然后调用<b>“画笔1.置模糊遮罩过滤器()”</b>填写对应参数。</p>
+	<p align="left">最后使用<b>“画位图”</b>绘制图片。</p>
+	<p align="left"><img border="0" src="hb_images/310.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">左图：模糊后效果。</p>
+	<p align="left">右图：原图片效果。</p>
+	<p align="left"><img border="0" src="hb_images/311.png" ><img border="0" src="hb_images/311a.jpg"></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="csdhwz"></a>
+	<a name="csdhwz2"></a>
+		<a name="csdhwz3"></a>
+	<font style="font-size: 12pt; font-weight:700">● 测算断行位置</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 测算断行位置2</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 测算断行位置3</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“测算断行位置”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本类的主要作用就是绘制一大段文本时，计算出需要进行换行的位置。</p>
+	<p align="left">通俗理解就是计算出一行可以放多少个字符。</p>
+	<p align="left">如果还不理解，可以看黄框内的详细说明。</p>
+	<p align="left">参数3：通常情况下填写<b>“真”</b>即可。</p>
+	<p align="left">参数5：如果没有这种特殊需求，可以直接省略不写。</p>
+	<p align="left"><img border="0" src="hb_images/312.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“测算断行位置2”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法和<b>“测算断行位置”</b>不同之处多了两个参数。</p>
+	<p align="left">分别为<b>“起始字符位置”</b>和<b>“结束字符位置”</b>，返回值也位于这个文本区间内。</p>
+	<p align="left"><img border="0" src="hb_images/313.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“测算断行位置3”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法的不同之处在于，测算的内容为<b>“字符数组”</b>，测算区间为<b>“起始字符位置”</b>和<b>“被测算的文本长度”</b>。</p>
+	<p align="left">返回值也位于这个文本区间内。</p>
+	<p align="left"><img border="0" src="hb_images/314.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图（1）：</p>
+<blockquote>
+	<p align="left">此处我们举例第一个方法进行代码编写。</p>
+	<p align="left">首先定义<b>“画笔类”</b>变量，设置<b>“颜色”</b>和<b>“字体尺寸”</b>。</p>
+	<p align="left">随后定义一个<b>“文本型常量”</b>，填写一大段的文本到初始值内。</p>
+	<p align="left"><img border="0" src="hb_images/315.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图（2）：</p>
+<blockquote>
+	<p align="left">在<b>“异步绘制帧”</b>方法下编写的代码较为复杂，代码内我也写上了详细的注释<b>“绿色文字”</b>部分。</p>
+	<p align="left">此处我简单解释几个重点。</p>
+	<p align="left"><b>“字体高度”</b>那一行，<b>“取整数绝对值（）”</b>方法可以将<b>“负整数”</b>变为<b>“正整数”</b>。</p>
+	<p align="left">而在括号内填写<b>“整数”</b>的意思，是将<b>“画笔1.字体上沿高度”</b>的返回值强转为<b>“整数”</b>。</p>
+	<p align="left">在绘制一大段文本时，不可能每一行的文本都恰好沾满整行。</p>
+	<p align="left"><b>“循环”</b>方法的作用是将占满整行的文本绘制完毕。</p>
+	<p align="left"><b>“循环”</b>方法下面的命令是用来绘制<b>“最后一行”</b>没有占满整行的文本。</p>
+	<p align="left"><img border="0" src="hb_images/316.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">可以看到，一大段的文本进行了智能的换行。</p>
+	<p align="left"><img border="0" src="hb_images/317.png" ></p>
+</blockquote>
+	
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hblfz"></a>
+	<font style="font-size: 12pt; font-weight:700">● 复制</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，将指定<b>“画笔类”</b>变量中的所有配置项复制到当前画笔类中。</p>
+	<p align="left">把需要复制的<b>“画笔类”</b>变量写入<b>“参数2”</b>中即可。</p>
+	
+	<p align="left"><img border="0" src="hb_images/318.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hblfzcj"></a>
+	<font style="font-size: 12pt; font-weight:700">● 复制创建</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left"><b>“复制后”</b>返回一个<b>“画笔类”</b>对象，相当于<b>“复制”</b>方法多了一个返回值。</p>
+	<p align="left">可以把返回的本类对象，赋值给一个新的<b>“画笔类”</b>变量。</p>
+	<p align="left"><img border="0" src="hb_images/319.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hblfzlj"></a>
+	<font style="font-size: 12pt; font-weight:700">● 复制路径</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法顾名思义，就是将指定<b>“路径类”</b>的<b>“所有参数”</b>，复制到<b>“新的路径类”</b>中。</p>
+	<p align="left">这个新的<b>“路径类”</b>，也就是<b>“参数3”</b>。</p>
+	<p align="left">复制成功返回<b>“真”</b>，失败返回<b>“假”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/320.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">举个简单的例子，可以看到图中定义了两个路径类变量。</p>
+	<p align="left">给<b>“路径1”</b>添加两条直线，随后调用本方法，复制给<b>“路径2”</b>使用。</p>
+	<p align="left">然后调用<b>“画路径”</b>方法绘制<b>“路径2”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/321.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最后结果，<b>“路径2”</b>虽然没有调用<b>“加直线到”</b>方法，但是也成功看到了路径效果。</p>
+	<p align="left">证明复制成功。</p>
+	<p align="left"><img border="0" src="hb_images/322.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hbqczzglq"></a>
+	<font style="font-size: 12pt; font-weight:700">● 清除遮罩过滤器</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，就是用来清除设置的各种<b>“遮罩过滤器”</b>。</p>
+	<p align="left">调用方式：<b>“画笔变量.清除遮罩过滤器()”</b></p>
+	<p align="left"><img border="0" src="hb_images/323.png" ></p>
+</blockquote>
+
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hbqlyyc"></a>
+	<font style="font-size: 12pt; font-weight:700">● 清理阴影层</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，就是用来清理设置的<b>“阴影效果”</b>。</p>
+	<p align="left">调用方式：<b>“画笔变量.清理阴影层()”</b></p>
+	<p align="left"><img border="0" src="hb_images/324.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="hbqwbbjjx"></a>
+	<a name="qwbbjjx2"></a>
+	<a name="qwbbjjx3"></a>
+	<font style="font-size: 12pt; font-weight:700">● 取文本边界矩形</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 取文本边界矩形2</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 取文本边界矩形3</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“取文本边界矩形”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">简单来说，就是取出指定文本的<b>“边界数据”</b>放入到<b>“矩形类”</b>中。</p>
+	<p align="left">也就是<b>“参数3”</b>，通过<b>“矩形类”</b>的各种<b>“读属性”</b>，可以读取文本的各种数据。</p>
+	<p align="left"><img border="0" src="hb_images/325.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“取文本边界矩形2”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法与<b>“取文本边界矩形”</b>不同之处在于，本方法多了两个参数。</p>
+	<p align="left">分别为<b>“起始字符索引位置”</b>和<b>“字符数目”</b>，用来取出文本区间。</p>
+	<p align="left"><img border="0" src="hb_images/326.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“取文本边界矩形3”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法和<b>“2”</b>不同之处在于，本方法要取的为<b>“字符数组”</b>。</p>
+	<p align="left">字符数组的创建可以通过<b>“文本到字符数组()”</b>方法进行转换。</p>
+	<p align="left"><img border="0" src="hb_images/327.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">此处举例<b>“取文本边界矩形()”</b>方法。</p>
+	<p align="left">定义画笔类变量，设置<b>“颜色”</b>和<b>“字体尺寸”</b>。</p>
+	<p align="left">随后定义<b>“矩形类”</b>变量，然后将变量写入<b>“取文本边界矩形”</b>参数内。</p>
+	<p align="left">最后就可以通过<b>“矩形.高度”</b>和<b>“宽度”</b>读属性，读取文本的高度和宽度数值。</p>
+	<p align="left"><img border="0" src="hb_images/328.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="hb_images/329.png" ></p>
+</blockquote>
+	
+
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="qwbkd"></a>
+	<a name="qwbkd2"></a>
+	<a name="qwbkd3"></a>
+	<font style="font-size: 12pt; font-weight:700">● 取文本宽度</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 取文本宽度2</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 取文本宽度3</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“取文本宽度”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">根据<b>“画笔类”</b>指定的相关属性，例如<b>“字体尺寸”</b>等，返回最终要绘制文本的<b>“宽度”</b>。</p>
+	<p align="left">直接把想要计算的文本，填入参数内即可，返回值为一个小数。</p>
+	
+	<p align="left"><img border="0" src="hb_images/330.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“取文本宽度2”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法和<b>“取文本宽度”</b>不同之处在于，本方法多了一个两个参数。</p>
+	<p align="left">分别为<b>“其实字符位置”</b>和<b>“字符数目”</b>用来指定文本区间。</p>
+	<p align="left"><img border="0" src="hb_images/331.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“取文本宽度3”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法和<b>“2”</b>的不同之处在于，要判断的<b>“参数2”</b>为<b>“字符数组”</b>。</p>
+	<p align="left">以上三个调用方法：<b>“画笔变量.”</b>+<b>“方法名()”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/332.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="qwblj"></a>
+	<a name="qwblj3"></a>
+	<a name="qwblj3"></a>
+	<font style="font-size: 12pt; font-weight:700">● 取文本路径</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 取文本路径2</font><br/>
+	<font style="font-size: 12pt; font-weight:700">● 取文本路径3</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“取文本路径”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法有点类似于<a href="#hblfzlj"><b>“复制路径”</b></a>。</p>
+	<p align="left">不同之处，本方法是通过指定文本和对应的坐标，创建一条路径对象，赋值给<b>“参数5”</b>。</p>
+	
+	<p align="left"><img border="0" src="hb_images/333.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“取文本路径2”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法与<b>“取文本路径”</b>不同之处在于，多了两个参数，用来指定文本区间。</p>
+	<p align="left">分别为<b>“起始字符索引位置”</b>和<b>“字符数目”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/334.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“取文本路径3”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法和<b>“2”</b>的不同之处在于，所基于的文本是<b>“字符数组”</b>。</p>
+	<p align="left">以上三个方法应用场景可参考：<a href="#hblfzlj"><b>“复制路径”</b></a>。</p>
+	<p align="left"><img border="0" src="hb_images/335.png" ></p>
+</blockquote>
+
+	
+		<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="qwbzfkd"></a>
+	<a name="qwbzfkd2"></a>
+	<a name="qwbzfkd3"></a>
+	<font style="font-size: 12pt; font-weight:700">● 取文本字符宽度</font><br/>
+	
+	<font style="font-size: 12pt; font-weight:700">● 取文本字符宽度2</font><br/>
+	
+	<font style="font-size: 12pt; font-weight:700">● 取文本字符宽度3</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“取文本字符宽度”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">简单来说，就是根据设置的<b>“各种字体属性”</b>计算出一串文本中。</p>
+	<p align="left">每个字符的宽度，然后这些宽度会放入到<b>“浮点小数数组”</b>中，也就是<b>“参数3”</b></p>
+	<p align="left">参数2：直接放入需要计算的文本即可。</p>
+	<p align="left"><img border="0" src="hb_images/336.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“取文本字符宽度2”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法与<b>“取文本字符宽度”</b>不同之处在于，本方法多了两个参数。</p>
+	<p align="left">分别是<b>“起始字符索引位置”</b>和<b>“字符数目”</b>，用来指定文本区间。</p>
+	<p align="left"><img border="0" src="hb_images/337.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“取文本字符宽度3”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法与<b>“2”</b>的区别在于，本方法计算的是<b>“字符数组”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/338.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义<b>“画笔类”</b>成员变量，设置<b>“颜色”</b>和<b>“字体尺寸”</b>属性。</p>
+	<p align="left">在<b>“异步绘制帧”</b>事件下定义三个变量，分别为<b>“浮点小数数组”</b>,<b>“小数[]”</b>和<b>“整数”</b>。</p>
+	<p align="left">浮点小数数组需要设置参考。</p>
+	<p align="left">随后利用<b>“画文本”</b>方法，绘制指定文本做参考，不绘制文本也可以进行计算字符宽度。</p>
+	<p align="left">然后需要用到<b>“浮点小数数组.创建()”</b>方法，创建10个成员赋值给定义的<b>“浮点小数”</b>变量。</p>
+	<p align="left">然后就调用本方法计算指定文本，<b>“浮点小数”</b>变量填入参数内。</p>
+	<p align="left">随后需要将<b>“浮点小数”</b>数组通过<b>“浮点小数数组.到小数数组（）”</b>方法转换成小数，赋值给<b>“小数数组”</b>变量。</p>
+	<p align="left">最后利用<b>“循环”</b>方法，将小数数组内的成员循环出来，绘制在画板上显示。</p>
+	<p align="left"><img border="0" src="hb_images/339.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">可以看到在<b>“字体尺寸为20”</b>的情况下。</p>
+	<p align="left"><b>“汉字”</b>的字符宽度为<b>“20”</b>。</p>
+	<p align="left"><b>“字母”</b>和<b>“数组”</b>的字符宽度为<b>“11”</b>。</p>
+	<p align="left">英文标点符号<b>“逗号”</b>的字符宽度为<b>“4”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/340.png" ></p>
+</blockquote>	
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="qztxx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 取字体信息</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">简单来说，就是利用本方法根据设置的字体相关的属性，返回推荐的<b>“行间距”</b>。</p>
+	<p align="left">另外<b>“参数2”</b>中，可以根据本参数取出<b>“字体上沿高度”</b>等属性。</p>
+	<p align="left"><img border="0" src="hb_images/341.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“绘制字体信息类”</b>部分属性：</p>
+<blockquote>
+	<p align="left">可以通过一下五个读属性，取出相关信息。</p>
+	<p align="left">调用方式：<b>“绘制字体信息类变量.XXX”</b></p>
+	<p align="left"><img border="0" src="hb_images/342.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写：</p>
+<blockquote>
+	<p align="left">例如，设置<b>“画笔类”</b>变量字体尺寸为<b>“20”</b>。</p>
+	<p align="left"><b>“异步绘制帧”</b>事件下定义两个变量，分别为<b>“绘制字体信息类”</b>和<b>“小数”</b>。</p>
+	<p align="left"><b>“小数”</b>变量，用作<b>“取字体信息值”</b>的返回值。</p>
+	<p align="left"><b>“绘制字体信息类”</b>变量则放入<b>“取字体信息值”</b>的参数中。</p>
+	<p align="left">最后用<b>“提示框”</b>方法弹出提示，显示结果。</p>
+	<p align="left"><img border="0" src="hb_images/343.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+  <p align="left">当字体尺寸为20dp时，推荐行间距为<b>“23”</b>单位是像素。</p>
+	<p align="left"><img border="0" src="hb_images/344.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="qztzsxx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 取字体整数信息</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“取字体信息”</b>不同之处就是，本方法所有的信息参数全部是<b>“整数”</b>。</p>
+	<p align="left">如果对数值精度有要求，还是建议使用<b>“取字体信息”</b>方法。</p>
+	<p align="left">代码编写参考<b>“取字体信息”</b>，此处不再演示。</p>
+	<p align="left"><img border="0" src="hb_images/345.png" ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

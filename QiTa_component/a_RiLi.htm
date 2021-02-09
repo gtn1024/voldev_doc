@@ -1,0 +1,214 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+			<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new6')" >一.日历框<span>(可收缩)</span></h6></li>
+		<ol id="new6">
+			<li><blockquote><a href="#">1.准备工作</a></blockquote></li>
+			<li><blockquote><a href="#rlzsr">2.周首日(读写)</a></blockquote></li>
+			<li><blockquote><a href="#rlrq">3.日期(读写)</a></blockquote></li>
+			<li><blockquote><a href="#rlzdzcrq">4.最大支持日期(读写)</a></blockquote></li>
+			<li><blockquote><a href="#rlzxzcrq">5.最小支持日期(读写)</a></blockquote></li>
+			<li><blockquote><a href="#rlzrq">6.日期被选择(事件)</a></blockquote></li>
+			<li><blockquote><a href="#rlzrq">7.置日期</a></blockquote></li>
+		</ol>
+
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>日历框组件实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+	<font style="font-size: 12pt; font-weight:700">● 辅助说明</font><br/>
+     	<blockquote>
+		<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+	<a name="rilikuang"></a>
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font>	
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">打开窗口设计器，从上到下依次拖放<b>“按钮1”</b>，<b>“按钮2”</b>和<b>“日历框1”</b>。</p>
+	<p align="left">然后设置<b>“日历框1”</b>的高/宽度类型为<b>“匹配父组件高/宽度”</b>。</p>
+	<p align="left">设置完毕后保存布局即可。</p>
+	<p align="left"><img border="0" src="rili_images/115.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="rlzsr"></a>
+<font style="font-size: 12pt; font-weight:700">● 周首日(读写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“周首日(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本写属性可以用来设置日历框的周首日是周几。</p>
+	<p align="left">属性值范围<b>“1-7”</b>，1为周日，2为周一以此类推。</p>
+	<p align="left">同名读属性，即读取当前的<b>“周首日”</b>。</p>
+	<p align="left"><img border="0" src="rili_images/116.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，设置属性值为2，即周一为首天。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，可以判断当前的<b>“周首日”</b>是否为2，然后弹出对应提示即可。</p>
+	
+	<p align="left"><img border="0" src="rili_images/117.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left"><b>“日历框”</b>组件，默认的周首日为<b>“周日”</b>，点击<b>“按钮1”</b>后当前的周首日会变成<b>“周一”</b></p>
+    <p align="left">点击<b>“按钮2”</b>后，成功判断当前的周首日。</p>
+	<p align="left"><img border="0" src="rili_images/118.gif" >
+    </p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="rlrq"></a>
+<font style="font-size: 12pt; font-weight:700">● 日期(读写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“日期(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本写属性可跳转至指定日期，参数值需要填写<a href="https://baike.baidu.com/item/%E6%97%B6%E9%97%B4%E6%88%B3" target="_blank"><b>“时间戳”</b></a>。</p>
+	<p align="left">同名读属性，可以读取当前时间（并非当前日历框选择时间）。</p>
+	<p align="left"><img border="0" src="rili_images/119.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，设置当前属性值为<b>“取当前毫秒时间()”</b>，即常说的<b>“当前时间戳”</b>。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，定义<b>“日历类”</b>变量，起名<b>“日历1”</b>。</p>
+	<p align="left">可通过<a href="j_time.htm#rllzhmsj"><b>“置毫秒时间”</b></a>方法，将当前<b>“日历框1.日期”</b>，转换为日历类对象。</p>
+	<p align="left">最后通过<a href="j_time.htm#rlldgswb"><b>“到格式文本”</b></a>方法可将当前日历对象，转换为可显示的日期文本。</p>
+	
+	<p align="left"><img border="0" src="rili_images/120.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后，可以看到跳转到了当前日期。</p>
+    <p align="left">点击<b>“按钮2”</b>后，成功提示了当前日期。</p>
+	<p align="left"><img border="0" src="rili_images/121.gif" >
+    </p>
+</blockquote>
+	
+
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="rlzdzcrq"></a>
+<a name="rlzxzcrq"></a>
+<font style="font-size: 12pt; font-weight:700">● 最大支持日期(读写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 最小支持日期(读写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“最大支持日期(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性的作用就是用来设置当前日历框的最大支持日期。</p>
+	<p align="left">超过此日期的将在日历框禁止显示和选择（部分安卓系统可能有所差异）。</p>
+	<p align="left">参数值需要填写时间戳。</p>
+	<p align="left">同名读属性，即读取当前的最大支持日期，返回值为时间戳。</p>
+	<p align="left"><img border="0" src="rili_images/122.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“最小支持日期(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性正好和<b>“最大支持日期”</b>相反。</p>
+	<p align="left">设置最小日期后，小于此日期的将在日历框禁止显示和选择。</p>
+	<p align="left">同名读属性，即读取当前的最小支持日期，返回值为时间戳。</p>
+	<p align="left"><img border="0" src="rili_images/123.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">首先可以在<b>“如果”</b>方法之前定义一个<b>“日历类”</b>变量。</p>
+	<p align="left"><b>“按钮1”</b>被点击后，调用<a href="j_time.htm#rllzrqsj"><b>“置日期”</b></a>方法设置<b>“年月日”</b>。</p>
+	<p align="left">然后通过<b>“日历类1.取毫秒时间()”</b>方法就可以取出<b>“置日期”</b>的时间戳。</p>
+	<p align="left">通过这样的方法，来给当前<b>“最小支持日期”</b>和<b>“最大支持日期”</b>属性分别赋值。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，可通过<b>“置毫秒时间”</b>方法，将当前<b>“最小支持日期”</b>转换为日历类对象。</p>
+	<p align="left">然后可通过<b>“到格式文本”</b>方法，将当前日历转换为可识别的日期格式。</p>
+	<p align="left">同样的方法取出<b>“最大支持日期”</b>。</p>
+	
+	<p align="left"><img border="0" src="rili_images/124.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">因安卓系统版本之间对日历类的显示有所差异，所以最终效果可能有所不同。</p>
+    <p align="left">左图：安卓6.0。</p>
+    <p align="left">右图：安卓5.1。</p>
+	<p align="left"><img border="0" src="rili_images/125.gif" >&nbsp;&nbsp;
+		<img border="0" src="rili_images/126.gif" >
+    </p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="rlzrq"></a>
+<font style="font-size: 12pt; font-weight:700">● 日期被选择(事件)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 置日期</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“日期被选择(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">当前日历框的日期被选择后，会触发本事件，并通过参数返回<b>“年月日”</b>。</p>
+	<p align="left"><img border="0" src="rili_images/127.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“置日期”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">本方法和<b>“日期”</b>写属性一致，都是用来跳转至指定日期。</p>
+	<p align="left">不同之处在于，本方法增加了两个参数，可以用来设置<b>“是否平滑滚动”</b>和<b>“居中显示”</b>。</p>
+	<p align="left">如果无特殊需求，直接忽略即可。</p>
+	<p align="left"><img border="0" src="rili_images/128.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，直接调用<b>“置日期”</b>方法，参数内填写<b>“取当前毫秒时间()”</b>即可。</p>
+  <p align="left">添加<b>“日历框_日期被选择”</b>事件，将返回的<b>“年月日”</b>通过<b>“到文本”</b>方法转换后，显示在<b>“按钮2”</b>上。</p>
+	<p align="left"><img border="0" src="rili_images/129.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可以看到选择日期后<b>“按钮2”</b>的标题会变成当前选择的日期。</p>
+    <p align="left"><b>“按钮1”</b>被点击后，会跳转到今天的日期。</p>
+    <p align="left">注意：虽然<b>“置日期”</b>可以跳转日期，但是并不会触发<b>“日期被改变”</b>事件。</p>
+	<p align="left"><img border="0" src="rili_images/130.gif" >
+    </p>
+</blockquote>
+
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

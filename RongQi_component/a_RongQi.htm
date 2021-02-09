@@ -1,0 +1,530 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+			<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new11')" >窗口容器组件<span>(可收缩)</span></h6></li>
+		<ol id="new11">
+        
+           <li><blockquote><a href="#ckrqzj">1.本类说明</a></blockquote></li>
+          <li><blockquote><a href="#sczzj">2.删除子组件</a></blockquote></li>	
+          <li><blockquote><a href="#scsyzzj">3.删除所有子组件</a></blockquote></li>	
+          <li><blockquote><a href="#sczdwzzzj">4.删除指定位置子组件</a></blockquote></li>	
+          <li><blockquote><a href="#sczdfwzzj">5.删除指定范围子组件</a></blockquote></li>	
+          <li><blockquote><a href="#quzzj">6.取子组件</a></blockquote></li>	
+          <li><blockquote><a href="#quzzjsm">7.取子组件数目</a></blockquote></li>	
+          <li><blockquote><a href="#qazckrqzj">8.取安卓窗口容器组件</a></blockquote></li>	
+          <li><blockquote><a href="#qjdzzj">9.取焦点子组件</a></blockquote></li>	
+      
+			 <li><blockquote><a href="#cczzj">10.查找子组件位置</a></blockquote></li>	
+          <li><blockquote><a href="#tjzzj">11.添加子组件</a></blockquote></li>	
+       <!--   <li><blockquote><a href="#fgdzsj">12.分割动作事件（读写）</a></blockquote></li>	-->
+          <li><blockquote><a href="#zzjjd">12.子组件焦点（读写）</a></blockquote></li>	
+
+          <li><blockquote><a href="#nbjqzzj">13.内边剪切子组件（写）</a></blockquote></li>	
+          <li><blockquote><a href="#zzzzjjt">14.支持子组件监听（写）</a></blockquote></li>	
+   
+          <li><blockquote><a href="#zzjbsc">15.子组件被删除（事件）</a></blockquote></li>	
+          <li><blockquote><a href="#zzjbjr">16.子组件被加入（事件）</a></blockquote></li>	
+      				
+		</ol>	
+		
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>窗口容器组件实例讲解</h2> <a name="ckrqzj"></a>
+<p><strong>作者：创世魂</strong></p>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left">本类是属于窗口容器组件的基础类，所有的容器类组件都会继承自本类。</p>
+	<p align="left">例如：<strong>线性布局器，帧布局器，滚动容器</strong>类组件等都继承了本类中的所有方法。</p>
+	<p align="left">除此之外<b>“窗口”</b>也属于容器，当前窗口中可以使用“取窗口容器组件()”</b>方法取出当前窗口的容器。</p>
+	<p align="left">注意：本方法取出的对象，无法监听组件<b>“子组件被删除”</b>和<b>“子组件被加入”</b>事件。</p>
+	<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="sczzj"></a><a name="zzzzjjt"></a><a name="zzjbsc"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除子组件</font><br>
+<font style="font-size: 12pt; font-weight:700">● 支持子组件监听（写）</font><br>	
+<font style="font-size: 12pt; font-weight:700">● 子组件被删除（事件）</font><br>		
+<p align="left">&nbsp;</p>	
+<p align="left"><b>“删除子组件”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本方法可以删除容器内的指定组件。</p>
+	<p align="left"><img border="0" src="RongQi_images/266.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left"><b>“支持子组件监听（写）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，本属性值设置为真，可监听<b>“子组件被删除”</b>或<b>“子组件被加入”</b>事件。</p>
+	<p align="left">注意：本属性无法监听窗口本身的子组件被删除，只能监听<b>“线性布局器”</b>或<b>“滚动容器”</b>类的子组件被删除。</p>
+	<p align="left"><img border="0" src="RongQi_images/266a.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left"><b>“子组件被删除（事件）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，当<b>“支持子组件监听”</b>为真时，会发送本事件。</p>
+	<p align="left"><img border="0" src="RongQi_images/266b.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">界面准备如下图：</p>
+<blockquote>
+  <p align="left">拖放一个线性布局，在布局器内依次放入<b>“按钮1”</b>，<b>“按钮2”</b>和<b>“文本框1”</b>。</p>
+	<p align="left"><img src="RongQi_images/266c.png" width="538" height="526" border="0" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写（1）：</p>
+<blockquote>
+  <p align="left">保存界面布局后，右键线性布局器，选择<b>“事件接收方法”</b>。</p>
+	<p align="left"><img border="0" src="RongQi_images/266d.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写（2）：</p>
+<blockquote>
+	<p align="left">可以将<b>“子组件被加入”</b>和<b>“子组件被删除”</b>两个事件全部添加。</p>
+  <p align="left">稍后会讲解<b>“被加入”</b>事件。</p>
+	<p align="left"><img border="0" src="RongQi_images/266e.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写（3）：</p>
+<blockquote>
+	<p align="left">指定来源对象后，定义<b>“文本框”</b>变量，通过<b>“所删除子组件”</b>参数调用<b>“取窗口组件()”</b>。</p>
+	<p align="left">将取出的对象强转<b>“文本框”</b>后赋值给定义的文本框变量。</p>
+	<p align="left">最后可通过<b>“文本框组件.内容”</b>取出被删除组件的标题信息。</p>
+	<p align="left"><img border="0" src="RongQi_images/266f.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在<b>“按钮1”</b>被点击下，通过<b>“线性布局器1”</b>调用<b>“支持子组件监听”</b>属性，属性值设置为真。</p>
+	<p align="left">随后通过布局器调用<b>“删除子组件”</b>方法删除<b>“文本框1”</b>。</p>
+	<p align="left"><img border="0" src="RongQi_images/266g.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">可以看到<b>“按钮1”</b>被点击后，成功弹出了<b>“文本框1”</b>的内容。</p>
+	<p align="left">并且<b>“文本框1”</b>也被成功删除。</p>
+	<p align="left"><img border="0" src="RongQi_images/267.gif" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="tjzzj"></a><a name="zzjbjr"></a>
+<font style="font-size: 12pt; font-weight:700">● 添加子组件</font><br>
+<font style="font-size: 12pt; font-weight:700">● 子组件被加入（事件）</font>	
+<p align="left">&nbsp;</p>	
+<p align="left"><b>“添加子组件”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本方法可以给当前容器添加组件。</p>
+	<p align="left">参数1：输入要添加的组件。</p>
+	<p align="left">参数2：如果当前为空对象，则添加在所有组件的后面。如果不为空在添加在本参数组件的前面。</p>
+	<p align="left"><img border="0" src="RongQi_images/277.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left"><b>“子组件被加入（事件）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，当<b>“支持子组件监听”</b>为真时，会发送监听事件。</p>
+	<p align="left">注意：本事件无法监听窗口本身的子组件被添加，只能监听<b>“线性布局器”</b>或<b>“滚动容器”</b>类的子组件被添加。</p>
+	<p align="left"><img border="0" src="RongQi_images/278.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写（1）：</p>
+<blockquote>
+  <p align="left">在上一个方法的代码上，简单修改即可。</p>
+	<p align="left">例如：增加一个<b>“编辑框”</b>变量，调用本方法添加即可。</p>
+	<p align="left">然后可以调用<b>“置需求尺寸”</b>方法，设置宽度和高度。</p>
+	<p align="left"><img border="0" src="RongQi_images/279.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写（2）：</p>
+<blockquote>
+  <p align="left">在<b>“子组件被加入”</b>事件下，输入如下代码。</p>
+  <p align="left">可以看出和<b>“子组件被删除”</b>事件下的代码类似，只是组件类型不同。</p>
+	<p align="left"><img src="RongQi_images/280.png"  border="0" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>后成功出现一个编辑框，并且新创建的<b>“编辑框”</b>内也出现了对应的内容。</p>
+	<p align="left"><img border="0" src="RongQi_images/281.gif" ></p>
+</blockquote>
+	
+	
+	
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="scsyzzj"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除所有子组件</font>
+<p align="left">&nbsp;</p>	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">顾名思义，本方法的作用就是删除容器内所有的子组件。</p>
+	<p align="left">如果通过<a href="a_win.htm#qckrqzj"><b>“取窗口容器组件()”</b></a>进行删除，那么当前窗口所有组件将会被删除。</p>
+	<p align="left"><img border="0" src="RongQi_images/268.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">直接在<b>“取窗口容器组件()”</b>后调用本方法即可。</p>
+	<p align="left">当然也可以通过<b>“线性布局器1”</b>来调用本方法。</p>
+	<p align="left">通过<b>“线性布局器1”</b>来调用，只会删除<b>“线性布局器”</b>内的所有组件，布局器外的不受影响。</p>
+	<p align="left"><img border="0" src="RongQi_images/269.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+  <p align="left">点击<b>“按钮1”</b>后，可以看到所有的组件都被删除了。</p>
+	<p align="left"><img border="0" src="RongQi_images/270.gif" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="sczdwzzzj"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除指定位置子组件</font>
+<p align="left">&nbsp;</p>	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">顾名思义，删除指定索引的子组件。</p>
+	
+	<p align="left"><img border="0" src="RongQi_images/271.png" ></p>
+	<p align="left">&nbsp;</p>	
+	<p align="left">索引位置从0开始，组件索引按照组件排列顺序，如下图所示。</p>
+	<p align="left">如果<b>“文本框1”</b>和<b>“按钮2”</b>调换位置，那么<b>“文本框1”</b>就会变成<b>“索引1”</b></p>
+	<p align="left"><img border="0" src="RongQi_images/272a.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">此处调用本方法删除<b>“索引1”</b>，此处即删除<b>“按钮2”</b>。</p>
+	<p align="left"><img border="0" src="RongQi_images/272.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+  <p align="left">最终可以看到<b>“按钮2”</b>被删除。</p>
+	<p align="left"><img border="0" src="RongQi_images/273.gif" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="sczdfwzzj"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除指定范围子组件</font>
+<p align="left">&nbsp;</p>	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">顾名思义，删除指定索引范围内的子组件。</p>
+	<p align="left">参数1：填写首个要删除的索引位置即可。</p>
+	<p align="left">参数2：填写想要删除的数量即可。</p>
+	<p align="left"><img border="0" src="RongQi_images/274.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">直接调用本方法，填写对应参数即可。</p>
+	<p align="left">此处填写的参数意思就是：从<b>“索引1”</b>位置开始删除，并且删除<b>“两个”</b>组件。</p>
+	<p align="left"><img border="0" src="RongQi_images/275.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+  <p align="left">最终可以看到<b>“按钮2”</b>和<b>“文本框1”</b>被删除。</p>
+	<p align="left"><img border="0" src="RongQi_images/276.gif" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="quzzj"></a>
+<font style="font-size: 12pt; font-weight:700">● 取子组件</font>
+<p align="left">&nbsp;</p>	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本方法可以取出子组件。</p>
+	<p align="left">参数1：直接填写想要取的组件索引即可。</p>
+	<p align="left"><img border="0" src="RongQi_images/281.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在<b>“按钮1”</b>被点击下，调用本方法取<b>“索引2”</b>的组件。</p>
+	<p align="left">通过设计器得知，索引2是文本框，因此需要强转<b>“文本框”</b>赋值给定义的<b>“文本框组件”</b>变量。</p>
+	<p align="left"><img border="0" src="RongQi_images/282.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最后<b>“按钮1”</b>被点击后，成功修改了<b>“文本框1”</b>的内容。</p>
+	<p align="left"><img border="0" src="RongQi_images/283.gif" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="quzzjsm"></a>
+<font style="font-size: 12pt; font-weight:700">● 取子组件数目</font>
+<p align="left">&nbsp;</p>	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">注意：子组件内的子组件并不会计算。</p>
+	<p align="left">本方法可参考<a href="#qckrqzj"><b>“窗口操作->取窗口容器组件()”</b></a>方法，此处不再详细介绍。</p>
+	<p align="left"><img border="0" src="RongQi_images/284.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="qazckrqzj"></a>
+<font style="font-size: 12pt; font-weight:700">● 取安卓窗口容器组件</font>
+<p align="left">&nbsp;</p>	
+<p align="left"><b>“取安卓窗口容器组件”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本方法可取出<b>“安卓窗口容器组件”</b>对象。</p>
+	<p align="left">通过本对象可执行<b>“创建窗口组件”</b>或者<b>“取窗口组件”</b>方法。</p>
+	<p align="left"><img border="0" src="RongQi_images/285.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left"><b>“安卓窗口容器组件”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本对象中共有三个方法，<b>“取窗口容器组件”</b>会取出当前<b>“窗口容器组件”</b>类。</p>
+	<p align="left"><b>“创建窗口组件”</b>和<b>“取窗口组件”</b>继承自<b>“安卓窗口组件”</b>类。</p>
+	<p align="left">此例程以<b>“创建窗口组件”</b>为例，继续点击查看帮助文档。</p>
+	<p align="left"><img border="0" src="RongQi_images/285a.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left"><b>“创建窗口组件”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法共有三个参数，动态调用时<b>“参数1”</b>忽略。</p>
+	<p align="left">参数2：填写指定的窗口组件类型。</p>
+	<p align="left">例如：创建编辑框组件，直接输入<b>“编辑框”</b>即可。</p>
+	<p align="left">参数3：通常情况下，为空即可。</p>
+	<p align="left"><img border="0" src="RongQi_images/285b.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义<b>“编辑框”</b>变量，调用<b>“取安卓窗口容器组件()”</b>方法后可以继续调用<b>“创建窗口组件()”</b>方法。</p>
+	<p align="left">参数内直接输入<b>“编辑框”</b>即可。</p>
+	<p align="left">然后将其赋值给<b>“编辑框组件”</b>变量。</p>
+	<p align="left">紧接着可调用<b>“添加子组件”</b>方法，将编辑框添加到窗口。</p>
+	<p align="left">最后可以设置编辑框内容。</p>
+	<p align="left"><img border="0" src="RongQi_images/286.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最后可以看到成功添加了编辑框，并且也显示了指定内容。</p>
+	<p align="left"><img border="0" src="RongQi_images/287.gif" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="qjdzzj"></a>
+<font style="font-size: 12pt; font-weight:700">● 取焦点子组件</font>
+<p align="left">&nbsp;</p>	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可以取出带有焦点的组件，通常为<b>“编辑框”</b>组件。</p>
+	<p align="left">如果没有焦点组件或者该组件不是火山窗口组件，则返回空对象。</p>
+	<p align="left"><img border="0" src="RongQi_images/288.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接判断本方法的返回值是否为空对象，然后弹出对应提示。</p>
+	<p align="left">在本例程中，本方法必然返回空对象，因为窗口内没有编辑框。</p>
+	<p align="left"><img border="0" src="RongQi_images/289.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终的结果表明，本方法的返回值确实是空对象。</p>
+	<p align="left"><img border="0" src="RongQi_images/290.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="cczzj"></a>
+<font style="font-size: 12pt; font-weight:700">● 查找子组件位置</font>
+<p align="left">&nbsp;</p>	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本方法可取出组件所在索引位置。</p>
+	<p align="left">返回值必定大于0，如果返回值等于-1，则表示该组件不存在。</p>
+	<p align="left"><img border="0" src="RongQi_images/291.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义一个整数变量，然后通过本方法查找<b>“文本框1”</b>组件，赋值给此变量。</p>
+	<p align="left">随后可调用<b>“如果”</b>来判断此变量是否等于<b>“-1”</b>。</p>
+	<p align="left">如果不等于-1，就弹出当前文本框1的索引位置。</p>
+	<p align="left"><img border="0" src="RongQi_images/292.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">按钮1被点击后，成功弹出<b>“文本框1”</b>的位置。</p>
+	<p align="left"><img border="0" src="RongQi_images/293.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="nbjqzzj"></a>
+<font style="font-size: 12pt; font-weight:700">● 内边剪切子组件（写）</font>
+<p align="left">&nbsp;</p>	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性的作用，就是来设置是否根据容器的内边距对容器内的组件进行裁剪。</p>
+	<p align="left">本属性值默认为真，通常情况下不需要调用本属性设置，默认就是裁剪状态。</p>
+	<p align="left"><img border="0" src="RongQi_images/294.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">界面准备如下图：</p>
+<blockquote>
+	<p align="left">首先在界面设计器固定线性布局的高度和宽度。</p>
+	<p align="left"><img src="RongQi_images/295.png" width="736" height="778" border="0" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">随后直接调用<b>“置内边距”</b>方法分别设置四个边的边距。</p>
+	<p align="left"><img border="0" src="RongQi_images/296.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">最后可以看到<b>“按钮1”</b>被点击后，所有的组件都变小了，这是因为被内边距裁剪的缘故。</p>
+	<p align="left"><img border="0" src="RongQi_images/297.gif" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="zzjjd"></a>
+<font style="font-size: 12pt; font-weight:700">● 子组件焦点（读写）</font>
+<p align="left">&nbsp;</p>	
+<p align="left"><b>“子组件焦点（写）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">设置当前容器内的子组件焦点模式，通过<b>“子组件焦点模式.XXX”</b>指定。</p>
+	<p align="left"><img border="0" src="RongQi_images/298.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left"><b>“子组件焦点（读）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，读取当前的子组件焦点模式。</p>
+	<p align="left"><img border="0" src="RongQi_images/299.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">界面准备如下图：</p>
+<blockquote>
+	<p align="left">打开界面设计器，增加两个编辑框，一个在布局器内，一个在布局器外。</p>
+	<p align="left"><img border="0" src="RongQi_images/300.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在成员变量<b>“线性布局器1”</b>中增加属性值<b>“子组件焦点”</b>，选择属性值<b>“阻止子组件”</b>。</p>
+	<p align="left"><b>“按钮1”</b>被点击后，分别判断当前的子组件焦点状态，然后弹出对应提示。</p>
+	<p align="left">备注：弹出的提示，就是对应类型的帮助说明。</p>
+	<p align="left"><img border="0" src="RongQi_images/301.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">可以看到运行软件后，直接是<b>“编辑框2”</b>获得焦点。</p>
+	<p align="left">如果设置的焦点模式为<b>“先于子组件”</b>或<b>“后于子组件”</b>，那么此时必定是<b>“编辑框1”</b>获得焦点。</p>
+	<p align="left">最后点击<b>“按钮1”</b>子组件焦点模式正常读取。</p>
+	<p align="left"><img border="0" src="RongQi_images/302.gif" ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

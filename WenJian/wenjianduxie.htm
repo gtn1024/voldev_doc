@@ -1,0 +1,606 @@
+
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+
+</head>
+
+<body>
+
+<div class="xuanfu">
+<ul class="menu">
+
+	<ol>
+        <li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'newsdown')" >一.文件读写操作类<span>(可收缩)</span></h6></li>
+		<ol id="newsdown">
+			<li><blockquote><a href="#wj_cjzml">1.创建子目录</a></blockquote></li>
+			<li><blockquote><a href="#wj_drwbwj">2.读入文本文件</a></blockquote></li>
+			<li><blockquote><a href="#wj_drwbwjh">3.读入文本文件行</a></blockquote></li>
+            <li><blockquote><a href="#wj_drwj">4.读入文件</a></blockquote></li>
+    		<li><blockquote><a href="#wj_fzwj">5.复制文件</a></blockquote></li>
+    		<li><blockquote><a href="#wj_scwj">6.删除文件</a></blockquote></li>
+    		<li><blockquote><a href="#wj_wjsfcz">7.文件是否存在</a></blockquote></li>
+    		<li><blockquote><a href="#wj_xcwbwj">8.写出文本文件</a></blockquote></li>
+            <li><blockquote><a href="#wj_xcwbwjh">9.写出文本文件行</a></blockquote></li>
+    		<li><blockquote><a href="#wj_xcwj">10.写出文件</a></blockquote></li>
+    		<li><blockquote><a href="#wj_cmmwj">11.重命名文件</a></blockquote></li>
+		</ol>
+		
+	</ol>
+
+  
+</ul>
+
+</div>
+
+<p align="left">
+<h2>文件读写操作类操作实例讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+	<font style="font-size: 12pt; font-weight:700">● 辅助说明</font><br/>
+     	<blockquote style="color: #E91C1F">
+		<p align="left">注意：从安卓10（API29）开始（安卓11彻底禁止），谷歌针对安卓文件系统进行了大修改，逐渐开始禁止软件操作存储卡目录。</p>
+		<p align="left">其目的是为了规范软件本身文件管理，防止软件滥用文件创建功能和软件隐私保护，防止被第三方不法软件获取软件数据。</p>
+        <p align="left">所有软件只能操作私有数据目录，对私有目录内容进行读写。</p>   
+        <p align="left">在火山中即使用<a href="neichu.htm#qnbsysjbm">“取内部私有数据目录()”</a>和<a href="waichu.htm#qwbsysjzml">“取外部私有数据子目录()”</a>，取出操作目录来进行文件读写操作。</p>   
+	</blockquote>
+
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 文件操作准备工作</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">本类需要设计一个<b>如下图</b>所示的APP界面。</p>
+<blockquote>
+<p align="left">从上到下依次是<b>“编辑框1”</b>，<b>“编辑框2”</b>，<b>“按钮1”</b>，<b>“图片框1”</b></p>
+
+  <p align="left"><img border="0" src="wj_images/jm.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">我们右键<b>“窗口”</b>选择<b>“添加虚拟方法”</b>，打开<b>“启动类”</b>窗口的所有的<b>“窗口事件”</b></p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/jm1.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开后选择<b>“通知_被创建”</b>，点击<b>“添加”</b>。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/jm2.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">点击后出现下图的<b>“通知_被创建”</b>方法。</p>
+
+<blockquote>
+	<p align="left">1.创建一个<b>“文件名类”</b>的局部变量（名称随意），注意参考属性不要忘记。</p>
+    <p align="left">2.利用<b>“取外部存储空间根目录”</b>的方法，获取到存储卡的<b>“文件名类”</b>，并且赋值给定义的<b>“文件名类”</b>变量。</p>
+    <p align="left">3.用定义的<b>“变量”</b>的取文件名方法，把<b>“文件名”</b>类转换成<b>“文本型”</b>的路径形式，这样就可以取出<b>“存储卡”</b></p>
+	<p align="left">存储用户数据的路径（也就是打开手机文件管理器的默认路径），把取出来的路径放到<b>“编辑框”</b>显示出来，方便接下来的操作。</p>
+    
+    <p align="left"><font color="#FF0000"><b>注意:</b></font>建议<b>“取文件名”</b>结尾加上一个<b>“/”</b>，默认取出的<b>“路径”</b>是没有这个<b>“/”</b>的。</p>
+    
+    <p align="left"><font color="#FF0000"><b>再次注意：</b></font>
+    软件通常操作的<b>“目录”</b>均是<b>“外部存储空间根目录”</b>。 </p>
+	<p align="left">如果需要操作安卓<b>“内部数据”</b>目录，则手机需要获取<b>“Root权限”</b>才可以操作。
+    </p>
+    
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/jm3.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<h2>一、文件读写操作类</h2>
+
+<p align="left">&nbsp;</p>
+<a name="wj_cjzml"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建子目录</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到<b>“创建子目录”</b>有一个<b>“目录名”</b>参数和一个<b>“逻辑”</b>返回值。</p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj1.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">直接将<b>“编辑框”</b>的内容写入<b>“参数”</b>，用<b>“如果”</b>命令判断是否创建成功。</p>
+<p align="left">注意：如果目标<b>“目录”</b>存在也会返回假。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj1a.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">调试运行后，我们在<b>“数据路径”</b>后输入要创建的<b>“目录名”</b>，<b>“左图”</b>创建成功，<b>“右图”</b>重复第二次创建<b>“返回假”</b>。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj1y.png">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img border="0" src="wj_images/wj1y2.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开手机<b>“文件管理器”</b>，也可以看到我们创建的<b>“目录”</b>。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj1y3.png">
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="wj_drwbwj"></a>
+<font style="font-size: 12pt; font-weight:700">● 读入文本文件方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容可以看到有<b>“两个”</b>参数和一个<b>“文本”</b>返回值。</p>
+<p align="left">注意：提前准备一个txt<b>“文本文件”</b>，放入<b>“火山软件”</b>文件夹内。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj2.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">直接读取<b>“编辑框1”</b>作为<b>“参数1”</b>，参数二里面直接放文件对应的<b>“文编编码”</b>即可，最后让<b>“文本内容”</b>赋值给<b>“编辑框2”</b>显示即可。</p>
+
+<p align="left">因我放的"文件编码"是"GBK"的，所以这里我用的是"GBK编码"，安卓通常情况下使用的是<b>“UTF-8”</b>编码。</p>
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj2a.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">运行后<b>“编辑框2”</b>成功读取提前放置的<b>“文本文件”</b>。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj2y.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="wj_drwbwjh"></a>
+<font style="font-size: 12pt; font-weight:700">● 读入文本文件行方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到<b>“读入文本文件行”</b>有两个和<b>“读入文本文件”</b>一样参数，不同之处就是这里的返回值是<b>“文本数组”</b></p>
+<p align="left">从名称可以看出它返回的是<b>“文本文件”</b>内容行的文本数组类。</p>
+<p align="left">注意：可以提前在<b>“文本文件”</b>内多输入几行文本。</p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj3.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义<b>“两个”</b>局部变量，保留<b>“读入文本文件”</b>代码，放下对比。</p>
+<p align="left">将<b>“读入文本文件行”</b>方法直接赋值给定义的<b>“文本数组变量”</b>。</p>
+<p align="left">用定义的变量名称的<b>“取成员数”</b>方法，取出数组数量然后赋值给<b>“成员数”</b>变量，最后<b>“到文本”</b>转换提供给信息框显示。</p>
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj3a.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">调试运行后效果如下，成功的判断<b>“文本文件”</b>内的行数。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj3y.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="wj_drwj"></a>
+<font style="font-size: 12pt; font-weight:700">● 读入文件方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容可以看到，该方法只有一个<b>“文本型”</b>的文件名参数和一个<b>“字节数组”</b>返回值。</p>
+<p align="left">备注：提前准备一张<b>“图片”</b>放到<b>“火山软件”</b>文件夹内。</p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj4.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义一个<b>“字节”</b>数组变量，然后<b>“读入文件”</b>方法给变量赋值，最后使用<b>“图片框”</b>的<b>“置图片数据”</b>的方法加载<b>“字节变量”</b>到<b>“图片框1”</b></p>
+
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj4a.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">编译运行后，成功取出了提前放好的一张<b>“png”</b>图片。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj4y.png"></p>
+</blockquote>
+
+
+
+
+<p align="left">&nbsp;</p>
+<a name="wj_fzwj"></a>
+<font style="font-size: 12pt; font-weight:700">● 复制文件方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容可以看到<b>“复制文件”</b>有两个<b>“文本参数”</b>和一个是否覆盖的<b>“逻辑参数”</b>，复制成功返回<b>“真”</b>，失败返回<b>“假”</b></p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj5.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">参数<b>“1和2”</b>直接填写<b>“编辑框1和2”</b>的内容，<b>“参数3”</b>这里就填写<b>“真”</b>（根据实际需求正确填写）</p>
+
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj5a.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">运行后在<b>“编辑框2”</b>也放上存储卡<b>“路径”</b>，并且输入上对应的目录名和<b>“复制后文件名”</b>。</p>
+<p align="left"><b>“左图：”</b>提示复制成功。<b>“右图：”</b>文件管理器内也成功显示。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj5y.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img border="0" src="wj_images/wj5y2.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="wj_scwj"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除文件方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容可以看到<b>“删除文件”</b>方法只有一个<b>“文本参数”</b>和一个<b>“逻辑返回值”</b>。</p>
+<p align="left"><b>“注意：”</b>红框内的提示，如果要<b>“删除目录”</b>，必须保证<b>“目录”</b>内是<b>“空的”</b>。</p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj6.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">代码编写也很简单，直接把<b>“编辑框1”</b>放到<b>“参数1”</b>内，运行后在<b>“用户数据目录”</b>的基础上增加你想要删除的<b>“目录”</b>或者<b>“文件名”</b>即可。</p>
+
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj6a.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">运行后我们可以删除掉，刚才的<b>“复制版文本文件”</b>，<b>“左图”</b>提示删除成功，<b>“右图”</b>文件管理器也成功消失。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj6y.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img border="0" src="wj_images/wj6y2.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">如果我们删除<b>“火山软件”</b>目录，则会提示<b>“删除失败”</b>，因为<b>“目录内存在内容”</b>。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj6y3.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="wj_wjsfcz"></a>
+<font style="font-size: 12pt; font-weight:700">● 文件是否存在方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容我们可以看到有一个<b>“文本参数”</b>和一个<b>“逻辑”</b>返回值。可以判断<b>“文件”</b>或者<b>“目录”</b>是否存在。</p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj7.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">代码编写，直接将<b>“编辑框1”</b>的内容放到<b>“参数1”</b>中，然后用<b>“如果”</b>命令判断该方法返回的<b>“逻辑值”</b>，如果等于<b>“真”</b>则提示<b>“存在”</b>，否则相反。</p>
+
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj7a.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">左图：判断<b>“火山软件”</b>目录会提示<b>“存在”</b>。右图：我们随便输入一个名字，就会提示<b>“不存在”</b>。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj7y1.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img border="0" src="wj_images/wj7y.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="wj_xcwbwj"></a>
+<font style="font-size: 12pt; font-weight:700">● 写出文本文件方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容可以看到<b>“写出文本文件”</b>有两个<b>“文本参数”</b>，一个是否覆盖的<b>“逻辑参数”</b>和一个<b>“文本编码参数”</b>，最后也是返回的<b>“逻辑值”</b>。</p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj8.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">代码编写非常简单，直接<b>“编辑框1和2”</b>的内容写到<b>“参数1和2”</b>，覆盖填写<b>“真”</b>。</p>
+<p align="left">要注意的是，最后的<b>“编码”</b>建议填写<b>“UTF8编码”</b>。</p>
+<p align="left">还有，必须保证<b>“目录正确”</b>并且<b>“目录存在”</b>才能成功<b>“写出文本文件”</b>。</p>
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj8a.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">左图：路径正确<b>“成功写出”</b>。右图：输入了一个<b>“不存在”</b>的目录，会<b>“无法保存”</b>。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj8y.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img border="0" src="wj_images/wj8y1.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开文件管理器就可以看到我们新写的文件了。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj8y2.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="wj_xcwbwjh"></a>
+<font style="font-size: 12pt; font-weight:700">● 写出文本文件行方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助我们可以看到该方法和<b>“写出文本文件”</b>一样，有四个参数，不同之处就是这里保存的是<b>“文本数组类”</b>。</p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj9.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">我们这里可以用<b>“读入文本文件行”</b>的方法，来读取一个<b>“文件数组类”</b>的变量。</p>
+<p align="left">然后将定义的变量填入<b>“写出文本文件行”</b>的<b>“参数2”</b>中（这里的编码，必须和上面的一致）。</p>
+<p align="left">最后用<b>“如果”</b>来判断<b>“写出文本文件”</b>的<b>“返回值”</b>即可。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj9a.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">左图：提示成功。右图：文件管理器也成功显示。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><i></i><img border="0" src="wj_images/wj9y.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img border="0" src="wj_images/wj9y1.png"></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="wj_xcwj"></a>
+<font style="font-size: 12pt; font-weight:700">● 写出文件方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容可以看到<b>“写出文件”</b>方法只有<b>“三个参数”</b>和一个<b>“逻辑返回值”</b>。</p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj10.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义一个<b>“字节数组”</b>变量，使用<b>“文本到字节数组”</b>方法，将<b>“编辑框2”</b>的内容转换赋值给定义的<b>“字节数组变量”</b>。</p>
+<p align="left"><b>“写出文件”</b>参数一直接依然还是<b>“编辑框1”</b>的内容，参数二放入<b>“字节数组变量”</b>，<b>“参数三”</b>根据实际需求填写。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj10a.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">左图：执行后<b>“保存”</b>成功。右图：文件管理器内也看到了对应的文件。</p>
+<p align="left"></p>
+  <p align="left"><img border="0" src="wj_images/wj10y.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img border="0" src="wj_images/wj10y1.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="wj_cmmwj"></a>
+<font style="font-size: 12pt; font-weight:700">● 重命名文件方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容可以看到<b>“重命名”</b>有<b>“两个参数”</b>，并且也同样支持重命名<b>“文件和目录”</b>。</p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj11.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">代码编写，直接将<b>“编辑框1”</b>和<b>“编辑框2”</b>的内容填入参数即可，实际应用过程中，填入自己需要<b>“重命名”</b>的文件或者目录的路径。</p>
+
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj11a.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">左图：将<b>“火山软件”</b>目录，成功的重命名为<b>“火山软件开发平台”</b></p>
+<p align="left">右图：文件管理器内也发生改变，证明重名成功。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj11y.png">
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img border="0" src="wj_images/wj11y1.png">
+  </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+
+</body>
+</html>

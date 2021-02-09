@@ -1,0 +1,210 @@
+
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+<div class="xuanfu">
+<ul class="menu">
+  <!--<li><h4>二维及条形码类</h4></li>-->
+	<ol>
+		
+			<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.二维及条形码类<span>(可收缩)</span></h6></li>
+		<ol id="new1">
+			<li><blockquote><a href="#ewjtxmlsm">1.本类说明</a></blockquote></li>
+			<li><blockquote><a href="#ewmsm">2.扫描指定位图</a></blockquote></li>
+			<li><blockquote><a href="#ewmsmzdtx">3.扫描指定图像</a></blockquote></li>
+			<li><blockquote><a href="#ewmqdsm">4.启动扫描</a></blockquote></li>
+			<li><blockquote><a href="#ewmscerm">5.生成二维码</a></blockquote></li>
+			<li><blockquote><a href="#ewmtiaoma">6.生成条码</a></blockquote></li>
+			<li><blockquote><a href="#ewmsm">7.扫描图像完毕(事件)</a></blockquote></li>
+		</ol>
+	
+		
+	</ol>
+</ul>
+</div>	
+
+
+
+<p align="left">
+<h2>二维及条形码类实例讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+  
+     <a name="ewjtxmlsm"></a>
+<font style="font-size: 12pt; font-weight:700">● 帮助说明</font><br/>
+<br/>
+<blockquote>
+ <p align="left">本类是基于<b>“Zxing3.3”</b>版本的开源库进行封装，用于条码和二维码的扫码和生成支持。</p>
+    <p align="left">本类和<b>“二维码类”</b>的不同之处在于，本类扫码和生成的速度更快一些，适用于一些快速扫描的应用场景。</p>
+    <p align="left"><font color="#F70408">注意：本类位于<strong>“高级条码及二维码支持”</strong>模块中，欲使用本类需添加其模块。</font></p>
+	<p align="left"><img border="0" src="ewm_images/help/1.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>	<a name="ewmsm"></a>
+<font style="font-size: 12pt; font-weight:700">● 扫描指定位图</font><br>
+<font style="font-size: 12pt; font-weight:700">● 扫描图像完毕(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“扫描指定位图”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本方法可扫描指定位图类对象。</p>
+    <p align="left">最终的扫码结果将会通过<b>“扫描图像完毕”</b>事件返回。</p>
+	<p align="left"><img border="0" src="ewm_images/help/2.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“扫描图像完毕”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">调用<b>“扫描指定位图”</b>方法后会触发本事件，并返回两个参数。</p>
+    <p align="left">参数1：返回是否扫描成功。</p>
+    <p align="left">参数2：返回扫描结果。</p>
+	<p align="left"><img border="0" src="ewm_images/help/3.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、给<b>“图片框1”</b>的图片属性导入一张二维码图片。</p>
+    <p align="left">2、定义类型为<b>“二维及条形码类”</b>的成员变量，名称随意。</p>
+    <p align="left">3、添加按钮被单击事件，当<b>“按钮1”</b>被单击时，取出图片框的图片，并将其强制转换成<b>“位图可绘制对象类”</b>。</p>
+    <p align="left">4、通过此对象的<b>“取位图()”</b>方法，可取出位图对象，将其放到<b>“扫描指定位图()”</b>方法的参数中即可。</p>
+	<p align="left"><img border="0" src="ewm_images/4.png" ></p>
+	<p align="left">5、添加<b>“扫描图像完毕”</b>事件，判断是否扫描成功，如果成功则在编辑框显示扫描结果，否则弹出扫描失败提示。</p>
+	<p align="left"><img border="0" src="ewm_images/5.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="ewm_images/6.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	<a name="ewmsmzdtx"></a>
+<font style="font-size: 12pt; font-weight:700">● 扫描指定图像</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法共有一个参数<b>“图片路径”</b>，通过本方法可扫描本路径存储的二维码图片。</p>
+    <p align="left">扫描结果同样也是在<b>“扫描图像完毕”</b>事件中返回。</p>
+	<p align="left"><img border="0" src="ewm_images/help/7.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、<b>“按钮1”</b>被点击后调用本方法，参数填写图片路径。</p>
+    <p align="left">注：此处的<b>“/sdcard/”</b>同样可以表示存储卡根目录，如果不想使用<b>“取外部存储空间根目录()”</b>方法课使用本字符串代替。</p>
+    <p align="left">2、添加<b>“扫描图像完毕”</b>事件，并返回扫描结果。</p>
+	<p align="left"><img border="0" src="ewm_images/8.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="ewm_images/9.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	<a name="ewmqdsm"></a>
+<font style="font-size: 12pt; font-weight:700">● 启动扫描</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">打开帮助页可以看到本方法共有12个参数，分别可以设置扫码框的各种功能。</p>
+    <p align="left">此处需要注意的就是<b>“参数1”</b>和<b>“参数2”</b>中的注释，扫码结果会在<b>“通知_获得返回数据”</b>虚拟方法中返回。</p>
+    <p align="left">默认的返回请求码为999.</p>
+	<p align="left"><img border="0" src="ewm_images/help/10.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、使用本方法时，可直接通过<b>“二维及条形码类”</b>调用，无需定义变量。</p>
+    <p align="left">2、添加<b>“通知_获得返回数据”</b>虚拟方法后，首先判断<b>“请求码”</b>是否等于999，此数值要和方法参数中的数值一致。</p>
+    <p align="left">3、然后判断<b>“所返回结果信息”</b>是否不等于空对象，用于防止扫码失败的情况。</p>
+    <p align="left">4、最后就可以通过<b>“所返回结果信息.取附带文本数据 (二维及条形码类.扫码结果)”</b>取出扫码结果。</p>
+	
+	
+	<p align="left"><img border="0" src="ewm_images/13.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="ewm_images/12.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">常见问题：</p>
+<blockquote>
+	<p align="left">如果扫码时出现此问题，是因为软件没有获取相机权限。</p>
+	<p align="left">解决方案1：手动打开系统设置，找到应用权限并赋予当前软件相机权限。</p>
+	<p align="left">解决方案2：动态申请相机权限，参考火山例程中<b>“安卓6动态申请权限”</b>例程。</p>
+	<p align="left"><img border="0" src="ewm_images/11.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	<a name="ewmscerm"></a>
+<font style="font-size: 12pt; font-weight:700">● 生成二维码</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本方法可生成二维码位图。</p>
+    <p align="left">参数1：填写要生成的二维码内容。</p>
+    <p align="left">参数2、3：可设置生成二维码的大小。</p>
+    <p align="left">参数4：如果想让二维码拥有logo，填写本参数即可。</p>
+    <p align="left">注意：本方法为静态方法，可直接通过<b>“二维及条形码类”</b>访问本方法。</p>
+	<p align="left"><img border="0" src="ewm_images/help/14.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、调用当前方法赋值给定义的位图类变量。</p>
+    <p align="left">2、将位图显示在图片框中即可。</p>
+	<p align="left"><img border="0" src="ewm_images/15.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">在编辑框中随便输入一段文本后，点击<b>“按钮1”</b>二维码将会显示在图片框中。</p>
+	<p align="left"><img border="0" src="ewm_images/16.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	<a name="ewmtiaoma"></a>
+<font style="font-size: 12pt; font-weight:700">● 生成条码</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本方法可生成条码数据，返回位图类对象。</p>
+    <p align="left">参数1：如果调用本方法是所处的类为窗口类，则本参数直接填写<b>“本对象”</b>即可，否则填写对应的窗口环境。</p>
+    <p align="left">参数2：填写要生成的条码数据，注意不能填写中文。</p>
+    <p align="left">参数3、4：填写生成的条码高度和宽度，通常情况下，条码的高度要填写一个较小的数值。</p>
+    <p align="left">参数5、6、7：都是用来控制条码下方文本内容，根据自己的需求填写数据即可。</p>
+	<p align="left"><img border="0" src="ewm_images/help/17.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">本方法的使用和<b>“生成二维码”</b>一致，调用当前方法后填写对应参数即可实现条码生成。</p>
+	<p align="left"><img border="0" src="ewm_images/18.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">在编辑框中随便输入一段数字后，点击<b>“按钮1”</b>条码就会显示在图片框中。</p>
+	<p align="left"><img border="0" src="ewm_images/19.gif" ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

@@ -1,0 +1,1696 @@
+
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+
+</head>
+
+<body>
+
+<div class="xuanfu">
+
+  
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'newsleiji')" >一.文件名类<span>(可收缩)</span></h6></li>
+		<ol id="newsleiji">
+			<li><blockquote><a href="#wjm_cj">1.创建</a></blockquote></li>
+			<li><blockquote><a href="#wjm_cj2">2.创建2</a></blockquote></li>
+			<li><blockquote><a href="#wjm_cj3">3.创建3</a></blockquote></li>
+            <li><blockquote><a href="#wjm_cjfmlwjdx">4.创建父目录对象文件对象</a></blockquote></li>
+    		<li><blockquote><a href="#wjm_cjjdljwjdx">5.创建绝对路径文件对象</a></blockquote></li>
+    		<li><blockquote><a href="#wjm_cjjdljwjdx2">6.创建绝对路径文件对象2</a></blockquote></li>
+    		<li><blockquote><a href="#wjm_cjlswj">7.创建临时文件</a></blockquote></li>
+    		<li><blockquote><a href="#wjm_cjml">8.创建目录</a></blockquote></li>
+    		<li><blockquote><a href="#wjm_cjmlnrwjlb">9.创建目录内容文件列表</a></blockquote></li>
+    		<li><blockquote><a href="#wjm_cjxwj">10.创建新文件</a></blockquote></li>
+            <li><blockquote><a href="#wjm_cjzgml">11.创建整个目录</a></blockquote></li>
+			<li><blockquote><a href="#wjm_ljbj">12.路径比较</a></blockquote></li>
+			<li><blockquote><a href="#wjm_cfml">13.取父目录</a></blockquote></li>
+            <li><blockquote><a href="#wjm_qjdlj">14.取绝对路径</a></blockquote></li>
+    		<li><blockquote><a href="#wjm_qjdlj2">15.取绝对路径2</a></blockquote></li>
+    		<li><blockquote><a href="#wjm_qkykjcc">16.取可用空间尺寸</a></blockquote></li>
+    		<li><blockquote><a href="#wjm_qmlnrlb">17.取目录内容列表</a></blockquote></li>
+    		<li><blockquote><a href="#wjm_qqbkjcc">18.取全部空间尺寸</a></blockquote></li>
+    		<li><blockquote><a href="#wjm_qsykjcc">19.取剩余空间尺寸</a></blockquote></li>
+    		<li><blockquote><a href="#wjm_qwjcc">20.取文件尺寸</a></blockquote></li>
+            <li><blockquote><a href="#wjm_qwjm">21.取文件名</a></blockquote></li>
+			<li><blockquote><a href="#wjm_qwljwjm">22.取无路径文件名</a></blockquote></li>
+			<li><blockquote><a href="#wjm_qxtsygml">23.取系统所有根目录</a></blockquote></li>
+            <li><blockquote><a href="#wjm_qzhxgsj">24.取最后修改时间</a></blockquote></li>
+    		<li><blockquote><a href="#wjm_sc">25.删除</a></blockquote></li>
+    		<li><blockquote><a href="#wjm_sfbyc">26.是否被隐藏</a></blockquote></li>
+    		<li><blockquote><a href="#wjm_sfcz">27.是否存在</a></blockquote></li>
+    		<li><blockquote><a href="#wjm_sfkdq">28.是否可读取</a></blockquote></li>
+    		<li><blockquote><a href="#wjm_sfkxr">29.是否可写入</a></blockquote></li>
+    		<li><blockquote><a href="#wjm_sfkzx">30.是否可执行</a></blockquote></li>
+            <li><blockquote><a href="#wjm_sfwjdlj">31.是否为绝对路径</a></blockquote></li>
+            <li><blockquote><a href="#wjm_sfwml">32.是否为目录</a></blockquote></li>
+            <li><blockquote><a href="#wjm_sfwwj">33.是否为文件</a></blockquote></li>
+            <li><blockquote><a href="#wjm_zkdzt">34.置可读状态</a></blockquote></li>
+            <li><blockquote><a href="#wjm_zkxzt">35.置可写状态</a></blockquote></li>
+            <li><blockquote><a href="#wjm_zkzxzt">36.置可执行状态</a></blockquote></li>
+             <li><blockquote><a href="#wjm_zwzd">37.置为只读</a></blockquote></li>
+             <li><blockquote><a href="#wjm_zzhxgsj">38.置最后修改时间</a></blockquote></li>
+             <li><blockquote><a href="#wjm_cmm">39.重命名</a></blockquote></li>
+		</ol>						
+	</ol>
+
+  
+</ul>
+
+</div>
+
+<p align="left">
+<h2>文件名类操作实例讲解</h2><a name="wjm_cj"></a>
+<p><b>作者：创世魂</b></p>
+
+<p align="left">&nbsp;</p>
+		<font style="font-size: 12pt; font-weight:700">● 辅助说明</font><br/>
+     	<blockquote style="color: #E91C1F">
+		<p align="left">注意：从安卓10（API29）开始（安卓11彻底禁止），谷歌针对安卓文件系统进行了大修改，逐渐开始禁止软件操作存储卡目录。</p>
+		<p align="left">其目的是为了规范软件本身文件管理，防止软件滥用文件创建功能和软件隐私保护，防止被第三方不法软件获取软件数据。</p>
+        <p align="left">所有软件只能操作私有数据目录，对私有目录内容进行读写。</p>   
+        <p align="left">在火山中即使用<a href="neichu.htm#qnbsysjbm">“取内部私有数据目录()”</a>和<a href="waichu.htm#qwbsysjzml">“取外部私有数据子目录()”</a>，取出操作目录来进行文件读写操作。</p>   
+	</blockquote>	
+<p align="left">&nbsp;</p>
+<h6>本类所有方法的调用，必须用<b>“文件名类.方法名”</b></h6>
+<h6>或者定义一个类型为<b>“文件名类”</b>的变量，然后用<b>“变量名.方法名”</b>的形式调用。</h6>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 创建方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到"创建"有一个"文件名"参数和一个"文件名类"的对象返回值。</p>
+<p align="left">顾名思义，就是创建指定文件名的文件对象。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj12.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">可以定义一个<b>“文件名类变量”</b>，然后用<b>“文件名类.创建()”</b>方法给变量赋值，参数直接写<b>“编辑框1”</b>的内容。</p>
+<p align="left">可以利用定义的<b>“文件名类变量”</b>的<b>“取文件名”</b>方法取出<b>“文件名类”</b>对象中存储的<b>“文件”</b>或<b>“目录”</b>的路径。 </p>
+<p align="left">注意：定义的<b>“文件名类变量”</b>一定要设置<b>“参考”</b>属性。</p>
+<p align="left">注意黄色箭头：用<b>“变量类”</b>访问类方法的时候，<b>“取文件名”</b>的<b>“参数1文件名类”</b>不用写。</p>
+
+  <p align="left"><img border="0" src="wj_images/wj13.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">运行后我们输入<b>“火山软件开发平台”</b>这个目录，执行后成功的创建<b>“文件类”</b>，并且也成功的利用<b>“取文件名”</b>方法将创建的其取出。</p>
+<p align="left">注意：输入的目录内，有结束的<b>“路径符号"，但是创建<b>“文件名类”</b>后重新取出后<b>“路径符号”</b>会消失。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj14.png">
+
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="wjm_cj2"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建2方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到<b>"创建2"</b>有两个<b>“文本型参数”</b>和一个<b>“文件类”</b>的返回值。</p>
+<p align="left">顾名思义就是创建一个带<b>“父目录名”</b>的<b>“文件类”</b>对象。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj15.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left"><b>“编辑框1”</b>窗口创建的时候取的是<b>“存储数据”</b>路径，所以它可以当父路径，直接把<b>“编辑框1”</b>写入<b>“参数1”</b>即可。 </p>
+
+<p align="left"><b>"参数2"</b>直接写<b>"编辑框2"</b>的内容即可。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj16.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">运行后在<b>“编辑框2”</b>输入一个<b>“文件名”</b>，执行后成功将<b>“父目录”</b>和<b>“文件名”</b>合并了起来。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj17y.png">
+</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">&nbsp;</p>
+<a name="wjm_cj3"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建3方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，该方法和<b>“创建2”</b>没什么区别，唯一不同之处就是，参数一变成了<b>“文件类”</b>对象。</p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj18.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">创建<b>“两个”</b>文件名类的变量，其中一个命名为<b>“父目录对象”</b>，另外一个依然可以命名<b>“文件名类变量”</b></p>
+<p align="left">利用<b>“创建”</b>方法，创建<b>“编辑框1”</b>的内容为<b>“文件名类”</b>并且赋值给<b>“父目录对象”</b>的变量。</p>
+<p align="left">随后将<b>“父目录对象”</b>填入<b>“创建3”</b>的<b>“参数1”</b>即可，<b>“参数2”</b>依然写<b>“编辑框2”</b>的内容。</p>
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj19.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">运行后填写<b>“编辑框2”</b>的文件名，成功将两个组合起来。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj20.png">
+
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+<a name="wjm_cjfmlwjdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建父目录文件对象方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助可以看到参数名和返回值都是<b>“文件名类”</b>对象，如果没有<b>“父目录”</b>会返回<b>“空对象”</b>。</p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj21.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">代码编写也很简单，我们只需要在<b>“创建3”</b>的基础上稍作修改即可。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj22.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">运行后成功取出了<b>“外部存储空间”</b>的父目录。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj23.png">
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+<a name="wjm_cjjdljwjdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建绝对路径文件对象方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到该方法的<b>“参数”</b>和<b>“返回值”</b>都是<b>“文件名类”</b>。</p>
+<p align="left">顾名思义就是取绝对路径的<b>“文件名类”</b>对象</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj24.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">我们用<b>“创建”</b>方法，创建一个以<b>“编辑框2”</b>内容为参数的文件名类，并且赋值给定义的<b>“文件名类变量”</b></p>
+<p align="left">然后用<b>“创建绝对路径文件对象”</b>的方法，将<b>“编辑框2”</b>的<b>“相对路径”</b>转换成<b>“绝对路径”</b>的文件名类变量。</p>
+<p align="left">最后用<b>“取文件名”</b>方法，取出来路径文本看一下效果。</p>
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj25.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">运行后，我们在<b>“编辑框2”</b>，输入<b>“相对路径”</b>执行后会自动处理成<b>“绝对路径”</b>。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj26.png">
+</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="wjm_cjjdljwjdx2"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建绝对路径文件对象2方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容我们可以看到本方法和<b>“创建绝对路径文件对象”</b>没什么区别，不同之处就是本方法不会对<b>“相对路径”</b>前面的两个小数点就行处理。</p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj27.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">代码编写也和<b>“创建绝对路径文件对象”</b>一模一样。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj28.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">调试运行后，我们输入一个<b>“相对路径”</b>可以看到本方法并没有处理掉两个小数点。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj29.png">
+</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+<a name="wjm_cjlswj"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建临时文件方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到本方法有<b>“三个参数”</b>和一个<b>“文件名类”</b>的返回值，并且<b>“参数2和3”</b>都有默认值。</p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj30.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">代码编写如下图，依然是定义一个<b>“文件名类”</b>变量，把<b>“编辑框2”</b>的内容放入<b>“参数1”</b>，<b>“参数2和3”</b>因有默认值所以可以直接省略不写。</p>
+<p align="left">最后我们可以用<b>“取文件名”</b>的方法取出<b>“临时文件”</b>的目录。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj31.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">调试运行后，可以在<b>“编辑框2”</b>输入一个<b>“文件名”</b>，取出完整路径后可以看到，后缀也是默认的<b>“tmp”</b>。</p>
+<p align="left">并且在<b>“文件名”</b>和<b>“后缀”</b>之间有一个10位数的<b>“时间戳”</b>。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj32.png">
+</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+<a name="wjm_cjml"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建目录方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到它有一个<b>“文件名类”</b>参数和一个<b>“逻辑”</b>返回值。</p>
+<p align="left">注意黄框内容，如果<b>“父目录不存在”</b>或者<b>“目录已经存在”</b>都会返回<b>“假”</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj33.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义一个<b>“目录对象”</b>的文件类变量，然后用<b>“创建”</b>方法，创建<b>“编辑框1”</b>的内容给定义的变量。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj34.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">调试运行后，我们输入要创建的"目录名"，"左图"创建成功，"右图"重复第二次创建会提示失败。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj35.png">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img border="0" src="wj_images/wj35a.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开手机"文件管理器"，也可以看到我们创建的"目录"。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj35b.png">
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="wjm_cjmlnrwjlb"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建目录内容文件列表方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到本方法只有一个<b>“文件名类”</b>参数和一个<b>“文件名类数组”</b>返回值。</p>
+<p align="left">顾名思义就是返回指定目录内的<b>“子目录”</b>和<b>“文件名”</b>数组。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj36.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">代码编写也很简单，定义三个变量，依然是用<b>“创建”</b>方法去创建文件对象，赋值给变量。</p>
+<p align="left">然后用该方法就可以取出<b>“文件名类数组”</b>。</p>
+<p align="left">最后利用<b>“取数组成员数”</b>的方法取数量，最后<b>“到文本”</b>显示结果。</p>
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj37.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">左图：我们在<b>“666”</b>目录，随便放<b>“两个”</b>文件夹和<b>“三个”</b>文件。</p>
+<p align="left">右图：成功的取出<b>“数量5”</b>。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj38.png">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img border="0" src="wj_images/wj38a.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">&nbsp;</p>
+<a name="wjm_cjxwj"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建新文件方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到<b>"创建新文件"</b>有一个<b>"文件名类"</b>参数和一个<b>"逻辑"</b>返回值。</p>
+<p align="left">注意：<b>黄色</b>的框内提示，已经存在返回假。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj39.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">代码编写依然是创建<b>“文件名类”</b>变量，然后用<b>“创建”</b>方法赋值。</p>
+<p align="left">最后使用本方法进行文件创建。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj40.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left"><b>左图：</b>我们在<b>“666”</b>目录内创建一个<b>“777”</b>的文本文件，提示创建成功。<b>右图：</b>重复创建则会返回<b>“失败”</b>。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj41.png">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img border="0" src="wj_images/wj41a.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开手机"文件管理器"，可以看到文件成功创建。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj41b.png">
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="wjm_cjzgml"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建整个目录方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到本方法也是一个<b>“文件名类”</b>参数和一个<b>“逻辑”</b>返回值。</p>
+<p align="left">它和<b>“创建目录”</b>不同之处在于，它可以直接创建<b>“多层”</b>目录，创建的<b>“目标目录”</b>的<b>“父目录”</b>如果不存在会<b>“自动创建”</b>。</p>
+<p align="left">注意：如果目标"目录"存在会返回假。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj42.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">代码编写也非常简单，和<b>“创建新文件”</b>方法无差别。</p>
+
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj43.png"></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">调试运行后，我们在<b>“编辑框”</b>输入自己要创建的<b>“多层”</b>目录，执行会全部创建成功。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj44.png">  </blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开手机"文件管理器"，可以看到输入的<b>“所有目录”</b>全部自动创建。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj44a.png">
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="wjm_ljbj"></a>
+<font style="font-size: 12pt; font-weight:700">● 路径比较方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到"路径比较"有两个个"文件名类"参数和一个"整数"返回值。</p>
+<p align="left">顾名思义就是比较<b>“两个路径”</b>是否相等。</p>
+<p align="left"><font color="#FF0000">注意：</font>帮助文档内的返回值书写<b>“有错误”</b>。</p>
+<p align="left">路径一大于路径二：结果<font color="#FF0000"><b>“大于0”</b></font>。</p>
+<p align="left">路径一小于路径二：结果<font color="#FF0000">"小于0"</font>。</p>
+<p align="left">路径一等于路径二：结果<font color="#FF0000">"等于0"</font>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj45.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">代码编写也很简单，定义两个<b>“文件名类”</b>变量和一个<b>“整数”</b>的结果变量。</p>
+<p align="left">随后用创建方法分别将两个<b>“编辑框”</b>的内容创建<b>“文件对象”</b>，并且赋值给<b>“文件名类变量”</b>。</p>
+<p align="left">最后用<b>“路径比较”</b>方法对比即可。</p>
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj46.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">运行后输入路径内容，比对结果如下。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj47.png">
+  &nbsp;&nbsp;
+  <img border="0" src="wj_images/wj47a.png">
+  &nbsp;&nbsp;
+  <img border="0" src="wj_images/wj47b.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="wjm_qfml"></a>
+<font style="font-size: 12pt; font-weight:700">● 取父目录方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到本方法有一个<b>“文件名类”</b>参数和一个<b>“文本”</b>返回值。</p>
+<p align="left">顾名思义就是取出指定<b>“文件对象”</b>的<b>“父目录”</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj48.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">代码编写很简单，创建一个<b>“文件类对象”</b>，用<b>“创建”</b>方法创建对象。</p>
+<p align="left">最后用<b>“取父目录”</b>就可以取出来<b>“父目录路径”</b>。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj49.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">运行后如下图：</p>
+<blockquote>
+<p align="left">左图：成功取出<b>“目录”</b>的<b>“父目录路径”</b>。
+</p>
+<p align="left">右图：成功取出<b>"文件"</b>的<b>"父目录路径"</b>。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj50.png">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img border="0" src="wj_images/wj50a.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">&nbsp;</p>
+<a name="wjm_qjdlj"></a>
+<font style="font-size: 12pt; font-weight:700">● 取绝对路径方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到本方法有一个<b>"文件名类"</b>参数和一个<b>"文本"</b>返回值。</p>
+<p align="left">本方法和<b>“创建绝对路径文件对象”</b>不同之处就是，本方法直接返回<b>“文本”</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj51.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">依然是需要<b>“创建”</b>方法，创建<b>“文件名类”</b>的变量，最后用<b>“取绝对路径”</b>方法取出即可。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj52.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">我们在<b>“编辑框1”</b>输入一个<b>“相对路径”</b>，会自动处理成<b>“绝对路径”</b>。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj53.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="wjm_qjdlj2"></a>
+<font style="font-size: 12pt; font-weight:700">● 取绝对路径2方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到本方法和<b>“取绝对路径”</b>唯一的区别就是，本方法不会对<b>“相对路径”</b>的两个小数点进行处理。</p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj54.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">代码编写和<b>“取绝对路径”</b>没有任何区别。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj55.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">输入一个<b>“相对路径”</b>可以看到并没有对小数点进行处理。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj56.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">&nbsp;</p>
+<a name="wjm_qkykjcc"></a>
+<font style="font-size: 12pt; font-weight:700">● 取可用空间尺寸方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到本方法有一个<b>“文件名类参数”</b>和一个<b>“长整数”</b>的返回值，返回字节长度。</p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj57.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">非常简单，将定义的<b>“文件名类”</b>变量，直接调用<b>“取可用空间尺寸”</b>方法即可。</p>
+<p align="left">最后<b>“到文本”</b>赋值给<b>“编辑框2”</b>显示出来。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj58.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">调试运行后，我们可以取出<b>“外部存储数据根目录”</b>还有这么多<b>"字节"</b>可以用。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj59.png">
+</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">&nbsp;</p>
+<a name="wjm_qmlnrlb"></a>
+<font style="font-size: 12pt; font-weight:700">● 取目录内容列表方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到本方法和<b>“创建目录内容文件列表”</b>不同之处在于，本方法直接返回<b>“文本型”</b>数组。</p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj60.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义两个变量，创建<b>“文件名类”</b>对象后，直接调用本方法就可以取出<b>“目录文件数组”</b></p>
+<p align="left">最后<b>“取数组成员数”</b>，然后<b>“到文本”</b>赋值给<b>“编辑框2”</b>显示出来。</p>
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj61.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">执行后左图显示<b>“4个”</b>数组成员，右图的<b>“文件管理器”</b>也是<b>“4个”</b>，证明取出的是正确的。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj62.png">
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img border="0" src="wj_images/wj62a.png">
+</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">&nbsp;</p>
+<a name="wjm_qqbkjcc"></a>
+<font style="font-size: 12pt; font-weight:700">● 取全部空间尺寸方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">顾名思义就是取出所有空间的尺寸，返回值的单位依然是字节。 </p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj63.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图： </p>
+<blockquote>
+<p align="left">依然是创建<b>“文件名类”</b>变量，随后用本方法直接取尺寸，最后转换文本赋值给<b>“编辑框2”</b>显示。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj64.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">调试运行后，成功取出<b>“取外部存储空间根目录”</b>总共有这么多字节空间。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj65.png">
+</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">&nbsp;</p>
+<a name="wjm_qsykjcc"></a>
+<font style="font-size: 12pt; font-weight:700">● 取剩余空间尺寸方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">本方法和<b>“取全部空间尺寸”</b>没什么区别，顾名思义就是<b>“取出剩余空间”</b>尺寸。</p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj66.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">代码编写和<b>“取全部空间尺寸”</b>一样，直接套用下来即可。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj67.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">运行后可以看到成功取出<b>“取外部存储空间根目录”</b>还有这么多字节空间可以用。 </p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj68.png">
+</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">&nbsp;</p>
+<a name="wjm_qwjcc"></a>
+<font style="font-size: 12pt; font-weight:700">● 取文件尺寸方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到有一个<b>“文件名类”</b>参数和一个<b>“长整数”</b>返回值。</p>
+<p align="left"><b>注意：</b>只能<b>“取文件尺寸”</b>，目录取不出来。</p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj69.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码如下图：</p>
+<blockquote>
+<p align="left">定义<b>“文件名类”</b>变量，然后用本方法直接<b>“取文件尺寸”</b>即可。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj70.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">成功取出<b>“666”</b>文件夹内的<b>“1.png”</b>图片尺寸。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj71.png">
+</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">&nbsp;</p>
+<a name="wjm_qwjm"></a>
+<font style="font-size: 12pt; font-weight:700">● 取文件名方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">可以看到一个<b>“文件名类”</b>参数和<b>“文本型”</b>的返回值。</p>
+<p align="left">顾名思义就是取出创建<b>“文件对象”</b>时候的完整<b>“文件路径”</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj72.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">代码编写也很简单，和前面的命令模式基本一样，套下来即可，最后赋值给<b>“编辑框2”</b>显示。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj73.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">左图：取目录对象的效果（取出来的路径没有结束的<b>“路径符”</b>）。</p>
+<p align="left">右图：取文件对象的效果。</p>
+
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj74.png">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img border="0" src="wj_images/wj74a.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">&nbsp;</p>
+<a name="wjm_qwljwjm"></a>
+<font style="font-size: 12pt; font-weight:700">● 取无路径文件名方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">帮助内容依然显示一个<b>“文件名类”</b>参数和一个<b>“文本返回值”</b>。</p>
+<p align="left">顾名思义就是取出<b>“目录名”</b>和<b>“文件名”</b>，不包括前面的路径部分。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj75.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">定义<b>“文件名类”</b>变量，创建<b>“文件名类”</b>后赋值给<b>“变量”</b>，最后用本方法<b>“取无路径文件名”</b>，赋值给<b>“编辑框2”</b>显示。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj76.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">左图：<b>“取目录名”</b>效果。</p>
+<p align="left">右图：<b>“取文件名”</b>效果。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj77.png">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img border="0" src="wj_images/wj77a.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+<a name="wjm_qxtsygml"></a>
+<font style="font-size: 12pt; font-weight:700">● 取系统所有根目录方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，可以看到它之后一个<b>“文件名类”</b>的<b>“数组”</b>返回值。</p>
+<p align="left">顾名思义就是取出所有的<b>“根目录”</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj78.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">创建<b>“文件类数组”</b>变量，然后用本方法为<b>“数组变量”</b>赋值。</p>
+<p align="left">最后<b>“取数组成员数”</b>，<b>“到文本”</b>转换，然后用<b>“提示信息框”</b>显示出来看效果。</p>
+<p align="left"></p>
+
+  <p align="left"><img border="0" src="wj_images/wj79.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">运行后，因<b>安卓系统</b>下只有一个根目录，所以<b>“显示1”</b>。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj80.png">
+</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">&nbsp;</p>
+<a name="wjm_qzhxgsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 取最后修改时间方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，有一个<b>“文件名类”</b>参数和一个<b>“长整数”</b>的返回值。</p>
+<p align="left">返回的是一个13位数的时间戳，这个时间戳就是从1970年1月1日0点，到指定时间的毫秒数。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj81.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码如下图：</p>
+<blockquote>
+<p align="left">依然是将<b>“编辑框1”</b>的内容创建一个<b>“文件类变量”</b>，然后赋值给定义的<b>“变量”</b>。</p>
+<p align="left">然后用<b>“取最后修改时间”</b>方法就可以取出修改13位毫秒时间戳。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj82.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">左图：成功取出一个<b>“文件”</b>的最后修改时间。</p>
+<p align="left">右图：成功取出一个<b>“目录”</b>的最后修改时间。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj83.png">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img border="0" src="wj_images/wj83a.png">
+  </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+<a name="wjm_sc"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助内容，参数和上面的方法一样都是<b>“文件名类”</b>，不同之处就是它的返回值是<b>“逻辑型”</b>。</p>
+<p align="left">要注意的是，如果删除目录，必须保证目录内是空的。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj84.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">本方法也需要创建<b>“文件类变量”</b>，然后直接使用<b>“删除”</b>方法即可，最后用<b>“如果”</b>进行判断。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj85.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图： </p>
+<blockquote>
+<p align="left">左图：删除文件<b>“1.txt”</b>成功。</p>
+<p align="left">右图：因为<b>“666”</b>目录内还有其它文件，所以目录<b>“删除失败”</b>。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj86.png">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img border="0" src="wj_images/wj86a.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+<a name="wjm_sfbyc"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否被隐藏方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">顾名思义，就是判断一个<b>“文件类”</b>对象是否是<b>“隐藏文件”</b>或者<b>“目录”</b></p>
+<p align="left">应用场景：例如你用某个方法获取到一个<b>“路径”</b>，但是不知道这个<b>“路径”</b>的<b>“文件对象”</b>是不是<b>“隐藏”</b>状态。</p>
+<p align="left">这时候你就可以用<b>“本方法判断”</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj87.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">因为是写例子，所以使用本方法需要提前创建一个<b>"文件类变量"</b>，然后直接使用<b>"是否被隐藏"</b>方法，最后用<b>"如果"</b>进行判断。</p>
+
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj88.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">左图：我们手动输入一个<b>“隐藏的文件名”</b>，就会自动判断出它是隐藏的文件。</p>
+<p align="left">右图：我们手动输入一个<b>“正常的文件名”</b>，就会可以判断出他不是隐藏文件。</p>
+<p align="left">注意：本方法对<b>“隐藏的目录”</b>判断同样有效，并且无论是<b>“隐藏的文件”</b>还是<b>“隐藏的目录”</b>，<b>“目录名”</b>和<b>“文件名”</b>前面会有一个<b>“小数点”</b>作为标识（红圈内）。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj89.png">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img border="0" src="wj_images/wj89a.png">
+</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="wjm_sfcz"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否存在方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">顾名思义就是判断指定的<b>“文件对象”</b>是否存在，存在返回真，不存在返回<b>“假”</b>。</p>
+<p align="left">目录和文件都可以进行判断。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj90.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">创建"文件类变量"，然后直接使用"是否存在"方法即可，最后用"如果"进行判断。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj91.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">左图：执行后<b>“目录存在”</b>。</p>
+<p align="left">右图：随便输入一个不存在文件，就会提示<b>“不存在”</b>。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj92.png">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img border="0" src="wj_images/wj92a.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">&nbsp;</p>
+<a name="wjm_sfkdq"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否可读取方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">顾名思义，就是判断一个<b>“文件名类”</b>是否可被当前程序读取使用，如果没有操作权限会返回<b>“假”</b>，相反返回<b>“真”</b>。</p>
+<p align="left">什么时候<b>“返回假”</b>？</p>
+<p align="left">例如：你操作的目录是安卓内部数据目录,并且还没有获取root权限，肯定是返回<b>“假”</b>。</p>
+<p align="left">如果指定的<b>“文件对象”</b>已经被其他软件占用，这个时候也会返回<b>“假”</b>。</p>
+<p align="left">如果目标文件不存在，也返回<b>“假”</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj93.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">创建"文件类变量"，然后直接使用"是否可读取"方法即可，最后用"如果"进行判断。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj94.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">运行后，<b>“外部存储数据目录”</b>可以被读取，所以返回<b>“可以”</b>。</p>
+  <p align="left"><img border="0" src="wj_images/wj95.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">&nbsp;</p>
+<a name="wjm_sfkxr"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否可写入方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">顾名思义就是判断一个文件对象是否有<b>“可写入”</b>的权限，有返回<b>“真”</b>，没有返回<b>“假”</b>。</p>
+<p align="left">返回假的情况同<b>“是否可读取”</b></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj96.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">创建<b>“文件类变量”</b>，然后直接使用<b>“是否可写入”</b>方法即可，最后用<b>“如果”</b>进行判断。</p>
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj97.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left"><b>“1.png”</b>存在并且有<b>“写入权限”</b>，所以这里返回<b>“可以”</b>。</p>
+
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj98.png">
+</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="wjm_sfkzx"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否可执行方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">顾名思义就是判断一个文件对象是否有<b>“可执行”</b>的权限，有返回<b>“真”</b>，没有返回<b>“假”</b>。</p>
+<p align="left">返回假的情况同<b>“是否可读取”</b></p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj99.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">创建<b>“文件类变量”</b>，然后直接使用<b>“是否可执行”</b>方法即可，最后用<b>“如果”</b>进行判断。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj100.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">左图：<b>“666”</b>目录存在且可以被执行，所以返回<b>“可以执行”</b>。</p>
+<p align="left">右图：随便输入了一个<b>“不存在”</b>的目录，会返回<b>“不可以”</b>。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj101.png">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img border="0" src="wj_images/wj101a.png">
+  
+  </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">&nbsp;</p>
+<a name="wjm_sfwjdlj"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否为绝对路径方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">顾名思义就是判断一个<b>“文件对象”</b>是否为<b>“绝对路径”</b>，如果是"真"，不是返回"假"。</p>
+<p align="left">注意黄色框内提示：只要不是<b>“/”</b>起始的路径，都不是绝对路径。</p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj102.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">创建<b>“文件类变量”</b>，然后直接使用<b>“是否为绝对路径”</b>方法即可，最后用<b>“如果”</b>进行判断。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj103.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">左图：带<b>“/”</b>路径符的直接判断<b>“是”</b>。</p>
+<p align="left">右图：只要删除了<b>“/”</b>路径符号就会判断<b>“不是”</b>。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj104.png">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img border="0" src="wj_images/wj104a.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">&nbsp;</p>
+<a name="wjm_sfwml"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否为目录方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">顾名思义就是判断一个文件对象<b>“是否为目录”</b>，如果是目录返回<b>“真”</b>，不是返回<b>“假”</b>。</p>
+<p align="left">目标目录不存在也会<b>“返回假”</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj105.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">创建<b>"文件类变量"</b>，然后直接使用<b>"是否为目录"</b>方法即可，最后用<b>"如果"</b>进行判断。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj106.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">左图：是目录<b>“返回真”</b>。</p>
+<p align="left">右图：输入了一个文件则会<b>“返回假”</b></p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj107.png">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img border="0" src="wj_images/wj107a.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="wjm_sfwwj"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否为文件方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">本方法和<b>“是否为目录”</b>的功能正好相反，它是用来判断目标对象是否为<b>“文件”</b>，如果是文件返回<b>"真"</b>，不是返回<b>"假"</b>。</p>
+<p align="left">目标文件不存在也会<b>"返回假"</b>。</p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj108.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">创建<b>"文件类变量"</b>，然后直接使用<b>"是否为文件"</b>方法即可，最后可以用<b>"如果"</b>进行判断。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj109.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">左图：目标存在，并且是文件<b>“返回真”</b>。</p>
+<p align="left">右图：虽然输入了一个文件，但是目标不存在，依然会返回<b>“不是文件”</b>。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj110.png">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img border="0" src="wj_images/wj110a.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+
+<p align="left">&nbsp;</p>
+<a name="wjm_zkdzt"></a>
+<font style="font-size: 12pt; font-weight:700">● 置可读状态方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">本方法有三个参数。</p>
+<p align="left">参数一：依然是<b>“文件名类”</b>。</p>
+<p align="left">参数二：是否可读，意思就是说，设置指定<b>“文件对象”</b>是否可读状态。<b>“真”</b>为可读，<b>“假”</b>为不可读。</p>
+<p align="left">参数三：<b>“真”</b>设置给当前用户，<b>“假”</b>设置给所有用户。</p>
+<p align="left"><b>注意：</b><b>“黄色框”</b>内提示，因国内安卓系统环境复杂，并不保证每一台手机都可以设置生效（关于权限的设置不再赘述）。</p>
+<p align="left">&nbsp;</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj111.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">创建"文件类变量"，然后直接使用"置可读状态"方法即可，最后可以用"如果"进行判断。</p>
+<p align="left">注意：这里采用的是<b>“动态调用”</b>（变量调用的模式），所以<b>“参数一”</b>的<b>“文件名类”</b>可以省略，直接从<b>“参数二”</b>开始写即可。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj112.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="wjm_zkxzt"></a>
+<font style="font-size: 12pt; font-weight:700">● 置可写状态方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">本方法依然是三个参数。</p>
+<p align="left">本方法和<b>“置可读状态”</b>一样，设置指定"文件对象"是否可写入数据。</p>
+<p align="left">失败原因：同<b>“置可读状态”</b>。</p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj114.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">代码编写和<b>“置可读状态”</b>一样。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj115.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+<a name="wjm_zkzxzt"></a>
+<font style="font-size: 12pt; font-weight:700">● 置可执行状态方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">本方法和<b>"置可读状态"</b>一样，设置指定<b>"文件对象"</b>是否可执行。</p>
+<p align="left">失败原因：同<b>"置可读状态"</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj_KeZhiXing.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">创建<b>"文件名类"</b>，然后用直接调用<b>本方法</b>，最后用<b>"如果"</b>判断返回值即可。。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj_KeZhiXing_dm.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+<a name="wjm_zwzd"></a>
+<font style="font-size: 12pt; font-weight:700">● 置为只读方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">本方法和<b>"置可读状态"</b>一样，设置指定<b>"文件对象"</b>只可以读取数据，不可写入数据。</p>
+<p align="left">失败原因：同<b>"置可读状态"</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj117.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">创建<b>“文件名类”</b>，然后用直接调用<b>“本方法”</b>，最后用<b>“如果”</b>判断返回值即可。。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj118.png"></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="wjm_zzhxgsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 置最后修改时间方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">打开帮助可以看到有两个参数，设置成功返回<b>“真”</b>，失败返回<b>“假”</b>。</p>
+<p align="left">参数一：还是<b>“文件名类”</b>。</p>
+<p align="left">参数二：13位数的时间戳。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj120.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">创建<b>“文件名类”</b>，赋值给<b>“文件名类变量”</b>。</p>
+<p align="left">用<b>“取当前毫秒时间”</b>方法，可以取出当前时间的时间戳，取出后赋值给定义的<b>“长整数”</b>变量。</p>
+<p align="left">最后把<b>“当前时间”</b>变量，放入本方法内，最后用<b>“如果”</b>判断返回值即可。</p>
+<p align="left">执行成功后，可以用<b>“取最后修改时间”</b>取出时间戳显示出来。</p>
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj121.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">运行后效果如下图：</p>
+<blockquote>
+<p align="left"></p>
+  <p align="left"><img border="0" src="wj_images/wj122.png">
+</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="wjm_cmm"></a>
+<font style="font-size: 12pt; font-weight:700">● 重命名方法</font><br/>
+<br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">可以看到有两个<b>“文件名类”</b>参数，成功返回<b>“真”</b>，失败返回<b>“假”</b></p>
+<p align="left">本方法也可用作<b>“移动文件”</b>到<b>“另外一个目录”</b>，并且还可以进行重名操作。</p>
+<p align="left">如果要<b>“移动文件”</b>，必须保证<b>“目标目录”</b>存在。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left"><img border="0" src="wj_images/wj123.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">本方法需要创建两个<b>“文件名类”</b>，一个<b>“源文件”</b>，一个是<b>“目标文件”</b>。</p>
+<p align="left">然后将两个变量依次放入<b>“重命名”</b>方法即可。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="wj_images/wj124.png"></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">如下图：</p>
+<blockquote>
+<p align="left">左图：把<b>“666”</b>目录内<b>“1.png”</b>成功移动并且重命名到了<b>“外部存储空间根目录”</b></p>
+<p align="left">右图：可以在<b>“文件管理器”</b>内看到移动后的<b>“新文件名”</b>。</p>
+<p align="left">&nbsp;</p>
+  <p align="left"><img border="0" src="wj_images/wj125.png">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img border="0" src="wj_images/wj126.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+
+</body>
+</html>

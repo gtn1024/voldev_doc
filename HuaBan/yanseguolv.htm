@@ -1,0 +1,109 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		 <li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new12')" >一.颜色过滤器类<span>(可收缩)</span></h6></li>
+		<ol id="new12">
+			<li><blockquote><a href="#yanseguolvqi">1.本类说明</a></blockquote></li>  
+			<li><blockquote><a href="#yscjhhglq">2.创建混合过滤器</a></blockquote></li>  
+    		<li><blockquote><a href="#yscjglglq">3.创建高亮过滤器</a></blockquote></li>
+   		</ol>
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>颜色过滤器类实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+  	<p align="left">本类的作用就是用来给图片增加各种样式，添加的样式是通过一种数字图像合成算法实现。</p>
+  	<p align="left">例如：加亮，变暗，相加等效果，都可以在本类中实现。</p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="yscjhhglq"></a>
+	<font style="font-size: 12pt; font-weight:700">● 创建混合过滤器</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法是一种<b>“数字图像混合算法”</b>，通过本算法可以实现<b>“目标颜色”</b>和<b>“目的图片”</b>之间形成各种各样的效果。</p>
+	<p align="left">具体效果通过<b>“图像混合方式”</b>实现，共有18种算法。</p>
+	<p align="left"><img border="0" src="hb_images/518.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义<b>“画笔类”</b>成员变量。</p>
+	<p align="left">随后在<b>“异步绘制帧”</b>下创建位图对象，然后指定<b>“画笔.颜色过滤器”</b>写属性为<b>“创建混合过滤器”</b>。</p>
+	<p align="left">参数1：填写<b>“颜色类.红色”</b>。</p>
+	<p align="left">参数2：填写<b>“图像混合方式.高亮”</b>。</p>
+	<p align="left">最终的<b>“红色”</b>会和<b>“当前位图”</b>进行<b>“高亮”</b>算法，然后形成一个全新的位图。</p>
+	<p align="left">最后将<b>“位图”</b>绘制出来演示效果。</p>
+	<p align="left">此处我举例了<b>“四种”</b>样式。</p>
+	<p align="left"><img border="0" src="hb_images/519.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">其它样式大家可以自己调整<b>“图像混合方式”</b>的<b>“常量值”</b>来感受效果。</p>
+	<p align="left"><img border="0" src="hb_images/520.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="yscjglglq"></a>
+	<font style="font-size: 12pt; font-weight:700">● 创建高亮过滤器</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法进行了一种高亮图片算法，计算公式就是红框内的文字说明，知道即可，无需深入了解。</p>
+	<p align="left"><img border="0" src="hb_images/521.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">本代码中演示了三种高亮样式，大家可以自己调整相关的颜色值，查看不同的效果。</p>
+	<p align="left"><img border="0" src="hb_images/522.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="hb_images/523.png" ></p>
+</blockquote>
+	
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,978 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		  <li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new12')" >一. PDF展示器<span>(可收缩)</span></h6></li>
+	  <ol id="new12">
+			<li><blockquote><a href="#pdf">1.准备工作</a></blockquote></li>
+			<li><blockquote><a href="#zswd">2.载入自字节数组</a></blockquote></li>
+			<li><blockquote><a href="#zswd">3.载入自文件</a></blockquote></li>
+			<li><blockquote><a href="#zswd">4.载入自资产文件</a></blockquote></li>
+			<li><blockquote><a href="#zswd">5.载入自资源</a></blockquote></li>
+			<li><blockquote><a href="#zswd">6.载入自输入流</a></blockquote></li>
+			<li><blockquote><a href="#zswd">7.展示文档</a></blockquote></li>	
+			<li><blockquote><a href="#dhsc">8.动画缩放</a></blockquote></li>
+			<li><blockquote><a href="#dhsc">9.动画缩放2</a></blockquote></li>
+			<li><blockquote><a href="#dhczsf">10.动画重置缩放</a></blockquote></li>
+			<li><blockquote><a href="#qzdpyy">11.取指定偏移页</a></blockquote></li>
+			<li><blockquote><a href="#qzdycc">12.取指定页宽度</a></blockquote></li>
+			<li><blockquote><a href="#qzdycc">13.取指定页高度</a></blockquote></li>
+			<li><blockquote><a href="#qwdmsl">14.取文档描述</a></blockquote></li>
+			<li><blockquote><a href="#qwdml">15.取文档目录</a></blockquote></li>
+			<li><blockquote><a href="#qcljlb">16.取超链接列表</a></blockquote></li>
+			<li><blockquote><a href="#zdysykd">17.指定页适应宽度</a></blockquote></li>
+			<li><blockquote><a href="#zsjssqy">18.置双击手势启用</a></blockquote></li>
+			<li><blockquote><a href="#zyjms">19.置夜间模式</a></blockquote></li>
+			<li><blockquote><a href="#zwdmmkl">20.置文档密码口令</a></blockquote></li>
+			<li><blockquote><a href="#zwdygbhd">21.置文档页改变滑动</a></blockquote></li>
+			<li><blockquote><a href="#zwdyfz">22.置文档页翻转</a></blockquote></li>
+			<li><blockquote><a href="#zxsy">23.置显示页</a></blockquote></li>
+			<li><blockquote><a href="#zhxgd">24.置横向滚动</a></blockquote></li>
+			<li><blockquote><a href="#zyjj">25.置页间距</a></blockquote></li>
+			<li><blockquote><a href="#zmrxsy">26.置默认显示页</a></blockquote></li>
+			<li><blockquote><a href="#zhzjt">27.置绘制监听</a></blockquote></li>
+			<li><blockquote><a href="#zhzjt">28.文档绘制响应(事件)</a></blockquote></li>
+			<li><blockquote><a href="#zhzqbjt">29.置绘制全部监听</a></blockquote></li>
+			<li><blockquote><a href="#zhzqbjt">30.文档绘制全部响应(事件)</a></blockquote></li>
+			<li><blockquote><a href="#zwdxrjt">31.置文档渲染监听</a></blockquote></li>
+			<li><blockquote><a href="#zwdxrjt">32.文档开始渲染(事件)</a></blockquote></li>
+			<li><blockquote><a href="#zwdgdjt">33.置文档滚动监听</a></blockquote></li>
+			<li><blockquote><a href="#zwdgdjt">34.文档被滚动(事件)</a></blockquote></li>
+			<li><blockquote><a href="#zwdcmjt">35.置文档触摸监听</a></blockquote></li>
+			<li><blockquote><a href="#zwdcmjt">36.文档被触摸(事件)</a></blockquote></li>
+			<li><blockquote><a href="#zwdzrjt">37.置文档载入监听</a></blockquote></li>
+			<li><blockquote><a href="#zwdzrjt">38.文档已载入完毕(事件)</a></blockquote></li>
+			<li><blockquote><a href="#cjlbdj">39.置文档链接单击监听</a></blockquote></li>
+			<li><blockquote><a href="#cjlbdj">40.超链接被单击(事件)</a></blockquote></li>
+			<li><blockquote><a href="#ccmjt">41.置文档长触摸监听</a></blockquote></li>
+			<li><blockquote><a href="#ccmjt">42.文档被长触摸(事件)</a></blockquote></li>
+			<li><blockquote><a href="#dqsfjb">43.当前缩放级别(读)</a></blockquote></li>
+			<li><blockquote><a href="#zchd">44.支持滑动(写)</a></blockquote></li>
+			<li><blockquote><a href="#sfjb">45.普通缩放级别(写)</a></blockquote></li>
+			<li><blockquote><a href="#sfjb">46.最小缩放级别(写)</a></blockquote></li>
+			<li><blockquote><a href="#zdsfjb">47.最大缩放级别(读写)</a></blockquote></li>
+			<li><blockquote><a href="#czhd">48.垂直滑动(读)</a></blockquote></li>
+			<li><blockquote><a href="#dqhxpy">51.当前横向偏移(读)</a></blockquote></li>
+			<li><blockquote><a href="#dqhxpy">52.当前纵向偏移(读)</a></blockquote></li>
+			<li><blockquote><a href="#dqysy">53.当前页索引(读)</a></blockquote></li>
+			<li><blockquote><a href="#sfcysf">54.是否处于缩放(读)</a></blockquote></li>
+			<li><blockquote><a href="#jianju">55.间距(读)</a></blockquote></li>
+	  </ol>	
+		
+		
+	</ol>
+</ul>
+</div>	
+
+<p align="left">
+<h2>PDF展示器组件实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+  
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">打开启动类<b>“界面设计器”</b>，设计如下界面。</p>
+    <p align="left">依次是<b>“按钮1”</b>、<b>“按钮2”</b>和<b>“PDF展示器1”</b>。 </p>
+	<p align="left"><font color="#F30F12">注意：本组件位于<strong>“PDF展示器窗口组件”</strong>模块中。</font></p>
+	<p align="left"><img src="pdf_images/86.png" border="0" ></p>
+
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="zswd"></a>
+<font style="font-size: 12pt; font-weight:700">● 载入自字节数组</font><br>
+<font style="font-size: 12pt; font-weight:700">● 载入自文件</font><br>
+<font style="font-size: 12pt; font-weight:700">● 载入自资产文件</font><br>
+<font style="font-size: 12pt; font-weight:700">● 载入自资源</font><br>
+<font style="font-size: 12pt; font-weight:700">● 载入自输入流</font><br>
+<font style="font-size: 12pt; font-weight:700">● 展示文档</font>
+
+	<p align="left">&nbsp;</p>
+	<p align="left">前五个方法都是用来载入<b>“PDF文档”</b>，此处演示<b>“载入自字节数组”</b>方法。</p>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“载入自字节数组”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本方法可载入字节数组的PDF文档。</p>
+	<p align="left">成功载入返回真，失败返回假。</p>
+	<p align="left"><img border="0" src="pdf_images/87.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“展示文档”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法用来展示被载入的PDF文档，务必调用本方法PDF问道才能显示出来。</p>
+	<p align="left"><img border="0" src="pdf_images/88.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、取出PDF文档路径。</p>
+	<p align="left">2、调用<b>“读入文件”</b>方法读取文档，将当前方法放入<b>“载入自字节数组”</b>方法内。</p>
+	<p align="left">3、如果载入成功，调用<b>“展示文档”</b>方法将PDF展示出来。</p>
+	<p align="left"><img border="0" src="pdf_images/89.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left"><img border="0" src="pdf_images/90.gif" ></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>	
+<a name="dhsc"></a>
+<font style="font-size: 12pt; font-weight:700">● 动画缩放</font><br>
+<font style="font-size: 12pt; font-weight:700">● 动画缩放2</font>
+<p align="left">&nbsp;</p>	
+<p align="left">此处演示<b>“动画缩放”</b>方法。</p>	
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图： </p>
+<blockquote>
+  <p align="left">顾名思义，通过本方法可进行动画缩放，参数值填写要缩放的级别。</p>
+	<p align="left"><img border="0" src="pdf_images/91.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">将<b>“载入PDF文档”</b>的相关代码剪切到<b>“通知_被创建”</b>虚拟方法下。</p>
+	<p align="left"><img border="0" src="pdf_images/92.png" ></p>
+  <p align="left"><b>“按钮1”</b>被点击后，调用当前方法，参数填写要缩放的级别即可。</p>
+  <p align="left"><img border="0" src="pdf_images/93.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最后可看到PDF进行了放大操作。</p>
+	<p align="left"><img border="0" src="pdf_images/94.gif" >
+  </p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>	
+<a name="dhczsf"></a>
+	<font style="font-size: 12pt; font-weight:700">● 动画重置缩放</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可将当前展示的PDF文档恢复至默认大小。</p>
+	<p align="left"><img border="0" src="pdf_images/95.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，执行缩放。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，调用本方法恢复默认大小。</p>
+	<p align="left"><img border="0" src="pdf_images/96.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="pdf_images/97.gif" >
+  </p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>	
+<a name="qzdpyy"></a>
+	<font style="font-size: 12pt; font-weight:700">● 取指定偏移页</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可取出，偏移指定位置后的页索引。</p>
+	<p align="left">参数值范围<b>“0-1”</b>。</p>
+  <p align="left">注意：本方法并非真的偏移到指定位置，作用只是取出偏移后的页索引。</p>
+	<p align="left"><img border="0" src="pdf_images/98.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">取出指定偏移位置的页索引后，将其显示在提示信息框即可。</p>
+	<p align="left"><img border="0" src="pdf_images/99.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="pdf_images/100.png" >
+  </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="qzdycc"></a>
+<font style="font-size: 12pt; font-weight:700">● 取指定页宽度</font><br>
+<font style="font-size: 12pt; font-weight:700">● 取指定页高度</font>
+
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“取指定页宽度”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本方法可取出指定索引页的宽度，返回值为小数。</p>
+	<p align="left"><img border="0" src="pdf_images/101.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“取指定页高度”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本方法可取出指定索引页的高度，返回值为小数。</p>
+	<p align="left"><img border="0" src="pdf_images/102.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">取出<b>“页索引1”</b>的高度和宽度。</p>
+	<p align="left"><img border="0" src="pdf_images/103.png" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="pdf_images/104.png" ></p>
+</blockquote>
+
+
+	<p align="left">&nbsp;</p>
+	<a name="qwdmsl"></a>
+<font style="font-size: 12pt; font-weight:700">● 取文档描述</font>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可取出当前PDF文档描述。</p>
+	<p align="left">通过取出的<b>“PDF文档描述类”</b>，可进一步取出<b>“作者”</b>，<b>“构建日期”</b>等信息。</p>
+	<p align="left">如果描述信息不存在将返回空文本。</p>
+	<p align="left"><img border="0" src="pdf_images/105.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+	
+<blockquote>
+	<p align="left">定义类型为<b>“PDF文档描述类”</b>的变量，勾选参考，随后调用本方法赋值给变量。</p>
+	<p align="left">通过<b>“描述”</b>变量就可以<b>“构建日期”</b>和<b>“作者”</b>信息。</p>
+  <p align="left"><img border="0" src="pdf_images/106.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="pdf_images/107.png" ></p>
+</blockquote>	
+	
+
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<a name="qwdml"></a>
+<font style="font-size: 12pt; font-weight:700">● 取文档目录</font>
+<p align="left">&nbsp;</p>
+	<p align="left">界面准备：</p>
+<blockquote>
+	<p align="left">在原界面的基础上增加一个<b>“编辑框1”</b>，用于存放目录内容。</p>
+	<p align="left"><img border="0" src="pdf_images/108a.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本方法可取出文档目录，返回值为<b>“PDF文档目录列表类”</b>。</p>
+	<p align="left"><img border="0" src="pdf_images/108.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">1、定义类型为<b>“PDF文档目录列表类”</b>变量，设置参考，并定义一个<b>“计次”</b>整数。</p>
+	<p align="left">2、通过本方法取出列表对象赋值给<b>“列表”</b>变量。</p>
+	<p align="left">3、通过循环方法循环取列表成员，赋值给<b>“目录”</b>变量。</p>
+  <p align="left">4、最后通过<b>“目录.标题”</b>就可取出文档目录标题。</p>
+	<p align="left"><img border="0" src="pdf_images/109.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>后当前的文档目录会显示在编辑框内。</p>
+	<p align="left"><img border="0" src="pdf_images/110.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<a name="qcljlb"></a>
+<font style="font-size: 12pt; font-weight:700">● 取超链接列表</font></font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本方法可取出指定索引页的所有超链接。</p>
+	<p align="left">返回值为<b>“文本列表类”</b>。</p>
+	<p align="left">注意：页索引值从0开始。</p>
+	<p align="left"><img border="0" src="pdf_images/111.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义两个变量，类型分别为<b>“文本列表类”</b>和<b>“整数”</b>。</p>
+	<p align="left">2、调用当前方法赋值给<b>“列表”</b>变量。</p>
+	<p align="left">3、通过<b>“取成员数”</b>和是否为<b>“空对象”</b>的方法，判断当前页是否存在超链接。</p>
+	<p align="left">4、利用<b>“循环”</b>方法取出所有成员数，添加到编辑框中。</p>
+	<p align="left"><img border="0" src="pdf_images/112.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，文档中的所有超链接都会显示在编辑框中。</p>
+	<p align="left"><img border="0" src="pdf_images/113.gif" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+	<a name="zdysykd"></a>
+<font style="font-size: 12pt; font-weight:700">● 指定页适应宽度</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可让指定页自适应宽度。</p>
+	<p align="left"><img border="0" src="pdf_images/114.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">调用本方法，参数值填写0。</p>
+	<p align="left"><img border="0" src="pdf_images/115.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="pdf_images/116.gif" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+	<a name="zsjssqy"></a>
+<font style="font-size: 12pt; font-weight:700">● 置双击手势启用</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可启用或者关闭双击手势。</p>
+	<p align="left">参数值为真则开启，为假在关闭。</p>
+	<p align="left">注1：如果使用的模拟器则为鼠标双击。</p>
+	<p align="left">注2：本方法务必写到<b>“展示文档”</b>方法前。</p>
+	<p align="left"><img border="0" src="pdf_images/117.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在<b>“展示文档”</b>方法前调用本方法，参数值填写假。</p>
+	<p align="left"><img border="0" src="pdf_images/118.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">左图：参数值为假的效果，只能上下滚动无法双击缩放。</p>
+	<p align="left">右图：参数值为真的效果，可以随意的双击缩放。</p>
+	<p align="left"><img border="0" src="pdf_images/119.gif" >&nbsp;&nbsp;&nbsp;<img border="0" src="pdf_images/120.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<a name="zyjms"></a>
+<font style="font-size: 12pt; font-weight:700">● 置夜间模式</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可设置当前PDF文档是否开启夜间模式。</p>
+	<p align="left">参数值为真开启，否则关闭。</p>
+	<p align="left">如果不设置，默认为关闭状态。</p>
+	<p align="left">注：本方法只能在<b>“展示文档”</b>方法前调用。</p>
+	<p align="left"><img border="0" src="pdf_images/121.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在<b>“展示文档”</b>方法前调用本方法，参数值设置为真。</p>
+	<p align="left"><img border="0" src="pdf_images/122.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="pdf_images/123.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<a name="zwdmmkl"></a>
+<font style="font-size: 12pt; font-weight:700">● 置文档密码口令</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法解密PDF文档，参数值填写要解密的密码即可。</p>
+	<p align="left">备注：加密PDF文档自行百度搜索，或者使用<a href="http://app.xunjiepdf.com/pdfaddpwd">迅捷PDF在线加密</a>。</p>
+	<p align="left"><img border="0" src="pdf_images/124.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">本方法务必在<b>“展示文档”</b>方法前调用，其它任何地方调用无效。</p>
+	<p align="left"><img border="0" src="pdf_images/125.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="pdf_images/126.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<a name="zwdygbhd"></a>
+<font style="font-size: 12pt; font-weight:700">● 置文档页改变滑动</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可设置当前PDF是否支持上下滑动。</p>
+	<p align="left">参数值为真则开启，为假则关闭。</p>
+  <p align="left">备注：如果禁止上下滑动，只是禁止<b>“默认缩放级别下”</b>的上下滑动。</p>
+	<p align="left">当PDF内容进行<b>“放大”</b>操作后，依然可以<b>“上下滑动”</b>。</p>
+	<p align="left">只要恢复成默认缩放级别时，当前内容就会无法上下滑动。</p>
+	<p align="left"><img border="0" src="pdf_images/127.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">务必在<b>“展示文档”</b>前调用本方法，此处设置参数值为假，禁止上下滑动。</p>
+	<p align="left"><img border="0" src="pdf_images/128.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可看到当前PDF内容，并不影响放大后的上下滑动，一旦恢复默认缩放级别，则无法上下滑动。</p>
+	<p align="left"><img border="0" src="pdf_images/129.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<a name="zwdyfz"></a>
+<font style="font-size: 12pt; font-weight:700">● 置文档页翻转</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可设置是否启用页翻转效果。</p>
+	<p align="left">开启后，只需要轻微滑动就可实现上下快速翻页。</p>
+	<p align="left"><img border="0" src="pdf_images/130.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">本方法务必在<b>“展示文档”</b>前调用。</p>
+	<p align="left"><img border="0" src="pdf_images/131.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="pdf_images/132.gif" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+	<a name="zxsy"></a>
+<font style="font-size: 12pt; font-weight:700">● 置显示页</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可设置当前PDF文档加载指定页。</p>
+	<p align="left">参数值为可扩展参数，可增加N个页索引。</p>
+	<p align="left">注意：页索引从0开始。</p>
+	<p align="left"><img border="0" src="pdf_images/133.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">本方法务必在<b>“展示文档”</b>前调用。</p>
+	<p align="left">此处展示索引<b>“1、100、200”</b>。</p>
+	<p align="left"><img border="0" src="pdf_images/134.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="pdf_images/135.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<a name="zhxgd"></a>
+<font style="font-size: 12pt; font-weight:700">● 置横向滚动</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可以设置PDF文档是否开启横向滚动。</p>
+	<p align="left"><img border="0" src="pdf_images/136.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">本方法务必在<b>“展示文档”</b>前调用。</p>
+	<p align="left"><img border="0" src="pdf_images/137.png" ></p>
+</blockquote>
+	
+
+	<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">当前PDF文档将进行横向滚动。</p>
+	<p align="left"><img border="0" src="pdf_images/138.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<a name="zyjj"></a>
+<font style="font-size: 12pt; font-weight:700">● 置页间距</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可设置PDF文档的页间距，单位像素。</p>
+	<p align="left"><img border="0" src="pdf_images/139.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">本方法务必在<b>“展示文档”</b>前调用。</p>
+	<p align="left"><img border="0" src="pdf_images/140.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">左图：不设置页间距的状态。</p>
+	<p align="left">右图：设置100像素页间距的状态。</p>
+	<p align="left"><img border="0" src="pdf_images/141.png" >&nbsp;&nbsp;<img border="0" src="pdf_images/142.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<a name="zmrxsy"></a>
+<font style="font-size: 12pt; font-weight:700">● 置默认显示页</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可让PDF文档加载时默认显示某页。</p>
+	<p align="left">页索引从0开始。</p>
+	<p align="left"><img border="0" src="pdf_images/143.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">本方法务必在<b>“展示文档”</b>前调用，设置本方法的参数值为100.</p>
+	<p align="left"><img border="0" src="pdf_images/144.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">页索引100对应正是101页，当前设置项生效。</p>
+	<p align="left"><img border="0" src="pdf_images/145.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<a name="zhzjt"></a>
+<font style="font-size: 12pt; font-weight:700">● 置绘制监听</font><br>
+<font style="font-size: 12pt; font-weight:700">● 文档绘制响应(事件)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“置绘制监听”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本方法可监听当前PDF文档的绘制。</p>
+	<p align="left">参数值为真，则不停的发送<b>“文档绘制响应”</b>事件。</p>
+	<p align="left"><img border="0" src="pdf_images/145.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“文档绘制响应(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">当<b>“置绘制监听”</b>方法参数值为真时，本事件会被发送。</p>
+	<p align="left">参数1：返回画板对象，本对象可参考<a href="http://doc.voldp.com/a_canvas.htm#huabanlei"><b>“画板教程”</b></a>。</p>
+	<p align="left">参数2、3、4：分别返回<b>“宽度”</b>、<b>“高度”</b>和<b>“页索引”</b>。</p>
+	<p align="left"><img border="0" src="pdf_images/146.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">监听方法必须写在<b>“展示文档”</b>方法前。</p>
+	<p align="left"><img border="0" src="pdf_images/147.png" ></p>
+	<p align="left">&nbsp;</p>
+	<p align="left">添加<b>“文档绘制响应”</b>事件，将返回的高度、宽度和页索引显示在<b>“按钮2”</b>上。</p>
+	<p align="left"><img border="0" src="pdf_images/148.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">无论是缩放还是翻页，返回的数据都会实时更改。</p>
+	<p align="left"><img border="0" src="pdf_images/149.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<a name="zhzqbjt"></a>
+<font style="font-size: 12pt; font-weight:700">● 置绘制全部监听</font>
+<br/>
+<font style="font-size: 12pt; font-weight:700">● 文档绘制全部响应(事件)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">这两个命令和<a href="#zhzjt"><b>“置绘制监听”</b></a>和<a href="#zhzjt"><b>“文档绘制响应(事件)”</b></a>作用和效果一致。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<a name="zwdxrjt"></a>
+<font style="font-size: 12pt; font-weight:700">● 置文档渲染监听</font><br>
+<font style="font-size: 12pt; font-weight:700">● 文档开始渲染(事件)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“置文档渲染监听”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法参数值设置为真，可监听<b>“文档开始渲染”</b>事件，否则相反。</p>
+	<p align="left"><img border="0" src="pdf_images/150.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“文档开始渲染(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">务必设置<b>“置文档渲染监听”</b>参数值为真，本事件才会被发送。</p>
+	<p align="left">本事件的只有一个参数，将会返回当前PDF文档<b>“总页数”</b>。</p>
+	<p align="left"><img border="0" src="pdf_images/151.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">本方法务必在<b>“展示文档”</b>前调用，设置参数值为真。</p>
+	<p align="left"><img border="0" src="pdf_images/152.png" ></p>
+	<p align="left">&nbsp;</p>
+	<p align="left">添加<b>“文档开始渲染”</b>事件，将返回的<b>“总页数”</b>显示在<b>“按钮2”</b>的标题上。</p>
+	<p align="left"><img border="0" src="pdf_images/153.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="pdf_images/154.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<a name="zwdgdjt"></a>
+<font style="font-size: 12pt; font-weight:700">● 置文档滚动监听</font><br>
+<font style="font-size: 12pt; font-weight:700">● 文档被滚动(事件)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“置文档滚动监听”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本方法可设置PDF文档被滚动时的监听，参数值为真将发送<b>“文档被滚动”</b>事件。</p>
+	<p align="left"><img border="0" src="pdf_images/155.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“文档被滚动(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">文档被滚动时将触发本事件，返回<b>“当前页索引”</b>和<b>“当前页滚动偏移值”</b>。</p>
+	<p align="left"><img border="0" src="pdf_images/156.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">本方法务必在<b>“展示文档”</b>前调用，设置参数值为真。 </p>
+	<p align="left"><img border="0" src="pdf_images/157.png" ></p>
+	<p align="left">&nbsp;</p>
+	<p align="left">添加<b>“文档被滚动”</b>事件，将返回的两个参数值显示在<b>“按钮2”</b>的标题上。</p>
+	<p align="left"><img border="0" src="pdf_images/158.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">只要处于滚动状态，按钮2的标题会不断更新。</p>
+	<p align="left"><img border="0" src="pdf_images/159.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<a name="zwdcmjt"></a>
+<font style="font-size: 12pt; font-weight:700">● 置文档触摸监听</font><br>
+<font style="font-size: 12pt; font-weight:700">● 文档被触摸(事件)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“置文档触摸监听”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本方法可监听<b>“文档被触摸”</b>事件，参数值为真则监听，否则相反。</p>
+	<p align="left"><img border="0" src="pdf_images/160.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“文档被触摸(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">文档被触摸后发送本事件，返回<b>“动作事件类”</b>对象。</p>
+	<p align="left"><img border="0" src="pdf_images/161.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">本方法务必在<b>“展示文档”</b>前调用，设置参数值为真。 </p>
+	<p align="left"><img border="0" src="pdf_images/162.png" ></p>
+	<p align="left">&nbsp;</p>
+	<p align="left">添加<b>“文档被触摸”</b>事件，通过返回的<b>“动作对象”</b>可判断<b>“动作类型”</b>。</p>
+	<p align="left"><img border="0" src="pdf_images/163.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">当PDF文档被按下后，就会弹出<b>“PDF被按下”</b>提示。</p>
+	<p align="left"><img border="0" src="pdf_images/164.gif" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+	<a name="zwdzrjt"></a>
+<font style="font-size: 12pt; font-weight:700">● 置文档载入监听</font><br>
+<font style="font-size: 12pt; font-weight:700">● 文档已载入完毕(事件)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">这两个命令和<a href="#zwdxrjt"><b>“置文档渲染监听”</b></a>和<a href="#zwdxrjt"><b>“文档开始渲染(事件)”</b></a>作用和效果一致。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<a name="cjlbdj"></a>
+<font style="font-size: 12pt; font-weight:700">● 置文档链接单击监听</font><br>
+<font style="font-size: 12pt; font-weight:700">● 超链接被单击(事件)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“置文档链接单击监听”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本方法可设置PDF文档中超链接被点击事件的监听。</p>
+	<p align="left"><img border="0" src="pdf_images/165.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“超链接被单击(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">超链接被点击后将触发本事件。</p>
+	<p align="left">本事件将返回超链接地址以及坐标信息。</p>
+	<p align="left">参数6的<b>“小数矩形类”</b>，可通过<b>“上下左右”</b>四个读属性，取出超链接坐标范围。</p>
+	<p align="left"><img border="0" src="pdf_images/166.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">本方法务必在<b>“展示文档”</b>前调用，设置参数值为真。 </p>
+	<p align="left"><img border="0" src="pdf_images/167.png" ></p>
+	<p align="left">&nbsp;</p>
+	<p align="left">添加<b>“超链接被单击”</b>事件，将返回的信息显示在信息框中。</p>
+	<p align="left"><img border="0" src="pdf_images/168.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）： </p>
+
+<blockquote>
+	<p align="left"><img border="0" src="pdf_images/169.gif" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+	<a name="ccmjt"></a>
+<font style="font-size: 12pt; font-weight:700">● 置文档长触摸监听</font><br>
+<font style="font-size: 12pt; font-weight:700">● 文档被长触摸(事件)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助说明：</p>
+<blockquote>
+		<p align="left">这两个命令和<a href="#zwdcmjt"><b>“置文档触摸监听”</b></a>和<a href="#zwdcmjt"><b>“文档被触摸(事件)”</b></a>作用和效果基本一致。</p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+	<a name="dqsfjb"></a>
+<font style="font-size: 12pt; font-weight:700">● 当前缩放级别(读)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可读取当前PDF文档的缩放级别。</p>
+	<p align="left"><img border="0" src="pdf_images/170.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接调用本属性读取即可。</p>
+	<p align="left"><img border="0" src="pdf_images/171.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="pdf_images/172.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<a name="zchd"></a>
+<font style="font-size: 12pt; font-weight:700">● 支持滑动(写)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可设置当前PDF文档是否支持手势滑动。</p>
+	<p align="left">不设置本属性，默认为真。</p>
+	<p align="left"><img border="0" src="pdf_images/173.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击，设置本属性值为真，开启滑动。</p>
+	<p align="left"><b>“按钮2”</b>被点击，设置本属性值为假，关闭滑动。</p>
+	<p align="left"><img border="0" src="pdf_images/174.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="pdf_images/175.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<a name="sfjb"></a>
+<font style="font-size: 12pt; font-weight:700">● 普通缩放级别(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 最小缩放级别(写)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“普通缩放级别(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">简单来说本属性的作用，是用来设置当前PDF的默认缩放级别。</p>
+	<p align="left">不设置本属性的情况下默认级别为<b>“1.0”</b>。</p>
+	<p align="left">注意：本属性的属性值不能小于1.0。</p>
+	<p align="left"><img border="0" src="pdf_images/176.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“最小缩放级别(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本属性可设置最小缩放级别，属性值同样不能小于1.0。</p>
+	<p align="left"><img border="0" src="pdf_images/177.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，分别设置以上两个属性值。</p>
+	<p align="left"><img border="0" src="pdf_images/178.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>后，在对PDF进行双击缩放操作时，<b>“缩放级别”</b>将会锁定在设置的范围内。</p>
+	<p align="left"><img border="0" src="pdf_images/179.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<a name="zdsfjb"></a>
+<font style="font-size: 12pt; font-weight:700">● 最大缩放级别(读写)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“最大缩放级别(写)”</b>帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可设置当前PDF最大缩放级别，属性值不能小于<b>“1.0”</b>。</p>
+	<p align="left">同名读属性，即读取当前最大缩放级别。</p>
+	<p align="left"><img border="0" src="pdf_images/180.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后设置当前最大缩放级别。</p>
+	<p align="left"><b>“按钮2”</b>被点击后读取当前设置的值。</p>
+	<p align="left"><img border="0" src="pdf_images/181.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>之前，双击缩放可缩放两次。</p>
+	<p align="left">之后时，缩放级别会控制在<b>“1.5”</b>以内。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，会读取当前缩放级别。</p>
+	<p align="left"><img border="0" src="pdf_images/182.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<a name="czhd"></a>
+<font style="font-size: 12pt; font-weight:700">● 垂直滑动(读)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可判断当前是否处于<b>“垂直滚动”</b>，垂直滚动返回真，否则返回假。</p>
+	<p align="left"><img border="0" src="pdf_images/183.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在<b>“展示文档”</b>方法前，调用<b>“置横向滚动”</b>方法，参数值设置真。 </p>
+	<p align="left"><img border="0" src="pdf_images/184.png" ></p>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“按钮1”</b>被点击后，判断当前读属性的返回值。</p>
+	<p align="left"><img border="0" src="pdf_images/185.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">左图：横向滚动状态下判断返回值。</p>
+	<p align="left">右图：垂直滚动状态下判断返回值。</p>
+	<p align="left"><img border="0" src="pdf_images/186.gif" >&nbsp;&nbsp;&nbsp;<img border="0" src="pdf_images/187.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<a name="dqhxpy"></a>
+<font style="font-size: 12pt; font-weight:700">● 当前横向偏移(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 当前纵向偏移(读)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">以上两个属性，就是用来判断当前PDF文档，当前横/纵向偏移值。</p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，直接读取这两个偏移值到提示框即可。</p>
+	<p align="left"><img border="0" src="pdf_images/188.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="pdf_images/189.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<a name="dqysy"></a>
+<font style="font-size: 12pt; font-weight:700">● 当前页索引(读)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本属性可读取当前PDF文档所处的页索引。</p>
+	<p align="left"><img border="0" src="pdf_images/190.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接调用本属性读取即可。</p>
+	<p align="left"><img border="0" src="pdf_images/191.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="pdf_images/192.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<a name="sfcysf"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否处于缩放(读)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性可判断当前PDF文档是否处于缩放状态。</p>
+	<p align="left">处于缩放状态返回真，否则返回假。</p>
+	<p align="left"><img border="0" src="pdf_images/193.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，直接判断本属性的返回值即可。</p>
+	<p align="left"><img border="0" src="pdf_images/194.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="pdf_images/195.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<a name="jianju"></a>
+<font style="font-size: 12pt; font-weight:700">● 间距(读)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可读取当前PDF文档的页间距，单位像素。</p>
+	<p align="left"><img border="0" src="pdf_images/196.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，直接读取即可。</p>
+	<p align="left"><img border="0" src="pdf_images/197.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="pdf_images/198.png" ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

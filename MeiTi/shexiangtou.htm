@@ -1,0 +1,502 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+			<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new8')" >一.摄像头类<span>(可收缩)</span></h6></li>
+		<ol id="new8">
+        
+           <li><blockquote><a href="#shexiangtou">1.本类说明</a></blockquote></li>
+          <li><blockquote><a href="#sxdk">2.打开</a></blockquote></li>
+          <li><blockquote><a href="#sxsd">3.锁定</a></blockquote></li>
+          <li><blockquote><a href="#sxjs">4.解锁</a></blockquote></li>
+          <li><blockquote><a href="#sxzzszj">5.置展示组件</a></blockquote></li>
+           
+           <li><blockquote><a href="#sxksyl">6.开始预览</a></blockquote></li>
+           <li><blockquote><a href="#sxksjj">7.开始聚焦</a></blockquote></li>
+           <li><blockquote><a href="#sxqxjj">8.取消聚焦</a></blockquote></li>
+           <li><blockquote><a href="#sxksjclb">9.开始检测脸部</a></blockquote></li>
+         
+           <li><blockquote><a href="#sxtzyl">10.停止预览</a></blockquote></li>
+           <li><blockquote><a href="#sxtzjclb">11.停止检测脸部</a></blockquote></li>
+           <li><blockquote><a href="#sxpz">12.拍照</a></blockquote></li>
+           <li><blockquote><a href="#sxybpz">13.异步拍照</a></blockquote></li>
+           <li><blockquote><a href="#sxcxlj">14.重新连接</a></blockquote></li>
+           <li><blockquote><a href="#sxsf">15.释放</a></blockquote></li>
+           <li><blockquote><a href="#sxqzsxt">16.前置摄像头（常）</a></blockquote></li>
+           <li><blockquote><a href="#sxhzsxt">17.后置摄像头（常）</a></blockquote></li>
+           <li><blockquote><a href="#sxtsl">18.摄像头数量（读）</a></blockquote></li>
+           <li><blockquote><a href="#kmsx">19.快门声（写）</a></blockquote></li>
+           <li><blockquote><a href="#xsjdx">20.显示角度（写）</a></blockquote></li>
+           <li><blockquote><a href="#ddtxsj">21.得到图像数据（事件）</a></blockquote></li>
+         
+           <li><blockquote><a href="#jcdrl">22.检测到人脸（事件）</a></blockquote></li>
+           <li><blockquote><a href="#jjwb">23.聚焦完毕（事件）</a></blockquote></li>
+         
+           <li><blockquote><a href="#cfkm">24.触发快门（事件）</a></blockquote></li>
+          
+           <li><blockquote><a href="#ylhcsj">25.预览缓存数据（事件）</a></blockquote></li>
+           
+		</ol>	
+		
+		
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new9')" >二.摄像头脸部类<span>(可收缩)</span></h6></li>
+		<ol id="new9">
+           <li><blockquote><a href="#lian">1.本类说明</a></blockquote></li>
+          <li><blockquote><a href="#zuoyan">2.左眼中心（读）</a></blockquote></li>
+          <li><blockquote><a href="#youyan">3.右眼中心（读）</a></blockquote></li>
+          <li><blockquote><a href="#zuiba">4.嘴部中心（读）</a></blockquote></li>
+          <li><blockquote><a href="#renlian">5.是否人脸（读）</a></blockquote></li>
+          <li><blockquote><a href="#lianid">6.脸部ID（读）</a></blockquote></li>
+          <li><blockquote><a href="#mianbu">7.面部坐标（读）</a></blockquote></li>
+       
+		</ol>	
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>摄像头实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="shexiangtou"></a>
+<h2>一、摄像头类</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+    <p align="left">通过本类可以调用<b>“摄像头”</b>，然后创建相机，实现拍照等事件。</p>
+    <p align="left">简单来说，通过本类可以自己开发一个简单的相机软件。</p>
+    <p align="left">如果要访问指定摄像头，需要使用<b>“打开”</b>方法，默认访问<b>“后置摄像头”</b>。</p>
+	<p align="left"><font color="#F70408">注意：本类位于<strong>“多媒体功能支持”</strong>模块中，必须添加此模块才能使用。</font></p>
+	<p align="left"><img border="0" src="mt_images/138.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="sxdk"></a>
+<font style="font-size: 12pt; font-weight:700">● 打开</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">即打开指定摄像头，默认为<b>“后置摄像头”</b>。</p>
+    <p align="left">可通过<b>“摄像头类.前置摄像头”</b>来打开前置。</p>
+	<p align="left"><img border="0" src="mt_images/139.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<a name="sxsd"></a>
+<font style="font-size: 12pt; font-weight:700">● 锁定</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，锁定当前相机仅当前程序可用。</p>
+    <p align="left">如果想让其它软件访问相机，需要执行<b>“解锁”</b>方法。</p>
+	<p align="left"><img border="0" src="mt_images/140.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="sxjs"></a>
+<font style="font-size: 12pt; font-weight:700">● 解锁</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，解锁相机让其它程序访问。</p>
+	<p align="left"><img border="0" src="mt_images/140a.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="sxzzszj"></a>
+<font style="font-size: 12pt; font-weight:700">● 置展示组件</font><br/>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+   <p align="left">顾名思义，设置拍摄时显示图像的组件。</p>
+<p align="left">该组件为高级画板，务必保证画板在窗口界面上。</p>
+	<p align="left"><img border="0" src="mt_images/141.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<a name="sxksyl"></a>
+<font style="font-size: 12pt; font-weight:700">● 开始预览</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">在绑定的<b>“高级画板”</b>上显示相机画面。</p>
+	<p align="left"><img border="0" src="mt_images/142.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="sxtzyl"></a>
+<font style="font-size: 12pt; font-weight:700">● 停止预览</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">暂停当前画面预览，<b>“高级画板”</b>上显示的界面将停留在最后一帧上。</p>
+	<p align="left"><img border="0" src="mt_images/145.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="sxksjj"></a>
+<font style="font-size: 12pt; font-weight:700">● 开始聚焦</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法即我们常说的<b>“对焦”</b>。</p>
+	<p align="left"><img border="0" src="mt_images/143.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<a name="sxksjclb"></a>
+<font style="font-size: 12pt; font-weight:700">● 开始检测脸部</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">安卓内置的2D人脸检测方法，本方法调用后会不停的发送<b>“检测到人脸”</b>事件。</p>
+    <p align="left">本方法不建议用来做人脸识别功能，因为照片也可以识别。</p>
+	<p align="left"><img border="0" src="mt_images/144.png" ></p>
+</blockquote>
+	
+
+	<p align="left">&nbsp;</p>
+<a name="sxtzjclb"></a>
+<font style="font-size: 12pt; font-weight:700">● 停止检测脸部</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，调用本方法后，将会停止人脸检测。</p>
+	<p align="left"><img border="0" src="mt_images/146.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<a name="sxpz"></a>
+<font style="font-size: 12pt; font-weight:700">● 拍照</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，执行本方法后会触发<b>“触发快门”</b>和<b>“得到图像数据”</b>事件。</p>
+    <p align="left">并且<b>“得到图像数据”</b>事件会触发三次，得到三种不同的图片数据。</p>
+	<p align="left"><img border="0" src="mt_images/147.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<a name="sxsf"></a>
+<font style="font-size: 12pt; font-weight:700">● 释放</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，释放当前相机所占用的资源。</p>
+	<p align="left"><img border="0" src="mt_images/148.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<a name="sxqzsxt"></a><a name="sxhzsxt"></a>
+<font style="font-size: 12pt; font-weight:700">● 前置摄像头（常）</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 后置摄像头（常）</font><br/>	
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">以上两个为常量值，通过<b>“摄像头类.XXX”</b>即可调用。</p>
+    <p align="left">主要作用就是提供给<b>“打开”</b>方法。</p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<a name="kmsx"></a>
+<font style="font-size: 12pt; font-weight:700">● 快门声（写）</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本<b>“写属性”</b>可以设置是否开启快门声。</p>
+    <p align="left">本属性并不保证所有设备都可以正常使用，部分手机强制开启快门。</p>
+    <p align="left">快门声音为系统相机的快门声音。</p>
+	<p align="left"><img border="0" src="mt_images/149.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<a name="xsjdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 显示角度（写）</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本<b>“写属性”</b>用来设置预览画面时的角度。</p>
+    <p align="left">总共四个角度，分别为：0,90,180,270度。</p>
+	<p align="left"><img border="0" src="mt_images/150.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<a name="ddtxsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 得到图像数据（事件）</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过<b>“拍照”</b>方法触发本事件，本事件总共会触发三次，得到三种不同的图片数据。</p>
+    <p align="left">分别为：<b>“0=未压缩的原始数据”</b>。</p>
+    <p align="left"><b>“1=预览数据”</b>和<b>“2=JPEG最终保存数据”</b></p>
+    <p align="left">预览数据：通常用来作为拍照完毕后，相机画面显示的数据。</p>
+	<p align="left"><img border="0" src="mt_images/151.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="jcdrl"></a>
+<font style="font-size: 12pt; font-weight:700">● 检测到人脸（事件）</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">当执行<b>“开始检测脸部”</b>后，会不停的发送本事件。</p>
+    <p align="left">通过本事件中<b>“摄像头脸部类”</b>可以获得人脸数据，关于本类教程中会详细介绍。</p>
+	<p align="left"><img border="0" src="mt_images/152.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<a name="jjwb"></a>
+<font style="font-size: 12pt; font-weight:700">● 聚焦完毕（事件）</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">执行<b>“聚焦”</b>方法，聚焦完毕后会发送本事件。</p>
+    <p align="left">还可以通过<b>“聚焦成功”</b>参数来判断是否对焦成功。</p>
+	<p align="left"><img border="0" src="mt_images/153.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<a name="cfkm"></a>
+<font style="font-size: 12pt; font-weight:700">● 触发快门（事件）</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">执行<b>“拍照”</b>方法会触发本事件。</p>
+    <p align="left">根据自己的实际需求，决定是否在本事件下执行相应的方法。</p>
+	<p align="left"><img border="0" src="mt_images/154.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<a name="ylhcsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 预览缓存数据（事件）</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">当打开摄像头后，本事件会不停的发送。</p>
+    <p align="left">本事件下的<b>“预览数据”</b>参数，返回的并非正常的图片数据。</p>
+    <p align="left">可以理解为拍摄时产生的垃圾文件。</p>
+	<p align="left"><img border="0" src="mt_images/155.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">界面准备如下图：</p>
+<blockquote>
+	<p align="left">在上一个类的基础上，增加一个按钮，分别修改这三个按钮的标题。</p>
+	<p align="left">修改完毕后点击<b>“确定”</b>保存布局。</p>
+	<p align="left"><img border="0" src="mt_images/156.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+	<p align="left">增加一个<b>“摄像头类”</b>成员变量，起名<b>“摄像头”</b>。</p>
+	<p align="left">右键<b>“摄像头类”</b>选择添加<b>“事件接收方法”</b>。</p>
+	<p align="left"><img border="0" src="mt_images/157.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+	<p align="left">随后分别依次添加<b>“得到图像数据”</b>，<b>“触发快门”</b>，<b>“聚焦完毕”</b>，<b>“预览缓存数据”</b>和<b>“检测到人脸”</b>事件。</p>
+	<p align="left">注意：<b>“被缩放”</b>，<b>“预览数据”</b>和<b>“开始移动聚焦”</b>这三个事件实测无效，不讲解。</p>
+	<p align="left">注意：<b>“发生错误”</b>事件，仅在拍摄时出错的情况下才会触发。</p>
+	<p align="left">正常情况下根本不会出错，本事件触发的可能性极低，因此不再讲解。</p>
+	<p align="left"><img border="0" src="mt_images/158.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（3）：</p>
+<blockquote>
+	<p align="left">在<b>“得到图像数据”</b>事件下，判断来源对象后继续判断<b>“触发标志”</b>参数。</p>
+	<p align="left">通过判断不同的标志，来保存不同的<b>“图片数据”</b>字节数组。</p>
+  <p align="left">使用的方法是<a href="j_file.htm#wj_xcwj"><b>“写出文件”</b></a>，可点击跳转查看具体帮助文档。</p>
+	<p align="left">注意：最后一个触发标志被触发后，如果不再使用摄像头。</p>
+	<p align="left">建议调用<b>“停止预览”</b>，<b>“解锁”</b>和<b>“释放”</b>方法。</p>
+	<p align="left"><img border="0" src="mt_images/159.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（4）：</p>
+<blockquote>
+	<p align="left">分别在<b>“触发快门”</b>，<b>“聚焦完毕”</b>和<b>“预览缓存数据”</b>下执行你想要执行的方法即可。</p>
+	<p align="left"><img border="0" src="mt_images/160.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（5）：</p>
+<blockquote>
+	<p align="left">调用<b>“开始检测脸部”</b>后，会触发本事件。</p>
+	<p align="left">通过<b>“脸部数据”</b>参数可以获得人脸坐标等数据。</p>
+	<p align="left">详细说明可跳转查看<a href="#lian"><b>“摄像头脸部类”</b></a>。</p>
+	<p align="left">本例子中，判断<b>“数组成员数”</b>的目的，是为了防止没有检测到人脸。</p>
+	<p align="left">通过<b>“脸部数据”</b>参数，可以看出它是一个数组类的参数。</p>
+		<p align="left">也就表明，检测人脸时会将画面内出现的人脸全部进行检测。</p>
+	<p align="left"><img border="0" src="mt_images/161.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（6）：</p>
+<blockquote>
+	<p align="left">最后在<b>“按钮被单击”</b>下，判断按钮来源，执行对应的方法即可。</p>
+	<p align="left"><img border="0" src="mt_images/162.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">可以看到<b>“文本框1”</b>显示可信度为<b>“91”</b>。</p>
+	<p align="left">高达90以上的基本可以确定为人脸。</p>
+	<p align="left">图文教程仅能演示到此，其它方法自行测试。</p>
+	<p align="left"><img border="0" src="mt_images/162a.png" width="450" height="800" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>	
+<a name="sxqxjj"></a>
+<font style="font-size: 12pt; font-weight:700">● 取消聚焦</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，取消当前所有的对焦动作。</p>
+	<p align="left">如果遇到摄像头反复对焦的情况（极少遇见），可执行本方法取消对焦操作。</p>
+	<p align="left">调用方法：<b>“摄像头变量.取消聚焦()”</b></p>
+	<p align="left"><img border="0" src="mt_images/163.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+<a name="sxybpz"></a>
+<font style="font-size: 12pt; font-weight:700">● 异步拍照</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">本方法和<b>“拍照”</b>方法功能一样，不同之处是使用本方法<b>“拍照”</b>界面不会发成卡顿现象。</p>
+	<p align="left">调用方法：<b>“摄像头变量.异步拍照()”</b></p>
+	<p align="left"><img border="0" src="mt_images/164.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+<a name="sxcxlj"></a>
+<font style="font-size: 12pt; font-weight:700">● 重新连接</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">假如：当前程序需要让其它程序临时访问相机。</p>
+	<p align="left">访问结束后，需要调用本方法让当前程序重新连接到摄像头。</p>
+	<p align="left">调用方法：<b>“摄像头变量.重新连接()”</b></p>
+	<p align="left"><img border="0" src="mt_images/165.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<a name="sxtsl"></a>
+<font style="font-size: 12pt; font-weight:700">● 摄像头数量（读）</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本读属性获得前后摄像头的总数量。</p>
+	<p align="left">手机前后双摄，三摄，或者更多摄像头，均会识别为一个摄像头。</p>
+	<p align="left">也就意味着，只要手机存在前后摄像头，此方法必然返回<b>“2”</b>。</p>
+	<p align="left"><img border="0" src="mt_images/166.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">界面准备：</p>
+<blockquote>
+	<p align="left">在原界面的基础上，修改<b>“按钮3”</b>的标题为<b>“摄像头数量”</b>。</p>
+	<p align="left"><img border="0" src="mt_images/167.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在<b>“按钮3”</b>被单击后，利用本方法读取数量，赋值给文本框的内容。</p>
+	<p align="left"><img border="0" src="mt_images/168.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+  <p align="left">下图为真机（小米6）运行截图，手机为后置双摄前置单摄，可以看到返回的是<b>“2”</b>。</p>
+	<p align="left">注意：想要读取摄像头数量，必须打开相机才可以读取。</p>
+	<p align="left"><img src="mt_images/169.png" width="450" height="800" border="0" ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="lian"></a>
+	<h2>二、摄像头脸部类</h2>
+<p align="left">&nbsp;</p>	
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本类实现了对人脸检测方面的操作。</p>
+	<p align="left">本类中共有六个读属性。</p>
+	<p align="left">本类并不能直接创建或者调用，需要通过<b>“摄像头类_检测到人脸”</b>事件才能获取当前对象。</p>
+	<p align="left">各个方法的帮助说明，如下图所示，不再单独讲解。</p>
+	<p align="left"><b>“脸部ID”</b>获得当前脸部唯一ID值，可以将ID值存储起来，用于简单的人脸识别。</p>
+	<p align="left">当然并不建议使用本属性，因为2D人脸识别极其不安全，并且有重复ID的可能性。</p>
+	
+	<p align="left"><img border="0" src="mt_images/170.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">直接在<b>“摄像头类_检测到人脸”</b>事件下，通过<b>“脸部数据”</b>参数调用对应的方法就可以读取相关信息。</p>
+	<p align="left">本例程中的代码，设置了只有当画面内出现<b>“两张人脸”</b>时才会反馈检测数据。</p>
+	<p align="left"><img src="mt_images/171.png" width="800" height="674" border="0" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">左眼，右眼和嘴部返回<b>“null”</b>，是因为检测失败导致的。</p>
+	<p align="left">脸部ID返回<b>“-1”</b>同样也是因为检测失败返回的数据。</p>
+	<p align="left"><img src="mt_images/172.png" width="450" height="800" border="0" ></p>
+</blockquote>
+
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,111 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		
+			
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new4')" >一.折线预览图<span>(可收缩)</span></h6></li>
+		<ol id="new4">
+			<li><blockquote><a href="#">1.准备工作</a></blockquote></li>
+			<li><blockquote><a href="#zylysz">2.预览颜色值(写)</a></blockquote></li>
+			 <li><blockquote><a href="#zylysz">22.现行视图区域(写)</a></blockquote></li>
+		</ol>
+		
+	</ol>
+</ul>
+</div>	
+<p align="left">
+<h2>折线预览图组件实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p> 
+<font style="font-size: 12pt; font-weight:700">● 教程说明</font><br/>
+<br/>
+	<blockquote>
+	<p align="left"><font color="#F30F12">注意：本组件位于<strong>“图表类窗口组件”</strong>模块中。</font></p>
+ </blockquote>
+	<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 详细例程</font><br/>
+<br/><blockquote>
+	<p align="left">可打开火山安装目录下<b>“samples\samples.vsln”</b>解决方案。 </p>
+	<p align="left">位于<b>“窗口及组件->图表系列组件”</b>分类下。</p>
+	<p align="left"><img src="chart_images/0.png" border="0" ></p>
+	 </blockquote>
+		
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<h2>一、折线预览图</h2>
+<p align="left">&nbsp;</p>
+	
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font>	
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">打开启动类<b>“界面设计器”</b>，设计如下界面。</p>
+	<p align="left">依次是<b>“折线图1”</b>和<b>“折线预览图1”</b>。</p>
+	<p align="left">分别设置其高度和宽度。</p>
+	<p align="left">注意：本组件继承了<b>“折线图”</b>的所有方法，但是主要作用是<b>“提供预览”</b>。</p>
+	<p align="left"><img src="chart_images/119.png"></p>
+</blockquote>	
+	
+
+<p align="left">&nbsp;</p>	
+<a name="zylysz"></a>
+<font style="font-size: 12pt; font-weight:700">● 预览颜色值(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 现行视图区域(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“预览颜色值(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，设置预览颜色值，可使用<b>“颜色类”</b>中定义的常量值。</p>
+	<p align="left"><img border="0" src="chart_images/120.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“现行视图区域(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">设置现行视图区域，用于实时预览。</p>
+	<p align="left"><img border="0" src="chart_images/121.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">在<b>“折线图”</b>创建代码的基础上简单修改即可。</p>
+	<p align="left">1、在创建折线图代码尾部，设置<b>“折线预览图1.图表数据”</b>属性值为<b>“折线图数据”</b>。</p>
+	<p align="left">即<b>“折线图”</b>和<b>“折线预览图”</b>共用同一数据。</p>
+	<p align="left">2、设置<b>“预览颜色值”</b>为<b>“黄色”</b>。</p>
+	<p align="left">3、设置<b>“支持视图区域改变监听”</b>的属性值为<b>“真”</b>。</p>
+	<p align="left"><img border="0" src="chart_images/122.png" ></p>
+	<p align="left"></p>
+	<p align="left">4、添加<b>“折线预览图_视图区域改变”</b>事件，设置<b>“折线图1.现行视图区域”</b>属性值为<b>“当前区域对象”</b>参数。</p>
+	<p align="left"><img border="0" src="chart_images/123.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">拖动<b>“折线预览图”</b>中的黄色矩形，即可实时预览<b>“折线图”</b>局部折线的效果。</p>
+	<p align="left"><img border="0" src="chart_images/124.gif" >
+    </p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

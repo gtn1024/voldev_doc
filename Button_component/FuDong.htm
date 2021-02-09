@@ -1,0 +1,497 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+	
+	
+	
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>浮动按钮组件</h4></li>
+	<ol>
+
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new5')" >一.浮动按钮<span>(可收缩)</span></h6></li>
+		<ol id="new5">
+            <li><blockquote><a href="#fxan">1.准备工作</a></blockquote></li> 
+			<li><blockquote><a href="#fdtx">2.图像(写)</a></blockquote></li>
+			<li><blockquote><a href="#fdtx">3.图像2(写)</a></blockquote></li>
+			<li><blockquote><a href="#fdaxys">4.按下颜色(写)</a></blockquote></li>
+            
+            <li><blockquote><a href="#fdaxys">5.按下扩散颜色(写)</a></blockquote></li>
+			
+            <li><blockquote><a href="#axyszy">6.按下颜色资源(写)</a></blockquote></li>
+			<li><blockquote><a href="#axyszy">7.按下扩散颜色资源(写)</a></blockquote></li>
+			<li><blockquote><a href="#fdaxys">8.正常颜色(写)</a></blockquote></li>
+            <li><blockquote><a href="#axyszy">9.正常颜色资源(写)</a></blockquote></li>
+            <li><blockquote><a href="#fdjysys">10.禁用时颜色(写)</a></blockquote></li>
+            <li><blockquote><a href="#fdjysys">11.禁用时颜色资源(写)</a></blockquote></li>
+            <li><blockquote><a href="#fdxsjdt">12.显示进度条(写)</a></blockquote></li>
+			<li><blockquote><a href="#fdjdzdz">13.进度最大值(读写)</a></blockquote></li>
+            <li><blockquote><a href="#fdjdmhms">14.进度模糊模式(写)</a></blockquote></li> 
+            <li><blockquote><a href="#fdxsyy">15.显示阴影(写)</a></blockquote></li>
+			<li><blockquote><a href="#fdxsyy">16.阴影偏移(写)</a></blockquote></li>
+            <li><blockquote><a href="#fdxsyy">17.阴影半径(写)</a></blockquote></li>
+            <li><blockquote><a href="#fdxsyy">18.阴影颜色(写)</a></blockquote></li> 
+            <li><blockquote><a href="#fdxsyy">19.阴影颜色资源(写)</a></blockquote></li>
+            <li><blockquote><a href="#fdkjgd">20.空间高度(写)</a></blockquote></li>
+            <li><blockquote><a href="#fdkjgd">21.空间高度2(写)</a></blockquote></li>
+            <li><blockquote><a href="#fdsxan">22.缩小按钮(读写)</a></blockquote></li>
+            <li><blockquote><a href="#fddqyczt">23.当前隐藏状态(读)</a></blockquote></li>
+            <li><blockquote><a href="#fdqhxszt">24.切换显示状态</a></blockquote></li>
+            <li><blockquote><a href="#fdxsjdt">25.取当前进度值</a></blockquote></li>
+			<li><blockquote><a href="#fdxsjdt">26.置当前进度值</a></blockquote></li>
+            <li><blockquote><a href="#fdycjdxs">27.隐藏进度显示</a></blockquote></li>
+            <li><blockquote><a href="#fdxs">28.显示</a></blockquote></li>
+            <li><blockquote><a href="#fdxs">29.隐藏</a></blockquote></li>
+		</ol>	
+			 
+	</ol>
+</ul>
+</div>
+
+
+
+<p align="left">
+<h2>浮动按钮组件操作实例讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	<a name="fxan"></a>    
+<h2>一、浮动按钮</h2>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 辅助说明</font><br/>
+     <blockquote>
+	<p align="left"><font color="#F70408">本类位于<strong>“浮动按钮窗口组件”</strong>模块中，必须添加此模块才能使用。</font></p>
+	</blockquote>		
+
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">1、拖放一个<b>“按钮1”</b>。</p>
+    <p align="left">2、在按钮下拖放一个<b>“帧布局器1”</b>，设置其<b>“高/宽度”</b>分别为<b>“匹配父组件高/宽度”</b>。</p>
+    <p align="left">3、在当前布局器内拖放一个<b>“简单列表框1”</b>和<b>“浮动按钮1”</b>(注意先后顺序不能搞反)。</p>
+    <p align="left">4、设置<b>“浮动按钮1”</b>的<b>“右/底外边距”</b>分别为20，并设置<b>“横/纵向对齐”</b>方式。</p>
+    <p align="left"><font color="#F30F12">注意：本组件位于<strong>“浮动按钮窗口组件”</strong>模块中。</font></p>
+	<p align="left"><img src="fd_images/1.png" border="0" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在<a href="a_win.htm#tzbcj"><b>“通知_被创建”</b></a>虚拟方法下，循环添加50个列表项。</p>
+	<p align="left"><img src="fd_images/2.png" border="0" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">浮动按钮默认为红色，整个按钮将悬浮在列表框上方。</p>
+	<p align="left"><img src="fd_images/3.gif" border="0" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="fdtx"></a>
+<font style="font-size: 12pt; font-weight:700">● 图像(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 图像2(写)</font>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left">以上两个属性都是用来设置按钮图像数据，此处介绍<b>“图像”</b>写属性。</p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义给当前按钮设置图片，属性值为<b>“可绘制资源”</b>。</p>
+	<p align="left"><img border="0" src="fd_images/4.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加<b>“按钮_被单击”</b>和<b>“浮动按钮_被单击”</b>事件。</p>
+	<p align="left"><b>“按钮1”</b>被点击后，设置当前组件<b>“图像”</b>属性。</p>
+	<p align="left"><b>“浮动按钮1”</b>被点击后，弹出一个提示。</p>
+	<p align="left"><img border="0" src="fd_images/5.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left"><img border="0" src="fd_images/6.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+
+<a name="fdaxys"></a>
+<font style="font-size: 12pt; font-weight:700">● 正常颜色(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 按下颜色(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 按下扩散颜色(写)</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left"><b>“正常颜色”</b>用来设置默认颜色。</p>
+	<p align="left"><b>“按下颜色”</b>用来设置按下后显示的颜色。</p>
+	<p align="left"><b>“按下扩散颜色”</b>用来设置按下后<b>“扩散动画”</b>的颜色值。</p>
+	<p align="left">注意：<b>“按下扩散颜色”</b>会逐步覆盖<b>“按下颜色”</b>。</p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后分别设置对应属性的颜色值即可。</p>
+	<p align="left">可使用<b>“颜色类”</b>中定义的常量值。</p>
+	<p align="left"><img border="0" src="fd_images/7.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="fd_images/8.gif" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<a name="axyszy"></a>
+<font style="font-size: 12pt; font-weight:700">● 正常颜色资源(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 按下颜色资源(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 按下扩散颜色资源(写)</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">以上三个属性的作用和前三个作用一致。</p>
+	<p align="left">不同之处在于，这三个属性的属性值为<b>“颜色值资源”</b>。</p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义<b>“颜色值资源”</b>变量，设置初始值<b>“#”</b>+<b>“十六进制颜色值”</b>。</p>
+	<p align="left">然后将定义的变量分别赋值给对应属性即可。</p>
+	<p align="left"><img border="0" src="fd_images/9.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="fd_images/10.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<a name="fdjysys"></a>
+<font style="font-size: 12pt; font-weight:700">● 禁用时颜色(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 禁用时颜色资源(写)</font>
+		<p align="left">&nbsp;</p>
+		<p align="left">以上两个属性都是用来设置组件被禁用后的颜色值。</p>
+		<p align="left">此处介绍<b>“禁用时颜色”</b>属性。</p>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，用来设置组件禁用后的颜色。</p>
+	<p align="left">可使用<b>“颜色类”</b>中定义的常量值。</p>
+	<p align="left"><img border="0" src="fd_images/11.png" > </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在<b>“悬浮按钮1”</b>的属性栏设置当前属性，属性值填写<b>“颜色类.灰色”</b>。</p>
+	<p align="left"><b>“按钮1”</b>被点击后，设置<b>“许可”</b>属性为假，禁用当前组件。</p>
+	<p align="left"><img border="0" src="fd_images/12.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可看到<b>“按钮1”</b>被点击后，浮动按钮变成了灰色。</p>
+	<p align="left"><img border="0" src="fd_images/13.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="fdxsjdt"></a>
+<font style="font-size: 12pt; font-weight:700">● 显示进度条(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 置当前进度值</font><br>
+<font style="font-size: 12pt; font-weight:700">● 取当前进度值</font>
+		<p align="left">&nbsp;</p>
+<p align="left"><b>“显示进度条(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，本属性用来设置当前组件是否显示进度条。</p>
+	<p align="left">属性值为真显示，否则不显示。</p>
+	<p align="left">注：进度条为圆环状。</p>
+	<p align="left"><img border="0" src="fd_images/14.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“置当前进度值”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义设置当前进度条进度。</p>
+	<p align="left">参数1：要设置的进度值。</p>
+	<p align="left">参数2：是否有动画效果。</p>
+	<p align="left"><img border="0" src="fd_images/15.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“取当前进度值”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义获取当前进度条的进度值，返回值为整数。</p>
+	<p align="left"><img border="0" src="fd_images/16.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，依次调用以上方法。</p>
+	<p align="left"><img border="0" src="fd_images/17.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="fd_images/18.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="fdjdzdz"></a>
+<font style="font-size: 12pt; font-weight:700">● 进度最大值(读写)</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“进度最大值(写)”</b>帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义设置当前进度条的最大进度值，默认为100。</p>
+	<p align="left">同名读属性，即读取当前最大进度值。</p>
+	<p align="left"><img border="0" src="fd_images/19.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击后，读取当前最大进度值。</p>
+<p align="left"><b>“浮动按钮1”</b>被点击后，设置最大进度值为200。</p>
+	<p align="left"><img border="0" src="fd_images/20.png" ></p>
+</blockquote>
+		
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="fd_images/21.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="fdjdmhms"></a>
+<font style="font-size: 12pt; font-weight:700">● 进度模糊模式(写)</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性值为真，进度条将进入无限循环动画模式，即不确定具体进度数值。</p>
+	<p align="left"><img border="0" src="fd_images/22.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后设置本属性值为真。</p>
+	<p align="left"><img border="0" src="fd_images/23.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="fd_images/24.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="fdxsyy"></a>
+<font style="font-size: 12pt; font-weight:700">● 显示阴影(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 阴影偏移(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 阴影半径(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 阴影颜色(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 阴影颜色资源(写)</font>
+		<p align="left"></p>
+		<p align="left">以上属性分别用来设置阴影相关。</p>
+		<p align="left"><b>“阴影颜色”</b>和<b>“阴影颜色资源”</b>二选一即可。</p>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，依次设置对应属性即可。</p>
+	<p align="left"><img border="0" src="fd_images/25.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="fd_images/26.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="fdkjgd"></a>
+<font style="font-size: 12pt; font-weight:700">● 空间高度(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 空间高度2(写)</font>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">此处讲解<b>“空间高度”</b>属性。</p>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性可用来设置一个突出于屏幕的视觉差高度。</p>
+	<p align="left"><img border="0" src="fd_images/27.png" ></p>
+</blockquote>	
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">设置本属性值为1。</p>
+	<p align="left"><img border="0" src="fd_images/28.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">注：仔细观察浮动按钮的变化。</p>
+	<p align="left"><img border="0" src="fd_images/29.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="fdsxan"></a>
+<font style="font-size: 12pt; font-weight:700">● 缩小按钮(读写)</font>
+		<p align="left">&nbsp;</p>
+<p align="left"><b>“缩小按钮(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性可用来设置当前按钮为小号按钮。</p>
+	<p align="left">同名读属性，即读取当前是否为小号按钮。</p>
+	<p align="left"><img border="0" src="fd_images/30.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">设置本属性值为<b>“取反(浮动按钮1.缩小按钮)”</b>。</p>
+	<p align="left"><img border="0" src="fd_images/31.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，将会在大小按钮之间切换。</p>
+	<p align="left"><img border="0" src="fd_images/32.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="fddqyczt"></a>
+<font style="font-size: 12pt; font-weight:700">● 当前隐藏状态(读)</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">判断当前组件是否处于隐藏状态。</p>
+	<p align="left">隐藏返回真，否则返回假。</p>
+	<p align="left"><img border="0" src="fd_images/33.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接判断当前属性的返回值即可。</p>
+	<p align="left"><img border="0" src="fd_images/34.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="fd_images/35.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="fdqhxszt"></a>
+<font style="font-size: 12pt; font-weight:700">● 切换显示状态</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，本方法用来切换显示状态。</p>
+	<p align="left">如果当前组件为显示状态则隐藏组件，否则相反。</p>
+	<p align="left">参数1：设置显示或隐藏是否带动画。</p>
+	<p align="left"><img border="0" src="fd_images/36.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">调用本方法，参数填写真。</p>
+	<p align="left"><img border="0" src="fd_images/37.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="fd_images/38.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="fdycjdxs"></a>
+<font style="font-size: 12pt; font-weight:700">● 隐藏进度显示</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，隐藏按钮的进度条。</p>
+	<p align="left"><img border="0" src="fd_images/39.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“浮动按钮1”</b>被点击，显示进度条设置进度。</p>
+	<p align="left"><b>“按钮1”</b>被点击，调用当前方法隐藏进度条。</p>
+	<p align="left"><img border="0" src="fd_images/40.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="fd_images/41.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="fdxs"></a>
+<font style="font-size: 12pt; font-weight:700">● 显示</font><br>
+<font style="font-size: 12pt; font-weight:700">● 隐藏</font>
+		<p align="left">&nbsp;</p>
+<p align="left"><b>“显示”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法可用来<b>“显示”</b>浮动按钮。</p>
+	<p align="left">参数值可设置是否启动动画效果。</p>
+	<p align="left"><img border="0" src="fd_images/42.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“隐藏”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法可用来<b>“隐藏”</b>浮动按钮。</p>
+	<p align="left">参数值可设置是否启动动画效果。</p>
+	<p align="left"><img border="0" src="fd_images/43.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击，调用<b>“显示”</b>方法。</p>
+	<p align="left"><b>“浮动按钮1”</b>被点击，调用<b>“隐藏”</b>方法。</p>
+	<p align="left"><img border="0" src="fd_images/44.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="fd_images/45.gif" ></p>
+</blockquote>
+
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

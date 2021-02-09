@@ -1,0 +1,511 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new6')" >视图容器<span>(可收缩)</span></h6></li>
+		<ol id="new6">
+			<li><blockquote><a href="#strq">1.准备工作</a></blockquote></li>
+			<li><blockquote><a href="#scshstrq">2.初始化视图容器</a></blockquote></li>
+			<li><blockquote><a href="#szcymgbjt">3.支持页面改变监听</a></blockquote></li>
+			<li><blockquote><a href="#sxlymjj">4.相邻页面间距</a></blockquote></li>
+			<li><blockquote><a href="#sxlymjj">5.相邻页面间距画面</a></blockquote></li>
+			<li><blockquote><a href="#stxxxzx">6.现行选中项(读写)</a></blockquote></li>
+			<li><blockquote><a href="#stnfxygd">7.能否向右滚动(读)</a></blockquote></li>
+			<li><blockquote><a href="#stnfxygd">8.能否向左滚动(读)</a></blockquote></li>
+			<li><blockquote><a href="#stymsl">9.页面数量(读)</a></blockquote></li>
+			<li><blockquote><a href="#stymksgd">10.页面开始滚动(事件)</a></blockquote></li>
+			<li><blockquote><a href="#szcymgbjt">11.页面被选择(事件)</a></blockquote></li>
+			<li><blockquote><a href="#stymgdztgb">12.页面滚动状态改变(事件)</a></blockquote></li>
+			<li><blockquote><a href="#stymgdztgb">13.处于最终位置(常)</a></blockquote></li>
+			<li><blockquote><a href="#stymgdztgb">14.正在拖动(常)</a></blockquote></li>
+			<li><blockquote><a href="#stymgdztgb">15.空闲状态(常)</a></blockquote></li>
+			<li><blockquote><a href="#Stjxym">16.添加新页面</a></blockquote></li>
+			<li><blockquote><a href="#Skfhd">17.可否滑动(写)</a></blockquote></li>
+			<li><blockquote><a href="#Ssczdym">18.删除指定页面</a></blockquote></li>
+			<li><blockquote><a href="#Sqdqsyymlb">19.取当前所有页面列表</a></blockquote></li>
+			<li><blockquote><a href="#Sqzdymzj">20.取指定页面组件</a></blockquote></li>
+			<li><blockquote><a href="#Qcrxym">21.插入新页面</a></blockquote></li>
+			<li><blockquote><a href="#Qqksyym">22.清空所有页面</a></blockquote></li>
+			<li><blockquote><a href="#Skfhd">23.置现行选中项</a></blockquote></li>
+		</ol>
+		
+		
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>视图容器实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+
+<p align="left">&nbsp;</p><a name="strq"></a>
+<h2>一、视图容器</h2>
+<p align="left">&nbsp;</p>
+	
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font>	
+<p align="left">&nbsp;</p>
+<p align="left">界面准备：</p>	
+<blockquote>
+	<p align="left">打开启动类<b>“界面设计器”</b>，设计如下界面。</p>
+	<p align="left">组件依次为<b>“按钮1”</b>，<b>“视图容器1”</b>。</p>
+	<p align="left">设置视图容器1<b>“高/宽度”</b>为<b>“匹配父组件高/宽度”</b>。</p>
+	<p align="left">视图容器可单独使用，无需配合<b>“高级选择夹”</b>。</p>
+	<p align="left"><font color="#F30F12">注意：本组件位于<strong>“杂类窗口组件1”</strong>模块中。</font></p>
+	<p align="left"><img src="layout_images/166.png" width="741" height="612"  border="0" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="scshstrq"></a>
+	<font style="font-size: 12pt; font-weight:700">● 初始化视图容器</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+  <p align="left">本方法参考<a href="a_Gaoji.htm#gbqnbj"><b>“高级选择夹”</b></a>中的代码。</p>
+</blockquote>	
+
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="szcymgbjt"></a>
+<font style="font-size: 12pt; font-weight:700">● 支持页面改变监听</font><br>
+<font style="font-size: 12pt; font-weight:700">● 页面被选择(事件)</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“支持页面改变监听”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本方法可监听<b>“页面被改变”</b>事件。</p>
+	<p align="left">参数值提供真则监听，否则取消监听。</p>
+	<p align="left"><img border="0" src="layout_images/167.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“页面被选择(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">页面被改变后触发本事件，参数将返回选择后的新页面索引。</p>
+	<p align="left">注意：索引从0开始。</p>
+	<p align="left"><img border="0" src="layout_images/168.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">添加<b>“按钮_被单击”</b>事件，调用<b>“支持页面改变监听()”</b>方法，参数值填写真。</p>
+	<p align="left">添加<b>“视图容器_页面被选择”</b>事件，指定来源对象后，弹出被选择的页面索引。</p>
+	<p align="left"><img border="0" src="layout_images/169.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>后，当页面被改变后就会触发<b>“页面被选择”</b>事件。</p>
+	<p align="left"><img border="0" src="layout_images/170.gif" >
+    </p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="sxlymjj"></a>
+<font style="font-size: 12pt; font-weight:700">● 相邻页面间距</font><br>
+<font style="font-size: 12pt; font-weight:700">● 相邻页面间距画面</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“相邻页面间距”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法可设置视图容器两个相邻页面的间距，单位像素。</p>
+	<p align="left"><img border="0" src="layout_images/174.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“相邻页面间距画面”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法可以给间距填充图片，参数值为<b>“可绘制对象类”</b>，可通过<b>“载入可绘制资源()”</b>方法进行转换。</p>
+	<p align="left"><img border="0" src="layout_images/175.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，依次调用这两个方法即可。</p>
+	<p align="left"><img border="0" src="layout_images/176.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，可看到当前视图容器两个页面之间填充了一张图片。</p>
+	<p align="left"><img border="0" src="layout_images/177.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="stxxxzx"></a>
+<font style="font-size: 12pt; font-weight:700">● 现行选中项(读写)</font>
+	<p align="left">&nbsp;</p>
+<p align="left">"现行选中项(写)"帮助文档：</p>
+<blockquote>
+	<p align="left">设置当前视图容器现行选中项，索引从0开始。</p>
+	<p align="left">同名读属性，即读取当前现行选中项。</p>
+	<p align="left"><img border="0" src="layout_images/178.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">调用本属性，设置想要选中的容器索引即可。</p>
+	<p align="left">随后调用读属性将其读取出来。</p>
+	<p align="left"><img border="0" src="layout_images/179.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，跳转到了<b>“容器3”</b>。</p>
+	<p align="left"><img border="0" src="layout_images/180.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="stnfxygd"></a>
+<font style="font-size: 12pt; font-weight:700">● 能否向右滚动(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 能否向左滚动(读)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">以上两个方法用法一致，但判断方向不同，此处举例<b>“能否向左滚动”</b>。</p>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，判断当前视图容器是否还能向左滚动。</p>
+	<p align="left">能滚动返回真，不能返回假。</p>
+	<p align="left"><img border="0" src="layout_images/181.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">直接调用本属性，判断返回值弹出对应提示即可。</p>
+	<p align="left"><img border="0" src="layout_images/182.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="layout_images/183.gif" >
+    </p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="stymsl"></a>
+<font style="font-size: 12pt; font-weight:700">● 页面数量(读)</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，读取当前视图容器的页面数量。</p>
+	<p align="left"><img border="0" src="layout_images/184.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">直接调用当前属性读取即可。</p>
+	<p align="left"><img border="0" src="layout_images/185.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left"><img border="0" src="layout_images/186.png" >
+    </p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="stymksgd"></a>
+<font style="font-size: 12pt; font-weight:700">● 页面开始滚动(事件)</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">想要监听本事件，务必调用<b>“支持页面改变监听()”</b>方法。</p>
+	<p align="left">参数1：返回页面索引。</p>
+	<p align="left">参数2：返回距离原页面偏移，范围在[0-1]之间。</p>
+	<p align="left">参数3：返回位置偏移，单位像素。</p>
+	<p align="left"><img border="0" src="layout_images/187.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">界面准备：</p>
+<blockquote>
+	<p align="left">打开界面设计器，增加一个<b>“文本框4”</b>。</p>
+	<p align="left"><img border="0" src="layout_images/188.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，设置<b>“支持页面改变监听()”</b>方法，参数值填写真。</p>
+	<p align="left">添加<b>“页面开始滚动”</b>事件，依次读取参数显示在<b>“文本框”</b>内。</p>
+	<p align="left"><img border="0" src="layout_images/189.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="layout_images/190.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="stymgdztgb"></a>
+<font style="font-size: 12pt; font-weight:700">● 页面滚动状态改变(事件)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 处于最终位置(常)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 正在拖动(常)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 空闲状态(常)</font>
+	<p align="left">&nbsp;</p>
+	
+<p align="left"><b>“页面滚动状态改变”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">想要监听本事件，务必调用<b>“支持页面改变监听()”</b>方法。</p>
+	<p align="left">参数返回当前视图容器状态，调用方式<b>“视图容器.XXX”</b>，共三个状态。</p>
+	<p align="left"><img border="0" src="layout_images/191.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，设置<b>“支持页面改变监听()”</b>方法，参数值填写真。</p>
+	<p align="left">添加<b>“页面滚动状态改变”</b>事件，依次判断当前状态，显示在文本框中即可。</p>
+	<p align="left"><img border="0" src="layout_images/192.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="layout_images/193.gif" >
+    </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="Stjxym"></a>
+<font style="font-size: 12pt; font-weight:700">● 添加新页面(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本方法可直接添加新的页面。 </p>
+	<p align="left"><img border="0" src="chrq_images/88.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">本代码分两部分组成。</p>
+	<p align="left">第一：实现一个简单的布局器。</p>
+	<blockquote>
+	<p align="left">1、首先创建一个方法，起名<b>“创建新页面()”</b>，填写一个<b>“文本型”</b>参数，返回值填写<b>“线性布局器”</b>。</p>
+	<p align="left">2、定义两个组件分别为<b>“线性布局器”</b>和<b>“文本框”</b>，并设置文本框的一些属性。</p>
+	<p align="left">3、将文本框添加到线性布局器中。</p>
+	<p align="left">4、设置线性布局器和文本框的尺寸。</p>
+	<p align="left">5、将定义的参数赋值给文本框的内容。</p>
+	<p align="left">6、最后返回线性布局器。</p>
+	</blockquote>	
+	<p align="left">第二：按钮点击事件。</p>
+	<blockquote>
+	<p align="left">1、<b>“按钮1”</b>被点击后，将定义的方法放到<b>“添加新页面()”</b>参数中。</p>
+	</blockquote>	
+	<p align="left"><img border="0" src="chrq_images/89.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">最终可看到，<b>“按钮1”</b>重复点击两次后，视图容器出现两个界面。</p>
+	<p align="left"><img border="0" src="chrq_images/90.gif" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>	
+<a name="Skfhd"></a>
+<font style="font-size: 12pt; font-weight:700">● 可否滑动(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 置现行选中项</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“可否滑动(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">如果将本属性设置为假，可以将视图容器的手势滑动关闭。</p>
+	<p align="left">此时必须调用<b>“现行选中项”</b>或<b>“置现行选中项”</b>才能切换页面。</p>
+	<p align="left"><img border="0" src="chrq_images/91.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“置现行选中项”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">调用本方法可以进行切换页面操作。</p>
+	<p align="left">参数1：提供要切换到的页面索引，从0开始。</p>
+	<p align="left">参数2：是否需要动画效果切换。</p>
+	<p align="left"><img border="0" src="chrq_images/92.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，执行<b>“可否滑动=假”</b>。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，调用<b>“置现行选中项()”</b>方法，跳转到第三页。</p>
+	<p align="left"><img border="0" src="chrq_images/93.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">最终可看到<b>“按钮1”</b>点击前，视图容器正常切换，点击后则无法切换。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，则切换到了视图容器第三页。</p>
+	<p align="left"><img border="0" src="chrq_images/94.gif" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>	
+<a name="Ssczdym"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除指定页面</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本方法可以将指定页面删除，页面索引从0开始。</p>
+	<p align="left"><img border="0" src="chrq_images/95.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，删除第二页。</p>
+	<p align="left"><img border="0" src="chrq_images/96.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">可以看到<b>“按钮1”</b>点击后，第二页消失。</p>
+	<p align="left"><img border="0" src="chrq_images/97.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>	
+<a name="Sqdqsyymlb"></a>
+<font style="font-size: 12pt; font-weight:700">● 取当前所有页面列表</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当调用本方法后可以取出视图容器所有页面的底层布局组件。</p>
+	<p align="left"><img border="0" src="chrq_images/98.png" ></p>
+	<p align="left">打开<b>“窗口组件列表类”</b>帮助文档。</p>
+	<p align="left">可以看到<b>“模板类型1、2、3”</b>对应的实际数据类型分别为<b>“窗口组件”</b>、<b>“创建组件集合类”</b>和<b>“窗口组件列表枚举器类”</b>。</p>
+	<p align="left"><img border="0" src="chrq_images/99.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、调用当前方法赋值给定义的<b>“窗口组件列表类”</b>变量。</p>
+	<p align="left">2、取出列表对象中的成员数，利用数量循环取出每个成员，赋值给定义好的<b>“线性布局器”</b>。</p>
+	<p align="left">3、设置布局器的背景色。</p>
+	<p align="left"><img border="0" src="chrq_images/100.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">最终可看到所有容器都变成了红色。</p>
+	<p align="left"><img border="0" src="chrq_images/101.gif" >
+    </p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>	
+<a name="Sqzdymzj"></a>
+<font style="font-size: 12pt; font-weight:700">● 取指定页面组件</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可取出指定页面的根组件，页面索引从0开始。</p>
+	<p align="left"><img border="0" src="chrq_images/102.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，调用本方法取出第二页的根组件，并改变背景色。</p>
+	<p align="left"><img border="0" src="chrq_images/103.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">最终可看到第二页的背景色被修改为红色。</p>
+	<p align="left"><img border="0" src="chrq_images/104.gif" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>	
+<a name="Qcrxym"></a>
+<font style="font-size: 12pt; font-weight:700">● 插入新页面</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">调用本方法可对视图容器进行插入页面的操作。</p>
+	<p align="left">参数1：提供要插入的索引，从0开始。</p>
+	<p align="left">参数2：提供要插入的组件，通常为线性布局器，也可插入帧布局器。</p>
+	<p align="left"><img border="0" src="chrq_images/105.png" > </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，调用当前方法在0索引处插入一个白色的布局器。</p>
+	<p align="left"><img src="chrq_images/106.png" border="0" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">最终可看到0索引变成了白色的布局器，原来的第一页则向后移动了一位。</p>
+	<p align="left"><img border="0" src="chrq_images/107.gif" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>	
+<a name="Qqksyym"></a>
+<font style="font-size: 12pt; font-weight:700">● 清空所有页面</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，调用本方法可清空所有页面。</p>
+	<p align="left"><img border="0" src="chrq_images/108.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后调用本方法清空。</p>
+	<p align="left"><img border="0" src="chrq_images/109.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">最终可看到页面被清空。</p>
+	<p align="left"><img border="0" src="chrq_images/110.gif" >
+    </p>
+</blockquote>
+
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

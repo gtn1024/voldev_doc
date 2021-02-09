@@ -1,0 +1,155 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>计时器组件</h4></li>
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new4')" >一.计时器<span>(可收缩)</span></h6></li>
+		<ol id="new4">
+        
+           <li><blockquote><a href="#jishiqi">1.本分类说明</a></blockquote></li>
+           <li><blockquote><a href="#ksjs">2.开始计时</a></blockquote></li>  
+          <li><blockquote><a href="#jsjs">3.结束计时</a></blockquote></li>
+           <li><blockquote><a href="#qzwb">4.前缀文本（变）</a></blockquote></li>
+           <li><blockquote><a href="#hzwb">5.后缀文本（变）</a></blockquote></li>
+           <li><blockquote><a href="#jsbgb">6.计时被改变（事件）</a></blockquote></li>
+			
+		</ol>	
+
+	</ol>
+</ul>
+</div>
+
+
+<p align="left">
+<h2>计时器组件操作实例讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+	<font style="font-size: 12pt; font-weight:700">● 辅助说明</font><br/>
+     	<blockquote>
+		<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+	</blockquote>	
+  
+
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font><br/>
+<p align="left">&nbsp;</p>
+
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">打开窗口设计器，拖放两个<b>“按钮”</b>，一个<b>“文本框”</b>。</p>
+    <p align="left">分别起名<b>“按钮1、按钮2”</b>和<b>“文本框1”</b>。</p>
+	<p align="left"><img src="text_images/2.png" border="0" ></p><br>
+    <p align="left">保存布局后，右键<b>“按钮”</b>选择<b>“添加事件接收方法”</b>。</p> 
+	<p align="left">然后去添加<b>“按钮_被单击”</b>事件。</p>
+	<p align="left">最终达到如图所示的效果。</p>
+    <p align="left"><img border="0" src="text_images/3.png" ></p>
+
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="jishiqi"></a>
+<h2>一、计时器</h2>
+<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">本类是一种用作简单计时的可视化组件，时间单位：秒。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+
+<font style="font-size: 12pt; font-weight:700">● 界面准备</font>	
+
+<p align="left">&nbsp;</p>	
+<p align="left">准备两个按钮和一个<b>“计时器”</b>。 </p>
+<blockquote>
+	<p align="left"><img border="0" src="text_images/148.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="ksjs"></a><a name="jsjs"></a><a name="qzwb"></a><a name="hzwb"></a><a name="jsbgb"></a>
+<font style="font-size: 12pt; font-weight:700">● 开始计时</font>	<br>
+	<font style="font-size: 12pt; font-weight:700">● 结束计时</font>	<br>
+	<font style="font-size: 12pt; font-weight:700">● 计时被改变（事件）</font><br>	
+	<font style="font-size: 12pt; font-weight:700">● 前/后缀文本（变）</font>
+
+
+	<p align="left">&nbsp;</p>	
+<p align="left"><b>“开始计时”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，调用本方法当前组件就会开始计时。</p>	
+	<p align="left">如果调用了<b>“结束计时”</b>后，重新调用本方法，会重新开始计时。</p>	
+	<p align="left"><img border="0" src="text_images/149.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<p align="left"><b>“结束计时”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，结束当前的计时。</p>	
+	<p align="left"><img border="0" src="text_images/150.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<p align="left"><b>“计时被改变（事件）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">当调用<b>“开始”</b>或<b>“结束”</b>的时候，均会发送本事件。</p>	
+	<p align="left">开始计时后，每秒钟也会发送一次本事件。</p>	
+	<p align="left"><img border="0" src="text_images/151.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<p align="left"><b>“前/后缀文本（变）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">以上两个成员变量，就是给当前的计时器增加<b>“前缀”</b>或<b>“后缀”</b>文本。</p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，可调用<b>“前/后缀文本”</b>变量，设置计时器的前后缀。</p>
+	<p align="left">随后调用<b>“开始计时”</b>方法后即可开始当前的计时操作。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，调用<b>“结束计时”</b>方法结束当前的计时操作。</p>
+	<p align="left">右键<b>“计时器”</b>可添加<b>“计时被改变”</b>事件。</p>
+	<p align="left">在本事件下指定来源对象后，弹出一个提示框。</p>
+	<p align="left"><img border="0" src="text_images/152.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可以看到<b>“按钮1”</b>被点击后，当前<b>“计时器”</b>开始计时，并且也同时拥有了<b>“前后缀文本”</b>。</p>
+	<p align="left"><b>“计时被改变”</b>事件弹出的<b>“提示框”</b>一直存在，证明本事件一直在发送。</p>
+	<p align="left">点击<b>“按钮2”</b>后，当前<b>“计时器”</b>就会立刻停止计时。</p>
+	
+	<p align="left"><img border="0" src="text_images/153.gif" ></p>
+</blockquote>
+
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

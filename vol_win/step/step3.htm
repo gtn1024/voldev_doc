@@ -1,0 +1,137 @@
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="../../images/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<p align="left"><b><font style="font-size: 14pt">一步一步跟我学写火山视窗程序</font></b></p>
+<p align="left">[<a href="step2.htm">上一章</a>]</p>
+<p align="left">&nbsp;</p>
+<p align="left">我们继续从上一个程序开始讲解，这次我们为所添加的新窗口加入菜单支持。</p>
+<p align="left">&nbsp;</p>
+<p align="left">1、打开上一章完成的项目，然后我们按下“<b>Ctrl+I”</b>快捷键（或者弹出菜单：“<b>插入-&gt;插入特定内容</b>”），选择其中的“<b>菜单类</b>”项目，点击“<b>添加</b>”插入到程序中：</p>
+<blockquote>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/s21.png" width="498" height="400"></p>
+	</blockquote>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">2、右键单击所加入到程序中的“<b>菜单类1</b>&quot;类,然后选择其中的“<b>打开菜单设计器</b>”菜单项：</p>
+<blockquote>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/s22.png" width="449" height="430"></p>
+	</blockquote>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">3、设计如下菜单内容：</p>
+<blockquote>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/s23.png" width="485" height="553"></p>
+	</blockquote>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">4、然后点击“<b>确定</b>”按钮添加到程序中：</p>
+<blockquote>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/s24.png" width="432" height="190"></p>
+		<p align="left">&nbsp;</p>
+	</blockquote>
+</blockquote>
+
+<p align="left">5、右键单击前面的“<b>窗口1</b>”类，然后选择“<b>添加窗口1的事件接收及虚拟方法</b>”菜单项，选择其中的“<b>窗口1_接收到命令</b>”，单击“<b>添加</b>”按钮将其添加到程序中：</p>
+<blockquote>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/s25.png" width="675" height="464"></p>
+	</blockquote>
+	<p align="left">注：另外一种添加事件接收方法的方法为：</p>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/s26.png" width="546" height="314"></p>
+		<p align="left">&nbsp;</p>
+	</blockquote>
+</blockquote>
+<p align="left">6、此时该部分的程序应该为这样：</p>
+<blockquote>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/s27.png" width="499" height="446"></p>
+		<p align="left">&nbsp;</p>
+	</blockquote>
+</blockquote>
+<p align="left">7、在第24行上按“<b>Insert</b>”键插入一个空白语句行，然后顺序输入以下语句：</p>
+<blockquote>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/s28.png" width="496" height="325"></p>
+	</blockquote>
+	<p align="left">输入方法不再累述。</p>
+	<p align="left">&nbsp;</p>
+</blockquote>
+<p align="left">8、将“<b>我的主窗口</b>”类中“<b>按钮_被单击</b>”方法中的第17行“<b>我的新窗口.创建对话框 ()</b>”改为“<b>我的新窗口.创建有菜单对话框 
+(菜单类1)</b>”：</p>
+<blockquote>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/s29.png" width="580" height="422"></p>
+		<p align="left">&nbsp;</p>
+	</blockquote>
+</blockquote>
+<p align="left">9、运行此程序，单击“<b>载入新窗口</b>”按钮，然后再单击“<b>我的主菜单-&gt;关于火山</b>”菜单项可以看到最终效果：</p>
+<blockquote>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/s30.png" width="494" height="324"></p>
+		<p align="left">&nbsp;</p>
+	</blockquote>
+</blockquote>
+<p align="left">10、最终程序在火山视窗样例解决方案中的“<b>教程相关-&gt;一步一步跟我学火山</b>”项目中，具体打开方法为：</p>
+<blockquote>
+	<p align="left">A、在开发环境中执行菜单项“<b>文件-&gt;打开-&gt;样例解决方案</b>”，在所弹出的对话框中选择“<b>视窗项目</b>”（如果当前系统未安装其它类型项目支持，则不会弹出对话框而直接打开）：</p>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/s31.png" width="278" height="233"></p>
+	</blockquote>
+	<p align="left">B、我们可以看到，该解决方案中有很多样例项目，这是目前（写本文档时）的样例解决方案内容：</p>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/s32.png" width="243" height="439"></p>
+	</blockquote>
+	<p align="left">C、双击该项目中的“<b>main.v</b>”即可看到我们所设计的程序内容：</p>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/s33.png" width="628" height="395"></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+</blockquote><hr>
+<p>&nbsp;</p>
+<p>至此，本教程的内容就暂时结束了，对大家在火山视窗平台开发的后续学习建议如下：</p>
+<blockquote>
+	<p><b>1、</b>仔细阅读“<b><a href="../../grammar.htm">火山平台语法手册</a></b>”，在其中的“<b><a href="../../grammar.htm#edit_tips">常用开发环境操作方法</a></b>”节中讲述了<b>如何进行常用的编辑操作</b>、<b>如何查看帮助信息</b>、<b>如何查看已有系统类库模块的内容</b>、<b>如何将对应模块加入到你自己的程序中</b>以及<b>如何查找所指定名称的所处例程</b>；</p>
+	<p><b>2、</b>打开并仔细阅读火山视窗平台的样例解决方案（打开方法见上），样例解决方案的内容在后续会不断丰富，阅读并理解样例解决方案中的各个项目内容对于了解火山视窗平台程序编写有很大的好处;</p>
+	<p><b>3、</b>尝试多写一写程序，经常上<a href="http://bbs.voldp.com"><b>火山论坛</b></a>查看相关资源并与其它用户交流，如有意见和想法也可以在上面提出。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">[<a href="step2.htm">上一章</a>]</p>
+</blockquote>
+
+</body>
+
+</html>

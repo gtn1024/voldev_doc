@@ -1,0 +1,125 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new7')" >一.组合统计图<span>(可收缩)</span></h6></li>
+		<ol id="new7">
+			<li><blockquote><a href="#">1.准备工作</a></blockquote></li>
+			<li><blockquote><a href="#zhtbsj">2.图表数据创建</a></blockquote></li>
+			<li><blockquote><a href="#zhcj">2.创建</a></blockquote></li>
+		</ol>
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>组合统计图组件实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p> 
+<font style="font-size: 12pt; font-weight:700">● 教程说明</font><br/>
+<br/>
+	<blockquote>
+	<p align="left"><font color="#F30F12">注意：本组件位于<strong>“图表类窗口组件”</strong>模块中。</font></p>
+ </blockquote>
+	<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 详细例程</font><br/>
+<br/><blockquote>
+	<p align="left">可打开火山安装目录下<b>“samples\samples.vsln”</b>解决方案。 </p>
+	<p align="left">位于<b>“窗口及组件->图表系列组件”</b>分类下。</p>
+	<p align="left"><img src="chart_images/0.png" border="0" ></p>
+	 </blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="zhtjt"></a>    
+<h2>一、组合统计图</h2>	
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">打开启动类<b>“界面设计器”</b>， 设计如下界面。</p>
+    <p align="left">依次是<b>“按钮1”</b>和<b>“柱状图1”</b>。 </p>
+	<p align="left"><img src="chart_images/140.png" border="0" ></p>
+
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="zhtbsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 图表数据创建</font>
+
+	
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left">本图表是一个组合统计图：是由<b>“折线图”</b>和<b>“柱状图”</b>组成。</p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<a name="zhcj"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建</font>	
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>	
+<blockquote>
+	<p align="left">本方法继承自<b>“组合统计图数据类”</b>，用于创建组合图数据。</p>
+	<p align="left">参数1：放要组合的柱状图数据。</p>
+	<p align="left">参数2：放要组合的折线图数据。</p>
+	<p align="left"><img src="chart_images/145.png"  ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>	
+<blockquote>
+	<p align="left">增加一个<b>“生成折线图数据”</b>方法，可通过<b>“Ctrl+M”</b>创建。</p>
+	<p align="left">设置返回值类型为<b>“折线图数据类”</b>。</p>
+	<p align="left"><img src="chart_images/141.png"  ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>	
+<blockquote>
+	<p align="left">增加一个<b>“生成柱状图数据”</b>方法，设置返回值类型为<b>“柱状图数据类”</b>。</p>
+
+	<p align="left"><img src="chart_images/142.png"  ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（3）：</p>	
+<blockquote>
+	<p align="left">1、定义<b>“组合统计图数据类”</b>变量，设置参考。</p>
+	<p align="left">2、将两个定义好的方法写到<b>“创建”</b>的参数中，赋值给<b>“组合图数据”</b>即可。</p>
+	<p align="left">3、设置轴线。</p>
+	<p align="left">4、调用<b>“图表数据”</b>属性，设置属性值为<b>“组合图数据”</b>即可。</p>
+	<p align="left"><img src="chart_images/143.png"  ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)： </p>
+<blockquote>
+	<p align="left">注意：<b>“组合统计图”</b>在不设置任何数据的情况下，默认存在数据。</p>
+	<p align="left"><img border="0" src="chart_images/144.gif" ></p>
+</blockquote>	
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

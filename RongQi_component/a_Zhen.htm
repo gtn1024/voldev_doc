@@ -1,0 +1,183 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+			<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.帧布局器<span>(可收缩)</span></h6></li>
+		<ol id="new1">
+            <li><blockquote><a href="#zbjq">1.准备工作</a></blockquote></li> 
+			<li><blockquote><a href="#zqjtx">2.前景图像(写)</a></blockquote></li>
+			<li><blockquote><a href="#zzqj">3.置前景</a></blockquote></li> 
+		    <li><blockquote><a href="#zzqjdqfs">4.置前景对齐方式</a></blockquote></li>
+            <li><blockquote><a href="#zzzzjdqfs">5.置子组件对齐方式</a></blockquote></li>
+		</ol>	
+		
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>帧布局器实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+	<a name="zbjq"></a>   
+		
+<p align="left">&nbsp;</p>
+<h2>一、帧布局器</h2>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+	<p align="left">本组件继承了<a href="../View_basis/a_ctrl_base.htm"><b>“窗口组件”</b></a>和<a href="a_RongQi.htm"><b>“窗口容器组件”</b></a>基础类的所有方法。</p>
+<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">打开启动类<b>“界面设计器”</b>，在<b>“基本容器组件”</b>分类下，可以看到所有的容器类组件。</p>
+    <p align="left">拖放<b>“帧布局器”</b>后，在帧布局器内拖放<b>“按钮1”</b>和<b>“文本框1”</b>。</p>
+    <p align="left">最终两个组件可重叠在一起，如果未重叠在一起，则两个组件必然没有位于<b>“帧布局器”</b>内。</p>
+    <p align="left">打开右侧<b>“布局内容”</b>可判断当前组件是否位于帧布局器内。</p>
+	<p align="left"><img src="layout_images/2.png" width="741" height="623" border="0" ></p>
+
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后设置文本框的<b>“背景色”</b>和<b>“文本颜色”</b>。</p>
+	<p align="left"><img border="0" src="layout_images/3.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+  <p align="left">可以明显的看到<b>“按钮1”</b>位于<b>“文本框1”</b>的上方。</p>
+  <p align="left">帧布局器的主要作用，可以让多个组件互相重叠。</p>
+  <p align="left">注意：安卓5.0后，<b>“按钮”</b>会位于所有布局最顶层。</p>
+	<p align="left"><img border="0" src="layout_images/4.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="zqjtx"></a>
+<a name="zzqj"></a>
+<font style="font-size: 12pt; font-weight:700">● 前景图像(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 置前景</font>
+	<p align="left">&nbsp;</p>
+<p align="left">界面准备：</p>
+<blockquote>
+  <p align="left">在原界面的基础上增加一个<b>“按钮2”</b>，设置其<b>“左外边距”</b>为200，使其和<b>“按钮1”</b>分开。</p>
+	<p align="left"><img src="layout_images/5.png" width="741" height="623"   border="0" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left"><b>“前景图像(写)”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">本写属性可用来设置当前组件的<b>“前景图像”</b>，属性值为<b>“可绘制资源”</b>。</p>
+  <p align="left">本属性会覆盖<b>“置前景”</b>方法。</p>
+	<p align="left"><img border="0" src="layout_images/6.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“置前景”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">本方法同样是用来设置前景图像，参数值为<b>“可绘制对象类”</b>。</p>
+  <p align="left">本方法会覆盖<b>“前景图像”</b>写属性。</p>
+	<p align="left"><img border="0" src="layout_images/7.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后调用<b>“前景图像”</b>写属性。</p>
+	<p align="left"><b>“按钮2”</b>被点击后执行<b>“置前景”</b>方法。</p>
+	<p align="left">参数<b>“可绘制对象类”</b>可通过<b>“载入可绘制资源()”</b>方法进行转换。</p>
+	<p align="left"><img border="0" src="layout_images/8.png" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">因当前<b>“属性和方法”</b>都是用来设置<b>“前景图像”</b>，所以当点击<b>“按钮1”</b>后，前景图像会覆盖组件。</p>
+	<p align="left">并且覆盖后并不影响点击组件，两个组件交替点击，前景图像会交替覆盖。</p>
+	<p align="left"><img border="0" src="layout_images/9.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="zzqjdqfs"></a>
+<font style="font-size: 12pt; font-weight:700">● 置前景对齐方式</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法用来设置当前前景图像对齐方式。</p>
+	<p align="left">参数1：调用方式<b>“水平对齐方式.XXX”</b>。</p>
+	<p align="left">参数2：调用方式<b>“垂直对齐方式.XXX”</b>。</p>
+	<p align="left"><img border="0" src="layout_images/10.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后设置<b>“前景图像”</b>属性。</p>
+	<p align="left">随后调用当前方法设置<b>“居中对齐”</b>。</p>
+	<p align="left"><img border="0" src="layout_images/11.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，可以看到当前前景图进行了居中显示，并没有铺满整个<b>“帧布局器”</b>。</p>
+	<p align="left"><img border="0" src="layout_images/12.gif" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="zzzzjdqfs"></a>
+<font style="font-size: 12pt; font-weight:700">● 置子组件对齐方式</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法可用来设置<b>“指定组件”</b>在本布局中的对齐方式。</p>
+	<p align="left">参数1：要设置对齐方式的组件，直接填写组件名称即可。</p>
+	<p align="left">参数1：调用方式<b>“水平对齐方式.XXX”</b>。</p>
+	<p align="left">参数2：调用方式<b>“垂直对齐方式.XXX”</b>。</p>
+	<p align="left"><img border="0" src="layout_images/13.png" ></p>
+</blockquote>
+
+	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后设置当前<b>“按钮1”</b>组件的对齐方式为<b>“居中”</b>对齐。</p>
+	<p align="left"><img border="0" src="layout_images/14.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可看到<b>“按钮1”</b>进行了居中对齐。</p>
+	<p align="left"><img border="0" src="layout_images/15.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

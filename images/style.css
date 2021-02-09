@@ -1,0 +1,28 @@
+﻿@charset "utf-8";
+/* 全局设置 */
+*{margin: 0px;padding: 0px;}
+html,body{margin: 0px;padding: 0px; background-color:#FAFAFA;}
+blockquote { margin-left: 11px; margin-right: 0px; margin-top: 2px; margin-bottom: 2px; }
+ul,li{list-style:none;list-style-type:none;list-style-position:outside;}
+input,textarea{ outline:none; }
+textarea{ resize:none; }
+html,body,td,div{font-size: 10pt;font-family:"Microsoft Yahei", Arial, "Lantinghei SC", "Hiragino Sans GB", "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight:normal; }
+.clear,.cf{clear: both;}
+/* 居中 */
+/*.warp{width: 1200px;margin-right: auto;margin-left: auto;clear:both;}*/
+/* --------------------------------------------------- */
+/*header*/
+.header{height:60px;background-color:#009EE5;margin-bottom: 15px;}
+/* --------------------------------------------------- */
+/*bottom*/
+.bottom{padding-top:20px; padding-bottom:20px;margin-top: 15px;}
+.bottom,.bottom .warp{ background-color:#444855; color:#A6A7AA; text-align:center; line-height:2.0;padding-top:10px; padding-bottom:10px;}
+.bottom a:link,.bottom a:visited {color: #D6D6D6;text-decoration: none;}
+.bottom a:hover,.bottom a:active {color: #D6D6D6;text-decoration:underline;}
+
+/* --------------------------------------------------- */
+.wtdoc{margin-right: 10px;margin-left: 10px;}
+.wtdoc a:link,.wtdoc a:visited {color: #0066FF;text-decoration: underline;}
+.wtdoc a:hover,.wtdoc a:active {color: #0099FF;text-decoration: underline;}
+.wtdoc tr,.wtdoc td{padding:4px;}
+.wtdoc p{line-height:1.5;}

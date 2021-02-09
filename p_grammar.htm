@@ -1,0 +1,3319 @@
+﻿<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<script language="JavaScript" type="text/javascript" src="script/doc_head.js"></script>
+<div class="wtdoc">
+
+<h3 align="center">火山平台语法手册</h3>
+<h4 align="center">（封装用户版）</h4>
+<p align="center"><b><font color="#FF0000">注意:</font> </b>本手册内容普通用户无需掌握,示例如非明确说明均为基于安卓平台.</p>
+<h4>一. 相关概念和约定:</h4>
+<blockquote>
+	<p align="left"><b>1. </b>火山平台基于面向对象的编程理念构造,支持类的封装、继承、多态,但是在此基础上进行了一些精简,以便能更好地学习和使用.</p>
+	<p align="left"><b>2. </b>
+	火山平台将用户分为<b>普通</b>和<b>封装</b>用户两种.</p>
+	<blockquote>
+		<p align="left"><b>普通用户</b>为正常使用火山平台开发应用软件的用户;</p>
+		<p align="left"><b>封装用户</b>则是可以自行使用火山程序扩展火山平台类库的用户.</p>
+		<p align="left">
+		为了屏蔽火山程序对特定目标环境的依赖，火山软件开发平台对每个目标环境提供了对应的封装类库，这种类库是使用火山程序本身进行封装的。<br>
+		绝大多数情况下，用户不涉及到类库封装方面的工作，随系统附带的类库已经足够完成通常的应用开发需求。但如果用户觉得不够用或者有其它特别的要求，可以使用火山程序自行修改或扩展类库，此类用户被称为封装用户，所需要掌握的知识在本手册中讲述。学习类库封装的最好实际例子在系统类库，可以查看应用程序项目建立后自动添加进去的&quot;<b>模块</b>&quot;过滤器中的内容。<br>
+		&nbsp;</p>
+	</blockquote>
+</blockquote>
+<h4>二. 相关术语:</h4>
+<blockquote>
+	<h5>1. 名称:</h5>
+	<blockquote>
+		<p align="left">火山平台中的名称分为以下这些:</p>
+		<p align="left"><b>1. 单名称:</b></p>
+		<blockquote>
+			<p>单名称必须以英文字母/下划线字符/汉字字符开头,后面跟随英文字母/下划线字符/数字/汉字字符.如未特殊标注,本文档中所提出的所有&quot;名称&quot;均为单名称.</p>
+		</blockquote>
+		<p align="left"><b>2. 全名称:</b></p>
+		<blockquote>
+			<p align="left"><a name="full_name"></a>以句点字符组合在一起的单名称
+			称为全名称,如&quot;火山.程序&quot;. 单名称可以被认为是全名称的一种(只包括一个单名称的全名称).</p>
+			<p align="left">实际上,目前只有<a href="#package_declare">包名</a>才使用到由多个单名称组成的全名称.</p>
+		</blockquote>
+		<p align="left"><b>3. 标识符名称: </b>:<a name="identifier"></a></p>
+		<blockquote>
+			<p align="left">
+			必须由两个或多个单词文本组成,首单词必须以英文字母/下划线字符开头,后续单词可以以英文字母/数字/下划线字符开头,单词之间使用句点字符分隔,单词中间的字符只能为英文字母/数字/下划线字符,最后一个单词固定为此标识符的当前版本号数值.</p>
+			<p align="left">
+			两个标识符,如果其名称部分相同且第一个标识符的版本号大于等于第二个标识符的版本号,则说明第一个标识符能够匹配第二个标识符.</p>
+			<p align="left">
+			如标识符&quot;cplus.win32.console.1&quot;,说明其名称为&quot;cplus.win32.console&quot;,版本号为1.</p>
+		</blockquote>
+		<p align="left">注意: 火山中的名称对英文字母的大小写敏感,譬如&quot;abc&quot;,&quot;ABC&quot;所指定的不是同一名称.</p>
+		<p align="left">　</p>
+	</blockquote>
+	<h5><a name="imm_value"></a>2. 立即数</h5>
+	<blockquote>
+		<p align="left">立即数用作表达一个直接的字面数据值,有以下几类:</p>
+		<p align="left"><b>1. 数值立即数:</b></p>
+		<blockquote>
+			<p align="left"><b>A. </b>十进制整数或小数,小数支持使用科学计数法.</p>
+			<p align="left"><b>B. </b>十六进制整数: &quot;0x&quot;后跟数字0-9或字母A-B(大小写无关). 如: 
+			0x12AC3F</p>
+			<p align="left"><b>C. </b>字符整数值: 使用单引号括住的字符,如'A'.</p>
+			<p align="left">如果欲强行指定数值的数据类型,可以使用&quot;<a href="#data_type_convert">强制类型转换</a>&quot;操作符,譬如&quot;(长整数)1&quot;,提供了一个数据类型为长整数的数值立即数.</p>
+			<p align="left">如果某整数的数值超出了整数的最大有效范围,将自动被设定为长整数数据类型. 如: 0x123456789A 
+			将被自动认为是长整数数据类型.</p>
+		</blockquote>
+		<p align="left"><b>2. 逻辑型立即数:</b> 为真/假.</p>
+		<p align="left"><b>3. 字符串立即数:</b></p>
+		<blockquote>
+			<p align="left">为用双引号括住的一段文本,文本内支持使用以下转义符:</p>
+			<table border="1" style="border-collapse: collapse">
+				<tr>
+					<td bgcolor="#808080" width="150" align="center"><b>转义符</b></td>
+					<td bgcolor="#808080" align="center"><b>解释</b></td>
+				</tr>
+				<tr>
+					<td width="150">\b</td>
+					<td>退格符</td>
+				</tr>
+				<tr>
+					<td width="150">\f</td>
+					<td>换页符</td>
+				</tr>
+				<tr>
+					<td width="!50">\r</td>
+					<td>回车符</td>
+				</tr>
+				<tr>
+					<td width="150">\n</td>
+					<td>换行符</td>
+				</tr>
+				<tr>
+					<td width="150">\t</td>
+					<td>水平制表符</td>
+				</tr>
+				<tr>
+					<td width="150">\'</td>
+					<td>单引号</td>
+				</tr>
+				<tr>
+					<td width="150">\&quot;</td>
+					<td>双引号</td>
+				</tr>
+				<tr>
+					<td width="150">\\</td>
+					<td>反斜杠</td>
+				</tr>
+				<tr>
+					<td width="150">\x</td>
+					<td>后跟1-3个十六进制字符,为所对应字符的代码值.</td>
+				</tr>
+				</table>
+			<p>如: &quot;您好!\n祖国&quot; 在&quot;您好!&quot;和&quot;祖国&quot;之间通过使用转义符插入了一个换行符.</p>
+		</blockquote>
+		<p align="left"><b>4. 数组立即数</b>(只能在提供数组常量/变量初始值时使用):</p>
+		<blockquote>
+			<p align="left">为使用花括号括住的立即数的组合,如: { 1, 2 }, 多维数组可以嵌套,如: { { 1, 2 }, 
+			{ 3, 4 } }</p>
+			<p align="left">注意: 多维数组的各维成员数目必须相等,譬如如下格式的数组立即数是不允许的: { { 1, 2 }, { 
+			3 } } ,因为其两个维的成员数目不相等.</p>
+		</blockquote>
+	</blockquote>
+	<p align="left">　</p>
+	<h5>3. 数据类型:</h5>
+	<blockquote>
+		<p align="left">数据类型可以为以下两种:</p>
+		<blockquote>
+			<p align="left"><b>A.</b> <a href="#base_data_type">基本数据类型</a>;</p>
+			<p align="left"><b>B.</b> <a href="#class_declare">用户程序中定义的类</a>,称为<b>类数据类型</b>;</p>
+			<p align="left"><b>C. </b>数组数据类型</p>
+			<blockquote>
+				<p align="left">数组数据类型为基本或类数据类型后面跟随一个或多个数组维定义组成.</p>
+				<p align="left">
+				每个数组维定义由左右中括号(&quot;[]&quot;)组成,如果应用在变量定义上,可以同时在中括号内部加入具体成员数目,表示生成对应的数组变量实例. 
+				如:</p>
+				<blockquote>
+					<p align="left">单维文本数组数据类型: 文本 [] </p>
+					<p align="left">多维整数数组数据类型: 整数 [] []</p>
+					<p align="left">定义具有指定成员数目的整数数组变量: 整数 [3], 整数 [3][3]</p>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+		<p align="left">&nbsp;</p>
+	</blockquote>
+</blockquote>
+<h4>三. 火山程序结构:</h4>
+<blockquote>
+	<p align="left">一个火山程序的构成结构如下:</p>
+	<p align="left">1. <a href="#package_declare">包定义</a></p>
+	<blockquote>
+		<p align="left">1. <a href="#embed_line">文档嵌入行</a></p>
+		<p align="left">2. <a href="#remark_line">文档注释行</a></p>
+		<p align="left">3. <a href="#class_declare">类定义</a></p>
+		<blockquote>
+			<p align="left">1. <a href="#embed_line">类嵌入行</a></p>
+			<p align="left">2. <a href="#remark_line">类注释行</a></p>
+			<p align="left">3. <a href="#const_declare">类成员常量</a></p>
+			<p align="left">4. <a href="#element_var_declare">类成员变量</a></p>
+			<p align="left">5. <a href="#method_declare">类成员方法</a></p>
+			<blockquote>
+				<p align="left">1. 方法参数</p>
+				<p align="left">2. <a href="#const_declare">方法局部常量</a></p>
+				<p align="left">3. <a href="#element_var_declare">方法局部变量</a></p>
+				<p align="left">4. <a href="#remark_line">语句注释行</a></p>
+				<p align="left">5. <a href="#embed_line">语句嵌入行</a></p>
+				<p align="left">6. <a href="#statment">火山语句行</a></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+	<p align="left">下面是一个火山程序的基本样图(天蓝色文字为说明):</p>
+	<p align="left">
+	<img border="0" src="images/structure.png"></p>
+	<p>　</p>
+	<h5><a name="package_declare"></a>1. 包定义:</h5>
+	<blockquote>
+		<p>包名为<a href="#full_name">全名称</a>,一个包内可以包含多个文档注释行/文档嵌入行/类定义.</p>
+		<p>包定义成员始终位于源文件的首部而且只能存在一个.</p>
+		<p>多个程序文件可以具有相同的包名,此时其中的内容被认为处于同一个包中.</p>
+		<p>　</p>
+	</blockquote>
+	<h5><a name="remark_line"></a>2. 注释</h5>
+	<blockquote>
+		<p>可以使用以下方式定义火山程序中的注释:</p>
+		<blockquote>
+			<p><b>A. </b>任何定义型成员其名称如果以<b>连续两个'/'字符</b>引导,说明其处于被注释状态,其以及其中的所有内容(包括直接/间接子成员)在编译时都将被忽略;</p>
+			<p><b>B. </b>在类外部的程序行,被称为<b>文档注释行</b>;<b> </b>在类内部但是在类方法外部的程序行,被称为<b>类注释行</b>;</p>
+			<p><b>C. </b>在类方法内部可以使用<b>连续两个'/'字符</b>引导一段一直到行尾的语句注释文本. </p>
+		</blockquote>
+		<p>文档注释行/类注释行/从行首开始的语句注释文本,其尾部如果以一个或多个<b>减号</b>/<b>等号</b>字符结束,IDE将自动在其后绘制对应长度的单/双分隔线.可以在IDE设置选项中将此机制关闭.</p>
+		<p>　</p>
+	</blockquote>
+	<h5><a name="embed_line"></a>3. 嵌入行</h5>
+	<blockquote>
+		<p>文档或者方法程序行行首如果以一个独立的'<b>@ </b>'字符开头(与后面的内容必须用空白字符隔开),则被称为<b>嵌入行</b>,该嵌入行在编译时将被直接发送到目的平台编译器,由用户自身保证该行的语法正确性.</p>
+		<p>文档中可以使用&quot;<b>@begin</b>&quot;和&quot;<b>@end</b>&quot;关键字行括住一批程序行(注意
+		此方法不支持在类/方法中使用),这些程序行都将被视作嵌入行.</p>
+		<p>嵌入行中可以使用以下替换符引用外部火山名称:</p>
+		<table border="1" style="border-collapse: collapse" width="100%">
+			<tr>
+				<td bgcolor="#808080" align="center" width="222"><b>格式</b></td>
+				<td bgcolor="#808080" align="center" width="657"><b>解释</b></td>
+				<td bgcolor="#808080" align="center" width="566"><b>样例</b></td>
+			</tr>
+			<tr>
+				<td width="222">@&lt;成员名称&gt;</td>
+				<td width="657">引用所指定的成员/参数名称.<p>注意: 
+				为了避免重复替换产生错误,所有参数仅允许在嵌入行中引用一次,但是<a href="#param_req_mode">需求类型</a>为&quot;<b>数据类型</b>&quot;的参数除外.</td>
+				<td width="566">@&lt;对象变量1&gt;.test, @&lt;对象变量1.成员1&gt;</td>
+			</tr>
+			<tr>
+				<td width="222">@n&lt;成员名称&gt;</td>
+				<td width="657">引用所指定的成员名称,与前面格式文本不同的是:<blockquote>
+					<p><b>1. </b>本格式文本仅加入最后一个成员名称. 譬如&quot;@n&lt;对象变量1.成员1&gt;&quot;仅会加入最后的&quot;成员1&quot;的名称,而不会加入前面的所有中间名称;</p>
+					<p><b>2. </b>本格式文本引用成员时,不受静态成员访问格式限制. 譬如&quot;@n&lt;类1.成员1&gt;&quot;,即使&quot;成员1&quot;不是常量/静态成员也可以被引用到;</p>
+					<p><b>3.</b> 本格式文本引用成员时,不受访问权限的限制(譬如所访问成员是否公开等).</p>
+				</blockquote>
+				<p>
+				由于去除了这些限制,开发者必须谨慎使用此替换符,必须能够保证该替换符获得的名称在任何场合下均能正常工作.</td>
+				<td width="566">@n&lt;对象变量1.成员1&gt;</td>
+			</tr>
+			<tr>
+				<td width="222"><a name="embed_data_type"></a>@dt&lt;数据类型名称&gt;</td>
+				<td width="657">引用所指定的数据类型名称,包括: 基本数据类型/<a href="#template_data_type">模板数据类型</a>/类.<br>
+				注意:<blockquote>
+					<p><b>1.</b> 不支持数组数据类型;<p><b>2. </b>
+					类数据类型是否使用全名称自动根据当前实际位置需要,可以通过在前方明确加上包名来强制组成全名称;<p><b>3.</b> 如果本替换符后跟随的不是对象成员访问字符(譬如句点),<a href="#alias_class">别名类</a>将使用其所封装的本地类名,<a href="#const_class">常量类</a>将使用其所对应的基本数据类型.</blockquote>
+				</td>
+				<td width="566">@dt&lt;整数&gt;, @dt&lt;模板类型1&gt;, @dt&lt;类1&gt;, @dt&lt;包1.类1&gt;.静态变量1</td>
+			</tr>
+			<tr>
+				<td width="222">@fdt&lt;数据类型名称&gt;</td>
+				<td width="657">与&quot;@dt&quot;基本相同,除了类数据类型始终使用全名称.</td>
+				<td width="566">&nbsp;</td>
+			</tr>
+			<tr>
+				<td width="222">@pdt&lt;参数名称&gt;</td>
+				<td width="657">引用为所指定参数提供的实际调用值数据类型,包括: 基本数据类型/类.<br>
+				注意:<blockquote>
+					<p><b>1.</b> 所获取名称文本不包括数组数据类型的维定义部分;<p><b>2.</b> 如果本替换符后跟随的不是对象成员访问字符(譬如句点),<a href="#alias_class">别名类</a>将使用其所封装的本地类名,<a href="#const_class">常量类</a>将使用其所对应的基本数据类型;<p>
+					<b>3. </b>类数据类型始终使用全名称.</blockquote>
+				</td>
+				<td width="566">&nbsp;</td>
+			</tr>
+			<tr>
+				<td width="222"><a name="embed_pkg"></a>@pkg&lt;包名称&gt;</td>
+				<td width="657">引用所指定的包名称</td>
+				<td width="566">@pkg&lt;火山.用户.程序&gt;</td>
+			</tr>
+			<tr>
+				<td width="222"><a name="embed_an"></a>@an&lt;约定名称&gt;</td>
+				<td width="657">引用所指定的全局/项目插件约定名称,其中全局约定名称由火山系统本身定义,插件约定名称由所使用的插件定义.</td>
+				<td width="566">@an&lt;onInitAndroidActivity&gt;</td>
+			</tr>
+			<tr>
+				<td width="222">@sn&lt;特定名称&gt;</td>
+				<td width="657">引用所指定的特定名称,具体列表如下:<blockquote>
+					<p><b>1.</b> <a name="sn_current_class"></a>&quot;current_class&quot;: 嵌入行当前所处类名(是否使用全名称自动根据当前实际位置需要,可以通过在前方明确加上包名来强制组成全名称);</p>
+					<p><b>2.</b> <a name="sn_current_package"></a>&quot;current_package&quot;: 嵌入行当前所处包名;</p>
+					<p><b>3.</b> <a name="sn_base_class"></a>&quot;base_class&quot;: 嵌入行当前所处类的基础类名(是否使用全名称自动根据当前实际位置需要,可以通过在前方明确加上包名来强制组成全名称);</p>
+					<p><b>4. </b>&quot;startup_method&quot;: 程序启动方法名(启动方法必须位于启动类中)</p>
+					<p><b>5.</b> &quot;startup_class&quot;: 程序启动类名(是否使用全名称自动根据当前实际位置需要,可以通过在前方明确加上包名来强制组成全名称);</p>
+					<p><b>6.</b> <a name="sn_startup_package"></a>&quot;startup_package&quot;: 
+				程序启动类所处包的包名;</p>
+					<p><b>7.</b> &quot;this&quot;: 
+				只能在非静态嵌入式方法中的嵌入行里使用,将被替换为调用该嵌入式方法时提供的调用对象;</p>
+					<p><b>8. </b>&quot;quot&quot;: 双引号字符;</p>
+					<p><b>9.</b> &quot;apos&quot;: 单引号字符;</p>
+					<p><b>10. </b>&quot;pm_types&quot;: 
+					只能在嵌入式方法中的嵌入行里使用,为调用该嵌入式方法时所提供的全部参数的实际调用值数据类型的标识字符串.字符串两侧使用双引号括住,数据类型的数组部分被忽略,每个参数调用值数据类型对应一个标识字符(区分大小写),其含义如下:</p>
+					<blockquote>
+						<table border="0" width="20%">
+							<tr>
+								<td><b>字节:</b></td>
+								<td>b</td>
+							</tr>
+							<tr>
+								<td><b>短整数:</b></td>
+								<td>s</td>
+							</tr>
+							<tr>
+								<td><b>字符:</b></td>
+								<td>c</td>
+							</tr>
+							<tr>
+								<td><b>整数:</b></td>
+								<td>n</td>
+							</tr>
+							<tr>
+								<td><b>变整数:</b></td>
+								<td>p</td>
+							</tr>
+							<tr>
+								<td><b>长整数:</b></td>
+								<td>l</td>
+							</tr>
+							<tr>
+								<td><b>小数:</b></td>
+								<td>f</td>
+							</tr>
+							<tr>
+								<td><b>逻辑值:</b></td>
+								<td>B</td>
+							</tr>
+							<tr>
+								<td><b>文本型:</b></td>
+								<td>S</td>
+							</tr>
+							<tr>
+								<td><b>类:</b></td>
+								<td>C</td>
+							</tr>
+						</table>
+						<p>如果参数调用值数据类型为类,可以通过其运行时类型信息来进行进一步判定其具体是什么类.</p>
+					</blockquote>
+					<p><b>11.</b> &quot;rand_name0&quot; 到 &quot;rand_name9&quot;: 随机生成的程序内唯一性名称.<blockquote>
+						<p>注意在同一条嵌入语句行或同一个嵌入式方法体中所有的嵌入语句行内,同一随机名称(&quot;rand_name0&quot; 到 
+						&quot;rand_name9&quot;)将为同一名称文本.<p>譬如假设在一个嵌入式方法的方法体内存在以下语句内容:<blockquote>
+							<p>for (int @sn&lt;rand_name5&gt; = 0; @sn&lt;rand_name5&gt; &lt; 
+							3; @sn&lt;rand_name5&gt;++)</blockquote>
+						<p>
+						其中&quot;@sn&lt;rand_name5&gt;&quot;所生成的随机名称在整个程序内为唯一性名称,但是在该嵌入式方法体内这三个位置处将为同一个名称文本.</blockquote>
+				</blockquote>
+				</td>
+				<td width="566">@sn&lt;current_class&gt;<p>@sn&lt;current_package&gt;</p>
+				<p>@sn&lt;base_class&gt;</p>
+				<p>@sn&lt;startup_method&gt;</p>
+				<p>@sn&lt;startup_class&gt;</p>
+				<p>@sn&lt;startup_package&gt;<p>@sn&lt;this&gt;<p>@sn&lt;quot&gt;<p>@sn&lt;apos&gt;<p>@sn&lt;pm_types&gt;<p>@sn&lt;rand_name&gt;</td>
+			</tr>
+			<tr>
+				<td width="222">@def_macro</td>
+				<td colspan="2">定义可以在嵌入行中使用的宏,目前不支持在方法中定义. 语法格式为:<blockquote>
+					<p><b>1. </b>不携带参数表方式:</p>
+					<blockquote>
+						<p>@def_macro 宏名称 宏内容</p>
+						<p>在使用该宏时将直接使用宏内容对该宏进行替换.</p>
+						<p>如: @def_macro TEST wutao</p>
+						<p>使用该宏时,如 @m&lt;TEST&gt;,该宏替换后的实际内容将为 
+				wutao .</p>
+					</blockquote>
+					<p>　</p>
+					<p><b>2. </b>携带参数表方式:</p>
+					<blockquote>
+						<p>@def_macro 宏名称(宏参数名称, ...)&nbsp; 
+				宏内容</p>
+						<p><b>注意事项:</b></p>
+						<p><b>A. 
+				</b>参数表的左括号必须紧跟在宏名称后面,中间不能存在空白字符,不然就会被认为是宏内容的一部分;</p>
+						<blockquote>
+							<p>如: 
+				@def_macro TEST(param1) param1</p>
+							<p>该宏的名称为TEST,具有一个名为param1的宏参数,宏内容是直接使用该参数.</p>
+							<p>如果左括号与TEST之间存在空白字符的话,如: @def_macro TEST&nbsp; (param1) param1</p>
+							<p>那么该宏就是一个名为TEST,没有参数,宏内容为&quot;(param1) param1&quot;.</p>
+						</blockquote>
+						<p><b>B. 
+				</b>参数表中可以包括一个或多个宏参数名称,多个参数名称之间使用逗号进行分隔;</p>
+						<blockquote>
+							<p>如: 
+				@def_macro MY_ADD(param1, param2) param1 + param2</p>
+						</blockquote>
+						<p><b>C. 
+				</b>宏内容中可以使用参数表内定义的宏参数名称,在使用该宏时将使用对应的实际参数内容进行替换;</p>
+						<p><b>D. 
+				</b>在宏内容中所使用的宏参数名称,如果其前方为1个'#'字符,该&quot;#宏参数名&quot;在进行宏替换时将被替换为字符串格式,即自动在两侧加上双引号;</p>
+						<blockquote>
+							<p>如: 
+				@def_macro TEST(param1) #param1</p>
+							<p>使用该宏时,如 @m&lt;TEST&gt; (abc) ,该宏替换后的实际内容将为 &quot;abc&quot; 
+				,注意abc两侧双引号也是替换后内容的一部分.</p>
+						</blockquote>
+						<p><b>E. 
+				</b>在宏内容中所使用的宏参数名称,如果其前方为2个'#'字符,该&quot;##宏参数名&quot;在进行宏替换时将自动与其前方内容连接起来.</p>
+						<blockquote>
+							<p>如: 
+				@def_macro TEST(param1) wutao_##param1</p>
+							<p>使用该宏时,如 @m&lt;TEST&gt; (abc) ,该宏替换后的实际内容将为 wutao_abc ,前后文本将连接在一起.</p>
+						</blockquote>
+						<p><a name="many_macro_params"></a><b>F.</b> 如果使用宏时所提供的实际参数数目超出当前所定义宏参数数目,则所有多余参数内容将被统一视为最后一个宏参数的替换内容.</p>
+						<blockquote>
+							<p>如: 
+				@def_macro TEST(param1) param1</p>
+							<p>使用该宏时如果提供了多余的参数,如 @m&lt;TEST&gt; (abc, bcd) ,则最终得到的替换结果就是 abc, bcd 
+				,而不会报错.</p>
+							<p>此特性是为了支持将目标语言的复杂代码文本指定为宏的最后一个参数的内容,如:</p>
+							<p>@m&lt;TEST&gt; (myObject.myMethod (1, 2, 3)) ,最终得到的替换结果就是 
+				myObject.myMethod (1, 2, 3) .</p>
+						</blockquote>
+					</blockquote>
+					<p>　</p>
+					<p><b>3. </b>多行宏内容:</p>
+					<blockquote>
+						<p>如果宏内容包括多行,可以在当前行的尾部使用'\'字符标记其紧接着的下一嵌入行也属于本宏的内容.如果当前行的尾部为双引号,而且下一行的首部也为双引号,则这两个字符串将合并到一起.</p>
+						<p>如:</p>
+						<blockquote>
+							<p>@def_macro TEST wutao&nbsp; \<br>volcano&nbsp; \<br>dev</p>
+						</blockquote>
+						<p>使用该宏时所最后得到的替换结果为:</p>
+						<blockquote>
+							<p>wutao<br>volcano<br>dev</p>
+						</blockquote>
+						<p>再如:</p>
+						<blockquote>
+							<p>@def_macro TEST &quot;wutao &quot;&nbsp; \<br>&quot;volcano&quot;</p>
+						</blockquote>
+						<p>使用该宏时所最后得到的替换结果为:</p>
+						<blockquote>
+							<p>&quot;wutao 
+				volcano&quot;</p>
+						</blockquote>
+					</blockquote>
+					<p><b>4. </b>宏内容中可以使用本表中列出的除开宏定义本身以外的所有其它替换符,包括使用其它宏.</blockquote>
+				</td>
+			</tr>
+			<tr>
+				<td width="222">@m&lt;宏名称&gt; (参数表)</td>
+				<td colspan="2">
+				使用所指定名称的宏,可以在后方跟随一个参数表(注意此处不再限制左括号与其前方不能留空白字符),参数表中的所有参数用作替换对应的宏参数.<p>
+				注意:</p>
+				<blockquote>
+					<p><b>1. </b>如果所欲使用的宏在类中定义,并且当前使用位置不位于该类中,则必须在宏名称前加上类名前缀;</p>
+					<p><b>2. </b>如果所使用宏未指定类名前缀,且其当前使用位置所处类及程序全局中均定义有该名称的宏,则将使用类中定义的宏;</p>
+					<p><b>3. </b>可以跨越多行提供宏参数表. 如:</p>
+					<blockquote>
+						<p>@m&lt;TEST&gt; (&quot;wutao&quot;,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;volcano&quot;)</p>
+					</blockquote>
+				</blockquote>
+				<p>
+				使用格式:</p>
+				<blockquote>
+					<p><b>1. </b>不携带参数表方式:</p>
+					<blockquote>
+						<p>如: @m&lt;TEST&gt;</p>
+					</blockquote>
+					<p><b>2. </b>携带参数表方式:</p>
+					<blockquote>
+						<p>如: @m&lt;TEST&gt; (&quot;wutao&quot;, 
+				&quot;volcano&quot;)</p>
+						<p>注意<a href="#many_macro_params">如前所述</a>,如果所提供的实际参数数目大于所使用宏中定义的宏参数数目,则所有多余部分将被视为宏的最后一个参数的内容.</blockquote>
+				</blockquote>
+				</td>
+			</tr>
+			</table>
+	</blockquote>
+	<p>　</p>
+	<h5><a name="class_declare"></a>4. 类定义</h5>
+	<blockquote>
+		<p>类用作定义一个可以具有子成员的数据类型.</p>
+		<p>类可以单根继承一个基础类,引用类名时可以直接使用类名称,或者使用&quot;包名.类名&quot;进行全名引用.</p>
+		<p>注意: 名称为&quot;<b>启动类</b>&quot;的类被用作特定定义用户程序的启动类</p>
+		<p>基本属性表:</p>
+		<table border="1" style="border-collapse: collapse">
+			<tr>
+				<td align="center" bgcolor="#808080" width="169"><b>名称</b></td>
+				<td align="center" bgcolor="#808080"><b>解释</b></td>
+			</tr>
+			<tr>
+				<td width="169"><a name="base_class_name"></a>基础类</td>
+				<td>指定本类的基础类名称,可以是单名称/全名称,也可以是空文本(表示无基础类).<p>
+				如果定义了非空基础类,当前类将自动继承所有来自该基础类的内容,如果该基础类还有基础类,将一并继承过来,此时本类称为这些类的&quot;<b>继承类</b>&quot;.<p>
+				继承类访问其直接/间接基础类中的成员不需要其为公开状态.<p>如果本类为<a href="#template_base_class">模板基础类</a>,则可以使用<a href="#template_data_type">模板数据类型</a>来动态提供其基础类.</td>
+			</tr>
+			<tr>
+				<td width="169">公开</td>
+				<td>指定本类是否对外公开. 公开类可以在所处包外部被访问,而非公开类只能在所处包内部被访问.</td>
+			</tr>
+		</table>
+		<p>　</p>
+	</blockquote>
+	<h5><a name="const_declare"></a>5. 类成员常量或局部常量定义</h5>
+	<blockquote>
+		<p>常量用作定义一个不允许在程序中进行修改的恒定值.</p>
+		<p>类的成员常量在其外部应该通过&quot;<b>类名.常量名</b>&quot;的方式来引用.</p>
+		<p>基本属性表:</p>
+		<table border="1" style="border-collapse: collapse">
+			<tr>
+				<td bgcolor="#808080" align="center" width="169"><b>名称</b></td>
+				<td bgcolor="#808080" align="center"><b>解释</b></td>
+			</tr>
+			<tr>
+				<td width="169">类型</td>
+				<td>提供常量的数据类型,只能是基本数据类型或<a href="#const_class">常量类</a>.</td>
+			</tr>
+			<tr>
+				<td width="169">公开</td>
+				<td>指定本常量是否公开.公开常量可以在所处类外部被访问,而非公开常量只能在本类或者其继承类中访问.<p>局部常量没有本属性.</td>
+			</tr>
+			<tr>
+				<td width="169">初始值</td>
+				<td>提供常量的初始值立即数,必须对应常量的数据类型. 注意:<blockquote>
+					<p><b>1. </b>在设置常量初始值时,只能提供<a href="#imm_value">立即数</a>,不能提供其它常量;<p><b>2. </b>可以使用'<b>@</b>'字符引导的文本来指定常量的本地初始化值文本(用户自行保证其有效性,火山编译器不会检查). 
+					如:<blockquote>
+						<p>
+						<img border="0" src="images/b51.png" width="531" height="56"></blockquote>
+				</blockquote>
+				</td>
+			</tr>
+		</table>
+	</blockquote>
+	<p>　</p>
+	<h5><a name="element_var_declare"></a>6. 类成员变量或局部变量定义</h5>
+	<blockquote>
+		<p>变量的内容允许在程序中被动态修改.</p>
+		<p>基本属性表:</p>
+		<table border="1" style="border-collapse: collapse">
+			<tr>
+				<td bgcolor="#808080" align="center" width="169"><b>名称</b></td>
+				<td bgcolor="#808080" align="center"><b>解释</b></td>
+			</tr>
+			<tr>
+				<td width="169">类型</td>
+				<td>提供变量的数据类型</td>
+			</tr>
+			<tr>
+				<td width="169">静态</td>
+				<td>指定是否为静态变量.静态变量在所处类载入后即保持始终存在.<p>由于静态变量初始化时不存在所处类实例,静态成员变量不支持自动挂接其事件到其所处类,在需要时必须通过&quot;<a href="#rev_event">挂接事件</a>&quot;命令手动挂接.</p>
+				<p>类的静态成员变量在外部应该通过&quot;<b>类名.变量名</b>&quot;的方式来引用.<p>非静态的类成员变量,如果其数据类型为类且其中定义有事件,将被自动挂接到当前类实例对象.</td>
+			</tr>
+			<tr>
+				<td width="169">参考</td>
+				<td>指定是否为参考变量.<p><b>注意:</b></p>
+				<blockquote>
+					<p>变量的参考属性如果为假,将自动创建一个对应数据类型的实例对象;<p>如果为真,则仅为用作指向另外一个已有实例对象的引用,本身并不创建实例对象.</blockquote>
+				</td>
+			</tr>
+			<tr>
+				<td width="169">公开</td>
+				<td>指定本变量是否公开.公开变量可以在所处类外部被访问,而非公开变量只能在本类或者其继承类中访问.<p>局部变量没有本属性.</td>
+			</tr>
+			<tr>
+				<td width="169">初始值</td>
+				<td>提供变量的初始值,必须对应变量的数据类型.<p>在设置变量初始值时,可以提供<a href="#imm_value">立即数</a>,也可以提供<a href="#const_declare">常量</a>.<p>如果未提供初始值,数值型变量的初始值为0,逻辑型变量的初始值为假,文本型变量的初始值为空文本,参考变量(&quot;参考&quot;属性为真的变量)的初始值为<a href="#null_object">空对象</a>.</td>
+			</tr>
+		</table>
+	</blockquote>
+	<p>　</p>
+	<h5><a name="method_declare"></a>7. 类方法定义</h5>
+	<blockquote>
+		<p>定义类的方法</p>
+		<p><a name="class_init_method"></a>名称为&quot;<b>类_初始化</b>&quot;的方法为类的初始化方法(在类对象被创建时自动调用),该方法不携带任何参数并且不返回值,对是否公开没有要求.</p>
+		<p><a name="class_clean_method"></a>名称为&quot;<b>类_清理</b>&quot;的方法为类的清理方法(在类对象被销毁时自动调用),该方法不携带任何参数并且不返回值,对是否公开没有要求. <b>注意</b>:在某些目标语言平台(如Java)上,类清理方法不会被支持.</p>
+		<p>基本属性表:</p>
+		<table border="1" style="border-collapse: collapse">
+			<tr>
+				<td bgcolor="#808080" align="center" width="169"><b>名称</b></td>
+				<td bgcolor="#808080" align="center"><b>解释</b></td>
+			</tr>
+			<tr>
+				<td width="169">返回值类型</td>
+				<td>提供方法执行完毕后所返回数据的数据类型</td>
+			</tr>
+			<tr>
+				<td width="169">静态</td>
+				<td>指定是否为静态方法.
+				注意:<blockquote>
+					<p><b>1. </b>类的静态方法需要通过&quot;类名.方法名&quot;的方式来引用;</p>
+					<p><b>2. </b>在静态方法内部，只能访问其所处类或者其所处类的基础类中的成员常量或者静态成员变量;</p>
+					<p>
+					<b>3. </b>如果静态方法所定义第一个参数的数据类型为方法所处类本身而且没有指定参数<a href="#param_match_mode">匹配</a>和<a href="#param_req_mode">需求类型</a>,那么可以基于该类对象以动态格式来调用该静态方法,编译器将自动进行转换.</p>
+					<blockquote>
+						<p><b>如: </b>假设&quot;类1&quot;中定义了&quot;方法1&quot;,而&quot;方法1&quot;的第一个参数数据类型为&quot;类1&quot;,类似这样的静态调用格式&quot;类1.方法1 
+					(类1对象, ...)&quot;可以以&quot;类1对象.方法1 (...)&quot;的动态调用格式进行书写.</p>
+					</blockquote>
+				</blockquote>
+				</td>
+			</tr>
+			<tr>
+				<td width="169">类别</td>
+				<td>指定方法的具体类别,可以为以下几种之一:<blockquote>
+					<p><b>1. 通常: </b>表明本方法为通常方法</p>
+					<p>　</p>
+					<p><b>2. 属性读:</b> 表明本方法为属性读取方法. 该属性可以在程序语句中被读取.</p>
+					<blockquote>
+						<p>如果属性读方法为静态方法,所要求的定义格式:</p>
+						<blockquote>
+							<p><b>A</b>. 必须定义且只能定义一个参数,该参数的数据类型必须为属性读方法所处类本身;</p>
+							<p><b>B</b>. 必须定义有返回值,该返回值的数据类型不能为数组,该数据类型即为本属性被读取时的数据类型.</p>
+						</blockquote>
+						<p>如果属性读方法不为静态方法,所要求的定义格式:</p>
+						<blockquote>
+							<p><b>A</b>. 不能定义参数;</p>
+							<p><b>B</b>. 必须定义有返回值,该返回值的数据类型不能为数组,该数据类型即为本属性被读取时的数据类型.</p>
+						</blockquote>
+						<p>注意:</p>
+						<blockquote>
+							<p><b>A</b>. 在程序中,必须以与变量相同的引用方式来访问属性读方法. 如: &quot;类对象1.属性1&quot;;</p>
+							<p><b>B</b>. 如果存在同名属性写方法,则两者的数据类型必须一致;</p>
+							<p><b>C</b>. 在<a href="#global_class">全局类</a>中不能定义属性读方法.</p>
+							<p>　</p>
+						</blockquote>
+					</blockquote>
+					<p><b>3. 属性写:</b> 
+					表明本方法为属性写入方法. 该属性除了可以在程序语句中被赋值,还可以在该类对象变量的扩展属性表的&quot;<b>属性</b>&quot;列中被赋予初始值.<a name="prop_set_method"></a></p>
+				</blockquote>
+				<blockquote>
+					<blockquote>
+						<p>如果属性写方法为静态方法,所要求的定义格式:</p>
+						<blockquote>
+							<p><b>A</b>. 必须未定义返回值;</p>
+							<p><b>B</b>. 
+							必须定义且只能定义两个参数,第一个参数的数据类型必须为属性写方法所处类本身,第二个参数的数据类型不能为数组,该数据类型即为本属性被写入时
+							所需要的数据类型.</p>
+						</blockquote>
+						<p>如果属性写方法不为静态方法,所要求的定义格式:</p>
+						<blockquote>
+							<p><b>A</b>. 必须未定义返回值;</p>
+							<p><b>B</b>. 
+							必须定义且只能定义一个参数,该参数的数据类型不能为数组,该数据类型即为本属性被写入时所需要的数据类型.</p>
+						</blockquote>
+						<p>注意:</p>
+						<blockquote>
+							<p><b>A</b>. 在程序中,必须以与变量相同的引用方式来访问属性写方法. 如: 
+							&quot;类对象1.属性1 = 1&quot;;</p>
+							<p><b>B</b>. 如果存在同名属性读方法,则两者的数据类型必须一致;</p>
+							<p><b>C</b>. 在<a href="#global_class">全局类</a>中不能定义属性写方法.</p>
+							<p>　</p>
+						</blockquote>
+					</blockquote>
+					<p><b>4. 定义事件: </b>定义本类对象将会发送事件的名称及格式,此种方法必须满足以下格式要求:<a name="event_declare_method"></a></p>
+					<blockquote>
+						<p><b>A. </b>方法体必须为空;</p>
+						<p><b>B. </b>返回值数据类型必须为整数;</p>
+						<p><b>C. </b>不能为静态方法.</p>
+						<p>　</p>
+					</blockquote>
+					<p><b>5. 接收事件: 
+					</b>定义本类对象将会接收本类中成员变量对象所发送的事件,此种方法且必须满足以下要求:<a name="event_rev_method"></a></p>
+					<blockquote>
+						<p><b>A. </b>返回值数据类型必须为整数;</p>
+						<p><b>B. </b>不能为静态方法;</p>
+						<p><b>C. </b>方法名称格式必须为: 事件对象类名 + &quot;_&quot; + 欲接收事件名;</p>
+						<p><b>D. </b>方法的第1个参数的数据类型必须为欲接收其事件的事件对象类名;</p>
+						<p><b>E. </b>方法的第2个参数的数据类型必须为整数,用作接收&quot;<a href="#rev_event">挂接事件</a>&quot;关键字调用所提供的&quot;标记值&quot;参数值(非该方式挂接事件则此参数值固定为0);</p>
+						<p><b>F. </b>方法其余参数的数目及数据类型必须与欲接收事件的定义方法一致.</p>
+					</blockquote>
+				</blockquote>
+				</td>
+			</tr>
+			<tr>
+				<td width="169">公开</td>
+				<td>指定本方法是否公开.公开方法可以在所处类外部被访问,而非公开方法只能在本类或者其继承类中访问.</td>
+			</tr>
+			<tr>
+				<td width="169">参数表</td>
+				<td>定义本方法的所有参数</td>
+			</tr>
+		</table>
+	</blockquote>
+	<p>　</p>
+	<h5><a name="statment"></a>8. 程序语句</h5>
+	<blockquote>
+		<p>提供具体的方法实现语句代码.</p>
+	</blockquote>
+		<p>　</p>
+	<h5>9. 按需编译</h5>
+	<blockquote>
+		<p>火山编译器实行的是按需编译模式,也就是说,凡是不可能被执行到的代码,一概不进行编译. 具体为:</p>
+		<blockquote>
+			<p>从程序的启动位置开始,所有未在程序执行流程中的代码都将不会被编译.<b> </b></p>
+			<p>&nbsp;</p>
+		</blockquote>
+	</blockquote>
+</blockquote>
+
+<h4>四. 火山平台关键字表:</h4>
+<h5><a name="base_data_type"></a>1. 基本数据类型关键字:</h5>
+<table border="1" width="100%" style="border-collapse: collapse">
+	<tr>
+		<td width="220" bgcolor="#808080" align="center"><b>名称</b></td>
+		<td bgcolor="#808080" align="center" width="89"><b>输入字1</b></td>
+		<td bgcolor="#808080" align="center"><b>解释</b></td>
+	</tr>
+	<tr>
+		<td width="220">字节</td>
+		<td width="89">sbyte</td>
+		<td>字节(有符号)基本数据类型,有效值范围从-128到127,占用1个字节空间.</td>
+	</tr>
+	<tr>
+		<td width="220">短整数</td>
+		<td width="89">short</td>
+		<td>短整数基本数据类型,有效值范围从-32768到32767,占用2个字节空间.</td>
+	</tr>
+	<tr>
+		<td width="220">字符</td>
+		<td width="89">wchar</td>
+		<td>宽字符基本数据类型,有效值范围从0到65535,占用2个字节空间.</td>
+	</tr>
+	<tr>
+		<td width="220">整数</td>
+		<td width="89">int</td>
+		<td>整数基本数据类型,有效值范围从-2147483648到2147483647,占用4个字节空间.</td>
+	</tr>
+	<tr>
+		<td width="220">变整数</td>
+		<td width="89">vint</td>
+		<td>
+		变整数基本数据类型,本类型在目的编程语言为c/c++且编译64位程序时等效于长整数类型,编译32位程序时等效于整数类型.目的编程语言为非c/c++时均等于整数类型. 
+		一般情况下无需使用.<p>由于变整数的数据尺寸等于当前目的cpu的位数,因此常用作表达c/c++目的程序里面的指针值.</td>
+	</tr>
+	<tr>
+		<td width="220">长整数</td>
+		<td width="89">long</td>
+		<td>长整数基本数据类型,有效值范围从-9223372036854774808到9223372036854774807,占用8个字节空间.</td>
+	</tr>
+	<tr>
+		<td width="220">小数</td>
+		<td width="89">double</td>
+		<td>双精度小数基本数据类型,有效值范围从1.797693e+308到4.9000000e-324,占用8个字节空间.</td>
+	</tr>
+	<tr>
+		<td width="220">逻辑型</td>
+		<td width="89">bool</td>
+		<td>逻辑型基本数据类型,有效值为真/假.</td>
+	</tr>
+	<tr>
+		<td width="220">文本型</td>
+		<td width="89">string</td>
+		<td>文本型基本数据类型,用作记录一段字符串文本.</td>
+	</tr>
+	<tr>
+		<td width="220"><a name="template_data_type"></a>模板类型1 -&gt; 模板类型8</td>
+		<td width="89">　</td>
+		<td>模板数据类型,只能在<a href="#template_base_class">模板基础类</a>中使用,其所对应的真实数据类型需要由<a href="#template_inherit_class">模板实现类</a>来提供.</td>
+	</tr>
+</table>
+<p>　</p>
+<p align="left">各种数值数据类型的容量从小到大排列:</p>
+<blockquote>
+	<p align="left">字节 &lt; 短整数 &lt; 字符 &lt; 整数 &lt; 长整数 &lt; 小数</p>
+	<p align="left">&nbsp;</p>
+</blockquote>
+<p align="left">数值计算表达式的最终数据类型确定方法:</p>
+<blockquote>
+	<p align="left">为数值计算表达式中具有最大容量的数值数据类型</p>
+</blockquote>
+<blockquote>
+	<p align="left">&nbsp;</p>
+</blockquote>
+<h5>2. 名称关键字:</h5>
+<table border="1" width="100%" style="border-collapse: collapse">
+	<tr>
+		<td width="9%" bgcolor="#808080" align="center"><b>名称</b></td>
+		<td bgcolor="#808080" align="center" width="6%"><b>输入字1</b></td>
+		<td bgcolor="#808080" align="center"><b>解释</b></td>
+	</tr>
+	<tr>
+		<td colspan="3" bgcolor="#C0C0C0"><b>对象名称关键字:</b></td>
+	</tr>
+	<tr>
+		<td width="9%">本对象</td>
+		<td width="6%">this</td>
+		<td>用作在类成员方法中代表所处类的对象本身</td>
+	</tr>
+	<tr>
+		<td width="9%">父对象</td>
+		<td width="6%">super</td>
+		<td>用作在类成员方法中代表所处类的父对象,注意本关键字只能在句点操作符的第一个参数位置处使用.</td>
+	</tr>
+	<tr>
+		<td colspan="3" bgcolor="#C0C0C0"><b>立即数名称关键字:</b></td>
+	</tr>
+	<tr>
+		<td width="9%">真</td>
+		<td width="6%">true</td>
+		<td>用作代表逻辑值真</td>
+	</tr>
+	<tr>
+		<td width="9%">假</td>
+		<td width="6%">false</td>
+		<td>用作代表逻辑值假</td>
+	</tr>
+	<tr>
+		<td width="9%"><a name="null_object"></a>空对象</td>
+		<td width="6%">null</td>
+		<td>用作代表空对象,可以匹配所有非常量类的类数据类型以及文本型.</td>
+	</tr>
+</table>
+<p>　</p>
+<h5>3. 操作符关键字:</h5>
+<table border="1" width="100%" style="border-collapse: collapse">
+	<tr>
+		<td width="9%" bgcolor="#808080" align="center"><b>名称</b></td>
+		<td bgcolor="#808080" align="center" width="6%"><b>特性</b></td>
+		<td bgcolor="#808080" align="center" width="4%"><b>优先级</b></td>
+		<td bgcolor="#808080" align="center" width="5%"><b>输入字1</b></td>
+		<td bgcolor="#808080" align="center" width="12%"><b>首/左侧参数</b></td>
+		<td bgcolor="#808080" align="center" width="12%"><b>右侧参数</b></td>
+		<td bgcolor="#808080" align="center"><b>解释</b></td>
+	</tr>
+	<tr>
+		<td width="9%" height="27">.</td>
+		<td width="6%" height="27">[可扩展]</td>
+		<td width="4%" height="27">1</td>
+		<td width="5%" height="27">　</td>
+		<td width="12%" height="27">欲访问类/类对象名称</td>
+		<td width="12%">欲访问类成员名称</td>
+		<td>句点分隔操作符,用作分隔类/类对象与其成员名称.</td>
+	</tr>
+	<tr>
+		<td width="9%">[]</td>
+		<td width="6%">[只能为参数]<p>[可扩展]</td>
+		<td width="4%">1</td>
+		<td width="5%">　</td>
+		<td width="12%">欲访问数组数据</td>
+		<td width="12%">[整数] 欲访问数组成员索引值</td>
+		<td>数组成员访问操作符,用作访问所指定索引位置处的数组成员.<p>
+		数组成员访问索引值从0开始,有效范围为从0到数组成员数-1,分别对应数组的第一个和最后一个成员.</td>
+	</tr>
+	<tr>
+		<td width="9%">-</td>
+		<td width="6%">[只能为参数]<p>[右结合]</td>
+		<td width="4%">2</td>
+		<td width="5%">　</td>
+		<td width="12%">[数值] 欲取反的数值</td>
+		<td width="12%">　</td>
+		<td>算术取反操作符,用作返回将指定数值进行符号翻转后的结果值.</td>
+	</tr>
+	<tr>
+		<td width="9%">强制类型转换<a name="data_type_convert"></a></td>
+		<td width="6%">[只能为参数]<p>[右结合]</td>
+		<td width="4%">2</td>
+		<td width="5%">　</td>
+		<td width="12%">欲转换到数据类型名称</td>
+		<td width="12%">欲转换数据类型的数据</td>
+		<td>类型强转操作符,用作将数据转换到所指定的数据类型.<p>调用格式为: <b>
+		(欲强行转换到的数据类型)欲转换类型的数据</b></p>
+		<p>允许以下数据类型之间进行强制转换:</p>
+		<blockquote>
+			<p><b>1. </b>&quot;空对象&quot;可以强制转换到任何非常量类的类数据类型或文本型;</p><p>
+			<b>2. </b>数值数据类型之间可以强行转换;<p><b>3. </b>常量类可以强制转换到其所对应的基本数据类型;<p><b>4. 
+			</b>类数据类型只能强制转换到其直接/间接基础类或继承类.</blockquote>
+		</td>
+	</tr>
+	<tr>
+		<td width="9%">*</td>
+		<td width="6%">[只能为参数]<p>[可扩展]</td>
+		<td width="4%">3</td>
+		<td width="5%">　</td>
+		<td width="12%">[数值] 被乘数</td>
+		<td width="12%">[数值] 乘数</td>
+		<td>算术相乘操作符,用作计算两个数值的相乘结果.</td>
+	</tr>
+	<tr>
+		<td width="9%">/</td>
+		<td width="6%">[只能为参数]<p>[可扩展]</td>
+		<td width="4%">3</td>
+		<td width="5%">　</td>
+		<td width="12%" rowspan="2">[数值] 被除数</td>
+		<td rowspan="2" width="12%">[数值] 除数</td>
+		<td>算术相除操作符,用作计算两个数值的相除结果.</td>
+	</tr>
+	<tr>
+		<td width="9%">%</td>
+		<td width="6%">[只能为参数]</td>
+		<td width="4%">3</td>
+		<td width="5%">　</td>
+		<td>算术模除操作符,用作计算两个整数的相除后的余数.</td>
+	</tr>
+	<tr>
+		<td width="9%">+</td>
+		<td width="6%">[只能为参数]<p>[可扩展]</td>
+		<td width="4%">4</td>
+		<td width="5%">　</td>
+		<td width="12%">[数值/文本] 被加数</td>
+		<td width="12%">[数值/文本] 加数</td>
+		<td>相加操作符,用作计算两个数值/文本的相加结果.</td>
+	</tr>
+	<tr>
+		<td width="9%">-</td>
+		<td width="6%">[只能为参数]<p>[可扩展]</td>
+		<td width="4%">4</td>
+		<td width="5%">　</td>
+		<td width="12%">[数值] 被减数</td>
+		<td width="12%">[数值] 减数</td>
+		<td>算术相减操作符,用作计算两个数值的相减结果.</td>
+	</tr>
+	<tr>
+		<td width="9%">&lt;=</td>
+		<td width="6%">[只能为参数]</td>
+		<td width="4%">5</td>
+		<td width="5%">　</td>
+		<td width="12%" rowspan="4">[数值] 被比较数值</td>
+		<td rowspan="4" width="12%">[数值] 比较数值</td>
+		<td>小于等于逻辑比较操作符,当左侧参数小于等于右侧参数时返回真.</td>
+	</tr>
+	<tr>
+		<td width="9%">&gt;=</td>
+		<td width="6%">[只能为参数]</td>
+		<td width="4%">5</td>
+		<td width="5%">　</td>
+		<td>大于等于逻辑比较操作符,当左侧参数大于等于右侧参数时返回真.</td>
+	</tr>
+	<tr>
+		<td width="9%">&lt;</td>
+		<td width="6%">[只能为参数]</td>
+		<td width="4%">5</td>
+		<td width="5%">　</td>
+		<td>小于逻辑比较操作符,当左侧参数小于右侧参数时返回真.</td>
+	</tr>
+	<tr>
+		<td width="9%">&gt;</td>
+		<td width="6%">[只能为参数]</td>
+		<td width="4%">5</td>
+		<td width="5%">　</td>
+		<td>大于逻辑比较操作符,当左侧参数大于等于右侧参数时返回真.</td>
+	</tr>
+	<tr>
+		<td width="9%">属于</td>
+		<td width="6%">[只能为参数]</td>
+		<td width="4%">5</td>
+		<td width="5%">instanceof</td>
+		<td width="12%">[对象] 被检查对象</td>
+		<td width="12%">用作检查的类名</td>
+		<td>返回左侧对象是否为右侧类或者其直接/间接继承类的实例对象,即左侧对象能否被安全转换到右侧类数据类型.<p>
+		注意: 左侧对象的数据类型必须为类,而且必须与右侧类之间存在继承/被继承关系或者等于右侧类.</td>
+	</tr>
+	<tr>
+		<td width="9%">==</td>
+		<td width="6%">[只能为参数]</td>
+		<td width="4%">6</td>
+		<td width="5%">　</td>
+		<td width="12%" rowspan="2">[数值/逻辑型/文本/数组/对象] 被比较值</td>
+		<td rowspan="2" width="12%">[数值/逻辑型/文本/数组/对象]&nbsp; 比较值</td>
+		<td rowspan="2">等于/不等于逻辑比较操作符,当左侧参数等于/不等于右侧参数时返回真.<p><b>注意: </b>
+		<blockquote>
+			<p><b>1. </b>对于数组对象,唯一能够与其进行比较的是&quot;空对象&quot;;<p><b>2. </b>
+			对于文本数据,将比较两者实际文本内容是否相同(区分字母大小写),也可以将文本数据与&quot;<a href="#null_object">空对象</a>&quot;进行比较;<p>
+			<b>3. </b>类对象比较仅比较两者是否指向同一个对象实例,而不会去对比两者所指向对象实例中存放的数据内容是否相同(火山安卓平台比较两个对象是否参考到同一对象实例,火山视窗平台比较两个对象的所处地址是否相同).<blockquote>
+				<p>注意,在火山视窗平台中:<p><b>A. </b>如欲比较两个对象的数据内容是否相同,可以使用系统类库中所提供的&quot;<b>对象内容是否相同</b>&quot;全局方法;<p>
+				<b>B. </b>&quot;<b>字节集类</b>&quot;是一个特例,该类的对象之间进行比较将比较两者的实际数据内容是否相同.</blockquote>
+		</blockquote>
+		</td>
+	</tr>
+	<tr>
+		<td width="9%">!=</td>
+		<td width="6%">[只能为参数]</td>
+		<td width="4%">6</td>
+		<td width="5%">　</td>
+	</tr>
+	<tr>
+		<td width="9%">&amp;&amp;</td>
+		<td width="6%">[只能为参数]<p>[可扩展]</td>
+		<td width="4%">7</td>
+		<td width="5%">且</td>
+		<td width="12%" rowspan="2">[逻辑型] 逻辑值一</td>
+		<td rowspan="2" width="12%">[逻辑型] 逻辑值二</td>
+		<td>并且逻辑操作符,当左侧参数和右侧参数均为逻辑值真时返回真.</td>
+	</tr>
+	<tr>
+		<td width="9%">||</td>
+		<td width="6%">[只能为参数]</td>
+		<td width="4%">8</td>
+		<td width="5%">或</td>
+		<td>或者逻辑操作符,当左侧参数和右侧参数其中任意一个为逻辑值真时返回真.</td>
+	</tr>
+	<tr>
+		<td width="9%">=</td>
+		<td width="6%">[右结合]</td>
+		<td width="4%">9</td>
+		<td width="5%">　</td>
+		<td width="12%">赋值到的变量/可写属性</td>
+		<td width="12%"><p>用作提供赋值用数据</td>
+		<td>赋值操作符,将右侧参数的值赋予给左侧参数所指定的变量/可写属性.</td>
+	</tr>
+</table>
+<p>注释:</p>
+<blockquote>
+	<p><b>1. </b>表格中的优先级值越小表明该操作符优先级越高;</p>
+	<p><b>2. </b>&quot;特性&quot;列中的&quot;<b>[只能为参数]</b>&quot;表示该操作符只能位于语句参数中; &quot;<b>[右结合]</b>&quot;表示
+	操作符参数为右结合,&quot;<b>[可扩展]</b>&quot;表明右侧参数可以被扩展多个.</p>
+</blockquote>
+<p>　</p>
+<h5>4. 命令关键字:</h5>
+<table border="1" width="100%" style="border-collapse: collapse">
+	<tr>
+		<td width="8%" bgcolor="#808080" align="center"><b>名称</b></td>
+		<td bgcolor="#808080" align="center" width="7%"><b>特性</b></td>
+		<td bgcolor="#808080" align="center" width="4%"><b>输入字1</b></td>
+		<td bgcolor="#808080" align="center" width="5%"><b>参数类型</b></td>
+		<td bgcolor="#808080" align="center" width="11%"><b>参数名称</b></td>
+		<td bgcolor="#808080" align="center" width="25%"><b>参数解释</b></td>
+		<td bgcolor="#808080" align="center" width="6%"><b>返回值</b></td>
+		<td bgcolor="#808080" align="center" width="34%"><b>解释</b></td>
+	</tr>
+	<tr>
+		<td colspan="8" bgcolor="#C0C0C0"><b>循环类关键字:</b></td>
+	</tr>
+	<tr>
+		<td width="8%">判断循环</td>
+		<td width="7%">[需求语句体]</td>
+		<td width="4%">while</td>
+		<td width="5%">逻辑型</td>
+		<td width="11%">判断值 </td>
+		<td width="25%">当此参数值为真时进入循环体,为假时将跳过循环体.</td>
+		<td width="6%">　</td>
+		<td width="34%">
+		本命令根据提供的逻辑参数的值,来决定是否进入循环体.如果提供的逻辑参数值为真,程序顺序执行下一条语句进入循环体,否则跳转到本命令循环体的下一条语句处.</td>
+	</tr>
+	<tr>
+		<td width="8%" rowspan="4">循环</td>
+		<td width="7%" rowspan="4">[需求语句体]<p>[隐藏空参数表]</td>
+		<td width="4%" rowspan="4">for</td>
+		<td width="5%">整数</td>
+		<td width="11%">[可省略] 变量起始值</td>
+		<td width="25%">定义循环变量的起始数值.<p>如果被省略,默认值为0.</td>
+		<td width="6%" rowspan="4">　</td>
+		<td width="34%" rowspan="4">
+		本命令将利用变量对循环体内的命令进行循环执行.第一次执行此命令时将使用&quot;变量起始值&quot;参数初始化&quot;循环变量&quot;参数所指定的变量.每次(包括第一次)执行到此命令处都将判断循环变量内的值是否已经到达&quot;变量目标值&quot;参数所指定的值,如已等于或超过,则跳转到循环体的下一条语句处,否则进入循环体.</td>
+	</tr>
+	<tr>
+		<td width="5%">整数</td>
+		<td width="11%">[可省略] 变量目标值</td>
+		<td width="25%">
+		定义循环变量的目标数值,在循环首部如果发现循环变量值已到达此目标值时(递增值小于0时<b>小于等于</b>目标值,递增值大于0时<b>大于等于</b>目标值)将跳出循环
+		而不再进入循环体.<p>如果被省略,默认值为1.</td>
+	</tr>
+	<tr>
+		<td width="5%">整数</td>
+		<td width="11%">[可省略][需求可写变量] 循环变量</td>
+		<td width="25%">
+		本整数型变量将用作控制循环执行次数,在循环尾部将自动递增或递减该变量内的数值(由变量递增值参数决定).循环体中的用户程序可以直接取用此变量中的值.<p>如果被省略,将自动使用内部临时变量.</td>
+	</tr>
+	<tr>
+		<td width="5%">整数</td>
+		<td width="11%">[可省略][需求立即数] 变量递增值</td>
+		<td width="25%">
+		每次执行到循环尾部时都将把此值加入到循环变量中去,此值可为正数或负数,如为正数则递增,为负数则递减.<p>注意: 
+		必须为本参数提供非0整数立即值,以便编译器建立循环结束条件.</p>
+		<p>如果被省略,则默认值为1.</td>
+	</tr>
+	<tr>
+		<td colspan="8" bgcolor="#C0C0C0"><b>流程控制类关键字:</b></td>
+	</tr>
+	<tr>
+		<td width="8%">如果</td>
+		<td width="7%">[需求语句体]</td>
+		<td width="4%">if</td>
+		<td width="5%">逻辑型</td>
+		<td width="11%">判断条件</td>
+		<td width="25%">本条件值的结果决定下一步程序执行位置</td>
+		<td width="6%">　</td>
+		<td width="34%">
+		本命令根据所提供逻辑参数的值,来决定是否改变程序的执行位置.如果提供的逻辑参数值为真,程序继续顺序向下执行进入本命令的子语句体,然后跳过本命令后续所有的&quot;否则&quot;命令,为假则将跳过本命令的子语句体.</td>
+	</tr>
+	<tr>
+		<td width="8%">否则</td>
+		<td width="7%">[需求语句体]<p>[隐藏空参数表]</td>
+		<td width="4%">elseif</td>
+		<td width="5%">逻辑型</td>
+		<td width="11%">判断条件</td>
+		<td width="25%">本条件值的结果决定下一步程序执行位置. 注意: 本参数可忽略以不提供,但是此时不能再后续跟随其它的&quot;否则&quot;语句.</td>
+		<td width="6%">　</td>
+		<td width="34%">
+		本命令只能放在&quot;如果&quot;或其它&quot;否则&quot;命令的后面,根据所提供逻辑参数的值,来决定是否改变程序的执行位置.如果提供的逻辑参数值为真,程序继续顺序向下执行进入本命令的子语句体,然后跳过本命令后续所有的&quot;否则&quot;命令,为假则将跳过本命令的子语句体.</td>
+	</tr>
+	<tr>
+		<td width="8%"><a name="continue"></a>到循环尾</td>
+		<td width="7%">[隐藏空参数表]</td>
+		<td width="4%">continue</td>
+		<td width="5%">　</td>
+		<td width="11%">　</td>
+		<td width="25%">　</td>
+		<td width="6%">　</td>
+		<td width="34%">本命令转移当前程序执行位置到当前所处循环体的尾部</td>
+	</tr>
+	<tr>
+		<td width="8%"><a name="break"></a>跳出循环</td>
+		<td width="7%">[隐藏空参数表]</td>
+		<td width="4%">break</td>
+		<td width="5%">　</td>
+		<td width="11%">　</td>
+		<td width="25%">　</td>
+		<td width="6%">　</td>
+		<td width="34%">本命令转移当前程序执行位置到当前所处循环体尾部的下一条语句处</td>
+	</tr>
+	<tr>
+		<td width="8%">返回</td>
+		<td width="7%">[隐藏空参数表]</td>
+		<td width="4%">return</td>
+		<td width="5%">　</td>
+		<td width="11%">[可省略] 返回值</td>
+		<td width="25%">当所处方法定义有非空返回值数据类型时,必须提供返回到调用方的具体值,否则必须省略掉本参数,即两者必须对应.</td>
+		<td width="6%">　</td>
+		<td width="34%">本命令转移当前程序执行位置到调用本语句所处方法的下一条语句处,并可根据需要返回一个值到调用语句处.</td>
+	</tr>
+	<tr>
+		<td colspan="8" bgcolor="#C0C0C0"><b>运算类关键字:</b></td>
+	</tr>
+	<tr>
+		<td width="8%">取反</td>
+		<td width="7%">　</td>
+		<td width="4%">　</td>
+		<td width="5%">逻辑型</td>
+		<td width="11%">待取反逻辑值</td>
+		<td width="25%">提供将其反转的逻辑值</td>
+		<td width="6%">逻辑型</td>
+		<td width="34%">将所指定逻辑值进行反转,返回反转后的结果.</td>
+	</tr>
+	<tr>
+		<td width="8%">位取反</td>
+		<td width="7%">　</td>
+		<td width="4%">　</td>
+		<td width="5%">所有整数型</td>
+		<td width="11%">待取反整数值</td>
+		<td width="25%">提供将其所有位反转的整数值</td>
+		<td width="6%">对应整数型</td>
+		<td width="34%">将所指定整数值的每一位进行反转,返回反转后的结果.</td>
+	</tr>
+	<tr>
+		<td width="8%" rowspan="2">位与</td>
+		<td width="7%" rowspan="2">　</td>
+		<td width="4%" rowspan="2">　</td>
+		<td width="5%">所有整数型</td>
+		<td width="11%">整数参数一</td>
+		<td width="25%">提供用作位操作的整数参数值一</td>
+		<td width="6%" rowspan="2">对应整数型</td>
+		<td width="34%" rowspan="2">将参数1的每一位与参数2的对应位进行与操作,返回运算后的结果.</td>
+	</tr>
+	<tr>
+		<td width="5%">所有整数型</td>
+		<td width="11%">整数参数二</td>
+		<td width="25%">提供用作位操作的整数参数值二</td>
+		</tr>
+	<tr>
+		<td width="8%">位或</td>
+		<td width="7%">　</td>
+		<td width="4%">　</td>
+		<td width="47%" colspan="4" rowspan="2">同&quot;位与&quot;</td>
+		<td width="34%">将参数1的每一位与参数2的对应位进行或操作,返回运算后的结果.</td>
+	</tr>
+	<tr>
+		<td width="8%">位异或</td>
+		<td width="7%">　</td>
+		<td width="4%">　</td>
+		<td width="34%">将参数1的每一位与参数2的对应位进行异或操作,返回运算后的结果.</td>
+	</tr>
+	<tr>
+		<td width="8%" rowspan="2">位左移</td>
+		<td width="7%" rowspan="2">　</td>
+		<td width="4%" rowspan="2">　</td>
+		<td width="5%">所有整数型</td>
+		<td width="11%">待位移整数值</td>
+		<td width="25%">提供被位移的整数值</td>
+		<td width="6%" rowspan="2">对应整数型　</td>
+		<td width="34%" rowspan="2">将参数1的每一位向左无符号移动参数2所指定的数目,返回运算后的结果.</td>
+	</tr>
+	<tr>
+		<td width="5%">所有整数型</td>
+		<td width="11%">位移数目</td>
+		<td width="25%">提供进行位移的位数</td>
+		</tr>
+	<tr>
+		<td width="8%">位右移</td>
+		<td width="7%">　</td>
+		<td width="4%">　</td>
+		<td width="47%" colspan="4">同&quot;位左移&quot;</td>
+		<td width="34%">将参数1的每一位向右无符号移动参数2所指定的数目,返回运算后的结果.</td>
+	</tr>
+	<tr>
+		<td colspan="8" bgcolor="#C0C0C0"><b>编译时处理关键字:</b></td>
+	</tr>
+	<tr>
+		<td width="8%">编译出错<a name="cerror"></a></td>
+		<td width="7%">　</td>
+		<td width="4%">cerror</td>
+		<td width="5%">　</td>
+		<td width="11%">　</td>
+		<td width="25%">　</td>
+		<td width="6%">　</td>
+		<td width="34%">仅在编译程序时起作用,用作告知编译器发现了编译错误并停止编译.</td>
+	</tr>
+	<tr>
+		<td colspan="8" bgcolor="#C0C0C0">调试类关键字:</td>
+	</tr>
+	<tr>
+		<td width="8%" rowspan="2">调试检查<a name="assert"></a></td>
+		<td width="7%" rowspan="2">　</td>
+		<td width="4%" rowspan="2">assert</td>
+		<td width="5%">逻辑型</td>
+		<td width="11%">检查值</td>
+		<td width="25%">在调试版中,当此参数值为假时,程序将中断执行并报错.</td>
+		<td width="6%" rowspan="2">　</td>
+		<td width="34%" rowspan="2">
+		本命令的调用语句仅在程序所编译的调试版本中存在,在程序所编译的发布版中将被忽略不编译.<p>在调试版中,当所提供的参数值为假时,程序将在此处中断执行并报错.</td>
+	</tr>
+	<tr>
+		<td width="5%">文本型</td>
+		<td width="11%">[可省略] 检查失败信息</td>
+		<td width="25%">指定当检查失败时(检查值参数为假)所输出的信息.如果被省略,则默认为空文本.</td>
+	</tr>
+	<tr>
+		<td width="8%">为调试版<a name="is_debug_ver"></a></td>
+		<td width="7%">　</td>
+		<td width="4%">　</td>
+		<td width="5%">　</td>
+		<td width="11%">　</td>
+		<td width="25%">　</td>
+		<td width="6%">逻辑型</td>
+		<td width="34%">返回当前所编译程序是否为调试版本</td>
+	</tr>
+	<tr>
+		<td colspan="8" bgcolor="#C0C0C0"><b>其它:</b></td>
+	</tr>
+	<tr>
+		<td width="8%" rowspan="2"><a name="rev_event"></a>挂接事件</td>
+		<td width="7%" rowspan="2">　</td>
+		<td width="4%" rowspan="2">　</td>
+		<td width="5%">对象</td>
+		<td width="11%">欲挂接其事件的对象</td>
+		<td width="25%">提供欲将其所定义事件挂接到当前类对应<a href="#event_rev_method">事件接收方法</a>的对象</td>
+		<td width="6%" rowspan="2">　</td>
+		<td width="34%" rowspan="2">将指定对象所支持的事件挂接到当前类对象中的对应事件接收方法上. 
+		本命令仅用作动态挂接对象事件,类及类中定义的成员对象变量除非明确指定不<a href="#auto_attach_events">自动挂接</a>,均会自动挂接事件.</td>
+	</tr>
+	<tr>
+		<td width="5%">整数</td>
+		<td width="11%">标记值</td>
+		<td width="25%">
+		用作提供欲挂接其事件的对象所对应的标记值,由用户自行定义.该值将被原值发送给事件接收方法,用作区分具体的事件来源.如果被省略,则默认为0.</td>
+	</tr>
+	<tr>
+		<td width="8%">取消事件挂接</td>
+		<td width="7%">　</td>
+		<td width="4%">　</td>
+		<td width="5%">对象</td>
+		<td width="11%">欲取消其事件挂接的对象</td>
+		<td width="25%">
+		提供欲取消将其所定义事件挂接到当前类对应<a href="#event_rev_method">事件接收方法</a>的对象</td>
+		<td width="6%">　</td>
+		<td width="34%">不再将指定对象所支持的事件挂接到当前类对象中的对应事件接收方法上.<p>
+		无论是自动挂接事件还是手动调用<a href="#rev_event">挂接事件</a>关键字挂接的对象,均可以调用本关键字取消其事件挂接. 
+		事件挂接一旦取消,该对象的事件将不会再被接收到.</td>
+	</tr>
+	</table>
+<p>注释:</p>
+<blockquote>
+	<p><b>1. </b>&quot;特性&quot;列中的&quot;<b>[需求语句体]</b>&quot;表示该命令需要携带一个子语句体,&quot;<b>[隐藏空参数表]</b>&quot;表示当该命令的参数表为空时将被省略掉不显示;</p>
+	<p><b>2. </b>&quot;参数表&quot;列中的&quot;<b>[可省略]</b>&quot;表示该参数可以被省略不提供;&quot;<b>[需求可写变量]</b>&quot;表示必须为该参数提供一个可写入变量或参数;&quot;<b>[需求立即数]</b>&quot;表示必须为该参数提供一个立即数.</p>
+	<p>　</p>
+</blockquote>
+<h4>五. 扩展属性表:</h4>
+<blockquote>
+	<p><b>1. </b>程序成员的所有属性由基本属性和扩展属性两部分组成;</p>
+	<p>　</p>
+	<p><b>2. </b>扩展属性有以下几种:</p>
+	<blockquote>
+		<p><b>A. </b>类中定义的&quot;<a href="#attr_var">属性变量</a>&quot;扩展属性值为真的成员变量;</p>
+		<p><b>B. </b>类中定义的所有<a href="#prop_set_method">属性写方法</a>;</p>
+		<p><b>C. 
+		</b>所设置扩展属性可以是<b>属性的子属性</b>,如&quot;可读属性1.可读属性2.可写属性3&quot;,前面的父属性必须均为可读取属性,最后一个属性必须为可写入属性;</p>
+		<p><b>D. </b>火山系统定义的<a href="#global_extend_attr">全局扩展属性</a>(属性名以'@'开头);</p>
+		<p><b>E. </b>项目插件定义的<a href="#android_extend_attr">项目扩展属性</a>(属性名以'@'开头).</p>
+		<p>　</p>
+	</blockquote>
+	<p><b>3.</b> 属性值可以引用程序中定义的<a href="#const_declare">常量</a>或者提供对应数据类型的<a href="#imm_value">立即数</a>. 
+	<b>注意:</b></p>
+	<blockquote>
+		<p><b>A.</b> 属性数据类型为<a href="#const_class">常量类</a>时也可以直接提供对应数据类型的<a href="#imm_value">立即
+		数</a>(下面<b>C</b>条例外). 
+		譬如,假设属性A的数据类型为&quot;可绘制资源&quot;(安卓平台项目下提供),那么属性值除了可以为其提供一个同样数据类型的常量以外,还可以直接为其提供一个可绘制资源文件名字符串;</p>
+		<p><b>B.</b> 如果属性指定只能从其提供的选择列表中选择属性值(譬如下面的&quot;<a href="#list_item_choose">@列表选择项</a>&quot;),则属性值只能从这些列表项中选择;</p>
+		<p><b>C.</b> 如果属性数据类型为<a href="#const_class">常量类</a>且该类中定义有常量成员,则属性值只能从这些常量成员中选择.</p>
+		<p>　</p>
+	</blockquote>
+</blockquote>
+
+</div>
+<div class="wtdoc">
+
+<blockquote>
+	<p><a name="global_extend_attr"></a><b>4. </b>火山系统定义的全局扩展属性表:</p>
+	<table border="1" width="100%" style="border-collapse: collapse">
+		<tr>
+			<td align="center" bgcolor="#808080" width="158"><b>名称</b></td>
+			<td align="center" bgcolor="#808080" width="132"><b>数据类型</b></td>
+			<td align="center" bgcolor="#808080" width="129"><b>相关特性</b></td>
+			<td align="center" bgcolor="#808080" width="113"><b>应用场合</b></td>
+			<td align="center" bgcolor="#808080"><b>解释</b></td>
+		</tr>
+		<tr>
+			<td width="158">@<a name="out_name"></a>输出名</td>
+			<td width="132">文本型</td>
+			<td width="129">　</td>
+			<td width="113">任何定义型程序成员</td>
+			<td>
+			本属性可以应用于任何定义型成员,用作指定其编译后的输出名称(不使用本属性进行指定则编译器会自动为它生成一个输出名称),编译器会保证其它所自动生成的输出名称不会与此指定名发生冲突.所提供输出名称如果以'@'字符开头,表明为引用全局/项目约定名称.</td>
+		</tr>
+		<tr>
+			<td width="158">@<a name="auto_attach_events"></a>自动挂接事件</td>
+			<td width="132">逻辑型</td>
+			<td width="129">　</td>
+			<td width="113">类或者类的非静态成员变量</td>
+			<td>
+			本属性可以应用于类或数据类型为类的非静态成员变量上,用作指定是否自动将该类或该类对象支持的所有事件挂接到本类上.如果没有指定本属性,默认值为真.</td>
+		</tr>
+		<tr>
+			<td width="158">@<a name="attr_var"></a>属性变量</td>
+			<td width="132">逻辑型</td>
+			<td width="129">　</td>
+			<td width="113">非静态类成员变量</td>
+			<td>本属性可以应用于非静态的类成员变量(数据类型只能是基本数据类型或<a href="#const_class">常量类</a>数据类型)上,用作指定该成员变量是否为其所处类的属性型成员.</td>
+		</tr>
+		<tr>
+			<td width="158"><a name="attr_value_detail_type"></a>@值细节类型</td>
+			<td width="132">整数</td>
+			<td width="129">　</td>
+			<td width="113">类或者类的属性写成员(属性型成员变量或属性写方法)</td>
+			<td>当应用于类时,指定该类数据类型值的细节类型; 当应用于类的属性型成员时,指定该属性值的细节类型.<p>当属性数据类型为<b>整数</b>时,可以为以下选择项之一:</p>
+			<blockquote>
+				<p><b>1. 颜色</b>: 为RGB十六进制颜色数值;</p>
+				<p><b>2. 颜色支持透明</b>: 
+				为RGB十六进制颜色数值.支持设置为透明颜色值(RGB值为0xFFFFFF,Alpha值根据目标本地语言不同而不同,譬如java为0,c++为0xFF);</p>
+				<p><b>3. 颜色支持默认</b>: 
+				为RGB十六进制颜色数值.支持设置为默认颜色值(RGB值为0,Alpha值根据目标本地语言不同而不同,譬如java为0,c++为0xFF).</p>
+			</blockquote>
+			<p>当属性数据类型为<b>文本型</b>时,可以为以下选择项之一:</p>
+			<blockquote>
+				<p><b>1. 文件名</b>: 为欲打开的文件名(可以通过&quot;<b>@附加文本</b>&quot;属性提供其过滤器文本);</p>
+				<p><b>2. 保存用文件名</b>: 为欲保存到的文件名(可以通过&quot;<b>@附加文本</b>&quot;属性提供其过滤器文本);</p>
+				<p><b>3. 字体</b>: 为字体信息,格式为: &quot;字体名, 字体尺寸, 是否为粗体, 是否为斜体&quot;, 
+				其中&quot;是否&quot;字段,用1代表真,0代表假;</p>
+				<p><b>4. 定宽字体</b>: 与&quot;字体&quot;类型不同的是仅限定宽字体;</p>
+				<p><b>5. 自定义</b>: 允许通过调用外部DLL中的输出函数来建立属性值文本,此时需要通过&quot;<b>@附加文本</b>&quot;属性提供当用户单击值列右侧按钮时所调用的外部dll文件及其中的输出函数名.</p>
+			</blockquote>
+			</td>
+		</tr>
+		<tr>
+			<td width="158"><a name="list_item_choose"></a>@列表选择项</td>
+			<td width="132">文本型</td>
+			<td width="129">　</td>
+			<td width="113">类的属性写成员(属性型成员变量或属性写方法)</td>
+			<td>本属性提供一系列备选列表文本,各个备选文本之间使用换行符分隔,用作在输入类的初始值/类属性成员的属性值时直接选择输入.<p>本属性的有效条件如下:</p>
+			<blockquote>
+				<p><b>1. </b>所对应成员必须未指定细节类型;</p>
+				<p><b>2. 
+			</b>所对应成员如果为类的属性型成员,仅当该成员的数据类型是整数/文本型或整数/文本型的<a href="#const_class">常量类</a>时有效.</p>
+			</blockquote>
+			<p>当成员的数据类型为整数时,属性值在编译时将被自动转换为以0开始的整数索引值.</td>
+		</tr>
+		<tr>
+			<td width="158">@附加文本</td>
+			<td width="132">文本型</td>
+			<td width="129">　</td>
+			<td width="113">类的属性写成员(属性型成员变量或属性写方法)</td>
+			<td>本属性用作提供附加文本信息:<blockquote>
+				<p><b>1. </b>当所对应成员细节类型为&quot;<b>文件名</b>&quot;或&quot;<b>保存用文件名</b>&quot;时,用作提供具体文件名过滤器文本: 
+				该文本必须以&#39;|&#39;分隔和结束,类似以下格式: 
+				&quot;JPG文件(*.jpg;*.jpeg)|*.jpg;*.jpeg|GIF动画(*.gif)|*.gif|&quot;,尾部会自动加上能匹配所有文件的过滤器;</p>
+				<p><b>2.</b> 当所对应成员细节类型为&quot;<b>自定义</b>&quot;时,用作顺序提供所需调用的64位外部DLL文件名 
+				+ 32位外部DLL文件名 
+				+ 该DLL中的输出函数名 + 相关用户自定义数值,DLL文件名均相对当前源文件所处目录,四者之间使用换行符分隔,其中用户自定义数值部分可以省略(默认为0).</p>
+				<blockquote>
+					<p>当用户单击值列右侧的按钮时,IDE即自动调用该输出函数以获得最新的值文本.</p>
+					<p>该输出函数的原型为:</p>
+					<blockquote>
+						<p>const TCHAR* (WINAPI *PA_PROP_BTN_CLICKED) (const 
+						TCHAR* szPropertyCurrentValue, const HWND hParentWnd, const UINT_P 
+						upUserData);</p>
+					</blockquote>
+					<p>该函数用作处理值列右侧按钮单击事件,各参数及返回值的意义为:</p>
+					<blockquote>
+						<p>szPropertyCurrentValue: 提供当前属性文本内容</p>
+						<p>hParentWnd: 父窗口句柄,必定不为NULL.</p>
+						<p>upUserData: 本属性值中所提供的用户自定义数值.</p>
+					</blockquote>
+					<p>
+					返回NULL表示当前属性文本内容未被修改,否则返回修改后的属性文本内容(调用方必须立即将其复制保存,其可能会在后续操作中被改变或无效).</p>
+				</blockquote>
+			</blockquote>
+			</td>
+		</tr>
+		<tr>
+			<td width="158">@设计时隐藏</td>
+			<td width="132">逻辑型</td>
+			<td width="129">&nbsp;</td>
+			<td width="113">类的属性成员(属性型成员变量或属性读/写方法)</td>
+			<td>
+			指定对应的类属性在相关设计器中是否隐藏.类的属性读/写方法只要有任一个被隐藏,则两者同时被隐藏.</td>
+		</tr>
+		<tr>
+			<td width="158">@外部包</td>
+			<td width="132">文本型</td>
+			<td width="129">[允许多设置项]</td>
+			<td width="113">包</td>
+			<td>
+			本属性只能应用于包定义成员上,用作指定一个或多个在本包定义成员所处源文件内优先查询的外部包名称(多个包名之间使用逗号或换行符分隔).<p>
+			当程序中引用到某个未明确指定其所处包的类名时(即该类名不为全名称),将按照如下规则进行顺序搜寻匹配:</p>
+			<blockquote>
+				<p><b>1.</b> 首先查找该类名引用程序位置所处的包中是否存在该名称的类,如找到则使用该类;</p>
+				<p><b>2.</b> 
+				然后找到该类名引用程序位置所处源文件首的包定义成员,检查该成员中是否定义有本属性,如有则读出属性值中指定的所有外部包名列表,在此包名列表中查找所有该名称的类.如果只找到一个,则使用该类,找到多个则报错;</p>
+				<p><b>3.</b> 最后查找所有剩余的包,未找到该名称的类则报错,找到多个也报错.如果只找到一个,则使用该类.</p>
+			</blockquote>
+			</td>
+		</tr>
+		<tr>
+			<td width="158"><a name="const_class"></a>@常量类</td>
+			<td width="132">整数</td>
+			<td width="129">　</td>
+			<td width="113">类</td>
+			<td>本属性只能应用于类,用作指定该类是否为常量类及其所对应的基本数据类型.<p>可以为以下选择项之一,用作指定其所对应的基本数据类型:</p>
+			<blockquote>
+				<p><b>1. </b>字节;</p>
+				<p><b>2. </b>短整数;</p>
+				<p><b>3. </b>字符;</p>
+				<p><b>4. </b>整数;</p>
+				<p><b>5.</b> 变整数</p>
+				<p><b>6. </b>长整数;</p>
+				<p><b>7. </b>小数;</p>
+				<p><b>8. </b>逻辑型;</p>
+				<p><b>9. </b>文本型;</p>
+				<p><b>10. </b>文本到ID(常量初始值所对应的数据类型是文本型,但其它场合所对应的数据类型为整数型,由编译器进行特定处理,相关实例请参见安卓开发平台的系统类&quot;资源&quot;的说明)</p>
+			</blockquote>
+			<p>常量类特点及注意事项:</p>
+			<blockquote>
+				<p><b>1. 
+				</b>常量类用作建立对应某基本数据类型数据的特定类,该类中只允许定义数据类型为该类的常量成员.如果类中所定义常量成员的数据类型为空,则其数据类型会自动默认为所处常量类;</p>
+				<p><b>2. </b>如果存在类的继承,常量类的基础类只能是常量类(两者所对应的基本数据类型必须一致),非常量类的基础类只能是非常量类,两者不能混用;</p>
+				<p><b>3. </b>数据类型为常量类的局部变量在访问前必须首先明确赋值;</p>
+				<p><b>4.</b> 数据类型为常量类的常量/变量的初始值可以为常量类所对应的基本数据类型<a href="#imm_value">立即数</a>;</p>
+				<p><b>5.</b> 常量类数据类型不能与其所对应的基本数据类型匹配,但是可以强制转换到所对应的基本数据类型.</p>
+			</blockquote>
+			</td>
+		</tr>
+		<tr>
+			<td width="158"><a name="alias_class"></a>@别名</td>
+			<td width="132">文本型</td>
+			<td width="129">　</td>
+			<td width="113">类</td>
+			<td>
+			<p>本属性只能应用于类定义成员上,表明该类为别名类.</p>
+			<p>别名类用作直接封装所指定的目标语言本地类,在程序中使用别名类等于直接使用所对应的本地类,其特性如下:</p>
+			<blockquote>
+				<p><b>1. </b>别名类如存在基础类,必须也是别名类,且用户必须自行保证该基础别名类所封装的本地类为本别名类所封装本地类的基础类,非别名类的基础类不能是别名类;</p>
+				<p><b>2. </b>别名类中只允许定义常量或静态成员;</p>
+				<p><b>3. </b>如果允许该别名类创建对象,所封装的本地类必须提供有默认无参数构造方法(仅火山安卓平台需要);</p>
+				<p><b>4. </b>别名类可以为其它非别名类的基础类,支持使用类似&quot;ArrayList&lt;E&gt;&quot;这样的本地模板类名,如果当前类同时为<a href="#template_base_class">模板基础类</a>,支持在其中使用火山<a href="#template_data_type">模板数据类型</a>;<p>
+				<b>5. </b>支持在名称首部使用如下嵌入替换符: <a href="#embed_pkg">@pkg&lt;包名称&gt;</a><b>、</b><a href="#embed_an">@an&lt;约定名称&gt;</a><b>、</b><a href="#sn_current_package">@sn&lt;current_package&gt;</a>、<a href="#sn_startup_package">@sn&lt;startup_package&gt;</a></p>
+				<p><b>6. </b>如果封装的是类似Java接口这样的数据类型,务必将&quot;<a href="#object_create_disabled">@禁止创建对象</a>&quot;属性设置为真,避免用户以错误的方式使用此别名类.</blockquote>
+			</td>
+		</tr>
+		<tr>
+			<td width="158"><a name="global_class"></a>@全局类</td>
+			<td width="132">逻辑型</td>
+			<td width="129">　</td>
+			<td width="113">类</td>
+			<td>
+			本属性只能应用于类定义成员上,用作为指定当前类为全局类.<p>全局类中的所有静态公开方法在外部访问时都可以省略其类名指定(<a href="#embed_line">嵌入行语句</a>中除外),此类方法被称为&quot;<b>全局方法</b>&quot;.</td>
+		</tr>
+		<tr>
+			<td width="158"><a name="template_base_class"></a>@模板基础类</td>
+			<td width="132">逻辑型</td>
+			<td width="129">　</td>
+			<td width="113">类</td>
+			<td>
+			本属性只能应用于类定义成员上,用作指定当前类为模板基础类.<p>模板基础类不能同时为常量类或模板实现类,模板基础类的基础类可以也为其它模板基础类.</p>
+			<p>
+			模板基础类只能用作模板实现类或其它模板基础类的基础类,或者在该类内部使用,除此之外不能在其它任何场合使用,只有在模板基础类中才能使用<a href="#template_data_type">模板数据类型</a>.</p>
+			<p>
+			在模板基础类中,在以下位置可以使用<a href="#template_data_type">模板数据类型</a>:</p>
+			<blockquote>
+				<p><b>1. </b>所有可以使用数据类型的位置;</p>
+				<p><b>2. </b>模板基础类的<a href="#extern_base_class">&quot;@外部基础类&quot;</a>属性值;</p>
+				<p><b>3. </b>模板基础类的<a href="#alias_class">&quot;@别名&quot;</a>属性值;</p>
+				<p><b>4. </b>模板基础类的<a href="#base_class_name">基础类</a>属性.</p>
+			</blockquote>
+			<p>需要注意的是:<blockquote>
+				<p><b>1. 
+				</b>由于模板基础类中的内容会被整体复制到模板实现类中然后进行模板数据类型替换,所以模板基础类中的代码不要去访问其所在包中的非公开类,因为其实际编译位置是位于模板实现类内,而模板实现类不见得会与模板基础类位于同一个包中;<p>
+				<b>2. </b>同样的原因,在模板基础类中引用外部本地类名(譬如Java类)时,需要使用具有多个单名称的<a href="#full_name">全名称</a>.</blockquote>
+			</td>
+		</tr>
+		<tr>
+			<td width="158"><a name="template_inherit_class"></a>@模板实现类</td>
+			<td width="132">文本型</td>
+			<td width="129">　</td>
+			<td width="113">类</td>
+			<td>
+			本属性只能应用于类定义成员上,用作指定当前类为模板实现类.<p>
+			模板实现类不能同时为常量类或模板基础类,模板实现类的基础类必须为模板基础类.</p>
+			<p>本属性值用作为模板基础类中所使用到的所有模板数据类型顺序提供对应的实际替换数据类型(从<a href="#template_data_type">模板类型1</a>开始),多个替换数据类型之间用逗号或换行符分隔.<p>
+			模板实现类实现模板基础类的具体算法为:<blockquote>
+				<p><b>1. </b>首先将模板基础类中的所有内容添加到模板实现类的内容尾部,然后将其中所有使用了<a href="#template_data_type">模板数据类型</a>的位置用本属性值中提供的对应替换数据类型进行替换,所有使用了模板基础类本身的位置使用模板实现类替换;<p>
+				<b>2. </b>然后将模板基础类的基础类设置为本模板实现类的基础类,将模板基础类的所有属性添加到本模板实现类的属性表中(跳过所有当前在模板实现类中已经存在的);<p>
+				<b>3. </b>如果模板基础类的基础类仍然为模板基础类,则跳到步骤1重复执行;<p>
+				<b>4. </b>对所有从模板基础类中添加进来的&quot;类_初始化&quot;和&quot;类_清理&quot;方法进行处理,确保其能够被自动执行且执行顺序正确.</blockquote>
+			</td>
+		</tr>
+		<tr>
+			<td width="158">@默认基础类</td>
+			<td width="132">逻辑型</td>
+			<td width="129">　</td>
+			<td width="113">类</td>
+			<td>
+			本属性只能应用于类定义成员上,当其它类(不包括常量类)没有指定基础类时,将使用该类作为其它类的默认基础类.<p>注意:<blockquote>
+				<p><b>1. </b>整个应用程序中只允许一个类被定义为默认基础类;<p><b>2. </b>被定义为默认基础类的类不允许定义有基础类;<p>
+				<b>3. </b>被定义为默认基础类的类不允许为常量类;<p>
+				<b>4. </b>必须确保所定义的默认基础类也为所有外部本地类的实际基础类;<p>
+				<b>5. </b>必须确保所定义的默认基础类定义有无参数构造方法.</blockquote>
+			</td>
+		</tr>
+		<tr>
+			<td width="158"><a name="object_create_disabled"></a>@禁止创建对象</td>
+			<td width="132">逻辑型</td>
+			<td width="129">　</td>
+			<td width="113">类</td>
+			<td>
+			本属性只能应用于类定义成员上,用作指定是否允许定义类型为该类的变量(&quot;参考&quot;属性为真的变量不在限制之内).</td>
+		</tr>
+		<tr>
+			<td width="158">@禁止静态</td>
+			<td width="132">逻辑型</td>
+			<td width="129">　</td>
+			<td width="113">类</td>
+			<td>本属性只能应用于类,用作指定是否允许在程序中定义该类及其所有继承类的静态或静态参考变量.</td>
+		</tr>
+		<tr>
+			<td width="158">@<a name="inherit_disabled"></a>禁止继承</td>
+			<td width="132">逻辑型</td>
+			<td width="129">　</td>
+			<td width="113">类</td>
+			<td>本属性只能应用于类定义成员上,用作指定是否不允许本类作为其它类的基础类.<p>注意有以下特例:<blockquote>
+				<p><b>1. </b>在一个别名类上设置此属性并不能阻止它成为其它别名类的基础类;<p><b>2. 
+				</b>在一个模板基础类上设置此属性并不能阻止它成为其它模板基础类/模板实现类的基础类.</blockquote>
+			</td>
+		</tr>
+		<tr>
+			<td width="158">@强制输出</td>
+			<td width="132">逻辑型</td>
+			<td width="129">　</td>
+			<td width="113">类/方法</td>
+			<td>本属性只能应用于类/方法定义成员上,用作指定该类/方法将被强制编译输出.<p>
+			正常情况下,编译器会仅编译并输出被程序启动类或启动方法直接或间接访问的类/方法,此属性仅用作强制编译输出未被程序启动类或启动方法直接或间接访问的类/方法,一般用作自动加入一些被目标平台默认使用的类,譬如登记到安卓程序清单文件中的&quot;应用程序类&quot;/&quot;服务类&quot;/&quot;广播接收器类&quot;等.</td>
+		</tr>
+		<tr>
+			<td width="158">@强制依赖</td>
+			<td width="132">文本型</td>
+			<td width="129">[允许多设置项]</td>
+			<td width="113">类/方法</td>
+			<td>
+			本属性只能应用于类/方法定义成员上,用作强制指定一个或多个类作为本类/方法的依赖类(多个依赖类名之间使用逗号或换行符分隔),一旦本类/方法被用户程序使用,则其所有在此处指定的依赖类均认为被使用.<p>
+			正常情况下,类之间的依赖关系会被编译器自动判别,此属性仅用作当本类/方法中未曾实际使用到某类时强制指定其为本类/方法的依赖类.</td>
+		</tr>
+		<tr>
+			<td width="158">@<a name="extern_base_class"></a>外部基础类</td>
+			<td width="132">文本型</td>
+			<td width="129">　</td>
+			<td width="113">类的基础类属性</td>
+			<td>本属性用作指定一个本地类名作为当前类的基础类名称,编译器将不进行任何检查.
+			注意:<blockquote>
+				<p><b>1. </b>此时当前类应该没有定义基础类;</p>
+				<p><b>2. </b>不能将本属性值指向一个火山类名,因为系统不会对其进行引用检查,因而该火山类可能会因为没有被引用而在代码优化时被删除;</p>
+				<p><b>3. </b>如果定义了非空外部基础类,则编译器编译本类时将不会再自动生成本类的无参数空白构造方法;</p>
+				<p><b>4. </b>支持使用类似&quot;ArrayList&lt;E&gt;&quot;这样的本地模板类名,如果当前类为<a href="#template_base_class">模板基础类</a>,支持在其中使用火山<a href="#template_data_type">模板数据类型</a>;</p>
+				<p><b>5. </b>支持在名称首部使用如下嵌入替换符: <a href="#embed_pkg">@pkg&lt;包名称&gt;</a><b>、</b><a href="#embed_an">@an&lt;约定名称&gt;</a><b>、</b><a href="#sn_current_package">@sn&lt;current_package&gt;</a>、<a href="#sn_startup_package">@sn&lt;startup_package&gt;</a></p>
+			</blockquote>
+			</td>
+		</tr>
+		<tr>
+			<td width="158">@<a name="virtual_method"></a>虚拟方法</td>
+			<td width="132">整数</td>
+			<td width="129">　</td>
+			<td width="113">方法</td>
+			<td>本属性只能应用于普通类型的非静态方法定义成员上,用作指定该方法为虚拟方法(类的多态).<p>虚拟方法可以在其继承类中被覆盖,继承类中用作覆盖的虚拟方法必须与其基础类中对应虚拟方法的名称/公开状态/返回值/参数表完全相同.</p>
+			<p>
+			属性值可以为以下选项值之一:</p>
+			<blockquote>
+				<p><b>1. 可覆盖: </b>为可覆盖虚拟方法,继承类可以通过定义与本方法同名同返回值同参数表的虚拟方法来覆盖本方法;</p>
+				<p><b>2. 不可覆盖: </b>为不可覆盖虚拟方法,继承类不能覆盖本方法.</p>
+			</blockquote>
+			</td>
+		</tr>
+		<tr>
+			<td width="158">@<a name="embed_method"></a>嵌入式方法</td>
+			<td width="132">文本型</td>
+			<td width="129">　</td>
+			<td width="113">方法</td>
+			<td>
+			本属性只能应用于方法定义成员上,用作为指定当前方法为嵌入式方法.<p>本属性的值文本为属性表格式,该属性表可以具有以下属性:</p>
+			<blockquote>
+				<p><b>1. name</b>:<b> </b>文本型,定义本嵌入式方法的标记名称,仅在所处类中使用并有效;</p>
+				<p><b>2. has_body</b>:<b> 
+				</b>逻辑型,默认值为假,指定本嵌入式方法的调用语句是否携带一个子语句体;</p>
+				<p><b>3. has_loop_body</b>:<b> </b>逻辑型,默认值为假. 
+				指定本嵌入式方法的调用语句是否携带一个循环体类型的子语句体,在该子语句体中可以支持调用&quot;<b>到循环尾</b>&quot;和&quot;<b>跳出循环</b>&quot;关键字语句
+				而不会编译报错;</p>
+				<p><b>4. body_header</b>: 
+				文本型,仅当&quot;<b>has_body</b>&quot;或&quot;<b>has_loop_body</b>&quot;属性值为真时有效,如果不为空文本,用作指定编译时在子语句体首部加入的本地代码行,如果未定义本属性或者本属性值为空文本,则编译器自动使用对应目标编程语言的默认子语句体起始代码,对于java/c/c++来说,就是&quot;{&quot;. 
+				如果属性值为&quot;<b>@none</b>&quot;表示无;</p>
+				<p><b>5. body_tail</b>: 
+				文本型,仅当&quot;<b>has_body</b>&quot;或&quot;<b>has_loop_body</b>&quot;属性值为真时有效,如果不为空文本,用作指定编译时在子语句体尾部加入的本地代码行,如果未定义本属性或者本属性值为空文本,则编译器自动使用对应目标编程语言的默认子语句体结束代码,对于java/c/c++来说,就是&quot;}&quot;. 
+				如果属性值为&quot;<b>@none</b>&quot;表示无;</p>
+				<p><b>6. prev</b>:<b> </b>文本型,如果不为空文本,指定
+				一个位于相同类中嵌入式方法的标记名称列表(多个标记名称之间使用逗号分隔). 本嵌入式方法的调用语句前方必须存在任何一个
+				在该名称列表中指定的嵌入式方法调用语句. 在标记名称列表中,可以使用特殊标记名称&quot;<b>@none</b>&quot;来匹配当前调用语句位于所处语句体首部的情况;</p>
+				<p><b>7. next</b>:<b> </b>文本型,如果不为空文本,指定一个标记名称列表(格式同上). 本嵌入式方法的调用语句后方必须存在
+				任何一个在该名称列表中指定的嵌入式方法调用语句. 在标记名称列表中,可以使用特殊标记名称&quot;<b>@none</b>&quot;来匹配当前调用语句位于所处语句体尾部的情况;</p>
+				<p><b>8. parent</b>: 
+				文本型,如果不为空文本,指定一个标记名称列表(格式同上). 本嵌入式方法的调用语句必须直接或间接(由&quot;<b>lineal_parent</b>&quot;属性决定)位于任何一个
+				在该名称列表中指定的嵌入式方法调用语句的子语句体中. 在标记名称列表中,可以使用特殊标记名称&quot;<b>@none</b>&quot;来匹配当前调用语句位于所处方法顶层语句体内(即不位于任何语句的子语句体中)的情况;</p>
+				<p><b>9. child</b>:<b> </b>文本型,如果不为空文本,指定一个标记名称列表(格式同上). 本嵌入式方法调用语句
+				的子语句体中只能存在在该名称列表中指定的嵌入式方法调用语句. 在标记名称列表中,可以使用特殊标记名称&quot;<b>@none</b>&quot;来匹配当前调用语句的子语句体为空的情况,如果未指定&quot;<b>@none</b>&quot;,则必须至少存在一个符合要求的子嵌入式方法调用语句;</p>
+				<p><b>10. lineal_parent</b>: 逻辑型,默认值为假. 用作和&quot;<b>parent</b>&quot;属性配合使用. 
+				属性值如为真,则本嵌入式方法的调用语句必须直接位于任何一个在&quot;<b>parent</b>&quot;名称列表中指定的嵌入式方法调用语句的子语句体中(即必须为紧接着的上一层父语句),否则可以间接位于(即可以为上层或更上层);</p>
+				<p><b>11. req_obj_param_pointer</b>: 逻辑型,默认值为假. 
+				仅在视窗版中使用,用作指定是否将本方法的所有文本型和对象型调用参数转换为其对象地址指针(如: 
+				&quot;字节集&quot;对象转换为&quot;CVolMem*&quot;,文本型数据转换为&quot;CVolString*&quot;);</p>
+				<p><b>12. req_str_param_text_pointer</b>: 逻辑型,默认值为假. 
+				仅在视窗版中使用,用作指定是否将本方法的所有文本型调用参数转换为其文本数据指针(const TCHAR*).本属性的优先级高于&quot;<b>req_obj_param_pointer&quot;</b>,也就是说如果同时定义了&quot;<b>req_obj_param_pointer</b>&quot;,文本型调用参数会被转换为&quot;const 
+				TCHAR*&quot;而不是&quot;CVolString*&quot;;</p>
+				<p><b>13. no_end_sem</b>: 逻辑型,默认值为假. 指定在嵌入式方法的调用语句尾部是否不自动加入分号.</p>
+			</blockquote>
+			<p>嵌入式方法具有以下特点和需要注意的地方:</p>
+			<blockquote>
+				<p><b>1. </b>嵌入式方法自动<a href="#flow_check_disabled">禁止流程检查</a>;</p>
+				<p><b>2. 
+				</b>如果设置有&quot;has_body&quot;或&quot;has_loop_body&quot;属性项或者提供了非空的&quot;prev&quot;/&quot;next&quot;属性值,则所应用到的嵌入式方法不能定义返回值;</p>
+				<p><b>3. </b> <a href="#class_init_method">类_初始化</a> /
+				<a href="#class_clean_method">类_清理</a> /
+				<a href="#prop_set_method">属性写</a> /
+				<a href="#event_declare_method">事件定义</a>或<a href="#event_rev_method">接收</a>方法 / 类<a href="#virtual_method">虚拟方法</a>均不能设置为嵌入式方法;</p>
+				<p><b>4. </b>嵌入式方法内只能存在嵌入行语句,这些语句将与调用参数组合起来用作替换调用语句本身;</p>
+				<p><b>5. </b>方法的<a href="#embed_line">嵌入行语句</a>内访问除开嵌入式方法参数以外的其它任何成员时,必须明确指定类名前缀,且该类必须为公开类;</p>
+				<p><b>6. </b>方法的嵌入行语句内始终只允许访问公开成员,哪怕该成员位于嵌入式方法本身所处的类/基础类中;</p>
+				<p><b>7. </b>方法的嵌入行语句内的&quot;<a href="#sn_current_class">sn&lt;current_class&gt;</a>&quot;、&quot;<a href="#sn_base_class">sn&lt;base_class&gt;</a>&quot;、&quot;<a href="#sn_current_package">sn&lt;current_package&gt;</a>&quot;将基于调用该嵌入式方法的实际语句所处位置获取;</p>
+				<p><b>8. </b>方法的嵌入行语句内对所处方法的参数只允许最多引用一次;</p>
+				<p><b>9. </b>对嵌入式方法的调用将直接替换调用语句本身,编译器会根据需要自动在所生成的替换文本两侧加上左右小括号.</p>
+			</blockquote>
+			</td>
+		</tr>
+		<tr>
+			<td width="158">@<a name="flow_check_disabled"></a>禁止流程检查</td>
+			<td width="132">逻辑型</td>
+			<td width="129">　</td>
+			<td width="113">方法</td>
+			<td>本属性只能应用于方法定义成员上,用作关闭编译器在该方法上的流程检查机制,主要包括以下内容:<blockquote>
+				<p><b>1. </b>当方法定义有返回值时是否所有退出流程分支均返回了值</p>
+			</blockquote>
+			</td>
+		</tr>
+		<tr>
+			<td width="158">@默认值</td>
+			<td width="132">　</td>
+			<td width="129">　</td>
+			<td width="113">参数</td>
+			<td>
+			本属性只能应用于方法的参数定义成员上,用作为参数提供调用方未提供对应数据时的默认值,所设置数据必须与参数数据类型匹配.<p>
+			当本属性应用到数据类型为数组/类/文本型的参数时,可以将属性值设置为&quot;<a href="#null_object">空对象</a>&quot;.</td>
+		</tr>
+		<tr>
+			<td width="158">@常量参数</td>
+			<td width="132">逻辑型</td>
+			<td width="129">　</td>
+			<td width="113">参数</td>
+			<td>
+			本属性只能应用于非嵌入式方法的参数定义成员上,设置为真说明该参数的内容在方法内部不可被修改.</td>
+		</tr>
+		<tr>
+			<td width="158">@匹配类型<a name="param_match_mode"></a></td>
+			<td width="132">整数</td>
+			<td width="129">　</td>
+			<td width="113">参数</td>
+			<td>
+			本属性只能应用于嵌入式方法的参数定义成员上,用作为参数匹配提供增强通配模式.<p>可以为以下选择项之一,用作指定其所对应的增强通配模式:</p>
+			<blockquote>
+				<p><b>1. 通用整数型:</b> 匹配所有非数组整数数据类型,如: 字节、短整数、字符、整数、长整数.</p>
+				<p><b>2. 通用数值型</b>:<b> </b>匹配所有非数组数值型数据类型,如: 字节、短整数、字符、整数、长整数、小数.</p>
+				<p><b>3. 通用非文本基本型</b>:<b> </b>匹配所有非数组非文本的基本数据类型,如: 
+				字节、短整数、字符、整数、长整数、小数、逻辑型.</p>
+				<p><b>4. 通用基本型</b>:<b> </b>匹配所有非数组基本数据类型</p>
+				<p><b>5. 通用类</b>:<b> </b>匹配所有非数组类定义数据类型</p>
+				<p><b>6. 通用型</b>:<b> </b>匹配所有非数组数据类型</p>
+				<p><b>7. 通用整数型数组</b>:<b> </b>匹配所有整数数据类型数组,如: 字节、短整数、字符、整数、长整数.</p>
+				<p><b>8. 通用数值型数组</b>:<b> </b>匹配所有数值型数据类型数组,如: 字节、短整数、字符、整数、长整数、小数.</p>
+				<p><b>9. 通用非文本基本型数组</b>: 匹配所有非文本的基本数据类型数组,如: 
+				字节、短整数、字符、整数、长整数、小数、逻辑型.</p>
+				<p><b>10. 通用基本型数组</b>:<b> </b>匹配所有基本数据类型数组</p>
+				<p><b>11. 通用类数组</b>:<b> </b>匹配所有类定义数据类型数组</p>
+				<p><b>12. 通用型数组</b>:<b> </b>匹配所有数据类型数组</p>
+				<p><b>13. 所有类型</b>:<b> </b>匹配所有数组和非数组数据类型</p>
+				<p><b>14. 等于前参数值类型</b>: 
+				所提供参数值数据类型必须与为前方参数所提供的参数值数据类型一致,不能用在第一个参数上.此类型不支持同时定义参数默认值</p>
+				<p><b>15. 匹配前参数值类型</b>: 
+				前方参数值数据类型必须能够正常转换到当前参数值数据类型,不能用在第一个参数上.此类型不支持同时定义参数默认值</p>
+			</blockquote>
+			<p>注意: 此时不能为参数设置数据类型</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="158">@需求类型<a name="param_req_mode"></a></td>
+			<td width="132">整数</td>
+			<td width="129">　</td>
+			<td width="113">参数</td>
+			<td>
+			本属性只能应用于嵌入式方法的参数定义成员上,用作为参数匹配提供参数数据需求类型.<p>可以为以下选择项之一:</p>
+			<blockquote>
+				<p><b>1. 可写入变量: </b>调用方需要提供可以修改其内容(即排除掉类似常量参数等)的参数/变量作为参数值</p>
+				<p><b>2. 立即数或常量: </b>调用方需要提供立即数或常量作为参数值</p>
+				<p><b>3. 数据类型: </b>调用方需要提供数据类型名称作为参数值</p>
+			</blockquote>
+			</td>
+		</tr>
+		<tr>
+			<td width="158">@可扩展<a name="extendable_param"></a></td>
+			<td width="132">文本型</td>
+			<td width="129">　</td>
+			<td width="113">参数</td>
+			<td>
+			本属性只能应用于嵌入式方法的最后一个参数定义成员上,用作说明该参数在调用时可以被扩展.<p>
+			属性值为一个属性表文本,该属性表中可以具有以下属性:</p>
+			<blockquote>
+				<p><b>1. d_text: </b>文本型,用作指定各个扩展参数之间的分隔文本,未指定或为空默认为&quot;, &quot;.</p>
+			</blockquote>
+			</td>
+		</tr>
+		<tr>
+			<td width="158">@返回值类型</td>
+			<td width="132">整数</td>
+			<td width="129">　</td>
+			<td width="113">参数</td>
+			<td>
+			本属性只能应用于嵌入式方法的参数定义成员上,用作说明该方法的返回值数据类型为调用方法时所提供的本参数数据的当前实际数据类型.<p>注意:</p>
+			<blockquote>
+				<p><b>1. </b>从参数数据所获得的数据类型被去除了数组定义部分,而代替由属性值来直接指定数组定义部分的维数;</p>
+				<p><b>2. </b>所处方法本身必须没有定义返回值数据类型;</p>
+				<p><b>3. </b>所处方法只能有一个参数定义有此属性.</p>
+			</blockquote>
+			</td>
+		</tr>
+		<tr>
+			<td width="158">@文档</td>
+			<td width="132">文本型</td>
+			<td width="129">　</td>
+			<td width="113">所有成员</td>
+			<td>
+			本属性用作为相关成员提供文档信息,以便系统自动建立其帮助信息.<p>
+			属性值为一个文本属性表,具体所支持的属性表格式如下:</p>
+			<p>category = &quot;xxx&quot;</p>
+			<p><br>
+			以上属性中,被中括号括住属性的为可选属性,否则为必须提供的属性.</p>
+			<table border="1" width="100%" style="border-collapse: collapse">
+				<tr>
+					<td bgcolor="#808080" width="11%"><b>名称</b></td>
+					<td bgcolor="#808080" width="9%"><b>数据类型</b></td>
+					<td bgcolor="#808080"><b>解释</b></td>
+				</tr>
+				<tr>
+					<td width="11%">category</td>
+					<td width="9%">文本型</td>
+					<td>用作提供本成员所对应的文档类别名称,可以应用于包或类定义成员上.<p>注意: 当应用在包定义成员上时,仅对该包定义成员自身所处源文件中定义的
+					所有类有效,不包括程序内其它源文件中定义的同名包. 如果某个类自身及其所处包均定义了本属性,则将使用其自身的.</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td width="158">@设计器</td>
+			<td width="132">文本型</td>
+			<td width="129">[不允许常量]</td>
+			<td width="113" rowspan="3">类</td>
+			<td>
+			本属性只能应用于其直接/间接基础类为可设计类(定义有输出名为&quot;gVolGetDesignContent&quot;的虚拟方法)的类定义成员上,用作提供该类对应外部设计器的相关信息.<p>
+			属性值为一个文本属性表,具体所支持的属性表格式如下:</p>
+			<p>[name] = &quot;xxx&quot;</p>
+			<p>dll_file_name.x64 = &quot;xxx&quot;</p>
+			<p>dll_file_name.win32 = &quot;xxx&quot;</p>
+			<p>[func_name] = &quot;xxx&quot;</p>
+			<p>[user_param] = xxx</p>
+			<p>[auto_generate_mark] = &quot;xxx&quot;</p>
+			<p><br>
+			以上属性中,被中括号括住属性的为可选属性,否则为必须提供的属性.</p>
+			<table border="1" width="100%" style="border-collapse: collapse">
+				<tr>
+					<td bgcolor="#808080" width="11%"><b>名称</b></td>
+					<td bgcolor="#808080" width="9%"><b>数据类型</b></td>
+					<td bgcolor="#808080"><b>解释</b></td>
+				</tr>
+				<tr>
+					<td width="11%">name</td>
+					<td width="9%">文本型</td>
+					<td>提供本设计器的显示用名称,被省略表示无.</td>
+				</tr>
+				<tr>
+					<td width="11%">dll_file_name.x64 
+					<p>dll_file_name.win32</td>
+					<td width="9%">文本型</td>
+					<td>用作提供设计器启动函数所处的DLL文件名,相对当前源文件所处目录.<p>
+					子属性名&quot;x64&quot;和&quot;win32&quot;分别用作提供该DLL文件的对应目标平台版本,对应平台的IDE会自动使用对应平台的DLL.</td>
+				</tr>
+				<tr>
+					<td width="11%">func_name</td>
+					<td width="9%">文本型</td>
+					<td>用作提供设计器启动函数在其所处DLL中的输出名称,必须为有效的英文名称.如果被省略,则默认为&quot;designer&quot;. 其原型为:<p>
+					typedef const TCHAR* (WINAPI *FN_EXTERN_DESIGNER_STARTUP) 
+					(const TCHAR* szCurrentClassName, const TCHAR* 
+					szCurrentDesignContent, const HWND hParentWnd, const INT_P 
+					npUserParam, const TCHAR** ppsAutoGeneratedElements);<br>
+					函数返回NULL表示所提供当前设计内容未被修改,否则返回修改后的设计内容(为字面文本,调用方必须立即将其处理完毕或复制保存,其可能会在后续操作中被改变或无效).</p>
+					<p>参数说明:</p>
+					<blockquote>
+						<p>szCurrentClassName: 当前设计内容文本所处类的名称,必定不为空文本.<br>
+						szCurrentDesignContent: 当前设计内容文本,必定不为NULL.<br>
+						hParentWnd: 父窗口句柄,必定为有效窗口句柄.<br>
+						npUserParam: 本属性表内&quot;user_param&quot;属性值中所提供的用户自定义整数参数值<br>
+						ppsAutoGeneratedElements: 
+						必定不为NULL,用作在其中返回外部设计器自动生成到被设计类中的成员信息表,仅当函数返回非NULL指针值时有效.文本格式为&#39;\0&#39;字符分隔的文本字段,每5个字段分别提供成员类型(0:常量/1:变量) 
+						+ 成员名称 + 数据类型(为空文本表示为整数) + 值(字面文本) + 注释文本,最后以一个单独的&#39;\0&#39;字符结束. 
+						调用方必须立即将其处理完毕或复制保存,其可能会在后续操作中被改变或无效. 
+						填入NULL指针表示不需要加入任何成员.</p>
+					</blockquote>
+					</td>
+				</tr>
+				<tr>
+					<td width="11%">user_param</td>
+					<td width="9%">整数</td>
+					<td>传递到设计器启动函数的自定义整数参数值,如果省略则为0.</td>
+				</tr>
+				<tr>
+					<td width="11%">auto_generate_mark</td>
+					<td width="9%">文本型</td>
+					<td>
+					如果设计器启动函数通过&quot;ppsAutoGeneratedConsts&quot;参数返回了欲插入到被设计类中的常量成员,那么这些常量成员会被自动添加属性值为此文本的&quot;@自动生成&quot;属性,用作标注其为该设计器所生成.
+					<p>如果被省略,则默认为空文本.</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td width="158">@设计内容</td>
+			<td width="132">文本型</td>
+			<td width="129">[不允许常量]</td>
+			<td>
+			本属性值内容由外部设计器所生成,只能应用于其直接/间接基础类为可设计类(定义有输出名为&quot;gVolGetDesignContent&quot;的虚拟方法)的类定义成员上,用作提供外部设计器为该类所设计生成的文本内容(FN_EXTERN_DESIGNER_STARTUP方法所返回).该内容文本在运行时可以调用本类的&quot;gVolGetDesignContent&quot;虚拟方法返回.</td>
+		</tr>
+		<tr>
+			<td width="158">@可插入程序类</td>
+			<td width="132">文本型</td>
+			<td width="129">[不允许常量]</td>
+			<td>
+			本属性只能应用于类定义成员上,用作支持用户在火山程序编辑器的&quot;插入程序类&quot;功能中插入其继承类定义信息到程序中.<p>
+			属性值为一个文本属性表,具体所支持的属性表格式如下:</p>
+			<p>[prefix] = &quot;xxx&quot;</p>
+			<p>[shown_name] = &quot;xxx&quot;</p>
+			<p>[icon] = &quot;xxx&quot;</p>
+			<p>[explain] = &quot;xxx&quot;</p>
+			<p>[dll_file_name.x64] = &quot;xxx&quot;</p>
+			<p>[dll_file_name.win32] = &quot;xxx&quot;</p>
+			<p>[func_name] = &quot;xxx&quot;</p>
+			<p>[user_param] = xxx</p>
+			<p><br>
+			以上属性中,被中括号括住属性的为可选属性,否则为必须提供的属性.</p>
+			<table border="1" width="100%" style="border-collapse: collapse">
+				<tr>
+					<td bgcolor="#808080" width="11%"><b>名称</b></td>
+					<td bgcolor="#808080" width="9%"><b>数据类型</b></td>
+					<td bgcolor="#808080"><b>解释</b></td>
+				</tr>
+				<tr>
+					<td width="11%">prefix</td>
+					<td width="9%">文本型</td>
+					<td>提供插入到火山程序中的新类的前缀名称,被省略表示使用该类的当前名称.</td>
+				</tr>
+				<tr>
+					<td width="11%">shown_name</td>
+					<td width="9%">文本型</td>
+					<td>提供在程序类插入对话框中使用的显示用名称,被省略表示等同于前缀名称.</td>
+				</tr>
+				<tr>
+					<td width="11%">icon</td>
+					<td width="9%">文本型</td>
+					<td>提供在程序类插入对话框中使用的显示用图片文件名,相对该类所处火山源文件位于的目录,被省略表示使用默认图标.<br>
+					图片文件要求如下: 格式为BMP,尺寸32x32像素,颜色深度32位,透明背景色为洋红(RGB颜色分量: 255, 0, 
+					255).</td>
+				</tr>
+				<tr>
+					<td width="11%">explain</td>
+					<td width="9%">文本型</td>
+					<td>提供对应的解释信息,被省略表示无.</td>
+				</tr>
+				<tr>
+					<td width="11%">dll_file_name.x64 
+					<p>dll_file_name.win32</td>
+					<td width="9%">文本型</td>
+					<td>用作提供插入操作执行函数所处的DLL文件名,相对当前源文件所处目录. 被省略表示无.<p>
+					子属性名&quot;x64&quot;和&quot;win32&quot;分别用作提供该DLL文件的对应目标平台版本,对应平台的IDE会自动使用对应平台的DLL.</td>
+				</tr>
+				<tr>
+					<td width="11%">func_name</td>
+					<td width="9%">文本型</td>
+					<td>用作提供插入操作执行函数在其所处DLL中的输出名称,必须为有效的英文名称.如果被省略,则默认为&quot;app_class_inserter&quot;.如果&quot;dll_file_name&quot;属性被省略,则本属性无效. 其原型为:<p>
+					typedef void (WINAPI *FN_APP_CLASS_INSERTER) (const TCHAR* 
+					szAppClassName, const TCHAR* szRecommendedNewAppClassName, const 
+					HWND hParentWnd, const INT_P npUserParam);</p>
+					<p>参数说明:</p>
+					<blockquote>
+						<p>szAppClassName: 当前相关已有程序类的名称,必定为有效名称文本.<br>
+						szRecommendedNewAppClassName: 所推荐的当前所欲插入新程序类的名称,必定为有效名称文本.<br>hParentWnd: 父窗口句柄,必定为有效窗口句柄.<br>npUserParam: 本属性表内&quot;user_param&quot;属性值中所提供的用户自定义整数参数值</p>
+					</blockquote>
+					</td>
+				</tr>
+				<tr>
+					<td width="11%">user_param</td>
+					<td width="9%">整数</td>
+					<td>传递到插入操作执行函数的自定义整数参数值,如果省略则为0.</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td width="158" height="49">@自动生成</td>
+			<td width="132" height="49">文本型</td>
+			<td width="129" height="49">[不允许常量]</td>
+			<td width="113" height="49">所有成员</td>
+			<td height="49">
+			本属性可以应用在任何成员上,表明其不为用户所输入而为外部插件自动加入,属性值可以为任意标记文本,用作标志加入本属性所处成员的外部插件类型.</td>
+		</tr>
+		</table>
+	<p>注释:</p>
+	<blockquote>
+		<p><b>1. </b>属性表特性列中凡是未标注&quot;<b>[允许多设置项]</b>&quot;的说明其在属性表中只能存在一个设置项;</p>
+		<p><b>2. </b>未标注&quot;<b>[允许后缀]</b>&quot;的说明其不允许使用后缀方式;</p>
+		<p><b>3. </b>未标注&quot;<b>[不允许常量]</b>&quot;的支持用外部常量对本属性进行赋值(否则只能使用<a href="#imm_value">立即数</a>).</p>
+	</blockquote>
+</blockquote>
+<p>　</p>
+
+</div><hr>
+<h4>六. 安卓项目插件相关:</h4>
+<div class="wtdoc">
+
+<blockquote>
+	<h5><a name="android_extend_attr"></a>1.安卓项目插件定义的项目扩展属性表:</h5>
+	<table border="1" width="100%" style="border-collapse: collapse">
+		<tr>
+			<td align="center" bgcolor="#808080" width="199"><b>名称</b></td>
+			<td align="center" bgcolor="#808080" width="90"><b>数据类型</b></td>
+			<td align="center" bgcolor="#808080" width="129"><b>相关特性</b></td>
+			<td align="center" bgcolor="#808080" width="198"><b>应用场合</b></td>
+			<td align="center" bgcolor="#808080"><b>解释</b></td>
+		</tr>
+		<tr>
+			<td width="199">@java.同步</td>
+			<td width="90">逻辑型</td>
+			<td width="129">　</td>
+			<td width="198">方法</td>
+			<td>用作指定该方法支持在多线程中同步</td>
+		</tr>
+		<tr>
+			<td width="199">@java.前缀文本</td>
+			<td width="90">文本型</td>
+			<td width="129">　</td>
+			<td width="198">类或方法</td>
+			<td>
+			本属性可以应用在类或方法定义成员上,用作在转换到Java代码后在其成员定义首部添加一段指定文本,譬如可以为方法定义成员添加&quot;@JavascriptInterface&quot;前缀文本以定义可以在JaveScript中调用的方法等.</td>
+		</tr>
+		<tr>
+			<td width="199">@java.后缀文本</td>
+			<td width="90">文本型</td>
+			<td width="129">　</td>
+			<td width="198">类或方法</td>
+			<td>
+			本属性可以应用在类或方法定义成员上,用作在转换到Java代码后在成员名后添加一段指定文本,譬如可以为类定义成员添加类似&quot;implements 
+			my_interface&quot;文本以实现指定Java接口,为方法定义成员添加类似&quot;throws&quot;文本指定异常抛出列表等.</td>
+		</tr>
+		<tr>
+			<td width="199">@java.导入</td>
+			<td width="90">文本型</td>
+			<td width="129">[允许多设置项]</td>
+			<td width="198" rowspan="10">包/类/方法<p>　</p>
+			<p>注意: 当应用在包定义成员上时,仅对该包定义成员自身有效,不包括程序内其它源文件中定义的同名包定义成员.</p></td>
+			<td>本属性用作声明所处包/类/方法编译时需要加入的相关java命名空间import导入语句,多个导入名称之间使用逗号或换行符分隔.</td>
+		</tr>
+		<tr>
+			<td width="199">@java.外部源文件</td>
+			<td width="90">文本型</td>
+			<td width="129">[允许多设置项]</td>
+			<td>本属性用作提供所处包/类/方法正常执行所需求的外部java源文件名.<p>注意:</p>
+			<blockquote>
+				<p><b>1</b>. 所提供java源文件的内容必须为UTF8文本格式;</p>
+				<p><b>2</b>. 
+				所提供java源文件如果使用了java的package语句指定所处包,编译器将自动创建该包所对应的目录并将此源文件拷贝进去,然后递交给java编译器一并编译;</p>
+				<p><b>3</b>. 
+				所提供java源文件如果没有使用package语句指定所处包,编译器将自动使用本属性应用位置所处火山源程序的包名;</p>
+				<p><b>4</b>. 所提供java源文件名如果为相对路径,为相对于本属性应用位置所处火山源文件的目录位置;</p>
+				<p><b>5.</b> 
+				所提供java源文件名如果以&#39;*&#39;星号字符开头,表明相对当前安卓插件的数据目录,具体就是系统安装目录下的&quot;plugins\vprj_android&quot;子目录.</p>
+			</blockquote>
+			</td>
+		</tr>
+		<tr>
+			<td width="199">@安卓.权限需求</td>
+			<td width="90">文本型</td>
+			<td width="129">[允许多设置项]</td>
+			<td>本属性用作声明所处包/类/方法正常执行所需求的安卓权限,多个权限之间使用逗号或者换行符分隔.如果权限名称未给定前缀,默认为&quot;android.permission&quot;.</td>
+		</tr>
+		<tr>
+			<td width="199">@安卓.系统需求</td>
+			<td width="90">整数</td>
+			<td width="129">　</td>
+			<td>本属性用作声明所处包/类/方法正常编译及执行时所需求的最小安卓系统API级别. 注意本属性与&quot;@安卓.编译时系统需求&quot;相比同时设置了编译及运行时的系统需求.</td>
+		</tr>
+		<tr>
+			<td width="199">@安卓.编译时系统需求</td>
+			<td width="90">整数</td>
+			<td width="129">&nbsp;</td>
+			<td>本属性用作声明所处包/类/方法正常编译所需求的最小安卓系统API级别. 注意本属性与&quot;@安卓.系统需求&quot;相比仅设置了编译时的系统需求.</td>
+		</tr>
+		<tr>
+			<td width="199"><a name="addi_manifest"></a>@安卓.附加清单</td>
+			<td width="90">文本型</td>
+			<td width="129">[允许多设置项]</td>
+			<td>本属性用作声明所处包/类/方法正常执行所要加入到安卓程序&quot;AndroidManifest.xml&quot;清单文件中的XML数据.<p>属性值为具体的欲加入XML数据文本,其中的XML结点分为两种: 独有结点和非独有结点. 
+			独有结点在同层次结点中只能存在一个,而非独有结点则可以存在多个. 独有结点的名称必须以&quot;@&quot;字符开头,而非独有结点则不以此字符开头. 
+			在输出最终XML结果文本时,独有结点名称前的&quot;@&quot;字符将被自动去除.</p>
+			<p>譬如,&quot;manifest&quot;/&quot;application&quot;结点均应该为独有结点,应该分别以&quot;@manifest&quot;/&quot;@application&quot;来表达,而&quot;activity&quot;/&quot;service&quot;则为非独有结点,首部不用加上此字符.</p>
+			<p>如果所提供XML文本中的独有结点在已有XML清单内容中已经存在,将不再新建结点而直接将其属性表合并进已有结点的属性表,否则将新建结点.</p>
+			<p>在进行结点的属性表合并时,不允许覆盖已有属性值,除开以下例外:</p>
+			<blockquote>
+				<p><b>1. </b>继承类上所应用的XML内容可以覆盖其基础类上应用的XML内容;</p>
+				<p><b>2. </b>方法中所应用的XML内容可以覆盖其所处类上应用的XML内容;</p>
+				<p><b>3. </b>编译器建立的所有安卓程序部件(应用程序/窗口/服务/广播接收器)的XML内容可以被用户所覆盖.</p>
+			</blockquote>
+			<p>所提供XML文本中所有根结点的名称可以为以下几种方式之一,用作定位其下属XML数据在清单中的具体插入位置:</p>
+			<blockquote>
+				<p><b>1. </b>绝对结点路径: 以&quot;\&quot;字符开始和分隔的多个结点名称,表示为从根结点开始的结点路径;</p>
+				<p><b>2. </b>相对结点路径: 与绝对结点路径相比,它不以&quot;\&quot;字符开始,为相对当前结点的路径;</p>
+				<p><b>3. </b>当前结点特定名称: 为固定的&quot;.&quot;文本,用作代表当前结点.</p>
+			</blockquote>
+			<p>注意:</p>
+			<blockquote>
+				<p><b>1. </b>除开尾结点,路径中的所有结点必须均为独有结点,以保证路径的唯一性;</p>
+				<p><b>2. </b>路径中的结点如果尚不存在,将自动创建;</p>
+				<p><b>3. 
+			</b>&quot;应用程序&quot;/&quot;窗口&quot;/&quot;服务&quot;/&quot;广播接收器&quot;4个类及其所有继承类被称为<b>安卓程序部件类</b>,其对应到相应的安卓程序部件: 
+			应用程序/窗口/服务/广播接收器.只有本属性所应用到成员的所处类(应用在类上则为该类,应用在方法上则为其所处类)为安卓程序部件类时,才会存在当前结点,此时当前结点即为对应的安卓程序部件在清单文件中的输出结点;</p>
+				<p><b>4. 
+			</b>在所有安卓程序部件类及其内部被使用方法上应用的本属性内容将被一并添加到该安卓程序部件在清单文件中的输出结点上;</p>
+				<p><b>5. </b>所有非根结点只能使用纯粹的名称,即不能包括路径,也不能使用当前结点特定名称;</p>
+				<p><b>6. </b>XML属性值两侧如果没有双引号将被自动添加;</p>
+				<p><b>7.</b> 清单文本中可以使用&quot;@sn&lt;current_class&gt;&quot;引用本属性当前所处火山类对应的数据类型,使用&quot;@sn&lt;startup_package&gt;&quot;引用程序启动包的名称.</p>
+			</blockquote>
+			<p>举例:</p>
+			<blockquote>
+				<p>添加manifest属性: &lt;\@manifest 
+			android:installLocation=&quot;internalOnly&quot; /&gt;</p>
+				<p>添加application属性和子结点: &lt;\@manifest\@application 
+			android:uiOptions=&quot;none&quot;&gt; &lt;meta-data android:name=&quot;zoo&quot; android:value=&quot;abc&quot; /&gt; &lt;/@application&gt;</p>
+				<p>添加当前结点的子结点: &lt;meta-data android:name=&quot;zoo&quot; android:value=&quot;abc&quot; 
+			/&gt;</p>
+				<p>添加当前结点的属性: &lt;. android:enabled=&quot;true&quot; /&gt;</p>
+				<p>添加当前结点的属性和子结点: &lt;. android:enabled=&quot;true&quot;&gt; &lt;meta-data 
+			android:name=&quot;zoo&quot; android:value=&quot;abc&quot; /&gt; &lt;/.&gt;</blockquote>
+			</td>
+		</tr>
+		<tr>
+			<td width="199">@安卓.外部库<a name="extern_lib"></a></td>
+			<td width="90">文本型</td>
+			<td width="129">[允许多设置项]<p>[允许后缀]</td>
+			<td>本属性用作提供所处包/类/方法正常执行所需求的外部aar/jar/so库文件名,多个文件名之间使用逗号或者换行符分隔.<p>
+			文件名如果为相对路径,为相对于当前成员所处火山源文件的目录位置.</p>
+			<p>
+			文件名如果以&#39;*&#39;星号字符开头,表明相对当前安卓插件的数据目录,具体就是系统安装目录下的&quot;plugins\vprj_android&quot;子目录.</p>
+			<p>
+			系统对外部aar/jar/so库文件按照不同的算法进行处理:</p>
+			<blockquote>
+				<p><b>1</b>. 如果是aar外部库,则将该库文件处理后的各类数据分别加入到对应的项目数据存放目录,并自动合并其清单内容,创建其R类;</p>
+				<p><b>2</b>. 如果是jar外部库,则直接将该库文件加入到项目外部库存放目录.如果同时提供了属性名后缀&quot;<b>不打包</b>&quot;(即&quot;<b>@安卓.外部库.不打包</b>&quot;),则该jar将仅只在编译时使用,在打包到APK的时候将被忽略;</p>
+				<p><b>3</b>. 如果是so外部库,系统将按照以下算法(也是系统所使用的标准安卓资源搜寻算法)寻找并加入该so库的其它CPU架构版本:</p>
+				<blockquote>
+					<p><b>A. </b>如果该文件携带修饰符,则将在同一目录中搜寻加入具有其余种类修饰符的同名so文件. 
+					修饰符文本必须放在文件后缀名的前面,与文件名之间使用减号分隔,如&quot;test-armeabi-v7a.so&quot;.所允许的修饰符为&quot;arm64-v8a&quot;/&quot;armeabi&quot;/&quot;armeabi-v7a&quot;/&quot;mips&quot;/&quot;mips64&quot;/&quot;x86&quot;/&quot;x86_64&quot;之一,用作提供其所支持的CPU架构);</p>
+					<p>
+					<b>B. </b>如果该文件位于以以上修饰符作为名称的子目录中,则自动在上一层目录中名称为其余种类修饰符的子目录内搜寻加入同名so文件(这一算法与安卓系统本身的一致);</p>
+					<p><b>C. </b>如果以上条件都不满足,则仅将该so文件加入到项目外部库目录的&quot;armeabi-v7a&quot;子目录内.</p>
+				</blockquote>
+			</blockquote>
+			</td>
+		</tr>
+		<tr>
+			<td width="199">@安卓.外部资产</td>
+			<td width="90">文本型</td>
+			<td width="129">[允许多设置项]</td>
+			<td>本属性用作提供所处包/类/方法正常执行所需求的外部安卓资产文件.<p>注意:</p>
+			<blockquote>
+				<p><b>1. </b>所提供的属性值如果为文件名,则将该文件拷贝到安卓项目的&quot;assets&quot;目录内;</p>
+				<p><b>2. 
+				</b>所提供的属性值如果为目录名,则将该目录内及其下属所有直接/间接子目录中的文件均拷贝到安卓项目的&quot;assets&quot;目录内,并保持其原有目录结构;</p>
+				<p><b>3. </b>目录或文件名如果为相对路径,均相对于当前成员所处火山源文件的目录位置;</p>
+				<p><b>4.</b> 
+				目录或文件名如果以&#39;*&#39;星号字符开头,表明相对当前安卓插件的数据目录,具体就是系统安装目录下的&quot;plugins\vprj_android&quot;子目录.</p>
+			</blockquote>
+			</td>
+		</tr>
+		<tr>
+			<td width="199"><a name="extern_res"></a>@安卓.外部资源</td>
+			<td width="90">文本型</td>
+			<td width="129">[允许多设置项]</td>
+			<td>
+			本属性用作提供所处包/类/方法正常执行所需求的外部安卓资源目录名,该目录及其子目录内的所有文件和目录结构将均被原样复制到安卓项目的&quot;res&quot;目录内,用户必须确保其中的文件和目录格式符合安卓系统的要求,不然将导致资源编译失败.<p>
+			目录名如果为相对路径,为相对于当前成员所处火山源文件的目录位置.</p>
+			<p>
+			目录名如果以&#39;*&#39;星号字符开头,表明相对当前安卓插件的数据目录,具体就是系统安装目录下的&quot;plugins\vprj_android&quot;子目录.</p>
+			</td>
+		</tr>
+		<tr>
+			<td width="199">@安卓.外部资源.属性动画<p>@安卓.外部资源.居间动画</p>
+			<p>@安卓.外部资源.颜色表</p>
+			<p>@安卓.外部资源.可绘制</p>
+			<p>@安卓.外部资源.菜单</p>
+			<p>@安卓.外部资源.原始数据</p>
+			<p>@安卓.外部资源.XML数据</p>
+			<p>@安卓.外部资源.值</td>
+			<td width="90">文本型</td>
+			<td width="129">[允许多设置项]</td>
+			<td>这些属性用作提供所处包/类/方法正常执行所需求的各类外部资源文件名,分别对应以下类型的安卓资源: 
+			&quot;animator&quot;、&quot;anim&quot;、&quot;color&quot;、&quot;drawable&quot;、&quot;menu&quot;、&quot;raw&quot;、&quot;xml&quot;、&quot;values&quot;.<p>多个文件名之间使用逗号或者换行符分隔,这些文件将被自动整合到当前程序的对应资源目录位置.</p>
+			<p>
+			文件名如果为相对路径,为相对于当前成员所处火山源文件的目录位置.<p>
+			文件名如果以&#39;*&#39;星号字符开头,表明相对当前安卓插件的数据目录,具体就是系统安装目录下的&quot;plugins\vprj_android&quot;子目录.</p>
+			<p>
+			编译器会自动搜寻加入所有具有不同安卓修饰符的同名资源文件,具体算法为:<blockquote>
+				<p><b>1</b>. 如果该资源文件名携带修饰符,则将在同一目录中搜寻加入具有其余种类修饰符的同名文件.<br>
+				修饰符文本必须放在文件后缀名的前面,与文件名之间使用减号分隔,如&quot;test-hdpi.9.png&quot;或<br>
+				&quot;test-zh-hdpi.9.png&quot;(组合修饰符),具体所允许的修饰符与安卓系统的规定相同;<p><b>2</b>. 如果该资源文件位于以&quot;资源类型+修饰符&quot;作为名称的子目录中,则自动在上一层目录中名称<br>
+				为其余种类修饰符的子目录内搜寻加入同名资源文件. 如: 假设资源文件位于&quot;drawable-hdpi&quot;<br>
+				子目录中,而上一层目录中还存在&quot;drawable-mdpi&quot;子目录,则自动到该目录内搜寻. 这一搜寻机制<br>
+				与安卓系统本身的一致;<p><b>3</b>. 如果以上条件都不满足,则仅将该单一资源文件加入到项目的对应资源目录中.</blockquote>
+			<p>编译器目前支持安卓4.2提供的所有各种修饰符及其组合(组合顺序随意,编译器会自动调整),可用修饰符可以使用随开发环境附带的工具获取.</td>
+		</tr>
+		<tr>
+			<td width="199">@安卓.值资源</td>
+			<td width="90">文本型</td>
+			<td width="129">[允许后缀]</td>
+			<td width="198">类定义成员</td>
+			<td>
+			本属性可以应用在数据类型为&quot;可设置值资源&quot;或其继承类的常量/变量上,用作提供该常量/变量在不同修饰符下的对应初始资源值.<p>本属性必须同时提供一个安卓组合修饰符作为属性名后缀,如:&quot;@安卓.值资源.en&quot;,即指定本属性值为所处值资源常量在英文设备上的对应值.</td>
+		</tr>
+		<tr>
+			<td width="199">@安卓.窗口.布局</td>
+			<td width="90">文本型</td>
+			<td width="129">[允许后缀]<p>[不允许常量]</td>
+			<td width="198">类定义成员或成员变量</td>
+			<td>本属性可以应用在直接/间接基础类为&quot;窗口&quot;的类定义成员或者窗口类中类型为&quot;窗口组件&quot;的成员变量上(属性名后可以选择附加一个安卓修饰符文本后缀),用作记录相关的布局参数.<p>本属性可以携带一个安卓组合修饰符作为后缀,用作指定本布局应用到所指定的设备环境上.如:&quot;@安卓.窗口.布局.en-sw720-hdpi&quot;,即指定本布局应用到最小宽度为720dp,高dpi的英文设备上.</p>
+			<p>属性值中提供的布局属性可以以一个'@'字符开头,表明该布局属性及其值将强制通过编译器的检查(用户此时将自行保证该布局属性及其值的正确性).</td>
+		</tr>
+		<tr>
+			<td width="199">@安卓.窗口组件.布局配置<a name="win_control"></a></td>
+			<td width="90">文本型</td>
+			<td width="129">[不允许常量]</td>
+			<td width="198">窗口组件类</td>
+			<td>
+			本属性只能在直接/间接基础类为&quot;窗口组件&quot;的类定义成员上使用,用作提供其在安卓布局文件中的相关配置信息.<p>
+			具体所支持的属性表格式如下:</p>
+			<p>native_class = xxx<br>
+			[helper] = xxx<br>
+			[hidden]<br>
+			[one_child_enabled]<br>
+			[add_child_disabled]<br>
+			[category] = xxx<br>
+			[icon] = xxx<br>
+			[default_event] = xxx<br>
+			[self] / [child]<br>
+			{<br>
+&nbsp;&nbsp;&nbsp; attr<br>
+&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [hidden]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [discard]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name = xxx<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; shown_name = xxx<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [desc] = xxx<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; data_type = xxx<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [detail_type] = xxx<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [default_value] = xxx<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [min_value] = xxx<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [max_value] = xxx<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [item]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name = xxx<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; shown_name = 
+			xxx<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [desc] = xxx<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [item ...]<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; [attr ...]<br>
+			}</p>
+			<p>以上属性中,被中括号括住属性的为可选属性,否则为必须提供的属性. 
+			另外,&quot;attr&quot;属性必须定义在&quot;self&quot;或&quot;child&quot;属性内.</p>
+			<table border="1" width="100%" style="border-collapse: collapse">
+				<tr>
+					<td bgcolor="#808080" width="11%"><b>名称</b></td>
+					<td bgcolor="#808080" width="9%"><b>数据类型</b></td>
+					<td bgcolor="#808080" colspan="4"><b>解释</b></td>
+				</tr>
+				<tr>
+					<td width="11%">native_class</td>
+					<td width="9%">文本型</td>
+					<td colspan="4">用作提供本组件所对应的本地java类名,必须为有效英文全名称.<p><b>注意:</b> 
+					也可以使用在火山程序中定义的类,用作支持使用火山程序自定义安卓组件,具体方法是在名称前面加上&#39;@&#39;字符,如:</p>
+					<blockquote>
+						<p>native_class = &quot;@我的火山组件类&quot;</p>
+					</blockquote>
+					</td>
+				</tr>
+				<tr>
+					<td width="11%">helper</td>
+					<td width="9%">文本型</td>
+					<td colspan="4">如果不为空文本,标记需要匹配该<a href="#identifier">标识符</a>的已登记到系统的辅助功能插件来支持本组件的设计/编译.</td>
+				</tr>
+				<tr>
+					<td width="11%">hidden (顶层)</td>
+					<td width="9%">逻辑型</td>
+					<td colspan="4">标记本组件设计时为隐藏状态,仅设计器使用.</td>
+				</tr>
+				<tr>
+					<td width="11%">one_child_enabled</td>
+					<td width="9%">逻辑型</td>
+					<td colspan="4">如果本组件为容器类型组件,标记是否仅允许在其中加入一个子组件.</td>
+				</tr>
+				<tr>
+					<td width="11%">add_child_enabled</td>
+					<td width="9%">逻辑型</td>
+					<td colspan="4">某些容器组件类(譬如&quot;native_class&quot;属性值以&#39;@&#39;字符开头的火山本地窗口容器组件类)默认是不允许加入子组件的,如果确需加入,需要显式设置本属性值为真.</td>
+				</tr>
+				<tr>
+					<td width="11%">add_child_disabled</td>
+					<td width="9%">逻辑型</td>
+					<td colspan="4">标记本组件即使为容器类型组件,也不允许在其中加入子组件.
+					本属性可以用在类似列表框这样的组件上.</td>
+				</tr>
+				<tr>
+					<td width="11%">category</td>
+					<td width="9%">文本型</td>
+					<td colspan="4">提供本组件所处的分类,仅设计器使用.</td>
+				</tr>
+				<tr>
+					<td width="11%">icon</td>
+					<td width="9%">文本型</td>
+					<td colspan="4">提供本组件图标的图片文件名,相对本配置信息所处火山源文件位于的目录,为空表示
+					使用默认图标.<br>
+					图片文件要求如下: 格式为BMP,尺寸24x24像素,颜色深度32位,背景色为白色.</td>
+				</tr>
+				<tr>
+					<td width="11%">default_event</td>
+					<td width="9%">文本型</td>
+					<td colspan="4">
+					设置本组件的默认事件定义方法(可以位于组件基础类中)的名称,当在窗口设计器中双击本组件时,会自动添加该事件的接收方法.</td>
+				</tr>
+				<tr>
+					<td width="11%">self</td>
+					<td width="9%">　</td>
+					<td colspan="4">标记其中属性为组件自身使用的属性</td>
+				</tr>
+				<tr>
+					<td width="11%">child</td>
+					<td width="9%">　</td>
+					<td colspan="4">标记其中属性为组件的直接子组件使用的属性</td>
+				</tr>
+				<tr>
+					<td width="11%">attr</td>
+					<td width="9%">　</td>
+					<td colspan="4">标记一个新属性的定义开始</td>
+				</tr>
+				<tr>
+					<td width="11%">hidden (attr节中)</td>
+					<td width="9%">逻辑型</td>
+					<td colspan="4">标记本属性设计时为隐藏状态,仅设计器使用.</td>
+				</tr>
+				<tr>
+					<td width="11%">discard</td>
+					<td width="9%">逻辑型</td>
+					<td colspan="4">标记本属性已经被抛弃,被抛弃属性自动被隐藏,且在设计器/编译器输出时被自动去除.</td>
+				</tr>
+				<tr>
+					<td width="11%">name </td>
+					<td width="9%">文本型</td>
+					<td colspan="4">
+					本属性的名称,必须为有效英文全名称.<p>属性名中可以使用句点字符分隔命令空间与名称本身,如果未指定命名空间,则默认命名空间为&quot;android&quot;(&quot;style&quot;/&quot;class&quot;/&quot;id&quot;名称除外).一个特例命令空间名称为&quot;global&quot;,该命名空间表示为全局命名空间.</p>
+					<p>举例说明:</p>
+					<blockquote>
+						<p>指定命名空间: &quot;my_app.attr_name&quot; -&gt; &quot;my_app:attr_name&quot;;</p>
+						<p>指定全局命名空间: &quot;global.attr_name&quot;-&gt; &quot;attr_name&quot;</p>
+						<p>使用默认命名空间: &quot;attr_name&quot; -&gt; &quot;android:attr_name&quot;</p>
+						<p>特例: &quot;style&quot; -&gt; &quot;style&quot;, 
+					&quot;class&quot; -&gt; &quot;class&quot;, &quot;id&quot; -&gt; &quot;id&quot;</p>
+					</blockquote>
+					<p>如果以'@'字符开头,表示后续名称文本为在辅助功能插件中有约定的名称,此时如果本组件指定了不需要辅助功能插件(&quot;need_helper&quot;属性为假)或者在对应辅助功能插件中未定义此约定名称,将解析出错.注意实际所使用的名称将不包括首部的'@'字符.</td>
+				</tr>
+				<tr>
+					<td width="11%">shown_name </td>
+					<td width="9%">文本型</td>
+					<td colspan="4">本属性的显示名称,仅设计器使用.</td>
+				</tr>
+				<tr>
+					<td width="11%">desc</td>
+					<td width="9%">文本型</td>
+					<td colspan="4">本属性的描述文本,仅设计器使用.</td>
+				</tr>
+				<tr>
+					<td width="11%" rowspan="5">data_type </td>
+					<td width="9%" rowspan="5">可选项</td>
+					<td width="13%" bgcolor="#808080"><b>可选项名称</b></td>
+					<td width="11%" bgcolor="#808080"><b>数据类型</b></td>
+					<td width="36%" bgcolor="#808080"><b>解释</b></td>
+					<td rowspan="5" width="18%">定义本属性的数据类型</td>
+				</tr>
+				<tr>
+					<td width="13%">boolean</td>
+					<td width="11%">逻辑型</td>
+					<td width="36%">　</td>
+				</tr>
+				<tr>
+					<td width="13%">int</td>
+					<td width="11%">整数型</td>
+					<td width="36%">　</td>
+				</tr>
+				<tr>
+					<td width="13%">double</td>
+					<td width="11%">小数型</td>
+					<td width="36%">　</td>
+				</tr>
+				<tr>
+					<td width="13%">string</td>
+					<td width="11%">文本型</td>
+					<td width="36%">　</td>
+				</tr>
+				<tr>
+					<td width="11%" rowspan="8">detail_type</td>
+					<td width="9%" rowspan="8">可选项</td>
+					<td width="13%" bgcolor="#808080"><b>可选项名称</b></td>
+					<td width="11%" bgcolor="#808080"><b>适用数据类型</b></td>
+					<td width="36%" bgcolor="#808080"><b>解释</b></td>
+					<td rowspan="8" width="18%">定义本属性的细节类型,细节类型必须与属性的数据类型对应.</td>
+				</tr>
+				<tr>
+					<td width="13%">dim</td>
+					<td width="11%" rowspan="3">小数型</td>
+					<td width="36%">位置/尺寸.单位DP.</td>
+				</tr>
+				<tr>
+					<td width="13%">font_size</td>
+					<td width="36%">字体尺寸.单位SP.</td>
+				</tr>
+				<tr>
+					<td width="13%">frac</td>
+					<td width="36%">百分比</td>
+				</tr>
+				<tr>
+					<td width="13%">color</td>
+					<td width="11%" rowspan="4">文本型</td>
+					<td width="36%">颜色,格式为'#'字符后跟数个十六进制字符,所支持的格式如下:<blockquote>
+						<p><b>1. </b>#RGB;</p>
+						<p><b>2. </b>#ARGB;</p>
+						<p><b>3. </b>#RRGGBB</p>
+						<p><b>4. </b>#AARRGGBB</p>
+					</blockquote>
+					<p>其中'#'后的每个字母代表一个十六进制字符位置,'A'代表透明色;'R'代表红色;'G'代表绿色;'B'代表蓝色.</td>
+				</tr>
+				<tr>
+					<td width="13%">enum</td>
+					<td width="36%">枚举型,表示属性值为一系列可选文本项中的一项.<p>必须使用&quot;item&quot;为此类属性提供可选文本项列表.</td>
+				</tr>
+				<tr>
+					<td width="13%">flags</td>
+					<td width="36%">
+					标记集,表示属性值为一系列可选文本项中一或多项的集合,多项标记文本之间使用'|'字符分隔.<br>
+					必须使用&quot;item&quot;为此类属性提供可选文本项列表</td>
+				</tr>
+				<tr>
+					<td width="13%">drawable_res_file</td>
+					<td width="36%">
+					可绘制资源文件名(可以是图片或对应类型xml文件名)</td>
+				</tr>
+				<tr>
+					<td width="11%">default_value</td>
+					<td width="9%">文本型</td>
+					<td colspan="4">指定本属性在设计/编译时所使用的默认值</td>
+				</tr>
+				<tr>
+					<td width="11%">min_value</td>
+					<td width="9%">数值型</td>
+					<td colspan="4" rowspan="2">
+					仅适用于整数型/小数型的属性,用作提供数值的最小和最大许可值,默认为无限制.</td>
+				</tr>
+				<tr>
+					<td width="11%">max_value</td>
+					<td width="9%">数值型</td>
+				</tr>
+				<tr>
+					<td width="11%">item</td>
+					<td width="9%">　</td>
+					<td colspan="4">用作为本属性提供一个可选择文本项.<p>注: 可以为任何格式文本,系统不进行要求.</td>
+				</tr>
+			</table>
+			</td>
+		</tr>
+		<tr>
+			<td width="199">@安卓.强制分配到主包</td>
+			<td width="90">逻辑型</td>
+			<td width="129">&nbsp;</td>
+			<td width="198">类</td>
+			<td>
+			本属性可以应用在类定义成员上,用作在当前项目的&quot;启用APK分包机制&quot;选项被启用后,强制指定将本类分配到APK中所分出来的主DEX中.<p>
+			在APK被分包后,安卓操作系统载入该APK后会首先载入其中的主DEX,然后建立所需要的对应应用程序/窗口/服务/广播监听器等安卓对象,然后再载入后续所有分出来的次DEX,在建立上述安卓对象时,如果有某些需要访问的类被分包到了次DEX中而此时次DEX又尚未载入,将导致APK启动失败报无法找到相关类错误,此时的解决方案就是使用本属性将这些相关类强制分配到主DEX中即可.</p>
+			<p>注意:</p>
+			<blockquote>
+				<p><b>1.</b> 
+				编译器会自动将&quot;应用程序&quot;和&quot;启动类&quot;及这两个类使用和关联到的所有其它类放入主DEX中(绝大多数情况下此机制就能够满足需要),其它类如需放入主DEX需要通过本属性指定;</p>
+				<p><b>2.</b> 如果未启用当前项目的&quot;启用APK分包机制&quot;选项,就不需要使用本属性.</p>
+			</blockquote>
+			</td>
+		</tr>
+	</table>
+</blockquote>
+
+</div><!-- wtdoc -->
+<blockquote>
+	<p>注释:</p>
+	<blockquote>
+		<p><b>1. </b>属性表特性列中凡是未标注&quot;<b>[允许多设置项]</b>&quot;的说明其在属性表中只能存在一个设置项;</p>
+		<p><b>2. </b>未标注&quot;<b>[允许后缀]</b>&quot;的说明其不允许使用后缀方式;</p>
+		<p><b>3. </b>未标注&quot;<b>[不允许常量]</b>&quot;的支持用外部常量对本属性进行赋值(否则只能使用立即数).</p>
+	</blockquote>
+	<p>　</p>
+	<h5>2. 其它:</h5>
+	<blockquote>
+		<p><b>A. </b>当前类如果为窗口类/组件布局类/窗口组件或其继承类,则系统自动为其导入以下本地类:</p>
+		<blockquote>
+			<p>import android.app.Activity;<br>import android.view.View;<br>import android.view.ViewGroup;<br>import android.widget.*;</p>
+			<p>&nbsp;</p>
+		</blockquote>
+	</blockquote>
+</blockquote><hr>
+<h4>七. 视窗项目插件相关:</h4>
+<blockquote>
+	<p>
+	在进行视窗项目类库封装工作之前,建议先仔细阅读一下系统目录&quot;plugins\vprj_win\classlib\sys\base\libs\win_base&quot;内的所有C++源码,这些源码(以下简称核心源码)提供了封装的基础和核心代码,通过&quot;视窗基本类&quot;模块引入到用户的火山程序中,同时建议将&quot;视窗基本类&quot;模块中的火山程序及其编译后的结果C++程序内容也阅读对比一下,里面对各种封装方法基本上都有演示.</p>
+	<p><font size="3"><b>一. <a href="#embed_line">嵌入行</a>内容分区:</b></font></p>
+	<blockquote>
+		<p><font size="2">
+		嵌入行内容分区用作指定某段嵌入行内容的所处区域类型,分区内容中间不能存在非嵌入行内容,仅支持文档和类嵌入行内容分区,语句嵌入行内容不支持.</font></p>
+		<p><font size="3"><b>1. 头文件内容分区</b></font></p>
+		<blockquote>
+			<p><font size="2">
+			在&quot;&lt;include&gt;&quot;和&quot;&lt;/include&gt;&quot;中定义的嵌入行内容被认为位于编译后的对应头文件中,否则被认为位于编译后的cpp源文件中.</font></p>
+		</blockquote>
+		<blockquote>
+			<p><b>A. </b>文档嵌入行内的<font size="2">头文件内容分区:</font></p>
+			<blockquote>
+				<p>所有文档嵌入行中的头文件内容均会被组织到一起后放入其所处火山源文件编译后的对应头文件中.</p>
+				<p>譬如&quot;视窗基本类&quot;模块中&quot;w_startup.v&quot;内的以下嵌入行内容:</p>
+				<blockquote>
+					<p>
+					<img border="0" src="images/c3.png" width="552" height="321"></p>
+				</blockquote>
+				<p>其中的内容在编译时将被组织到&quot;w_startup.v&quot;对应的&quot;vpkg_w_startup.h&quot;头文件中:</p>
+				<blockquote>
+					<p>
+					<img border="0" src="images/c4.png" width="499" height="159"></p>
+				</blockquote>
+				<p>由于火山程序编译后,所有包对应的头文件会放在所有类对应的头文件前面,因此在类嵌入行中可以使用所有在文档嵌入行中定义的内容.</p>
+			</blockquote>
+			<p><b>B. </b>类嵌入行内的<font size="2">头文件内容分区:</font></p>
+			<blockquote>
+				<p>所有类嵌入行中的头文件内容均会被组织到一起后放入其所处火山类编译后的对应头文件中.</p>
+				<p>譬如&quot;MFC界面基本类&quot;模块中&quot;w_mfc_ui_base.v&quot;的&quot;窗口组件&quot;类内的以下嵌入行内容:</p>
+				<blockquote>
+					<p>
+					<img border="0" src="images/c1.png" width="585" height="383"></p>
+				</blockquote>
+				<p>其中的内容在编译时将被组织到&quot;窗口组件&quot;类对应的&quot;vcls_CVolWinControl.h&quot;头文件中:</p>
+				<blockquote>
+					<p>
+					<img border="0" src="images/c2.png" width="595" height="291"></p>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+		<p><b><font size="3">2</font></b><font size="3"><b>. 全局命令空间内容分区</b></font></p>
+		<blockquote>
+			<p><font size="2">
+			在&quot;&lt;global&gt;&quot;和&quot;&lt;/global&gt;&quot;中定义的嵌入行内容被认为位于全局命名空间中,否则被认为是位于当前包的局部命名空间内.</font></p>
+			<p>譬如下面这段代码:</p>
+			<blockquote>
+				<p><img border="0" src="images/c5.png" width="312" height="456"></p>
+			</blockquote>
+			<p>编译后的结果内容为:</p>
+			<blockquote>
+				<p><img border="0" src="images/c6.png" width="332" height="334"></p>
+			</blockquote>
+			<p>
+			其中&quot;my_global_func&quot;函数由于位于全局命名空间分区中,编译后被放置在全局命名空间内,而&quot;my_local_func&quot;函数则被放在了当前包&quot;火山.测试&quot;编译后的局部命名空间&quot;rg_HuoShan_CeShi&quot;中.</p>
+			<p>全局命名空间内容分区可以与头文件内容分区嵌套使用,此时则是指定在头文件中的全局命名空间内容.</p>
+			<p>&nbsp;</p>
+		</blockquote>
+	</blockquote>
+	<p><font size="3"><b>二</b></font><b><font size="3">. 类中的额外处理嵌入方法</font></b></p>
+	<blockquote>
+		<p><font size="2">
+		在类嵌入行中定义的一些具有特定名称和格式的嵌入方法具有特殊意义,主要用作进行一些针对类中C++嵌入成员的额外处理,列表如下:</font></p>
+		<table border="1" style="border-collapse: collapse" width="100%">
+			<tr>
+				<td width="50%" align="center" bgcolor="#808080" height="27"><b>
+				额外处理嵌入方法定义格式</b></td>
+				<td align="center" bgcolor="#808080" height="27"><b>解释</b></td>
+			</tr>
+			<tr>
+				<td width="50%">static void @an&lt;_sOnStaticInitExtra&gt; ()</td>
+				<td>如果存在,在程序初始化静态数据时被自动调用,用作初始化所处火山类中的额外静态成员.</td>
+			</tr>
+			<tr>
+				<td width="50%">void @an&lt;_OnInitExtra&gt; ()</td>
+				<td>如果存在,在所处火山类的对象构造时被自动调用,用作初始化所处类中的额外动态成员.</td>
+			</tr>
+			<tr>
+				<td width="50%">void @an&lt;_OnCleanupExtra&gt; ()</td>
+				<td>如果存在,在所处火山类的对象析构时被自动调用,用作清理所处类中的额外动态成员.</td>
+			</tr>
+			<tr>
+				<td width="50%">BOOL @an&lt;_IsSelfEqual&gt; (const 
+				@sn&lt;current_class&gt;&amp; objCompare) const</td>
+				<td>如果存在,在进行火山类对象比较时被自动调用,用作对类额外成员进行比较,返回是否相等.</td>
+			</tr>
+			<tr>
+				<td width="50%">void @an&lt;_CopySelfFromExtra&gt; (const 
+				@sn&lt;current_class&gt;&amp; objCopyFrom)</td>
+				<td>如果存在,在进行火山类对象赋值操作时被自动调用,用作复制类中的额外成员内容.</td>
+			</tr>
+			<tr>
+				<td width="35%">void @an&lt;_OnAfterEventAttached&gt; (BOOL blAttach)</td>
+				<td>如果存在,当所处火山类对象被挂接/取消事件挂接时自动调用,用作进行额外的相关处理.<p>
+				blAttach参数为真表示事件挂接,为假表示取消事件挂接</td>
+			</tr>
+		</table>
+		<p>注明:</p>
+		<blockquote>
+			<p>1. 以上所说的额外成员,是指火山类中使用类嵌入行定义的C++成员,火山程序成员本身会自动得到处理;</p>
+			<p>2. 在以上额外处理嵌入方法中,均不用考虑所处类的基础类,基础类需要此类处理需要自行定义,编译器亦会自动顺序调用;</p>
+			<p>3. 上面嵌入方法定义格式中的&quot;<a href="#embed_an">@an</a>&quot;和&quot;<a href="#sn_current_class">@sn&lt;current_class&gt;</a>&quot;参见前面的<a href="#embed_line">嵌入行</a>说明内容;</p>
+			<p>4. 
+			以上方法的使用实例请参见&quot;视窗基本类&quot;模块中的&quot;w_base.v&quot;或&quot;MFC界面基本类&quot;模块中的&quot;w_mfc_ui_base.v&quot;火山源程序.</p>
+		</blockquote>
+		<p>&nbsp;</p>
+	</blockquote>
+	<p><font size="3"><b>三</b></font><b><font size="3">. 视窗项目插件定义的项目扩展属性表:</font></b></p>
+	<blockquote>
+		<table border="1" width="100%" style="border-collapse: collapse">
+			<tr>
+				<td align="center" bgcolor="#808080" width="199" height="21"><b>名称</b></td>
+				<td align="center" bgcolor="#808080" width="90" height="21"><b>数据类型</b></td>
+				<td align="center" bgcolor="#808080" width="129" height="21"><b>相关特性</b></td>
+				<td align="center" bgcolor="#808080" width="198" height="21"><b>应用场合</b></td>
+				<td align="center" bgcolor="#808080" height="21"><b>解释</b></td>
+			</tr>
+			<tr>
+				<td width="199">@视窗.前缀文本</td>
+				<td width="90" rowspan="16">文本型</td>
+				<td width="129">　</td>
+				<td width="198">类或方法</td>
+				<td>本属性可以应用在类或方法定义成员上,用作在转换到C++代码后在头文件中其成员定义前方添加一段指定文本.<p>
+				当应用在类上时,用作在&quot;class&quot;关键字前添加一段文本;<p>
+				当应用在方法上时,用作在方法定义语句首部添加一段文本,但如果所提供文本以&#39;@&#39;字符开头(譬如&quot;@WINAPI&quot;),则将后续文本放置在方法名称的前面(用作加入类似WINAPI这样的声明).</td>
+			</tr>
+			<tr>
+				<td width="199">@视窗.后缀文本</td>
+				<td width="129">　</td>
+				<td width="198">类或方法</td>
+				<td>本属性可以应用在类或方法定义成员上,用作在转换到C++代码后在头文件中其成员定义后方添加一段指定文本.<p>
+				当应用在类上时,仅用作为该类添加其它的基础类列表; 当应用在方法上时,用作在方法参数表后添加一段文本.</td>
+			</tr>
+			<tr>
+				<td width="199">@视窗.预定义宏</td>
+				<td width="129" rowspan="8">[允许多设置项]<p>[允许后缀]</td>
+				<td width="198" rowspan="13">包/类/方法<p>　</p>
+				<p>注意: 当应用在包定义成员上时,仅对该包定义成员自身有效,不包括程序内其它源文件中定义的同名包定义成员.</p>
+				<p>&nbsp;</td>
+				<td>
+				本属性用作提供所处包/类/方法正常编译时所需要使用的预定义宏,多个宏之间使用逗号或换行符分隔,可以通过&quot;宏名=宏值&quot;表达式同时提供宏值..<p>
+				可以通过在属性名后缀中提供对应的修饰符组合来指定当前宏所具体应用到的编译环境,所支持的修饰符有以下几组:</p>
+				<blockquote>
+					<p>1. &quot;x64&quot;(编译64位平台版本时) / &quot;win32&quot;(编译32位平台版本时);</p>
+					<p>2. &quot;debug&quot;(编译调试版本时) / &quot;release&quot;(编译发布版本时);</p>
+					<p>3. &quot;exe&quot;(编译为窗口可执行文件时) / &quot;dll&quot;(编译为动态库时) / &quot;lib&quot;(编译为静态链接库时) 
+					/ &quot;console&quot;(编译为控制台可执行文件时).</p>
+				</blockquote>
+				<p>
+				属性名后缀中可以同时存在多个修饰符,但每组修饰符中只允许同时存在一个,多个修饰符之间使用减号字符分隔,其排列顺序没有要求.如果某组中的修饰符一个都没有指定,说明对所对应的编译选项没有要求(任意均可).</td>
+			</tr>
+			<tr>
+				<td width="199">@视窗.附加编译参数</td>
+				<td>本属性用作指定所处包/类/方法正常编译时所需要提供到C++编译/链接器等工具软件的附加操作参数文本.<p>
+				参数文本必须以一个工具软件类型指定标识符开始,后跟一个冒号分隔符,再后跟具体的参数文本.</p>
+				<p>所支持的工具软件类型及定义格式如下:</p>
+				<blockquote>
+					<p>1. &quot;cpp&quot;: 提供到C++编译器的附加参数文本;</p>
+					<p>2. &quot;asm&quot;: 提供到汇编编译器的附加参数文本;</p>
+					<p>3. &quot;link&quot;: 提供到C++链接器的附加参数文本.</p>
+				</blockquote>
+				<p>各类编译参数的优先级从高到低顺序为: 在项目选项中设置的编译参数 -&gt; 通过本属性设置的编译参数 -&gt; 
+				系统默认建立的编译参数</p>
+				<p>可以通过在属性名后缀中提供对应的修饰符组合来指定当前参数所具体应用到的编译环境,所支持的修饰符有以下几组:</p>
+				<blockquote>
+					<p>1. &quot;x64&quot;(编译64位平台版本时) / &quot;win32&quot;(编译32位平台版本时);</p>
+					<p>2. &quot;debug&quot;(编译调试版本时) / &quot;release&quot;(编译发布版本时);</p>
+					<p>3. &quot;exe&quot;(编译为窗口可执行文件时) / &quot;dll&quot;(编译为动态库时) / &quot;lib&quot;(编译为静态链接库时) 
+					/ &quot;console&quot;(编译为控制台可执行文件时).</p>
+				</blockquote>
+				<p>
+				属性名后缀中可以同时存在多个修饰符,但每组修饰符中只允许同时存在一个,多个修饰符之间使用减号字符分隔,其排列顺序没有要求.如果某组中的修饰符一个都没有指定,说明对所对应的编译选项没有要求(任意均可).</p>
+				<p>例子: @视窗.附加编译参数.debug = &quot;cpp: /MDd&quot;</td>
+			</tr>
+			<tr>
+				<td width="199"><a name="win_extern_include_file"></a>@视窗.外部头文件</td>
+				<td>本属性用作提供所处包/类/方法正常执行所需求的外部头文件名(.h),多个文件名之间使用逗号或换行符分隔.<p>注意:</p>
+				<blockquote>
+					<p>1. 所提供头文件的内容必须为ANSI字符集格式;</p>
+					<p>2. 所提供头文件名如果为相对路径,则将顺序在以下目录内查找:</p>
+					<blockquote>
+						<p>A. 本属性应用位置所处火山源文件的目录路径(如欲跳过此目录位置,请使用尖括号将其括住(如: 
+						&lt;stdio.h&gt; / &lt;iostream&gt; 等);</p>
+						<p>B. 本插件附属数据目录的&quot;classlib&quot;子目录;</p>
+						<p>C. 项目选项中设置的附加头文件搜寻路径;</p>
+						<p>D. &quot;@视窗.头文件搜寻目录&quot;属性中设置的头文件搜寻路径;</p>
+						<p>E. &quot;INCLUDE&quot;系统环境变量中设置的头文件搜寻路径.</p>
+					</blockquote>
+					<p>3. 如果同时提供了属性名后缀&quot;<b>全局</b>&quot;,说明该头文件为<b>全局外部头文件</b>,全局外部头文件始终排列在非全局外部头文件的前面;</p>
+					<p>4. 
+					每个引入的全局外部头文件均有一个排序用整数值,所有全局外部头文件都将按照这个整数值的从小到大进行排序.此值默认为1000,可以通过在&quot;全局&quot;后附加一个减号字符及一个整数值来指定,譬如: 
+					&quot;@视窗.外部头文件.全局-100&quot;即指定了排序值为100;</p>
+					<p>5. 
+					在文件名中可以使用&quot;$(环境变量名)&quot;引用已有的计算机系统或编译器内嵌环境变量值,编译器内嵌支持的环境变量引用名有以下:</p>
+					<blockquote>
+						<p>$(p): 当前编译目标平台英文名称(x64/win32);</p>
+						<p>$(r): 当前编译结果类型英文名称(exe/dll/lib/console);</p>
+						<p>$(d): 当前编译调试版本类型英文名称(debug/realse);</p>
+						<p>$(pf): 当前项目文件去除路径及后缀后的名称.</p>
+					</blockquote>
+				</blockquote>
+				</td>
+			</tr>
+			<tr>
+				<td width="199">@视窗.外部源文件</td>
+				<td>本属性用作提供所处包/类/方法正常执行所需求的外部源文件名,多个文件名之间使用逗号或换行符分隔.<p>
+				可以通过在属性名后缀中提供对应的修饰符组合来指定当前源文件所具体应用到的编译环境,所支持的修饰符有以下几组:</p>
+				<blockquote>
+					<p>1. &quot;x64&quot;(编译64位平台版本时) / &quot;win32&quot;(编译32位平台版本时);</p>
+					<p>2. &quot;debug&quot;(编译调试版本时) / &quot;release&quot;(编译发布版本时);</p>
+					<p>3. &quot;exe&quot;(编译为窗口可执行文件时) / &quot;dll&quot;(编译为动态库时) / &quot;lib&quot;(编译为静态链接库时) 
+					/ &quot;console&quot;(编译为控制台可执行文件时).</p>
+				</blockquote>
+				<p>
+				属性名后缀中可以同时存在多个修饰符,但每组修饰符中只允许同时存在一个,多个修饰符之间使用减号字符分隔,其排列顺序没有要求.如果某组中的修饰符一个都没有指定,说明对所对应的编译选项没有要求(任意均可).</p>
+				<p>注意:</p>
+				<blockquote>
+					<p>1. 所提供源文件的内容必须为ANSI字符集格式;</p>
+					<p>2. 所提供源文件名如果为相对路径,为相对于本属性应用位置所处火山源文件的目录位置;</p>
+					<p>3. 所提供源文件可以是 &quot;.cpp&quot; / &quot;.c&quot; / &quot;.cc&quot; / &quot;.cxx&quot; / &quot;.asm&quot; 
+					源代码文件;</p>
+					<p>4. 
+					在文件名中可以使用&quot;$(环境变量名)&quot;引用已有的计算机系统或编译器内嵌环境变量值,编译器内嵌支持的环境变量引用名有以下:</p>
+					<blockquote>
+						<p>$(p): 当前编译目标平台英文名称(x64/win32);</p>
+						<p>$(r): 当前编译结果类型英文名称(exe/dll/lib/console);</p>
+						<p>$(d): 当前编译调试版本类型英文名称(debug/realse);</p>
+						<p>$(pf): 当前项目文件去除路径及后缀后的名称.</p>
+					</blockquote>
+				</blockquote>
+				</td>
+			</tr>
+			<tr>
+				<td width="199">@视窗.外部资源文件</td>
+				<td>本属性用作提供所处包/类/方法正常执行所需求的外部资源文件名(.rc),多个文件名之间使用逗号或换行符分隔.<p>
+				可以通过在属性名后缀中提供对应的修饰符组合来指定当前资源文件所具体应用到的编译环境,所支持的修饰符有以下几组:</p>
+				<blockquote>
+					<p>1. &quot;x64&quot;(编译64位平台版本时) / &quot;win32&quot;(编译32位平台版本时);</p>
+					<p>2. &quot;debug&quot;(编译调试版本时) / &quot;release&quot;(编译发布版本时);</p>
+					<p>3. &quot;exe&quot;(编译为窗口可执行文件时) / &quot;dll&quot;(编译为动态库时) / &quot;lib&quot;(编译为静态链接库时) 
+					/ &quot;console&quot;(编译为控制台可执行文件时).</p>
+				</blockquote>
+				<p>
+				属性名后缀中可以同时存在多个修饰符,但每组修饰符中只允许同时存在一个,多个修饰符之间使用减号字符分隔,其排列顺序没有要求.如果某组中的修饰符一个都没有指定,说明对所对应的编译选项没有要求(任意均可).</p>
+				<p>注意:</p>
+				<blockquote>
+					<p>1. 所提供资源文件的内容必须为ANSI字符集格式;</p>
+					<p>2. 所提供资源文件名如果为相对路径,为相对于本属性应用位置所处火山源文件的目录位置;</p>
+					<p>3. 
+					在文件名中可以使用&quot;$(环境变量名)&quot;引用已有的计算机系统或编译器内嵌环境变量值,编译器内嵌支持的环境变量引用名有以下:</p>
+					<blockquote>
+						<p>$(p): 当前编译目标平台英文名称(x64/win32);</p>
+						<p>$(r): 当前编译结果类型英文名称(exe/dll/lib/console);</p>
+						<p>$(d): 当前编译调试版本类型英文名称(debug/realse);</p>
+						<p>$(pf): 当前项目文件去除路径及后缀后的名称.</p>
+					</blockquote>
+				</blockquote>
+				</td>
+			</tr>
+			<tr>
+				<td width="199">@视窗.外部清单文件</td>
+				<td>本属性用作提供所处包/类/方法正常执行所需求的外部清单文件名(.manifest),多个文件名之间使用逗号或换行符分隔.<p>
+				可以通过在属性名后缀中提供对应的修饰符组合来指定当前清单文件所具体应用到的编译环境,所支持的修饰符有以下几组:</p>
+				<blockquote>
+					<p>1. &quot;x64&quot;(编译64位平台版本时) / &quot;win32&quot;(编译32位平台版本时);</p>
+					<p>2. &quot;debug&quot;(编译调试版本时) / &quot;release&quot;(编译发布版本时);</p>
+					<p>3. &quot;exe&quot;(编译为窗口可执行文件时) / &quot;dll&quot;(编译为动态库时) / &quot;lib&quot;(编译为静态链接库时) 
+					/ &quot;console&quot;(编译为控制台可执行文件时).</p>
+				</blockquote>
+				<p>
+				属性名后缀中可以同时存在多个修饰符,但每组修饰符中只允许同时存在一个,多个修饰符之间使用减号字符分隔,其排列顺序没有要求.如果某组中的修饰符一个都没有指定,说明对所对应的编译选项没有要求(任意均可).</p>
+				<p>注意:</p>
+				<blockquote>
+					<p>1. 所提供清单文件的内容必须为ANSI字符集格式;</p>
+					<p>2. 所提供清单文件名如果为相对路径,为相对于本属性应用位置所处火山源文件的目录位置;</p>
+					<p>3. 
+					在文件名中可以使用&quot;$(环境变量名)&quot;引用已有的计算机系统或编译器内嵌环境变量值,编译器内嵌支持的环境变量引用名有以下:</p>
+					<blockquote>
+						<p>$(p): 当前编译目标平台英文名称(x64/win32);</p>
+						<p>$(r): 当前编译结果类型英文名称(exe/dll/lib/console);</p>
+						<p>$(d): 当前编译调试版本类型英文名称(debug/realse);</p>
+						<p>$(pf): 当前项目文件去除路径及后缀后的名称.</p>
+					</blockquote>
+				</blockquote>
+				</td>
+			</tr>
+			<tr>
+				<td width="199">@视窗.外部库<a name="win_extern_lib"></a></td>
+				<td>本属性用作提供所处包/类/方法正常编译所需求的外部lib/obj库文件名,多个文件名之间使用逗号或换行符分隔.<p>
+				可以通过在属性名后缀中提供对应的修饰符组合来指定当前库文件所具体应用到的编译环境,所支持的修饰符有以下几组:</p>
+				<blockquote>
+					<p>1. &quot;x64&quot;(编译64位平台版本时) / &quot;win32&quot;(编译32位平台版本时);</p>
+					<p>2. &quot;debug&quot;(编译调试版本时) / &quot;release&quot;(编译发布版本时);</p>
+					<p>3. &quot;exe&quot;(编译为窗口可执行文件时) / &quot;dll&quot;(编译为动态库时) / &quot;lib&quot;(编译为静态链接库时) 
+					/ &quot;console&quot;(编译为控制台可执行文件时).</p>
+				</blockquote>
+				<p>
+				属性名后缀中可以同时存在多个修饰符,但每组修饰符中只允许同时存在一个,多个修饰符之间使用减号字符分隔,其排列顺序没有要求.如果某组中的修饰符一个都没有指定,说明对所对应的编译选项没有要求(任意均可).</p>
+				<p>所提供库文件名如果为相对路径,则将顺序在以下目录内查找:</p>
+				<blockquote>
+					<p>1. 本属性应用位置所处火山源文件的目录路径;</p>
+					<p>2. 项目选项中设置的附加库文件搜寻路径;</p>
+					<p>3. &quot;@视窗.库文件搜寻目录&quot;属性中设置的库文件搜寻路径;</p>
+					<p>4. &quot;LIB&quot;系统环境变量中设置的库文件搜寻路径.</p>
+				</blockquote>
+				<p>以下系统库已经在编译时自动加入,无需指定:</p>
+				<blockquote>
+					<p>kernel32.lib user32.lib gdi32.lib winspool.lib 
+					comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib 
+					uuid.lib odbc32.lib odbccp32.lib comctl32.lib</p>
+				</blockquote>
+				<p>在文件名中可以使用&quot;$(环境变量名)&quot;引用已有的计算机系统或编译器内嵌环境变量值,编译器内嵌支持的环境变量引用名有以下:</p>
+				<blockquote>
+					<p>$(p): 当前编译目标平台英文名称(x64/win32);</p>
+					<p>$(r): 当前编译结果类型英文名称(exe/dll/lib/console);</p>
+					<p>$(d): 当前编译调试版本类型英文名称(debug/realse);</p>
+					<p>$(pf): 当前项目文件去除路径及后缀后的名称.</p>
+				</blockquote>
+				</td>
+			</tr>
+			<tr>
+				<td width="199">@视窗.附属文件</td>
+				<td><p>
+				本属性用作提供所处包/类/方法运行时所需求外部附属文件或目录的名称,多个文件或目录名之间使用逗号或换行符分隔.</p>
+				<p>
+				当成功编译完毕后,这些文件或目录(包括其中的所有文件及子目录)将被复制到编译结果文件所处的目录中,以供其运行时访问.</p>
+				<p>
+				可以通过在属性名后缀中提供对应的修饰符组合来指定这些文件所具体应用到的编译环境,所支持的修饰符有以下几组:</p>
+				<blockquote>
+					<p>1. &quot;x64&quot;(编译64位平台版本时) / &quot;win32&quot;(编译32位平台版本时);</p>
+					<p>2. &quot;debug&quot;(编译调试版本时) / &quot;release&quot;(编译发布版本时);</p>
+					<p>3. &quot;exe&quot;(编译为窗口可执行文件时) / &quot;dll&quot;(编译为动态库时) / &quot;lib&quot;(编译为静态链接库时) 
+					/ &quot;console&quot;(编译为控制台可执行文件时).</p>
+				</blockquote>
+				<p>
+				属性名后缀中可以同时存在多个修饰符,但每组修饰符中只允许同时存在一个,多个修饰符之间使用减号字符分隔,其排列顺序没有要求.如果某组中的修饰符一个都没有指定,说明对所对应的编译选项没有要求(任意均可).</p>
+				<p>所提供文件/目录名如果为相对路径,则将在本属性应用位置所处火山源文件的目录路径内查找.</p>
+				<p>在文件/目录名中可以使用&quot;$(环境变量名)&quot;引用已有的计算机系统或编译器内嵌环境变量值,编译器内嵌支持的环境变量引用名有以下:</p>
+				<blockquote>
+					<p>$(p): 当前编译目标平台英文名称(x64/win32);</p>
+					<p>$(r): 当前编译结果类型英文名称(exe/dll/lib/console);</p>
+					<p>$(d): 当前编译调试版本类型英文名称(debug/realse);</p>
+					<p>$(pf): 当前项目文件去除路径及后缀后的名称.</p>
+				</blockquote>
+				</td>
+			</tr>
+			<tr>
+				<td width="199">@视窗.库文件搜寻目录</td>
+				<td width="129" rowspan="2">[允许多设置项]</td>
+				<td>本属性用作提供所处包/类/方法正常编译所需求外部lib库文件的附加搜寻目录,多个目录名之间使用逗号或换行符分隔.<p>
+				在目录名中可以使用&quot;$(环境变量名)&quot;引用已有的计算机系统或编译器内嵌环境变量值,编译器内嵌支持的环境变量引用名有以下:<blockquote>
+					<p>$(p): 当前编译目标平台英文名称(x64/win32);<p>$(r): 
+					当前编译结果类型英文名称(exe/dll/lib/console);<p>$(d): 
+					当前编译调试版本类型英文名称(debug/realse);<p>$(pf): 当前项目文件去除路径及后缀后的名称.</blockquote>
+				</td>
+			</tr>
+			<tr>
+				<td width="199">@视窗.头文件搜寻目录</td>
+				<td>本属性用作提供所处包/类/方法正常编译所需求外部头文件的附加搜寻目录,多个目录名之间使用逗号或换行符分隔.<p>
+				在目录名中可以使用&quot;$(环境变量名)&quot;引用已有的计算机系统或编译器内嵌环境变量值,编译器内嵌支持的环境变量引用名有以下:<blockquote>
+					<p>$(p): 当前编译目标平台英文名称(x64/win32);<p>$(r): 
+					当前编译结果类型英文名称(exe/dll/lib/console);<p>$(d): 
+					当前编译调试版本类型英文名称(debug/realse);<p>$(pf): 当前项目文件去除路径及后缀后的名称.</blockquote>
+				</td>
+			</tr>
+			<tr>
+				<td width="199">@视窗.需求VS版本</td>
+				<td width="129" rowspan="3">&nbsp;</td>
+				<td>本属性用作提供所处包/类/方法正常编译所需求 Visual Studio 
+				或其生成工具的编译器版本号范围,属性值为使用逗号分隔的所需求最小和最大版本号,两个版本号均可以被省略(被省略表示对应版本号无需求),因此有效的格式为以下几种之一:<blockquote>
+					<p>1. &quot;最小版本号&quot;;</p>
+					<p>2. &quot;最小版本号, 最大版本号&quot;;</p>
+					<p>3. &quot;, 最大版本号&quot;.</p>
+				</blockquote>
+				<p>以下为各个常用 Visual Studio 或其生成工具对应的编译器版本号:</p>
+				<blockquote>
+					<p>1. Visual Studio 2010: 10.0</p>
+					<p>2. Visual Studio 2012: 11.0</p>
+					<p>3. Visual Studio 2013: 12.0</p>
+					<p>4. Visual Studio 2014: 13.0</p>
+					<p>5. Visual Studio 2015: 14.0</p>
+					<p>6. Visual Studio 2017 或其生成工具: 15.0</p>
+					<p>7. Visual Studio 2019 或其生成工具: 16.0</p>
+				</blockquote>
+				</td>
+			</tr>
+			<tr>
+				<td width="199">@视窗.需求目标平台</td>
+				<td>
+				本属性用作提供所处包/类/方法正常编译所需求的目标平台.<p>属性值可以为以下之一: 所有平台、64位平台、32位平台</td>
+			</tr>
+			<tr>
+				<td width="199">@视窗.需求系统头文件</td>
+				<td>
+				本属性用作提供所处包/类/方法正常编译所必须存在的头文件的文件名及该头文件不存在时的错误提示信息文本(可以被省略),两者之间使用&#39;|&#39;字符分隔.<p>
+				所指定头文件必须能够在以下路径之一中找到,否则编译器将报错:</p>
+				<blockquote>
+					<p>1. 本插件附属数据目录的&quot;classlib&quot;子目录;</p>
+					<p>2. 项目选项中设置的附加头文件搜寻路径;</p>
+					<p>3. &quot;@视窗.头文件搜寻目录&quot;属性中设置的头文件搜寻路径;</p>
+					<p>4. &quot;INCLUDE&quot;系统环境变量中设置的头文件搜寻路径.</p>
+				</blockquote>
+				<p>在文件名中可以使用&quot;$(环境变量名)&quot;引用已有的计算机系统或编译器内嵌环境变量值,编译器内嵌支持的环境变量引用名有以下:</p>
+				<blockquote>
+					<p>$(p): 当前编译目标平台英文名称(x64/win32);</p>
+					<p>$(r): 当前编译结果类型英文名称(exe/dll/lib/console);</p>
+					<p>$(d): 当前编译调试版本类型英文名称(debug/realse);</p>
+					<p>$(pf): 当前项目文件去除路径及后缀后的名称.</p>
+				</blockquote>
+				<p>例子: @视窗.需求系统头文件 = &quot;afxwin.h | 当前 Visual Studio 本地编译环境未安装 MFC 
+				,需要首先将其安装才能进行编译,安装方法请参考系统菜单\&quot;工具-&gt;安装 Visual Studio 2019 
+				生成工具\&quot;功能对话框中的相关说明.&quot;</td>
+			</tr>
+			<tr>
+				<td width="199">@视窗.值文件</td>
+				<td width="129">&nbsp;</td>
+				<td width="198">成员变量 / 局部变量</td>
+				<td>本属性用作提供数据类型为&quot;文本型&quot;或&quot;字节集类&quot;的成员/局部变量的初始值内容.<p>注意:</p>
+				<blockquote>
+					<p>1. 当变量数据类型为&quot;文本型&quot;时,所提供文件必须为Unicode-16字符集格式的文本文件;</p>
+					<p>2. 当变量数据类型为&quot;字节集类&quot;时,所提供文件可以是任意二进制文件;</p>
+					<p>3. 所提供文件名如果为相对路径,为相对于本属性应用位置所处火山源文件的目录位置;</p>
+					<p>4. 所提供的值文件内容将被直接整合进入所编译项目的结果文件资源段中,发布时不再需要单独携带;</p>
+					<p>5. 
+					在文件名中可以使用&quot;$(环境变量名)&quot;引用已有的计算机系统或编译器内嵌环境变量值,编译器内嵌支持的环境变量引用名有以下:</p>
+					<blockquote>
+						<p>$(p): 当前编译目标平台英文名称(x64/win32);</p>
+						<p>$(r): 当前编译结果类型英文名称(exe/dll/lib/console);</p>
+						<p>$(d): 当前编译调试版本类型英文名称(debug/realse);</p>
+						<p>$(pf): 当前项目文件去除路径及后缀后的名称.</p>
+					</blockquote>
+				</blockquote>
+				</td>
+			</tr>
+			<tr>
+				<td width="199">@视窗.资源类型</td>
+				<td width="90">文本型</td>
+				<td width="129" rowspan="4">[不允许常量]</td>
+				<td width="198">&quot;视窗文件资源&quot;或其继承类</td>
+				<td>
+				用作指定资源类所对应的具体Windowss系统资源类型名称(如&quot;RCDATA&quot;,&quot;BITMAP&quot;等), 
+				具体应用实例请参见系统类库中&quot;视窗文件资源&quot;类处的相关代码.</td>
+			</tr>
+			<tr>
+				<td width="199">@视窗.返回参考</td>
+				<td width="90">逻辑型</td>
+				<td width="198">方法</td>
+				<td>
+				本属性只能在具有返回值的方法上使用,指定该方法所返回的数据是否以参考方式传递,设置本属性为真时该方法必须确保所返回的参考数据在方法外部有效.</td>
+			</tr>
+			<tr>
+				<td width="199">@视窗.布局</td>
+				<td width="90">文本型</td>
+				<td width="198">&quot;窗口容器组件&quot;继承类 / 成员变量</td>
+				<td>
+				本属性只能应用在基础类为&quot;窗口容器组件&quot;的类或其中数据类型匹配&quot;窗口组件&quot;的成员变量上,用作提供其在窗口容器布局中的相关配置信息.<p>
+				只有具有本属性的窗口组件成员变量才会被系统认为处于当前窗口容器布局中,只有具有本属性的&quot;窗口容器组件&quot;继承类才会被系统认为其中具有布局数据.</p>
+				<table border="1" width="100%" style="border-collapse: collapse">
+					<tr>
+						<td colspan="3" bgcolor="#E6E6E6">
+						<p>
+				当应用在基础类为&quot;窗口容器组件&quot;的类上时,所具体所支持的属性表格式如下:</p>
+				<p>[client_size] = xxx</p>
+						<p>以上属性中,被中括号括住属性的为可选属性,否则为必须提供的属性.</p></td>
+					</tr>
+					<tr>
+						<td bgcolor="#808080" width="10%"><b>名称</b></td>
+						<td bgcolor="#808080" width="9%"><b>数据类型</b></td>
+						<td bgcolor="#808080" width="80%"><b>解释</b></td>
+					</tr>
+					<tr>
+						<td width="10%">client_size</td>
+						<td width="9%">文本型</td>
+						<td width="80%">为连续2个以逗号分隔的整数值,分别指定布局用户区(即不包括标题栏/边框等部分)的横向及纵向尺寸. 可以被省略,此时表明均为0.</td>
+					</tr>
+					<tr>
+						<td bgcolor="#E6E6E6" colspan="3">
+						<p>
+				当应用在&quot;窗口组件&quot;成员变量上时,所具体所支持的属性表格式如下:</p>
+				<p>id = xxx</p>
+				<p>[parent_id] = xxx</p>
+				<p>[pos] = &quot;left, top, width, height&quot;</p>
+						<p>以上属性中,被中括号括住属性的为可选属性,否则为必须提供的属性.</p></td>
+					</tr>
+					<tr>
+						<td bgcolor="#808080" width="10%"><b>名称</b></td>
+						<td bgcolor="#808080" width="9%"><b>数据类型</b></td>
+						<td bgcolor="#808080" width="80%"><b>解释</b></td>
+					</tr>
+					<tr>
+						<td width="10%">id</td>
+						<td width="9%">整数</td>
+						<td width="80%"><p>用作提供
+						组件所对应的id值,在所处布局中必须唯一,本属性必须存在.</td>
+					</tr>
+					<tr>
+						<td width="10%">parent_id</td>
+						<td width="9%">整数</td>
+						<td width="80%"><p>用作提供组件所处父组件的id值. 
+						可以被省略,此时表明父组件为所处窗口容器组件.</td>
+					</tr>
+					<tr>
+						<td width="10%">pos</td>
+						<td width="9%">文本型</td>
+						<td width="80%">为连续4个以逗号分隔的整数值,分别指定在所处父组件中位置矩形的
+						左边坐标/顶边坐标/宽度/高度. 可以被省略,此时表明均为0.</td>
+					</tr>
+				</table></td>
+			</tr>
+			<tr>
+				<td width="199">@视窗.设置时机</td>
+				<td width="90">整数</td>
+				<td width="198">&quot;窗口组件&quot;继承类的属性写方法</td>
+				<td>
+				本属性只能应用在基础类为&quot;窗口组件&quot;&quot;的类中的属性写方法上,指定该属性所允许的具体设置时机.<blockquote>
+					<p><b>1.</b> 组件创建后: 
+					仅支持在所处窗口组件创建完毕后设置(在所处窗口组件创建完毕前设置将失败或编译报错),此为本属性默认值;<br>
+					<b>2.</b> 组件创建前: 
+					仅支持在所处窗口组件创建前设置(在界面设计器中如果修改了本属性将导致所处窗口组件自动重建);<br>
+					<b>3.</b> 组件创建前后: 在所处窗口组件创建前后均可设置(编译器将尽量在所处窗口组件创建前处理本属性的设置).</p>
+				</blockquote>
+				</td>
+			</tr>
+			<tr>
+			<td width="199">@视窗.窗口组件<a name="win_ui_control"></a></td>
+			<td width="90">文本型</td>
+			<td width="129">[不允许常量]</td>
+			<td width="198">窗口组件类</td>
+			<td>
+			本属性只能在直接/间接基础类为&quot;窗口组件&quot;的类定义成员上使用,用作提供其在视窗布局文件中的相关配置信息.只有定义了本属性的窗口组件类才会在布局设计器的工具箱中被列出.<p>
+			具体所支持的属性表格式如下:</p>
+			<p>[hidden]<br>
+			*
+			[one_child_enabled]<br>
+			*
+			[add_child_disabled]<br>
+			[category] = xxx<br>
+			*
+			[icon] = xxx<br>
+			[default_event] = xxx<br>
+			*
+			[default_size] = &quot;xx, xx&quot;</p>
+			<p>以上属性中,被中括号括住属性的为可选属性,否则为必须提供的属性.</p>
+			<p>前面添加星号标注的属性: 基础窗口组件类中的这些属性可以被其继承窗口组件类自动继承使用(如果其没有覆盖设置).</p>
+			<table border="1" width="100%" style="border-collapse: collapse">
+				<tr>
+					<td bgcolor="#808080" width="11%"><b>名称</b></td>
+					<td bgcolor="#808080" width="9%"><b>数据类型</b></td>
+					<td bgcolor="#808080"><b>解释</b></td>
+				</tr>
+				<tr>
+					<td width="11%">hidden</td>
+					<td width="9%">逻辑型</td>
+					<td>标记本组件设计时为隐藏状态</td>
+				</tr>
+				<tr>
+					<td width="11%">one_child_enabled</td>
+					<td width="9%">逻辑型</td>
+					<td>如果本组件为容器类型组件,标记是否仅允许在其中加入一个子组件.</td>
+				</tr>
+				<tr>
+					<td width="11%">add_child_disabled</td>
+					<td width="9%">逻辑型</td>
+					<td>标记本组件即使为容器类型组件,也不允许在其中加入子组件.</td>
+				</tr>
+				<tr>
+					<td width="11%">category</td>
+					<td width="9%">文本型</td>
+					<td>提供本组件所处的分类,仅设计器使用.</td>
+				</tr>
+				<tr>
+					<td width="11%">icon</td>
+					<td width="9%">文本型</td>
+					<td>提供本组件图标的图片文件名,相对本配置信息所处火山源文件位于的目录,为空表示
+					使用默认图标.<br>
+					图片文件要求如下: 格式为BMP,尺寸24x24像素,颜色深度32位,透明背景色为洋红(RGB颜色分量: 255, 0, 
+					255).<p>也可以通过使用&#39;@&#39;字符引导的
+					整数索引值来引用系统内置的相关图标,该索引值索引到如下图片:
+					<a href="images/ctrl_icons.bmp">images/ctrl_icons.bmp</a></p>
+					</td>
+				</tr>
+				<tr>
+					<td width="11%">default_event</td>
+					<td width="9%">文本型</td>
+					<td>
+					设置本组件的默认事件定义方法(可以位于组件基础类中)的名称,当在窗口设计器中双击本组件时,会自动添加该事件的接收方法.</td>
+				</tr>
+				<tr>
+					<td width="11%">default_size</td>
+					<td width="9%">文本型</td>
+					<td>
+					设置当在布局设计器工具箱中选中本类组件后再单击预览窗口上指定位置来加入新的本组件时,所使用的默认宽度和高度(两者之间使用逗号分隔). 
+					如果未指定,则默认尺寸为100 x 100.</td>
+				</tr>
+				</table>
+			</td>
+			</tr>
+			<tr>
+				<td width="199">@视窗.结构类<a name="win_struct_class"></a></td>
+				<td width="90">整数</td>
+				<td width="129">&nbsp;</td>
+				<td width="198">类</td>
+				<td>
+				本属性只能应用在类上,用作指定是否为该类建立对应其中所有成员变量数据的C/C++结构,该结构内容一般用作和外部API进行交互时使用.<p>
+				设置本属性的前提是: 当前类所有成员变量的数据类型必须为非文本型基本数据类型 / 其它设置了本属性的类 / 
+				这两种数据类型的数组.</p>
+				<p>
+				属性值提供类中各个成员变量在所建立结构中按多少字节尺寸进行对齐,只能为0/1/2/4/8/16之一,0表示按默认字节数对齐.</p>
+				<p>
+				一旦设置了本属性,编译器将自动在当前类中建立名称为&quot;S&quot;的C++结构数据类型,对应其中的所有成员变量内容,并建立以下两个公开C++成员方法:</p>
+				<blockquote>
+					<p><b>1.</b> S* GetStruct (S* pInf);</p>
+					<blockquote>
+						<p>该方法将把当前类中各个成员变量的数据内容填入到pInf所指向结构中并将其返回.</p>
+					</blockquote>
+					<p><b>2. </b>void SetStruct (const S* pInf);</p>
+					<blockquote>
+						<p>该方法将把pInf指针中的结构数据填入到当前类的各个对应成员变量中.</p>
+					</blockquote>
+				</blockquote>
+				<p>注意:</p>
+				<blockquote>
+					<p><b>1.</b> 在使用&quot;S&quot;结构数据类型时,前面注意加入其所处类的类名前缀,即: 
+					&quot;所处类名::S&quot;,在嵌入语句行中可以使用&quot;<a href="#embed_data_type">@dt</a>&lt;所处类名&gt;::S&quot;表达;</p>
+					<p><b>2. </b>类中使用嵌入语句行直接加入的C++成员变量不会被处理.</p>
+				</blockquote>
+				</td>
+			</tr>
+			<tr>
+				<td width="199">@视窗.输入<a name="win_import_method"></a></td>
+				<td width="90">文本型</td>
+				<td width="129">[允许后缀]<p>[方法体必须为空]</td>
+				<td width="198" rowspan="2">公开静态通常方法</td>
+				<td>
+				本属性只能应用在类的公开静态通常方法上,且必须与&quot;<a href="#out_name">@输出名</a>&quot;属性配合使用,用作表示该方法的具体实现由所指定的外部库(由本属性值提供)中指定名称(由&quot;<a href="#out_name">@输出名</a>&quot;属性值提供)的输出函数来实现.<p>
+				可以通过在属性名后缀中提供对应的修饰符组合来指定所具体应用到的编译环境,所支持的修饰符有以下几组:</p>
+				<blockquote>
+					<p>1. &quot;x64&quot;(编译64位平台版本时) / &quot;win32&quot;(编译32位平台版本时);</p>
+					<p>2. &quot;debug&quot;(编译调试版本时) / &quot;release&quot;(编译发布版本时);</p>
+					<p>3. &quot;exe&quot;(编译为窗口可执行文件时) / &quot;dll&quot;(编译为动态库时) / &quot;lib&quot;(编译为静态链接库时) 
+					/ &quot;console&quot;(编译为控制台可执行文件时).</p>
+				</blockquote>
+				<p>属性名后缀中可以同时存在多个修饰符,但每组修饰符中只允许同时存在一个,多个修饰符之间使用减号字符分隔,其排列顺序没有要求.如果某组中的修饰符一个都没有指定,说明对所对应的编译选项没有要求(任意均可).</p>
+				<p>属性值为一个外部dll或lib库文件名,如果为空文本,必须确保相关外部lib库文件已经默认或使用&quot;<a href="#win_extern_lib">@视窗.外部库</a>&quot;属性引入到程序中,否则本地编译时将报告无法找到外部符号错误.</p>
+				<p>默认引入的外部库文件列表: kernel32.lib user32.lib gdi32.lib winspool.lib 
+				comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib 
+				uuid.lib odbc32.lib odbccp32.lib</p>
+				<p>注意:</p>
+				<blockquote>
+					<p><b>1. </b>一旦设置了本属性值,则方法体必须为空;</p>
+					<p><b>2. </b>
+					如果属性值为lib库文件名且该lib为静态链接库(即不为dll动态链接库的输入库),则需要在属性值文本首部加上一个&#39;@&#39;引导字符用作区分;</p>
+					<p><b>3. </b>
+					如果属性值为非lib库文件名,则编译器认为其是一个动态链接库文件,该文件名路径如为相对路径,则为相对本程序编译后结果文件运行时所处目录;</p>
+					<p><b>4. </b>
+					本属性所处方法的定义格式必须与所指定外部库中输出函数的定义格式完全一致,如果外部输出函数中的某参数在定义时指定了&quot;<a href="#win_out_param">@视窗.输出参数</a>&quot;属性(火山编译的外部库)或将输出返回数据(非火山编译的外部库),则所处方法的对应参数也必须指定&quot;<a href="#win_out_param">@视窗.输出参数</a>&quot;属性,以通知编译器复制回输出函数参数中所返回的数据.</p>
+					<p><b>5.</b> 
+					在文件名中可以使用&quot;$(环境变量名)&quot;引用已有的计算机系统或编译器内嵌环境变量值,编译器内嵌支持的环境变量引用名有以下:</p>
+					<blockquote>
+						<p>$(p): 当前编译目标平台英文名称(x64/win32);</p>
+						<p>$(r): 当前编译结果类型英文名称(exe/dll/lib/console);</p>
+						<p>$(d): 当前编译调试版本类型英文名称(debug/realse);</p>
+						<p>$(pf): 当前项目文件去除路径及后缀后的名称.</p>
+					</blockquote>
+				</blockquote>
+				</td>
+			</tr>
+			<tr>
+				<td width="199">@视窗.输出<a name="win_export_method"></a></td>
+				<td width="90">逻辑型</td>
+				<td width="129">[不允许常量]<p>[强制编译输出]</td>
+				<td>
+				本属性只能应用在类的公开静态通常方法上,且必须与&quot;<a href="#out_name">@输出名</a>&quot;属性配合使用,用作表示该方法是否在动态/静态链接库项目中被编译为对外公开的输出函数(所公开名称由&quot;<a href="#out_name">@输出名</a>&quot;属性值提供).<p>
+				注意:</p>
+				<blockquote>
+					<p><b>1. </b>方法所有参数的数据类型必须为基本数据类型或字节集类或设置了&quot;<a href="#win_struct_class">@视窗.结构类</a>&quot;属性的类数据类型,如果需要将某参数的数据修改后返回到调用方,则必须在该参数上指定&quot;<a href="#win_out_param">@视窗.输出参数</a>&quot;属性;</p>
+					<p><b>2. </b>方法如果定义有返回值,其数据类型必须为非文本型基本数据类型.</p>
+				</blockquote>
+				</td>
+			</tr>
+			<tr>
+				<td width="199">@视窗.输出参数<a name="win_out_param"></a></td>
+				<td width="90">逻辑型</td>
+				<td width="129">&nbsp;</td>
+				<td width="198">方法参数</td>
+				<td>
+				本属性只能应用在设置了&quot;<a href="#win_import_method">@视窗.输入</a>&quot;或&quot;<a href="#win_export_method">@视窗.输出</a>&quot;属性的方法的参数上,参数数据类型必须为设置了&quot;<a href="#win_out_param">@视窗.输出参数</a>&quot;属性的类数据类型,用作表示该参数中的数据是否会在方法内被修改以返回输出数据到调用方.只有当设置了本属性,编译器才会加入对应的处理代码.</td>
+			</tr>
+			</table>
+		<p>注释:</p>
+		<blockquote>
+			<p><b>1. </b>属性表特性列中凡是未标注&quot;<b>[允许多设置项]</b>&quot;的说明其在属性表中只能存在一个设置项;</p>
+			<p><b>2. </b>未标注&quot;<b>[允许后缀]</b>&quot;的说明其不允许使用后缀方式;</p>
+			<p><b>3. </b>未标注&quot;<b>[不允许常量]</b>&quot;的支持用外部常量对本属性进行赋值(否则只能使用立即数);</p>
+			<p><b>4.</b> 标注有&quot;<b>[方法体必须为空]</b>&quot;的表示如果属性应用在方法上,方法体的内容必须为空;</p>
+			<p><b>5.</b> 标注有&quot;<b>[强制编译输出]</b>&quot;的表示属性所应用到的程序成员必定会被编译输出,而不论用户的应用程序是否确实使用过它.</p>
+			<p>&nbsp;</p>
+		</blockquote>
+	</blockquote>
+	<p><font size="3"><b>四. 实现自己的界面模块</b></font></p>
+	<blockquote>
+		<p>火山视窗平台及其界面设计器支持程序使用各种自定义界面模块,具体示例请参见系统类库中提供的&quot;MFC界面基本类&quot;模块,相关注意点如下:</p>
+		<p><b>1. </b>界面模块的vgrp文件内容中,必须定义值为<b>&quot;ui&quot;</b>的<b>&quot;unique_mark&quot;</b>属性,该属性值用作标记本模块为界面模块,同时避免一个程序中同时加入多个界面模块.</p>
+		<blockquote>
+			<blockquote>
+				<p>以下为&quot;MFC界面基本类&quot;模块的vgrp定义文件相关内容:</p>
+				<blockquote>
+					<p>name =&quot;MFC界面基本类&quot;<br>
+					version = 1<br>
+					explain = &quot;提供基于MFC的界面基本支持功能&quot;<br>
+					<font color="#FF0000">unique_mark </font>=<font color="#FF0000"> 
+					ui</font><br>
+					......</p>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+		<p><b>2. </b>界面模块的vgrp文件所处目录的&quot;<b>ui</b>&quot;子目录下必须存在文件名为&quot;<b>ui.vprj</b>&quot;且类型为&quot;DLL动态链接库&quot;的火山项目文件,用作生成系统界面设计器所需要的该界面模块的<b>插件</b>.</p>
+		<blockquote>
+			<p>该界面插件项目中需要定义并输出三类接口方法:</p>
+			<p><b>A.</b> 由系统自动填写其中内容的接口方法:</p>
+			<blockquote>
+				<p>此类接口方法只需要在项目中定义并输出即可,其内容由系统自动填写.</p>
+			</blockquote>
+			<p><b>B. </b>需要由用户提供其中内容的接口方法:</p>
+			<blockquote>
+				<p>此类接口方法需要在项目中定义并输出,其方法实现内容必须由用户提供.</p>
+			</blockquote>
+			<p><b>C. </b>需要由用户提供其中内容的可选接口方法:</p>
+			<blockquote>
+				<p>此类接口方法与上一类的区别为是可选的,如果用户不想支持该接口,可以不定义该方法.</p>
+			</blockquote>
+			<p>
+			具体所需要定义的所有接口方法及其说明请参见系统安装目录&quot;plugins\vprj_win\classlib\sys\mfc_ui_base\ui\src\main.v&quot;源文件,其为&quot;MFC界面基本类&quot;的界面插件实现了所有接口方法.</p>
+			<p>界面插件项目编译后的结果dll文件会首先尝试放在界面模块vgrp文件所处目录的&quot;<b>ui_plugin</b>&quot;子目录下,如果当前计算机用户权限不够无法写出到此目录,会改为放到系统的文档目录中.</p>
+		</blockquote>
+	</blockquote>
+	<blockquote>
+		<p><b>3. </b>
+		系统在编译所生成的界面模块插件项目时,会自动预定义&quot;_VOL_FOR_UI_DESIGNER&quot;宏,因此在界面模块的代码中可以根据此宏是否定义来进行一些特殊处理(譬如在类似&quot;可视&quot;属性被设置为假时不进行实际隐藏操作,以免其在界面设计器中不可见等),也可调用&quot;CVolAppInstance::IsForUiDesigner&quot;虚拟方法不通过宏来获取此信息.</p>
+		<p><b>4. </b>界面模块中必须定义其输出名为以下几种的类:</p>
+		<blockquote>
+			<p><b>A.</b> &quot;@CVolWinControl&quot;: 所有窗口组件类的基础类,如果某类为此类的继承类,则系统认为其为窗口组件;</p>
+			<p><b>B.</b> &quot;@CVolWinContainer&quot;: 
+			所有容器类窗口组件类的基础类,该类必定为&quot;@CVolWinControl&quot;类的继承类,如果某类为该类的继承类,则系统认为其为容器类窗口组件.容器类窗口组件中可以放置其它的子窗口组件,非容器类窗口组件则不允许;</p>
+			<p><b>C.</b> &quot;@CVolTopWnd&quot;: 
+			所有顶层窗口组件类的基础类,该类必定为&quot;@CVolWinControl&quot;类的继承类. 
+			顶层窗口组件不能为其它容器类窗口组件的子组件,一般用来表述界面中类似顶层窗口之类的部分.</p>
+		</blockquote>
+		<p><b>5. </b>所有欲放置到系统界面设计器工具箱中的组件,必须定义有有效的&quot;<a href="#win_ui_control">视窗.窗口组件</a>&quot;属性.</p>
+		<p><b>6. </b>如果当前用户项目的程序中加入了某界面模块,那么当用户启动系统界面设计器时,其会首先自动载入该界面模块对应的插件,如果该插件不存在或者其相对界面模块已经过时,系统会自动提示是否重新编译.用户也可以随时通过执行&quot;<b>工具-&gt;编译更新界面插件</b>&quot;菜单项来手动更新系统类库中所有界面模块的插件.</p>
+		<p>&nbsp;</p>
+	</blockquote>
+	<p><b><font size="3">五. 其它:</font></b></p>
+	<blockquote>
+		<p><b>1. </b>火山视窗项目中的所有用户类都必须为&quot;<b>CVolObject</b>&quot; 
+		C++类(在核心源码中定义)的继承类,无论是所使用的别名类还是外部基础类;</p>
+		<p><b>2. </b>火山文本型数据类型对应&quot;<b>CVolString</b>&quot; C++类(在核心源码中定义);</p>
+		<p><b>3. </b>有关&quot;<a href="#null_object">空对象</a>&quot;关键字在视窗版的用法:</p>
+		<blockquote>
+			<p>
+			每一个火山类对象(由于文本型实际上也是一个火山对象类,因此也包括它)均具有一个名为&quot;空白对象&quot;的系统标志,当此标志被置位时,则编译器认为该对象为一个空对象.</p>
+			<p>空对象的使用方法:</p>
+			<p><b>A.</b> &quot;<a href="#null_object">空对象</a>&quot;关键字的用法和火山其它平台基本是一致的,唯一不同在于,视窗版里面的<a href="#null_object">空对象</a>是存在对应对象实例的(只不过该对象设置了&quot;空白对象&quot;系统标志),所以&quot;<a href="#null_object">空对象</a>&quot;关键字在视窗版中实际代表的是一个设置有&quot;空白对象&quot;系统标志的空白(其中内容为初始状态)对象;</p>
+			<p><b>B.</b> 调用某方法时可以将一个&quot;<a href="#null_object">空对象</a>&quot;关键字作为参数
+			值传递过去时,该关键字可以匹配任何对象类型及文本型,编译器将自动创建一个对应数据类型的对象实例,并设置其&quot;空白对象&quot;标志,然后将其传递过去;</p>
+			<p><b>C.</b> 判断某对象是否设置了&quot;空白对象&quot;标志,可以通过&quot;==&quot;及&quot;!=&quot;操作符与&quot;<a href="#null_object">空对象</a>&quot;关键字进行比较;</p>
+			<p><b>D.</b> 设置某对象的&quot;空白对象&quot;标志可以直接赋值一个&quot;<a href="#null_object">空对象</a>&quot;关键字,注意
+			被赋值对象中的原有内容也将同时被清除到初始状态.</p>
+		</blockquote>
+		<p><b>4.</b> 火山视窗项目不支持定义参考型数据,因此项目中以下火山程序特性与安卓项目有所不同:</p>
+		<blockquote>
+			<p><b>A.</b> 不支持定义参考型变量,所有的变量赋值操作均采用直接的内容复制方式. 特例: 
+			方法的文本型和对象型参数数据传递仍然采用参考传递方式;</p>
+			<p><b>B.</b> 非嵌入式方法不支持定义数组型参数,也不支持返回数组型数据(可以通过使用对应的数组封装类来替换);</p>
+			<p><b>C.</b> 不支持使用维数为0的数组型数据类型(非嵌入式方法参数除外),同样通过使用对应的数组封装类来替换;</p>
+			<p>其它方面完全一致.</p>
+		</blockquote>
+		<p><b>5</b><font size="2"><b>. </b>&quot;vol_user_app_info.h&quot;头文件:</font></p>
+		<blockquote>
+			<p><font size="2">
+			火山编译器为每一个被编译的火山程序均建立并自动包含了此头文件,其中提供了用户火山程序的相关设置项,其内容类似如下:</font></p>
+			<blockquote>
+				<p>#define _T_VOL_USER_APP_NAME _T (&quot;火山应用程序&quot;)&nbsp; // 用户程序的名称<br>
+				#define _VOL_USER_APP_VERSION_NUMBER 1&nbsp; // 用户程序的版本号<br>
+				#define _VOL_USER_APP_ICON_RES_ID 100&nbsp; // 用户程序所设置图标的资源ID</p>
+			</blockquote>
+			<p>编译器会自动将该头文件所处目录加入到系统头文件搜寻目录中,因此用户可以在程序中除开<a href="#win_extern_include_file">外部头文件</a>外的任何位置(包括外部源文件)引用其中的内容.</p>
+		</blockquote>
+		<p><b>6. </b>快速编译的注意事项:</p>
+		<blockquote>
+			<p>
+			火山编译器支持使用C++编译器的预编译头文件机制及基于依赖关系的编译更新判定,相比上次没有被更改的源文件不会重新编译,因此已经编译过的程序再次编译时速度将会得到提升.但是目前需要注意的是,如果下列类型文件被修改,目前编译器尚不能自动识别:</p>
+			<blockquote>
+				<p>1. 用户程序使用&quot;@视窗.外部资源文件&quot;属性所导入的外部RC资源文件(不包括该文件本身)内容中二次引用的其它文件;</p>
+				<p>2. 用户程序使用&quot;@视窗.外部源文件&quot;属性所导入外部汇编类型ASM源文件(不包括该文件本身)内容中二次引用的其它文件.</p>
+			</blockquote>
+			<p>如果程序中所使用到的上述文件被修改或替换,必须执行重新编译或者启用&quot;始终重新编译&quot;项目配置属性开关后进行编译才能得到正确结果.</p>
+		</blockquote>
+		<p><b>7. </b>编译火山视窗项目时系统自动加入的相关宏,可以在程序中直接使用:</p>
+		<blockquote>
+			<table border="1" width="50%" style="border-collapse: collapse">
+				<tr>
+					<td bgcolor="#808080" height="22" width="295"><b>名称</b></td>
+					<td bgcolor="#808080" height="22" width="124"><b>设置位置</b></td>
+					<td bgcolor="#808080" height="22"><b>解释</b></td>
+				</tr>
+				<tr>
+					<td width="295">_VOL_WIN_EXE</td>
+					<td rowspan="6" width="124">编译参数行</td>
+					<td>编译结果类型为&quot;窗口EXE可执行文件&quot;时</td>
+				</tr>
+				<tr>
+					<td width="295">_VOL_DLL </td>
+					<td>编译结果类型为&quot;DLL动态链接库&quot;时</td>
+				</tr>
+				<tr>
+					<td width="295">_VOL_CONSOLE_EXE</td>
+					<td>编译结果类型为&quot;控制台EXE可执行文件&quot;时</td>
+				</tr>
+				<tr>
+					<td width="295">_VOL_X64</td>
+					<td>目标平台为&quot;64位&quot;时</td>
+				</tr>
+				<tr>
+					<td width="295">_VOL_WIN32</td>
+					<td>目标平台为&quot;32位&quot;时</td>
+				</tr>
+				<tr>
+					<td width="295">_VOL_FOR_UI_DESIGNER</td>
+					<td>当前正在编译被界面设计器所使用的代码时</td>
+				</tr>
+				<tr>
+					<td width="295">_VOL_DEV_VERSION_NUMBER</td>
+					<td rowspan="6" width="124">vol_user_app_info.h</td>
+					<td>编译此应用程序的火山平台版本号</td>
+				</tr>
+				<tr>
+					<td width="295">_VOL_DEV_LANG_ID</td>
+					<td>编译此应用程序的火山平台语言ID(使用国际标准码: 简体中文:2052; 英文:1033)</td>
+				</tr>
+				<tr>
+					<td width="295">_VOL_DEV_CATEGORY</td>
+					<td>编译此应用程序的火山平台类别: 0:免费版; 1:测试版; 2:个人版; 3:企业版; 4:专业版</td>
+				</tr>
+				<tr>
+					<td width="295">_T_VOL_USER_APP_NAME</td>
+					<td>用户程序名称</td>
+				</tr>
+				<tr>
+					<td width="295">_VOL_USER_APP_VERSION_NUMBER</td>
+					<td>用户程序版本号</td>
+				</tr>
+				<tr>
+					<td width="295">_VOL_USER_APP_ICON_RES_ID</td>
+					<td>用户程序图标资源ID</td>
+				</tr>
+			</table>
+		</blockquote>
+	</blockquote>
+	<blockquote>
+		<p>&nbsp;</p>
+	</blockquote>
+	<hr>
+	<p>&nbsp;</p>
+</blockquote>
+<p align="center">--- 完 ---</p>
+<script language="JavaScript" type="text/javascript" src="script/doc_foot.js"></script>
+</body>
+
+
+</html>

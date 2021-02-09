@@ -1,0 +1,526 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.窗口组件指示器<span>(可收缩)</span></h6></li>
+		<ol id="new1">
+            <li><blockquote><a href="#">1.准备工作</a></blockquote></li> 
+            <li><blockquote><a href="#cjantsq">2.创建按钮指示器</a></blockquote></li>  
+            <li><blockquote><a href="#cjxtsq">3.创建新指示器</a></blockquote></li>
+            <li><blockquote><a href="#cjxtsq2">4.创建新指示器2</a></blockquote></li>
+		    <li><blockquote><a href="#cjxtsq3">5.创建新指示器3</a></blockquote></li>
+            <li><blockquote><a href="#xs">6.显示</a></blockquote></li>
+            <li><blockquote><a href="#yc">7.隐藏</a></blockquote></li>
+            <li><blockquote><a href="#dhxs">8.动画显示</a></blockquote></li>
+            <li><blockquote><a href="#dhyc">9.动画隐藏</a></blockquote></li>
+            <li><blockquote><a href="#qhkszt">10.切换可视状态</a></blockquote></li>
+            <li><blockquote><a href="#dhqhkszt">11.动画切换可视状态</a></blockquote></li>
+            <li><blockquote><a href="#zjsz">12.增加数字</a></blockquote></li>
+            <li><blockquote><a href="#jssz">13.减少数字</a></blockquote></li>
+		    <li><blockquote><a href="#czwbj">14.垂直外边距(读写)</a></blockquote></li> 
+			<li><blockquote><a href="#spwbj">15.水平外边距(读写)</a></blockquote></li>
+             <li><blockquote><a href="#xsfw">16.显示方位(读写)</a></blockquote></li>
+            <li><blockquote><a href="#xszt">17.显示状态(读写)</a></blockquote></li>
+            <li><blockquote><a href="#bjys">18.背景颜色(读写)</a></blockquote></li>
+			<li><blockquote><a href="#xsfw">19.位于组件中间(常)</a></blockquote></li>
+            <li><blockquote><a href="#xsfw">20.位于组件右上(常)</a></blockquote></li>
+            <li><blockquote><a href="#xsfw">21.位于组件右下(常)</a></blockquote></li>
+            <li><blockquote><a href="#xsfw">22.位于组件左上(常)</a></blockquote></li>
+            <li><blockquote><a href="#xsfw">23.位于组件左下(常)</a></blockquote></li>
+		   
+		</ol>	
+		
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>窗口组件指示器实例讲解</h2> <a name="zbgz"></a>    
+<p><strong>作者：创世魂</strong></p>
+
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 帮助文档查看</font><br/>
+<br/>
+
+<p align="left"><b>“窗口组件指示器”</b>虽然属于窗口组件，但是并不能在<b>“界面设计器”</b>中创建使用。</p>
+<p align="left">它需要通过创建变量的形式才能使用，主要作用是给指定组件添加类似于<b>“角标”</b>的功能。</p>
+	<p align="left">另外本组件继承类了<a href="a_ctrl_text.htm"><b>“文本框”</b></a>和<a href="a_ctrl_base.htm"><b>“窗口组件”</b></a>的所有方法。</p>
+	<p align="left">虽继承了所有的方法，但是并非每一个方法都能够正常的使用。</p>
+	<p align="left">部分方法只有在特定组件中才能使用，例如：编辑框等。</p>
+	<p align="left"><font color="#F30F12">注意：本组件位于<strong>“杂类窗口组件1”</strong>模块中。</font></p>
+<blockquote>
+
+  <p align="left"><img src="zhshiqi_images/1a.png" border="0" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font><br/>
+<p align="left">&nbsp;</p>
+
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">打开窗口设计器，拖放<b>“两个按钮”</b>，一个<b>“文本框”</b>。</p>
+    <p align="left">分别起名<b>“按钮1、按钮2”</b>和<b>“文本框1”</b>。</p>
+    <p align="left"><b>“文本框1”</b>调整宽度为<b>“匹配父组件宽度”</b>。</p>
+	<p align="left"><img src="zhshiqi_images/2.png" border="0" ></p><br>
+    <p align="left">保存布局后，右键<b>“按钮”</b>选择添加事件接收方法。</p> 
+	<p align="left">然后去添加<b>“按钮_被单击”</b>事件。</p>
+	<p align="left">最终达到如图所示的效果。</p>
+	<p align="left">修改<b>“文本框1”</b>的颜色是为了方便和当前窗口区分开。</p>
+	<p align="left">然后定义<b>“窗口组件指示器”</b>变量，设置变量名称为<b>“指示器1”</b>，并且设置参考。</p>
+    <p align="left"><img border="0" src="zhshiqi_images/3.png" ></p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="cjantsq"></a><a name="xs"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建按钮指示器</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 显示</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“创建按钮指示器”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">顾名思义，本方法是专门用来给<b>“按钮”</b>组件添加指示器。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/4.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“显示”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">顾名思义，显示当前指示器。</p>
+	<p align="left">创建的指示器都会处于隐藏状态，需要调用本方法进行显示。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/5.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加<a href="a_win.htm#tzbcj"><b>“通知_被创建”</b></a>事件，然后调用<b>“创建按钮指示器”</b>方法，参数填写<b>“按钮2”</b>。</p>
+	<p align="left">将其赋值给<b>“指示器1”</b>变量。</p>
+	<p align="left">调用<b>“内容”</b>属性可设置内容，默认文本颜色为<b>“白色”</b>，底色为<b>“红色”</b>。</p>
+<p align="left">最后需要调用<b>“显示”</b>方法将其显示出来。</p>
+<p align="left"><b>“按钮_被单击”</b>事件下，判断<b>“按钮1”</b>被点击，可重新设置<b>“指示器”</b>内容。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/6.png" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">软件运行后，可以看到<b>“按钮2”</b>的右上角多了一个<b>“红底白字”</b>的提示文本。</p>
+	<p align="left">点击<b>“按钮1”</b>后可以更新提示文本。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/7.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="cjxtsq"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建新指示器</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“创建按钮指示器”</b>不同之处在于，本方法只能创建非按钮的指示器。</p>
+	<p align="left">返回值为当前对象，参数填写要创建指示器的窗口组件即可。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/8.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+	<p align="left">首先增加一个<b>“窗口组件指示器”</b>成员变量，设置参考。</p>
+	<p align="left">变量名设置为<b>“指示器2”</b>。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/9.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击设置这两个指示器的新标题。</p>
+	<p align="left">在<b>“通知_被创建”</b>事件下，分别给<b>“按钮2”</b>和<b>“文本框1”</b>同时创建指示器。</p>
+	<p align="left">然后依次设置内容，最后调用<b>“显示”</b>方法显示。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/10.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">运行软件可以看到<b>“按钮2”</b>的指示器并不是不能创建，而是隐藏在了<b>“按钮2”</b>的下面。</p>
+	<p align="left">这是因为<b>“安卓5.0”</b>,按钮会自动处于布局最顶层的缘故，所以不能用它来给按钮添加<b>“指示器”</b>。</p>
+	<p align="left"><b>“文本框1”</b>的指示器显示正常。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/11.gif" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="cjxtsq2"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建新指示器2</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“创建新指示器”</b>不同之处在于，本方法的参数类型为<b>“安卓窗口组件”</b>。</p>
+	<p align="left">本方法同样只能用于<b>“非按钮”</b>组件上，如果用于按钮组件，指示器并不会正常显示。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/12.png" ></p>
+</blockquote>
+
+	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在<b>“创建新指示器”</b>方法的基础上简单修改即可。</p>
+	<p align="left">当前方法参数值<b>“安卓窗口组件”</b>可通过<b>“组件名称.取安卓窗口组件()”</b>获得。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/13.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">程序运行后可以看到<b>“按钮2”</b>的指示器并没有正常显示。</p>
+	<p align="left">证明当前方法并不能用于<b>“按钮”</b>组件。</p>
+	<p align="left">而<b>“文本框”</b>的指示器一切正常。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/14.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="cjxtsq3"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建新指示器3</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“创建新指示器2”</b>不同之处在于。</p>
+	<p align="left">本方法的指示器，既可以创建在<b>“按钮”</b>组件上，又可以创建在<b>“非按钮”</b>的组件上。</p>
+	<p align="left">参数类型同样是<b>“安卓窗口组件”</b>。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/15.png" ></p>
+</blockquote>
+
+	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在<b>“通知_被创建”</b>下调用当前方法即可。</p>
+	<p align="left">当前方法参数值<b>“安卓窗口组件”</b>可通过<b>“组件名称.取安卓窗口组件()”</b>获。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/16.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">程序运行后可以看到<b>“按钮2”</b>和<b>“文本框1”</b>都正常显示指示器。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/17.gif" ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="czwbj"></a><a name="spwbj"></a>
+<font style="font-size: 12pt; font-weight:700">● 垂直外边距（读写）</font><br>
+<font style="font-size: 12pt; font-weight:700">● 水平外边距（读写）</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“垂直外边距（写）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，本属性值用来设置当前指示器的<b>“垂直外边距”</b>，单位为像素。</p>
+	<p align="left">如果<b>“指示器”</b>位于组件的<b>“左上/右上”</b>，则当前属性则表示距离<b>“顶边”</b>的距离。</p>
+	<p align="left">如果<b>“指示器”</b>位于组件的<b>“左下/右下”</b>，则当前属性则表示距离<b>“底边”</b>的距离。</p>
+	
+	<p align="left">本写属性必须在<b>“显示”</b>方法前调用。</p>
+	<p align="left">同名读属性，即读取当前的垂直外边距。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/18.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“水平外边距（写）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，本属性值用来设置当前指示器的<b>“水平外边距”</b>，单位为像素。</p>
+	<p align="left">如果<b>“指示器”</b>位于组件的<b>“左上/左下”</b>，则当前属性则表示距离<b>“左边”</b>的距离。</p>
+	<p align="left">如果<b>“指示器”</b>位于组件的<b>“右上/右下”</b>，则当前属性则表示距离<b>“右边”</b>的距离。</p>
+	
+	<p align="left">本写属性必须在<b>“显示”</b>方法前调用。</p>
+	<p align="left">同名读属性，即读取当前的水平外边距。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/19.png" ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+<p align="left">界面准备：</p>
+<blockquote>
+	<p align="left">设置<b>“文本框1”</b>的高度/宽度类型为<b>“匹配父组件高度/宽度”</b></p>
+	<p align="left"><img border="0" src="zhshiqi_images/20.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>和<b>“按钮2”</b>被点击后，分别读取当前的<b>“垂直/水平外边距”</b>读属性。</p>
+	<p align="left">在<b>“通知_被创建”</b>虚拟方法下，调用<b>“创建新指示器”</b>方法给<b>“文本框1”</b>创建指示器。</p>
+	<p align="left">然后设置内容，外边距，最后调用<b>“显示”</b>方法显示指示器。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/21.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">指示器默认显示在右上角，而本例程运行后可以看到，当前指示器偏移了一定像素。</p>
+	<p align="left">而偏移的这些距离，就是外边距属性产生的。</p>
+	<p align="left">点击<b>“按钮1”</b>和<b>“按钮2”</b>就会读取当前的指示器外边距。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/22.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="xsfw"></a>
+<font style="font-size: 12pt; font-weight:700">● 显示方位（读写）</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 位于组件左上(常)</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 位于组件右上(常)</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 位于组件左下(常)</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 位于组件右下(常)</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 位于组件中间(常)</font><br>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“显示方位（写）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本属性可以设置当前指示器的显示位置。</p>
+	<p align="left">属性值调用方式<b>“窗口组件指示器.位于组件XX”</b>方位，共有五个常量值。</p>
+	<p align="left">不设置本属性，默认显示在组件右上角。</p>
+	<p align="left">同名读属性，即读取当前的显示方位。</p>
+	<p align="left">注意：本属性必须在<b>“显示”</b>方法前调用。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/23.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后判断当前<b>“显示方位”</b>是否位于组件左上方，然后弹出对应提示。</p>
+	<p align="left">在<b>“通知_被创建”</b>方法下，<b>“显示”</b>方法前调用本属性即可。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/24.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">程序运行后可以看到<b>“指示器”</b>显示在组件的左上方。</p>
+	<p align="left"><b>“按钮1”</b>点击后，也成功判断当前的显示方位。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/25.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="xszt"></a>
+<font style="font-size: 12pt; font-weight:700">● 显示状态（读写）</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可以设置当前指示器是否显示。</p>
+	<p align="left">属性值为真则显示，否则隐藏。</p>
+	<p align="left">同名的读属性读取当前的显示状态。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/26.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“通知_被创建”</b>虚拟方法下，创建一个指示器。</p>
+	<p align="left"><b>“按钮1”</b>被点击时，调用当前写属性。</p>
+	<p align="left">属性值设置为<b>“取反(指示器1.显示状态)”</b>。</p>
+	<p align="left"><b>“取反”</b>方法的作用是翻转逻辑值。</p>
+
+	<p align="left"><img border="0" src="zhshiqi_images/27.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击可以实现<b>“隐藏”</b>和<b>“显示”</b>两种效果。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/28.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="bjys"></a>
+<font style="font-size: 12pt; font-weight:700">● 背景颜色（读写）</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">顾名思义，本属性的作用就是给当前<b>“指示器”</b>设置背景颜色。</p>
+  <p align="left">如果不设置默认为<b>“红色”</b>，可通过<b>“颜色类”</b>中定义的常量值设置。</p>
+  <p align="left">同名读属性，即读取当前设置的背景色。</p>
+  <p align="left">注意：本属性必须在<b>“显示”</b>方法前调用。</p>
+  <p align="left"><img border="0" src="zhshiqi_images/29.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">在<b>“按钮1”</b>被点击下，将背景颜色值显示在提示框。</p>
+	<p align="left">在<b>“通知_被创建”</b>虚拟方法下，创建一个新的指示器。</p>
+	<p align="left">设置<b>“内容”</b>、<b>“背景颜色”</b>，最后调用显示方法。</p>
+  <p align="left"><img border="0" src="zhshiqi_images/30.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+  <p align="left">软件启动后会看到当前指示器的背景颜色会变成<b>“黑色”</b>。</p>
+	<p align="left"><b>“按钮1”</b>被点击后会读取当前黑色的颜色值。</p>
+  <p align="left"><img border="0" src="zhshiqi_images/31.gif" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="yc"></a>
+<font style="font-size: 12pt; font-weight:700">● 隐藏</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，隐藏当前指示器。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/32.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“通知_被创建”</b>虚拟方法下，创建一个指示器。</p>
+	<p align="left">然后分别在<b>“按钮1”</b>和<b>“按钮2”</b>被点击下执行<b>“隐藏”</b>和<b>“显示”</b>方法。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/33.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">可以看到<b>“按钮1”</b>被点击后，指示器会隐藏。</p>
+	<p align="left"><b>“按钮2”</b>被点击后会重新显示出来。</p>
+<p align="left"><img border="0" src="zhshiqi_images/34.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="dhxs"></a><a name="dhyc"></a>
+<font style="font-size: 12pt; font-weight:700">● 动画显示</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 动画隐藏</font>
+<p align="left">&nbsp;</p>
+
+<p align="left"><b>“动画显示”</b>帮助文档</p>
+<blockquote>
+	<p align="left">通过本方法可以让当前指示器，带动画显示。</p>
+	<p align="left">显示效果为渐显，并且无法修改动画效果。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/35.png" ></p>
+  </blockquote> 
+	
+	<p align="left">&nbsp;</p>	
+<p align="left"><b>“动画隐藏”</b>帮助文档</p>
+<blockquote>
+	<p align="left">使用本方法可带动画隐藏，隐藏效果为渐隐，动画效果同样也无法修改。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/36.png" ></p>
+  </blockquote> 
+	
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">依然是在<b>“通知_被创建”</b>虚拟方法下创建指示器。</p>
+	<p align="left"><b>“按钮1”</b>和<b>“按钮2”</b> 被点击后分别调用<b>“动画隐藏”</b>和<b>“动画显示”</b>方法。</p>
+<p align="left"><img border="0" src="zhshiqi_images/37.png" ></p>
+  </blockquote> 
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>和<b>“按钮2”</b>点击的时候，可以看到指示器有明显的动画效果。</p>
+<p align="left"><img border="0" src="zhshiqi_images/38.gif" ></p>
+  </blockquote> 
+	
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="qhkszt"></a><a name="dhqhkszt"></a>
+<font style="font-size: 12pt; font-weight:700">● 切换可视状态</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 动画切换可视状态</font>
+<p align="left">&nbsp;</p>
+<p align="left">以上两个都是切换可视状态，不同之处是前者没有动画，后者有动画。</p>
+<p align="left">此处举例<b>“动画切换可视状态”</b>。</p>
+<p align="left">&nbsp;</p>	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">如果当前为显示状态，调用本方法可进行动画隐藏，否则相反。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/39.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在<b>“通知_被创建”</b>虚拟方法下创建指示器。</p>
+	<p align="left"><b>“按钮1”</b>点击后调用当前方法即可。</p>
+    <p align="left"><img border="0" src="zhshiqi_images/40.png" ></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可以看到<b>“按钮1”</b>被点击能够实现<b>“显示和隐藏”</b>两种效果。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/41.gif" >
+    </p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="zjsz"></a><a name="jssz"></a>
+<font style="font-size: 12pt; font-weight:700">● 增加数字</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 减少数字</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“增加数字”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">如果当前指示器显示的为数字，则调用本方法可直接增加指定数字。</p>
+	<p align="left">例如：指示器的数字为<b>“3”</b>，参数值填写<b>“2”</b>，最终显示<b>“5”</b>。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/42.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+<p align="left"><b>“减少数字”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法的作用是用来减少指定数字。</p>
+	<p align="left">例如：指示器的数字为<b>“3”</b>，参数值填写<b>“2”</b>，最终显示<b>“1”</b>。</p>
+    <p align="left"><img border="0" src="zhshiqi_images/43.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“通知_被创建”</b>虚拟方法下，创建指示器后设置内容，一定要设置为数字，否则无法进行加减。</p>
+	<p align="left">然后在<b>“按钮1”</b>和<b>“按钮2”</b>被点击下，分别调用<b>“增加数字”</b>和<b>“减少数字”</b>方法。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/44.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">最后可以看到<b>“按钮1”</b>被点击后，数字会增加2。</p>
+    <p align="left"><b>“按钮2”</b>被点击数字会减少1。</p>
+	<p align="left"><img border="0" src="zhshiqi_images/45.gif" >
+    </p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,131 @@
+
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.压缩解压数据<span>(可收缩)</span></h6></li>
+		<ol id="new1">
+          <li><blockquote><a href="#zipyasuolei">1.本类说明</a></blockquote></li>
+          <li><blockquote><a href="#yasuo">2.ZIP压缩类</a></blockquote></li>
+          <li><blockquote><a href="#jieya">3.ZIP解压类</a></blockquote></li>
+		</ol>
+	
+	</ol>
+</ul>
+</div>
+
+
+<p align="left">
+<h2>ZIP压缩解压操作实例讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+<a name="zbgz"></a>    
+     
+<font style="font-size: 12pt; font-weight:700">● 帮助说明</font><br/>
+<br/>
+<blockquote>
+<p align="left"><font color="#F70408">本教程所有方法均位于<strong>“数据压缩解压及JAR访问支持”</strong>模块中。</font></p>
+ <!-- <p align="left"><img border="0" src="img/1.png" ></p>-->
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<h2>一、压缩解压数据</h2>
+<p align="left">&nbsp;</p>
+<a name="zipyasuolei"></a>
+<font style="font-size: 12pt; font-weight:700">● 本分类说明</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">压缩解压操作由ZLIB压缩库提供压缩解压支持，分别为<b>“ZIP压缩类”</b>和<b>“ZIP解压类”</b>。</p>
+	<p align="left">注意：此压缩并非打包成ZIP包，只是利用zip压缩数据算法进行数据压缩，如果要进行打包zip，请使用<strong>“解压缩工具类”</strong>。</p>
+	<p align="left"><img border="0" src="img/259.png" ></p>
+	<p align="left"><img border="0" src="img/260.png" > </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 压缩解压具体实现实例</font><br/>
+<p align="left">&nbsp;</p>
+	<a name="yasuo"></a>
+<p align="left"><b>“ZIP压缩类”</b>使用该方法如下：</p>
+<blockquote>
+    <p align="left">1、<b>“Ctrl+M”</b>新建一个方法（名称随意），增加一个参数类型为<b>“字节[]”</b>，返回类型填写<b>“字节[]”</b>。</p>
+  <p align="left">2、调用<b>“创建对象()”</b>方法创建当前压缩对象，参数填写<b>“ZIP亚压缩类.XXX”</b>常量值。</p>
+	<blockquote>
+    	<p align="left">全部常量如下图： </p>
+    	<p align="left"><img border="0" src="img/262.png" ></p>
+	</blockquote>	
+  <p align="left">3、调用<b>“重置()”</b>方法，对当前对象进行清空数据操作，本方法无参数。</p>
+  <p align="left">4、调用<b>“设置输入数据()”</b>方法，设置要压缩的数据，本方法只有一个参数。</p>
+  <p align="left">5、如果要给当前压缩的数据设置密码，务必调用<b>“设置字典()”</b>方法，本方法的参数为<b>“字节数组”</b>。</p>
+  <p align="left">6、设置数据后，务必调用<b>“完毕()”</b>方法结束所有操作。</p>
+  <p align="left">7、创建<b>“字节数组输出流”</b>对象，成员数为<b>“要压缩的数据”</b>成员数。</p>
+  <p align="left">8、定义<b>“临时缓冲”</b>字节数组变量，用于临时存储压缩数据。</p>
+  <p align="left">9、利用<b>“判断循环()”</b>方法，持续判断当前压缩数据是否到达数据尾部。</p>
+  <p align="left">10、循环方法内调用<b>“压缩()”</b>方法，压缩数据到<b>“临时缓冲”</b>中，返回值为压缩后的字节数。</p>
+  <p align="left">11、利用<b>“字节输出流”</b>写出被压缩的数据。</p>
+  <p align="left">12、<b>“判断循环”</b>结束后，调用<b>“字节输出流.取已写入数据()”</b>方法，读取所有压缩的数据。</p>
+    <p align="left">13、当不使用当前压缩对象后，务必调用<b>“关闭()”</b>方法关闭对象。</p>
+    <p align="left">14、最后返回压缩后的数据。</p>
+	<p align="left"><img border="0" src="img/261.png" ></p>
+</blockquote>
+	<a name="jieya"></a>
+	<p align="left"><b>“ZIP解压类”</b>使用该方法如下：</p>
+<blockquote>
+    <p align="left">1、解压类的用法和压缩类基本一致，只有一点需要注意。</p>
+    <p align="left">2、在使用<b>“是否需要预设字典”</b>属性判断是否有密码之前，需要执行<b>“解压()”</b>方法。</p>
+    <p align="left">3、只有这样才能判断是否有密码，否则程序会崩溃闪退。</p>
+	<p align="left"><img border="0" src="img/263.png" ></p>
+</blockquote>
+	
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击：</p>
+	<blockquote>
+    	<p align="left">1、定义<b>“文本数据”</b>变量，初始值导入一串文本。</p>
+    	<p align="left">2、定义类型为<b>“字节[]”</b>的变量，调用定义的<b>“压缩数据()”</b>方法赋值给此变量。</p>
+		<blockquote>
+			<p align="left">通过<b>“文本到字节数组()”</b>方法可将当前文本数据，转换成字节数组。</p>
+		</blockquote>	
+    	<p align="left">3、输出原数据长度和压缩后数据长度做对比。</p>
+			
+    	<p align="left">4、最后可调用<a href="j_file.htm#wj_xcwj"><b>“写出文件()”</b></a>方法，写出压缩后的数据。</p>
+	</blockquote>
+	<p align="left"><b>“按钮2”</b>被点击：</p>
+	<blockquote>
+    	<p align="left">1、定义类型为<b>“字节[]”</b>的变量，调用<a href="j_file.htm#wj_drwj"><b>“读入文件()”</b></a>方法，读取被压缩的数据，赋值给此变量。</p>
+    	<p align="left">2、最后输出被解压的数据。</p>
+	</blockquote>
+	<p align="left"><img border="0" src="img/264.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/265.gif" ></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>对话框操作</h4></li>
+	<ol>
+    <li><blockquote><a href="#zbgz">0.准备工作</a></blockquote></li>     
+	
+			<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new9')" >一.字符选择对话框类<span>(可收缩)</span></h6></li>
+		<ol id="new9">
+			<li><blockquote><a href="#zfcj">1.创建</a></blockquote></li>
+            <li><blockquote><a href="#zfcj">2.按钮被单击（事件）</a></blockquote></li>
+		</ol>		
+        
+ 							
+	</ol>
+</ul>
+</div>
+
+
+<p align="left">
+<h2>字符选择对话框类操作实例讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 辅助说明</font><br/>
+<br/>
+<blockquote>
+<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 准备一个界面</font><br/>
+<p align="left">&nbsp;</p>
+
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">打开窗口设计器，放两个<b>“按钮”</b>，右侧属性文本分别起名<b>“按钮1”</b>和<b>“按钮2”</b>。</p>
+	<p align="left"><img border="0" src="dhk_images/2.png" ></p>
+    <p align="left">保存布局后，右键<b>“按钮”</b>，添加<b>“按钮被单击事件接收方法”</b>，添加完毕后<b>如下图</b>所示。</p>
+    <p align="left"><img border="0" src="dhk_images/02.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<h2>一、字符选择对话框类</h2>
+<p align="left">&nbsp;</p>
+
+
+<font style="font-size: 12pt; font-weight:700">● 创建</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 按钮被单击（事件）</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“创建”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">创建<b>“字符选择对话框类”</b>对象，并且返回当前类。</p>
+	<p align="left">参数1：通常填写<b>“本对象”</b>。</p>
+    <p align="left">参数2：填写你想要显示的文本。</p>
+    <p align="left"><img border="0" src="dhk_images/129.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“按钮被单击”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">当<b>“字符”</b>被选择的时候触发本事件。</p>
+	<p align="left">触发后立刻返回当前选择<b>“字符”</b>，如果选择的是<b>“关闭按钮”</b>则返回<b>“空文本”</b>。</p>
+    <p align="left"><img border="0" src="dhk_images/130.png" ></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写（1）：</b></p>
+<blockquote>
+	<p align="left">定义一个类型为<b>“字符选择对话框类”</b>的成员变量，设置参考。</p>
+    <p align="left">利用本方法创建对象后，赋值给定义的<b>“字符对话框”</b>成员变量。</p>
+    <p align="left">随后<b>“挂接事件”</b>，最后调用<b>“显示”</b>方法显示。</p>
+	
+    <p align="left"><img border="0" src="dhk_images/131.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写（2）：</b></p>
+<blockquote>
+	<p align="left">添加<b>“字符选择对话框类_按钮被单击”</b>接收事件。</p>
+    <p align="left">添加后判断来源对象，随后利用<b>“文本相等”</b>方法，判断<b>“字符”</b>是否为空。</p>
+    <p align="left">如果为<b>“空文本”</b>就<b>“关闭”</b>对话框。</p>
+	<p align="left">否则就用<b>“提示框”</b>显示<b>“被选中字符”</b>。</p>
+    <p align="left"><img border="0" src="dhk_images/132.png" ></p>
+   
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">点击<b>“按钮1”</b>后可以看到，设置的文本，全部拆成一个一个的<b>“字符”</b>显示，每个字符点击后都会<b>“返回文本”</b>。</p>
+    <p align="left">点击<b>“关闭按钮”</b>就会关闭当前对话框。</p>
+	<p align="left"><img border="0" src="dhk_images/133.gif" >
+    </p>
+</blockquote>
+
+</body>
+</html>

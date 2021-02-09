@@ -1,0 +1,319 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new5')" >一.纵向滚动容器<span>(可收缩)</span></h6></li>
+		<ol id="new5">
+			<li><blockquote><a href="#zxgdrq">1.效果演示</a></blockquote></li>
+			<li><blockquote><a href="#zhichigundong">2.支持滚动监听(写)</a></blockquote></li>
+			<li><blockquote><a href="#zhichigundong">3.滚动位置已改变(事件)</a></blockquote></li>
+			<li><blockquote><a href="#dibu">4.已滚动至底部(事件)</a></blockquote></li>
+			<li><blockquote><a href="#dingbu">5.已滚动至顶部(事件)</a></blockquote></li>
+			<li><blockquote><a href="#sfdingbu">6.是否处于顶部(读)</a></blockquote></li>
+			<li><blockquote><a href="#sfdibu">7.是否处于底部(读)</a></blockquote></li>
+			<li><blockquote><a href="#gundong">8.滚动到顶/底部</a></blockquote></li>
+			<li><blockquote><a href="#phgd">9.平滑滚动内容</a></blockquote></li>
+			<li><blockquote><a href="#phgddao">10.平滑滚动内容到</a></blockquote></li>
+			<li><blockquote><a href="#yincang">11.隐藏滚动条</a></blockquote></li>
+			<li><blockquote><a href="#huakuaitu">12.修改滑块图</a></blockquote></li>
+		</ol>
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>纵向滚动容器实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+
+		
+<p align="left">&nbsp;</p>
+	<font style="font-size: 12pt; font-weight:700">● 辅助说明</font><br/>
+     	<blockquote>
+		<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+	</blockquote>
+<p align="left">&nbsp;</p>	<a name="zxgdrq"></a>
+<h2>一、纵向滚动容器</h2>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 效果演示</font>	
+<p align="left">&nbsp;</p>
+<p align="left">界面准备：</p>	
+<blockquote>
+	<p align="left">打开启动类界面设计器，设计如下界面。</p>
+	<p align="left">在<b>“纵向滚动容器”</b>内嵌套<b>“线性布局器”</b>，在该布局器内拖放多个按钮，以实现纵向滚动效果。</p>
+	<p align="left"><img src="layout_images/75.png" width="741" height="612"  border="0" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本组件就是用来实现纵向滚动效果，它和<b>“横向滚动容器”</b>一样，容器内只能拖放一个组件。</p>
+	<p align="left">可通过线性布局器来实现承载更多的组件。</p>
+	<p align="left">本组件的所有方法和<b>“横向滚动容器”</b>相似，不同之处就是方向不同。</p>
+	<p align="left"><img border="0" src="layout_images/76.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left"><img border="0" src="layout_images/77.gif" ></p>
+</blockquote>	
+	
+	<a name="zhichigundong"></a><p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 支持滚动监听(写)</font>	
+<font style="font-size: 12pt; font-weight:700">● 滚动位置已改变(事件)</font>	
+<p align="left">&nbsp;</p>
+<p align="left">“支持滚动监听”帮助文档：</p>	
+<blockquote>
+	<p align="left">将本属性设置为真，可监听纵向滚动容器的所有滚动事件。</p>
+	<p align="left"><img src="zong_images/1.png"  border="0" ></p>
+</blockquote>
+    <p align="left">&nbsp;</p>
+<p align="left">“滚动位置已改变”帮助文档：</p>	
+<blockquote>
+	<p align="left">设置“支持滚动监听=真”后，本事件才能触发。</p>
+	<p align="left">注意：因为使用的是纵向滚动容器，所以此事件的参数只有“垂直原点”和“之前垂直原点”有效。</p>
+	<p align="left"><img src="zong_images/2.png"  border="0" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、在“纵向滚动容器1”的属性栏，设置“支持滚动监听=真”。</p>
+	<p align="left"><img border="0" src="zong_images/3.png" ></p>
+    <p align="left">2、添加“纵向滚动容器_滚动位置已改变”事件，输出垂直原点到标题。</p>
+	<p align="left"><img border="0" src="zong_images/4.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终当滚动容器被滚动时，垂直原点将会显示在窗口标题上。</p>
+	<p align="left"><img border="0" src="zong_images/5.gif" ></p>
+</blockquote>	
+    
+    <a name="dibu"></a><p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 已滚动至底部(事件)</font>	
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>	
+<blockquote>
+	<p align="left">当设置“支持滚动监听=真”后可监听本事件。</p>
+	<p align="left"><img src="zong_images/6.png"  border="0" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加“纵向滚动容器_已滚动至底部”事件，并判断来源后弹出提示框。</p>
+	<p align="left"><img border="0" src="zong_images/7.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">当纵向滚动容器滚动到底部后，会弹出提示，证明事件被触发。</p>
+	<p align="left"><img border="0" src="zong_images/8.gif" ></p>
+</blockquote>
+    
+    <a name="dingbu"></a><p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 已滚动至顶部</font>	
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>	
+<blockquote>
+	<p align="left">想要触发本事件，必须设置“支持滚动监听=真”。</p>
+	<p align="left"><img src="zong_images/9.png"  border="0" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加“纵向滚动容器_已滚动至底部”事件，判断来源对象后弹出提示框。</p>
+	<p align="left"><img border="0" src="zong_images/10.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终可以看到当滚动容器滚动到顶部后，会触发本事件弹出提示。</p>
+	<p align="left"><img border="0" src="zong_images/11.gif" ></p>
+</blockquote>
+    
+    <a name="sfdingbu"></a><p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 是否处于顶部</font>	
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>	
+<blockquote>
+	<p align="left">当纵向滚动容器位于顶部时，本属性返回真，否则返回假。</p>
+	<p align="left"><img src="zong_images/12.png"  border="0" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">“按钮1”被点击后，判断当前属性的返回值来修改窗口标题。</p>
+	<p align="left"><img border="0" src="zong_images/13.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终可以看到，当容器滚动后，再次点击按钮，将会提示“没有在顶部”。</p>
+	<p align="left"><img border="0" src="zong_images/14.gif" ></p>
+</blockquote>
+    
+    <a name="sfdibu"></a><p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 是否处于底部</font>	
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>	
+<blockquote>
+	<p align="left">当纵向滚动容器位于最底部时，本方法返回真，否则返回假。</p>
+	<p align="left"><img src="zong_images/15.png"  border="0" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮被点击后，判断本属性的返回值是否为真，根据结果修改窗口标题。</p>
+	<p align="left"><img border="0" src="zong_images/16.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终可以看到，当容器滚动后，再次点击按钮，将会提示“没有在底部”。</p>
+	<p align="left"><img border="0" src="zong_images/17.gif" > </p>
+</blockquote>
+    
+    <a name="gundong"></a><p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 滚动到顶/底部</font>	
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>	
+<blockquote>
+	<p align="left">想要实现滚动到顶部或底部功能，需要使用“光标首尾滚动()”方法。</p>
+	<p align="left">本方法只有一个参数，填写-1滚动到顶部，填写1滚动到底部。</p>
+	<p align="left"><img src="zong_images/18.png"  border="0" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">“按钮1”被点击后调用本方法滚动到底部。</p>
+	<p align="left">“按钮2”被点击后调用本方法滚动到顶部。</p>
+	<p align="left"><img border="0" src="zong_images/19.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left"><img border="0" src="zong_images/20.gif" ></p>
+</blockquote>
+    
+    <a name="phgd"></a><p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 平滑滚动内容</font>	
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>	
+<blockquote>
+	<p align="left">本方法的作用可以在滚动容器原位置的基础上，进行递增滚动操作。</p>
+	<p align="left">参数1：因为当前是纵向滚动容器，所以本参数直接提供0即可。</p>
+	<p align="left">参数2：提供要递增的值。</p>
+	<p align="left"><img src="zong_images/21.png"  border="0" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、按钮被点击后滚动20像素。</p>
+	<p align="left">2、添加“纵向滚动容器_滚动位置已改变”事件，输出坐标到窗口标题。</p>
+	<p align="left"><img border="0" src="zong_images/22.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终按钮1点击后，可以看到垂直原点移动了20像素。</p>
+	<p align="left"><img border="0" src="zong_images/23.gif" ></p>
+</blockquote>
+    
+    <a name="phgddao"></a><p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 平滑滚动内容到</font>	
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>	
+<blockquote>
+	<p align="left">本方法的作用是直接滚动到指定像素位置。</p>
+	<p align="left">参数1：因为当前组件是纵向滚动容器，所以本参数直接提供0即可。</p>
+	<p align="left">参数2：提供要滚动到的像素位置。</p>
+	<p align="left"><img src="zong_images/24.png"  border="0" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、按钮被点击后，滚动到20像素的位置。</p>
+	<p align="left">2、添加“纵向滚动容器_滚动位置已改变”事件，输出坐标到窗口标题。</p>
+	<p align="left"><img border="0" src="zong_images/25.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终按钮被点击后，将会滚动到20像素的位置。</p>
+	<p align="left"><img border="0" src="zong_images/26.gif" ></p>
+</blockquote>
+    
+    <a name="yincang"></a><p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 隐藏滚动条</font>	
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>	
+<blockquote>
+	<p align="left">纵向滚动容器想要隐藏滚动条，需要使用“窗口组件”的“允许垂直滚动条”属性。</p>
+	<p align="left">设置本属性为假即可隐藏滚动条，否则显示滚动条。</p>
+	<p align="left"><img src="zong_images/27.png"  border="0" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮被点击后设置本属性为假，即可隐藏滚动条。</p>
+	<p align="left"><img border="0" src="zong_images/28.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">可以看到当按钮被点击后，滚动条将会被隐藏。</p>
+	<p align="left"><img border="0" src="zong_images/29.gif" ></p>
+</blockquote>
+    
+
+<a name="huakuaitu"></a><p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 修改滑块图</font>	
+<p align="left">&nbsp;</p>
+<p align="left">界面设置如下图：</p>	
+<blockquote>
+	<p align="left">打开界面设计器选中要修改滑块图的纵向滚动容器组件。</p>
+	<p align="left">在属性栏就可以看到“垂直滚动条滑块图”和“垂直滚动条滑轨图”，浏览引用图片后就可以进行修改操作。</p>
+	<p align="left"><img src="zong_images/30.png"  border="0" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left"><img border="0" src="zong_images/31.gif" ></p>
+</blockquote>	
+	
+    
+    
+    
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

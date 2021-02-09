@@ -1,0 +1,145 @@
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+	
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>自定义列表框组件</h4></li>
+	<ol>
+
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new5')" >一.自定义列表框<span>(可收缩)</span></h6></li>
+		<ol id="new5">
+			<li><blockquote><a href="#zdylbk">1.列表项添加</a></blockquote></li>
+			<li><blockquote><a href="#zdyqdbxmst">2.取列表项信息</a></blockquote></li>
+			<li><blockquote><a href="#zdyspq">3.列表内组件被点击</a></blockquote></li>
+		</ol>
+
+
+	</ol>
+</ul>
+</div>	 
+	
+<p align="left">
+<h2>自定义列表框组件操作实例讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 帮助说明</font>		
+<blockquote>
+	<p align="left">本组件和<a href="a_ctrl_layout.htm#xfuffw"><b>“自定义堆叠器”</b></a>用法一致，此处做简单演示。</p>
+	<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+</blockquote>		
+	<p align="left">&nbsp;</p>
+	<a name="zdylbk"></a>
+<font style="font-size: 12pt; font-weight:700">● 列表项添加</font>	
+<p align="left">&nbsp;</p>
+<p align="left">界面准备：</p>	
+<blockquote>
+	<p align="left">打开启动类<b>“界面设计器”</b>，设计如下界面。</p>
+	<p align="left">依次是<b>“按钮1”</b>和<b>“自定义列表框”</b>。</p>
+	<p align="left"><img src="zydlb_images/169.png"  ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+	<p align="left">1、新增一个类，类名为<b>“列表数据”</b>。</p>
+	<p align="left">2、增加三个成员变量，类型分别为<b>“可绘制资源”</b>和<b>“文本型”</b>。</p>
+	<p align="left"><img border="0" src="zydlb_images/170.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+	<p align="left">1、定义三个变量，类型分别为<b>“列表数据”</b>，<b>“可绘制资源”</b>和<b>“整数”</b>。</p>
+	<p align="left">2、通过<b>“列表数据1”</b>分别设置其数据。</p>
+	<p align="left">3、最后通过<b>“适配器.插入项目”</b>方法插入<b>“列表数据1”</b>。</p>
+	<p align="left"><img border="0" src="zydlb_images/171.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（3）：</p>
+<blockquote>
+	<p align="left">1、添加<b>“自定义列表框_取对象项目视图”</b>接收事件。</p>
+	<p align="left">2、定义五个变量，类型分别为<b>“列表数据”</b>，<b>“线性布局器”</b>，<b>“图片框”</b>，<b>“文本框”</b>和<b>“按钮1”</b>。</p>
+	<p align="left">3、通过<b>“项目信息.项目数据对象”</b>强转<b>“列表数据”</b>后，可取出<b>“插入项目()”</b>方法插入的数据。</p>
+	<p align="left">4、通过<b>“布局器1”</b>分别添加这三个子组件，并设置尺寸信息。</p>
+	<p align="left">5、添加后分别设置这三个组件的数据为<b>“列表数据1”</b>的三种数据。</p>
+	<p align="left">6、最后利用<b>“项目信息.所返回组件”</b>可返回当前项目布局。</p>
+	<p align="left">注意：当列表内存在<b>“按钮”</b>组件时，务必设置<b>“布局器”</b>的子组件焦点属性。</p>
+	<p align="left"><img border="0" src="zydlb_images/172.png" ></p>
+</blockquote>	
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left"><img border="0" src="zydlb_images/173.gif" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<a name="zdyqdbxmst"></a>
+<font style="font-size: 12pt; font-weight:700">● 取列表项信息</font>	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、新增一个类，类名为<b>“列表数据”</b>。</p>
+	<p align="left">2、增加三个成员变量，类型分别为<b>“可绘制资源”</b>和<b>“文本型”</b>。</p>
+	<p align="left"><img border="0" src="zydlb_images/174.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)： </p>
+<blockquote>
+	<p align="left"><img border="0" src="zydlb_images/175.gif" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<a name="zdyspq"></a>
+<font style="font-size: 12pt; font-weight:700">● 列表内组件被点击</font>	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+	<p align="left">1、在<b>“取对象项目视图”</b>事件下，调用<b>“挂接事件”</b>方法挂接事件。</p>
+	<p align="left">2、<b>“项目信息.项目索引位置”</b>即当前项目的索引位置，本参数将传递到<b>“被单击”</b>事件下的<b>“标记值”</b>参数中。</p>
+	<p align="left">3、除了<b>“按钮类”</b>组件外，其它组件都需要设置<b>“支持单击”</b>属性。</p>
+	<p align="left"><img border="0" src="zydlb_images/176.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+	<p align="left">1、<b>“按钮_被单击”</b>事件下，增加<b>“否则”</b>分支。</p>
+	<p align="left">2、直接通过<b>“标记值”</b>参数就可以取出<b>“挂接事件”</b>传递的项目索引。</p>
+	<p align="left"><img border="0" src="zydlb_images/177.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（3）：</p>
+<blockquote>
+	<p align="left">添加<b>“图片框_被单击”</b>事件，同样也通过<b>“标记值”</b>就可取出项目索引。</p>
+	<p align="left"><img border="0" src="zydlb_images/178.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)： </p>
+<blockquote>
+	<p align="left"><img border="0" src="zydlb_images/179.gif" ></p>
+</blockquote>	
+
+
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

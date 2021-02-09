@@ -1,0 +1,102 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		 <li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new5')" >一.绘制过滤器类<span>(可收缩)</span></h6></li>
+		<ol id="new5">
+			<li><blockquote><a href="#hzglql">1.本类说明</a></blockquote></li>  
+			<li><blockquote><a href="#cjbzglq">2.创建标志过滤器</a></blockquote></li>  
+    		<li><blockquote><a href="#cjfjcglq">3.创建反锯齿过滤器</a></blockquote></li>
+		</ol>
+		
+		
+	</ol>
+</ul>
+</div>	
+
+<p align="left">
+<h2>绘制过滤器类实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+  	<p align="left">本来的主要作用就是创建过滤器，针对绘制图片或者图形时，过滤某些不想要的东西。</p>
+	<p align="left">总共有两个方法，可分别过滤不同的东西。</p>
+	<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+	<p align="left"><img border="0" src="hb_images/346.png" >
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="cjbzglq"></a>
+	<font style="font-size: 12pt; font-weight:700">● 创建标志过滤器</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left"><b>“标志过滤器”</b>也是过滤器的一种，通过<b>“画笔标志类”</b>中定义的常量值可以进行<b>“标志”</b>指定。</p>
+	<p align="left">调用方式：画笔标志类.XXX，可以多个标志用<b>“加号”</b>叠加在一起。</p>
+	<p align="left">例如：画笔标志类.反锯齿+画笔标志类.位图过滤。</p>
+	<p align="left">参数1：填写要清理的标志。</p>
+	<p align="left">参数2：填写想要设置的标志。</p>
+	<p align="left"><img border="0" src="hb_images/347.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义<b>“画笔类”</b>变量，设置<b>“字体尺寸”</b>，<b>“下划线文本”</b>和<b>“颜色”</b>三个属性。</p>
+	<p align="left">随后在<b>“异步绘制帧”</b>事件下，执行<b>“画文本”</b>方法。</p>
+	<p align="left">随后调用<b>“绘制过滤器类.创建标志过滤器()”</b>赋值给<b>“画板对象.绘制过滤器”</b>写属性。</p>
+	<p align="left"><b>“创建标志过滤器”</b>方法内。</p>
+	<p align="left">参数1：填写<b>“画笔标志类.下划线文本”</b>，意思就是清理文本下划线。</p>
+	<p align="left">参数2：设置粗体，穿透线和反锯齿标志。</p>
+
+	<p align="left"><img border="0" src="hb_images/348.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最后结果，第二次绘制文本时<b>“下划线消失”</b>，并且附加了<b>“粗体”</b>，<b>“穿透线”</b>和<b>“反锯齿”</b>三个属性。</p>
+	<p align="left"><img border="0" src="hb_images/349.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="cjfjcglq"></a>
+	<font style="font-size: 12pt; font-weight:700">● 创建反锯齿过滤器</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义就是<b>“创建反锯齿过滤器”</b>，创建后可以清除绘制时产生的锯齿。</p>
+	<p align="left">代码编写参考：<a href="#hzglqx"><b>“绘制过滤器”</b></a>。</p>
+	
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

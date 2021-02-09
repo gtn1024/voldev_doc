@@ -1,0 +1,1216 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+	<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+</head>
+
+<body>
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>流对象操作</h4></li>
+	<ol>
+		<li><blockquote><a href="#liuduixiang">1.流对象说明</a></blockquote></li>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new12')" >一.写出流<span>(可收缩)</span></h6></li>
+				<ol id="new12">
+				<li><blockquote><a href="#xiechuliu">1.本类说明</a></blockquote></li>
+				<li><blockquote><a href="#cjwjxcl">2.创建文件写出流</a></blockquote></li>
+				<li><blockquote><a href="#cjwjxcl">3.添加文本</a></blockquote></li>
+				<li><blockquote><a href="#cjwjxcl">4.关闭</a></blockquote></li>
+				<li><blockquote><a href="#lxczf">5.写出字符</a></blockquote></li>
+				<li><blockquote><a href="#lxczfsz">6.写出字符数组</a></blockquote></li>
+				<li><blockquote><a href="#lxczfsz">7.写出字符数组1</a></blockquote></li>
+				<li><blockquote><a href="#lxcwb">8.写出文本</a></blockquote></li>
+				<li><blockquote><a href="#lxcwb">9.写出文本1</a></blockquote></li>
+				</ol>
+			<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new13')" >二.字符数组写出流<span>(可收缩)</span></h6></li>
+				<ol id="new13">		
+				<li><blockquote><a href="#zfszxcl">1.本类说明</a></blockquote></li>
+				<li><blockquote><a href="#cjdzfsz">2.创建</a></blockquote></li>
+				<li><blockquote><a href="#cjdzfsz">3.到字符数组</a></blockquote></li>
+				<li><blockquote><a href="#zfxdl">4.写到流</a></blockquote></li>
+				<li><blockquote><a href="#zfqhcqcc">5.取缓冲区尺寸</a></blockquote></li>
+				<li><blockquote><a href="#zflcz">6.重置</a></blockquote></li>
+				</ol>
+			<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new15')" >三.缓冲写出流<span>(可收缩)</span></h6></li>
+				<ol id="new15">		
+				<li><blockquote><a href="#hcxcl">1.本类说明</a></blockquote></li>
+				<li><blockquote><a href="#hclcj">2.创建</a></blockquote></li>
+				<li><blockquote><a href="#hcxchh">3.写出换行</a></blockquote></li>
+				</ol>
+			<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new14')" >四.打印写出流<span>(可收缩)</span></h6></li>
+				<ol id="new14">		
+				<li><blockquote><a href="#dyxcl">1.本类说明</a></blockquote></li>
+				<li><blockquote><a href="#dycj">2.创建</a></blockquote></li>
+				<li><blockquote><a href="#dycj">3.创建1</a></blockquote></li>
+				<li><blockquote><a href="#dycj">4.创建2</a></blockquote></li>
+				<li><blockquote><a href="#dycj">5.创建3</a></blockquote></li>
+				<li><blockquote><a href="#dycj">6.打印数据</a></blockquote></li>
+				<li><blockquote><a href="#dycj">7.检查错误</a></blockquote></li>
+				<li><blockquote><a href="#dyhuanh">8.打印换行</a></blockquote></li>
+				<li><blockquote><a href="#dygshsj">9.打印格式数据</a></blockquote></li>
+				</ol>
+		
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new16')" >五.管道读/写流<span>(可收缩)</span></h6></li>
+				<ol id="new16">		
+				<li><blockquote><a href="#gddrxcl">1.本分类说明</a></blockquote></li>
+				<li><blockquote><a href="#gddxl">2.示例程序讲解</a></blockquote></li>
+				</ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new17')" >六.读入流<span>(可收缩)</span></h6></li>
+				<ol id="new17">		
+				<li><blockquote><a href="#duruliu">1.本类说明</a></blockquote></li>
+				<li><blockquote><a href="#drlzfdr">2.创建字符数组读入流</a></blockquote></li>
+				<li><blockquote><a href="#drlzfdr">3.读入字符</a></blockquote></li>
+				<li><blockquote><a href="#drlzfdr">4.关闭</a></blockquote></li>
+				<li><blockquote><a href="#cjwjdrl">5.创建文件读入流</a></blockquote></li>
+				<li><blockquote><a href="#cjwjdrl">6.读入文本</a></blockquote></li>
+				<li><blockquote><a href="#cjwbnrdrl">7.创建文本内容读入流</a></blockquote></li>
+				<li><blockquote><a href="#tzdbjwz">8.标记</a></blockquote></li>
+				<li><blockquote><a href="#tzdbjwz">9.跳转到标记</a></blockquote></li>
+				<li><blockquote><a href="#tzdbjwz">10.是否支持标记(读)</a></blockquote></li>
+				<li><blockquote><a href="#ldxtiaoguo">11.跳过</a></blockquote></li>
+				</ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new18')" >七.缓冲读入流<span>(可收缩)</span></h6></li>
+				<ol id="new18">		
+				<li><blockquote><a href="#hcdrl">1.本类说明</a></blockquote></li>
+				<li><blockquote><a href="#hcdrlcj">2.创建</a></blockquote></li>
+				<li><blockquote><a href="#hcdrlcj">3.读入一行</a></blockquote></li>
+				</ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new19')" >八.行号读入流<span>(可收缩)</span></h6></li>
+				<ol id="new19">		
+				<li><blockquote><a href="#hhdrl">1.本类说明</a></blockquote></li>
+				<li><blockquote><a href="#cjhhdrl">2.创建行号读入流</a></blockquote></li>
+				<li><blockquote><a href="#cjhhdrl">3.取当前行号</a></blockquote></li>
+				</ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new20')" >九.文件输入流<span>(可收缩)</span></h6></li>
+				<ol id="new20">		
+				<li><blockquote><a href="#lwjsrl">1.本类说明</a></blockquote></li>
+				<li><blockquote><a href="#wjsrlcj">2.创建</a></blockquote></li>
+				<li><blockquote><a href="#wjsrlcj">3.读入数据</a></blockquote></li>
+				<li><blockquote><a href="#wjcjhcl">4.创建缓冲流</a></blockquote></li>
+				<li><blockquote><a href="#wjcjhcl">5.读入指定尺寸数据</a></blockquote></li>
+				<li><blockquote><a href="#wjsrlbj">6.标记位置</a></blockquote></li>
+				<li><blockquote><a href="#wjsrlbj">7.跳回标记位置</a></blockquote></li>
+				<li><blockquote><a href="#wjsrlbj">9.跳过</a></blockquote></li>
+				<li><blockquote><a href="#wjsrlbj">10.支持位置标记(读)</a></blockquote></li>
+				</ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new21')" >十.字节数组输入流<span>(可收缩)</span></h6></li>
+				<ol id="new21">		
+				<li><blockquote><a href="#zjszsrl">1.本类说明</a></blockquote></li>
+				<li><blockquote><a href="#zjszcjsrl">2.创建</a></blockquote></li>
+				<li><blockquote><a href="#zjszcjsrl">3.创建2</a></blockquote></li>
+				</ol>
+		
+	
+				<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new22')" >十一.管道输入/出流<span>(可收缩)</span></h6></li>
+				<ol id="new22">		
+				<li><blockquote><a href="#gdsrscl">1.管道输入/出流</a></blockquote></li>
+				</ol>
+		
+			
+				<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new23')" >十二.文件输出流<span>(可收缩)</span></h6></li>
+				<ol id="new23">		
+				<li><blockquote><a href="#wjsrl">1.本类说明</a></blockquote></li>
+				<li><blockquote><a href="#wjsrlxcsj">2.创建</a></blockquote></li>
+				<li><blockquote><a href="#wjsrlxcsj">2.写出数据2</a></blockquote></li>
+				<li><blockquote><a href="#wjsrlxcsj">3.写出缓存</a></blockquote></li>
+				<li><blockquote><a href="#wjsrlxcsj">4.关闭</a></blockquote></li>
+				</ol>
+		
+				<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new24')" >十三.字节数组输出流<span>(可收缩)</span></h6></li>
+				<ol id="new24">		
+				<li><blockquote><a href="#zjszscl">1.本类说明</a></blockquote></li>
+				<li><blockquote><a href="#zjszsclcj">2.创建</a></blockquote></li>
+				<li><blockquote><a href="#zjszsclcj">3.取已写入数据</a></blockquote></li>
+				<li><blockquote><a href="#qyxrsjcc">4.取已写入文本</a></blockquote></li>
+				<li><blockquote><a href="#qyxrsjcc">5.取已写入数据尺寸</a></blockquote></li>
+				<li><blockquote><a href="#ziszsclxdl">6.写到流</a></blockquote></li>
+				</ol>
+		
+		
+				<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new25')" >十四.打印输出流<span>(可收缩)</span></h6></li>
+				<ol id="new25">		
+				<li><blockquote><a href="#dayinscl">1.本类说明</a></blockquote></li>
+				</ol>
+		
+		
+	</ol>
+</ul>
+</div>
+
+
+<p align="left">
+<p align="left">	<a name="liuduixiang"></a>	
+<h2>流对象操作实例讲解</h2>
+
+<p><b>作者：创世魂</b></p>
+<!--<p align="left">[<a href="object.htm">上一章</a>] [<a href="homeland.htm">下一章</a>]</p>-->
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 流对象说明</font>	
+<p align="left">&nbsp; </p>
+<p align="left">流对象的概念和作用：</p>
+	<blockquote>
+		<p align="left">流是一组有顺序的，有起点和终点的字节集合，是对数据传输的总称。</p>
+		<p align="left">即数据在两设备间的传输称为流，流的本质是数据传输，根据数据传输特性将流抽象为各种类，方便更直观的进行数据操作。</p>
+</blockquote>
+<p align="left">流对象的分类：</p>
+<blockquote>
+<p align="left">根据处理数据类型的不同分为：字符流和数据流。</p>
+	<blockquote>
+		<p align="left">1、在火山中<b>“XX写出流”</b>或<b>“XX读入流”</b>都属于字符流。</p>
+		<p align="left">2、<b>“XX输入流”</b>或<b>“XX输出流”</b>都属于数据流。</p>
+	</blockquote>
+
+</blockquote>
+<p align="left">流对象的作用：</p>
+<blockquote>
+<p align="left">在程序实际开发过程中，对应不同的数据需要用不同的流来进行操作。</p>	
+	<blockquote>
+		<p align="left">1、操作文件，可能会用到<b>“文件输入/出流”</b>。</p>
+		<p align="left">2、操作字节数组，可能要用<b>“字节数组输入/出流”</b>。</p>
+		<p align="left">总之要根据当前程序情况，选择合适的流对象。</p>
+	</blockquote>
+
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">下面将列举一些实例，来讲解流对象应该如何使用。</p>
+<p align="left">&nbsp;</p><a name="xiechuliu"></a>	
+<p align="left">&nbsp;</p>
+<h2>一、写出流</h2>
+<p align="left">&nbsp;</p>	
+	
+<font style="font-size: 12pt; font-weight:700">● 写出流说明：</font>
+	<p align="left">&nbsp;</p>
+<blockquote>
+    <p align="left">如果要创建本对象，请用当前类中的创建方法进行。</p>
+    <p align="left">注意：如果不使用本对象后一定要记着关闭。</p> 
+    <p align="left">注意2：在火山中XX写出流，都是本类的子类。</p> 
+	<p align="left"><img border="0" src="ldx_images/1.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="cjwjxcl"></a>	
+<font style="font-size: 12pt; font-weight:700">● 创建文件写出流</font><br>
+<font style="font-size: 12pt; font-weight:700">● 添加文本</font><br>
+<font style="font-size: 12pt; font-weight:700">● 关闭</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“创建文件写出流”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本方法可创建一个文件写出流，文件路径由<b>“参数1”</b>决定。</p>
+  <p align="left">如果文件不存在会自动创建，如果文件存在，可通过<b>“参数2”</b>来决定是否追加内容。</p>
+  <p align="left">创建后返回<b>“写出流”</b>对象，创建失败返回空对象。</p>
+	<p align="left"><img border="0" src="ldx_images/2.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“添加文本”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">顾名思义，给当前<b>“写出流”</b>对象添加指定文本。</p>
+  <p align="left">添加成功返回真，否则返回假。</p>
+	<p align="left"><img border="0" src="ldx_images/3.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“关闭”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本方法可关闭当前流对象。</p>
+  <p align="left">注意：如果不使用当前对象后，务必调用本方法进行关闭，且关闭后无法进行任何其他行为的操作。</p>
+	<p align="left"><img border="0" src="ldx_images/5.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、定义类型为<b>“写出流”</b>的变量并勾选参考。</p>
+    <p align="left">2、调用<b>“创建文件写出流()”</b>方法创建当前流对象，并赋值给定义的变量。</p>
+    <p align="left">3、调用<b>“添加文本()”</b>方法进行文本数据添加。</p>
+    <p align="left">4、不使用当前对象后进行关闭操作。</p>
+	
+  <p align="left"><img border="0" src="ldx_images/4.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后会提示<b>“添加文本成功”</b>。</p>
+	<p align="left">此时打开文件管理器，会在存储卡根目录内看到当前创建的文件。</p>
+	<p align="left">由此可见，本例程等同于调用了<a href="j_file.htm#wj_xcwbwj"><b>“写出文本文件()”</b></a>方法，只不过本例程是通过流对象创建的。</p>
+	<p align="left"><img border="0" src="ldx_images/6.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<a name="lxczf"></a>	
+<font style="font-size: 12pt; font-weight:700">● 写出字符</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">通过本方法可写出一个字符到<b>“写出流”</b>对象中。</p>
+  <p align="left">写出成功返回真，失败返回假。</p>
+  <p align="left">注意：每个字母，汉字，数字均代表一个字符。</p>
+	<p align="left"><img border="0" src="ldx_images/7.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">本实例的重点是学习<b>“文本到字符串().取字符(0)”</b>方法的应用，通过此方法可将<b>“文本”</b>转换成<b>“字符”</b>。</p>
+    <p align="left">注意：不使用流对象后，务必要调用<b>“关闭()”</b>方法。</p>	
+  <p align="left"><img border="0" src="ldx_images/8.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后会提示<b>“写出字符成功”</b>。</p>
+	<p align="left">从文件管理器打开<b>“1.txt”</b>文件，文件内就会看到写出的字符内容。</p>
+	<p align="left"><img border="0" src="ldx_images/9.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<a name="lxczfsz"></a>	
+<font style="font-size: 12pt; font-weight:700">● 写出字符数组</font><br>
+<font style="font-size: 12pt; font-weight:700">● 写出字符数组1</font>
+<p align="left">&nbsp;</p>
+<p align="left">以上两个方法的作用都是用来写出字符数组到流对象中，此处举例<b>“写出字符数组()”</b>方法。</p>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">通过本方法可写出字符数组到<b>“写出流”</b>对象中。</p>
+  <p align="left">写出成功返回真，失败返回假。</p>
+	<p align="left"><img border="0" src="ldx_images/10.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">通过<b>“文本到字符数组()”</b>方法可将<b>“文本”</b>转换成<b>“字符数组”</b>。</p>
+    <p align="left">随后调用<b>“写出字符数组()”</b>方法即可将其写出。</p>
+  <p align="left"><img border="0" src="ldx_images/12.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后会提示<b>“写出字符数组成功”</b>。</p>
+	<p align="left">从文件管理器打开<b>“1.txt”</b>文件，文件内就会看到写出的字符内容。</p>
+	<p align="left"><img border="0" src="ldx_images/11.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="lxcwb"></a>	
+<font style="font-size: 12pt; font-weight:700">● 写出文本</font><br>
+<font style="font-size: 12pt; font-weight:700">● 写出文本1</font>
+<p align="left">&nbsp;</p>
+<p align="left">以上两个方法的用法和<b>“<a href="#cjwjxcl">添加文本()</a>”</b>方法一致，参考添加文本方法即可。</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="zfszxcl"></a>
+<h2>二、字符数组写出流</h2>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font>
+	<p align="left">&nbsp;</p>
+<blockquote>
+    <p align="left">本类继承了<b>“写出流”</b>可使用写出流的所有方法。</p>
+    <p align="left">本类的主要作用：针对字符数组进行写出流操作。</p> 
+	<p align="left"><img border="0" src="ldx_images/13.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="cjdzfsz"></a>	
+<font style="font-size: 12pt; font-weight:700">● 创建</font><br>
+<font style="font-size: 12pt; font-weight:700">● 到字符数组</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“创建”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本方法可创建一个<b>“字符数组写出流”</b>对象。</p>
+  <p align="left">本方法只有一个参数，用来设置缓冲区尺寸，如对尺寸无特殊要求，留空即可。 </p>
+	<p align="left"><img border="0" src="ldx_images/14.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“到字符数组”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">通过本方法可将当前流对象内存储的内容转换成字符数组。</p>
+	<p align="left"><img border="0" src="ldx_images/15.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、定义类型为<b>“字符数组写出流”</b>的变量，并调用<b>“创建()”</b>方法赋值给此变量。</p>
+    <p align="left">2、通过<b>“写出流”</b>对象中的<b>“添加文本()”</b>方法可对当前流对象写入内容。</p>
+    <p align="left">3、调用<b>“到字符数组()”</b>方法转换成字符数组，可通过<b>“字符数组到文本()”</b>方法重新将其转换为文本。 </p>
+  <p align="left"><img border="0" src="ldx_images/16.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，代码中输入的文本内容会出现在编辑框中。</p>
+	<p align="left"><img border="0" src="ldx_images/17.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="zfxdl"></a>	
+<font style="font-size: 12pt; font-weight:700">● 写到流</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">简单来说，本方法可以将当前流对象的内容放到指定流对象中，类似于复制。</p>
+  <p align="left">参数1：填写要操作的<b>“字符数组写出流”</b>对象，如果是通过变量调用本方法，则本参数忽略。</p>
+  <p align="left">参数2：填写目标<b>“写出流”</b>对象，只要是继承了<b>“写出流”</b>的类，都可以填在本参数中。例如：字符数组写出流。</p>
+  <p align="left">参数3：如果不想判断写出状态，本参数为空即可。</p>
+	<p align="left"><img border="0" src="ldx_images/18.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、创建<b>“字符数组写出流”</b>对象，起名<b>“流对象1”</b>，并添加一段文本数据。</p>
+    <p align="left">2、再次创建一个<b>“字符数组写出流”</b>对象，起名<b>“流对象2”</b>。</p>
+    <p align="left">3、通过<b>“流对象1”</b>调用<b>“写出流()”</b>方法，将其内容写入到<b>“流对象2”</b>中。 </p>
+    <p align="left">4、最后从<b>“流对象2”</b>中读取内容。</p>
+  <p align="left"><img border="0" src="ldx_images/19.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，代码中输入的文本内容会出现在编辑框中。</p>
+	<p align="left"><img border="0" src="ldx_images/20.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="zfqhcqcc"></a>	
+<font style="font-size: 12pt; font-weight:700">● 取缓冲区尺寸</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本方法可取出当前缓冲区的尺寸。</p>
+  <p align="left">但是取出的尺寸并非创建流对象时的尺寸，而是流对象内容的尺寸。</p>
+	<p align="left"><img border="0" src="ldx_images/21.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、创建<b>“字符数组写出流”</b>对象，起名<b>“流对象”</b>，设置缓冲区尺寸为100。</p>
+    <p align="left">2、添加一串文本到流对象中。</p>
+    <p align="left">3、取出缓冲区尺寸，显示在编辑框中。 </p>
+  <p align="left"><img border="0" src="ldx_images/22.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，可看到当前缓冲区尺寸为<b>“4”</b>，证明并非创建时的尺寸。</p>
+	<p align="left"><img border="0" src="ldx_images/23.png" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<a name="zflcz"></a>	
+<font style="font-size: 12pt; font-weight:700">● 重置</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">通过本方法可重置流对象的缓冲区。</p>
+	<p align="left"><img border="0" src="ldx_images/24.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">在上一个方法的基础上，增加本方法测试结果。</p>
+  <p align="left"><img border="0" src="ldx_images/25.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">最终取出缓冲区尺寸为0，证明流对象被重置。</p>
+	<p align="left"><img border="0" src="ldx_images/26.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="hcxcl"></a>
+<h2>三、缓冲写出流</h2>
+<p align="left">&nbsp;</p>
+	<a name="hcxcl"></a>	
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font>
+	<p align="left">&nbsp;</p>
+<blockquote>
+    <p align="left">本类继承了<b>“写出流”</b>可使用写出流的所有方法。</p>
+    <p align="left">本类的主要作用：高效写出。</p> 
+	<p align="left"><img border="0" src="ldx_images/27.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="hclcj"></a>	
+<font style="font-size: 12pt; font-weight:700">● 创建</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本方法可创建一个<b>“缓冲写出流”</b>对象。</p>
+  <p align="left">参数1：填写基于的<b>“写出流”</b>对象。 </p>
+  <p align="left">参数2：填写缓冲区尺寸。 </p>
+	<p align="left"><img border="0" src="ldx_images/28.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、创建一个文件写出流对象，起名<b>“写出流对象”</b>。</p>
+    <p align="left">2、创建缓冲写出流对象，将<b>“写出流对象”</b>放到<b>“创建()”</b>方法的参数中。</p>
+    <p align="left">3、此处添加文本后需要调用<b>“写出缓冲()”</b>方法，保证内容被成功写出到文件中。</p>
+    <p align="left">4、关闭两个流对象。</p>
+  <p align="left"><img border="0" src="ldx_images/29.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">提示<b>“添加成功”</b>后，打开文件管理器就会看到写出的文件。</p>
+	<p align="left"><img border="0" src="ldx_images/30.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="hcxchh"></a>	
+<font style="font-size: 12pt; font-weight:700">● 写出换行</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">顾名思义，调用本方法等同于使用了<b>“\n”</b>换行符。</p>
+  <p align="left">添加成功返回真，失败返回假。</p>
+	<p align="left"><img border="0" src="ldx_images/31.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">在上一个方法代码的基础上，增加本方法。</p>
+  <p align="left"><img border="0" src="ldx_images/32.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">提示<b>“添加成功”</b>后，打开写出的文件，会发现文本被换行。</p>
+	<p align="left"><img border="0" src="ldx_images/33.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="dyxcl"></a>
+<h2>四、打印写出流</h2>
+<p align="left">&nbsp;</p>
+<a name="dyxcl"></a>	
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font>
+	<p align="left">&nbsp;</p>
+<blockquote>
+    <p align="left">本类继承了<b>“写出流”</b>可使用写出流的所有方法。</p>
+    <p align="left">本类的主要作用：可用于打印<a href="j_text.htm#gshwb">格式文本数据</a>。</p> 
+    <p align="left"><font color="#F11014">注意：此类并不能连接打印机。</font></p> 
+	<p align="left"><img border="0" src="ldx_images/34.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="dycj"></a>	
+<font style="font-size: 12pt; font-weight:700">● 创建</font><br>
+<font style="font-size: 12pt; font-weight:700">● 创建1</font><br>
+<font style="font-size: 12pt; font-weight:700">● 创建2</font><br>
+<font style="font-size: 12pt; font-weight:700">● 创建3</font><br>
+<font style="font-size: 12pt; font-weight:700">● 打印数据</font><br>
+<font style="font-size: 12pt; font-weight:700">● 检查错误</font>
+<p align="left">&nbsp;</p>
+<p align="left">前四个创建方法，都是用于创建当前<b>“打印写出流”</b>对象，此处演示<b>“创建2”</b>方法。</p>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“创建2”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">通过本方法可创建当前打印写出流对象。</p>
+  <p align="left">参数1：填写要保存的文件路径，如果文件存在会进行覆盖操作。</p>
+  <p align="left">参数2：可通过<b>“文本编码”</b>类中定义的常量值调用。</p>
+	<p align="left"><img border="0" src="ldx_images/35.png" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“打印数据”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本方法可打印数据到本地文件中，支持所有类型的数据打印。</p>
+  <p align="left">注意：如果要检查是否打印成功，需要调用<b>“检查错误()”</b>方法。</p>
+	<p align="left"><img border="0" src="ldx_images/36.png" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“检查错误”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">本方法用于检查打印方法是否执行错误。</p>
+  <p align="left">返回真表示执行错误，执行正确返回假。</p>
+	<p align="left"><img border="0" src="ldx_images/37.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、调用<b>“创建2”</b>方法，创建当前<b>“打印写出流”</b>的对象。</p>
+    <p align="left">2、调用<b>“打印数据()”</b>方法，可随意打印<b>“整数”</b>，<b>“小数”</b>或<b>“文本”</b>等各种类型数据。</p>
+    <p align="left">3、最后调用<b>“检查错误()”</b>方法检查打印结果。</p>
+  <p align="left"><img border="0" src="ldx_images/38.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">提示<b>“数据写出成功！”</b>后，打开文件管理器就可以看到写出的文件。</p>
+	<p align="left"><img border="0" src="ldx_images/39.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="dyhuanh"></a>	
+<font style="font-size: 12pt; font-weight:700">● 打印换行</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">调用本方法就等同于使用<b>“\n”</b>换行符。</p>
+ 
+	<p align="left"><img border="0" src="ldx_images/40.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">在上一个方法代码的基础上，增加本方法做测试。</p>
+  <p align="left"><img border="0" src="ldx_images/41.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终结果可看到，文本文件中的数据被换行。</p>
+	<p align="left"><img border="0" src="ldx_images/42.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="dygshsj"></a>	
+<font style="font-size: 12pt; font-weight:700">● 打印格式数据</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">通过本方法可打印<a href="j_text.htm#gshwb"><b>“格式文本”</b></a>数据到指定文件中。</p>
+  <p align="left">参数1：要操作的打印流对象。</p>
+  <p align="left">参数2：填写要操作的<a href="j_text.htm#gshwb"><b>“格式文本”</b></a>。</p>
+  <p align="left">参数3：可自由扩展，填写任意类型数据。</p>
+ 
+	<p align="left"><img border="0" src="ldx_images/43.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、创建当前打印写出流对象。</p>
+    <p align="left">2、调用<b>“打印格式数据()”</b>方法，打印数据。</p>
+    <p align="left">3、最后检查是否打印成功。</p>
+  <p align="left"><img border="0" src="ldx_images/44.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="ldx_images/45.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="gddrxcl"></a>
+<h2>五、管道读入/写出流</h2>
+<p align="left">&nbsp;</p>
+	<font style="font-size: 12pt; font-weight:700">● 本分类说明</font>
+<p align="left">&nbsp;</p>
+<p align="left">本分类说明：</p>
+<blockquote>
+  <p align="left">本分类共两个对象，分别为<b>“管道写出流”</b>和<b>“管道读入流”</b>对象。</p>
+  <p align="left">主要作用：用于多线程之间的通信，可通过<b>“管道写出流”</b>发送数据，<b>“管道读入流”</b>接收数据。</p>
+  <p align="left">以上两个类在使用中有以下注意事项：</p>
+  <p align="left">1、本管道写出/读入对象是线程安全的，不会出现线程冲突的情况。</p>
+  <p align="left">2、千万不要在一个线程内同时使用这两个管道对象。</p>
+  <p align="left">3、两个管道对象，只能一方连接另一方，不可双方互联，也不可一方连多方(例如：一个写出管道连接多个读入管道。)</p>
+  <p align="left">4、使用完毕之后,请及时调用<b>“关闭”</b>来关闭掉这两个管道对象.</p>
+  <p align="left">下面将写一个示例程序讲解具体通信实现过程。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="gddxl"></a>	
+<font style="font-size: 12pt; font-weight:700">● 示例程序讲解</font>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+  <p align="left">1、首先在成员变量中定义两个线程类，分别起名<b>“多线程1”</b>和<b>“多线程2”</b>。</p>
+  <p align="left">2、随后定义类型为<b>“管道写出/读入流”</b>的变量，起名<b>“读入管道”</b>和<b>“写出管道”</b>，并给<b>“写出管道”</b>勾选参考。</p>
+	<p align="left"><img border="0" src="ldx_images/46.png" ></p>
+</blockquote>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+    <p align="left">3、<b>“按钮1”</b>被点击后，通过<b>“管道写出流.创建(读入管道)”</b>方法，创建<b>“写出管道”</b>对象。</p>
+    <p align="left">4、分别将两个线程对象启动。</p>
+  <p align="left"><img border="0" src="ldx_images/47.png" ></p>
+</blockquote>
+	<p align="left">代码编写（3）：</p>
+<blockquote>
+	<p align="left">判断<b>“多线程1”</b>被启动后：</p>
+	<p align="left">5、通过<b>“写出管道.写出文本()”</b>方法可向读入管道发送数据。</p>
+	<p align="left">6、不使用<b>“写出管道”</b>后，调用<b>“关闭()”</b>方法关闭当前对象。</p>
+	<p align="left">判断<b>“多线程2”</b>被启动后：</p>
+	<p align="left">7、定义<b>“读入长度”</b>整数变量，用于判断数据是否读入完毕。</p>
+	<p align="left">8、定义<b>“字符[10]”</b>结果字符变量，用于存储接收到的数据（注意：成员数必须大于接收数据）。</p>
+	<p align="left">9、循环判断<b>“读入长度”</b>的数值是否不等于-1，从而执行<b>“读入管道.读入文本()”</b>方法。</p>
+	<blockquote>
+	<p align="left"><b>“读入文本()”</b>帮助文档： </p>
+	<blockquote>
+		<p align="left">参数1：要操作的流对象，动态调用时本参数省略。</p>
+		<p align="left">参数2：管道接收到的数据，存放在本参数内。</p>
+		<p align="left">参数3：起始读取位置。</p>
+		<p align="left">参数4：读取字符数量，不能大于定义的<b>“字符数组”</b>成员数量。</p>
+		<p align="left">参数5：留空即可。</p>
+		<p align="left"><img border="0" src="ldx_images/50.png" ></p>
+	</blockquote>
+	<p align="left">10、执行<b>“读入文本()”</b>方法的目的，是为了将返回值赋值给<b>“读入长度”</b>变量，从而使<b>“判断循环()”</b>进行循环执行读取。</p>	
+	<p align="left">11、利用<b>“字符数组到文本()”</b>方法可将定义的<b>“结果字符”</b>变量转换成文本显示。</p>	
+	<p align="left">12、关闭读入管道流对象，至此利用管道流在线程中发送数据编写完毕。</p>	
+		
+	</blockquote>
+	<p align="left"><img border="0" src="ldx_images/48.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="ldx_images/49.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="duruliu"></a>
+<h2>六、读入流</h2>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left">本类的主要作用就是用来进行数据读入操作。</p>
+  <p align="left">所有的<b>“XX读入流”</b>都是基于本类，不使用本对象后注意关闭。</p>
+	<p align="left"><img border="0" src="ldx_images/51.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="drlzfdr"></a>	
+<font style="font-size: 12pt; font-weight:700">● 创建字符数组读入流</font><br>
+<font style="font-size: 12pt; font-weight:700">● 读入字符</font><br>
+<font style="font-size: 12pt; font-weight:700">● 关闭</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“创建字符数组读入流”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">顾名思义，通过字符数组创建当前对象，失败返回空对象。</p>
+	<p align="left"><img border="0" src="ldx_images/52.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“读入字符”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">通过本方法可读取当前流对象内的一个字符，返回当前字符代码，如果返回-1表示读取完毕。</p>
+  <p align="left">字符代码：字符的一种表现形式，可通过<b>“(字符)具体字符代码”</b>将字符代码强制转换成<b>“字符”</b>类型。</p>
+  <p align="left">注意：第一次调用读取流对象中第一个字符，第二次调用读取第二个字符，以此类推。</p>
+	<p align="left"><img border="0" src="ldx_images/53.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“关闭”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">不使用当前对象后，务必调用本方法关闭。</p>
+	<p align="left"><img border="0" src="ldx_images/54.png" ></p>
+</blockquote>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、定义类型为<b>“读入流”</b>的变量，起名<b>“流对象”</b>并勾选参考。</p>
+    <p align="left">2、通过<b>“创建字符数组读入流()”</b>方法创建本对象，赋值给<b>“流对象”</b>变量。</p>
+    <p align="left">3、定义<b>“返回结果”</b>整数变量，用于循环判断结果值是否等于-1，从而实现循环读取字符。</p>
+    <p align="left">4、在循环语句内再次判断<b>“返回结果”</b>是否不等于-1，用于防止字符多读。</p>
+    <p align="left">5、将字符代码转换成文本显示在编辑框中。</p>
+    <p align="left">6、最后关闭本对象。</p>
+  <p align="left"><img border="0" src="ldx_images/55.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="ldx_images/56.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="cjwjdrl"></a>	
+<font style="font-size: 12pt; font-weight:700">● 创建文件读入流</font><br>
+<font style="font-size: 12pt; font-weight:700">● 读入文本</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“创建文件读入流”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">通过本方法可从一个文件创建<b>“读入流”</b>对象，创建失败返回空对象。</p>
+	<p align="left"><img border="0" src="ldx_images/57.png" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“读入文本”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">调用本方法可读取一段文本，读取的文本将存放在参数2的<b>“结果字符数组”</b>中。</p>
+  <p align="left">参数3、4：用于指定要读取的其实位置和读取字符数目。</p>
+  <p align="left">如果本方法返回-1，表示应读取完毕。</p>
+	<p align="left"><img border="0" src="ldx_images/58.png" ></p>
+</blockquote>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">只需要在上一个方法代码的基础上简单修改即可。</p>
+    <p align="left">1、调用<b>“创建文件读入流()”</b>通过存储卡的指定文件创建当前对象。</p>
+    <p align="left">2、增加类型为<b>“字符[1]”</b>的结果字符变量，用于存储读取结果。</p>
+    <p align="left">3、循环方法内调用<b>“读入文本()”</b>方法，一个字符一个字符的读取到<b>“结果字符”</b>中。</p>
+    <p align="left">4、利用<b>“字符数组到文本()”</b>方法将字符数组转换成文本显示在编辑框中。</p>
+    <p align="left">5、最后关闭当前对象。</p>
+  <p align="left"><img border="0" src="ldx_images/59.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，文件的内容就会被读取到编辑框中显示。</p>
+	<p align="left"><img border="0" src="ldx_images/60.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="cjwbnrdrl"></a>	
+<font style="font-size: 12pt; font-weight:700">● 创建文本内容读入流</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">本方法顾名思义，可通过文本创建一个读入流对象，失败返回空对象。</p>
+	<p align="left"><img border="0" src="ldx_images/61.png" ></p>
+</blockquote>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">在上一个方法的基础上将<b>“创建文件读入流()”</b>换成<b>“创建文本内容读入流()”</b>方法即可，其余代码保持不变。</p>
+  <p align="left"><img border="0" src="ldx_images/62.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，文本内容就会被读取到编辑框中显示。</p>
+	<p align="left"><img border="0" src="ldx_images/63.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="tzdbjwz"></a>	
+<font style="font-size: 12pt; font-weight:700">● 标记</font><br>
+<font style="font-size: 12pt; font-weight:700">● 跳转到标记</font><br>
+<font style="font-size: 12pt; font-weight:700">● 是否支持标记(读)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“标记”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">顾名思义，做一个标记，需要时可跳转到本标记位置。</p>
+  <p align="left">参数2的作用：后续读入多少个字符后，本标记失效。</p>
+	<p align="left"><img border="0" src="ldx_images/64.png" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“跳转到标记”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">顾名思义，跳转到最后一次标记位置。</p>
+	<p align="left"><img border="0" src="ldx_images/67.png" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“是否支持标记(读)”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">通过本属性可判断当前流对象是否支持标记，返回真表示支持，否则不支持。</p>
+	<p align="left"><img border="0" src="ldx_images/65.png" ></p>
+</blockquote>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、通过<b>“创建文本内容读入流()”</b>创建当前流对象。</p>
+    <p align="left">2、定义<b>“返回结果”</b>整数变量，用于读取返回值。</p>
+    <p align="left">3、读入一个字符后，判断当前对象是否支持标记，如果支持则调用<b>“标记()”</b>方法标记位置。</p>
+    <p align="left">4、再次读入一个字符后，调用<b>“跳转到标记()”</b>方法跳转到指定位置。</p>
+    <p align="left">5、重新读入一个字符后关闭当前对象。</p>
+  <p align="left"><img border="0" src="ldx_images/66.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最后可看到编辑框中显示了两个<b>“文”</b>，证明<b>“标记()”</b>和<b>“跳转到标记()”</b>方法都执行成功。</p>
+	<p align="left"><img border="0" src="ldx_images/67.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="ldxtiaoguo"></a>	
+<font style="font-size: 12pt; font-weight:700">● 跳过</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本方法可跳过指定字符数，返回跳过的字符数量。</p>
+  <p align="left">如果跳过失败则返回-1。</p>
+	<p align="left"><img border="0" src="ldx_images/68.png" ></p>
+</blockquote>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、通过<b>“创建文本内容读入流()”</b>创建当前流对象。</p>
+    <p align="left">2、调用<b>“跳过()”</b>方法跳过4个字符后，调用<b>“读入字符()”</b>读取一个字符。</p>
+    <p align="left">3、最后关闭当前对象。</p>
+  <p align="left"><img border="0" src="ldx_images/69.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终结果，编辑框内显示<b>“容”</b>，证明前四个字符被成功跳过。</p>
+	<p align="left"><img border="0" src="ldx_images/70.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="hcdrl"></a>
+<h2>七、缓冲读入流</h2>
+<p align="left">&nbsp;</p>
+	<font style="font-size: 12pt; font-weight:700">● 本类说明</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left">本类继承了<b>“读入流”</b>可使用读入流的所有方法。</p>
+  <p align="left">本类的主要作用：用于高效读取数据。 </p>
+	<p align="left"><img border="0" src="ldx_images/71.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="hcdrlcj"></a>	
+<font style="font-size: 12pt; font-weight:700">● 创建</font><br>
+<font style="font-size: 12pt; font-weight:700">● 读入一行</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“创建”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">通过指定<b>“读入流”</b>创建当前对象，失败返回空对象。</p>
+	<p align="left"><img border="0" src="ldx_images/72.png" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“读入一行”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本方法可读入一行文本，失败将返回空对象。</p>
+	<p align="left"><img border="0" src="ldx_images/73.png" ></p>
+</blockquote>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、通过<b>“创建文本内容读入流()”</b>创建<b>“读入流对象”</b>。</p>
+    <p align="left">2、随后利用<b>“读入流对象”</b>创建<b>“缓冲读入流”</b>对象。</p>
+    <p align="left">3、调用<b>“读入一行()”</b>方法读取一行文本，显示在编辑框中。</p>
+    <p align="left">4、关闭两个流对象。</p>
+  <p align="left"><img border="0" src="ldx_images/74.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">最终结果，读取了一行文本显示在编辑框中。</p>
+	<p align="left"><img border="0" src="ldx_images/75.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="hhdrl"></a>
+<h2>八、行号读入流</h2>
+<p align="left">&nbsp;</p>
+	<font style="font-size: 12pt; font-weight:700">● 本类说明</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left">本类继承了<b>“读入流”</b>和<b>“缓冲读入流”</b>可使用这两个类的所有方法。 </p>
+  <p align="left">本类的主要作用：获取当前读入行的行号。</p>
+	<p align="left"><img border="0" src="ldx_images/76.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="cjhhdrl"></a>	
+<font style="font-size: 12pt; font-weight:700">● 创建行号读入流</font><br>
+<font style="font-size: 12pt; font-weight:700">● 取当前行号</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“创建行号读入流”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">通过指定<b>“读入流”</b>创建当前对象，失败返回空对象。</p>
+  <p align="left">参数1：提供要创建行号读入流的<b>“读入流”</b>对象。</p>
+  <p align="left">参数2：如无特殊需求留空即可。</p>
+	<p align="left"><img border="0" src="ldx_images/77.png" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“取当前行号”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">通过本方法可读取当前行的行号。</p>
+  <p align="left">注意：行号从0开始。</p>
+	<p align="left"><img border="0" src="ldx_images/79.png" ></p>
+</blockquote>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、通过<b>“创建文本内容读入流()”</b>创建<b>“读入流对象”</b>。</p>
+    <p align="left">2、随后利用<b>“读入流对象”</b>创建<b>“行号读入流”</b>对象。</p>
+    <p align="left">3、调用<b>“取当前行号()”</b>和<b>“读入一行()”</b>获取行号和文本显示在编辑框中。</p>
+    <p align="left">4、关闭两个流对象。</p>
+  <p align="left"><img border="0" src="ldx_images/78.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">最终结果，行号和文本成功读取。 </p>
+	<p align="left"><img border="0" src="ldx_images/80.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="lwjsrl"></a>
+<h2>九、文件输入流</h2>
+<p align="left">&nbsp;</p>
+	<font style="font-size: 12pt; font-weight:700">● 本类说明</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left">本流对象继承了<b>“输入流”</b>可使用输入流的所有方法，因输入流不能直接创建对象，因此用本类做演示。</p>
+  <p align="left">本类的主要作用：以流的方式对文件进行操作。</p>
+	<p align="left"><img border="0" src="ldx_images/81.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="wjsrlcj"></a>	
+<font style="font-size: 12pt; font-weight:700">● 创建</font><br>
+<font style="font-size: 12pt; font-weight:700">● 读入数据</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“创建”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">通过指定<b>“文件路径”</b>创建当前对象，失败返回空对象。</p>
+	<p align="left"><img border="0" src="ldx_images/82.png" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“读入数据”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">通过本方法可读取对象中存储的文件数据，读取成功返回实际读取的字节数，否则返回-1。</p>
+  <p align="left">参数1：提供要操作的输入流，通过变量调用本方法是，本参数省略。</p>
+  <p align="left">参数2：提供字节数组缓冲区，用于存放读取到的文件数据。</p>
+  <p align="left">参数3、4：提供起始位置和读取字节数。</p>
+  <p align="left">参数5：提供读取的状态对象，如果不想使用本参数，填写空对象即可。</p>
+  <p align="left">注意：本方法继承自<b>“输入流”</b>。</p>
+	<p align="left"><img border="0" src="ldx_images/83.png" ></p>
+</blockquote>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、通过<b>“创建()”</b>创建<b>“文件输入流”</b>对象。</p>
+    <p align="left">2、定义类型为<b>“字节[]”</b>的缓冲数组变量，成员填写1024，此变量的作用用于临时存放读取到的文件数据。</p>
+    <p align="left">3、定义<b>“返回结果”</b>整数变量，用于判断<b>“读入数据()”</b>是否读取成功。</p>
+    <p align="left">4、循环判断<b>“返回结果”</b>是否不等于-1，如果不等于就调用<b>“文件流.读入数据()”</b>方法，并将结果显示在编辑框中。</p>
+    <p align="left">5、最后关闭本对象。</p>
+  <p align="left"><img border="0" src="ldx_images/84.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">最终结果，文本文件的内容读取成功。 </p>
+	<p align="left"><img border="0" src="ldx_images/85.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="wjcjhcl"></a>	
+<font style="font-size: 12pt; font-weight:700">● 创建缓冲流</font><br>
+<font style="font-size: 12pt; font-weight:700">● 读入指定尺寸数据</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“创建缓冲流”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">通过本方法可创建<b>“缓冲输入流”</b>对象，目的用于快速高效读取数据，失败返回空对象。</p>
+  <p align="left">注意：<b>“缓冲输入流”</b>同样继承自<b>“输入流”</b>可使用输入流的所有方法。</p>
+	<p align="left"><img border="0" src="ldx_images/86.png" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“读入指定尺寸数据”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">本方法可<a href="#wjsrlcj"><b>“读入数据()”</b></a>方法类似，不同之处为，本方法返回值为逻辑型，用于判断是否读取成功。</p>
+  <p align="left">注意：如果缓冲字节数组成员数大于要读取的数据，则本方法会返回假。</p>
+	<p align="left"><img border="0" src="ldx_images/87.png" ></p>
+</blockquote>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、通过<b>“文件输入流.创建缓冲流()”</b>方法创建<b>“缓冲输入流”</b>对象，起名缓冲流。</p>
+    <p align="left">2、定义类型为<b>“字节[]”</b>的缓冲数组变量，成员填写3，此变量的作用用于临时存放读取到的文件数据。</p>
+    <p align="left">3、定义<b>“返回结果”</b>逻辑变量，用于判断<b>“读入数据()”</b>是否读取成功。</p>
+    <p align="left">4、最后将读取结果显示在编辑框中，并关闭本对象。</p>
+  <p align="left"><img border="0" src="ldx_images/88.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终结果，成功读取一个汉字显示在编辑框中。 </p>
+	<p align="left"><img border="0" src="ldx_images/89.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="wjsrlbj"></a>	
+<font style="font-size: 12pt; font-weight:700">● 标记位置</font><br>
+<font style="font-size: 12pt; font-weight:700">● 跳回标记位置</font><br>
+<font style="font-size: 12pt; font-weight:700">● 支持位置标记(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 跳过</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+  <p align="left">以上三个方法的作用可参考<b>“读入流”</b>中的<a href="#tzdbjwz"><b>“标记”</b></a>，<a href="#tzdbjwz"><b>“跳转到标记”</b></a>,<a href="#ldxtiaoguo"><b>“跳过”</b></a>和<a href="#tzdbjwz"><b>“是否支持标记”</b></a>。</p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="zjszsrl"></a>
+<h2>十、字节数组输入流</h2>
+<p align="left">&nbsp;</p>
+	<font style="font-size: 12pt; font-weight:700">● 本类说明</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left">本类继承自<b>“输入流”</b>可使用输入流的所有方法。</p>
+  <p align="left">创建本对象，必须使用本对象提供的创建方法。</p>
+  <p align="left">本类的主要作用：对字节数组进行流操作。</p>
+	<p align="left"><img border="0" src="ldx_images/90.png" > </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="zjszcjsrl"></a>	
+<font style="font-size: 12pt; font-weight:700">● 创建</font><br>
+<font style="font-size: 12pt; font-weight:700">● 创建2</font>
+<p align="left">&nbsp;</p>
+<p align="left">以上两个方法都是用于创建当前字节数组输入流对象，不同之处为<b>“创建2”</b>可以设置起始位置和数据尺寸。</p>
+<p align="left">此处举例<b>“创建()”</b>方法。</p>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">通过本方法可创建当前字节数组输入流对象，失败返回空对象。</p>
+  <p align="left">参数1：提供创建当前对象的字节数组。 </p>
+	<p align="left"><img border="0" src="ldx_images/91.png" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、调用<b>“创建()”</b>方法创建当前对象。</p>
+    <p align="left">2、定一个<b>“缓冲数组”</b>变量，调用<b>“读入数据()”</b>方法读取流对象中的数据显示在编辑框中。</p>
+    <p align="left">3、最后关闭当前对象。</p>
+    <p align="left">提示：如果要读取的字节数据较多，参考<a href="#wjsrlcj"><b>“文件输入流.读入数据()”</b></a>方法中判断循环的用法。</p>
+  <p align="left"><img border="0" src="ldx_images/92.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终结果，成功将数据显示在编辑框中。 </p>
+	<p align="left"><img border="0" src="ldx_images/93.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="gdsrscl"></a>
+<h2>十一、管道输入/出流</h2>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left"><b>“管道输入/出流”</b>的主要作用也是用于线程之间的通信和<a href="#gddrxcl"><b>“管道读/写流”</b></a>的用法一致。</p>
+<p align="left">具体操作实现流程，直接参考<a href="#gddrxcl"><b>“管道读/写流”</b></a>即可。</p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="wjsrl"></a>
+<h2>十二、文件输出流</h2>
+<p align="left">&nbsp;</p>	
+	<font style="font-size: 12pt; font-weight:700">● 本类说明</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left">本类继承自<b>“输出流”</b>可使用输出流的所有方法。</p>
+  <p align="left">本类的主要作用：用于文件写出操作。</p>
+	<p align="left"><img border="0" src="ldx_images/94.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="wjsrlxcsj"></a>	
+<font style="font-size: 12pt; font-weight:700">● 创建</font><br>
+<font style="font-size: 12pt; font-weight:700">● 写出数据2</font><br>
+<font style="font-size: 12pt; font-weight:700">● 写出缓存</font><br>
+<font style="font-size: 12pt; font-weight:700">● 关闭</font><br>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“创建”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本方法可创建当前<b>“文件输出流”</b>。</p>
+  <p align="left">参数1：提供要写出的文件路径。</p>
+  <p align="left">参数2：是否在原文件的基础上增加数据，如果留空则覆盖原文件。</p>
+	<p align="left"><img border="0" src="ldx_images/95.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“写出数据2”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">本方法继承自<b>“输出流”</b>可用于写出数据。</p>
+  <p align="left">参数1：要操作的输出流对象，通过变量调用本方法时，本参数省略。</p>
+  <p align="left">参数2：准备写出的字节数组数据。</p>
+  <p align="left">参数3：写出状态保存在此参数中，留空则为空对象。</p>
+  <p align="left">写出成功返回真，失败返回假。</p>
+	<p align="left"><img border="0" src="ldx_images/96.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“写出缓存”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">本方法的作用可保证流对象的数据被正常写出。</p>
+  <p align="left">注意：本方法继承自<b>“输出流”</b>。</p>
+	<p align="left"><img border="0" src="ldx_images/97.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“关闭”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">顾名思义，关闭当前对象。</p>
+    <p align="left">注意：本方法继承自<b>“输出流”</b>。</p>
+	<p align="left"><img border="0" src="ldx_images/98.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">1、通过<b>“创建()”</b>创建当前流对象。</p>
+  <p align="left">2、调用<b>“写出数据2()”</b>方法写出一段数据到流对象中，并判断是否写出成功。</p>
+  <p align="left">3、调用<b>“写出缓存()”</b>用来保证数据被成功写出到文件中。</p>
+  <p align="left">4、最后关闭当前对象。</p>
+	<p align="left"><img border="0" src="ldx_images/99.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，打开文件管理器可看到被写出的文件。</p>
+	<p align="left"><img border="0" src="ldx_images/100.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="zjszscl"></a>
+<h2>十三、字节数组输出流</h2>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left">本类继承自<b>“输出流”</b>可使用输出流的所有方法。</p>
+  <p align="left">本类的主要作用：操作字节数组，可实现字节数组合并。</p>
+	<p align="left"><img border="0" src="ldx_images/101.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="zjszsclcj"></a>	
+<font style="font-size: 12pt; font-weight:700">● 创建</font><br>
+<font style="font-size: 12pt; font-weight:700">● 取已写入数据</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“创建”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本方法可创建当前<b>“字节数组输出流”</b>。</p>
+  <p align="left">参数1：填写字节尺寸，如果写入的数据大于本尺寸，将自动扩充。</p>
+	<p align="left"><img border="0" src="ldx_images/102.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“取已写入数据”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">通过本方法可将写入的字节数组合并后取出并返回。</p>
+	<p align="left"><img border="0" src="ldx_images/103.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">1、通过<b>“创建()”</b>创建当前<b>“字节数组输出流”</b>对象，尺寸分配1。</p>
+  <p align="left">2、调用<b>“写出数据2()”</b>方法写出三组数据。</p>
+  <p align="left">3、调用<b>“取已写入数据()”</b>取出被写出的数据显示在编辑框中。</p>
+  <p align="left">4、最后关闭当前对象。</p>
+	<p align="left"><img border="0" src="ldx_images/104.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+  <p align="left">最终被写出的数据将会合并显示在编辑框中。</p>
+	<p align="left"><img border="0" src="ldx_images/105.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="qyxrsjcc"></a>	
+<font style="font-size: 12pt; font-weight:700">● 取已写入文本</font><br>
+<font style="font-size: 12pt; font-weight:700">● 取已写入数据尺寸</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“取已写入文本”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">通过本方法可直接取出当前流对象内的文本数据。</p>
+	<p align="left"><img border="0" src="ldx_images/106.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“取已写入数据尺寸”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">本方法可取出流对象中的数据尺寸，单位字节。</p>
+	<p align="left"><img border="0" src="ldx_images/107.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">1、创建当前<b>“字节数组输出流”</b>对象，尺寸分配1。</p>
+  <p align="left">2、调用<b>“写出数据2()”</b>方法写出三组数据。</p>
+  <p align="left">3、调用<b>“取已写入文本()”</b>和<b>“取已写入数据尺寸()”</b>方法取出数据和尺寸，显示在编辑框中。</p>
+  <p align="left">4、最后关闭当前对象。 </p>
+	<p align="left"><img border="0" src="ldx_images/108.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="ldx_images/109.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="ziszsclxdl"></a>	
+<font style="font-size: 12pt; font-weight:700">● 写到流</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left">本方法的作用和用法可参考<a href="#zfxdl"><b>“字符数组写出流.写到流()”</b></a>方法。</p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="dayinscl"></a>
+<h2>十四、打印输出流</h2>
+<p align="left">&nbsp;</p>
+	<font style="font-size: 12pt; font-weight:700">● 本类说明</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left">本类中的方法和<a href="#dyxcl"><b>“打印写出流”</b></a>中的方法基本一致，不同之处为本类继承自<b>“输出流”</b>。</p>
+  <p align="left">下面列举一个示例来讲解如何操作。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">1、定义类型为<b>“打印输出流”</b>的变量并勾选参考，调用<a href="#dycj"><b>“创建2()”</b></a>方法赋值给此变量。</p>
+  <p align="left">2、调用<a href="#wjsrlxcsj"><b>“写出数据2()”</b></a>和<a href="#dycj"><b>“打印数据()”</b></a>方法写出数据到文件中。</p>
+  <p align="left">3、最后关闭当前对象。 </p>
+	<p align="left"><img border="0" src="ldx_images/110.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最后两组数据将成功被写出到文件中。</p>
+	<p align="left"><img border="0" src="ldx_images/111.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	
+	
+	
+	
+</body>
+
+</html>

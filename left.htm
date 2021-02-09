@@ -1,0 +1,728 @@
+
+
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="scripts/style.css" rel="stylesheet" type="text/css" />
+<base target="main">
+<script language="JavaScript" type="text/javascript" src="scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="scripts/common.js"></script>
+</head>
+
+<style>
+.header{background-color:#F3F4F8; margin-left: 0.5em; margin-right: 0em; margin-top: 0em; margin-bottom: 0em;}
+</style>
+
+<body class="header">
+<ul class="menu">
+  <li>
+    <p><font color="#009EE5">基础资料</font></p>
+    <ol>
+       
+		<p onClick="left_ShowItem('#grammar1','grammar')"  ><img id="grammar1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">语法学习手册(普通用户图文版)</font></p>
+		 <!-- <li><a href="grammar.htm"><img border="0" width="12" height="12" align="center" src="scripts/closed.gif" onClick="left_ShowItem(this,'grammar')" />&nbsp;语法学习手册(普通用户图文版)</a></li>-->
+  
+	<!--	<span > </span><br />-->
+			
+		
+
+		<ol id="grammar" hidden>
+			<li><a href="grammar.htm">一. 相关术语</a></li>
+			<ol>
+				<li><a href="grammar.htm#c_name">1. 名称</a></li>
+				<li><a href="grammar.htm#imm_value">2. 立即数</a></li>
+				<li><a href="grammar.htm#c_datatype">3. 数据类型</a></li>
+			</ol>
+			<li><a href="grammar.htm#c_struct">二. 火山程序结构</a></li>
+			<ol>
+				<li><a href="grammar.htm#package_declare">1. 包</a></li>
+				<li><a href="grammar.htm#remark_line">2. 注释</a></li>
+				<li><a href="grammar.htm#class_declare">3. 类</a></li>
+				<li><a href="grammar.htm#const_declare">4. 类成员或局部常量</a></li>
+				<li><a href="grammar.htm#element_var_declare">5. 类成员或局部变量</a></li>
+				<li><a href="grammar.htm#method_declare">6. 类成员方法</a></li>
+				<li><a href="grammar.htm#element_attr">7. 类成员属性</a></li>
+				<li><a href="grammar.htm#element_event">8. 类成员事件</a></li>
+				<li><a href="grammar.htm#virtual_method">9. 虚拟方法</a></li>
+				<li><a href="grammar.htm#statment">10. 方法语句</a></li>
+			</ol>
+			<li><a href="grammar.htm#c_keyword">三. 火山平台关键字</a></li>
+			<ol>
+				<li><a href="grammar.htm#base_data_type">1. 基本数据类型关键字</a></li>
+				<li><a href="grammar.htm#name_keyword">2. 名称关键字</a></li>
+				<li><a href="grammar.htm#oper_keyword">3. 操作符关键字</a></li>
+				<li><a href="grammar.htm#command_keyword">4. 命令关键字</a></li>
+			</ol>			
+			<li><a href="grammar.htm#c_other">四. 其它</a></li>
+			<ol>
+				<li><a href="grammar.htm#compile_check">1. 按需编译</a></li>
+				<li><a href="grammar.htm#flow_control">2. 扩展流程控制</a></li>
+				<li><a href="grammar.htm#exception_manager">3. 异常管理</a></li>
+				<li><a href="grammar.htm#edit_tips">4. 常用开发环境操作方法</a></li>
+				
+			</ol>						
+		</ol>
+      
+		
+		<p onClick="left_ShowItem('#imgrmjc','jc')" ><img border="0" width="12" height="12" align="center" src="scripts/closed.gif"/ id="imgrmjc">&nbsp;<font color="#009EE5">火山程序开发基础</font></p>
+		
+		<!--<li><a href="object.htm"><img border="0" width="12" height="12" align="center" src="scripts/closed.gif" onClick="left_ShowItem('#imgrmjc','jc')" />&nbsp;火山程序开发基础</a></li>-->
+		
+		<ol id="jc" hidden>
+			<li><a href="object.htm">1. 面向对象的程序设计方法</a></li>
+			<li><a href="vol_object.htm">2. 火山中进行面向对象设计</a></li>
+			<li><a href="homeland.htm">3. 祖国您好</a></li>
+		</ol>
+	</ol>
+  </li>
+  
+	
+	<li>
+    	<p>
+			&nbsp;<font color="#009EE5">类库模块的封装(</font><font color="#FF0000">普通用户无需了解</font><font color="#009EE5">)</font>
+		</p>
+    	<ol id="fz">
+        	<li><a href="p_vcom.htm">类库模块的封装和使用方法</a></li>
+        	<li><a href="p_grammar.htm">语法手册(封装用户版)</a></li>
+		</ol>
+  	</li>
+			
+	<li>
+		
+		<p  onClick="left_ShowItem('#vol_Win1','vol_Win')" style="cursor:pointer" ><img id="vol_Win1" border="0" width="12" height="12" align="center" src="scripts/opened.gif" />&nbsp;<font color="#009EE5">火山视窗软件开发平台</font></p>
+		
+		<ol  id="vol_Win">
+			<ol>
+				<li><a href="vol_win/step/step1.htm">一步一步跟我学写视窗程序</a></li>
+			</ol>
+		</ol>
+	</li>
+
+	<li>
+		
+		<p  onClick="left_ShowItem('#vol_Android1','vol_Android')" style="cursor:pointer" ><img id="vol_Android1" border="0" width="12" height="12" align="center" src="scripts/opened.gif" />&nbsp;<font color="#009EE5">火山安卓软件开发平台</font></p>
+		
+		<ol  id="vol_Android">
+			<ol>
+				<li><a href="new/new.htm">安卓平台新手入门</a></li>
+			</ol>
+			<p onClick="left_ShowItem('#android1','android')" ><img id="android1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">安卓程序开发手册</font></p>
+				<ol id="android" hidden>
+					<li><a href="android.htm#res">一. 如何使用安卓资源</a></li>				
+					<li><a href="android.htm#layout">二. 如何设计安卓界面布局</a></li>				
+				</ol>
+			
+				<p  onClick="left_ShowItem('#Widget_Class1','Widget_Class')" ><img id="Widget_Class1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">组件类库讲解</font></p>
+				<ol id="Widget_Class" hidden>
+					<p onClick="left_ShowItem('#Widget1','Widget')" ><img id="Widget1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">窗口组件</font></p>
+					<ol id="Widget" hidden>
+						<li><a href="View_basis/a_ctrl_base.htm">通常方法</a></li>
+						<li><a href="View_basis/a_ctrl_base.htm#jtff">静态方法</a></li>
+						<li><a href="View_basis/a_ctrl_base.htm#shuxingduxie">属性读写方法</a></li>
+						<li><a href="View_basis/a_ctrl_base.htm#qtdxff">其它读写方法</a></li>
+						<li><a href="View_basis/a_ctrl_base.htm#shijian">事件定义方法</a></li>
+						<li><a href="View_basis/a_ctrl_base.htm#shexiangtou">成员变量</a></li>
+						<li><a href="View_basis/a_ctrl_base.htm#biaojilei">标记类</a></li>
+						</ol>
+
+						<p onClick="left_ShowItem('#textbox1','textbox')" ><img id="textbox1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">文本类组件</font></p>
+						<ol id="textbox" hidden>
+							<li><a href="Text_component/a_ctrl_text.htm">文本框</a></li>
+							<li><a href="Text_component/a_ctrl_JiShiQi.htm">计时器</a></li>
+							<li><a href="Text_component/a_ctrl_ReCi.htm">热词框</a></li>
+							<li><a href="Text_component/a_ctrl_YueDu.htm">轻量阅读器</a></li>
+							<li><a href="Text_component/a_ctrl_ShiZhongKuang.htm">文本时钟框</a></li>
+							<li><a href="Text_component/a_ctrl_XuanZeWenBen.htm">选择文本框</a></li>
+						</ol>
+
+						<p onClick="left_ShowItem('#EditText1','EditText')" ><img id="EditText1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">编辑类组件</font></p>
+						<ol id="EditText" hidden>
+							<li><a href="Edit_component/a_ctrl_edit.htm">编辑框</a></li>
+							<li><a href="Edit_component/a_SouXun.htm">搜寻框</a></li>
+							<li><a href="Edit_component/a_TiShiShuRuKuang.htm">提示输入框</a></li>
+							<li><a href="Edit_component/a_MaterialEdit.htm">高级兼容编辑框</a></li>
+							<li><a href="Edit_component/a_ZiDongWanCheng.htm">自动完成编辑框</a></li>
+							<li><a href="Edit_component/a_DuoLieWanCheng.htm">多列自动完成编辑框</a></li>
+						</ol>
+
+						<p onClick="left_ShowItem('#button1','button')" ><img id="button1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">按钮类组件</font></p>
+						<ol id="button" hidden>
+							<li><a href="Button_component/AnNiu.htm">按钮</a></li>
+							<li><a href="Button_component/a_XuanZe.htm">组合按钮基础类</a></li>
+							<li><a href="Button_component/a_XuanZe.htm">单选框/多选框</a></li>
+							<li><a href="Button_component/KaiGuan.htm">开关</a></li>
+							<li><a href="Button_component/Kg_Anniu.htm">开关按钮</a></li>
+							<li><a href="Button_component/FuDong.htm">浮动按钮</a></li>
+							<li><a href="Button_component/FuDongCaiDan.htm">浮动按钮菜单</a></li>
+							<li><a href="Button_component/a_fancy_button.htm">花式按钮</a></li>
+						</ol>
+
+					<p onClick="left_ShowItem('#xuanze1','xuanze')" ><img id="xuanze1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">日期时间组件</font></p>
+						<ol id="xuanze" hidden>
+							<li><a href="QiTa_component/a_monishizhong.htm">模拟时钟框</a></li>
+							<li><a href="XuanZe_component/a_RiQi.htm">日期选择器</a></li>
+							<li><a href="XuanZe_component/a_ShiJian.htm">时间选择器</a></li>
+						</ol>
+
+					<p onClick="left_ShowItem('#xuanzeqi1','xuanzeqi')" ><img id="xuanzeqi1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">文本数字选择器组件</font></p>
+						<ol id="xuanzeqi" hidden>
+							<!--<li><a href="a_ctrl_view.htm">高级选择文本框</a>-->
+							<!--<li><a href="a_ctrl_view.htm">高级数字选择器</a>-->
+							<li><a href="XuanZe_component/a_ShuZi.htm">数字选择器</a></li>
+						</ol>	
+
+
+						<p onClick="left_ShowItem('#PictureBox1','PictureBox')" ><img id="PictureBox1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">图片类组件</font></p>
+						<ol id="PictureBox" hidden>
+							<li><a href="TuPian_component/a_TuPianKuang.htm">图片框</a></li>
+							<li><a href="TuPian_component/a_TuPianAnNiu.htm">图片按钮</a></li>
+							<li><a href="TuPian_component/a_LianXiRen.htm">联系人按钮</a></li>
+							<li><a href="TuPian_component/a_LuBoTu.htm">轮播图</a></li>
+							<li><a href="TuPian_component/a_GIF.htm">GIF动画框</a></li>
+							<li><a href="TuPian_component/a_Yuan.htm">圆形图片框</a></li>
+							<li><a href="TuPian_component/a_ctrl_photo_view.htm">高级图片框</a></li>
+							<li><a href="TuPian_component/a_Loading.htm">加载动画框</a></li>
+						</ol>
+
+						<p onClick="left_ShowItem('#progress1','progress')" ><img id="progress1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">进度类组件</font></p>
+						<ol id="progress" hidden>
+							<li><a href="JinDu_component/a_ctrl_jindu.htm">进度条</a></li>
+							<li><a href="JinDu_component/a_ctrl_dingwei.htm">定位条</a></li>
+							<li><a href="JinDu_component/a_ctrl_pingfen.htm">星级评分条</a></li>
+						</ol>
+
+						<p onClick="left_ShowItem('#gundong1','gundong')" ><img id="gundong1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">滚动容器组件</font></p>
+						<ol id="gundong" hidden>	
+							<li><a href="RongQi_component/a_Heng.htm">横向滚动容器</a></li>
+							<li><a href="RongQi_component/a_Zong.htm">纵向滚动容器</a></li>
+							<li><a href="RongQi_component/a_bouncing.htm">果冻滚动容器</a></li>
+							<li><a href="RongQi_component/a_ctrl_nested_scrollview.htm">嵌套滚动容器</a></li>
+						</ol>
+
+						<p onClick="left_ShowItem('#duoyemian1','duoyemian')" ><img id="duoyemian1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">多页面容器组件</font></p>
+						<ol id="duoyemian" hidden>	
+							<li><a href="RongQi_component/a_Gaoji.htm">高级选择夹</a></li>
+							<li><a href="RongQi_component/a_Shitu.htm">视图容器</a></li>
+							<li><a href="RongQi_component/a_DuiDieQi.htm">图像堆叠器</a></li>
+							<li><a href="RongQi_component/a_ZiDingYiDuiDie.htm">自定义堆叠器</a></li>
+							<li><a href="RongQi_component/a_FanYueQi.htm">图像翻阅器</a></li>
+							<li><a href="RongQi_component/a_ZiDingYiFanyue.htm">自定义翻阅器</a></li>
+						</ol>
+
+						<p onClick="left_ShowItem('#cehua1','cehua')" ><img id="cehua1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">侧滑容器组件</font></p>
+						<ol id="cehua" hidden>	
+							<li><a href="RongQi_component/a_CeHua.htm">侧滑容器</a></li>
+							<li><a href="RongQi_component/a_QuanPingCeHua.htm">全屏侧滑布局器</a></li>
+						</ol>
+
+						<p onClick="left_ShowItem('#shuaxin1','shuaxin')" ><img id="shuaxin1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">刷新容器组件</font></p>
+						<ol id="shuaxin" hidden>	
+							<li><a href="RongQi_component/a_ChuiZhiShaXinRongQi.htm">垂直刷新容器</a></li>
+							<!--<li><a href="a_ctrl_view.htm">高级刷新容器</a></li>-->
+						</ol>
+
+						<p onClick="left_ShowItem('#container1','container')" ><img id="container1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">布局组件</font></p>
+						<ol id="container" hidden>
+							<li><a href="RongQi_component/a_RongQi.htm">窗口容器组件</a></li>
+							<li><a href="RongQi_component/a_Zhen.htm">帧布局器</a></li>
+							<li><a href="RongQi_component/a_Xian.htm">线性布局器</a></li>
+							<li><a href="RongQi_component/a_KaPian.htm">卡片布局器</a></li>
+							<li><a href="RongQi_component/a_Dan.htm">单选组合框</a></li>
+						</ol>
+
+
+						<p onClick="left_ShowItem('#listing1','listing')" ><img id="listing1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">列表类组件</font></p>
+						<ol id="listing" hidden>
+							<li><a href="LieBiao_component/a_JianDanLieBiao.htm">简单列表框</a></li>
+							<li><a href="LieBiao_component/a_JianDanbiaoge.htm">简单表格</a></li>
+							<li><a href="LieBiao_component/a_JiandanxiaLa.htm">简单下拉列表框</a></li>
+							<li><a href="LieBiao_component/a_JianDanFenZu.htm">简单分组列表框</a></li>
+							<li><a href="LieBiao_component/a_zidingyiliebiao.htm">自定义列表框</a></li>
+							<li><a href="LieBiao_component/a_zidingyibiaoge.htm">自定义表格</a></li>
+							<li><a href="LieBiao_component/a_JiandanxiaLa.htm">自定义下拉列表框</a></li>
+							<li><a href="LieBiao_component/a_zidingyifenzu.htm">自定义分组列表框</a></li>
+						</ol>
+
+
+						<p onClick="left_ShowItem('#chart1','chart')" ><img id="chart1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">图表类组件</font></p>
+						<ol id="chart" hidden>
+							<li><a href="TuBiao_component/a_bing.htm">饼状图</a></li>
+							<li><a href="TuBiao_component/a_qi.htm">气泡图</a></li>
+							<li><a href="TuBiao_component/a_zhe.htm">折线图</a></li>
+							<li><a href="TuBiao_component/a_zheYulan.htm">折线预览图</a></li>
+							<li><a href="TuBiao_component/a_Zhu.htm">柱状图</a></li>
+							<li><a href="TuBiao_component/a_ZhuYulan.htm">柱状预览图</a></li>
+							<li><a href="TuBiao_component/a_zuhe.htm">组合统计图</a></li>
+						</ol>
+
+						<p onClick="left_ShowItem('#huaban1','huaban')" ><img id="huaban1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">画板类组件</font></p>
+						<ol id="huaban" hidden>
+							<li><a href="HuaBan/huaban.htm">画板</a></li>
+							<li><a href="HuaBan/gaojihuaban.htm">高级画板</a></li>
+						</ol>
+
+						<p onClick="left_ShowItem('#bofangqi1','bofangqi')" ><img id="bofangqi1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">视频播放器组件</font></p>
+						<ol id="bofangqi" hidden>
+							<li><a href="MeiTi/shipinbofangqi.htm">视频播放器</a></li>
+
+						</ol>
+
+						<p onClick="left_ShowItem('#rilizujian1','rilizujian')" ><img id="rilizujian1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">日历类组件</font></p>
+						<ol id="rilizujian" hidden>
+							<li><a href="QiTa_component/a_RiLi.htm">日历框</a></li>
+							<li><a href="QiTa_component/a_gaojirili.htm">高级日历框</a></li>
+						</ol>
+
+						<p onClick="left_ShowItem('#liulanqi1','liulanqi')" ><img id="liulanqi1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">浏览器组件</font></p>
+						<ol id="liulanqi" hidden>
+							<li><a href="QiTa_component/a_liulanqi.htm">浏览框</a></li>
+							<!--<li><a href="a_ctrl_view.htm">腾讯X5浏览器</a></li>-->
+						</ol>
+
+						<p onClick="left_ShowItem('#pdfzujian1','pdfzujian')" ><img id="pdfzujian1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">PDF组件</font></p>
+						<ol id="pdfzujian" hidden>
+							<li><a href="QiTa_component/a_pdf.htm">PDF展示器</a></li>
+						</ol>
+
+						<p onClick="left_ShowItem('#view1','view')" ><img id="view1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">其它组件</font></p>
+						<ol id="view" hidden>
+							<li><a href="QiTa_component/a_ZhiShiQi.htm">窗口组件指示器</a></li>
+							<li><a href="QiTa_component/a_FenGeXian.htm">分割线</a></li>
+							<li><a href="QiTa_component/a_ZhaoXiang.htm">照相机</a></li>
+							<li><a href="QiTa_component/a_kongbai.htm">空白框</a></li>
+						</ol>
+
+
+					</ol>
+			  <!--	</li>
+
+			  <li>-->
+			   <!-- <p><font color="#009EE5">其它类库讲解</font></p>-->
+			<p onClick="left_ShowItem('#Other_Modules1','Other_Modules')" ><img id="Other_Modules1" border="0" width="12" height="12" align="center" src="scripts/closed.gif"/>&nbsp;<font color="#009EE5">其它类库讲解</font></p>  
+				<ol id="Other_Modules" hidden>
+					
+					<p onClick="left_ShowItem('#newscompile1','newscompile')" ><img id="newscompile1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">常用窗口</font></p>   
+						<ol id="newscompile" hidden>
+								<li><a href="window/a_win.htm#dhkck">1.对话框窗口</a></li>
+								<li><a href="window/a_win.htm#dhkck">2.横向窗口</a></li>
+								<li><a href="window/a_win.htm#dhkck">3.平板窗口</a></li>
+								<li><a href="window/a_win.htm#dhkck">4.全屏窗口</a></li>
+								<li><a href="window/a_win.htm#dhkck">5.透明窗口</a></li>
+								<li><a href="window/a_win.htm#dhkck">6.纵向窗口</a></li>
+								<li><a href="window/a_win.htm#anzhuo5">7.安卓5无标题窗口</a></li>
+								<li><a href="window/a_win.htm#anzhuo5">8.安卓5无标题白色窗口</a></li>
+								<li><a href="window/a_win.htm#anzhuo5">9.安卓5全屏窗口</a></li>
+								<li><a href="window/a_win.htm#anzhuo5">10.安卓5全屏窗口白色</a></li>
+								<li><a href="window/a_win.htm#anzhuo5">13.安卓5对话框窗口白色</a></li>
+								<li><a href="window/a_win.htm#anzhuo5">14.安卓5对话框窗口</a></li>
+							</ol>
+						
+					
+					<p onClick="left_ShowItem('#win1','android_win')" ><img id="win1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">窗口操作相关</font></p>
+						<ol id="android_win" hidden>
+							<li><blockquote><blockquote>一.准备工作</blockquote></blockquote></li>
+							<li><a href="window/a_win.htm#smzq">1.窗口生命周期解释</a></li>
+							<li><a href="window/a_win.htm#xnffcj">2.虚拟方法创建</a></li>
+							<li><a href="window/a_win.htm#cjygjm">3.创建一个界面</a></li>
+							<li><blockquote><blockquote>二.窗口虚拟方法</blockquote></blockquote></li>
+							<li><a href="window/a_win.htm#tzbcj">1.通知_被创建</a></li>
+							<li><a href="window/a_win.htm#tzbqd">2.通知_被启动</a></li>
+							<li><a href="window/a_win.htm#tzbcxqd">3.通知_被重新启动</a></li>
+							<li><a href="window/a_win.htm#tzbjh">4.通知_被激活</a></li>
+							<li><a href="window/a_win.htm#tzsqjh">5.通知_失去激活</a></li>
+							<li><a href="window/a_win.htm#tzqlsj">6.通知_清理数据</a></li>
+							<li><a href="window/a_win.htm#tzbtz">7.通知_被停止</a></li>
+							<li><a href="window/a_win.htm#tzjbxh">8.通知_将被销毁</a></li>
+							<li><a href="window/a_win.htm#tzjjcshnr">9.通知_即将初始化内容</a></li>
+							<li><a href="window/a_win.htm#tzcshxxcd">10.通知_初始化选项菜单</a></li>
+							<li><a href="window/a_win.htm#tzgxxxcd">11.通知_更新选项菜单</a></li>
+
+							<li><a href="window/a_win.htm#tzhdfhsj">12.通知_获得返回数据</a></li>
+							<li><a href="window/a_win.htm#tzjjfsajsj">13.通知_即将发送按键事件</a></li>
+							<li><a href="window/a_win.htm#tzjjfskjjsj">14.通知_即将发送快捷键事件</a></li>
+							<li><a href="window/a_win.htm#tzajsj">15.通知_按键事件</a></li>
+							<li><a href="window/a_win.htm#tzjjfscmsj">16.通知_即将发送触摸事件</a></li>
+							<li><a href="window/a_win.htm#tzbcm">17.通知_被触摸</a></li>
+							<li><a href="window/a_win.htm#tzhtjbax">18.通知_回退键被按下</a></li>
+							<li><a href="window/a_win.htm#tzhqckms">19.通知_获取窗口描述</a></li>
+							<li><a href="window/a_win.htm#tzyhjr">20.通知_用户进入</a></li>
+							<li><a href="window/a_win.htm#tzyhlk">21.通知_用户离开</a></li>
+							<li><a href="window/a_win.htm#tzckjdbgb">22.通知_窗口焦点被改变</a></li>
+							<li><blockquote><blockquote>三.读写属性</blockquote></blockquote></li>	
+							<li><a href="window/a_win.htm#bjsx">1.背景色（写）</a></li>
+							<li><a href="window/a_win.htm#bjtx">2.背景图（写）</a></li>
+							<li><a href="window/a_win.htm#btx">3.标题（写）</a></li>
+							<li><a href="window/a_win.htm#btd">4.标题（读）</a></li>
+							<li><a href="window/a_win.htm#cjmsx">5.沉浸模式（写）</a></li>
+							<li><a href="window/a_win.htm#jwcmgbx">6.界外触摸关闭（写）</a></li>
+							<li><a href="window/a_win.htm#pmfxx">9.屏幕方向（写）</a></li>
+							<li><a href="window/a_win.htm#qdxxd">10.启动信息（读）</a></li>
+							<li><a href="window/a_win.htm#qmmsx">11.全屏模式（隐藏状态栏）</a></li>
+							<li><a href="window/a_win.htm#sfbjhd">12.是否被激活（读）</a></li>
+							<li><a href="window/a_win.htm#sfksx">13.是否可视（写）</a></li>
+							<li><a href="window/a_win.htm#sfyxhd">14.是否已销毁（读）</a></li>
+							<li><a href="window/a_win.htm#sfyjdd">15.是否有焦点（读）</a></li>
+							<li><a href="window/a_win.htm#stjyplxx">16.所调节音频类型（写）</a></li>
+							<li><a href="window/a_win.htm#stjyplxd">17.所调节音频类型（读）</a></li>
+							<li><a href="window/a_win.htm#dztks">18.动作条可视（写）</a></li>
+							<!--<li><a href="window/a_win.htm#ztlztss">19.状态栏字体深色（写）</a></li>-->
+							<li><a href="window/a_win.htm#ztlys">19.状态栏颜色（写）</a></li>
+							<li><a href="window/a_win.htm#ztlgd">20.状态栏高度（读）</a></li>	
+							<li><blockquote><blockquote>四.其它方法</blockquote></blockquote></li>	
+							<li><a href="window/a_win.htm#ycbtl">0.隐藏标题栏</a></li>
+								<li><a href="window/a_win.htm#xxk">1.信息框</a></li>
+								<li><a href="window/a_win.htm#tsxxk">2.提示信息框</a></li>
+								<li><a href="window/a_win.htm#jgxxk">3.警告信息框</a></li>
+								<li><a href="window/a_win.htm#cwxxk">4.错误信息框</a></li>
+								<li><a href="window/a_win.htm#zrck">5.载入窗口</a></li>
+								<li><a href="window/a_win.htm#dhzrck">6.动画载入窗口</a></li>
+								<li><a href="window/a_win.htm#zrck2">7.载入窗口2</a></li>
+								<li><a href="window/a_win.htm#dhzrck2">8.动画载入窗口2</a></li>
+								<li><a href="window/a_win.htm#gbck">9.关闭（窗口）</a></li>
+								<li><a href="window/a_win.htm#dhgbck">10.动画关闭（窗口）</a></li>
+								<li><a href="window/a_win.htm#bfckqhdh">11.播放窗口切换动画</a></li>
+								<li><a href="window/a_win.htm#cjck">12.重建（窗口）</a></li>
+								<li><a href="window/a_win.htm#qybtljdt">13.启用标题栏进度条</a></li>
+								 <li><a href="window/a_win.htm#cjckzj">14.创建窗口组件</a></li>
+								<li><a href="window/a_win.htm#cjckzj1">15.创建窗口组件1</a></li>
+								<li><a href="window/a_win.htm#dkxxcd">16.打开选项菜单</a></li>
+								<li><a href="window/a_win.htm#cjxxcd">17.重建选项菜单</a></li>
+								<li><a href="window/a_win.htm#gbsxwcdzc">18.关闭上下文菜单支持</a></li>
+								<li><a href="window/a_win.htm#kqsxwcdzc">19.开启上下文菜单支持</a></li>
+								<li><a href="window/a_win.htm#gbxxcd">20.关闭选项菜单</a></li>
+								<li><a href="window/a_win.htm#czzzj">21.查找子组件</a></li>
+								<li><a href="window/a_win.htm#xsbtljdt">22.显示标题栏进度条</a></li>
+								<li><a href="window/a_win.htm#ydrwdht">23.移动任务到后台</a></li>
+								<li><a href="window/a_win.htm#qckpzb">24.取窗口配置表</a></li>
+								<li><a href="window/a_win.htm#qckrqzj">25.取窗口容器组件</a></li>
+								<li><a href="window/a_win.htm#qdqjdzzj">26.取当前焦点子组件</a></li>
+								<li><a href="window/a_win.htm#zbjt">27.置背景图</a></li>
+								<li><a href="window/a_win.htm#zbtldejd">28.置标题栏第二进度</a></li>
+								<li><a href="window/a_win.htm#zbtljd">29.置标题栏进度</a></li>
+								<li><a href="window/a_win.htm#zfhsj">30.置返回数据</a></li>
+								<li><a href="window/a_win.htm#fenxiang">31.分享图片</a></li>
+								<li><a href="window/a_win.htm#fenxiang">32.分享文字</a></li>
+								<li><a href="window/a_win.htm#fenxiang">33.分享视频</a></li>
+								<li><a href="window/a_win.htm#fenxiang">34.分享音乐</a></li>
+								<li><a href="window/a_win.htm#dkzdyy">34.打开指定应用</a></li>
+								<li><a href="window/a_win.htm#dkzdwj">34.打开指定文件</a></li>
+								<li><a href="window/a_win.htm#dzzdwz">34.打开指定网址</a></li>
+								<li><a href="window/a_win.htm#dzzdwz">34.打开指定网址2</a></li>
+								<li><a href="window/a_win.htm#ydrwdht">34.返回桌面</a></li>	
+							
+						</ol>	
+						
+						<!--	<p onClick="left_ShowItem('#e_res1','e_res')" ><img id="e_res1" border="0" width="12" height="12" align="center" src="scripts/opened.gif" />&nbsp;<font color="#009EE5">一.准备工作</font></p>
+								<ol id="e_res">
+								</ol>-->
+
+						<!--	<p onClick="left_ShowItem('#newsdown1','newsdown')" ><img id="newsdown1" border="0" width="12" height="12" align="center" src="scripts/opened.gif" />&nbsp;<font color="#009EE5">二.窗口虚拟方法</font></p>       
+								<ol id="newsdown">
+									
+								</ol>-->
+					<!--	<p onClick="left_ShowItem('#newsleiji1','newsleiji')" ><img id="newsleiji1" border="0" width="12" height="12" align="center" src="scripts/opened.gif" />&nbsp;<font color="#009EE5">三.读写属性</font></p>     		
+							<ol id="newsleiji">
+								
+							</ol>-->
+					<!--	<p onClick="left_ShowItem('#newsbaodu1','newsbaodu')" ><img id="newsbaodu1" border="0" width="12" height="12" align="center" src="scripts/opened.gif" />&nbsp;<font color="#009EE5">四.其它方法</font></p>   
+							<ol id="newsbaodu">
+								
+							</ol>	-->
+
+						
+
+					<p onClick="left_ShowItem('#text','text1')" ><img id="text" border="0" width="12" height="12" align="center" src="scripts/closed.gif"/>&nbsp;<font color="#009EE5">文本操作相关</font></p>
+						<ol id="text1" hidden>
+							<li><a href="WenBen/fenciqi.htm">文本分词器</a></li>
+							<li><a href="WenBen/j_text.htm">文本型类</a></li>
+						</ol>
+
+					<p onClick="left_ShowItem('#file','file1')" ><img id="file" border="0" width="12" height="12" align="center" src="scripts/closed.gif"/>&nbsp;<font color="#009EE5">文件操作相关</font></p>
+						<ol id="file1" hidden>
+							<li><a href="WenJian/wenjianming.htm">文件名类</a></li>
+							<li><a href="WenJian/waichu.htm">安卓外储文件类</a></li>
+							<li><a href="WenJian/neichu.htm">安卓内储文件类</a></li>
+							<li><a href="WenJian/wenjianfangwen.htm">文件访问类</a></li>
+							<li><a href="WenJian/wenjianduxie.htm">文件读写操作类</a></li>
+						</ol>
+
+					<p onClick="left_ShowItem('#json1','json')" ><img id="json1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">JSON操作</font></p>
+						<ol id="json" hidden>
+							<li><a href="JSON/json_duixiang.htm">JSON对象类 </a></li>
+							<li><a href="JSON/json_shuzu.htm">JSON数组类</a></li>
+							<li><a href="JSON/json_gongju.htm">JSON工具类</a></li>
+							<li><a href="JSON/json_wenben.htm">JSON文本类</a></li>
+
+						</ol>
+
+					<p onClick="left_ShowItem('#xml1','java_xml')" ><img id="xml1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">XML操作</font></p>
+						<ol id="java_xml" hidden>
+							<li><a href="XML/xml_hecheng.htm">XML合成器类</a></li>
+							<li><a href="XML/xml_jiexi.htm">XML解析器类</a></li>
+
+						</ol>
+
+
+
+					<p  onClick="left_ShowItem('#multi-media1','multi-media')" ><img id="multi-media1" border="0" width="12" height="12" align="center" src="scripts/closed.gif"/>&nbsp;<font color="#009EE5">多媒体相机操作</font></p>
+						<ol id="multi-media" hidden>
+							<li><a href="MeiTi/meitiluzhi.htm">媒体录制类</a></li>
+							<li><a href="MeiTi/meitibofang.htm#">媒体播放基础类</a></li>
+							<li><a href="MeiTi/meitibofang.htm#mtbfl">媒体播放类</a></li>
+							<li><a href="MeiTi/shexiangtou.htm">摄像头类</a></li>
+							<li><a href="MeiTi/shexiangtou.htm#lian">摄像头脸部类</a></li>
+							<li><a href="MeiTi/xiangji.htm">系统相机类</a></li>
+							<li><a href="MeiTi/shengyinchi.htm">声音池类</a></li>
+							<li><a href="QiTa_component/a_ZhaoXiang.htm">照相机</a></li>
+							<li><a href="MeiTi/shipinbofangqi.htm">视频播放器</a></li>
+							<li><a href="MeiTi/shipinbofangqi.htm#mtkzq">媒体控制器类</a></li>
+							<li><a href="MeiTi/yinpinluzhi.htm">音频录制器</a></li>
+							<li><a href="MeiTi/yinipnguanli.htm">音频管理器类</a></li>
+						</ol>
+
+					<p onClick="left_ShowItem('#dialog1','dialog')" ><img id="dialog1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">对话框操作</font></p>
+						<ol id="dialog" hidden>
+							<li><a href="DuiHuaKuang/danxuan.htm">单选列表对话框类</a></li>
+						<!--	<li><a href="a_dialog.htm">弹窗容器</a></li>-->
+							<li><a href="DuiHuaKuang/duihuakuang.htm">对话框类</a></li>
+							<li><a href="DuiHuaKuang/duoxuanliebiao.htm">多选列表对话框类</a></li>
+							<li><a href="DuiHuaKuang/jinduduihuak.htm">进度对话框类</a></li>
+							<li><a href="DuiHuaKuang/riqixuanze.htm">日期选择对话框类</a></li>
+							<li><a href="DuiHuaKuang/shijianxuanze.htm">时间选择对话框类</a></li>
+							<li><a href="DuiHuaKuang/shuruduihuak.htm">输入对话框类</a></li>
+							<li><a href="DuiHuaKuang/tishiduihuak.htm">提示对话框类</a></li>
+							<li><a href="DuiHuaKuang/zifuxuanze.htm">字符选择对话框类</a></li>
+						</ol>
+
+					<p onClick="left_ShowItem('#draw1','draw')" ><img id="draw1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">图像绘制</font></p>
+						<ol id="draw" hidden>
+							<li><a href="HuaBan/huaban.htm">画板</a></li>
+							<li><a href="HuaBan/gaojihuaban.htm">高级画板</a></li>
+							<li><a href="HuaBan/huabanlei.htm">画板类</a></li>
+							<li><a href="HuaBan/huabi.htm">画笔类</a></li>
+							<li><a href="HuaBan/huizhiguolvqi.htm">绘制过滤器类</a></li>
+							<li><a href="HuaBan/huizhilujing.htm">绘制路径类</a></li>
+							<li><a href="HuaBan/caijianquy.htm">剪裁区域类</a></li>
+							<li><a href="HuaBan/juzhen.htm">矩阵类</a></li>
+							<li><a href="HuaBan/lujing.htm">路径效果类</a></li>
+							<li><a href="HuaBan/yanseguolv.htm">颜色过滤器类</a></li>
+							<li><a href="HuaBan/zhuoseqi.htm">着色器类</a></li>
+							<li><a href="HuaBan/zitilei.htm">字体类</a></li>
+							<li><a href="HuaBan/kehuifangtupian.htm">可回放图片类</a></li>
+							<!--<li><a href="">可绘制外形类</a></li>-->
+							<li><a href="HuaBan/weitulei.htm">位图类</a></li>
+							<!--<li><a href="a_canvas.htm#weitu">可绘制资源</a></li>-->
+							<!--<li><a href="">可绘制对象类</a></li>-->
+							<!--<li><a href="">颜色表类</a></li>-->
+							<!--<li><a href="">状态到颜色表</a></li>-->
+							<!--<li><a href="">状态到图像表</a></li>-->
+							<!--<li><a href="">颜色类</a></li>-->
+						</ol>
+
+					<p onClick="left_ShowItem('#menu1','menu')" ><img id="menu1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">菜单操作</font></p>
+						<ol id="menu" hidden>
+							<li><a href="CaiDan/a_menu.htm">菜单</a></li>
+							<li><a href="CaiDan/a_menu.htm#cd_id">菜单项</a></li>
+							<li><a href="CaiDan/a_menu.htm#cd_cdxid">菜单项信息</a></li>
+							<li><a href="CaiDan/a_menu.htm#cdxx_cdxsz">菜单信息</a></li>
+							<li><a href="CaiDan/a_menu.htm#cd_zbgz">上下文菜单</a></li>
+						</ol>
+
+					<p onClick="left_ShowItem('#Thread1','Thread')"><img id="Thread1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">多线程操作</font></p>
+						<ol id="Thread" hidden>
+							<li><a href="DuoXianCheng/j_dxc.htm">线程定时器</a></li>
+							<li><a href="DuoXianCheng/j_dxc.htm#xcjcblsm
+			">线程基础类</a></li>
+							<li><a href="DuoXianCheng/j_dxc.htm#xclqd
+			">线程类</a></li>
+							<li><a href="DuoXianCheng/j_dxc.htm#xcyzcz
+			">原子操作</a></li>
+							<li><a href="DuoXianCheng/j_dxc.htm#xcclei
+			">线程池</a></li>
+							<li><a href="DuoXianCheng/j_dxc.htm#xianchengsuo
+			">线程锁</a></li>
+						</ol>
+
+					<p  onClick="left_ShowItem('#calculation1','calculation')"><img id="calculation1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">数学运算相关</font></p>
+						<ol id="calculation" hidden>
+							<!--<li><a href="j_dsys.htm">常规符号运算</a></li>-->
+							<li><a href="YunSuan/j_dsys.htm">大数类</a></li>
+							<li><a href="YunSuan/j_math.htm">数学运算类</a></li>
+							<li><a href="YunSuan/suijishu.htm">随机数类</a></li>
+						</ol>
+
+					<p  onClick="left_ShowItem('#network1','network')"><img id="network1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">网络操作相关</font></p>
+						<ol id="network" hidden>
+							<li><a href="WangLuo/a_yycxzdgx.htm">应用更新类</a></li>
+							<li><a href="WangLuo/a_ftp.htm">FTP客户端</a></li>
+							<li><a href="WangLuo/j_wlcz.htm">URL类</a></li>
+						</ol>
+
+					<p  onClick="left_ShowItem('#data_base1','data_base')"><img id="data_base1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">数据库操作</font></p>
+						<ol id="data_base" hidden>
+							<li><a href="ShuJuKu/a_sqlite.htm">Sqlite数据库</a></li>
+						</ol>
+
+
+					<p  onClick="left_ShowItem('#data_type1','data_type')"><img id="data_type1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">基本数据类型</font></p>
+						<ol id="data_type" hidden>
+							<!--<li><a href="j_obj.htm">短整数类</a></li>-->
+							<li><a href="JiBenLei/j_obj.htm">对象类</a></li>
+							<!--<li><a href="j_obj.htm">逻辑型类</a></li>-->
+							<!--<li><a href="j_obj.htm">数值类</a></li>-->
+							<!--<li><a href="j_obj.htm">小数类</a></li>-->
+							<!--<li><a href="j_obj.htm">长整数类</a></li>-->
+							<!--<li><a href="j_obj.htm">整数类</a></li>-->
+							<!--<li><a href="j_obj.htm">字符类</a></li>-->
+							<!--<li><a href="j_obj.htm">字节类</a></li>-->
+						</ol>
+
+
+					<p  onClick="left_ShowItem('#Stream_object1','Stream_object')"><img id="Stream_object1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">流对象操作</font></p>
+						<ol id="Stream_object" hidden>
+							<li><a href="Liu/j_liu.htm#">流对象说明</a></li>
+							<li><a href="Liu/j_liu.htm#xiechuliu">写出流</a></li>
+							<li><a href="Liu/j_liu.htm#zfszxcl">字符数组写出流</a></li>
+							<li><a href="Liu/j_liu.htm#hcxcl">缓冲写出流</a></li>
+							<li><a href="Liu/j_liu.htm#dyxcl">打印写出流</a></li>
+							<li><a href="Liu/j_liu.htm#gddrxcl">管道读/写出流</a></li>
+							<li><a href="Liu/j_liu.htm#duruliu">读入流</a></li>
+							<li><a href="Liu/j_liu.htm#hcdrl">缓冲读入流</a></li>
+							<li><a href="Liu/j_liu.htm#hhdrl">行号读入流</a></li>
+							<li><a href="Liu/j_liu.htm#lwjsrl">文件输入流</a></li>
+							<li><a href="Liu/j_liu.htm#zjszsrl">字节数组输入流</a></li>
+							<li><a href="Liu/j_liu.htm#gdsrscl">管道输入/出流</a></li>
+							<li><a href="Liu/j_liu.htm#wjsrl">文件写出流</a></li>
+							<li><a href="Liu/j_liu.htm#zjszscl">字节数组输出流</a></li>
+							<li><a href="Liu/j_liu.htm#dayinscl">打印输出流</a></li>
+						</ol>
+
+					<p  onClick="left_ShowItem('#array1','array')"><img id="array1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">数组操作相关</font></p>
+						<ol id="array" hidden>
+							<li><a href="ShuZu/wenbenshuzu.htm">文本数组操作</a></li>
+							<li><a href="ShuZu/shuzu.htm">数组操作</a></li>
+						</ol>
+
+
+					<p  onClick="left_ShowItem('#j_time1','j_time')"><img id="j_time1" border="0" width="12" height="12" align="center" src="scripts/closed.gif" />&nbsp;<font color="#009EE5">时间操作</font></p>
+						<ol id="j_time" hidden>
+							<li><a href="ShiJian/j_time.htm#">日历类</a></li>
+							<li><a href="ShiJian/j_time.htm#rllqsj">时间类</a></li>
+						</ol>
+
+
+
+					<p  onClick="left_ShowItem('#QRcode1','QRcode')" ><img id="QRcode1" border="0" width="12" height="12" align="center" src="scripts/closed.gif"/>&nbsp;<font color="#009EE5">二维码条码</font></p>
+						<ol id="QRcode" hidden>
+							<li><a href="erweima/a_erweima.htm">二维及条形码类</a></li>
+						</ol>
+
+					<p  onClick="left_ShowItem('#muban1','muban')" ><img id="muban1" border="0" width="12" height="12" align="center" src="scripts/closed.gif"/>&nbsp;<font color="#009EE5">常用模板类操作</font></p>
+						<ol id="muban" hidden>
+							<li><a href="MuBanlei/MuBanlei.htm#">哈希表模板类</a></li>
+							<li><a href="MuBanlei/MuBanlei.htm#haxibiaoxiang">哈希表项模板类</a></li>
+							<li><a href="MuBanlei/MuBanlei.htm#jihemuban">集合模板类</a></li>
+							<li><a href="MuBanlei/MuBanlei.htm#mjqmbl">枚举器模板类</a></li>
+							<li><a href="MuBanlei/MuBanlei.htm#hxjmbl">哈希集模板类</a></li>
+							<li><a href="MuBanlei/MuBanlei.htm#lbmbl">列表模板类</a></li>
+							<li><a href="MuBanlei/MuBanlei.htm#lbmjql">列表枚举器模板类</a></li>
+							<li><a href="MuBanlei/MuBanlei.htm#shuzuliebiao">数组列表模板类</a></li>
+						</ol>
+
+					<p  onClick="left_ShowItem('#img13','java_jiajie')" ><img id="img13" border="0" width="12" height="12" align="center" src="scripts/closed.gif"/>&nbsp;<font color="#009EE5">加解密及编码操作</font></p>
+						<ol id="java_jiajie" hidden>
+
+							<li><a href="JiaMi/j_jiajie.htm#aesjiami">AES加密</a></li>
+							<li><a href="JiaMi/j_jiajie.htm#desjiajiemi">DES加密</a></li>
+							<li><a href="JiaMi/j_jiajie.htm#desjiajiemi">RC4加密</a></li>
+							<li><a href="JiaMi/j_jiajie.htm#rsajiami">RSA加密</a></li>
+							<li><a href="JiaMi/md5.htm">MD5等数据摘要算法</a></li>
+							<li><a href="JiaMi/ba64.htm">Base64类</a></li>
+							<li><a href="JiaMi/shiliujinzhi.htm">字节数组和十六进制转换</a></li>
+							<li><a href="JiaMi/url.htm">URL编码类</a></li>
+						</ol>
+
+					<p  onClick="left_ShowItem('#regular_expression1','regular_expression')" ><img border="0" width="12" height="12" align="center" src="scripts/closed.gif" id="regular_expression1"/>&nbsp;<font color="#009EE5">正则表达式</font></p>
+						<ol id="regular_expression" hidden>
+							<li><a href="ZhengZe/j_zhengze.htm">正则表达式类</a></li>
+							<li><a href="ZhengZe/j_zhengze.htm#cqyscz">正则匹配器类</a></li>
+						</ol>
+
+					<p  onClick="left_ShowItem('#zip1','zip')" ><img id="zip1" border="0" width="12" height="12" align="center" src="scripts/closed.gif"/>&nbsp;<font color="#009EE5">ZIP压缩解压</font></p>
+						<ol id="zip" hidden>
+							<li><a href="ZIP/zip.htm" title="对进行ZIP压缩包进行解压和压缩操作">解压缩工具类</a></li>
+							<li><a href="ZIP/zipyasuo.htm">ZIP压缩类</a></li>
+							<li><a href="ZIP/zipyasuo.htm">ZIP解压类</a></li>
+							<li><a href="ZIP/zipwenjian.htm">ZIP文件类</a></li>
+						</ol>
+
+					<p  onClick="left_ShowItem('#wuzhangai1','wuzhangai')" ><img id="wuzhangai1" border="0" width="12" height="12" align="center" src="scripts/closed.gif"/>&nbsp;<font color="#009EE5">无障碍操作</font></p>
+						<ol id="wuzhangai" hidden>
+							<li><a href="WuZhangAi/a_WuZhangAi.htm">无障碍操作</a></li>
+						</ol>
+
+					<p  onClick="left_ShowItem('#jiantieban1','jiantieban')" ><img id="jiantieban1" border="0" width="12" height="12" align="center" src="scripts/closed.gif"/>&nbsp;<font color="#009EE5">剪贴板/剪辑版操作</font></p>
+						<ol id="jiantieban" hidden>
+							<li><a href="Jiantieban/a_clipboard.htm">剪贴板管理器</a></li>
+							<li><a href="Jiantieban/a_clipboard.htm#jtsjlblsm">剪贴数据类</a></li>
+							<li><a href="Jiantieban/a_clipboard.htm#sjms">剪贴数据描述类</a></li>
+							<li><a href="Jiantieban/a_clipboard.htm#sjx">剪贴数据项类</a></li>
+						</ol>
+
+					<p  onClick="left_ShowItem('#ini1','ini')" ><img id="ini1" border="0" width="12" height="12" align="center" src="scripts/closed.gif"/>&nbsp;<font color="#009EE5">软件程序配置操作</font></p>
+						<ol id="ini" hidden>
+							<li><a href="PeiZhi/PeiZhiBiao.htm">程序配置表</a></li>
+							<li><a href="PeiZhi/PeiZhiBiao.htm#xiugaiqi">程序配置表修改器</a></li>
+						</ol>
+
+					<p onClick="left_ShowItem('#system','system1')" ><img id="system" border="0" width="12" height="12" align="center" src="scripts/closed.gif"/>&nbsp;<font color="#009EE5">系统操作及语言货币</font></p>
+						<ol id="system1" hidden>
+							<li><a href="XiTong/xtcz.htm">系统操作</a></li>
+							<li><a href="XiTong/yuyan.htm">语言区域类</a></li>
+							<li><a href="XiTong/huobi.htm">货币信息类</a></li>
+						</ol>
+
+					<p onClick="left_ShowItem('#yichang','yichang1')" ><img id="yichang" border="0" width="12" height="12" align="center" src="scripts/closed.gif"/>&nbsp;<font color="#009EE5">程序异常处理</font></p>
+						<ol id="yichang1" hidden>
+							<li><a href="yichang/yichang.htm">异常处理</a></li>
+						</ol>
+
+					<p  onClick="left_ShowItem('#mixed1','mixed')" ><img id="mixed1" border="0" width="12" height="12" align="center" src="scripts/closed.gif"/>&nbsp;<font color="#009EE5">其它杂类</font></p>
+						<ol id="mixed" hidden>
+							<li><a href="qitazalei/xiaoxishuju.htm">信息数据类</a></li>
+							<li><a href="qitazalei/xiaoxi.htm">消息类</a></li>
+							<li><a href="qitazalei/zhuangtai.htm">状态类</a></li>
+							<li><a href="qitazalei/shuxingbiao.htm">属性表类</a></li>
+						</ol>		
+					</ol>
+
+		</ol>
+		
+    	
+  	</li>
+
+	
+	
+  <li>
+    <p><font color="#009EE5">其它</font></p>
+    <ol>
+		 <li><a href="about.htm">关于火山</a></li>
+		  <li><a href="main.htm">联系方式</a></li>
+	</ol>
+  </li>
+</ul>
+
+</body>
+
+</html>

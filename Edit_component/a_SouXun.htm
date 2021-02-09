@@ -1,0 +1,501 @@
+﻿
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>搜寻框组件</h4></li>
+	<ol>
+
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new5')" >一.搜寻框<span>(可收缩)</span></h6></li>
+		<ol id="new5">
+			<li><blockquote><a href="#souxun">1.准备工作</a></blockquote></li>
+			<li><blockquote><a href="#sxknr">2.内容(读写)</a></blockquote></li>
+			<li><blockquote><a href="#sxktbms">3.图标模式(读写)</a></blockquote></li>
+			<li><blockquote><a href="#sxktjan">4.提交按钮(读写)</a></blockquote></li>
+			<li><blockquote><a href="#sxkts">5.提示(读写)</a></blockquote></li>
+			<li><blockquote><a href="#sxkssms">6.收缩模式(读写)</a></blockquote></li>
+			<li><blockquote><a href="#sxkzdkd">7.最大宽度(读写)</a></blockquote></li>
+			<li><blockquote><a href="#sxksrfxx">8.输入法选项(读写)</a></blockquote></li>
+			<li><blockquote><a href="#sxksrlx">9.输入类型(读写)</a></blockquote></li>
+			<li><blockquote><a href="#sxkssts">10.搜索提示(写)</a></blockquote></li>
+			<li><blockquote><a href="#sxknrbgb">11.内容被改变(事件)</a></blockquote></li>
+			<li><blockquote><a href="#sxktswb">12.提交文本(事件)</a></blockquote></li>
+			<li><blockquote><a href="#sxktsbdj">13.提示被单击(事件)</a></blockquote></li>
+			<!-- <li><blockquote><a href="#sxktsbxz">14.提示被选择(事件)</a></blockquote></li> -->
+			<li><blockquote><a href="#sxkssbdj">14.搜索被点击(事件)</a></blockquote></li>
+			<li><blockquote><a href="#sxkjdbgb">15.焦点被改变(事件)</a></blockquote></li>
+			<li><blockquote><a href="#sxkbgb">16.被关闭(事件)</a></blockquote></li>
+			<li><blockquote><a href="#sxkzk">17.展开</a></blockquote></li>
+			<li><blockquote><a href="#sxkzd">18.折叠</a></blockquote></li>
+			
+		</ol>
+		
+		
+	</ol>
+</ul>
+</div>	
+	
+
+<p align="left">
+<h2>搜寻框组件操作实例讲解</h2>	
+<a name="souxun"></a>
+<p><strong>作者：创世魂</strong></p>
+
+<p align="left">&nbsp;</p>	
+		<font style="font-size: 12pt; font-weight:700">● 辅助说明</font><br/>
+     <blockquote>
+	<p align="left"><font color="#F70408">本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+	</blockquote>	
+<p align="left">&nbsp;</p>	
+	
+<h2>一、搜寻框</h2>
+<p align="left">&nbsp;</p>
+	
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font>	
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">打开窗口设计器，从上到下依次拖放<b>“按钮1”</b>，<b>“按钮2”</b>和<b>“搜寻框1”</b>。</p>
+	<p align="left">然后设置<b>“搜寻框1”</b>的宽度类型为<b>“匹配父组件宽度”</b>。</p>
+	<p align="left">设置完毕后保存布局即可。</p>
+	<p align="left"><img border="0" src="sx_images/73.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="sxknrbgb"></a><a name="sxknr"></a>
+<font style="font-size: 12pt; font-weight:700">● 内容(读写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 内容被改变(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“内容(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本写属性顾名思义，就是用来设置当前<b>“搜寻框”</b>的内容。</p>
+	<p align="left">设置内容后会触发<b>“内容被改变”</b>事件。</p>
+	<p align="left">同名读属性即读取当前搜寻框的内容。</p>
+	<p align="left"><img border="0" src="sx_images/74.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“内容被改变(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">内容被改变后会触发本事件，通过<b>“新的内容”</b>参数可以获得新内容。</p>
+	<p align="left"><img border="0" src="sx_images/75.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，设置内容属性。</p>
+	<p align="left"><b>“按钮2”</b>被点击后读取当前的内容属性。</p>
+	<p align="left">添加<b>“搜寻框_内容被改变”</b>事件，指定来源对象后，将参数弹出。</p>
+	
+	<p align="left"><img border="0" src="sx_images/76.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">最后可以看到，无论是输入内容，还是点击<b>“按钮1”</b>，都触发了<b>“内容被改变”</b>事件。</p>
+    <p align="left">点击<b>“按钮2”</b>后，成功读取当前搜寻框的内容。</p>
+	<p align="left"><img border="0" src="sx_images/77.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="sxktbms"></a>
+<font style="font-size: 12pt; font-weight:700">● 图标模式(读写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“图标模式(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本写属性用来设置当前<b>“搜寻框”</b>是否以图标模式显示。</p>
+	<p align="left">如果不设置本属性，默认是图标样式。</p>
+	<p align="left">同名读属性，即读取当前<b>“搜寻框”</b>是否以<b>“图标模式”</b>显示。</p>
+	<p align="left"><img border="0" src="sx_images/78.png" ></p>
+</blockquote>	
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，设置当前写属性的属性值为<b>“取反(搜寻框1.图标模式)”</b>。</p>
+	<p align="left"><b>“取反”</b>方法的作用，翻转逻辑值。</p>
+	<p align="left">这样就可以实现，点击一个按钮实现两种效果。</p>
+	
+	<p align="left"><img border="0" src="sx_images/79.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后，搜索图标消失变成编辑框样式，再次点击后又恢复图标模式。</p>
+	<p align="left"><img border="0" src="sx_images/80.gif" >
+    </p>
+</blockquote>
+	
+	
+		<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="sxktjan"></a><a name="sxktswb"></a>
+<font style="font-size: 12pt; font-weight:700">● 提交按钮(读写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 提交文本(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“提交按钮(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">在搜寻框中，有一个叫做<b>“提交”</b>的按钮，通过本属性可以设置其按钮是否显示。</p>
+	<p align="left">本按钮默认不显示，属性值设置为真则显示，否则相反。</p>
+	<p align="left">同名读属性，即读取当前<b>“搜寻框”</b>是否显示了提交按钮。</p>
+	<p align="left"><img border="0" src="sx_images/81.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“提交文本(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left"><b>“提交按钮”</b>被点击后会触发本事件，参数<b>“提交内容”</b>会返回当前搜寻框中的内容。</p>
+	<p align="left"><img border="0" src="sx_images/82.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，同样是利用<b>“取反”</b>方法设置当前写属性的属性值。</p>
+	<p align="left">添加<b>“搜寻框_提示文本”</b>事件后，指定来源对象，最后可利用提示框显示当前<b>“提交内容”</b>。</p>
+	
+	<p align="left"><img border="0" src="sx_images/83.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后，提交按钮会显示，再次点击后会消失。</p>
+    <p align="left"><b>“提交按钮”</b>被点击后，就会弹出<b>“提交内容”</b>。</p>
+	<p align="left"><img border="0" src="sx_images/84.gif" >
+    </p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="sxkts"></a>
+<font style="font-size: 12pt; font-weight:700">● 提示(读写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“提示(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，本写属性的作用就是用来设置当前<b>“搜寻框”</b>的提示文本。</p>
+	<p align="left">同名读属性，即读取当前<b>“搜寻框”</b>的提示文本。</p>
+	<p align="left"><img border="0" src="sx_images/85.png" ></p>
+</blockquote>
+
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，给当前搜寻框设置<b>“提示”</b>。</p>
+	<p align="left"><b>“按钮2”</b>被点击后读取当前<b>“提示”</b>，显示在提示框中。</p>
+	
+	<p align="left"><img border="0" src="sx_images/86.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可以看到<b>“按钮1”</b>被点击后，当前搜寻框显示了提示文本。</p>
+    <p align="left"><b>“按钮2”</b>被点击后，当前的提示文本被弹出。</p>
+	<p align="left"><img border="0" src="sx_images/87.gif" >
+    </p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="sxkssms"></a>
+<font style="font-size: 12pt; font-weight:700">● 收缩模式(读写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“收缩模式(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本写属性可以控制当前搜寻框，是否允许收缩为图标形式显示。</p>
+	<p align="left">如果属性值设置为真，则当前搜寻框可以收缩成图标显示，否则相反。</p>
+	<p align="left">同名读属性，即读取当前的<b>“收缩模式”</b>。</p>
+	<p align="left"><img border="0" src="sx_images/88.png" ></p>
+</blockquote>
+
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">此处依然可以利用<b>“取反”</b>方法，设置当前属性值为<b>“取反(搜寻框1.收缩模式)”</b>。</p>
+	
+	<p align="left"><img border="0" src="sx_images/89.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后，当前搜寻框会在<b>“能收缩”</b>和<b>“不能收缩”</b>之间进行转换。</p>
+	<p align="left"><img border="0" src="sx_images/90.gif" >
+    </p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="sxkzdkd"></a>
+<font style="font-size: 12pt; font-weight:700">● 最大宽度(读写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“最大宽度(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，设置当前组件的最大宽度，单位像素。</p>
+	<p align="left">同名读属性，即读取当前的<b>“最大宽度”</b>。</p>
+	<p align="left"><img border="0" src="sx_images/91.png" ></p>
+</blockquote>
+
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后设置当前<b>“最大宽度”</b>为200像素。</p>
+  <p align="left"><b>“按钮2”</b>被点击后读取当前<b>“最大宽度”</b>。</p>
+	
+	<p align="left"><img border="0" src="sx_images/92.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>点击后，当前搜寻框宽度变为200像素。</p>
+    <p align="left"><b>“按钮2”</b>点击后，成功读取当前搜寻框的最大宽度。</p>
+	<p align="left"><img border="0" src="sx_images/93.gif" >
+    </p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="sxksrfxx"></a>
+<font style="font-size: 12pt; font-weight:700">● 输入法选项(读写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">本读写属性参考<a href="a_ctrl_edit.htm#srfxxdx"><b>“编辑框类组件”</b></a>教程。</p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="sxksrlx"></a>
+<font style="font-size: 12pt; font-weight:700">● 输入类型(读写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“输入类型(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本属性可以设置当前搜寻框的输入类型，属性值为<b>“输入类型.XXX”</b>常量值。</p>
+	<p align="left">同名读属性，即读取当前的<b>“输入类型”</b>。</p>
+	<p align="left"><img border="0" src="sx_images/94.png" ></p>
+</blockquote>
+
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后设置当前<b>“输入类型”</b>为<b>“输入类型.数字”</b>。</p>
+  <p align="left"><b>“按钮2”</b>被点击后判断当前<b>“输入类型”</b>是否为数字，然后弹出对应提示。</p>
+	
+	<p align="left"><img border="0" src="sx_images/95.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>点击后，可以看到当前<b>“搜寻框”</b>只能输入数字，其它任何字符都无法输入。</p>
+    <p align="left"><b>“按钮2”</b>点击后，成功判断当前的输入类型。</p>
+	<p align="left"><img border="0" src="sx_images/96.gif" >
+    </p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="sxkssts"></a>
+<a name="sxktsbdj"></a>
+<font style="font-size: 12pt; font-weight:700">● 搜索提示(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 提示被单击(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“搜索提示(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性可以实现类似于<a href="a_ctrl_edit.htm#bxlbx"><b>“自动完成编辑框”</b></a>的功能，给当前搜寻框添加下拉列表。</p>
+	<p align="left">注意：每项文本之间需要用换行符分割，并且每调用一次，就会覆盖之前的内容。</p>
+	<p align="left"><img border="0" src="sx_images/97.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“提示被单击(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">点击<b>“搜寻框”</b>弹出的下拉列表，会触发本事件。</p>
+	<p align="left">本事件同时会返回<b>“选择序号”</b>和<b>“提示内容”</b>。</p>
+	<p align="left"><img border="0" src="sx_images/98.png" ></p>
+</blockquote>
+
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后设置当前<b>“搜索提示”</b>属性。</p>
+  <p align="left">添加<b>“搜寻框_提示被单击”</b>事件，指定来源对象后就可以将<b>“选择序号”</b>和<b>“提示内容”</b>弹出。</p>
+	
+	<p align="left"><img border="0" src="sx_images/99.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">当前<b>“搜寻框”</b>输入<b>“火山”</b>后会弹出列表。</p>
+    <p align="left">选择列表的任意项目后，会弹出当前选择项的<b>“序号”</b>和<b>“内容”</b>。</p>
+	<p align="left"><img border="0" src="sx_images/100.gif" >
+    </p>
+</blockquote>
+	
+	
+		<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="sxkssbdj"></a>
+<font style="font-size: 12pt; font-weight:700">● 搜索被点击(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“搜索被点击(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">当<b>“搜寻框”</b>的搜索按钮被点击后，会触发本事件。</p>
+	<p align="left"><img border="0" src="sx_images/101.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">添加<b>“搜寻框_搜索被点击”</b>事件，指定来源对象后弹出提示。</p>
+	<p align="left"><img border="0" src="sx_images/102.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可以看到点击<b>“搜寻框”</b>的按钮后，弹出了<b>“搜索被点击”</b>。</p>
+	<p align="left"><img border="0" src="sx_images/103.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="sxkbgb"></a>
+<font style="font-size: 12pt; font-weight:700">● 被关闭(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“被关闭(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">当<b>“搜寻框”</b>关闭按钮被点击后，会触发本事件。</p>
+	<p align="left"><img border="0" src="sx_images/104.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">添加<b>“搜寻框_被关闭”</b>事件，指定来源对象后弹出提示。</p>
+	<p align="left"><img border="0" src="sx_images/105.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可以看到点击<b>“搜寻框”</b>的关闭按钮后，弹出了<b>“被关闭”</b>提示。</p>
+	<p align="left"><img border="0" src="sx_images/106.gif" >
+    </p>
+</blockquote>
+
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="sxkjdbgb"></a>
+<font style="font-size: 12pt; font-weight:700">● 焦点被改变(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“焦点被改变(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">当<b>“焦点被改变”</b>会触发本事件，通过<b>“是否得到焦点”</b>参数可以判断当前搜寻框是否获得焦点。</p>
+	<p align="left"><img border="0" src="sx_images/107.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">界面准备： </p>
+<blockquote>
+  <p align="left">在原界面的基础上，增加一个<b>“编辑框”</b>组件，起名<b>“编辑框1”</b>。</p>
+	<p align="left"><img border="0" src="sx_images/108.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">添加<b>“搜寻框_焦点被改变”</b>事件，指定来源对象后判断<b>“是否得到焦点”</b>，然后弹出对应提示。</p>
+	<p align="left"><img border="0" src="sx_images/109.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可以看到点击<b>“搜索”</b>按钮后，当前<b>“搜寻框”</b>会获得焦点。</p>
+    <p align="left">点击<b>“关闭”</b>按钮后，当前<b>“搜寻框”</b>会失去焦点。</p>
+	<p align="left"><img border="0" src="sx_images/110.gif" >
+    </p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="sxkzk"></a>
+<a name="sxkzd"></a>
+<font style="font-size: 12pt; font-weight:700">● 展开</font><br>
+<font style="font-size: 12pt; font-weight:700">● 折叠</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“展开”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">当<b>“焦点被改变”</b>会触发本事件，通过<b>“是否得到焦点”</b>参数可以判断当前搜寻框是否获得焦点。</p>
+	<p align="left"><img border="0" src="sx_images/111.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“折叠”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">在原界面的基础上，增加一个<b>“编辑框”</b>组件，起名<b>“编辑框1”</b>。 </p>
+	<p align="left"><img border="0" src="sx_images/112.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">添加<b>“搜寻框_焦点被改变”</b>事件，指定来源对象后判断<b>“是否得到焦点”</b>，然后弹出对应提示。</p>
+	<p align="left"><img border="0" src="sx_images/113.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可以看到点击<b>“搜索”</b>按钮后，当前<b>“搜寻框”</b>会获得焦点。</p>
+    <p align="left">点击<b>“关闭”</b>按钮后，当前<b>“搜寻框”</b>会失去焦点。</p>
+	<p align="left"><img border="0" src="sx_images/114.gif" >
+    </p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

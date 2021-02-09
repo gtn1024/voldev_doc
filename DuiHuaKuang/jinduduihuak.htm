@@ -1,0 +1,423 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>对话框操作</h4></li>
+	<ol>
+    <li><blockquote><a href="#zbgz">0.准备工作</a></blockquote></li>     
+	
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new4')" >一.进度对话框类<span>(可收缩)</span></h6></li>
+		<ol id="new4">
+        
+           <li><blockquote><a href="#jdcj">0.创建</a></blockquote></li>
+            <li><blockquote><a href="#jdxs2">1.显示2</a></blockquote></li>
+            <li><blockquote><a href="#jdzjjd">2.增加进度</a></blockquote></li>
+            <li><blockquote><a href="#jdzjejjd">3.增加二级进度</a></blockquote></li>
+            <li><blockquote><a href="#jdbdmsd">4.不定模式（读）</a></blockquote></li>
+            <li><blockquote><a href="#jdbdmsx">5.不定模式（写）</a></blockquote></li>
+            <li><blockquote><a href="#jdzdjdd">6.最大进度（读）</a></blockquote></li>
+			<li><blockquote><a href="#jdzdjdx">7.最大进度（写）</a></blockquote></li>
+            <li><blockquote><a href="#jdxxejjdd">8.现行二级进度（读）</a></blockquote></li>
+            <li><blockquote><a href="#jdxxejjdx">9.现行二级进度（写）</a></blockquote></li>
+            <li><blockquote><a href="#jdxxjdd">10.现行进度（读）</a></blockquote></li>
+            <li><blockquote><a href="#jdxxjdx">11.现行进度（写）</a></blockquote></li>
+            <li><blockquote><a href="#jdbdjdtxx">12.不定进度图像（写）</a></blockquote></li>
+            <li><blockquote><a href="#jdjdtxx">13.进度图像（写）</a></blockquote></li>
+             <li><blockquote><a href="#jdwbgsx">14.进度文本格式（写）</a></blockquote></li>
+			<li><blockquote><a href="#jdjdysx">15.进度样式（写）</a></blockquote></li>
+		</ol>	
+        				
+	</ol>
+</ul>
+</div>
+
+
+<p align="left">
+<h2>进度对话框类操作实例讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+     
+<font style="font-size: 12pt; font-weight:700">● 帮助说明</font><br/>
+<br/>
+<blockquote>
+  
+<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 准备一个界面</font><br/>
+<p align="left">&nbsp;</p>
+
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">打开窗口设计器，放两个<b>“按钮”</b>，右侧属性文本分别起名<b>“按钮1”</b>和<b>“按钮2”</b>。</p>
+	<p align="left"><img border="0" src="dhk_images/2.png" ></p>
+    <p align="left">保存布局后，右键<b>“按钮”</b>，添加<b>“按钮被单击事件接收方法”</b>，添加完毕后<b>如下图</b>所示。</p>
+    <p align="left"><img border="0" src="dhk_images/02.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<h2>一、进度对话框类</h2>
+
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 创建</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">创建一个进度对话框对象，只有一个窗口参数，通常填写<b>“本对象”</b>即可。</p>
+	<p align="left"><img border="0" src="dhk_images/57.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义一个类型为<b>“进度对话框类”</b>的成员变量，注意设置参考。</p>
+	<p align="left">然后创建<b>“进度对话框类”</b>，随后调用<b>“显示”</b>方法，就可以显示出来。</p>
+    <p align="left">本显示方法是继承自<b>“对话框类”</b>。</p>
+    <p align="left">注意：利用<b>“显示”</b>方法<b>“显示进度对话框”</b>，无法通过<b>“返回键”</b>关闭对话框，也无法通过<b>“界外触摸关闭”</b>。</p>
+    <p align="left"><img border="0" src="dhk_images/58.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">点击<b>“按钮1”</b>后可以看到，弹出了一个一直转圈圈的对话框，这也是进度对话框的<b>“默认效果”</b>。</p>
+	<p align="left"><img border="0" src="dhk_images/59.gif" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+<a name="jdxs2"></a>
+<font style="font-size: 12pt; font-weight:700">● 显示2</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">可以看到有五个参数，没有返回值，并且后四个参数都有默认值，可以省略。</p>
+    <p align="left">使用本方法的时候，无需调用<b>“创建”</b>方法，可以直接通过<b>“进度对话框类.显示2”</b>的方式调用。</p>
+	<p align="left"><img border="0" src="dhk_images/60.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写：</b></p>
+<blockquote>
+<p align="left">不需要使用创建的<b>“成员变量”</b>，直接通过类名就可以创建并显示对话框。</p>
+	<p align="left">我们可以在这里同时设置<b>“标题”</b>和<b>“内容”</b>的初始值。</p>
+    <p align="left">参数4和5省略不写。</p>
+    <p align="left">注意：如果使用<b>“显示2”</b>方法，对话框的标题，内容，进度样式等无法修改，并且进度样式只能是进度圈。</p>
+	<p align="left"><img border="0" src="dhk_images/61.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</b></p>
+<blockquote>
+    <p align="left">执行<b>“按钮1”</b>后，没有使用创建方法，进度对话框依然正常显示。</p>
+    <p align="left">因我们没有设置<b>“参数5”</b>所以使用了默认值<b>“真”</b>。</p>
+    <p align="left">可以看到通过<b>“界外触摸”</b>和<b>“返回键”</b>都可以进行关闭对话框操作。</p>
+	<p align="left"><img border="0" src="dhk_images/62.gif" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="jdzjjd"></a>
+<font style="font-size: 12pt; font-weight:700">● 增加进度</font><br/>
+<a name="jdzjejjd"></a>
+<font style="font-size: 12pt; font-weight:700">● 增加二级进度</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助：</p>
+<blockquote>
+    <p align="left">可以看到，两个方法都只有一个整数类型的<b>“进度值”</b>参数。</p>
+    <p align="left">注意：这两个方法都是基于原进度，增加进度，并不是设置当前进度。</p>
+	<p align="left"><img border="0" src="dhk_images/63a.png" >
+    <img border="0" src="dhk_images/63b.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">本方法仅对<b>“进度条”</b>有效，所以需要首先设置<b>“进度样式=1”</b>。</p>
+	<p align="left"><img border="0" src="dhk_images/64.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">因我们没有设置初始进度，默认初始进度为0。</p>
+    <p align="left">所以显示后，进度为10，二级进度为50。</p>
+	<p align="left"><img border="0" src="dhk_images/65.png" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="jdbdmsx"></a>
+<font style="font-size: 12pt; font-weight:700">● 不定模式（写）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">写属性，用来设置<b>“当前进度条”</b>，是否为不确定模式。</p>
+    <p align="left">如果参数设置<b>“真”</b>，进度条将会循环播放动画。</p>
+	<p align="left"><img border="0" src="dhk_images/66.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写：</b></p>
+<blockquote>
+	<p align="left">本属性仅对<b>“进度条”</b>有效，所以首先需要设置<b>“进度样式=1”</b>。</p>
+    <p align="left">然后让<b>“按钮1”</b>单击的时候设置<b>“真”</b>，<b>“按钮2”</b>单击设置<b>“假”</b>。</p>
+    <p align="left">注意：我这里设置<b>“界外触摸关闭=真”</b>是为了方便演示效果。</p>
+	<p align="left"><img border="0" src="dhk_images/67.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可以看到<b>“按钮1”</b>点击后，进度条不停的重复播放动画。</p>
+    <p align="left">但是<b>“按钮2”</b>点击后进度条正常显示。</p>
+	<p align="left"><img border="0" src="dhk_images/68.gif" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="jdbdmsd"></a>
+<font style="font-size: 12pt; font-weight:700">● 不定模式（读）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义：就是读取当前进度条是否为<b>“不确定模式”</b>，返回一个逻辑值。</p>
+    <p align="left"><b>“真”</b>为不确定，<b>“假”</b>为确定。</p>
+	<p align="left"><img border="0" src="dhk_images/69.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">我们只需要在<b>“不定模式”</b>（写属性）的代码基础上稍作修改。</p>
+  <p align="left">在<b>“按钮2”</b>被点击下，写<b>“如果”</b>进行判断当前进度条的<b>“不定模式”</b>。</p>
+	<p align="left"><img border="0" src="dhk_images/70.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">可以看到，执行<b>“按钮2”</b>后成功判断。</p>
+	<p align="left"><img border="0" src="dhk_images/71.gif" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="jdzdjdd"></a>
+<font style="font-size: 12pt; font-weight:700">● 最大进度（读）</font><br/>
+<a name="jdzdjdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 最大进度（写）</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+ <p align="left">两个都是属性方法。</p>
+    <p align="left">左图：读取并<b>“返回”</b>当前<b>“最大进度”</b>值。</p>
+    <p align="left">右图：设置当前<b>“最大进度”</b>。</p>
+	<p align="left"><img border="0" src="dhk_images/72.png" >
+   &nbsp;&nbsp; <img border="0" src="dhk_images/73.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">只需要在<b>“不定模式”</b>代码基础上稍作修改。</p>
+    <p align="left"><b>“不定模式”</b>改为<b>“最大进度”</b>，并且直接赋值一个<b>“整数数字”</b>。</p>
+    <p align="left">例如：我这里直接赋值200.</p>
+    <p align="left"><b>“按钮2”</b>点击后，直接<b>“到文本”</b>转换<b>“本属性”</b>给提示信息框显示。</p>
+	<p align="left"><img border="0" src="dhk_images/74.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">点击<b>“按钮1”</b>后，可以看到<b>“最大进度”</b>变成了<b>“200”</b>。</p>
+    <p align="left">点击<b>“按钮2”</b>最大进度也成功读取。</p>
+	<p align="left"><img border="0" src="dhk_images/75.gif" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="jdxxjdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 现行进度（写）</font><br/>
+<a name="jdxxejjdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 现行二级进度（写）</font><br/>
+<a name="jdxxjdd"></a>
+<font style="font-size: 12pt; font-weight:700">● 现行进度（读）</font><br/>
+<a name="jdxxejjdd"></a>
+<font style="font-size: 12pt; font-weight:700">● 现行二级进度（读）</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">以上四个都是属性操作，这里统一解说：</p>
+<blockquote>
+    <p align="left"><b>“现行进度写属性”</b>，顾名思义就是设置当前一级进度值。</p>
+    <p align="left">注意：本属性必须在<b>“显示”</b>方法后调用。</p>
+    <p align="left"><img border="0" src="dhk_images/76a.png" ></p>
+    <p align="left">&nbsp;</p>
+    <p align="left"><b>“现行二级进度写属性”</b>：设置当前<b>“二级进度”</b>，它的进度颜色会比一级进度颜色要浅一些。</p>
+    <p align="left"><img border="0" src="dhk_images/76b.png" ></p>
+    <p align="left">&nbsp;</p>
+    <p align="left"><b>“现行进度读属性”</b>：返回当前的一级进度值。</p>
+    <p align="left"><img border="0" src="dhk_images/76c.png" ></p>
+    <p align="left">&nbsp;</p>
+    <p align="left">"现行二级进度读属性"：返回当前的二级进度值。</p>
+    <p align="left"><img border="0" src="dhk_images/76d.png" ></p>
+    <p align="left">&nbsp;</p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写如下图</b>：</p>
+<blockquote>
+	<p align="left">依然在原代码的基础上进行简单修改。</p>
+    <p align="left">直接赋值：现行<b>“二级进度=150”</b>，因设置了<b>“最大进度200”</b>，所以这里<b>“设置150”</b>没有任何问题。</p>
+    <p align="left"><b>“现行进度”</b>的赋值，必须在<b>“显示”</b>方法后调用，我这里<b>“赋值50”</b>。</p>
+    <p align="left"><b>“按钮2”</b>被单击这里，定义两个<b>“文本型”</b>变量，分别赋值<b>“现行进度”</b>和<b>“二级进度”</b>。</p>
+    <p align="left">因为我们等下要用<b>“提示信息框”</b>展示效果，所以这里需要进行<b>“到文本”</b>转换。</p>
+	<p align="left"><img border="0" src="dhk_images/76.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">可以看到无论是<b>“设置进度”</b>，还是<b>“读取进度”</b>，全部成功实现。</p>
+	<p align="left"><img border="0" src="dhk_images/77.gif" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+<a name="jdbdjdtxx"></a>
+<font style="font-size: 12pt; font-weight:700">● 不定进度图像（写）</font><br/>
+<a name="jdjdtxx"></a>
+<font style="font-size: 12pt; font-weight:700">● 进度图像（写）</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">以上两个方法<b>“用法”</b>和<b>“最终效果”</b>一致，这里举例<b>“不定进度图像”</b>。</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是给不确定进度，设置一张图片。</p>
+   
+
+	<p align="left"><img border="0" src="dhk_images/78.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写</b>：</p>
+<blockquote>
+	<p align="left">我们依然在<b>“原代码”</b>的基础修改，增加一个<b>“图像”</b>变量，导入一张图片。</p>
+    <p align="left">如果给<b>“不定进度设置图片”</b>，我们需要提前设置<b>“不定模式=真”</b>。</p>
+    <p align="left">最后赋值<b>“图像”</b>变量即可。</p>
+	<p align="left"><img border="0" src="dhk_images/79.png" ></p>
+   
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">执行<b>“按钮1”</b>后可以看到，<b>“不定进度”</b>变成了我设置的<b>“白色图片”</b>。</p>
+    <p align="left">备注：进度图像<b>“设置本图片”</b>，效果和下面一致。</p>
+	<p align="left"><img border="0" src="dhk_images/80.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="jdwbgsx"></a>
+<font style="font-size: 12pt; font-weight:700">● 进度文本格式（写）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，设置当前进度格式。</p>
+    <p align="left"><b>“%1d”</b>代表<b>“第一进度”</b>，<b>“%2d”</b>代表<b>“第二进度”</b>。</p>
+	<p align="left"><img border="0" src="dhk_images/81.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">如果我们在<b>“格式文本”</b>后增加字符，例如：<b>“Kb”</b>，用来显示下载文件进度。</p>
+	<p align="left"><img border="0" src="dhk_images/82.png" >
+
+    </p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">最终结果<b>“进度数值”</b>后增加了<b>“Kb”</b>字符。</p>
+	<p align="left"><img border="0" src="dhk_images/83.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="jdjdysx"></a>
+<font style="font-size: 12pt; font-weight:700">● 进度样式（写）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，设置当前进度对话框的进度样式。</p>
+    <p align="left">0为进度圈，1为进度条。</p>
+    <p align="left">前面的代码都演示了使用方法，这里不再演示。</p>
+	<p align="left"><img border="0" src="dhk_images/84.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+
+</body>
+</html>

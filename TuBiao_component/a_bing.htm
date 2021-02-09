@@ -1,0 +1,613 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.饼状图<span>(可收缩)</span></h6></li>
+		<ol id="new1">
+            <li><blockquote><a href="#">1.准备工作</a></blockquote></li> 
+			<li><blockquote><a href="#btsjcj">2.图表数据创建</a></blockquote></li>
+			<li><blockquote><a href="#btbsj">3.图表数据(写)</a></blockquote></li>
+			<li><blockquote><a href="#bsxqy">4.扇形区域(写)</a></blockquote></li>
+            <li><blockquote><a href="#bzcsdxz">5.支持手动旋转(读写)</a></blockquote></li>
+            <li><blockquote><a href="#bstbl">6.视图比例(写)</a></blockquote></li>
+            <li><blockquote><a href="#bdqxzjd">7.当前旋转角度(读)</a></blockquote></li>
+            <li><blockquote><a href="#bzdqxzjd">8.置当前旋转角度</a></blockquote></li>
+            <li><blockquote><a href="#bznrtlxz">9.值内容脱离选中(事件)</a></blockquote></li>
+            <li><blockquote><a href="#bznrtlxz">10.值内容被选中(事件)</a></blockquote></li>
+			<!-- 饼状图数据类 -->
+            <li><blockquote><a href="#btbsj">11.创建</a></blockquote></li> 
+            <li><blockquote><a href="#bzjwb">12.中间文本(写)</a></blockquote></li>
+			<li><blockquote><a href="#bzjwb">13.中间文本2(写)</a></blockquote></li>
+            <li><blockquote><a href="#bzjwb">14.中间文本字体(写)</a></blockquote></li>
+            <li><blockquote><a href="#bzjwb">15.中间文本字体2(写)</a></blockquote></li>
+            <li><blockquote><a href="#bzjwb">16.中间文本尺寸(写)</a></blockquote></li>
+            <li><blockquote><a href="#bzjwb">17.中间文本尺寸2(写)</a></blockquote></li>
+            <li><blockquote><a href="#bzjwb">18.中间文本颜色(写)</a></blockquote></li>
+            <li><blockquote><a href="#bzjwb">19.中间文本颜色2(写)</a></blockquote></li>
+            <li><blockquote><a href="#bzjwb">20.中间空心圆(写)</a></blockquote></li>
+            <li><blockquote><a href="#bzgshdx">21.值格式化对象(写)</a></blockquote></li> 
+            <li><blockquote><a href="#bqplb">22.切片列表(写)</a></blockquote></li>
+            <li><blockquote><a href="#bqplb">23.切片间距(写)</a></blockquote></li> 
+            <li><blockquote><a href="#bxsbq">24.显示标签(写)</a></blockquote></li>
+            <li><blockquote><a href="#bbqwbxs">25.标签外部显示(写)</a></blockquote></li>
+            <li><blockquote><a href="#bkxydx">26.空心圆大小(写)</a></blockquote></li>
+            <li><blockquote><a href="#bkxydx">27.空心圆颜色(写)</a></blockquote></li>
+            <li><blockquote><a href="#bxzsjts">28.选择数据提示(写)</a></blockquote></li>
+			<!-- 图表数据基础类 -->
+            <li><blockquote><a href="#bxsbq">29.值标签字体类型(写)</a></blockquote></li>
+            <li><blockquote><a href="#bxsbq">30.值标签文本尺寸(写)</a></blockquote></li>
+            <li><blockquote><a href="#bxsbq">31.值标签文本颜色(写)</a></blockquote></li>
+			<!-- 图表组件基础类 -->
+            <li><blockquote><a href="#bzcjh">32.支持交互(读写)</a></blockquote></li>
+            <li><blockquote><a href="#bzcxzxs">33.支持值选中显示(读写)</a></blockquote></li>
+            <li><blockquote><a href="#bzcdj">34.支持点击(读写)</a></blockquote></li>
+            <li><blockquote><a href="#stqugb">35.支持视图区域改变监听(写)</a></blockquote></li> 
+            <li><blockquote><a href="#stqugb">36.视图区域改变(事件)</a></blockquote></li>
+
+		</ol>	
+		
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>饼状图组件实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p> 
+<font style="font-size: 12pt; font-weight:700">● 教程说明</font><br/>
+<br/>
+	<blockquote>
+	<p align="left"><font color="#F30F12">注意：本组件位于<strong>“图表类窗口组件”</strong>模块中。</font></p>
+ </blockquote>
+	<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 详细例程</font><br/>
+<br/><blockquote>
+	<p align="left">可打开火山安装目录下<b>“samples\samples.vsln”</b>解决方案。 </p>
+	<p align="left">位于<b>“窗口及组件->图表系列组件”</b>分类下。</p>
+	<p align="left"><img src="chart_images/0.png" border="0" ></p>
+	 </blockquote>
+	<p align="left">&nbsp;</p> 
+<h2>一、饼状图</h2>
+<p align="left">&nbsp;</p>
+	
+
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">打开启动类<b>“界面设计器”</b>，设计如下界面。</p>
+    <p align="left">依次是<b>“按钮1”</b>和<b>“饼状图1”</b>。 </p>
+	<p align="left"><img src="chart_images/2.png" border="0" ></p>
+
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="btsjcj"></a>
+<font style="font-size: 12pt; font-weight:700">● 图表数据创建</font>
+
+	
+<p align="left">&nbsp;</p>
+<p align="left">饼状图创建方法如下：</p>
+<blockquote>
+  <p align="left">共需四个类，分别是<b>“图表切片值列表类”</b>、<b>“图表切片值数组类”</b>、<b>“图表切片值类”</b>和<b>“饼状图数据类”</b>。</p>
+  <p align="left">作用分别如下：</p>
+  <p align="left">1、图表切片值列表类：用于存储饼图数值。</p>
+  <p align="left">2、图表切片值数组类：用于创建<b>“图表切片值列表类”</b>。</p>
+  <p align="left">3、图表切片值类：用于创建饼图值信息。</p>
+  <p align="left">4、饼状图数据类：通过定义好的饼值信息，创建整个饼图数据。</p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="btbsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 图表数据(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 创建</font>
+
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“图表数据(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，设置当前图表数据，属性值为<b>“饼状图数据类”</b>。</p>
+	<p align="left"><img border="0" src="chart_images/3.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“创建”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法继承自<b>“饼状图数据类”</b>，用于创建<b>“饼状图数据”</b>。</p>
+	<p align="left">参数值为<b>“图表切片值列表类”</b>。</p>
+	<p align="left"><img border="0" src="chart_images/4.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“创建”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法是继承自<b>“图表切片值类”</b>，用于创建<b>“饼块值”</b>。</p>
+	<p align="left"><img border="0" src="chart_images/4a.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义三个变量，类型分别为<b>“图表切片值列表类”</b>和两个<b>“图表切片值类”</b>，设置参考。</p>
+	<p align="left">2、设置<b>“饼块列表”</b>数据。</p>
+	<p align="left">3、定义类型为<b>“饼状图数据类”</b>的变量，通过<b>“饼块列表”</b>创建当前<b>“饼数据”</b>。</p>
+	<p align="left">4、最后将设置<b>“图表数据”</b>的属性值为<b>“饼数据”</b>即可。</p>
+	<p align="left"><img border="0" src="chart_images/5.png" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">注意：饼状图在不设置任何数据的情况下，默认存在数据。</p>
+	<p align="left"><img border="0" src="chart_images/6.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+
+<a name="bsxqy"></a>
+<font style="font-size: 12pt; font-weight:700">● 扇形区域(写)</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可将当前饼图设置为椭圆形状（默认为正圆）。</p>
+	<p align="left"><img border="0" src="chart_images/7.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加<b>“通知_被创建”</b>虚拟方法，将创建饼图代码写入。</p>
+	<p align="left"><img border="0" src="chart_images/8.png" ></p>
+	<p align="left">&nbsp;</p>
+	<p align="left">在<b>“按钮1”</b>被点击下，定义<b>“小数矩形类”</b>变量，分贝设置<b>“上下左右”</b>四个属性。</p>
+	<p align="left">最后将变量名赋值给<b>“扇形区域”</b>属性。</p>
+	<p align="left"><img border="0" src="chart_images/9.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可看到饼图缩小，并且变成了椭圆形状。</p>
+	<p align="left"><img border="0" src="chart_images/10.gif" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<a name="bzcsdxz"></a>
+<font style="font-size: 12pt; font-weight:700">● 支持手动旋转(读写)</font>
+		<p align="left">&nbsp;</p>
+<p align="left"><b>“支持手动旋转(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，本属性可用来设置当前饼图是否支持手动旋转。</p>
+	<p align="left">如果不设置本属性，默认支持手动旋转。</p>
+	<p align="left">同名读属性，即读取当前是否支持手动旋转。</p>
+	<p align="left">手动旋转：即手指拖动饼图可执行顺时针或逆时针旋转。</p>
+	<p align="left"><img border="0" src="chart_images/11.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接判断当前读属性的返回值，然后执行对应的写属性。</p>
+	<p align="left"><img border="0" src="chart_images/12.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="chart_images/13.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<a name="bstbl"></a>
+<font style="font-size: 12pt; font-weight:700">● 视图比例(写)</font><br>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性用来设置缩放比例，属性值位于0-1之间。</p>
+	<p align="left"><img border="0" src="chart_images/14.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">设置属性值为0.5，缩小一半。</p>
+	<p align="left"><img border="0" src="chart_images/15.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可看到饼图明显变小。</p>
+	<p align="left"><img border="0" src="chart_images/16.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="bdqxzjd"></a>
+<font style="font-size: 12pt; font-weight:700">● 当前旋转角度(读)</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，读取当前饼图旋转角度。</p>
+	<p align="left"><img border="0" src="chart_images/17.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接通过本属性读取即可。</p>
+	<p align="left"><img border="0" src="chart_images/18.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">注意：默认角度为45度。</p>
+	<p align="left"><img border="0" src="chart_images/19.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="bzdqxzjd"></a>
+<font style="font-size: 12pt; font-weight:700">● 置当前旋转角度</font>
+
+	
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可设置饼图的旋转角度。</p>
+	<p align="left">参数1：提供要旋转的角度。</p>
+	<p align="left">参数2：是否有旋转动画。</p>
+	<p align="left">注意：饼图默认角度45度。</p>
+	<p align="left"><img border="0" src="chart_images/20.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">直接给当前方法填写对应参数即可。</p>
+	<p align="left"><img border="0" src="chart_images/21.png" ></p>
+</blockquote>
+		
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="chart_images/22.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="bznrtlxz"></a>
+<font style="font-size: 12pt; font-weight:700">● 值内容脱离选中(事件)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 值内容被选中(事件)</font>
+		<p align="left">&nbsp;</p>
+<p align="left"><b>“值内容被选中(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">当饼块被选中后触发本事件。</p>
+	<p align="left">参数1：返回<b>“索引值”</b>。</p>
+	<p align="left">参数2：通过参数2可以获得<b>“饼值”</b>。</p>
+	<p align="left"><img border="0" src="chart_images/23.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“值内容脱离选中(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">饼块脱离选择后将触发本事件。</p>
+	<p align="left">想要让本事件生效，务必设置<strong><a href="#bzcxzxs">“支持值选中显示”</a></strong>属性值为真。</p>
+	<p align="left"><img border="0" src="chart_images/24.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">分别添加这两个事件，填写要执行的代码。</p>
+	<p align="left"><img border="0" src="chart_images/25.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="chart_images/26.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="bzjwb"></a>
+<font style="font-size: 12pt; font-weight:700">● 中间文本(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 中间文本2(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 中间文本字体(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 中间文本字体2(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 中间文本尺寸(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 中间文本尺寸2(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 中间文本颜色(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 中间文本颜色2(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 中间空心圆(写)</font><br>
+		<p align="left"></p>
+		<p align="left">以上属性分别用来设置饼图中间文本信息，全部继承自<b>“饼状图数据类”</b>。</p>
+		<p align="left">注意：务必设置<b>“中间空心圆”</b>属性值为真，否则中间文本属性无效。</p>
+		<p align="left">注意2：以上属性需要写到<b>“图表数据”</b>属性前。</p>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">以上属性需要写到<b>“创建”</b>方法后，<b>“图表数据”</b>属性之前。</p>
+	<p align="left"><img border="0" src="chart_images/27.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="chart_images/28.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="bxsbq"></a>
+<font style="font-size: 12pt; font-weight:700">● 显示标签(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 值标签字体类型(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 值标签文本尺寸(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 值标签文本颜色(写)</font>
+		<p align="left">&nbsp;</p>
+		<p align="left"><b>“显示标签”</b>属性继承自<b>“饼状图数据类”</b>，作用是在<b>“饼块”</b>上显示<b>“饼值”</b>。</p>
+		<p align="left">剩余四个属性继承自<b>“图表数据基础类”</b>，用于设置饼值字体信息。</p>
+	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">以上属性同样需要写到<b>“创建”</b>方法后，<b>“图表数据”</b>属性前。</p>
+	<p align="left"><img border="0" src="chart_images/29.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left"><img border="0" src="chart_images/30.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="bzgshdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 值格式化对象(写)</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可设置饼值保留几位小数，需要通过<b>“饼图值格式化类”</b>创建。</p>
+	<p align="left"><img border="0" src="chart_images/31.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义饼值时填写小数。</p>
+	<p align="left">2、设置<b>“显示标签”</b>属性为真。</p>
+	<p align="left">3、给当前属性赋值<b>“饼图格式化类.创建(1)”</b>，即保留一位小数，参数值填写2保留两位，以此类推。</p>
+	<p align="left"><img border="0" src="chart_images/32.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最后可看到饼值，只保留了一位小数。</p>
+	<p align="left"><img border="0" src="chart_images/33.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="bqplb"></a>
+<font style="font-size: 12pt; font-weight:700">● 切片列表(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 切片间距(写)</font>
+		<p align="left">&nbsp;</p>
+<p align="left"><b>“切片列表(写)”</b>帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性可取代<b>“饼状图数据类.创建()”</b>设置饼数据。</p>
+	<p align="left"><img border="0" src="chart_images/34.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“切片间距(写)”</b>帮助文档如下图：</p>
+<blockquote>
+	<p align="left">设置饼块之间的间距，单位像素。</p>
+	<p align="left"><img border="0" src="chart_images/35.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“切片列表”</b>和<b>“创建”</b>二选一即可。</p>
+	<p align="left"><b>“切片间距”</b>需要设置在其后方。</p>
+	<p align="left"><img border="0" src="chart_images/36.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="chart_images/37.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="bbqwbxs"></a>
+<font style="font-size: 12pt; font-weight:700">● 标签外部显示(写)</font><br>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性用来设置<b>“饼值”</b>是否显示在<b>“饼图外部”</b>。</p>
+	<p align="left"><img border="0" src="chart_images/38.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">设置本属性值为真，同时也需要设置<b>“显示标签”</b>属性为真。</p>
+	<p align="left"><img border="0" src="chart_images/39.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="chart_images/40.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="bkxydx"></a>
+<font style="font-size: 12pt; font-weight:700">● 空心圆大小(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 空心圆颜色(写)</font>
+		<p align="left">&nbsp;</p>
+<p align="left"><b>“空心圆大小(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本属性可设置空心圆大小，属性值在<b>“0-1”</b>之间。</p>
+	<p align="left"><img border="0" src="chart_images/41.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“空心圆颜色(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">设置空心圆颜色，可使用<b>“颜色类”</b>中定义的常量值。</p>
+	<p align="left"><img border="0" src="chart_images/42.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">务必设置<b>“中间空心圆”</b>属性值为真。</p>
+	<p align="left">然后根据需求，依次设置以上两个属性值即可。</p>
+	<p align="left"><img border="0" src="chart_images/43.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left"><img border="0" src="chart_images/44.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="bxzsjts"></a>
+<font style="font-size: 12pt; font-weight:700">● 选择数据提示(写)</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性的作用，用于设置选择饼块后是否显示饼值。</p>
+	<p align="left">注意：如果<b>“显示标签=真”</b>，则本方法无效。</p>
+	<p align="left"><img border="0" src="chart_images/45.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">设置本属性值为真。</p>
+	<p align="left"><img border="0" src="chart_images/46.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">最后可看到，选中饼块后同时饼值也显示出来。</p>
+	<p align="left"><img border="0" src="chart_images/47.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="bzcjh"></a>
+<font style="font-size: 12pt; font-weight:700">● 支持交互(读写)</font>
+		<p align="left">&nbsp;</p>
+<p align="left"><b>“支持交互(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性用来设置当前组件是否支持交互点击，不设置本属性默认为真。</p>
+	<p align="left">同名读属性，即判断当前组件是否支持交互。</p>
+	<p align="left">注意：本属性继承自<b>“图表组件基础类”</b>。</p>
+	<p align="left"><img border="0" src="chart_images/48.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="chart_images/49.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="chart_images/50.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="bzcxzxs"></a>
+<font style="font-size: 12pt; font-weight:700">● 支持值选中显示(读写)</font>
+		<p align="left">&nbsp;</p>
+<p align="left"><b>“支持值选中显示(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性可以用来设置饼块被选中后是否显示出来。</p>
+	<p align="left">同名读属性，即读取当前是否支持选中显示。</p>
+	<p align="left"><img border="0" src="chart_images/51.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="chart_images/52.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="chart_images/53.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="bzcdj"></a>
+<font style="font-size: 12pt; font-weight:700">● 支持点击(读写)</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">设置当前组件是否支持点击。</p>
+	<p align="left">通名读属性，即读取当前组件是否支持点击。</p>
+	<p align="left"><img border="0" src="chart_images/54.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="chart_images/55.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="chart_images/56.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="stqugb"></a>
+<font style="font-size: 12pt; font-weight:700">● 支持视图区域改变监听(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 视图区域改变(事件)</font>
+		<p align="left">&nbsp;</p>
+<p align="left"><b>“支持视图区域改变监听(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性设置为真，可监听视图区域被改变事件。</p>
+	<p align="left"><img border="0" src="chart_images/57.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“视图区域改变(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">当视图区域被改变后将触发本事件，返回<b>“图表组件视图区域类”</b>。</p>
+	<p align="left">通过此类可取出改变后的视图坐标信息。</p>
+	<p align="left"><img border="0" src="chart_images/58.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、在饼状图变量属性栏设置<b>“支持视图区域被改变监听”</b>为真。</p>
+	<p align="left">2、<b>“按钮1”</b>被点击后画饼图。</p>
+	<p align="left"><img border="0" src="chart_images/59.png" ></p>
+	<p align="left"></p>
+	<p align="left">3、添加<b>“视图区域改变”</b>事件，通过<b>“当前区域对象”</b>参数可取出视图高度和宽度。</p>
+	<p align="left"><img border="0" src="chart_images/60.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="chart_images/61.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

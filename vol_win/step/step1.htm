@@ -1,0 +1,97 @@
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="../../images/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<p align="left"><b><font style="font-size: 14pt">一步一步跟我学写火山视窗程序</font></b></p>
+<p align="left">[<a href="step2.htm">下一章</a>]</p>
+<p align="left">&nbsp;</p>
+<p align="left">我们以写一个简单的程序开始逐步讲解。</p>
+<p align="left">&nbsp;</p>
+<p align="left">1、启动火山平台后，执行“<b>文件-&gt;新建-&gt;项目</b>”菜单功能，在左侧“<b>已安装项目模板</b>”树形框中选择“<b>空白视窗程序</b>”，右侧列表框中选择“<b>MFC窗口程序</b>”，然后在“<b>项目名称</b>”编辑框中输入一个项目名称，在“<b>所处位置</b>”编辑框中输入欲将项目存放到的目录位置，在“<b>解决方案名称</b>”编辑框中输入一个解决方案名称，最后点击“确定”按钮新建此项目。如图：</p>
+<blockquote>
+	<p align="left">
+	<img border="0" src="images/s1.png" width="772" height="575"></p>
+</blockquote>
+<p align="left">注：火山平台对程序采用“解决方案”和“项目”的方式进行管理，每个解决方案内可以包含有多个项目，用作将同类型的项目组织到一起。</p>
+<p align="left">下面为新建后的解决方案程序图：</p>
+<blockquote>
+	<p align="left">
+	<img border="0" src="images/s2.png" width="919" height="516"></p>
+</blockquote>
+<p align="left">直接按下“<b>F5</b>”快捷键编译并运行程序，可以看到程序显示了一个空白窗口：</p>
+<blockquote>
+	<p align="left">
+	<img border="0" src="images/s3.png" width="493" height="324"></p>
+</blockquote>
+<p align="left">
+注意：因为火山视窗平台将会把用户的火山程序编译为C++语言源程序，然后转交给C++本地编译器去进行编译，因此需要系统中安装有微软公司的VC编译器，如果您的系统中尚未安装，则启动编译时将会自动提示安装：</p>
+<blockquote>
+	<p align="left">
+	<img border="0" src="images/s4.png" width="553" height="444"></p>
+</blockquote>
+<p align="left">按照对话框中提示的信息进行安装并配置好即可。</p>
+<p align="left">&nbsp;</p>
+<p align="left">2、我们可以看到，所新建项目默认加入了一个名为“<b>我的主窗口</b>”的窗口类：</p>
+<blockquote>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/s5.png" width="555" height="128"></p>
+	</blockquote>
+	<p align="left">我们下面对它进行设计，在界面上增加一些内容。</p>
+	<p align="left">请右键单击该类，在所弹出来的菜单中选择“设计我的主窗口的界面布局”：</p>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/s6.png" width="535" height="442"></p>
+	</blockquote>
+	<p align="left">会弹出该窗口的界面设计器：</p>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/s7.png" width="1042" height="616"></p>
+	</blockquote>
+	<p align="left">在左侧“<b>基本组件</b>”框中选择“<b>标签</b>”，然后在右侧设计区中拖动绘制将该组件加入到窗口设计区中：</p>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/s8.png" width="1045" height="615"></p>
+	</blockquote>
+	<p align="left">修改其“<b>标题</b>”属性为“<b>祖国您好！</b>”，“字体”属性为“<b>黑体、粗体、二号字体</b>”，“<b>横向对齐方式</b>”为“<b>居中</b>”：</p>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/s9.png" width="1044" height="616"></p>
+	</blockquote>
+	<p align="left">然后点击上面工具栏中的水平和垂直居中对齐按钮将其在窗口中居中显示：</p>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/s10.png" width="1047" height="616"></p>
+	</blockquote>
+	<p align="left">然后按下“确定”按钮将设计结果存放到程序中：</p>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/s11.png" width="534" height="157"></p>
+	</blockquote>
+	<p align="left">再运行程序，即可看到设计后的窗口效果：</p>
+	<blockquote>
+		<p align="left">
+		<img border="0" src="images/s12.png" width="497" height="327"></p>
+		<p align="left">
+		&nbsp;</p>
+	</blockquote>
+	<p align="left">[<a href="step2.htm">下一章</a>]</p>
+</blockquote>
+
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+	<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+</head>
+
+<body>
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>异常处理操作</h4></li>
+	<ol>
+		
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new26')" >一.异常处理<span>(可收缩)</span></h6></li>
+		<ol id="new26">
+			<li><blockquote><a href="#yichang">1.本分类说明</a></blockquote></li>
+			<li><blockquote><a href="#kshfyc">2.开始俘获异常</a></blockquote></li>
+			<li><blockquote><a href="#kshfyc">3.俘获所有异常</a></blockquote></li>
+			<li><blockquote><a href="#qbfhycdx">4.取被俘获异常对象</a></blockquote></li>
+			<li><blockquote><a href="#qbfhycdx">5.取异常文本</a></blockquote></li>
+			<li><blockquote><a href="#paochuyichang">6.抛出异常</a></blockquote></li>
+		</ol>
+		
+		
+	</ol>
+</ul>
+</div>
+
+
+<p align="left">
+<p align="left">	<a name="liuduixiang"></a>	
+<h2>异常处理操作实例讲解</h2>
+
+<p><b>作者：创世魂</b></p>
+<!--<p align="left">[<a href="object.htm">上一章</a>] [<a href="homeland.htm">下一章</a>]</p>-->
+<p align="left">&nbsp;</p><a name="yichang"></a>
+<h2>一、异常处理</h2>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 本分类说明</font>	
+<p align="left">&nbsp;</p>
+	<blockquote>
+    <p align="left">异常处理可用于处理火山开过过程中遇到的各种未知错误，防止程序闪退等……</p>
+    <p align="left">通过返回的异常代码也可简单判断程序哪里出错，从而解决软件出现的问题。</p>
+	<p align="left"><img border="0" src="yccl_images/1.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<a name="kshfyc"></a>	
+<font style="font-size: 12pt; font-weight:700">● 开始俘获异常</font><br>
+<font style="font-size: 12pt; font-weight:700">● 俘获所有异常</font>
+<p align="left">&nbsp;</p>
+<p align="left">以上两个方法需要一同使用，用于捕捉程序异常。</p>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+  <p align="left">下面利用文本数组来模拟一段异常代码。</p>
+  <p align="left">1、定义类型为<b>“文本型[]”</b>的数组变量，并创建1个成员。</p>
+  <p align="left">2、给这个数组设置两个成员。</p>
+	<p align="left"><img border="0" src="yccl_images/2.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终结果程序必然会崩溃。</p>
+	<p align="left"><img border="0" src="yccl_images/3.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+  <p align="left">如果给上述代码加上<b>“开始俘获异常()”</b>和<b>“俘获所有异常()”</b>，程序执行结果和先前必然不同。</p>
+  <p align="left">1、将<b>“开始俘获异常()”</b>放在要执行的代码前，<b>“俘获所有异常()”</b>放在要执行的代码后。</p>
+  <p align="left">2、如果程序没有任何异常，则正常执行<b>“开始俘获异常()”</b>方法下的代码。</p>
+  <p align="left">3、如果发生异常则会执行<b>“俘获所有异常()”</b>下面的代码。</p>
+	<p align="left"><img border="0" src="yccl_images/4.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终结果程序必然会提示<b>“当前程序异常”</b>，从而不会发生程序崩溃闪退的情况。</p>
+	<p align="left"><img border="0" src="yccl_images/5.gif" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="qbfhycdx"></a>	
+<font style="font-size: 12pt; font-weight:700">● 取被俘获异常对象</font><br>
+<font style="font-size: 12pt; font-weight:700">● 取异常文本</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“取被俘获异常对象”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">本方法只能在<b>“俘获异常()”</b>或<b>“俘获所有异常()”</b>子语句体中使用，用作取出异常对象。</p>
+  <p align="left">返回值为<b>“基本异常类”</b>。</p>
+	<p align="left"><img border="0" src="yccl_images/6.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“基本异常类”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本类继承了<b>“可俘获异常类”</b>，可使用此类的所有方法，因此也可以调用<b>“取异常文本()”</b>方法取出异常文本。</p>
+	<p align="left"><img border="0" src="yccl_images/10.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“取异常文本”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本方法可取出当前程序异常错误信息，从而进行一些判断程序哪里出问题。</p>
+	<p align="left"><img border="0" src="yccl_images/7.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">在<b>“俘获所有异常()”</b>方法后调用<b>“取被俘获异常对象().取异常文本()”</b>可取出当前程序异常文本。</p>
+	<p align="left"><img border="0" src="yccl_images/8.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">最终结果程序必然会提示<b>“当前程序异常”</b>，并且会将异常文本输出到编辑框中。</p>
+	<p align="left"><img border="0" src="yccl_images/9.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="paochuyichang"></a>	
+<font style="font-size: 12pt; font-weight:700">● 抛出异常</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">通过本方法可设置定义异常文本。</p>
+  <p align="left">注意：本方法后的代码将不被执行。</p>
+	<p align="left"><img border="0" src="yccl_images/11.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">1、开始俘获异常后，定义类型为<b>“字节[2]”</b>的字节数组变量。</p>
+  <p align="left">2、判断本数组变量是否不等于10，如果不等于就调用<b>“抛出异常()”</b>方法。</p>
+  <p align="left">3、在<b>“俘获所有异常()”</b>取出异常文本。</p>
+	<p align="left"><img border="0" src="yccl_images/12.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">最终自定义的异常文本会显示在编辑框中。 </p>
+	<p align="left"><img border="0" src="yccl_images/13.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	
+	
+	
+	
+</body>
+
+</html>

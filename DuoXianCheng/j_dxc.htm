@@ -1,0 +1,691 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+	<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+</head>
+
+<body>
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>多线程操作</h4></li>
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new4')" >一.线程定时器<span>(可收缩)</span></h6></li>
+		<ol id="new4">
+			<li><blockquote><a href="#xcdsqd">1.启动</a></blockquote></li>
+			<li><blockquote><a href="#xcdsqd">2.停止</a></blockquote></li>
+			<li><blockquote><a href="#xcdsqd">3.定时任务(事件)</a></blockquote></li>
+		</ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new5')" >二.线程类<span>(可收缩)</span></h6></li>
+		<ol id="new5">
+			<li><blockquote><a href="#xclqd">1.启动</a></blockquote></li>
+			<li><blockquote><a href="#xclqd">2.线程启动(事件)</a></blockquote></li>
+		</ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new6')" >三.线程基础类<span>(可收缩)</span></h6></li>
+		<ol id="new6">
+			<li><blockquote><a href="#xcjcblsm">1.本类说明</a></blockquote></li>
+			<li><blockquote><a href="#xcjczd">1.中断线程</a></blockquote></li>
+			<li><blockquote><a href="#xcjczd">2.是否有中断请求</a></blockquote></li>
+			<li><blockquote><a href="#xcjcmc">3.置线程名称</a></blockquote></li>
+			<li><blockquote><a href="#xcjcmc">4.取线程名称</a></blockquote></li>
+			<li><blockquote><a href="#ddxcxk">5.等待执行许可</a></blockquote></li>
+			<li><blockquote><a href="#ddxcxk">6.授予执行许可</a></blockquote></li>
+			<li><blockquote><a href="#smdqxc">7.睡眠当前线程</a></blockquote></li>
+		</ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new7')" >四.原子操作<span>(可收缩)</span></h6></li>
+		<ol id="new7">
+			<li><blockquote><a href="#xcyzcz">1.本分类说明</a></blockquote></li>
+			<li><blockquote><a href="#yzljxl">2.原子逻辑型类</a></blockquote></li>
+			<li><blockquote><a href="#yzzsl">3.原子整数类</a></blockquote></li>
+			<li><blockquote><a href="#yzczdz">4.当前值(读写)</a></blockquote></li>
+			<li><blockquote><a href="#yzczdz">5.递增取值</a></blockquote></li>
+			<li><blockquote><a href="#cjjyx">6.创建</a></blockquote></li>
+			<li><blockquote><a href="#cjjyx">7.加运算并取值</a></blockquote></li>
+			<li><blockquote><a href="#qzbjys">8.取值并加运算</a></blockquote></li>
+			<li><blockquote><a href="#quzgx">9.取值更新</a></blockquote></li>
+			<li><blockquote><a href="#yzdjqz">10.递减取值</a></blockquote></li>
+		</ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new8')" >五.线程池<span>(可收缩)</span></h6></li>
+		<ol id="new8">
+			<li><blockquote><a href="#xcclei">1.本类说明</a></blockquote></li>
+			<li><blockquote><a href="#ljsljiangjie">2.列举实例讲解</a></blockquote></li>
+		</ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new9')" >六.线程锁<span>(可收缩)</span></h6></li>
+		<ol id="new9">
+			<li><blockquote><a href="#xianchengsuo">1.本分类说明</a></blockquote></li>
+			<li><blockquote><a href="#xcdxsl">2.线程读写锁类</a></blockquote></li>
+			<li><blockquote><a href="#xccrs">3.线程重入锁类</a></blockquote></li>
+		</ol>
+	</ol>
+</ul>
+</div>
+
+
+<p align="left">
+<p align="left">
+<h2>多线程操作实例讲解</h2>
+<p><b>作者：创世魂</b></p>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="xcdsqd"></a>
+<h2>一、线程定时器</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 启动</font><br>
+<font style="font-size: 12pt; font-weight:700">● 停止</font><br>
+<font style="font-size: 12pt; font-weight:700">● 定时任务(事件)</font><br>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“启动”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本方法为多线程操作，使用时请注意线程冲突问题。</p>
+    <p align="left">通过本方法可启动一个多线程的定时任务，调用本方法后会触发<b>“定时任务”</b>事件。</p>
+    <p align="left">参数1：填写要定时的周期，单位毫秒。</p>
+    <p align="left">参数2：首次定时是否延迟启动，单位毫秒，填写0表示不延迟。</p>
+    <p align="left">参数3、4：用于传递对象，传递的对象可在<b>“定时任务”</b>的事件中使用。</p>
+	<p align="left"><img border="0" src="xc_images/1.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“停止”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">顾名思义，调用本方法可停止定时任务。</p>
+    <p align="left">停止后，<b>“定时任务”</b>事件将不会被触发。</p>
+	<p align="left"><img border="0" src="xc_images/2.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“定时任务(事件)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">调用<b>“启动()”</b>后会触发本事件。</p>
+    <p align="left">参数1、2的对象，是由<b>“启动()”</b>方法传递过来。</p>
+    <p align="left">如果启动方法为传递过来，此处的对象则为空对象。</p>
+	<p align="left"><img border="0" src="xc_images/5.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、定义类型为<b>“线程定时器”</b>的成员变量。</p>
+    <p align="left">2、 <b>“按钮1”</b>被点击后，调用<b>“启动()”</b>方法，启动线程定时器。</p>
+    <p align="left">3、 <b>“按钮2”</b>被点击后，调用<b>“停止()”</b>方法，停止定时器。</p>
+	<p align="left"><img border="0" src="xc_images/3.png" ></p>
+	<p align="left">&nbsp;</p>
+	    <p align="left">4、添加<b>“线程定时器_定时任务”</b>接收事件，在当前事件下，计算定时次数并显示在编辑框中。</p>
+	<p align="left"><img border="0" src="xc_images/4.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="xc_images/5.gif" ></p>
+</blockquote>
+	
+		
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="xclqd"></a>
+<h2>二、线程类</h2>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 启动</font><br>
+<font style="font-size: 12pt; font-weight:700">● 线程启动(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“启动”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">通过本方法可以启动一条线程，会触发<b>“线程启动”</b>事件。</p>
+    <p align="left">参数1、2可用于传递操作对象。</p>
+    <p align="left">优点：加载网页源码或者网络图片时不会卡UI。</p>
+    <p align="left">缺点：每一个线程类只能启动一次，仅第一次启动时有效。</p>
+    <p align="left">如果想要启动多次，定义局部变量，并调用“挂接事件()”方法即可解决多次调用。</p>
+	<p align="left"><img border="0" src="xc_images/6.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“线程启动(事件)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">调用<b>“启动”</b>方法会会触发本事件。</p>
+    <p align="left">参数1、2的对象类是由<b>“启动()”</b>方法传递过来，如果启动方法未传递，此参数为空对象。</p>
+	<p align="left"><img border="0" src="xc_images/7.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、定义类型为<b>“线程类”</b>的成员变量。</p>
+    <p align="left">2、调用<b>“启动”</b>方法传递一个网址到线程事件中。</p>
+	<p align="left"><img border="0" src="xc_images/8.png" ></p>
+	<p align="left">&nbsp;</p>
+	    <p align="left">3、利用<b>“对象到文本()”</b>取出网址，并用<b>“安卓网络操作类.HTTP读文件()”</b>读取网站源码。</p>
+	    <p align="left">4、将读取的源码显示在编辑框中。</p>
+	<p align="left"><img border="0" src="xc_images/9.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="xc_images/10.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="xcjcblsm"></a>
+<h2>三、线程基础类</h2>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font>	
+<p align="left">&nbsp;</p>
+	<blockquote>
+    <p align="left"><b>“线程类”</b>是本类的子类，所以可通过<b>“线程类”</b>直接调用本类中的方法。</p>
+	<p align="left"><img border="0" src="xc_images/11.png" ></p>
+	</blockquote>
+<a name="xcjczd"></a>	
+<font style="font-size: 12pt; font-weight:700">● 中断线程</font><br>
+<font style="font-size: 12pt; font-weight:700">● 是否有中断请求</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“中断线程”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">注意：中断线程并非终止线程，只是设置<b>“是否有中断请求()”</b>方法返回值为真。</p>
+	<p align="left"><img border="0" src="xc_images/12.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“是否有中断请求”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">如果调用了<b>“中断线程()”</b>方法，那么本方法必然返回真。</p>
+    <p align="left">如果没有再次调用<b>“中断线程()”</b>，那么下次调用本方法会返回假。</p>
+	<p align="left"><img border="0" src="xc_images/13.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">参考<a href="#xclqd"><b>“线程类”</b></a>中的获取网页源码方法，进行简单修改。</p>
+    <p align="left">1、在<b>“线程启动”</b>事件下，首先调用<b>“中断线程()”</b>方法。</p>
+    <p align="left">2、随后调用<b>“是否有中断请求()”</b>方法判断其返回值，根据返回值决定是否中断取网页源码操作。</p>
+	<p align="left"><img border="0" src="xc_images/14.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">执行此获取网页源码操作，会提示线程已经中断。</p>
+	<p align="left"><img border="0" src="xc_images/15.gif" ></p>
+</blockquote>
+	
+	<a name="xcjcmc"></a>	
+<font style="font-size: 12pt; font-weight:700">● 置线程名称</font><br>
+<font style="font-size: 12pt; font-weight:700">● 取线程名称</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“置线程名称”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本方法可以给指定线程设定名称。</p>
+	<p align="left"><img border="0" src="xc_images/16.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“取线程名称”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">通过本方法可取出<b>“置线程名称()”</b>设置的名称。</p>
+	<p align="left"><img border="0" src="xc_images/17.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、<b>“按钮1”</b>被点击后，调用<b>“启动()”</b>方法启动线程，随后调用<b>“置线程名称()”</b>设置名称。</p>
+    <p align="left">2、在<b>“线程启动”</b>事件中，调用<b>“取线程名称()”</b>方法可做一些判断操作，通过判断结果来执行不同的方法。</p>
+	<p align="left"><img border="0" src="xc_images/18.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="xc_images/19.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<a name="ddxcxk"></a>	
+<font style="font-size: 12pt; font-weight:700">● 等待执行许可</font><br>
+<font style="font-size: 12pt; font-weight:700">● 授予执行许可</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“等待执行许可”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">通俗来讲，调用本方法后可以让线程等待一段时间执行。</p>
+    <p align="left">等待的时间由参数决定，单位毫秒。</p>
+    <p align="left">如果在等待时间内执行了<b>“授予执行许可()”</b>方法，则线程会跳过等待立刻执行。</p>
+	<p align="left"><img border="0" src="xc_images/20.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“授予执行许可”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">调用本方法可以让线程跳过<b>“等待执行许可()”</b>方法中设置的时间，立刻执行。</p>
+	<p align="left"><img border="0" src="xc_images/21.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、<b>“按钮1”</b>被点击启动线程后，在<b>“线程启动”</b>事件中调用<b>“等待执行许可()”</b>等待3秒钟执行信息框。</p>
+    <p align="left">2、<b>“按钮2”</b>被点击后，调用<b>“授予执行许可()”</b>方法。</p>
+	<p align="left"><img border="0" src="xc_images/22.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">左图：点击<b>“按钮1”</b>需要等待3秒钟，才会弹出信息框。</p>
+	<p align="left">右图：<b>“按钮2”</b>被点击后，立刻弹出了信息框。</p>
+	<p align="left"><img border="0" src="xc_images/23.gif" ><img border="0" src="xc_images/24.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<a name="smdqxc"></a>	
+<font style="font-size: 12pt; font-weight:700">● 睡眠当前线程</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法可<b>“等待执行许可()”</b>方法类似，都是用来延迟操作的。</p>
+    <p align="left">不同之处为，本方法并不能保证精确的睡眠指定时间，而且还受外部线程影响。</p>
+	<p align="left"><img border="0" src="xc_images/25.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">因<b>“线程基础类”</b>属于全局类方法，因此可以直接调用<b>“睡眠当前线程()”</b>进行延迟操作。</p>
+	<p align="left"><img border="0" src="xc_images/26.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>大约1秒后才会弹出提示信息框。</p>
+	<p align="left"><img border="0" src="xc_images/27.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="xcyzcz"></a>
+<h2>四、原子操作</h2>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 本分类说明</font>	
+<p align="left">&nbsp;</p>
+	<blockquote>
+    <p align="left">在本分类中，拥有<b>“原子逻辑型类”</b>，<b>“原子长整数类”</b>，<b>“原子长整数数组类”</b>，<b>“原子整数类”</b>和<b>“原子整数数组类”</b>等原子类操作。</p>
+    <p align="left">这些原子类的作用，就是用来维护在多线程环境中数值的稳定性。</p>
+    <p align="left">例如：想要在多线程中使用<b>“n=n+1”</b>的操作，但是最终结果可能因为多线程的缘故而出问题。</p>
+    <p align="left">原子操作中提供了类似的方法，可以很方便的实现<b>“n=n+1”</b>的操作，并且数值极为稳定不会出错。</p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">在本教程中将会举例：<b>“原子逻辑型类”</b>和<b>“原子整数类”</b>的基本应用。</p>
+	<p align="left">&nbsp;</p>
+<a name="yzljxl"></a>	
+<font style="font-size: 12pt; font-weight:700">● 原子逻辑型类</font>
+<p align="left">&nbsp;</p>
+<p align="left">本类说明：</p>
+<blockquote>
+    <p align="left">本类类似于自带锁性质，通过逻辑变量控制，不会被任何线程所干扰。</p>
+	<p align="left"><img border="0" src="xc_images/28.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“比较更新”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">通过本方法可比较逻辑变量，实现一些比较特殊的效果。</p>
+    <p align="left">调用本方法后<b>“比较值”</b>比较过后会更新成<b>“更新值”</b>并返回真，再次比较的时候会返回假。</p>
+	<p align="left"><img border="0" src="xc_images/29.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">通过本方法特性，进行如下代码编写。</p>
+    <p align="left">1、定义类型为<b>“原子逻辑型类”</b>的变量。</p>
+    <p align="left">2、调用<b>“循环()”</b>方法，循环10<b>“比较更新()”</b>方法比较两个逻辑值，并判断返回值是否等于真。</p>
+    <p align="left">3、在如果语句体内，执行<b>“编辑框1.添加内容行()”</b>方法，给编辑框添加内容。</p>
+	<p align="left"><img border="0" src="xc_images/30.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">通过此方法的特性，最后结果无论怎么点击<b>“按钮1”</b>编辑框中始终只是输出一条消息。</p>
+	<p align="left">当然无论是在多线程环境还是非多线程环境都会是同样的结果。</p>
+	<p align="left"><img border="0" src="xc_images/31.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="yzzsl"></a>	
+<font style="font-size: 12pt; font-weight:700">● 原子整数类</font>
+<p align="left">&nbsp;</p>
+<p align="left">本类说明：</p>
+<blockquote>
+    <p align="left">本类和<b>“原子逻辑型类”</b>基本一致，不同之处就是本类是用来操作整数。</p>
+    <p align="left">并且同样不会被其它线程所干扰。</p>
+	<p align="left"><img border="0" src="xc_images/33.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="yzczdz"></a>	
+<font style="font-size: 12pt; font-weight:700">● 当前值(读写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 递增取值</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“当前值(写)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">通过本属性可设置原子整数类中当前整数值。</p>
+    <p align="left">同名读属性，可读取原子整数类中存储的整数值。</p>
+	<p align="left"><img border="0" src="xc_images/34.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“递增取值”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">调用本方法就等同于在循环中使用<b>“i=i+1”</b>，不同之处为本方法会保持数值稳定性。</p>
+    <p align="left">可通过返回值获取<b>“原子整数类”</b>递增后的值，也可通过<b>“当前值”</b>读属性获取。</p>
+	<p align="left"><img border="0" src="xc_images/35.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+    <p align="left">1、定义<b>“原子整数类”</b>成员变量。</p>
+    <p align="left">2、重置编辑框的内容和原子整数的值，目的是为了方便重复测试。</p>
+    <p align="left">3、定义类型为<b>“线程类[100]”</b>的多线程数组变量，循环100次创建100个多线程对象。</p>
+	<blockquote><p align="left">注意：数组类对象要进行<b>“新建对象()”</b>，并且局部变量要挂接事件。</p></blockquote>
+    <p align="left">4、循环100次，启动定义的线程。</p>
+	<p align="left"><img border="0" src="xc_images/36.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+    <p align="left">在<b>“线程启动”</b>事件中，调用<b>“递增取值()”</b>方法进行递增操作，并将递增结果显示在编辑框中。</p>
+	<p align="left"><img border="0" src="xc_images/37.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">最终结果，1-100数值正常稳定。</p>
+	<p align="left"><img border="0" src="xc_images/38.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（3）：</p>
+<blockquote>
+    <p align="left">如果把<b>“递增取值()”</b>方法换成<b>“i=i+1”</b>，则执行结果未必就能保证数值正确。</p>
+	<p align="left"><img border="0" src="xc_images/39.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">结果中出现了两个<b>“2”</b>的情况，证明<b>“递增取值()”</b>方法比<b>“i=i+1”</b>更加稳定。</p>
+	<p align="left">注意：<b>“i=i+1”</b>也只是可能会不稳定，大多数情况依然能保持稳定结果，尤其是在循环次数比较低的情况。</p>
+	<p align="left">如果<b>“按钮1”</b>被点击，循环执行1000次线程，或者更多次数不稳定系数会大大增加。</p>
+	<p align="left"><img border="0" src="xc_images/32.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="cjjyx"></a>	
+<font style="font-size: 12pt; font-weight:700">● 创建</font><br>
+<font style="font-size: 12pt; font-weight:700">● 加运算并取值</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“创建”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本方法可设置当前<b>“原子整数类”</b>中的初始值。</p>
+	<p align="left"><img border="0" src="xc_images/40.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“加运算并取值”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本方法的作用就是进行加法运算，和普通的加法运算相比，本方法在多线程中更加稳定。</p>
+    <p align="left">参数1：填写要操作的原子整数对象，动态调用时忽略本参数。</p>
+    <p align="left">参数2：要进行加法运算的加数。</p>
+    <p align="left">提示：可通过返回值获取运算结果也可通过<b>“当前值”</b>读属性获取。</p>
+	<p align="left"><img border="0" src="xc_images/41.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、调用<b>“创建()”</b>方法设置原子初始值，赋值给定义的<b>“原子整数”</b>变量。</p>
+    <p align="left">2、调用<b>“加运算并取值()”</b>进行加10操作，最后取出当前值显示在编辑框中。</p>
+	<p align="left"><img border="0" src="xc_images/42.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">最终结果就是20，证明本方法作用就是进行了加法运算。</p>
+	<p align="left"><img border="0" src="xc_images/43.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="qzbjys"></a>	
+<font style="font-size: 12pt; font-weight:700">● 取值并加运算</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本方法可实现自定义加减乘除运算，具体运算过程由<b>“整数运算符基础类”</b>实现。</p>
+    <p align="left">参数2：更新值，实际上就是其中一个运算值。</p>
+	<p align="left"><img border="0" src="xc_images/44.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“整数运算符基础类”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本类只有一个虚拟方法，想要创建虚拟方法就需要定义一个新的类来实现。</p>
+    <p align="left">注意：本类需要API24，即安卓7.0才可以运行。</p>
+	<p align="left"><img border="0" src="xc_images/45.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“运算”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本虚拟方法只有两个参数。</p>
+    <p align="left">参数1：此参数的数值实际上就是<b>“原子整数类”</b>中存储的数值。</p>
+    <p align="left">参数2：此参数的数值是<b>“取值并加运算()”</b>方法填写的<b>“参数2”</b>。</p>
+	<p align="left"><img border="0" src="xc_images/46.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、定义<b>“基础类”</b>为<b>“整数运算符基础类”</b>的类对象，类名随意。</p>
+    <p align="left">2、添加<b>“运算()”</b>虚拟方法后，调用<b>“返回()”</b>将<b>“第一个操作数”</b>和<b>“第二个操作数”</b>进行数学运算。</p>
+	<p align="left"><img border="0" src="xc_images/47.png" ></p>
+	<p align="left">&nbsp;</p>
+	<p align="left">3、定义类型为<b>“原子整数类”</b>和<b>“数学运算”</b>（此类名要和定义的类名一致）的变量。</p>
+	<p align="left">4、调用<b>“当前值”</b>写属性设置原子整数的初始值。</p>
+	<p align="left">5、调用<b>“取值并运算()”</b>方法进行计算，此处实际上就是<b>“4+5”</b>。</p>
+	<p align="left">6、计算结果会覆盖<b>“当前值”</b>，最后将其取出即可。</p>
+	<p align="left"><img border="0" src="xc_images/48.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="xc_images/49.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<a name="quzgx"></a>	
+<font style="font-size: 12pt; font-weight:700">● 取值更新</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本方法可将参数中的<b>“更新值”</b>设置为原子整数类中的<b>“当前值”</b>。</p>
+    <p align="left">并且返回值是更新后的值。</p>
+	<p align="left"><img border="0" src="xc_images/50.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、定义类型为<b>“原子整数类”</b>的变量，设置<b>“当前值”</b>属性。</p>
+    <p align="left">2、调用本方法设置新的值。</p>
+    <p align="left">3、取出新的值显示在编辑框中。</p>
+	<p align="left"><img border="0" src="xc_images/51.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">可以看到取出来的最新值就是<b>“取值更新()”</b>参数中的值。</p>
+	<p align="left"><img border="0" src="xc_images/52.png" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<a name="yzdjqz"></a>	
+<font style="font-size: 12pt; font-weight:700">● 递减取值</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法和<b>“递增取值()”</b>的不同之处在于，本方法等同于使用<b>“i=i-1”</b>。</p>
+	<p align="left"><img border="0" src="xc_images/53.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、定义类型为<b>“原子整数类”</b>的变量，并设置<b>“当前值”</b>。</p>
+    <p align="left">2、循环10次调用<b>“递减取值()”</b>方法，并取出递减后的值显示在编辑框中。</p>
+	<p align="left"><img border="0" src="xc_images/54.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="xc_images/55.png" ></p>
+</blockquote>
+		
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="xcclei"></a>
+<h2>五、线程池</h2>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font>	
+<p align="left">&nbsp; </p>
+	<blockquote>
+    <p align="left">线程池，简单来说就是可以重复使用的多线程，并且还可以控制线程数等操作。</p>
+    <p align="left">在本篇教程中会列举一个实例来讲解线程池的基本使用方法。</p>
+	<p align="left"><img border="0" src="xc_images/56.png" ></p>
+	</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="ljsljiangjie"></a>	
+<font style="font-size: 12pt; font-weight:700">● 列举实例讲解</font>
+	<p align="left">&nbsp;</p>
+<p align="left">界面准备：</p>
+<blockquote>
+    <p align="left">准备如下界面：依次为<b>“按钮1”</b>和<b>“自定义表格1”</b>。</p>
+	<p align="left"><img border="0" src="xc_images/57.png" ></p>
+	
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、界面准备完毕后，设置自定义表格的<b>“列数”</b>为3列，并定义类型为<b>“线程池类”</b>变量。</p>
+	<p align="left"><img border="0" src="xc_images/58.png" ></p>
+	<p align="left">&nbsp;</p>
+  <p align="left">2、添加启动类<b>“通知_被创建”</b>虚拟方法，并<b>“创建缓存线程池()”</b>。</p>
+	<p align="left">3、如果在非列表中使用线程可用<b>“创建核心线程池()”</b>或者<b>“创建自定义线程池 ()”</b>。</p>
+  <p align="left"><img border="0" src="xc_images/59.png" ></p>
+	<p align="left">&nbsp;</p>
+  <p align="left">4、<b>“按钮1”</b>被点击后，利用<b>“文本到对象()”</b>方法，将一堆图片地址插入到自定义表格中。</p>
+	<p align="left"><img src="xc_images/60.png" width="704" height="448" border="0" ></p>
+	<p align="left">&nbsp;</p>
+  <p align="left">5、添加<b>“自定义表格_取对象项目视图”</b>接收事件，代码分为两个部分，如下。</p>
+	<blockquote>
+		<p align="left">第一部分：黄色方框内的用于定义自定义表格项目，项目内容为一个图片框。</p>
+		<p align="left">第二部分：剩余内容用于启动线程池，加载网络图片。</p>
+	</blockquote>
+  <p align="left"><img border="0" src="xc_images/61.png" ></p>
+	<p align="left">&nbsp;</p>
+		<p align="left">6、重点讲解第二部分内容：</p>
+	<p align="left">（1）线程运行类：本类类似于<a href="#xclqd"><b>“线程类”</b></a>，都是通过一个启动方法来启动线程事件。</p>
+	<blockquote>
+	 <p align="left">不同之处为，本类是为<b>“线程池”</b>提供服务。</p>
+	  <p align="left"><img border="0" src="xc_images/62.png" ></p>
+	</blockquote>
+	<p align="left">（2）置用户对象：本方法有两个<b>“对象类”</b>可传递参数到<b>“任务启动”</b>事件中。</p>
+	<p align="left">（3）上述例子代码中传递了<b>“项目数据对象”</b>和<b>“图片框1”</b>，这个<b>“项目数据对象”</b>实际上就是表格插入项目传递过来的图片地址。</p>
+	<p align="left">（4）执行任务：通过定义的<b>“线程池变量”</b>调用，目的就是启动定义的<b>“线程运行类”</b>对象。</p>
+	
+	
+  <p align="left">&nbsp; </p>
+<p align="left">7、添加<b>“线程运行类_任务启动”</b>接收事件，线程的具体运行过程都是由本事件执行。</p>	
+<p align="left">8、将<b>“用户对象2”</b>参数强转为图片框，这个图片框组件实际上就是自定义表格中的图片框。</p>	
+<p align="left">9、利用<a href="j_obj.htm#daoduixiang"><b>“对象到文本()”</b></a>方法，将<b>“用户对象1”</b>重新转换成网络图片地址，并用<b>“HTTP读文件()”</b>方法转换成字节数组。</p>	
+<p align="left">10、最后利用<a href="a_ctrl_img.htm#ztpsj"><b>“图片框1.置图片数据()”</b></a>方法将图片字节数组显示在图片框中。</p>	
+  <p align="left"><img border="0" src="xc_images/63.png" ></p>
+	
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终<b>“按钮1”</b>被点击后，线程池会启动将所有的网络图片非常快速的加载到自定义表格的图片框中。</p>
+	<p align="left"><img border="0" src="xc_images/64.gif" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="xianchengsuo"></a>
+<h2>六、线程锁</h2>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 本分类说明</font>	
+<p align="left">&nbsp; </p>
+	<blockquote>
+    <p align="left"><b>“线程锁”</b>的作用有点类似于原子操作，只不过<b>“原子操作”</b>的作用是用来维护在多线程过程中数值运算的稳定性。</p>
+    <p align="left">而<b>“线程锁”</b>的作用则是用来维护数据读写操作的稳定性。</p>
+
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="xcdxsl"></a>	
+<font style="font-size: 12pt; font-weight:700">● 线程读写锁类</font>
+	<p align="left">&nbsp;</p>
+	<p align="left"><a href="https://baike.baidu.com/item/%E8%AF%BB%E5%86%99%E9%94%81/1756708">读写锁</a>实际是一种特殊的<a href="https://baike.baidu.com/item/%E8%87%AA%E6%97%8B%E9%94%81" target="_blank">自旋锁</a>，它把对共享资源的访问者划分成读者和写者。</p>
+	<p align="left">读者只对共享资源进行读访问，写者则需要对共享资源进行写操作。</p>
+	
+	<p align="left">本篇教程中将会简单演示读写锁的基本应用场景。</p>
+	<p align="left">需要用到两个方法分别是<b>“取读锁()”</b>和<b>“取写锁()”</b>。</p>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“取读锁”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本方法可取出<b>“线程读锁类”</b>对象，通过此对象针对<b>“读数据”</b>进行加解锁。</p>
+  <p align="left"><img border="0" src="xc_images/65.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“取写锁”</b>帮助文档：</p>
+<blockquote>
+   <p align="left">本方法可取出<b>“线程写锁类”</b>对象，通过此对象针对<b>“写数据”</b>进行加解锁。</p>
+  <p align="left"><img border="0" src="xc_images/66.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“加/解锁”</b>帮助文档：</p>
+<blockquote>
+   <p align="left">无论是<b>“线程读锁类”</b>还是<b>“线程写锁类”</b>对象，这两个对象都继承了<b>“线程锁基础类”</b>。</p>
+   <p align="left">在此基础类中，有<b>“加锁()”</b>和<b>“解锁()”</b>方法可供调用，并且是成对使用。</p>
+  <p align="left"><img border="0" src="xc_images/67.png" ></p>
+  <p align="left"><img border="0" src="xc_images/68.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+    <p align="left">1、定义类型为<b>“线程读写锁类”</b>和<b>“文本型”</b>的成员变量，并给文本型变量设置初始值。</p>
+    <p align="left">2、循环创建并启动两条线程。</p>
+	<p align="left"><img border="0" src="xc_images/69.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+    <p align="left">3、在<b>“线程启动”</b>接收事件下，判断<b>“标记值”</b>分别执行写锁和读锁操作。</p>
+	<p align="left"><img border="0" src="xc_images/70.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">左图：加/解锁状态下的最终结果。</p>
+	<p align="left">右图：无锁状态下的结果。</p>
+	<p align="left"><img border="0" src="xc_images/71.png" >&nbsp;&nbsp;<img border="0" src="xc_images/72.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="xccrs"></a>	
+<font style="font-size: 12pt; font-weight:700">● 线程重入锁类</font>
+	<p align="left">&nbsp;</p>
+<p align="left">本类说明：</p>
+<blockquote>
+  <p align="left">同一个重入锁可以在未解锁的情况下在同一线程中多次加锁,即为重入。</p>
+    <p align="left">下面实现一个<b>“重入锁”</b>的实例。</p>
+	<p align="left"><img border="0" src="xc_images/73.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+    <p align="left">1、定义类型为<b>“线程重入锁类”</b>的成员变量。</p>
+    <p align="left">2、<b>“按钮1”</b>被点击后，循环创建三个线程，设置线程名称后并循环启动。</p>
+	<p align="left"><img border="0" src="xc_images/74.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+    <p align="left">3、在<b>“线程类_线程启动”</b>接收事件中，进行<b>“加锁”</b>操作后，循环添加内容到编辑框中并<b>“解锁”</b>。</p>
+	<p align="left"><img border="0" src="xc_images/75.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">左图：重入锁加锁后的运行结果。</p>
+	<p align="left">右图：未加锁的运行结果。</p>
+	<p align="left"><img border="0" src="xc_images/76.png" >&nbsp;&nbsp;<img border="0" src="xc_images/77.png" ></p>
+</blockquote>
+</body>
+
+</html>

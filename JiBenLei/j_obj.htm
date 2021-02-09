@@ -1,0 +1,352 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>对象类操作</h4></li>
+	<ol>
+			<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.对象类<span>(可收缩)</span></h6></li>
+		<ol id="new1">
+
+			<li><blockquote><a href="#daoduixiang">1.到对象</a></blockquote></li>
+			<li><blockquote><a href="#daoduixiang">2.对象到文本</a></blockquote></li>
+			<li><blockquote><a href="#dzsddx">3.短整数到对象</a></blockquote></li>
+			<li><blockquote><a href="#dzsddx">4.逻辑型到对象</a></blockquote></li>
+			<li><blockquote><a href="#dzsddx">5.文本到对象</a></blockquote></li>
+			<li><blockquote><a href="#dzsddx">6.小数到对象</a></blockquote></li>
+			<li><blockquote><a href="#dzsddx">7.长整数到对象</a></blockquote></li>
+			<li><blockquote><a href="#dzsddx">8.整数到对象</a></blockquote></li>
+			<li><blockquote><a href="#dzsddx">9.字符到对象</a></blockquote></li>
+			<li><blockquote><a href="#dzsddx">10.字节到对象</a></blockquote></li>
+			<li><blockquote><a href="#dzsddxxx">11.对象到小数</a></blockquote></li>
+			<li><blockquote><a href="#dxdsz">12.对象到数组</a></blockquote></li>
+			<li><blockquote><a href="#dxdsz2">13.对象到数组2</a></blockquote></li>
+			<li><blockquote><a href="#dxdsz3">14.对象到数组3</a></blockquote></li>
+			<li><blockquote><a href="#dzsfxd">15.对象是否相等</a></blockquote></li>
+			<li><blockquote><a href="#jsdxhash">16.计算对象的HASH值</a></blockquote></li>
+			<li><blockquote><a href="#quleiming">17.取对象类名</a></blockquote></li>
+			<li><blockquote><a href="#quleiming">18.取类名</a></blockquote></li>
+			<li><blockquote><a href="#qzdlxxdx">19.取类信息对象</a></blockquote></li>
+			<li><blockquote><a href="#qzdlxxdx">20.取指定类信息对象</a></blockquote></li>
+			<li><blockquote><a href="#xjduixiang">21.新建对象</a></blockquote></li>
+		</ol>	
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>对象类操作实例</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p> 
+<h2>一、对象类</h2>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="daoduixiang"></a>
+<font style="font-size: 12pt; font-weight:700">● 到对象</font><br>
+<font style="font-size: 12pt; font-weight:700">● 对象到文本</font>
+		<p align="left">&nbsp;</p>
+<p align="left"><b>“到对象”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法只有一个参数，类型为<b>“所有类型”</b>，返回值为<b>“对象类”</b>。</p>
+	<p align="left">简单来说就是通过本方法可将任何数据转换成对象数据。</p>
+	<p align="left"><img border="0" src="obj_images/1.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“对象到文本”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">如果要转换的<b>“对象类”</b>为文本数据，通过本方法可将对象类重新转换为文本型。</p>
+	<p align="left"><img border="0" src="obj_images/2.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义类型为<b>“对象类”</b>的成员变量，并勾选参考。</p>
+	<p align="left">2、<b>“按钮1”</b>被点击，调用<b>“到对象()”</b>方法将<b>“1”</b>转换成对象类赋值给定义的<b>“对象数据”</b>变量，并判断是否转换成功。</p>
+	<p align="left">3、调用<b>“对象到文本()”</b>方法可重新将<b>“对象数据”</b>转行文本型。</p>
+	<p align="left"><img border="0" src="obj_images/3.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终结果证明，对象类和文本型之间的互相转换成功。</p>
+	<p align="left"><img border="0" src="obj_images/4.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+
+<a name="dzsddx"></a>
+<font style="font-size: 12pt; font-weight:700">● 短整数到对象</font><br>
+<font style="font-size: 12pt; font-weight:700">● 逻辑型到对象</font><br>
+<font style="font-size: 12pt; font-weight:700">● 文本到对象</font><br>
+<font style="font-size: 12pt; font-weight:700">● 小数到对象</font><br>
+<font style="font-size: 12pt; font-weight:700">● 长整数到对象</font><br>
+<font style="font-size: 12pt; font-weight:700">● 整数到对象</font><br>
+<font style="font-size: 12pt; font-weight:700">● 字符到对象</font><br>
+<font style="font-size: 12pt; font-weight:700">● 字节到对象</font>
+		<p align="left">&nbsp;</p>
+
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">以上几个方法和<a href="#daoduixiang"><b>“到对象()”</b></a>方法用法一致。</p>
+	<p align="left">不同之处在于<b>“到对象()”</b>方法适用于所有类型，而以上方法则只适用于指定类型的转换。</p>
+	<p align="left">例如：<b>“文本到对象()”</b>只能转换文本型为对象，<b>“整数到对象()”</b>只能转换整数为对象。</p>
+	<p align="left">如果转换成对象后想要重新转换回去，只需要将命令的关键词调换即可。</p>
+	<p align="left">例如：使用<b>“小数到对象()”</b>将小数转换成对象后，可使用<b>“对象到小数()”</b>方法重新转换回去。</p>
+	<p align="left">此处举例上述两个方法做演示。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“小数到对象”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本方法可将<b>“小数”</b>转换成<b>“小数类”</b>，即小数的封装对象。</p>
+	<p align="left"><img border="0" src="obj_images/5.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p><a name="dzsddxxx"></a>
+<p align="left"><b>“对象到小数”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法可重新将对象类转换成小数，前提是要转换的对象必须是小数转换过去的。</p>
+	<p align="left"><img border="0" src="obj_images/6.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义类型为<b>“小数类”</b>的成员变量，勾选参考。</p>
+	<p align="left">2、<b>“按钮1”</b>点击后调用<b>“小数到对象()”</b>方法赋值给定义的<b>“小数对象”</b>变量，并判断是否转换成功。</p>
+	<p align="left">3、<b>“按钮2”</b>点击后调用<b>“对象到小数()”</b>方法转换成小数，利用<b>“到文本()”</b>方法转换成文本显示在编辑框中。</p>
+	<p align="left"><img border="0" src="obj_images/7.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终结果证明，对象和整数之间的互相转换成功。</p>
+	<p align="left"><img border="0" src="obj_images/8.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<a name="dxdsz"></a>
+<font style="font-size: 12pt; font-weight:700">● 对象到数组</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>	
+	<p align="left">本方法可将<b>“”</b>重新转换为数组，但必须保证要转换的<b>“对象类”</b>是由<b>“数组”</b>转换过去的，且类型必须填写正确。</p>
+	<p align="left">参数1：提供要转换的对象类。</p>
+	<p align="left">参数2：提供要转换的数据类型，务必保证填写正确。</p>
+  <p align="left">本方法的返回值为数组，类型由<b>“参数2”</b>决定。</p>
+	<p align="left"><img border="0" src="obj_images/9.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义类型为<b>“对象类”</b>的成员变量。</p>
+	<p align="left">2、<b>“按钮1”</b>被点击后，定义<b>“文本型[2]”</b>数组变量并设置成员，随即转换为对象类。</p>
+	<p align="left">3、<b>“按钮2”</b>被点击后，调用<b>“对象到数组()”</b>赋值给定义的文本型数组变量。</p>
+	<p align="left">注意：因要转换的对象数据是<b>“文本数组”</b>，所以参数2必须填写<b>“文本型”</b>。</p>
+	<p align="left">4、最后转换成文本显示在编辑框中。</p>
+	<p align="left"><img border="0" src="obj_images/10.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">结果证明<b>“文本数组”</b>和<b>“对象类”</b>之间相互转换成功。</p>
+	<p align="left"><img border="0" src="obj_images/11.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p> 
+<a name="dxdsz2"></a>
+<font style="font-size: 12pt; font-weight:700">● 对象到数组2</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本方法和<b>“对象到数组”</b>不同之处在于，本方法是用来转换对象为二维数组。 </p>
+	<p align="left">注意：务必保证要转换的数据类型正确。 </p>
+	
+  <p align="left"><img border="0" src="obj_images/12.png" ></p>
+</blockquote>
+
+	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、<b>“按钮1”</b>被点击后，定义一个文本型<b>“二维数组”</b>并转换为对象类。</p>
+	<p align="left">2、<b>“按钮1”</b>被点击后，利用当前方法重新将<b>“对象数据”</b>转换为二维数组，并取出指定成员。</p>
+	<p align="left"><img border="0" src="obj_images/13.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">最终结果证明，二维数组和对象类之间相互转换成功。</p>
+	<p align="left"><img border="0" src="obj_images/14.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+	<a name="dxdsz3"></a>
+<font style="font-size: 12pt; font-weight:700">● 对象到数组3</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用可将对象类转换为三维数组。</p>
+	<p align="left">注意：务必保证要转换的对象类为数据类型正确。</p>
+	<p align="left"><img border="0" src="obj_images/15.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、<b>“按钮1”</b>被点击后，定义一个文本型<b>“三维数组”</b>并转换为对象类。</p>
+	<p align="left">2、<b>“按钮2”</b>被点击后，利用当前方法重新将<b>“对象数据”</b>转换为三维数组，并取出指定成员。</p>
+	<p align="left"><img border="0" src="obj_images/16.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终结果证明，三维数组和对象类相互转换成功。</p>
+	<p align="left"><img border="0" src="obj_images/17.gif" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="dzsfxd"></a>
+<font style="font-size: 12pt; font-weight:700">● 对象是否相等</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本方法可判断两个对象数据是否相等。</p>
+  <p align="left">参数1、2提供要检查的对象即可，返回真表示相等，否则返回假。</p>
+	<p align="left"><img src="obj_images/18.png"> </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、<b>“按钮1”</b>被点击后，利用<b>“到对象()”</b>方法转换文本为对象，比对<b>“文本1”</b>。</p>
+	<p align="left">2、<b>“按钮2”</b>被点击后，利用同样的方法，比对<b>“1和2”</b>。</p>
+	<p align="left"><img border="0" src="obj_images/19.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终结果证明，通过本方法也可以判断两个文本数据是否相等。</p>
+	<p align="left"><img border="0" src="obj_images/20.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p> 
+	<a name="jsdxhash"></a>
+<font style="font-size: 12pt; font-weight:700">● 计算对象的HASH值</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本方法可计算指定对象的HASH值。</p>
+	<p align="left">HASH：又称为<a href="https://baike.baidu.com/item/Hash/390310" target="_blank"><b>“散列函数”</b></a>，简单的说就是一种将任意长度的消息压缩到某一固定长度的消息摘要的函数。</p>
+	<p align="left"><img border="0" src="obj_images/21.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">调用本方法计算<b>“火山软件”</b>的HASH值，并显示在<b>“按钮2”</b>上。</p>
+	<p align="left"><img border="0" src="obj_images/22.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="obj_images/23.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p> 
+
+	<a name="quleiming"></a>
+<font style="font-size: 12pt; font-weight:700">● 取对象类名</font><br>	
+<font style="font-size: 12pt; font-weight:700">● 取类名</font>	
+	<p align="left">&nbsp;</p>
+	<p align="left">以上两个方法都是取出对象的java类名，此处演示<b>“取对象类名()”</b>方法。</p>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本方法可取出指定对象的java类名，可用于对比数据或者记录。</p>
+	<p align="left">参数提供要对比的类名即可。</p>
+	<p align="left"><img src="obj_images/24.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">调用当前方法取出<b>“按钮2”</b>的类名，显示在<b>“按钮2”</b>的标题上。</p>
+
+	<p align="left"><img src="obj_images/25.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">最终得出<b>“按钮2”</b>的类名为<b>“HSH.ANZH.JB.RG_ANN”</b>。</p>
+	<p align="left"><img src="obj_images/26.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+	<a name="qzdlxxdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 取类信息对象</font><br>	
+<font style="font-size: 12pt; font-weight:700">● 取指定类信息对象</font>	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">以上两个方法都是取出对象的类信息，此处演示<b>“取指定类信息对象()”</b>方法。</p>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可取出指定对象的类信息，返回值为<b>“对象类信息”</b>。</p>
+	<p align="left"><img src="obj_images/27.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">调用当前方法取出<b>“对象类”</b>的<b>“实体名称”</b>，并显示在按钮2的标题上。</p>
+	<p align="left"><img src="obj_images/28.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><b>“对象类”</b>的实体名称为<b>“JAVA.LANG.OBJECT”</b>。</p>
+	<p align="left"><img src="obj_images/29.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+	<a name="xjduixiang"></a>
+<font style="font-size: 12pt; font-weight:700">● 新建对象</font>	
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本方法可重新创建对象，返回值由参数决定。</p>
+	<p align="left"><img src="obj_images/30.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、自定义一个类，添加一个类型为<b>“文本型”</b>成员变量，并设置初始值，用来模拟一个对象。</p>
+	<p align="left">2、<b>“按钮1”</b>被点击后，定义类型为<b>“自定义类”</b>的局部变量，勾选参考，模拟空对象。</p>
+	<p align="left">3、调用<b>“新建对象()”</b>方法创建<b>“自定义类”</b>的对象，赋值给定义的变量。</p>
+	<p align="left">4、取出此对象中定义的文本变量。</p>
+	<p align="left"><img src="obj_images/31.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">变量内容成功取出，证明<b>“新建对象”</b>成功。</p>
+	<p align="left"><img src="obj_images/32.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

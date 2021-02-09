@@ -1,0 +1,284 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>进度条组件</h4></li>
+	<ol>
+			<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.进度条<span>(可收缩)</span></h6></li>
+		<ol id="new1">
+            <li><blockquote><a href="#jdt">1.准备工作</a></blockquote></li> 
+			<li><blockquote><a href="#zdjdz">2.最大进度值(读写)</a></blockquote></li>
+			<li><blockquote><a href="#zdjdz">3.当前进度值(读写)</a></blockquote></li> 
+		    <li><blockquote><a href="#zdjdz">4.当前第二进度值(读写)</a></blockquote></li>
+            <li><blockquote><a href="#jdbqd">5.进度不确定(读写)</a></blockquote></li>
+            <!-- <li><blockquote><a href="#jdbqdzttxx">6.进度不确定状态图像(写)</a></blockquote></li> -->
+            <li><blockquote><a href="#jdttxx">6.进度条图像(写)</a></blockquote></li>
+            <li><blockquote><a href="#jdtys">7.进度条颜色(写)</a></blockquote></li>
+            <li><blockquote><a href="#zjdttx">8.置进度条图像</a></blockquote></li>
+			<!-- <li><blockquote><a href="#zjdbqdzttx">9.置进度不确定状态图像</a></blockquote></li> -->
+            <li><blockquote><a href="#qjdqjd">9.前进当前进度</a></blockquote></li>
+			<li><blockquote><a href="#qjdqjd">10.前进当前第二进度</a></blockquote></li>
+		</ol>	
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new2')" >二.设计器属性<span>(可收缩)</span></h6></li>
+		<ol id="new2">
+            <li><blockquote><a href="#jdtfengge">1.风格</a></blockquote></li> 
+			
+		</ol>	 
+        
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>进度条组件操作实例讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+<h2>一、进度条</h2>
+<p align="left">&nbsp;</p>
+		<font style="font-size: 12pt; font-weight:700">● 辅助说明</font><br/>
+     	<blockquote>
+		<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+	</blockquote>	
+<p align="left">&nbsp;</p>
+	
+<a name="jdt"></a>    
+
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">打开启动类<b>“界面设计器”</b>，设计如下界面。</p>
+    <p align="left">从上到下依次是<b>“按钮1”</b>、<b>“按钮2”</b>和<b>“进度条1”</b>。</p>
+    <p align="left">设置进度条风格为<b>“水平进度条”</b>，宽度为<b>“匹配父组件宽度”</b>。</p>
+	<p align="left"><img src="jd_images/2.png" width="796" height="680" border="0" ></p><br>
+    <p align="left">保存布局后，右键<b>“按钮”</b>选择添加<b>“事件接收方法”</b>。</p> 
+	<p align="left">然后去添加<b>“按钮_被单击”</b>事件。</p>
+	<p align="left">最终达到如图所示效果。</p>
+    <p align="left"><img border="0" src="jd_images/3.png" ></p>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="zdjdz"></a>
+<font style="font-size: 12pt; font-weight:700">● 最大进度值(读写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 当前进度值(读写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 当前第二进度值(读写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“最大进度值(写)”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">本写属性用来设置当前<b>“进度条”</b>的<b>“最大进度值”</b>。</p>
+  <p align="left">如果不设置默认为100.</p>
+  <p align="left">同名读属性，即读取当前最大进度值。</p>
+	<p align="left"><img border="0" src="jd_images/4.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“当前进度值(写)”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">本写属性可设置<b>“当前进度值”</b>。</p>
+  <p align="left">同名读属性，即读取当前进度值。</p>
+	<p align="left"><img border="0" src="jd_images/5.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“当前第二进度值(写)”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">设置当前进度条<b>“第二进度”</b>。</p>
+  <p align="left">同名读属性，即读取当前<b>“第二进度”</b>。</p>
+	<p align="left"><img border="0" src="jd_images/6.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后分别设置当前三个进度属性。</p>
+	<p align="left"><b>“按钮2”</b>被点击后分别读取。</p>
+	<p align="left"><img border="0" src="jd_images/7.png" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="jd_images/8.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="jdbqd"></a>
+<font style="font-size: 12pt; font-weight:700">● 进度不确定(读写)</font>
+		<p align="left">&nbsp;</p>
+<p align="left"><b>“进度不确定(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性用来设置当前进度是否处于不确定状态。</p>
+	<p align="left">属性值为真，表示进度条不确定，否则相反。</p>
+	<p align="left">同名读属性，即读取当前的进度是否确定。</p>
+	<p align="left"><img border="0" src="jd_images/9.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，依次设置<b>“当前进度值”</b>和<b>“进度不确定”</b>属性。</p>
+	<p align="left"><img border="0" src="jd_images/10.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">重复点击<b>“按钮1”</b>，当前进度条会在<b>“进度确定”</b>和<b>“进度不确定”</b>之间切换。</p>
+	<p align="left"><img border="0" src="jd_images/11.gif" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="cjxtsq2"></a>
+<font style="font-size: 12pt; font-weight:700">● 进度条图像(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 置进度条图像</font>
+		<p align="left">&nbsp;</p>
+<p align="left"><b>“进度条图像(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本写属性的作用是给当前进度条设置图像。</p>
+	<p align="left">本属性设置后会覆盖<b>“进度条颜色”</b>，并且无法显示<b>“当前进度值”</b>。</p>
+	<p align="left"><img border="0" src="jd_images/12.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“置进度条图像”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法和<b>“进度条图像”</b>写属性不同之处在于，本方法是通过<b>“可绘制对象类”</b>进行设置图像。</p>
+	<p align="left"><img border="0" src="jd_images/13.png" ></p>
+</blockquote>
+
+	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后设置<b>“当前进度值”</b>后调用<b>“进度条图像”</b>属性设置图像。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，调用<b>“置进度条图像”</b>方法来设置图像。</p>
+	<p align="left"><img border="0" src="jd_images/14.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">虽然设置了<b>“当前进度值”</b>，但是设置<b>“进度图像”</b>后并不能显示出来。</p>
+	<p align="left"><img border="0" src="jd_images/15.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="jdtys"></a>
+<font style="font-size: 12pt; font-weight:700">● 进度条颜色(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性用来设置进度条颜色，设置后会覆盖<b>“进度条图像”</b>属性。</p>
+	<p align="left"><img border="0" src="jd_images/16.png" ></p>
+</blockquote>
+
+	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后设置<b>“进度条图像”</b>属性。</p>
+	<p align="left"><b>“按钮2”</b>被点击后设置进度条颜色为黄色。</p>
+	<p align="left"><img border="0" src="jd_images/17.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">可以看到<b>“进度图像”</b>和<b>“进度颜色”</b>会相互覆盖。</p>
+	<p align="left"><img border="0" src="jd_images/18.gif" ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="qjdqjd"></a>
+<font style="font-size: 12pt; font-weight:700">● 前进当前进度</font><br>
+<font style="font-size: 12pt; font-weight:700">● 前进当前第二进度</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“前进当前进度”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">如果参数值<b>“大于0”</b>，则会在当前进度的基础上<b>“增加进度”</b>。</p>
+	<p align="left">如果参数<b>“小于0”</b>，则在当前进度的基础上<b>“减少进度”</b>。</p>
+	
+	<p align="left"><img border="0" src="jd_images/19.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“前进当前第二进度”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法的作用是用来对第二进度进行操作，参数值设置效果同上一个方法。</p>
+	<p align="left"><img border="0" src="jd_images/20.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后执行<b>“前进当前进度(5)”</b>。</p>
+	<p align="left"><b>“按钮2”</b>被点击后执行<b>“前进当前第二进度(5)”</b>。</p>
+	<p align="left"><img border="0" src="jd_images/21.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left"><img border="0" src="jd_images/22.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<h2>二、设计器属性</h2>
+<p align="left">&nbsp;</p>	
+<a name="jdtfengge"></a>
+<font style="font-size: 12pt; font-weight:700">● 风格</font>
+<p align="left">&nbsp;</p>
+<p align="left">本属性可用于调整进度样式，共六种样式。</p>
+    <blockquote>
+    <p align="left"><img border="0" src="jd_images/55.png" ></p>
+    </blockquote>    
+	<p align="left">&nbsp;</p>
+<p align="left">小环形进度条/小环形进度条2：</p>
+<blockquote>
+	<p align="left">一种极小的进度圈，进度圈的尺寸是固定的无法修改。</p>
+	<p align="left"><img border="0" src="jd_images/56.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">普通环形进度条：</p>
+<blockquote>
+	<p align="left">此进度条样式和“小环形进度条”效果一致，就是尺寸不同。</p>
+	<p align="left"><img border="0" src="jd_images/57.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">大环形进度条/大环形进度条2：</p>
+<blockquote>
+	<p align="left">此进度条样式和“小环形进度条”效果一致，就是尺寸更大。</p>
+	<p align="left"><img border="0" src="jd_images/58.gif" > </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

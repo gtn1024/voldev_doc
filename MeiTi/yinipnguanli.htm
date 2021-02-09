@@ -1,0 +1,456 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new12')" >一.音频管理器类<span>(可收缩)</span></h6></li>
+		<ol id="new12">
+        
+           <li><blockquote><a href="#ypgl">1.本类说明</a></blockquote></li>
+          <li><blockquote><a href="#ypxj">2.新建</a></blockquote></li>
+          <li><blockquote><a href="#ypbdsj">3.绑定事件</a></blockquote></li>
+         
+           <li><blockquote><a href="#ypjzyx">4.加载音效</a></blockquote></li>
+           <li><blockquote><a href="#ypbfyx">5.播放音效</a></blockquote></li>
+           <li><blockquote><a href="#ypxzyx">6.卸载音效</a></blockquote></li>
+           <li><blockquote><a href="#qushuxing">7.取属性</a></blockquote></li>
+           <li><blockquote><a href="#ypqdjd">8.取得焦点</a></blockquote></li>
+           <li><blockquote><a href="#ypqzdyl">9.取最大音量</a></blockquote></li>
+           <li><blockquote><a href="#ypzypyl">10.置音频音量</a></blockquote></li>
+           <li><blockquote><a href="#ypqypyl">11.取音频音量</a></blockquote></li>
+           <li><blockquote><a href="#yptzyl">12.调整音量</a></blockquote></li>
+           <li><blockquote><a href="#yptzypyl">13.调整音频音量</a></blockquote></li>
+           <li><blockquote><a href="#ypfqjd">14.放弃焦点</a></blockquote></li>
+           <li><blockquote><a href="#ysq">15.扬声器（写）</a></blockquote></li>
+          
+           <li><blockquote><a href="#lingsheng">16.铃声模式（写）</a></blockquote></li>
+           <li><blockquote><a href="#yp">17.音频模式（写）</a></blockquote></li>
+           <li><blockquote><a href="#mkf">18.麦克风静音（写）</a></blockquote></li>
+           <li><blockquote><a href="#ysqd">19.扬声器（读）</a></blockquote></li>
+          
+           <li><blockquote><a href="#zzbfmt">20.正在播放媒体（读）</a></blockquote></li>
+           
+           <li><blockquote><a href="#lsmsd">21.铃声模式（读）</a></blockquote></li>
+           <li><blockquote><a href="#ypmsd">22.音频模式（读）</a></blockquote></li>
+           <li><blockquote><a href="#mkfjyd">23.麦克风静音（读）</a></blockquote></li>
+          
+		</ol>
+		
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>音频管理器类实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+
+	<p align="left">&nbsp;</p>	
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">本方法的主要作用就是用来处理音频焦点，以及改变媒体音量等等……</p>
+	<p align="left">具体可看帮助内的详细说明。</p>
+	<p align="left"><font color="#F70408">注意：本类位于<strong>“多媒体功能支持”</strong>模块中，必须添加此模块才能使用。</font></p>
+	<p align="left"><img border="0" src="mt_images/220.png" ></p>
+</blockquote>	
+
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="ypbdsj"></a>
+<a name="ypxj"></a>	<a name="ypqdjd"></a>	<a name="ypfqjd"></a>
+<font style="font-size: 12pt; font-weight:700">● 新建</font><br/>
+
+<font style="font-size: 12pt; font-weight:700">● 绑定事件 </font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取得焦点 </font><br/>
+<font style="font-size: 12pt; font-weight:700">● 放弃焦点 </font>		
+
+<p align="left">&nbsp;</p>	
+<p align="left"><b>“新建”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本方法可以创建当前对象，创建对象后可以进行对各种方法的操作。</p>
+	<p align="left"><img border="0" src="mt_images/221.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“绑定事件”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本方法的作用，用来监听<b>“音频事件类”</b>中的<b>“焦点被改变”</b>事件。</p>
+    <p align="left">例如：程序A调用本方法监听事件后，打开程序B播放音乐。</p>
+    <p align="left">程序B就会把程序A的音频焦点抢走<b>“焦点被改变”</b>事件就会触发。</p>
+	<p align="left"><img border="0" src="mt_images/222.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“取得焦点”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本方法可以让当前应用获得<b>“音频焦点”</b>，暂停其它程序播放音乐。</p>
+    <p align="left">最常见的例子：电话铃声响起时，如果你手机正在播放音乐或看电影。</p>
+    <p align="left">声音会自动暂停，弹出接听电话的界面。</p>
+	<p align="left">取得焦点成功返回<b>“1”</b>，失败返回<b>“0”</b>。</p>
+    <p align="left">参数2：调用方式<b>“音频类型.XX”</b>.</p>
+    <p align="left">参数3：调用方式<b>“音频焦点类型.XX”</b>.</p>
+	<p align="left"><img border="0" src="mt_images/222a.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“放弃焦点”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">简单来说就是，如果通过<b>“取得焦点”</b>把一个音乐播放器的音频焦点抢过来后。</p>
+  <p align="left">调用本方法会将焦点换回去，让该音乐播放器继续播放音乐。</p>
+  <p align="left">成功返回<b>“1”</b>，失败返回<b>“0”</b>。</p>
+	<p align="left"><img border="0" src="mt_images/223a.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">界面准备如下图：</p>
+<blockquote>
+    <p align="left">准备两个按钮和一个文本框，保存布局。</p>
+	<p align="left"><img border="0" src="mt_images/223.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+    <p align="left">定义两个变量，类型分别为<b>“音频管理器类”</b>和<b>“音频事件类”</b>。</p>
+<p align="left">注意：管理器变量要设置参考。</p>
+	<p align="left"><img border="0" src="mt_images/224.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+    <p align="left">按照帮助文档中所说，右键<b>“音频事件类”</b>添加<b>“事件接收方法”</b>。</p>
+	<p align="left"><img border="0" src="mt_images/225.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（3）：</p>
+<blockquote>
+    <p align="left">添加完毕后，判断<b>“音频事件”</b>来源。</p>
+<p align="left">然后分别判断每一种焦点类型，对应的修改<b>“文本框”</b>的内容。</p>
+	<p align="left"><img border="0" src="mt_images/226.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（4）：</p>
+<blockquote>
+    <p align="left">添加<a href="a_win.htm#tzbcj"><b>“通知_被创建”</b></a>虚拟方法。</p>
+	<p align="left">在本虚拟方法下，调用<b>“音频管理器类.创建()”</b>方法，赋值给<b>“音频管理器1”</b>变量。</p>
+	<p align="left">最后调用<b>“绑定事件”</b>方法绑定<b>“音频事件”</b>变量。</p>
+	<p align="left"><img border="0" src="mt_images/227.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（5）：</p>
+<blockquote>
+    <p align="left">在<b>“按钮_被单击”</b>下，定义一个<b>“焦点返回值”</b>变量，类型为<b>“整数”</b>。</p>
+	<p align="left">然后分别判断<b>“按钮1”</b>和<b>“按钮2”</b>被点击，分别执行<b>“取消焦点”</b>和<b>“放弃焦点”</b>方法。</p>
+	<p align="left">将方法赋值给<b>“焦点返回值”</b>变量，通过<b>“如果”</b>判断是否执行成功。</p>
+	<p align="left"><img border="0" src="mt_images/228.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">GIF图片较大，如果加载不出来点击<a href="mt_images/228.gif" target="_blank">这里</a></p>
+	<p align="left">通过图片可以看到，软件获得音频焦点后正在播放的音乐会自动停止播放。</p>
+	<p align="left">当<b>“按钮2”</b>被点击放弃时，音乐会自动重新播放。</p>
+	<p align="left">如果当前软件已经获得了音频焦点，手动去点击音乐播放器的播放按钮。</p>
+	<p align="left">此时<b>“焦点被改变”</b>就会被触发，弹出了<b>“长期失去焦点”</b>提示。</p>
+	<p align="left"><img border="0" src="mt_images/228.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="ypjzyx"></a><a name="ypbfyx"></a>
+		<a name="ypxzyx"></a>
+<font style="font-size: 12pt; font-weight:700">● 加载音效</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 播放音效 </font><br/>
+<font style="font-size: 12pt; font-weight:700">● 卸载音效 </font><br/>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“加载音效”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">顾名思义，执行本方法可以加载音效，此音效为安卓系统的一些声音。</p>
+    <p align="left">因国内定制系统的缘故，手机之间的音效可能并不一致。</p>
+    <p align="left">加载音效后可调用<b>“播放音效”</b>播放，本方法调用一次即可。</p>
+	<p align="left"><img border="0" src="mt_images/229.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“播放音效”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">顾名思义，进行音效播放。</p>
+    <p align="left">可通过<b>“音频效果标志”</b>来指定音效，直接填写：音频效果标志.XXX即可。</p>
+    <p align="left">参数3：如果无音量需求，忽略本参数即可。</p>
+	<p align="left"><img border="0" src="mt_images/230.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“卸载音效”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">顾名思义，卸载当前音效，卸载后将无法播放。</p>
+    <p align="left">如果想要重新播放，需要重新调用<b>“加载音效”</b>方法。</p>
+	<p align="left"><img border="0" src="mt_images/231.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">在<b>“按钮_被单击”</b>下，按钮1被点击时，执行<b>“播放音效”</b>方法，播放提示音。</p>
+    <p align="left">此提示音为系统提示音。</p>
+	<p align="left">如果不想用了，可点击<b>“按钮2”</b>执行<b>“卸载音效”</b>方法。</p>
+	<p align="left">因<b>“加载音效”</b>方法执行一次即可，所以此方法建议填写到<b>“通知_被创建”</b>事件下。</p>
+	<p align="left">本例程无法演示，大家自行测试。</p>
+	<p align="left"><img border="0" src="mt_images/232.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="ypqzdyl"></a><a name="ypzypyl"></a><a name="ypqypyl"></a>
+	<a name="yptzypyl"></a>
+<font style="font-size: 12pt; font-weight:700">● 取最大音量</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 置音频音量</font><br/>	
+<font style="font-size: 12pt; font-weight:700">● 取音频音量 </font><br/>	
+<font style="font-size: 12pt; font-weight:700">● 调整音频音量 </font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“取最大音量”</b>帮助文档：</p>
+<blockquote>
+     <p align="left">顾名思义，取出指定媒体声音的最大音量值。</p>
+     <p align="left">在安卓手机中有多种声音类型，比如：闹钟，媒体等……</p>
+     <p align="left">本方法需要通过<b>“音频类型”</b>来指定某种类型声音的最大声音值。</p>
+     <p align="left">例如：<b>“音频类型.媒体”</b>。</p>
+     <p align="left">媒体声音值最大为<b>“15”</b>，部分设备可能有所不同。</p>
+	<p align="left"><img border="0" src="mt_images/233.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“置音频音量”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">设置指定<b>“音频类型”</b>的声音值，该声音值不能大于<b>“取最大音量”</b>的返回值。</p>
+  <p align="left">参数4：可以指定调整音量时的<b>“动作”</b>。</p>
+  <p align="left">例如：<b>“音频标志.音量框”</b>可以显示系统音量框。</p>
+     <p align="left"><b>“音频标志.提示”</b>会发出<b>“嘟”</b>的提示音。</p>
+  
+	<p align="left"><img src="mt_images/234.png" width="578" height="554" border="0" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“取音频音量”</b>帮助文档：</p>
+<blockquote>
+     <p align="left">顾名思义，通过本方法可以取出指定<b>“音频类型”</b>的音量值。</p>
+	<p align="left"><img border="0" src="mt_images/235.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“调整音频音量”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">本方法和<b>“置音频音量”</b>的区别在于，本方法可以进行递增或递减形式的调整。</p>
+     <p align="left">通过<b>“音频动作”</b>来实现。</p>
+     <p align="left">例如：<b>“音频动作.增加”</b>，会在原音量的基础上增加音量。</p>
+	<p align="left"><img border="0" src="mt_images/236.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+     <p align="left">在<b>“按钮1”</b>被点击下，定义两个整数变量，分别赋值<b>“取最大音量”</b>和<b>“取音频音量”</b>。</p>
+     <p align="left">然后判断当前<b>“音频音量”</b>是否等于<b>“最大音量”</b>。</p>
+     <p align="left">如果等于就弹出提示，否则就调用<b>“调整音频音量”</b>进行修改。</p>
+     <p align="left"><b>“按钮2”</b>被点击时，执行<b>“置音频音量”</b>方法，一次性设置为指定音量值。</p>
+     <p align="left">然后可以调用<b>“取音频音量”</b>方法赋值给文本框显示当前音量。</p>
+	<p align="left"><img border="0" src="mt_images/237.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+    <p align="left">可以看到<b>“按钮1”</b>被点击时，系统音量框弹出。</p>
+    <p align="left">音量加满后，也弹出提示当前为最大音量。</p>
+    <p align="left"><b>“按钮2”</b>被点击后，也成功设置当前音量为3.</p>
+	<p align="left"><img border="0" src="mt_images/238.gif" ></p>
+</blockquote>
+
+<a name="yptzyl"></a>
+<p align="left">&nbsp;</p>	
+<font style="font-size: 12pt; font-weight:700">● 调整音量 </font>
+<p align="left">&nbsp;</p>		
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法和<b>“调整音频音量”</b>不同之处在于，本方法不支持设置<b>“音频类型”</b>。</p>
+	<p align="left">默认调整<b>“媒体音量”</b>，如果当前处于通话状态，将调整<b>“通话音量”</b>。</p>
+	<p align="left">代码编写参考<b>“调整音频音量”</b>，此处不再详细介绍。</p>
+	<p align="left"><img border="0" src="mt_images/239.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	
+	<a name="ysq"></a><a name="ysqd"></a>
+<font style="font-size: 12pt; font-weight:700">● 扬声器（写）</font><br/>	
+<font style="font-size: 12pt; font-weight:700">● 扬声器（读）</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“扬声器（写）”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本<b>“写属性”</b>的作用就是用来设置当前扬声器是否启用。</p>
+    <p align="left">如果属性值为<b>“真”</b>则开启扬声器，否则相反。</p>
+	<p align="left"><img border="0" src="mt_images/240.png" ></p>
+</blockquote>
+	
+	<p align="left"><b>“扬声器（读）”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本<b>“读属性”</b>的作用，就是用来读取当前扬声器是否正常。</p>
+    <p align="left">返回<b>“真”</b>表示当前扬声器正常，否则返回假。</p>
+	<p align="left"><img border="0" src="mt_images/241.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">分别在<b>“按钮1和2”</b>的点击下，执行对应的读写属性即可。</p>
+    <p align="left">本例程无法演示，大家自行测试。</p>
+	<p align="left"><img border="0" src="mt_images/242.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+		<a name="lingsheng"></a><a name="lsmsd"></a>
+<font style="font-size: 12pt; font-weight:700">● 铃声模式（写）</font><br/>	
+<font style="font-size: 12pt; font-weight:700">● 铃声模式（读）</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“铃声模式（写）”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本<b>“写属性”</b>的作用就是用来设置当前手机铃声模式。</p>
+    <p align="left">通过<b>“音频铃声模式.XXX”</b>来设置。</p>
+    <p align="left">例如：设置为<b>“震动”</b>，当前手机就会开启震动。</p>
+    <p align="left">如果此时有电话打进来，不会响铃只会进行震动。</p>
+	<p align="left"><img border="0" src="mt_images/243.png" ></p>
+</blockquote>
+	
+	<p align="left"><b>“铃声模式（读）”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本<b>“读属性”</b>的作用，就是用来读取当前铃声模式。</p>
+    <p align="left">返回值参考：<b>“音频铃声模式.XXX”</b></p>
+	<p align="left"><img border="0" src="mt_images/244.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">分别在<b>“按钮1和2”</b>的点击下，执行对应的读写属性即可。</p>
+    <p align="left">本例程无法准确演示，大家自行测试。</p>
+	<p align="left"><img border="0" src="mt_images/245.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+		<a name="mkf"></a><a name="mkfjyd"></a>
+<font style="font-size: 12pt; font-weight:700">● 麦克风静音（写）</font><br/>	
+<font style="font-size: 12pt; font-weight:700">● 麦克风静音（读）</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“麦克风静音（写）”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">顾名思义，本写属性就是用来设置当前麦克风是否静音。</p>
+    <p align="left">属性值为<b>“真”</b>表示静音，否则相反。</p>
+    <p align="left">注意：本方法为全局方法，设置静音后除了通话外，所有声音播放都会静音。</p>
+	<p align="left"><img border="0" src="mt_images/246.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“麦克风静音（读）”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本<b>“读属性”</b>的作用，就是用来读取麦克风是否静音。</p>
+    <p align="left">返回<b>“真”</b>表示麦克风正常，返回<b>“假”</b>则当前麦克风被静音。</p>
+	<p align="left"><img border="0" src="mt_images/247.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">分别在<b>“按钮1和2”</b>的点击下，执行对应的读写属性即可。</p>
+    <p align="left">本例程无法准确演示，大家自行测试。 </p>
+	<p align="left"><img border="0" src="mt_images/248.png" ></p>
+</blockquote>
+	
+
+		
+	<p align="left">&nbsp;</p>
+
+<a name="zzbfmt"></a>
+<font style="font-size: 12pt; font-weight:700">● 正在播放媒体（读）</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本属性的作用就是用来读取当前是否正在播放音乐/视频等。</p>
+	<p align="left">正在播放返回<b>“真”</b>，否则返回<b>“假”</b>。</p>
+	<p align="left"><img border="0" src="mt_images/249.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">直接调用本读属性判断返回值即可。</p>
+	<p align="left"><img border="0" src="mt_images/250.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="mt_images/251.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<a name="qushuxing"></a>
+<font style="font-size: 12pt; font-weight:700">● 取属性 </font><br/>	
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法的作用就去取出一些音频的属性值，例如：采样率等……</p>
+    <p align="left">可通过<b>“音频属性.XX”</b>来指定。</p>
+    <p align="left">如果是逻辑属性，<b>“真”</b>返回<b>“true”</b>，<b>“假”</b>返回<b>“false”</b>。</p>
+	<p align="left"><img border="0" src="mt_images/252.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+    <p align="left">例如：此处读取音频采样率，赋值给文本框显示。</p>
+
+	<p align="left"><img border="0" src="mt_images/253.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图： </p>
+<blockquote>
+    <p align="left">点击<b>“按钮1”</b>后将显示出当前的音频采样率。</p>
+
+	<p align="left"><img border="0" src="mt_images/254.png" ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

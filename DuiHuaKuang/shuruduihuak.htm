@@ -1,0 +1,163 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>对话框操作</h4></li>
+	<ol>
+    <li><blockquote><a href="#zbgz">0.准备工作</a></blockquote></li>     
+           
+		
+       
+		 <li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new7')" >一.输入对话框类<span>(可收缩)</span></h6></li>
+	  <ol id="new7">
+			<li><blockquote><a href="#srcj">1.创建并显示</a></blockquote></li>
+            <li><blockquote><a href="#srbt">2.标题（写）</a></blockquote></li>
+             <li><blockquote><a href="#srtb">3.图标（写）</a></blockquote></li>
+			  <li><blockquote><a href="#srjg">4.输入结果（事件）</a></blockquote></li>
+		</ol>
+					
+	</ol>
+</ul>
+</div>
+
+
+<p align="left">
+<h2>输入对话框类操作实例讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+<a name="zbgz"></a>    
+<font style="font-size: 12pt; font-weight:700">● 帮助说明</font><br/>
+<br/>
+<blockquote>
+	<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 准备一个界面</font><br/>
+<p align="left">&nbsp;</p>
+
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">打开窗口设计器，放两个<b>“按钮”</b>，右侧属性文本分别起名<b>“按钮1”</b>和<b>“按钮2”</b>。</p>
+	<p align="left"><img border="0" src="dhk_images/2.png" ></p>
+    <p align="left">保存布局后，右键<b>“按钮”</b>，添加<b>“按钮被单击事件接收方法”</b>，添加完毕后<b>如下图</b>所示。</p>
+    <p align="left"><img border="0" src="dhk_images/02.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="srbt"></a>
+<a name="srtb"></a>
+<p align="left">&nbsp;</p>
+<h2>一、输入对话框类</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 创建并显示</font><br/>
+
+<font style="font-size: 12pt; font-weight:700">● 标题（写）</font><br/>
+
+<font style="font-size: 12pt; font-weight:700">● 图标（写）</font><br/>
+
+<p align="left">帮助文档：</p>
+<blockquote>
+    <p align="left">可以看到有<b>“三个”</b>参数。</p>
+    <p align="left">参数1：要显示的窗口。</p>
+    <p align="left">参数2：编辑框输入类型，调用方式<b>“常用输入类型.XXXX”</b>。</p>
+    <p align="left">参数3：对话框标题，默认空文本。</p>
+	<p align="left"><img border="0" src="dhk_images/102.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义类型为<b>“输入对话框类”</b>的成员变量，设置参考。</p>
+<p align="left">在<b>“按钮1”</b>被点击下，利用<b>“创建并显示”</b>方法，创建<b>“输入对话框类”</b>对象，并赋值给成员变量。</p>
+<p align="left">参数2：可以填写<b>“常用输入类型.数字密码”</b>，该模式可以进行密码输入。</p>
+<p align="left">定义一个类型为<b>“可绘制资源”</b>的图标变量，导入一张图片。</p>
+<p align="left">最后直接赋值<b>“标题”</b>和<b>“图标”</b>。</p>
+	<p align="left"><img border="0" src="dhk_images/103.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">点击<b>“按钮1”</b>后效果如下，虽然创建时设置了标题，但是此时的标题被<b>“新标题”</b>覆盖。</p>
+    <p align="left">左图：安卓5.0不会显示图标。</p>
+    <p align="left">右图：安卓8.0显示图标。</p>
+    <p align="left">其它安卓版本自行测试。</p>
+	<p align="left"><img border="0" src="dhk_images/104.png" >
+    <img border="0" src="dhk_images/105.png" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="srjg"></a>
+<font style="font-size: 12pt; font-weight:700">● 输入结果（事件）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">点击<b>“输入对话框”</b>内的<b>“确定”</b>按钮，就会发送本事件。</p>
+    <p align="left">并且会返回<b>“编辑框内容”</b>。</p>
+	<p align="left"><img border="0" src="dhk_images/105a.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+	<p align="left">添加<b>“输入结果”</b>事件接收方法。</p>
+    <p align="left">右键<b>“类名”</b>选择<b>“添加”</b>。</p>
+	<p align="left"><img border="0" src="dhk_images/105b.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+	<p align="left">在生成的事件内，直接写<b>“参数名”</b>就可以取出内容。。</p>
+	<p align="left"><img border="0" src="dhk_images/105c.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（3）：</p>
+<blockquote>
+	<p align="left">最重要的一点，不要忘记<b>“挂接事件”</b>。</p>
+	<p align="left"><img border="0" src="dhk_images/105d.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果：</p>
+<blockquote>
+	<p align="left">点击<b>“确定”</b>后，输入的内容就会被取出。</p>
+	<p align="left"><img border="0" src="dhk_images/105.gif" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

@@ -1,0 +1,517 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+	
+	
+	
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>浮动按钮菜单组件</h4></li>
+	<ol>
+            <li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new6')" >一.浮动按钮菜单 <span>(可收缩)</span></h6></li>
+	  <ol id="new6">
+			<li><blockquote><a href="#fdancd">1.准备工作</a></blockquote></li>
+			<li><blockquote><a href="#fdbqks">2.标签可视(读写)</a></blockquote></li>
+            <li><blockquote><a href="#fdbqwbnr">3.标签文本内容(写)</a></blockquote></li>
+            <li><blockquote><a href="#fdbqwbnr">4.标签文本颜色(写)</a></blockquote></li> 
+            <li><blockquote><a href="#fdbqwbnr">5.置标签颜色</a></blockquote></li>
+			
+			<li><blockquote><a href="#cdtbdhqy">6.图标动画启用(读写)</a></blockquote></li>
+			<li><blockquote><a href="#cdzcys">7.正常颜色(写)</a></blockquote></li>
+			<li><blockquote><a href="#cdzcys">8.按下颜色(写)</a></blockquote></li>
+			<li><blockquote><a href="#cdzcys">9.按下扩散颜色(写)</a></blockquote></li>
+			<li><blockquote><a href="#cdandhqy">10.按钮动画启用(读写)</a></blockquote></li>
+			<li><blockquote><a href="#cdzkztsjjt">11.展开状态事件监听(写)</a></blockquote></li>
+			<li><blockquote><a href="#cdzkzt">12.展开状态(读)</a></blockquote></li>
+			<li><blockquote><a href="#cdzkzt">13.展开</a></blockquote></li>
+			<li><blockquote><a href="#cdzkzt">14.关闭</a></blockquote></li>
+			<li><blockquote><a href="#cdqhzkzt">15.切换展开状态</a></blockquote></li>
+			<li><blockquote><a href="#xscd">16.显示菜单</a></blockquote></li>
+			<li><blockquote><a href="#xscd">17.隐藏菜单</a></blockquote></li>
+			<li><blockquote><a href="#xscd">18.当前隐藏状态(读)</a></blockquote></li>
+			<li><blockquote><a href="#cdqhxszt">19.切换显示状态</a></blockquote></li>
+			<li><blockquote><a href="#cdtjcdx">20.添加菜单项</a></blockquote></li>
+			<li><blockquote><a href="#cdtjcdx">21.添加菜单项2</a></blockquote></li>
+			<li><blockquote><a href="#xscdan">22.显示菜单按钮</a></blockquote></li>
+			<li><blockquote><a href="#xscdan">23.隐藏菜单按钮</a></blockquote></li>
+			<li><blockquote><a href="#sccdx">24.删除菜单项</a></blockquote></li>
+			<li><blockquote><a href="#scsycd">25.删除所有菜单项</a></blockquote></li>
+			<li><blockquote><a href="#cdzkztsjjt">26.展开状态已改变(事件)</a></blockquote></li>
+		</ol>	
+	
+
+	</ol>
+</ul>
+</div>
+
+
+
+<p align="left">
+<h2>浮动按钮菜单组件操作实例讲解</h2>
+<p><b>作者：创世魂</b></p>
+<font style="font-size: 12pt; font-weight:700">● 辅助说明</font><br/>
+     <blockquote>
+	<p align="left"><font color="#F70408">本类位于<strong>“浮动按钮窗口组件”</strong>模块中，必须添加此模块才能使用。</font></p>
+	</blockquote>	
+		
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="fdancd"></a>    
+<h2>一、浮动按钮菜单</h2>
+<p align="left">&nbsp;</p>
+	
+
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">本组件是一个容器，无法单独显示，容器内只能够放<b>“浮动按钮”</b>组件。</p>
+	<p align="left">其它任何组件都不能在本组件内显示。</p>
+	<p align="left">1、拖放一个<b>“按钮”</b>。</p>
+	<p align="left">2、拖放一个<b>“帧布局器”</b>，设置组件<b>“高/宽度”</b>为<b>“匹配父组件高/宽度”</b>。</p>
+    <p align="left">3、在<b>“帧布局器”</b>内，拖放一个<b>“简单列表框”</b>。 </p>
+    <p align="left">4、在<b>“帧布局器”</b>内，拖放<b>“浮动按钮菜单”</b>组件，设置其<b>“横/纵向对齐”</b>方式和<b>“右/底外边距”</b>。</p>
+    <p align="left">5、在<b>“浮动按钮菜单”</b>内，拖放三个<b>“浮动按钮”</b>。</p>
+	<p align="left"><img src="fdcd_images/46.png" border="0" ></p>
+	<p align="left">&nbsp;</p>
+	<p align="left">6、依次选择<b>“浮动按钮”</b>组件，在右侧设置<b>“标签文本内容”</b>属性。</p>
+	<p align="left">注意：本属性只有在当前<b>“浮动按钮”</b>存在于<b>“浮动按钮菜单”</b>中时，本属性才有效果。</p> <p align="left"><font color="#F30F12">注意：本组件位于<strong>“浮动按钮窗口组件”</strong>模块中。</font></p>
+	<p align="left"><img src="fdcd_images/47.png" border="0" ></p>
+
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">1、分别设置三个浮动按钮的<b>“图像”</b>属性。</p>
+  <p align="left">2、<b>“通知_被创建”</b>虚拟方法下，循环添加50个列表项。</p>
+	<p align="left"><img src="fdcd_images/48.png" border="0" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+  <p align="left">点击图标可展开收缩列表。</p>
+<p align="left"><img src="fdcd_images/49.gif" border="0" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<a name="fdbqks"></a>
+<font style="font-size: 12pt; font-weight:700">● 标签可视(读写)</font>
+
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“标签可视(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性继承自<b>“浮动按钮”</b>组件，用于设置组件的可视状态。</p>
+	<p align="left">属性值调用方式：<b>“组件可视状态.XXX”</b>。</p>
+	<p align="left">同名读属性，即读取当前的组件可视状态。</p>
+	<p align="left"><img border="0" src="fdcd_images/50.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">判断<b>“浮动按钮1”</b>的可视状态是否可视，然后执行不同的可视状态。</p>
+	<p align="left"><img border="0" src="fdcd_images/51.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="fdcd_images/52.gif" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>	
+<a name="fdbqwbnr"></a>
+<font style="font-size: 12pt; font-weight:700">● 标签文本内容(读写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 标签文本颜色(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 置标签颜色</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“标签文本内容(写)”</b>帮助文档： </p>
+<blockquote>
+  <p align="left">顾名思义，本属性用来设置<b>“浮动按钮”</b>的标签内容。</p>
+  <p align="left">同名读属性，用来读取标签内容。</p>
+	<p align="left"><img border="0" src="fdcd_images/53.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“标签文本颜色(写)”</b>帮助文档： </p>
+<blockquote>
+  <p align="left">顾名思义，本属性用来设置标签文本颜色。</p>
+  <p align="left">可使用<b>“颜色类”</b>中定义的常量值。</p>
+	<p align="left"><img border="0" src="fdcd_images/54.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“置标签颜色”</b>帮助文档： </p>
+<blockquote>
+  <p align="left">本方法共三个参数，分别设置不同状态下的颜色值（标签背景色）。</p>
+	<p align="left"><img border="0" src="fdcd_images/55.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，分别执行对应属性和方法。</p>
+	<p align="left">添加<b>“浮动按钮_被单击”</b>事件，通过<b>“来源对象”</b>可直接取出<b>“标签文本内容”</b>。</p>
+	<p align="left"><img border="0" src="fdcd_images/56.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="fdcd_images/57.gif" >
+  </p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>	
+<a name="cdtbdhqy"></a>
+	<font style="font-size: 12pt; font-weight:700">● 图标动画启用(读写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“图标动画启用(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性设置<b>“浮动按钮菜单”</b>组件是否启用动画效果。</p>
+	<p align="left">同名读属性，即读取当前组件是否启用了动画效果。</p>
+	<p align="left"><img border="0" src="fdcd_images/58.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">设置本属性的属性值为<b>“取反(浮动按钮菜单1.图标动画启用)”</b>。</p>
+	<p align="left"><img border="0" src="fdcd_images/59.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">注意观察按钮变化。</p>
+	<p align="left"><img border="0" src="fdcd_images/60.gif" >
+  </p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>	
+<a name="cdzcys"></a>
+	<font style="font-size: 12pt; font-weight:700">● 正常颜色(写)</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 按下颜色(写)</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 按下扩散颜色(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">以上三个属性，分别用来设置<b>“浮动按钮菜单”</b>组件的不同状态下的颜色值。</p>
+	<p align="left">注意：<b>“按下扩散颜色”</b>会逐渐覆盖<b>“按下颜色”</b>。</p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，分别设置对应属性的颜色。</p>
+	<p align="left"><img border="0" src="fdcd_images/61.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">注意观察按钮变化。</p>
+	<p align="left"><img border="0" src="fdcd_images/62.gif" >
+    </p>
+</blockquote>
+	
+		
+<p align="left">&nbsp;</p>	
+<a name="cdandhqy"></a>
+	<font style="font-size: 12pt; font-weight:700">● 按钮动画启用(读写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“按钮动画启用(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">设置当前组件内的<b>“浮动按钮”</b>被展开时，是否启用动画效果。</p>
+	<p align="left">同名读属性，即读取当前是否启用了动画效果。</p>
+	<p align="left"><img border="0" src="fdcd_images/63.png"></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">设置属性值为<b>“取反 (浮动按钮菜单1.按钮动画启用)”</b>。</p>
+	<p align="left"><img border="0" src="fdcd_images/64.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">注意观察展开效果。</p>
+	<p align="left"><img border="0" src="fdcd_images/65.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<a name="cdzkztsjjt"></a>
+	<font style="font-size: 12pt; font-weight:700">● 展开状态事件监听(写)</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 展开状态已改变(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“展开状态事件监听(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，用来设置当前浮动按钮展开监听。</p>
+	<p align="left"><img border="0" src="fdcd_images/66.png"></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“展开状态已改变(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">务必设置<b>“展开状态事件监听”</b>属性值为真，本事件才会有效。</p>
+	<p align="left">如果当前菜单展开，参数值返回真，否则返回假。</p>
+	<p align="left"><img border="0" src="fdcd_images/67.png"></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击设置<b>“展开状态事件监听”</b>属性值为真。</p>
+  <p align="left">添加<b>“浮动按钮菜单_展开状态已改变”</b>事件，判断<b>“是否展开”</b>弹出对应提示。</p>
+	<p align="left"><img border="0" src="fdcd_images/68.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="fdcd_images/69.gif" >
+    </p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<a name="cdzkzt"></a>
+	<font style="font-size: 12pt; font-weight:700">● 展开状态(读)</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 展开</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 关闭</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“展开状态(读)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，读取当前<b>“浮动按钮菜单”</b>的展开状态。</p>
+	<p align="left">展开返回真，否则返回假。</p>
+	<p align="left"><img border="0" src="fdcd_images/70.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“展开”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，执行本方法可<b>“展开”</b>菜单。</p>
+	<p align="left">参数可设置是否带动画展开。</p>
+	<p align="left"><img border="0" src="fdcd_images/71.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“关闭”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，执行本方法可<b>“关闭”</b>菜单。</p>
+	<p align="left">参数可设置是否带动画关闭。</p>
+	<p align="left"><img border="0" src="fdcd_images/72.png"></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">执行<b>“展开状态”</b>读属性判断是否展开，然后执行不同的方法。</p>
+	<p align="left"><img border="0" src="fdcd_images/73.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="fdcd_images/74.gif" >
+    </p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<a name="cdqhzkzt"></a>
+	<font style="font-size: 12pt; font-weight:700">● 切换展开状态</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，本方法用来切换菜单的展开状态。</p>
+	<p align="left">如果当前菜单展开，调用本方法会关闭，否则将会展开。</p>
+	<p align="left">参数为逻辑型，可指定是否带动画切换。</p>
+	<p align="left"><img border="0" src="fdcd_images/75.png"></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">调用本方法，参数填写真。</p>
+	<p align="left"><img border="0" src="fdcd_images/76.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="fdcd_images/77.gif" >
+    </p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<a name="xscd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 显示菜单</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 隐藏菜单</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 当前隐藏状态(读)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“显示菜单”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，本方法可用来显示菜单按钮。</p>
+	<p align="left">参数可指定是否启用动画效果。</p>
+	<p align="left"><img border="0" src="fdcd_images/78.png"></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“隐藏菜单”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法可隐藏菜单按钮。</p>
+	<p align="left">参数可指定是否启用动画效果。</p>
+	<p align="left"><img border="0" src="fdcd_images/79.png"></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“当前隐藏状态(读)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">读取当前菜单按钮是否处于隐藏状态。</p>
+	<p align="left"><img border="0" src="fdcd_images/80.png"></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，判断<b>“当前隐藏状态”</b>读属性的返回值，执行不同的方法即可。</p>
+	<p align="left"><img border="0" src="fdcd_images/81.png"></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="fdcd_images/82.gif" >
+    </p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+<a name="cdqhxszt"></a>
+	<font style="font-size: 12pt; font-weight:700">● 切换显示状态</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，本方法用来切换当前菜单按钮的显示状态。</p>
+	<p align="left">参数可指定是否使用动画效果来切换。</p>
+	<p align="left"><img border="0" src="fdcd_images/83.png"></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">直接调用本方法，参数值填写假。</p>
+	<p align="left"><img border="0" src="fdcd_images/84.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="fdcd_images/85.gif" >
+    </p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<a name="cdtjcdx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 添加菜单项</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 添加菜单项2</font>
+<p align="left">&nbsp;</p>
+<p align="left">以上两个方法都是添加菜单项，此处讲解<b>“添加菜单项”</b>方法。</p>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本方法可添加菜单项。</p>
+	<p align="left">参数值：填写要添加的<b>“浮动按钮”</b>组件。</p>
+	<p align="left"><img border="0" src="fdcd_images/86.png"></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">1、定义<b>“浮动按钮”</b>变量，设置<b>“图像”</b>和<b>“标签文本内容”</b>属性。</p>
+  <p align="left">2、调用当前方法，将<b>“浮动按钮4”</b>写入参数中即可。</p>
+	<p align="left"><img border="0" src="fdcd_images/87.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="fdcd_images/88.gif" >
+    </p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<a name="xscdan"></a>
+	<font style="font-size: 12pt; font-weight:700">● 显示菜单按钮</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 隐藏菜单按钮</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">以上两个方法参考<a href="#xscd"><b>“显示菜单”</b></a>和<a href="#xscd"><b>“隐藏菜单”</b></a>。</p>
+</blockquote>
+	
+
+	<p align="left">&nbsp;</p>	
+<a name="sccdx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 删除菜单项</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，删除指定菜单项。</p>
+	<p align="left">参数值填写要删除的<b>“浮动按钮”</b>组件。</p>
+	<p align="left"><img border="0" src="fdcd_images/89.png"></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，调用本方法，参数值填写<b>“浮动按钮2”</b>。</p>
+	<p align="left"><img border="0" src="fdcd_images/90.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可看到<b>“浮动按钮2”</b>被删除。</p>
+	<p align="left"><img border="0" src="fdcd_images/91.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<a name="scsycd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 删除所有菜单项</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，删除所有的浮动按钮。</p>
+	<p align="left"><img border="0" src="fdcd_images/92.png"></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，直接调用本方法即可。</p>
+	<p align="left"><img border="0" src="fdcd_images/93.png"></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可看到<b>“浮动按钮”</b>全部被删除。</p>
+	<p align="left"><img border="0" src="fdcd_images/94.gif" >
+    </p>
+</blockquote>
+
+	
+
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

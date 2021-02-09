@@ -1,0 +1,2758 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>安卓窗口操作</h4></li>
+	<ol>
+    
+            <li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'e_res')" >一.准备工作<span>(可收缩)</span></h6></li>
+	  <ol id="e_res">
+
+			<li><blockquote><a href="#smzq">1.窗口生命周期解释</a></blockquote></li>
+		 
+          <!--  <li><blockquote><a href="#ckbzck">2.帮助查看</a></blockquote></li>-->
+             <li><blockquote><a href="#xnffcj">2.虚拟方法创建</a></blockquote></li>
+            <li><blockquote><a href="#cjygjm">3.创建一个界面</a></blockquote></li>
+		</ol>	
+		<!--<li><a href="#wjdxczl">一.文件读写操作类</a></li>-->
+        <li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'newsdown')" >二.窗口虚拟方法<span>(可收缩)</span></h6></li>
+		<ol id="newsdown">
+            <li><blockquote><a href="#tzbcj">1.通知_被创建</a></blockquote></li>
+            <li><blockquote><a href="#tzbqd">2.通知_被启动</a></blockquote></li>
+			<li><blockquote><a href="#tzbcxqd">3.通知_被重新启动</a></blockquote></li>
+	        <li><blockquote><a href="#tzbjh">4.通知_被激活</a></blockquote></li>
+    		<li><blockquote><a href="#tzsqjh">5.通知_失去激活</a></blockquote></li>
+    		<li><blockquote><a href="#tzqlsj">6.通知_清理数据</a></blockquote></li>
+            <li><blockquote><a href="#tzbtz">7.通知_被停止</a></blockquote></li>
+            <li><blockquote><a href="#tzjbxh">8.通知_将被销毁</a></blockquote></li>
+            <li><blockquote><a href="#tzjjcshnr">9.通知_即将初始化内容</a></blockquote></li>
+            <li><blockquote><a href="#tzcshxxcd">10.通知_初始化选项菜单</a></blockquote></li>
+            <li><blockquote><a href="#tzgxxxcd">11.通知_更新选项菜单</a></blockquote></li>
+     <!--       <li><blockquote><a href="#tzcshzjsxwcd">12.通知_初始化组件上下文菜单</a></blockquote></li>
+            <li><blockquote><a href="#tzcdxbxz">13.通知_菜单项被选择</a></blockquote></li>
+          -->
+            <li><blockquote><a href="#tzhdfhsj">12.通知_获得返回数据</a></blockquote></li>
+ <!--           <li><blockquote><a href="#tzjjfstydzsj">15.通知_即将发送通用动作事件</a></blockquote></li>
+            <li><blockquote><a href="#tztydzsj">16.通知_通用动作事件</a></blockquote></li>-->
+            <li><blockquote><a href="#tzjjfsajsj">13.通知_即将发送按键事件</a></blockquote></li>
+            <li><blockquote><a href="#tzjjfskjjsj">14.通知_即将发送快捷键事件</a></blockquote></li>
+            <li><blockquote><a href="#tzajsj">15.通知_按键事件</a></blockquote></li>
+            <li><blockquote><a href="#tzjjfscmsj">16.通知_即将发送触摸事件</a></blockquote></li>
+            <li><blockquote><a href="#tzbcm">17.通知_被触摸</a></blockquote></li>
+            <li><blockquote><a href="#tzhtjbax">18.通知_回退键被按下</a></blockquote></li>
+            <li><blockquote><a href="#tzhqckms">19.通知_获取窗口描述</a></blockquote></li>
+            <li><blockquote><a href="#tzyhjr">20.通知_用户进入</a></blockquote></li>
+            <li><blockquote><a href="#tzyhlk">21.通知_用户离开</a></blockquote></li>
+            <li><blockquote><a href="#tzckjdbgb">22.通知_窗口焦点被改变</a></blockquote></li>
+		</ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'newsleiji')" >三.读写属性<span>(可收缩)</span></h6></li>
+		<ol id="newsleiji">
+			<li><blockquote><a href="#bjsx">1.背景色（写）</a></blockquote></li>
+			<li><blockquote><a href="#bjtx">2.背景图（写）</a></blockquote></li>
+			<li><blockquote><a href="#btx">3.标题（写）</a></blockquote></li>
+            
+    		<li><blockquote><a href="#btd">4.标题（读）</a></blockquote></li>
+    		<li><blockquote><a href="#cjmsx">5.沉浸模式（写）</a></blockquote></li>
+            <li><blockquote><a href="#jwcmgbx">6.界外触摸关闭（写）</a></blockquote></li>
+            
+            <li><blockquote><a href="#pmfxx">9.屏幕方向（写）</a></blockquote></li>
+            <li><blockquote><a href="#qdxxd">10.启动信息（读）</a></blockquote></li>
+
+            <li><blockquote><a href="#qmmsx">11.全屏模式（隐藏状态栏）</a></blockquote></li>
+            <li><blockquote><a href="#sfbjhd">12.是否被激活（读）</a></blockquote></li>
+            <li><blockquote><a href="#sfksx">13.是否可视（写）</a></blockquote></li>
+            <li><blockquote><a href="#sfyxhd">14.是否已销毁（读）</a></blockquote></li>
+             <li><blockquote><a href="#sfyjdd">15.是否有焦点（读）</a></blockquote></li>
+            <li><blockquote><a href="#stjyplxx">16.所调节音频类型（写）</a></blockquote></li>
+            <li><blockquote><a href="#stjyplxd">17.所调节音频类型（读）</a></blockquote></li>
+            <li><blockquote><a href="#dztks">18.动作条可视（写）</a></blockquote></li>
+            <!--<li><blockquote><a href="#ztlztss">19.状态栏字体深色（写）</a></blockquote></li>-->
+            <li><blockquote><a href="#ztlys">19.状态栏颜色（写）</a></blockquote></li>
+            <li><blockquote><a href="#ztlgd">20.状态栏高度（读）</a></blockquote></li>
+            
+            
+		</ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'newsbaodu')" >四.其它方法<span>(可收缩)</span></h6></li>
+		<ol id="newsbaodu">
+        
+           <li><blockquote><a href="#ycbtl">0.隐藏标题栏</a></blockquote></li>
+            <li><blockquote><a href="#xxk">1.信息框</a></blockquote></li>
+            <li><blockquote><a href="#tsxxk">2.提示信息框</a></blockquote></li>
+            <li><blockquote><a href="#jgxxk">3.警告信息框</a></blockquote></li>
+            <li><blockquote><a href="#cwxxk">4.错误信息框</a></blockquote></li>
+            <li><blockquote><a href="#zrck">5.载入窗口</a></blockquote></li>
+            <li><blockquote><a href="#dhzrck">6.动画载入窗口</a></blockquote></li>
+			<li><blockquote><a href="#zrck2">7.载入窗口2</a></blockquote></li>
+            <li><blockquote><a href="#dhzrck2">8.动画载入窗口2</a></blockquote></li>
+            <li><blockquote><a href="#gbck">9.关闭（窗口）</a></blockquote></li>
+            <li><blockquote><a href="#dhgbck">10.动画关闭（窗口）</a></blockquote></li>
+            <li><blockquote><a href="#bfckqhdh">11.播放窗口切换动画</a></blockquote></li>
+            <li><blockquote><a href="#cjck">12.重建（窗口）</a></blockquote></li>
+            
+            <li><blockquote><a href="#qybtljdt">13.启用标题栏进度条</a></blockquote></li>
+             <li><blockquote><a href="#cjckzj">14.创建窗口组件</a></blockquote></li>
+			<li><blockquote><a href="#cjckzj1">15.创建窗口组件1</a></blockquote></li>
+            <li><blockquote><a href="#dkxxcd">16.打开选项菜单</a></blockquote></li>
+            <li><blockquote><a href="#cjxxcd">17.重建选项菜单</a></blockquote></li>
+            <li><blockquote><a href="#gbsxwcdzc">18.关闭上下文菜单支持</a></blockquote></li>
+            <li><blockquote><a href="#kqsxwcdzc">19.开启上下文菜单支持</a></blockquote></li>
+            <li><blockquote><a href="#gbxxcd">20.关闭选项菜单</a></blockquote></li>
+           
+            <li><blockquote><a href="#czzzj">21.查找子组件</a></blockquote></li>
+            <li><blockquote><a href="#xsbtljdt">22.显示标题栏进度条</a></blockquote></li>
+            <li><blockquote><a href="#ydrwdht">23.移动任务到后台</a></blockquote></li>
+            <li><blockquote><a href="#qckpzb">24.取窗口配置表</a></blockquote></li>
+            <li><blockquote><a href="#qckrqzj">25.取窗口容器组件</a></blockquote></li>
+            <li><blockquote><a href="#qdqjdzzj">26.取当前焦点子组件</a></blockquote></li>
+           
+            <li><blockquote><a href="#zbjt">27.置背景图</a></blockquote></li>
+            <li><blockquote><a href="#zbtldejd">28.置标题栏第二进度</a></blockquote></li>
+            <li><blockquote><a href="#zbtljd">29.置标题栏进度</a></blockquote></li>
+            <li><blockquote><a href="#zfhsj">30.置返回数据</a></blockquote></li>
+            <li><blockquote><a href="#fenxiang">31.分享图片</a></blockquote></li>
+            <li><blockquote><a href="#fenxiang">32.分享文字</a></blockquote></li>
+            <li><blockquote><a href="#fenxiang">33.分享视频</a></blockquote></li>
+            <li><blockquote><a href="#fenxiang">34.分享音乐</a></blockquote></li>
+            <li><blockquote><a href="#dkzdyy">34.打开指定应用</a></blockquote></li>
+            <li><blockquote><a href="#dkzdwj">34.打开指定文件</a></blockquote></li>
+            <li><blockquote><a href="#dzzdwz">34.打开指定网址</a></blockquote></li>
+            <li><blockquote><a href="#dzzdwz">34.打开指定网址2</a></blockquote></li>
+            <li><blockquote><a href="#ydrwdht">34.返回桌面</a></blockquote></li>
+            
+            
+		</ol>	
+        
+        <li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'newscompile')" >五.常用窗口类<span>(可收缩)</span></h6></li>
+	  <ol id="newscompile">
+  <!--      <li><blockquote><a href="#wjfm_wjfwl">0.文件访问类准备</a></blockquote></li>-->
+			
+			<li><blockquote><a href="#dhkck">1.对话框窗口</a></blockquote></li>
+			<li><blockquote><a href="#dhkck">2.横向窗口</a></blockquote></li>
+            <li><blockquote><a href="#dhkck">3.平板窗口</a></blockquote></li>
+            <li><blockquote><a href="#dhkck">4.全屏窗口</a></blockquote></li>
+            <li><blockquote><a href="#dhkck">5.透明窗口</a></blockquote></li>
+             <li><blockquote><a href="#dhkck">6.纵向窗口</a></blockquote></li>
+             <li><blockquote><a href="#anzhuo5">7.安卓5无标题窗口</a></blockquote></li>
+             <li><blockquote><a href="#anzhuo5">8.安卓5无标题白色窗口</a></blockquote></li>
+             <li><blockquote><a href="#anzhuo5">9.安卓5全屏窗口</a></blockquote></li>
+             <li><blockquote><a href="#anzhuo5">10.安卓5全屏窗口白色</a></blockquote></li>
+             <li><blockquote><a href="#anzhuo5">11.安卓5对话框窗口无标题</a></blockquote></li>
+             <li><blockquote><a href="#anzhuo5">12.安卓5对话框窗口白色无标题</a></blockquote></li>
+             <li><blockquote><a href="#anzhuo5">13.安卓5对话框窗口白色</a></blockquote></li>
+             <li><blockquote><a href="#anzhuo5">14.安卓5对话框窗口</a></blockquote></li>
+		</ol>	
+        
+ 							
+	</ol>
+</ul>
+</div>
+
+
+
+<p align="left">
+<h2>窗口全操作实例讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+		<font style="font-size: 12pt; font-weight:700">● 辅助说明</font><br/>
+     	<blockquote>
+		<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+	</blockquote>	
+<p align="left">&nbsp;</p>
+
+<h2>一、窗口操作准备工作</h2>
+<a name="smzq"></a>    
+<p align="left">&nbsp;</p>
+     
+<font style="font-size: 12pt; font-weight:700">● 窗口生命周期解释</font><br/>
+<br/>
+
+
+<p align="left">当安卓程序运行后，窗口的<b>活动状态</b>就会发生改变。</p>
+<p align="left">每个<b>窗口</b>也都有属于自己的<b>活动状态</b>。</p>
+<p align="left">大致分为<b>四个</b>状态：</p>
+<blockquote>
+<p align="left"><b>活动状态：</b>当前窗口位于前台，用户可见并且可以对窗口进行操作。</p>
+<p align="left"><b>暂停状态：</b>当前窗口被其它窗口或者其它APP覆盖。</p>
+<p align="left"><b>停止状态：</b>当前窗口不可见，并且失去焦点。</p>
+<p align="left"><b>销毁状态：</b>当前窗口关闭，或者程序结束运行。</p>
+
+<p align="left">&nbsp;</p>
+
+  <p align="left"><img border="0" src="ck_images/1.png" ></p>
+</blockquote>
+
+<p align="left">上图展示了<b>安卓窗口</b>的完整的<b>生命周期</b>。</p>
+<p align="left">一个完整的安卓APP，通常情况下有<b>"多个窗口"</b>，每个<b>"窗口"</b>都有属于自己的<b>"生命周期"</b>。</p>
+<blockquote>
+		<p align="left">窗口创建时<b>“通知_被创建”</b>会被调用。</p>
+        <p align="left">窗口启动时<b>“通知_被启动”</b>会被调用。</p>
+        <p align="left">窗口被重启<b>“通知_被重新启动”</b>会被调用。</p>
+        <p align="left">窗口激活后<b>“通知_被激活”</b>会被调用。</p>
+        <p align="left">窗口被暂停<b>“通知_失去激活”</b>会被调用。</p>
+        <p align="left">窗口被停止<b>"通知_被停止"</b>会被调用。</p>
+        <p align="left">窗口被关闭<b>"通知_将被销毁"</b>会被调用。</p>
+        
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 生命周期实例</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">举个例子说：</p>
+<blockquote>
+	<p align="left">启动程序后<b>“启动类”</b>窗口就会触发<b>“通知_被创建/被启动/被激活”</b>。</p>
+	<p align="left">当<b>"启动类窗口"</b>切换<b>"窗口2"</b>的时候。</p>
+	<p align="left"><b>"启动类窗口"</b>就会触发<b>"失去激活"</b>，而<b>"窗口2"</b>就会触发<b>"被创建/被启动/被激活"</b>，开始它的<b>生命周期</b>。
+	<p align="left">如果关闭<b>“窗口2”</b>那么<b>“启动类窗口”</b>就会重新触发<b>“被激活”</b>。</p>
+	<p align="left">如果<b>"启动类窗口"</b>进入后台（也就是被停止状态触发）。</p>
+    <p align="left">这时重新让程序进入前台，这个时候<b>"被重新启动"</b>就会被触发。</p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码如下图：</p>
+<blockquote>
+	<p align="left">在窗口内设计一个<b>编辑框</b>做演示，最后添加<b>生命周期</b>内的“虚拟方法”。</p>
+    <p align="left"><a href="#xnffcj">点击跳转</a>查看“虚拟方法”的添加方法。</p>
+    <p align="left">给每个方法下都写一个<b>“编辑框1.添加内容”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/01.png" ></p>
+    <p align="left"><img border="0" src="ck_images/02.png" ></p>
+    <p align="left"><img border="0" src="ck_images/03.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果（GIF）：</p>
+<blockquote>
+	<p align="left">可以看到程序运行后<b>“被创建\被启动\被激活”</b>依次添加进来了。</p>
+    <p align="left">随后我按下了<b>“Home”键</b>返回了桌面，一闪而过的时候可以隐约看到<b>“失去激活”</b>被添加进来。</p>
+    <p align="left">重新打开程序，可以看到不仅多了<b>“失去激活”</b>紧跟其后还有一个<b>“被停止”</b>。</p>
+    <p align="left">证明程序进入后台后<b>“通知_被停止”</b>也被调用。</p>
+    <p align="left">因程序从后台重新进入前台，自然<b>“被重新启动”</b>也被调用。</p>
+    <p align="left">紧跟其后的是<b>“被启动/被激活”</b>。</p>
+    <p align="left">最后我按下<b>“返回键”</b>退出程序<b>“通知_将被销毁”</b>被调用，设置的<b>提示框</b>也弹出。</p>
+	<p align="left"><img border="0" src="ck_images/1.gif" ></p>
+</blockquote>
+
+<a name="ckbzck"></a>   
+<!--<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 帮助查看</font><br/>
+<br/>
+<blockquote>
+<p align="left">打开<b>“项目--程序结构查看器（F2）”</b></p>
+<p align="left">打开<b>“系统库”</b>，<b>“安卓基本”</b>，找到<b>“窗口”</b>，就可以看到所有的关于<b>“安卓窗口操作”</b>，右侧可以查看详细的帮助内容和说明。</p>
+<p align="left">&nbsp;</p>
+<p align="left"><img border="0" src="ck_images/2.png" ></p>
+</blockquote>-->
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="xnffcj"></a>   
+<font style="font-size: 12pt; font-weight:700">● 虚拟方法创建</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+<p align="left">右键<b>“窗口”</b>基础类任意区域，选择<b>“添加‘启动类’虚拟方法”</b>。</p>
+<p align="left"><b>备注：</b>在火山中安卓APP<b>“启动窗口”</b>的名字必须叫<b>“启动类”</b>，而且无法修改。</p>
+<p align="left"><img border="0" src="ck_images/3.png" ></p>
+<p align="left">&nbsp;</p>
+<p align="left">选择后这样我们就打开了<b>“启动类”</b>窗口的<b>“虚拟方法”</b>。</p>
+<p align="left">最后选择你要创建的<b>“虚拟方法”</b>，然后点击<b>“添加”</b>即可。</p>
+<p align="left"><img border="0" src="ck_images/4.png" ></p>
+</blockquote>
+<a name="cjygjm"></a>   
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 设计一个界面</font><br/>
+<br/>
+<blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">加入一个线性布局器,将其<b>“布局方向”</b>属性设置为<b>“横向布局”</b>。</p>
+<p align="left">然后在其中放<b>两个</b>按钮，最后在线性布局器的外面放一个<b>编辑框</b>。</p>
+<p align="left">编辑框右侧<b>属性</b>的组件宽度类型，设置为<b>“匹配父组件宽度”</b></p>
+<p align="left"><img border="0" src="ck_images/5.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<h2>二、窗口虚拟方法</h2>
+<p align="left">&nbsp;</p>
+<a name="tzbcj"></a>
+<font style="font-size: 12pt; font-weight:700">● 通知_被创建</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">可以看到本虚拟方法有<b>“三个”</b>参数。</p>
+    <p align="left">参数1：<b>“启动信息对象”</b>用来提供载入本窗口传递过来的<b>“启动信息”</b>。</p>
+    <p align="left"><b>例如：</b><a href="#zrck" title="点击跳转载入窗口解释说明">载入窗口</a>方法，有一个<b>“数据包类”</b>参数，提供参数后，这里就可以用<b>“启动信息类”</b>接收传递的参数。</p>
+    <p align="left">参数2：<b>“载入参数”</b>对象类，<a href="#zrck2" title="点击跳转载入窗口2说明">载入窗口2</a>可以传递本参数。</p>
+    <p align="left">参数3：就是传递的<b>“参数2”</b>的数组成员数了。</p>
+	<p align="left"><img border="0" src="ck_images/6.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写（1）</b>：</p>
+<blockquote>
+
+	<p align="left">使用快捷键<b>Ctrl+D</b>创建一个新的<b>类</b>，起名<b>“窗口2”</b>，基础类填写<b>“窗口”</b>。</p>
+    <p align="left">随后鼠标右键打开<strong>“窗口2界面布局”</strong>，放置一个<strong>“编辑框”</strong>。</p>
+    <p align="left">设置编辑框，组件宽度类型为<b>“匹配父组件宽度”</b></p>
+    <p align="left">最后鼠标右键添加<b>“窗口2”</b>的<b>“通知_被创建”</b>虚拟方法。</p>
+ 
+	<p align="left"><img border="0" src="ck_images/7.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写（2）</b>：</p>
+<blockquote>
+	<p align="left">首先添加<b>启动类</b>的<b>“通知_被创建”</b>虚拟方法。</p>
+    <p align="left">在该方法下创建一个类型为<b>“数据包类”</b>的变量（名称随意）。</p>
+    <p align="left">利用<b>数据包类</b>的<b>“写文本字段”</b>方法，可以写一段数据存储起来。</p>
+	
+     <p align="left"><b>写文本字段</b>有三个参数，并且支持动态调用。</p>
+     
+     <p align="left"><b>参数1：</b>为要操作的数据包类，因支持动态调用，所以这里可以省略不写。</p>
+     <p align="left">直接写<b>参数2</b>：字段名（可以理解为<b>“标识”</b>，名称随意）</p>
+     <p align="left"><b>参数3：</b>填写你要传递的文本数据即可。</p>
+       
+    <p align="left"><img border="0" src="ck_images/8.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写（3）</b>：</p>
+<blockquote>
+	<p align="left">在<b>窗口2</b>的<b>“通知_被创建”</b>下面，给本窗口设置一个<a href="#btx" title="点击跳转标题写方法">标题</a>方便区分（黄色箭头）。</p>
+    <p align="left">然后利用参数<b>启动信息</b>的<b>“取附带数据包”</b>方法，继续<b>“读文本字段”</b>方法。</p>
+    <p align="left">字段名自然是填写<b>启动类</b>那边输入的字段名。</p>
+    <p align="left">最后赋值给<b>“编辑框1.内容”</b>看看效果。</p>
+	<p align="left">
+    <img border="0" src="ck_images/9.png" >
+    </p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">运行后可以看见，程序直接载入到了<b>“窗口2”</b>，并且<b>“传递的文本”</b>也成功显示在了<b>“编辑框”</b>内。</p>
+	<p align="left"><img border="0" src="ck_images/10.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="tzbqd"></a>
+<font style="font-size: 12pt; font-weight:700">● 通知_被启动</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">可以看到被启动<b>“没有任何参数”</b>和<b>“返回值”</b>，用户可见之后调用。</p>
+	<p align="left"><img border="0" src="ck_images/11.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写</b>：</p>
+<blockquote>
+	<p align="left">通过<b>“生命周期图”</b>可以得知，<b>“被创建”</b>后紧跟着就是<b>“被启动”</b>。</p>
+    <p align="left">我们可以利用<b>“编辑框1.添加内容”</b>的方法来验证一下。</p>
+    <p align="left">隐藏掉原来的代码，在<b>“被创建”</b>和<b>“被启动”</b>的下面，分别写上一些内容。</p> 
+	<p align="left"><img border="0" src="ck_images/12.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">可以看到<b>“通知_被启动”</b>确实是跟着<b>“通知_被创建”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/13.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="tzbcxqd"></a>
+<font style="font-size: 12pt; font-weight:700">● 通知_被重新启动</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">可以看到没有任何参数。</p>
+    <p align="left">注意<b>红色方框</b>内的提示，<b>“窗口被停止”</b>重新<b>“载入”</b>的时候，会触发<b>“本虚拟方法”</b>。</p>
+    <p align="left">并且紧跟着，<b>“通知_被启动”</b>会重新触发一次。</p>
+	<p align="left"><img border="0" src="ck_images/14.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加<b>“通知_被重新启动”</b>虚拟方法，利用<b>“编辑框1.添加内容”</b>方法，添加一个<b>“文本”</b>进行进行测试。</p>
+	<p align="left"><img border="0" src="ck_images/15.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">最简单直接的方法<b>“按下手机Home键”</b>，返回桌面后，重新打开本程序。</p>
+    <p align="left">可以看到<b>“编辑框”</b>内新增了<b>“被重新启动”</b>和<b>“被启动”</b>两个文本。</p>
+	<p align="left"><img border="0" src="ck_images/16.gif" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="tzbjh"></a>
+<font style="font-size: 12pt; font-weight:700">● 通知_被激活</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">可以看到没有任何参数。</p>
+   <p align="left"> 通过<b>“生命周期图”</b>可以得知，本方法紧跟着<b>“被启动”</b>。</p>
+	<p align="left">并且本方法调用，意味着窗口进入了前台。</p>
+    <p align="left"><img border="0" src="ck_images/17.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加<b>“通知_被激活”</b>虚拟方法，依然是用“编辑框1.添加内容”</b>进行测试。</p>
+	<p align="left"><img border="0" src="ck_images/18.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">可以看到<b>“被启动”</b>后紧跟着就是<b>“被激活”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/19.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="tzsqjh"></a>
+<font style="font-size: 12pt; font-weight:700">● 通知_失去激活</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">可以看到没有任何参数。</p>
+    <p align="left">失去激活的<b>三种</b>方式。</p>
+    <p align="left">第一：本窗口被其它窗口覆盖。</p>
+    <p align="left">第二：本程序被其它程序覆盖。</p>
+    <p align="left">第三：按下手机home键进入桌面。</p>
+	<p align="left"><img border="0" src="ck_images/20.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码如下图：</p>
+<blockquote>
+    <p align="left">依然利用<b>“编辑框1.添加内容”</b>进行判断。</p>
+	<p align="left"><img border="0" src="ck_images/21.png" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">最简单的方法<b>“Home键”</b>回到桌面，重新打开程序，可以看到多了一个<b>“失去激活”</b>。</p>
+    <p align="left">对应的<b>“被重新启动”</b>，<b>“被启动”</b>，<b>“被激活”</b>也会被重新全部调用。</p>
+	<p align="left"><img border="0" src="ck_images/22.gif" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="tzqlsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 通知_清理数据</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">可以看到本方法没有任何参数。</p>
+	<p align="left">关闭本窗口前，<b>“本虚拟方法”</b>会被调用，处理一些不耗时的操作。</p>
+    <p align="left">并且本方法处于<b>“将被销毁”</b>前面和<b>“被停止”</b>后面。</p>
+	<p align="left"><img border="0" src="ck_images/23.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加<b>“通知_清理数据”</b>的虚拟方法，可以利用<b>“提示框”</b>来进行测试。</p>
+    <p align="left">添加<b>“按钮”</b>被单击事件，指定<b>来源对象</b>为<b>“按钮1”</b>。</p>
+    <p align="left">最后调用<b>“<a href="#gbck" title="点击跳转关闭窗口方法">关闭</a>”</b>方法，来关闭本窗口。</p>
+	<p align="left"><img border="0" src="ck_images/24.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可以看到点击<b>“按钮1”</b>后，执行<b>“关闭”</b>后，会弹出“被清理”提示。</p>
+	<p align="left">您可以把<b>提示框</b>方法，换成您要操作的<b>其它方法</b>，一定注意，<b>不能耗时过长</b>的方法。</p>
+    <p align="left"><img border="0" src="ck_images/25.gif" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="tzbtz"></a>
+<font style="font-size: 12pt; font-weight:700">● 通知_被停止</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">可以看到没有任何参数，窗口<b>被停止</b>时调用本方法。</p>
+     <p align="left">除了帮助文档中描述的情况之外，还有<b>三种</b>情况本方法会调用。</p>
+	<p align="left">第一：打开其它程序。</p>
+    <p align="left">第二：home键返回桌面。</p>
+    <p align="left">第三：程序结束。</p>
+	<p align="left"><img border="0" src="ck_images/26.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">我们在<b>“按钮_被单击”</b>事件下，增加一个<b>“载入窗口”</b>的方法。</p>
+    <p align="left">载入我们最开始定义的<b>“窗口2”</b>。</p>
+  <p align="left">添加<b>“被停止”</b>虚拟方法，可以弹出一个<b>“提示框”</b>做演示。</p>
+	<p align="left"><img border="0" src="ck_images/27.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+  <p align="left">可以看到执行<b>“按钮1”</b>进入<b>“窗口2”</b>后，<b>“提示框”</b>会被弹出。</p>
+    <p align="left">也就证明<b>“启动类”</b>窗口的<b>“被停止”</b>虚拟方法被调用。</p>
+	<p align="left"><img border="0" src="ck_images/28.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="tzjbxh"></a>
+<font style="font-size: 12pt; font-weight:700">● 通知_将被销毁</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">可以看到没有任何参数和返回值。</p>
+	<p align="left">窗口<b>“被销毁”</b>的时候<b>“本方法”</b>会被调用，不要在本方法下写<b>“清理数据”</b>。</p>
+    <p align="left">数据清理要在<b>“通知_清理数据”</b>方法下添加。</p>
+	<p align="left"><img border="0" src="ck_images/29.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">创建<b>“通知_将被销毁”</b>虚拟方法。</p>
+    <p align="left">写一个<b>“提示框”</b>方法做判断。</p>
+	<p align="left"><img border="0" src="ck_images/30.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">最简单的方法就是，进入程序后<b>“按下返回键”</b>，<b>“窗口”</b>就会<b>“进行销毁”</b>，对应的<b>“销毁提示”</b>就会弹出。</p>
+	<p align="left"><img border="0" src="ck_images/31.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="tzjjcshnr"></a>
+<font style="font-size: 12pt; font-weight:700">● 通知_即将初始化内容</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">可以看到本方法也没有任何参数和返回值，并且本方法在<b>“通知_被创建”</b>之前调用。</p>
+<p align="left">此时<b>“窗口内容”</b>还没有被载入，因此本方法下<b>“禁止操作”</b>任何窗口组件。</p>
+	<p align="left"><img border="0" src="ck_images/32.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">因不能操作窗口内的任何组件进行测试，所以这里我们可以修改<b>“<a href="#btx" title="点击跳转窗口标题设置说明">窗口标题</a>”</b>来演示效果。</p>
+	<p align="left"><img border="0" src="ck_images/33.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">执行程序后就可以看到<b>“启动类窗口”</b>的<b>“标题”</b>被修改成了我们设置的<b>内容</b>。</p>
+	<p align="left"><img border="0" src="ck_images/34.png" >
+    </p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="tzcshxxcd"></a>
+<font style="font-size: 12pt; font-weight:700">● 通知_初始化选项菜单</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">可以看到有一个<b>菜单</b>参数和<b>逻辑返回值</b>。</p>
+    <p align="left">如果调用了<b>“<a href="#cjxxcd" title="跳转重建">重建选项菜单</a>”</b><b>“本方法”</b>会被重新调用一次。</p>
+  <p align="left">更新选项菜单请在<b>“<a title="跳转更新选项菜单" href="#tzgxxxcd">通知_更新选项菜单</a>”</b>虚拟方法下填写。</p>
+	<p align="left"><img border="0" src="ck_images/35.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">我们随便添加三个菜单。</p>
+	<p align="left"><img border="0" src="ck_images/36.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">运行程序后<b>右上角</b>就会出现<b>“菜单按钮”</b>。</p>
+  <p align="left">备注：如果<b>标题被隐藏</b>，会看不到<b>“菜单按钮”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/37.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="tzgxxxcd"></a>
+<font style="font-size: 12pt; font-weight:700">● 通知_更新选项菜单</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">可以看到一个<b>“菜单”</b>参数和一个<b>“逻辑”</b>返回值。</p>
+    <p align="left">每次即将显示窗口时，本方法都会被调用，用户可以在本方法下<b>“更新菜单”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/38.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">例如：我们在<b>“通知_初始化选项菜单”</b>中随意添加几个菜单后。</p>
+    <p align="left">随后在<b>“通知_更新选项菜单”</b>下也添加几个菜单。</p>
+  <p align="left">注意：要添加<b>删除所有菜单项目</b>方法，不然会在<b>“原菜单”</b>的基础上<b>“增加菜单”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/39.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">点击右上角的<b>菜单按钮</b>弹出菜单后会显示<b>“更新选项菜单”</b>中的新菜单。</p>
+	<p align="left"><img border="0" src="ck_images/40.png" >
+    </p>
+</blockquote>
+
+
+
+<!--<p align="left">&nbsp;</p>
+<a name="tzcshzjsxwcd"></a>
+<font style="font-size: 12pt; font-weight:700">● 通知_初始化组件上下文菜单</font><br/>
+<br/>
+<p align="left"></p>
+<blockquote>
+  <p align="left">可看<b>“<a href="a_menu.htm#cd_zbgz" title="跳转菜单操作">菜单操作</a>”</b>，这里不做讲解。</p>
+</blockquote>-->
+
+
+<!--<p align="left">&nbsp;</p>
+<a name="tzcdxbxz"></a>
+<font style="font-size: 12pt; font-weight:700">● 通知_菜单项被选择</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left">可看"<a href="a_menu.htm#cd_jrcdx" title="跳转菜单操作">菜单操作</a>"，这里不做讲解。</p>
+</blockquote>-->
+
+
+
+<p align="left">&nbsp;</p>
+<a name="tzhdfhsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 通知_获得返回数据</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">可以看到有三个参数：</p>
+<p align="left">参数1：<b>载入窗口</b>时提供的返回值<b>请求码</b>。</p>
+<p align="left">参数2：<b>置返回数据</b>方法提供的<b>“所返回结果码”</b>。</p>
+<p align="left">参数3：<b>置返回数据</b>方法提供的<b>返回数据</b>。</p>
+    <p align="left">简单来说，就是<b>“窗口2”</b>关闭的时候<b>“传送数据”</b>，<b>“窗口1”</b>获得<b>“窗口2”</b>传送的数据。</p>
+    <p align="left">中间的过程用需要用<b>“请求码”</b>来判断。</p>
+	<p align="left"><img border="0" src="ck_images/41.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写（1）</b>：</p>
+<blockquote>
+	<p align="left">首先在<b>“启动类窗口”</b>，的<b>“按钮_被单击”</b>事件下写<b>“载入窗口”方法。</b>。</p>
+    <p align="left">参数1：写要载入的<b>窗口类</b>。</p>
+    <p align="left">参数2：可省略不写。</p>
+    <p align="left">参数3：填写<b>“请求码”</b>（数值随意）。</p>
+	<p align="left"><img border="0" src="ck_images/42.png" ></p>
+   
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写（2）</b>：</p>
+<blockquote>
+	<p align="left">在<b>窗口2</b>中，增加一个<b>按钮</b>。</p>
+    <p align="left">然后添加“按钮_被单击”事件，定义一个类型为“数据包类”的变量（名称随意）。</p>
+	<p align="left">随后利用<b>写文本字段</b>方法，写一串准备返回的文本数据。</p>
+    <p align="left">最后利用<b>“置返回数据”</b>方法，把定义的<b>“数据包变量”</b>写入<b>参数2</b>。</p>
+    <p align="left"><b>参数1</b>则填写一个<b>返回码</b>（黄圈内）。</p>
+    <p align="left"><img border="0" src="ck_images/43.png" ></p>
+   
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写（3）</b>：</p>
+<blockquote>
+	<p align="left">在<b>启动类</b>窗口下，添加<b>“通知_获得返回数据”</b>虚拟方法。</p>
+    <p align="left">最后用<b>“如果”</b>判断所返回结果码。</p>
+    <p align="left">最后利用<b>参数3</b>，<b>取附带数据包</b>方法的<b>“读文本字段”</b>，去读取保存数据的字段名。</p>
+    <p align="left">利用“编辑框1”添加内容方法，把整段代码放入。</p>
+	<p align="left"><img border="0" src="ck_images/44.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可以看到<b>“载入窗口2”</b>返回之后，<b>“启动类”</b>窗口中<b>“编辑框”</b>增加了返回的数据。</p>
+    <p align="left">并且还可看出<b>“本方法”</b>在<b>“重启新启动”</b>之前执行。</p>
+	<p align="left"><img border="0" src="ck_images/45.gif" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="tzjjfsajsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 通知_即将发送按键事件</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">可以看到有一个“键盘事件类”参数和一个“逻辑返回值”。</p>
+    <p align="left">顾名思义就是用来监听<b>“键盘”</b>按下事件。</p>
+    <p align="left">这个<b>键盘</b>自然是给<b>“手机”</b>或者其它<b>“安卓设备”</b>外接的<b>“实体键盘”</b>或者<b>“虚拟键盘”</b>。</p>
+    <p align="left">并且本方法在<b>“通知_按键事件”</b>之前提示触发本事件。</p>
+	<p align="left"><img border="0" src="ck_images/50.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加本虚拟方法后，可以利用<b>“按键事件类”</b>来对ctrl键进行监听。</p>
+	<p align="left"><img border="0" src="ck_images/51.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">外接接键盘后，按下键盘的<b>“ctrl”</b>，本虚拟方法就会触发。</p>
+	<p align="left"><img border="0" src="ck_images/52.png" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="tzajsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 通知_按键事件</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">可以看到有<b>三个</b>参数，和一个<b>逻辑</b>返回值。</p>
+    <p align="left">本方法在<b>“通知_即将发送按键事件”</b>和<b>“通知_即将发送快捷键事件”</b>后执行。</p>
+    <p align="left">本方法同样是用来<b>“监听键盘”</b>按下事件。</p>
+    <p align="left">不同之处就是本方法多了<b>两个参数</b>。</p>
+    <p align="left"><b>按键通知类型：</b>可以判断<b>“按键”</b>状态。</p>
+    
+    <p align="left">例如：<b>“被按下”</b>，<b>“被放开”</b>等……具体可以看该类型的帮助文档。</p>
+    
+    <p align="left"><b>按键代码：</b>查看<b>“按键代码类”</b>定义的常量值。</p>    
+	<p align="left"><img border="0" src="ck_images/53.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">例如：我们依然是监听<b>ctrl键</b>。</p>
+	<p align="left"><img border="0" src="ck_images/54.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">运行后可以看到<b>“按键事件”</b>在<b>“即将发送按键事件”</b>之后。</p>
+	<p align="left"><img border="0" src="ck_images/55.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="tzjjfskjjsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 通知_即将发送快捷键事件</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本方法有一个<b>“按键事件类”</b>参数和一个<b>逻辑</b>返回值。</p>
+    <p align="left">顾名思义，就是监听<b>“键盘”</b>按下的组合的快捷键（Ctrl+任意键）。</p>
+	<p align="left">本方法在“通知_按键事件”之前发送。</p>
+    <p align="left"><img border="0" src="ck_images/56.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">第一步：监听ctrl键。</p>
+    <p align="left">第二：利用<b>“快捷键输入事件”</b>的<b>“按键”</b>读方法，判断<b>“第二按键”</b>，例如我这边判断<b>“A”</b>.</p>
+    <p align="left">最后我们可以执行“<b>编辑框1.添加内容</b>”方法来演示效果。</p>
+	<p align="left"><img border="0" src="ck_images/57.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">按下键盘<b>“ctrl+a”</b>组合按键后，指定内容也成功输出。</p>
+	<p align="left"><img border="0" src="ck_images/58.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="tzjjfscmsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 通知_即将发送触摸事件</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">可以看到有一个<b>“动作事件类”</b>参数和一个<b>“逻辑”</b>返回值。</p>
+    <p align="left">顾名思义，就是当用户<b>触摸</b>窗口时，本方法会被调用。</p>
+    <p align="left">本方法和<b>“通知_被触摸”</b>的区别就是，本方法会提前触发。</p>
+	<p align="left"><img border="0" src="ck_images/59.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">例如：判断<b>“触摸动作事件.动作”</b>的<b>动作类型</b>。</p>
+    <p align="left">随后依然是用<b>编辑框1.添加内容</b>的方法演示效果。</p>
+	<p align="left"><img border="0" src="ck_images/60.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+<p align="left">执行后可以看到<b>两种动作类型</b>均被触发。</p>
+    <p align="left">备注：模拟器的<b>“鼠标点击”</b>等同于<b>“手指触摸”</b>。</p>
+	
+    <p align="left"><img border="0" src="ck_images/61.gif" >
+    </p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="tzbcm"></a>
+<font style="font-size: 12pt; font-weight:700">● 通知_被触摸</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">可以看到本方法和<b>“通知_即将发送触摸事件”</b>没什么区别。</p>
+    <p align="left">本方法在<b>“通知_即将发送触摸事件”</b>的后面执行。</p>
+	<p align="left"><img border="0" src="ck_images/62.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">可以把<b>“即将发送触摸事件”</b>的代码抄下来，<b>动作类型</b>改成<b>“移动”</b>。</p>
+    <p align="left">最后用编辑框演示结果。</p>
+	<p align="left"><img border="0" src="ck_images/63.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可以看到鼠标点击<b>“移动”</b>的时候<b>“被触摸”</b>会不停的触发。</p>
+    <p align="left">备注：模拟器的"鼠标点击移动"等同于"触摸移动"。</p>
+	<p align="left"><img border="0" src="ck_images/64.gif" >
+    </p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="tzhtjbax"></a>
+<font style="font-size: 12pt; font-weight:700">● 通知_回退键被按下</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">可以看到只有一个<b>逻辑</b>返回值，返回<b>“真”</b>屏蔽返回假，默认<b>返回假</b>。</p>
+    <p align="left">顾名思义，就是判断是否屏蔽<b>“安卓手机”</b>的<b>“返回键”</b>。</p>
+    <p align="left">你也可以用<b>“本方法”</b>来对<b>“按下返回键”</b>进行一些其它的操作。</p>
+	<p align="left"><img border="0" src="ck_images/69.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加<b>“通知_回退键被按下”</b>虚拟方法。</p>
+    <p align="left">随后在本方法下，<b>红色箭头</b>所指的位置，直接写<b>“==假”</b>即可屏蔽<b>“返回键”</b>的退出程序操作。</p>
+    <p align="left">代码中间可以增加一个你想要处理的方法，比如这里我添加了一个<b>提示框</b>。</p>
+	<p align="left"><img border="0" src="ck_images/70.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可以看到，我<b>“按下返回键”</b>后并没有<b>“退出程序”</b>，仅仅只是弹出了一个设置<b>“提示框”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/71.gif" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+<a name="tzhqckms"></a>
+<font style="font-size: 12pt; font-weight:700">● 通知_获取窗口描述</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">可以看到有一个<b>“文本返回值”</b>。</p>
+    <p align="left">当窗口<b>不处于</b>激活状态的时候，本方法会被调用，并且返回一个文本值。</p>
+    <p align="left">在需要的时候，文本值提供给其它方法使用。</p>
+	<p align="left"><img border="0" src="ck_images/72.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写（1）：</b></p>
+<blockquote>
+<p align="left">添加“通知_获取窗口描述”虚拟方法。</p>
+	<p align="left">我们可以<b>“隐藏”</b>或<b>“删除”</b>红色箭头所指的内容。</p>
+    <p align="left">重新写一个<b>“返回”</b>方法，参数填需要<b>“返回”</b>的<b>“返回值”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/73.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写（2）：</b></p>
+<blockquote>
+    <p align="left">在<b>“按钮_被单击”</b>下，可以指定<b>来源对象</b>等于<b>“按钮2”</b>。</p>
+    <p align="left">然后利用<b>“通知_获取窗口描述”</b>来得到你所写的返回值。</p>
+	<p align="left"><img border="0" src="ck_images/74.png" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">执行<b>“按钮2”</b>后，内容成功返回。</p>
+	<p align="left"><img border="0" src="ck_images/75.png" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="tzyhjr"></a>
+<font style="font-size: 12pt; font-weight:700">● 通知_用户进入</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">可以看到，只要窗口进行任何形式的交互，都会触发本方法。</p>
+    <p align="left">同时还有一个相关联的方法<b>“通知_用户离开”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/76.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在<b>“通知_用户进入”</b>虚拟方法下填写你要执行的<b>“方法”</b>即可。</p>
+	<p align="left"><img border="0" src="ck_images/77.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可以看到<b>“触摸”</b>的时候会<b>触发本方法</b>，点击<b>“按钮”</b>同样会<b>触发</b>。</p>
+	<p align="left"><img border="0" src="ck_images/78.gif" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="tzyhlk"></a>
+<font style="font-size: 12pt; font-weight:700">● 通知_用户离开</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left"><b>用户离开</b>一般分为三种情况。</p>
+    <p align="left">第一：<b>“home键”</b>返回桌面。</p>
+    <p align="left">第二：切换到<b>“其它窗口”</b>。</p>
+        <p align="left">第三：打开了<b>“其它app”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/79.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在<b>“用户离开”</b>虚拟方法下填写即可。</p>
+	<p align="left"><img border="0" src="ck_images/80.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可以看到切换<b>“窗口2”</b>，又<b>“切换回来”</b>的时候，<b>“用户离开”</b>方法被触发。</p>
+	<p align="left"><img border="0" src="ck_images/81.gif" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="tzckjdbgb"></a>
+<font style="font-size: 12pt; font-weight:700">● 通知_窗口焦点被改变</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">可以看到有一个<b>“逻辑”</b>参数。</p>
+    <p align="left">顾名思义，就是用来判断<b>“当前窗口”</b>是否有<b>“焦点”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/82.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写（1）：</b></p>
+<blockquote>
+	<p align="left">直接用<b>如果</b>判断参数的返回值，然后可以用<b>编辑框1.添加内容</b>看效果。</p>
+	<p align="left"><img border="0" src="ck_images/83.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写（2）：</b></p>
+<blockquote>
+    <p align="left">另外还可以点击<b>“按钮”</b>弹出一个<b>“信息框”</b>做测试。</p>
+	<p align="left"><img border="0" src="ck_images/84.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可以看到<b>“软件启动后”</b>，自动<b>“获得焦点”</b>。</p>
+    <p align="left"><b>信息框</b>弹出后<b>“焦点消失”</b>。</p>
+    <p align="left">关闭<b>“信息框”</b>后，<b>“窗口焦点”</b>又重新获取。</p>
+	<p align="left"><img border="0" src="ck_images/85.gif" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<h2>三、窗口读写属性</h2>
+<p align="left">&nbsp;</p>
+
+<a name="bjsx"></a>
+<font style="font-size: 12pt; font-weight:700">● 背景色（写）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义：就是设置<b>“当前窗口”</b>的背景颜色，并且会覆盖其它方式设置的背景。</p>
+	<p align="left"><img border="0" src="ck_images/86.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">直接对本属性赋值<b>“颜色类”</b>的<b>“颜色常量”</b>即可。</p>
+  <p align="left">如果要想设置其他颜色，直接赋值<b>“0xFF”</b>加十六进制颜色值。</p>
+  <p align="left">例如：当前设置的<b>“白色”</b>其实就是<b>“0xFFFFFFFF”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/87.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">执行按钮后，可以看到<b>“背景颜色”</b>变成了白色。</p>
+	<p align="left"><img border="0" src="ck_images/88.png" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="bjtx"></a>
+<font style="font-size: 12pt; font-weight:700">● 背景图（写）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义就是设置一个<b>“可绘制资源”</b>类型的<b>“背景图”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/89.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">例如：可以定义一个<b>“可绘制资源”</b>变量，点击<b>“黄色箭头”</b>所指的按钮导入一张<b>“图片”</b>。</p>
+    <p align="left"><b>图片名</b>不能是<b>“中文”</b>也不能是<b>“数字”</b>，前面的<b>路径</b>无所谓。</p>
+    <p align="left">然后直接给<b>“背景图”</b>赋值定义的<b>“背景图变量”</b>即可。</p>
+	<p align="left"><img border="0" src="ck_images/90.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">点击<b>“按钮”</b>后，可以看到<b>“背景图”</b>成功加载。</p>
+    <p align="left">并且<b>“背景图”</b>会覆盖<b>“背景色”</b>，同样<b>“背景色”</b>会覆盖<b>“背景图”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/91.gif" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="btx"></a>
+<font style="font-size: 12pt; font-weight:700">● 标题（写）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是修改<b>“当前窗口标题”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/92.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接给本属性“赋值”</b>一个<b>“文本型”</b>的字符串即可。</p>
+	<p align="left"><img border="0" src="ck_images/93.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">执行<b>按钮1</b>后就可以看到<b>“标题”</b>被修改。</p>
+	<p align="left"><img border="0" src="ck_images/94.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="btd"></a>
+<font style="font-size: 12pt; font-weight:700">● 标题（读）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义读取<b>“当前窗口标题”</b>并返回。</p>
+	<p align="left"><img border="0" src="ck_images/95.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">利用<b>“编辑框”</b>做演示，直接给<b>“编辑框的内容”</b>赋值<b>“标题”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/96.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">执行<b>“按钮2”</b>后，标题被<b>“取出”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/97.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="cjmsx"></a>
+<font style="font-size: 12pt; font-weight:700">● 沉浸模式（写）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，设置窗口是否为<b>“沉浸模式”</b>。</p>
+    <p align="left">沉浸模式通俗理解：手机<b>“状态栏会透明”</b>，将窗口显示出来。</p>
+    <p align="left">注意：设置<b>“沉浸模式”</b>后，窗口<b>“所有组件”</b>会整体<b>“上移”</b>一部分。</p>
+    <p align="left">本属性搭配“<a href="#ycbtl">隐藏标题</a>”使用更加完美。</p>
+	<p align="left"><img border="0" src="ck_images/98.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接赋值<b>“真”</b>或者<b>“假”</b>即可。</p>
+    <p align="left"><b>“真”</b>为沉浸模式，<b>“假”</b>为不沉浸。</p>
+	<p align="left"><img border="0" src="ck_images/99.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">可以看到<b>“按钮1”</b>点击后，状态栏<b>“黑色变透明<b>“。</p>
+    <p align="left">点击<b>“按钮2”</b>后，状态栏又恢复了<b>“黑色”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/100.gif" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="jwcmgbx"></a>
+<font style="font-size: 12pt; font-weight:700">● 界外触摸关闭（写）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是设置<b>“窗口外”</b>的区域，触摸后<b>“是否关闭”</b>窗口。</p>
+    <p align="left">通常用作<b>“对话框窗口”</b>的判断。</p>
+	<p align="left"><img border="0" src="ck_images/101.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写(1)</b>：</p>
+<blockquote>
+	<p align="left">首先<b>“启动类”</b>的基础类改成<b>“对话框窗口”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/102.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写(2)</b>：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>和<b>“按钮2”</b>分别设置<b>“真和假”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/102a.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可以看到程序运行后，变成了<b>“对话框”</b>模式。</p>
+    <p align="left">执行<b>“按钮1”</b>，触摸<b>“窗口外界”</b>，窗口<b>“直接关闭”</b>。</p>
+    <p align="left">执行"按钮2"，触摸"窗口外界"，窗口<b>“不会关闭”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/103.gif" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="pmfxx"></a>
+<font style="font-size: 12pt; font-weight:700">● 屏幕方向（写）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，设置<b>“窗口的方向”</b>是<b>“横”</b>还是<b>“纵”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/104.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>运行（1）：</b></p>
+<blockquote>
+	<p align="left">执行<b>“按钮2”</b>就会变成<b>“横向窗口”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/105.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>运行（2）：</b></p>
+<blockquote>
+    <p align="left">执行<b>"按钮1"</b>就会变成<b>"纵向窗口"</b>。</p>
+	<p align="left"><img src="ck_images/106h.png" width="754" height="425" border="0" >
+</p>
+    <p align="left"><img border="0" src="ck_images/106s.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="qdxxd"></a>
+<font style="font-size: 12pt; font-weight:700">● 启动信息（读）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">读取<b>“本窗口”</b>被载入时的<b>“启动信息类”</b>。</p>
+    <p align="left">通俗理解：<b>“窗口1”</b>载入<b>“窗口2”</b>传递了<b>“参数”</b>。</p>
+    
+    <p align="left">你不想在<b>“窗口2”</b>的<b>“通知_被创建”</b>下面获取，你就可以利用<b>“本方法”</b>在<b>“其它方法或事件”</b>下获取。</p>
+
+	<p align="left"><img border="0" src="ck_images/107.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写（1）</b>：</p>
+<blockquote>
+	<p align="left">点击<b>“启动类”</b>窗口的<b>“按钮”</b>后载入<b>“窗口2”</b>传递一个<b>“数据包变量”</b>变量过去。</p>
+	<p align="left"><img border="0" src="ck_images/108.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写（2）</b>：</p>
+<blockquote>
+    <p align="left">在<b>“窗口2”</b>的<b>“按钮_被单击”</b>事件下面获取传递的<b>“数据包”</b>。</p>
+    <p align="left">直接利用<b>本属性</b>就可以<b>“取附带数据包”</b>，然后<b>“读文本字段”</b>
+	<p align="left">注意：黄圈不要遗漏小数点。</p>
+    <p align="left">最后赋值给编辑框显示。</p>
+    <p align="left"><img border="0" src="ck_images/109.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">进入<b>“窗口2”</b>后，点击<b>“按钮”</b>就可以成功读取<b>“传递的数据”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/110.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="qmmsx"></a>
+<font style="font-size: 12pt; font-weight:700">● 全屏模式（显示/隐藏状态栏）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，设置窗口是否为全屏状态（也就是隐藏系统状态栏）。</p>
+	<p align="left"><img border="0" src="ck_images/111.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接<b>“赋值”</b>即可，<b>“真”</b>为<b>“隐藏”</b>状态栏，<b>“假”</b>为<b>“显示”</b>状态栏。</p>
+	<p align="left"><img border="0" src="ck_images/112.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">左图：<b>“按钮1”</b>点击后，<b>“状态栏”</b>消失，为全屏模式。</p>
+    <p align="left">右图：<b>"按钮2"</b>点击后，<b>"状态栏"</b>重新出现，非全屏模式。</p>
+	<p align="left"><img border="0" src="ck_images/113.png" >
+    &nbsp;&nbsp;&nbsp;
+    <img border="0" src="ck_images/114.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="sfbjhd"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否被激活（读）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，读取<b>“当前窗口”</b>是否<b>“被激活”</b>。</p>
+    <p align="left">也就是<b>“通知_被激活”</b>调用后就会处于<b>“激活”</b>状态。</p>
+	<p align="left"><img border="0" src="ck_images/115.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">左图：可以在<b>“通知_被创建”</b>下判断一下<b>“激活状态”</b>。</p>
+    <p align="left">右图：另外用<b>“按钮”</b>判断一下<b>“激活状态”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/116.png" >
+    &nbsp;&nbsp;&nbsp;
+    <img border="0" src="ck_images/116a.png" >
+    </p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">因<b>“通知_被创建”</b>在<b>“通知_被激活”</b>之前，所以<b>“打开软件后”</b>必然会首先提示<b>“没有激活”</b>。</p>
+    <p align="left">而<b>“执行按钮”</b>必然会提示<b>“已经激活”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/117.gif" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="sfksx"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否可视（写）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，设置<b>“当前窗口”</b>是否<b>“隐藏”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/118.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">例如：在“按钮_被单击”下写“是否可视=假”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/119.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">执行<b>“按钮”</b>后，<b>“窗口本身”</b>包括<b>“窗口内组件”</b>全部会变成<b>“不可见”</b>状态</p>
+    <p align="left">并不是程序死掉了，而是窗口隐藏了起来。</p>
+	<p align="left"><img border="0" src="ck_images/120.gif" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="sfyxhd"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否已销毁（读）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义：就是判断<b>“当前窗口”</b>是否<b>“已经销毁”</b>。</p>
+    <p align="left">如果返回<b>真</b>表示<b>“通知_将被销毁”</b>已经被调用。</p>
+	<p align="left"><img border="0" src="ck_images/121.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">左图：<b>“按钮”</b>被单击下，直接用<b>“如果”</b>进行判断。</p>
+    <p align="left">右图：可以在<b>“通知_将被销毁”</b>时间下进行一下判断。</p><br/>
+	<p align="left"><img border="0" src="ck_images/122.png" >
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <img border="0" src="ck_images/123.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可以看到执行<b>“按钮”</b>会提示没有被销毁，而<b>“退出程序”</b>后会弹出<b>“被销毁”</b>提示。</p>
+	<p align="left"><img border="0" src="ck_images/124.gif" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="sfyjdd"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否有焦点（读）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是读取<b>“当前窗口”</b>是否获得焦点。</p>
+	<p align="left"><img border="0" src="ck_images/125.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接用<b>“如果”</b>进行判断<b>“真”</b>或者<b>“假”</b>即可。</p>
+    <p align="left">窗口没有焦点的三种情况：</p>
+   
+    	<p align="left">第一：被其他窗口覆盖。</p>
+        <p align="left">第二：被其他APP覆盖。</p>
+         <p align="left">第三：弹出了一个对话框。</p>
+   
+	<p align="left"><img border="0" src="ck_images/127.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">因当前窗口处于<b>“前台激活”</b>状态，所以执行<b>“按钮”</b>后提示<b>“有焦点”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/126.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="stjyplxx"></a>
+<font style="font-size: 12pt; font-weight:700">● 所调节音频类型（写）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，设置当前<b>“当前窗口”</b><b>“按下音量键”</b>所调节的<b>“音频类型”</b>。</p>
+    <p align="left">&nbsp;</p>
+	<p align="left"><img border="0" src="ck_images/128.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">例如：要<b>“当前窗口”</b><b>“按下音量键”</b>调节<b>“系统音量”</b>（锁屏、按键等音量）。</p>
+    <p align="left">直接用对应的<b>“音频类型”</b>赋值即可。</p>
+    <p align="left">最终的效果就是<b>“按钮1”</b>点击后，此时去按<b>音量键</b>，就会调整<b>系统音量</b>。</p>
+    <p align="left">点击<b>“按钮2”</b>，再去按<b>音量键</b>，此时就会调整<b>闹钟声音</b>。</p>
+	<p align="left"><img border="0" src="ck_images/129.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="stjyplxd"></a>
+<font style="font-size: 12pt; font-weight:700">● 所调节音频类型（读）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义：就是返回<b>“当前窗口”</b>按下<b>“音量键”</b>所调节的<b>“音频类型”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/130.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">可以用<b>“如果”</b>判断调节的<b>“音频类型”</b>，然后<b>“执行”</b>，你想要<b>“执行”</b>的方法。</p>
+	<p align="left"><img border="0" src="ck_images/131.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="dztks"></a>
+<font style="font-size: 12pt; font-weight:700">● 动作条可视（写）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本属性也可以用于显示/隐藏标题栏。</p>
+    <p align="left">属性值为真则显示，否则隐藏。</p>
+	<p align="left"><img border="0" src="ck_images/214.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><strong>“按钮1”</strong>被点击后，显示标题栏。</p>
+	<p align="left"><strong>“按钮2”</strong>被点击后，隐藏标题栏。</p>
+	<p align="left"><img border="0" src="ck_images/215.png" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="ck_images/216.gif" ></p>
+</blockquote>
+<!--
+<p align="left">&nbsp;</p>
+<a name="ztlztss"></a>
+<font style="font-size: 12pt; font-weight:700">● 状态栏字体深色（写）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left"></p>
+	<p align="left"><img border="0" src="ck_images/214.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"></p>
+	<p align="left"><img border="0" src="ck_images/215.png" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"></p>
+	<p align="left"><img border="0" src="ck_images/216.gif" ></p>
+</blockquote>-->
+<p align="left">&nbsp;</p>
+<a name="ztlys"></a>
+<font style="font-size: 12pt; font-weight:700">● 状态栏颜色（写）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本属性可设置状态栏背景颜色。</p>
+    <p align="left">注意：本设置需要安卓系统5.0以上才可以使用。</p>
+	<p align="left"><img border="0" src="ck_images/217.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><strong>“按钮1”</strong>被点击后设置颜色为白色。</p>
+	<p align="left"><strong>“按钮2”</strong>被点击后，设置颜色为蓝色。</p>
+	<p align="left"><img border="0" src="ck_images/218.png" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="ck_images/219.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="ztlgd"></a>
+<font style="font-size: 12pt; font-weight:700">● 状态栏高度（读）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本属性可获取当前手机状态栏高度，单位像素。</p>
+    <p align="left">注意：手机状态栏高度未必都是一致的。</p>
+	<p align="left"><img border="0" src="ck_images/220.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接调用本属性读取即可。</p>
+	<p align="left"><img border="0" src="ck_images/221.png" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="ck_images/222.png" ></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<h2>四、其它方法</h2>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="ycbtl"></a>
+<font style="font-size: 12pt; font-weight:700">● 隐藏标题栏</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">它是一个<b>通常方法</b>，顾名思义就是用来<b>“隐藏当前窗口标题”</b>。</p>
+	<p align="left">并且还可以设置，是否为<b>“全屏模式”</b>，参数默认值为<b>“真”</b>。</p>
+    <p align="left">注意：本方法只能在<b>“通知_即将初始化内容”</b>中调用。</p>
+    <p align="left">如果想要在任意位置隐藏标题栏请使用<a href="#dztks">“动作条可视”</a>写属性。</p>
+    <p align="left"><img border="0" src="ck_images/132.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">左图：输入本方法不写参数。</p>
+    <p align="left">右图：运行后可以看到，<b>“标题”</b>和<b>“状态栏”</b>全部消失。</p>
+<br>
+
+	<p align="left"><img border="0" src="ck_images/133.png" >
+    &nbsp;&nbsp;&nbsp;
+    <img border="0" src="ck_images/133a.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>本方法</b>写一个参数<b>“假”</b>，运行后可以看到仅仅是<b>“标题被隐藏”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/134.png" >
+    &nbsp;&nbsp;&nbsp;
+    <img border="0" src="ck_images/134a.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="xxk"></a>
+<font style="font-size: 12pt; font-weight:700">● 信息框</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，在屏幕的中间弹出一个信息框。</p>
+    <p align="left">有三个参数，我们可以给它设置<b>“图标”</b>、<b>“内容”</b>和<b>“标题”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/135.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写(1)：</p>
+<blockquote>
+	<p align="left">例如：我们创建一个<b>“可绘制资源”</b>变量，导入一张图。</p>
+    <p align="left">填写<b>“本方法”</b>输入对应的<b>“参数”</b>。</p>
+    <p align="left">运行后如<b>“右图”</b>所示，弹出了一个带<b>“图标”</b>的<b>“信息框”</b>。</p>
+<br>
+
+	<p align="left"><img border="0" src="ck_images/136.png" >
+    &nbsp;&nbsp;&nbsp;
+    <img border="0" src="ck_images/136a.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写(2)：</p>
+<blockquote>
+    <p align="left">如果不想使用图标，我们只需要在<b>“参数1”</b>填写<b>“(可绘制资源)空资源()”</b>即可。</p>
+	<p align="left">可以看到<b>“右图”</b>，运行后并没有<b>“任何图标”</b>显示。</p>
+    <p align="left"><img border="0" src="ck_images/137.png" >&nbsp;&nbsp;&nbsp;
+    <img border="0" src="ck_images/137a.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="tsxxk"></a>
+<font style="font-size: 12pt; font-weight:700">● 提示信息框</font><br/>
+<a name="jgxxk"></a>
+<font style="font-size: 12pt; font-weight:700">● 警告信息框</font><br/>
+<a name="cwxxk"></a>
+<font style="font-size: 12pt; font-weight:700">● 错误信息框</font><br/>
+<br/>
+<p align="left">以上<b>“三个方法”</b>用法一致，这里用<b>“提示信息框”</b>举例。</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">只有一个<b>“文本”</b>参数。</p>
+	<p align="left"><img border="0" src="ck_images/138.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">输入<b>“方法名”</b>，填写想要<b>“显示的文本”</b>即可。</p>
+<br>
+
+	<p align="left"><img border="0" src="ck_images/139.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">执行<b>“按钮1”</b>后就可以看到一个带有<b>“提示图标”</b>的信息框。</p>
+    <p align="left"><b>“警告信息框”</b>带有<b>“警告”</b>图标。</p>
+    <p align="left"><b>"错误信息框"</b>带有<b>"错误"</b>图标。</p>
+	<p align="left"><img border="0" src="ck_images/140.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="zrck"></a>
+<font style="font-size: 12pt; font-weight:700">● 载入窗口</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">可以看到有三个参数。</p>
+  <p align="left">参数1：要载入的窗口类名称。</p>
+  <p align="left">参数2：如果要传递数据给另外一个窗口，在本方法中填写。</p>
+  <p align="left">参数3：另外一个窗口，返回本窗口用到的返回码。</p>
+ 
+	<p align="left"><img border="0" src="ck_images/141.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">参数一：直接填写要加载的<b>“窗口类名称”</b>即可。</p>
+	    <p align="left">参数二：示例请看"<a href="#tzbcj">通知_被创建</a>"</p>
+    <p align="left"> 参数三：示例请看"<a href="#tzhdfhsj">通知_获得返回数据</a>"</p>
+ 
+    <p align="left"><img border="0" src="ck_images/142.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">点击<b>“按钮1”</b>后就会进入到<b>“窗口2”</b>中。</p>
+	<p align="left"><img border="0" src="ck_images/143.gif" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="dhzrck"></a>
+<font style="font-size: 12pt; font-weight:700">●&nbsp;动画载入窗口</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">可以看到本方法和<b>“载入窗口”</b>基本没区别。</p>
+    <p align="left">不同之处就是<b>“本方法”</b>多了一个<b>“切换动画”</b>，具体可以看<b>“窗口切换模式”</b>的帮助文档。</p>
+	<p align="left"><img border="0" src="ck_images/144.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">给<b>“参数2”</b>写一个<b>“从右到左”</b>的动画效果。</p>
+	<p align="left"><img border="0" src="ck_images/145.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可以看到点击<b>“按钮1”</b>切换窗口的时候，多了一个<b>“从右到左”</b>的动画。</p>
+	<p align="left"><img border="0" src="ck_images/146.gif" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="zrck2"></a>
+<font style="font-size: 12pt; font-weight:700">● 载入窗口2</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">可以看到<b>“本方法”</b>和<b>“载入窗口”</b>并没有什么太大的区别。</p>
+    <p align="left">不同之处就是<b>“本方法”</b>的<b>“传递参数”</b>变成了任意类型。</p>
+    <p align="left">如果<b>“传递的数据”</b>不涉及<b>“对象”</b>，建议用<b>“载入窗口”</b>载入。</p>
+	<p align="left"><img border="0" src="ck_images/147.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写（1）：</b></p>
+<blockquote>
+	<p align="left">在<b>“启动类”</b>窗口，<b>“按钮被单击”</b>下写<b>“本方法”</b>。</p>
+    <p align="left">参数1：写要载入的窗口名字。</p>
+    <p align="left">参数2：可以直接写要传递的参数。</p>
+	<p align="left"><img border="0" src="ck_images/148.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写（2）：</b></p>
+<blockquote>
+    <p align="left">在<b>“窗口2”</b>的<b>“通知被创建”</b>下填写<b>“接收代码”</b>。</p>
+    <p align="left"><b>“载入参数”</b>数组填写<b>“0”</b>，最后用<b>“对象到文本”</b>方法转换，赋值给<b>“编辑框1”</b>显示。</p>
+	<p align="left"><img border="0" src="ck_images/149.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>运行效果：</b></p>
+<blockquote>
+    <p align="left">可以看到传递的数据被成功读取。</p>
+	<p align="left"><img border="0" src="ck_images/149.gif" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="dhzrck2"></a>
+<font style="font-size: 12pt; font-weight:700">● 动画载入窗口2</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">可以看到<b>“本方法”</b>和<b>“载入窗口2”</b>没什么区别。</p>
+    <p align="left">不同之处就是本方法多了一个<b>“切换动画”</b>。</p>
+    <p align="left">具体动画效果观看“窗口切换模式”的帮助文档。</p>
+	<p align="left"><img border="0" src="ck_images/150.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">例如：我们给<b>“参数2”</b>填写一个<b>“从上到下”</b>的动画效果。</p>
+	<p align="left"><img border="0" src="ck_images/151.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">可以看到<b>“载入窗口”</b>的时候多了一个<b>“从上到下”</b>的切换效果。</p>
+	<p align="left"><img border="0" src="ck_images/152.gif" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="gbck"></a>
+<font style="font-size: 12pt; font-weight:700">● 关闭（窗口）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+        <p align="left">顾名思义，就是关闭当前窗口。</p>
+    <p align="left">用途一：如果"当前窗口"是最后一个"窗口"，使用"本方法"后当前app"会退出"。</p>
+	<p align="left">具体可看："<a href="#tzqlsj">通知_清理数据</a>"中的使用方式。</p>
+    <p align="left">用途二："窗口1"载入"窗口2"，当"窗口2"使用"关闭"方法后，程序则会返回"窗口1"。</p>
+    <p align="left">具体可看："<a href="#tzhdfhsj">通知_获得返回数据</a>"中的使用方式。</p>
+	<p align="left"><img border="0" src="ck_images/153.png" ></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="dhgbck"></a>
+<font style="font-size: 12pt; font-weight:700">● 动画关闭（窗口）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+
+
+<blockquote>
+<p align="left">可以看<b>“本方法”</b>和<b>“关闭”</b>之间的区别就是多了一个<b>“切换动画”</b>。</p>
+<p align="left">具体如何使用<b>“动画常量”</b>，可以看<b>“<a href="#dhzrck">动画载入窗口”</a></b></p>
+<p align="left">具体动画效果观看"窗口切换模式"的帮助文档。</p>
+    <p align="left"><img border="0" src="ck_images/154.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="bfckqhdh"></a>
+<font style="font-size: 12pt; font-weight:700">● 播放窗口切换动画</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是播放窗口切换动画</p>
+    <p align="left">不过<b>“本方法”</b>无法单独执行，必须在<b>“载入窗口”</b>或<b>“载入窗口2”</b>或<b>“关闭”</b>后面。</p>
+	<p align="left"><img border="0" src="ck_images/155.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在普通的<b>“载入窗口”</b>方法下写上<b>“本方法”</b>，然后参数填写一个<b>“切换动画”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/156.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可以看到<b>“普通切换窗口”</b>方法，也可以增加<b>“切换动画”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/157.gif" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="cjck"></a>
+<font style="font-size: 12pt; font-weight:700">● 重建（窗口）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是把当前窗口进行<b>“重建”</b>操作。</p>
+	<p align="left"><img border="0" src="ck_images/158.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">例如：我们这里在<b>“按钮”</b>被单击下，执行<b>“重建”</b>。</p>
+    <p align="left">并且在<b>“通知_被激活”</b>下面改变<b>“编辑框”</b>的内容。</p>
+	<p align="left"><img border="0" src="ck_images/159.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可以看到<b>“当前窗口”</b>进行了一个<b>“重建”</b>操作，并且<b>“通知_被激活”</b>也被重新触发。</p>
+	<p align="left"><img border="0" src="ck_images/160.gif" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="qybtljdt"></a>
+<font style="font-size: 12pt; font-weight:700">● 启用标题栏进度条</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是在当前窗口的<b>“标题”</b>位置添加一个<b>“进度条”</b>。</p>
+	<p align="left">注意：<b>“本方法”</b>必须在<b>“通知_即将初始化内容”</b>虚拟方法下调用才有效。</p>
+    <p align="left">注意2：部分<b>“安卓手机设备”</b>的主题并不支持<b>“显示进度条”</b>。</p>
+    <p align="left">我们可以将<b>“窗口强制变成”</b>一个可以<b>“显示进度条”</b>的主题。</p>
+    <p align="left">例如：Holo主题。</p>
+    <p align="left"><img border="0" src="ck_images/161.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写（1）</b>：</p>
+<blockquote>
+	<p align="left">在要改变的<b>“窗口类”</b>后面的<b>“属性名”</b>中填写<b>“@安卓.附加清单”</b>。</p>
+	<p align="left">属性值填写：<b>常用窗口附加清单.Holo根主题</b></p>
+    <p align="left"><img border="0" src="ck_images/162.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写（2）</b>：</p>
+<blockquote>
+    <p align="left">我们在<b>“通知即将初始化内容”</b>虚拟方法下填写<b>“本方法”</b>，<b>“参数”</b>设置<b>“真”</b>。</p>
+	<p align="left">随后在<b>“按钮”</b>事件下，执行<b>“置标题栏进度”</b>和<b>“标题栏第二进度”</b>方法来设置进度。</p>
+    <p align="left"><img border="0" src="ck_images/163.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>运行效果</b>：</p>
+<blockquote>
+	<p align="left">运行后，执行<b>“按钮1”</b>可以看到，<b>“标题”</b>上面多了<b>“两个进度”</b>提示。</p>
+    <p align="left"><img border="0" src="ck_images/164.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="cjckzj"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建窗口组件</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是创建一个<b>窗口组件</b>，如果不能创建实例将返回<b>空对象</b>。</p>
+    <p align="left">有两个参数和返回值，<b>“参数1”</b>和<b>“返回值”</b>的数据类型相同。</p>
+    <p align="left">参数二：设置初始化数据，通常情况下为空即可。</p>
+	<p align="left"><img border="0" src="ck_images/165.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定一个类型为<b>“按钮”</b>的变量。</p>
+    <p align="left">利用本方法创建<b>按钮</b>组件，赋值给定义的<b>按钮变量</b>。</p>
+    
+ 
+	<p align="left">可以给<b>“按钮”</b>设置一个<b>“内容”属性</b>。</p>
+    <p align="left">最后利用<b>“线性布局器”</b>的<b>“添加子组件”</b>方法，添加定义的<b>“新按钮”</b>即可。</p>
+    <p align="left"><img border="0" src="ck_images/166.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可以看到点击<b>“按钮”</b>后，出来一个<b>“新的按钮”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/167.gif" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="cjckzj1"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建窗口组件1</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+    <p align="left">本方法和<b>"创建窗口组件"</b>的区别就是多了一个<b>"安卓窗口"</b>类。</p>
+	<p align="left"><img border="0" src="ck_images/204.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">如下图：</p>
+<blockquote>
+    <p align="left">参数1：直接填写本对象即可。</p>
+    <p align="left">因运行效果和<b>"创建窗口组件"</b>一致，因此不做演示。</p>
+	<p align="left"><img border="0" src="ck_images/205.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="dkxxcd"></a>
+<font style="font-size: 12pt; font-weight:700">● 打开选项菜单</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是打开定义的<b>“选项菜单”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/168.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">例如：随意定义几个菜单，然后在<b>“按钮”</b>事件下执行<b>“本方法”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/169.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">点击<b>“按钮1”</b>就会<b>“弹出菜单”</b>。</p>
+    <p align="left">备注：不同<b>“安卓版本”</b>，显示位置可能所有<b>“不同”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/170.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="cjxxcd"></a>
+<font style="font-size: 12pt; font-weight:700">● 重建选项菜单</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是让<b>“选项菜单”</b>重新建立一次。</p>
+	<p align="left"><img border="0" src="ck_images/171.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">可以在<b>“初始化选项菜单”</b>下，增加一个<b>“编辑框.添加内容”</b>方法。</p>
+	<p align="left"><img border="0" src="ck_images/172.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">点击<b>“按钮1”</b>执行本方法后，可以看到<b>“编辑框内”</b>又多了<b>“一条内容”</b>。</p>
+	<p align="left">间接证明<b>“通知_初始化选项菜单”</b>被重新调用了一次。</p>
+    <p align="left"><img border="0" src="ck_images/173.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="gbsxwcdzc"></a>
+<font style="font-size: 12pt; font-weight:700">● 关闭上下文菜单支持</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left"><b>“上下文菜单”</b>的通俗理解，指定<b>组件长按</b>后（约一两秒）弹出的菜单。</p>
+    <p align="left">本方法顾名思义，就是用来<b>“关闭”</b>指定组件弹出<b>“上下文菜单”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/174.png" ></p>
+</blockquote>
+
+<a name="kqshangxiawen"></a>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加上下文菜单，请看<b>“<a href="a_menu.htm#cd_zbgz">上下文菜单</a>”</b>的帮助文档。</p>
+	<p align="left">例如：我们让<b>“按钮1”</b>点击后<b>“按钮2”</b>开启上下文菜单。</p>
+    <p align="left"><b>“按钮2”</b>点击后，<b>“取消”</b>自身的<b>“上下文菜单”</b>。</p>
+    <p align="left"><img border="0" src="ck_images/175.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">可以看到点击<b>“按钮1”</b>，<b>“按钮2”</b>长按后（约一两秒），就会弹出一个菜单。</p>
+    <p align="left">备注：不同安卓版本，<b>“菜单”</b>显示位置可能不同（安卓5.0会在屏幕中间弹出）。</p>
+    <p align="left">我们点击<b>“按钮2”</b>后，再次去长按<b>“按钮2”</b>，<b>“上下文菜单”</b>将不会弹出。</p>
+	<p align="left"><img border="0" src="ck_images/176.gif" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="kqsxwcdzc"></a>
+<font style="font-size: 12pt; font-weight:700">● 开启上下文菜单支持</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通俗理解就是，让指定组件<b>“支持长按后”</b>弹出一个<b>“菜单”</b>选项。</p>
+    <p align="left">点击查看：<b>“<a href="#kqshangxiawen">开启上下文菜单</a>”</b></p>
+	<p align="left"><img border="0" src="ck_images/177.png" ></p>
+</blockquote>
+
+
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="gbxxcd"></a>
+<font style="font-size: 12pt; font-weight:700">● 关闭选项菜单</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是<b>“关闭”</b>一个已经打开的<b>“选项菜单”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/178.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在需要的地方直接<b>“输入本方法”</b>即可，本方法不进行效果演示。</p>
+	<p align="left"><img border="0" src="ck_images/179.png" ></p>
+   
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="czzzj"></a>
+<font style="font-size: 12pt; font-weight:700">● 查找子组件</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是通过ID查找指定组件，如果<b>“目标ID”</b>的组件<b>“不是”</b>火山组件，将会返回<b>“空对象”</b>。</p>
+	<p align="left">注意：必须保证你所查找的id存在于火山程序中。</p>
+    <p align="left"><img border="0" src="ck_images/180.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写（1）：</b></p>
+<blockquote>
+	<p align="left">例如：单击一个<b>“按钮”</b>查找组件。</p>
+    <p align="left">你需要定义一个<b>“目标类型”</b>的变量。</p>
+    <p align="left">例如：查找<b>“按钮”</b>，我们就定义类型为<b>“按钮”</b>的变量。</p>
+	<p align="left">利用<b>“本方法”</b>查找<b>“目标ID”</b>后，强转成<b>“目标类型”</b>，就可以操作<b>“目标类型”</b>各种方法。</p>
+    <p align="left">例如：我这里操作的是"按钮"的内容。</p>
+    <p align="left"><b><font color="#FF0000">注意：</font></b>如果你要查找的<b>“目标组件”</b>，不知道<b>“ID”</b>是多少，需要用目标<b>“组件名称”</b>的读<b>“ID”</b>属性取出。</p>
+    <p align="left">例如：我这里要找<b>“按钮2”</b>就直接写<b>“按钮2.ID”</b>。</p>
+    <p align="left"><img border="0" src="ck_images/181.png" ></p>
+   
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">执行<b>“按钮1”</b>后<b>“按钮2内容”</b>就会发生改变。</p>
+	<p align="left"><img border="0" src="ck_images/182.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="xsbtljdt"></a>
+<font style="font-size: 12pt; font-weight:700">● 显示标题栏进度条</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是用来隐藏和显示<b>“标题进度条”</b>。</p>
+    <p align="left">本方法必须搭配<b>“<a href="#qybtljdt">启用标题栏进度条</a>”</b>使用。</p>
+    <p align="left">参数1：是否显示可确定或不可确定进度条。</p>
+    <p align="left">参数2：就是是否显示和隐藏进度条。</p>
+	<p align="left"><img border="0" src="ck_images/184.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">例如：你需要<b>“显示”</b>标题栏进度条，<b>“参数2”</b>就填写<b>“真”</b>，<b>“隐藏”</b>就填写<b>“假”</b>。</p>
+    <p align="left"><img border="0" src="ck_images/185.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>显示，点击<b>“按钮2”</b>隐藏。</p>
+    <p align="left"><img border="0" src="ck_images/185a.gif" ></p>
+   
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="ydrwdht"></a>
+<font style="font-size: 12pt; font-weight:700">● 移动任务到后台</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通俗理解：就是<b>“返回桌面”</b>，相当于按下手机<b>“home键”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/186.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在需要的地方写<b>“本方法”</b>即可。</p>
+	<p align="left"><img border="0" src="ck_images/187.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left"><b>编辑框</b>内输入了内容，点击<b>“按钮1”</b>后程序进入后台运行，重新打开<b>“编辑框内容”</b>依然存在。</p>
+	<p align="left"><img border="0" src="ck_images/188.gif" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="qckpzb"></a>
+<font style="font-size: 12pt; font-weight:700">● 取窗口配置表</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">利用<b>“本方法”</b>可以写<b>“窗口配置”</b>。</p>
+   <p align="left"> 通俗理解就是可以<b>“保存”</b>一些数据，并且<b>“程序退出”</b>后信息依然存在。</p>
+	<p align="left">有一个<b>“是否添为添加写出”</b>的逻辑参数，通常情况下直接使用<b>“默认值”</b>即可。</p>
+    <p align="left"><img border="0" src="ck_images/189.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>执行后，执行的是<b>“保存配置”</b>的操作。</p>
+    <p align="left">定义一个类型为<b>“程序配置表修改器”</b>的变量，设置<b>参考</b>。</p>
+    <p align="left">随后用<b>“取窗口配置表().取修改器()”</b>，赋值给定义的<b>修改器变量</b>。</p>
+	<p align="left">然后就可以利用定义的<b>“修改器变量”</b>的<b>“置文本配置项”</b>方法，去写一段数据。</p>
+    <p align="left">最后要用一个<b>“提交”</b>方法来确认<b>“修改”</b>，成功返回<b>“真”</b>，失败返回<b>“假”</b>。</p>
+    <p align="left">&nbsp;</p>
+    <p align="left"><b>"按钮2"</b>自然是用来<b>"取文本配置项"</b>的，参数直接写保存时的<b>"配置项"</b>的名称即可。</p>
+    <p align="left"><img border="0" src="ck_images/190.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">左图：点击"按钮1"，提示保存成功。</p>
+    <p align="left">右图：点击"按钮2"，编辑框内成功读取配置。</p>
+	<p align="left"><img border="0" src="ck_images/191.png" >
+    &nbsp;&nbsp;&nbsp;
+    <img border="0" src="ck_images/191a.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="qckrqzj"></a>
+<font style="font-size: 12pt; font-weight:700">● 取窗口容器组件</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是取窗口本身的容器。</p>
+	&nbsp;
+    <p align="left"><img border="0" src="ck_images/192.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">例如：我们可以用<b>“本方法”</b>，取出窗口内<b>“子组件”</b>的数量。</p>
+	<p align="left"><img border="0" src="ck_images/193.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">窗口中明明有<b>多个</b>组件为什么会取出来是<b>两个？</b></p>
+    <p align="left">因为<b>“按钮1”</b>和<b>“按钮2”</b>是在一个<b>“线性布局容器”</b>内，容器内的<b>“组件”</b>不统计。</p>
+	<p align="left"><img border="0" src="ck_images/194.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="qdqjdzzj"></a>
+<font style="font-size: 12pt; font-weight:700">● 取当前焦点子组件</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是取出当前窗口内有<b>“输入焦点”</b>的组件，例如：可以取<b>“编辑框”</b>。</p>
+	<p align="left">取出来的组件可以干什么？具体可以看<b>“窗口组件”</b>类的帮助文档，点击<b>“红圈”</b>内的名字就可以进入。</p>
+    <p align="left"><img border="0" src="ck_images/195.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">例如：修改<b>“有输入焦点”</b>的背景色。</p>
+    <p align="left">可以直接在<b>“本方法”</b>后写<b>“.背景色”</b>，就可以设置<b>“编辑框”</b>的背景色。</p>
+	<p align="left">如果有多个<b>“编辑框”</b>，哪个编辑框有输入焦点，就修改哪个编辑框的背景色。</p>
+    <p align="left"><img border="0" src="ck_images/196.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">点击<b>“按钮1”</b>后编辑框的<b>“背景色”</b>就会发生改变。</p>
+	<p align="left"><img border="0" src="ck_images/197.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="zbjt"></a>
+<font style="font-size: 12pt; font-weight:700">● 置背景图</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是给窗口设置一个<b>“背景图”</b>，不过<b>“背景图”</b>参数是<b>“可绘制对象类”</b></p>
+    <p align="left">并且本方法会覆盖其它形式设置的背景。</p>
+	<p align="left"><img border="0" src="ck_images/198.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">我们可以设置一个<b>“可绘制资源”</b>变量，载入一张<b>“图片”</b>。</p>
+    <p align="left">最后可以用<b>“载入可绘制资源”</b>方法，将<b>“可绘制资源”</b>转换成<b>“可绘制对象类”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/199.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">点击"按钮1"窗口成功加载设置的<b>“背景图片”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/200.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="zbtldejd"></a>
+<font style="font-size: 12pt; font-weight:700">● 置标题栏第二进度</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">设置<b>“标题第二进度”</b>，可以用来当做播放器的<b>“缓冲进度”</b>，最大值100。</p>
+	<p align="left">本方法需要搭配<b>“<a href="#qybtljdt">启动标题栏进度条(真)</a>”</b>使用。</p>
+    <p align="left">具体用法可跳转<b>“<a href="#qybtljdt">启动标题栏进度条</a>”</b>查看。</p>
+    <p align="left"><img border="0" src="ck_images/201.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="zbtljd"></a>
+<font style="font-size: 12pt; font-weight:700">● 置标题栏进度</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">可以看到<b>“本方法”</b>和<b>“置标题栏第二进度”</b>相同，通用必须调用“<b>启用标题栏进度条（真）</b>”</p>
+     <p align="left">具体用法可跳转"<a href="#qybtljdt">启动标题栏进度条</a>"查看。</p>
+	<p align="left"><img border="0" src="ck_images/202.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="zfhsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 置返回数据</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通俗理解：当前窗口<b>“关闭”</b>后，<b>“返回数据”</b>到<b>“上一个”</b>窗口。</p>
+	<p align="left">参数1：输入<b>“返回码”</b>。</p>
+    <p align="left">参数2：输入要返回的<b>“数据包类”</b>。</p>
+    <p align="left">具体用法查看<b>“<a href="#tzhdfhsj">通知_获得返回数据</a>”</b></p>
+    <p align="left"><img border="0" src="ck_images/203.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="fenxiang"></a>
+<font style="font-size: 12pt; font-weight:700">● 分享图片</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 分享文字</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 分享视频</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 分享音乐</font>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">以上几个方法都会触发系统分享，通过系统分享可将指定内容分享到指定软件中。</p>
+<p align="left">此处演示“分享文字”方法。</p>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">本方法共有三个参数。</p>
+  <p align="left">参数1：设置要分享的内容。</p>
+  <p align="left">参数2：设置分享标题（部分手机可能不显示）。</p>
+  <p align="left">参数3：分享内容会弹出一个对话框，本参数就是用来设置对话框标题。</p>
+    <p align="left"><img border="0" src="ck_images/223.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">直接调用本方法设置对应参数即可。</p>
+    <p align="left"><img border="0" src="ck_images/224.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">分享后会直接将要分享的内容显示在指定软件上。</p>
+    <p align="left"><img border="0" src="ck_images/225.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="dkzdyy"></a>
+<font style="font-size: 12pt; font-weight:700">● 打开指定应用</font>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本方法可打开指定应用，成功返回真，否则返回假。</p>
+  <p align="left">注：部分手机打开时可能有权限提示或者禁止打开。</p>
+    <p align="left"><img border="0" src="ck_images/226.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">直接在本方法的参数内填写一个要打开的应用包名，并判断返回值即可。</p>
+    <p align="left"><img border="0" src="ck_images/227.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+    <p align="left"><img border="0" src="ck_images/228.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="dkzdwj"></a>
+<font style="font-size: 12pt; font-weight:700">● 打开指定文件</font>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本方法可打开指定文件。</p>
+  <p align="left">返回值为逻辑型，返回真表示系统内有可以打开本文件的程序，否则返回假。</p>
+  <p align="left">参数1：填写要打开的文件路径。</p>
+  <p align="left">参数2：填写文件类型，调用方式<strong>“常用文件类型.XXX”</strong>.</p>
+  <p align="left">注意：如果系统中存在多个程序都可以打开本文件，则会弹出选择提示。</p>
+    <p align="left"><img border="0" src="ck_images/229.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">调用本方法打开一个txt文本文件。</p>
+    <p align="left"><img border="0" src="ck_images/230.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+    <p align="left"><img border="0" src="ck_images/231.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="dzzdwz"></a>
+<font style="font-size: 12pt; font-weight:700">● 打开指定网址</font><br>
+<font style="font-size: 12pt; font-weight:700">● 打开指定网址2</font>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">以上两个方法都是打开网址，此处讲解“打开指定网址”方法。</p>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本方法可打开指定网址。</p>
+  <p align="left">例如：打开火山官网直接在参数内填写<strong>“http://www.voldp.com”</strong></p>
+  <p align="left">注意：如果有多个浏览器会弹出选择提示。</p>
+    <p align="left"><img border="0" src="ck_images/232.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">直接在参数内填写要打开的网址即可。</p>
+    <p align="left"><img border="0" src="ck_images/233.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+    <p align="left"><img border="0" src="ck_images/234.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="ydrwdht"></a>
+<font style="font-size: 12pt; font-weight:700">● 返回桌面</font><br>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">调用本方法可返回系统桌面，本方法效果等同于按下Home键。</p>
+  <p align="left">注意：并不能实现永久后台运行。</p>
+    <p align="left"><img border="0" src="ck_images/235.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">直接调用本方法即可。</p>
+    <p align="left"><img border="0" src="ck_images/236.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可看到<strong>“按钮1”</strong>被点击返回桌面后，再次打开软件编辑框内容依然存在。</p>
+    <p align="left"><img border="0" src="ck_images/238.gif" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p><a name="dhkck"></a>
+<h2>五、常用窗口类</h2>
+
+<p align="left">&nbsp;</p>
+
+
+<font style="font-size: 12pt; font-weight:700">● 对话框窗口</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 横向窗口</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 平板窗口</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 全屏窗口</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 透明窗口</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 纵向窗口</font><br/>
+<br/>
+<p align="left">以上窗口模式用法一致，这里举例<b>“对话框窗口”</b>窗口。</p>
+<p align="left">帮助内容如下：</p>
+<blockquote>
+    <p align="left">顾名思义，就是将当前<b>“窗口”</b>设置成<b>“对话框风格”</b>。</p>
+	<p align="left"><img border="0" src="ck_images/206.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+	<p align="left">直接将<b>“基础类”</b>改名<b>“对话框窗口”</b>即可。</p>
+	<p align="left"><img border="0" src="ck_images/207.png" ></p>
+    <p align="left">&nbsp;</p>
+   <p align="left">或者也可以利用<b>“@安卓.附加清单”</b>属性，修改属性值为<b>“常用窗口附加清单.对话框窗口”</b>。</p>
+   <p align="left">设置后仅对当前窗口有效。</p>
+   <p align="left"><img border="0" src="ck_images/208.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">运行后<b>“窗口”</b>会变成<b>“对话框”</b>风格显示。</p>
+	<p align="left"><img border="0" src="ck_images/209.png" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="anzhuo5"></a>
+<font style="font-size: 12pt; font-weight:700">● 安卓5无标题窗口</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 安卓5无标题白色窗口</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 安卓5全屏窗口</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 安卓5全屏窗口白色</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 安卓5对话框窗口无标题</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 安卓5对话框窗口白色无标题</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 安卓5对话框窗口白色</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 安卓5对话框窗口</font><br/>
+<br/>
+<p align="left">以上窗口模式是通过改变<strong>“材质风格”</strong>(类似窗口皮肤)实现，此处举例<strong>“安卓5无标题白色窗口”</strong>。</p>
+<p align="left">注意：以上窗口风格需要<strong>安卓系统5.0</strong>(即API级别21)以上才能使用.</p>
+<p align="left">&nbsp;</p>
+<p align="left">帮助内容如下：</p>
+<blockquote>
+    <p align="left">顾名思义，就是将当前<b>“窗口”</b>设置成<b>“白色无标题”</b>风格。</p>
+	<p align="left"><img border="0" src="ck_images/210.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接将<b>“基础类”</b>改名<b>“安卓5无标题白色窗口”</b>即可。</p>
+	<p align="left"><img border="0" src="ck_images/211.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">左图：<strong>“安卓5无标题白色窗口”</strong>的效果图。</p>
+    <p align="left">右图：通过<strong>“常用窗口附加清单.无标题白色窗口”</strong>设置的无标题白色窗口效果。</p>
+	<p align="left"><img border="0" src="ck_images/212.png" ><img border="0" src="ck_images/213.png" >
+    </p>
+</blockquote>
+
+
+
+</body>
+</html>

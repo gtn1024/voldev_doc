@@ -1,0 +1,590 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+			<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >花式按钮<span>(可收缩)</span></h6></li>
+		<ol id="new1">
+			<li><blockquote><a href="#huashianniu">1.本类说明</a></blockquote></li>
+			<li><blockquote><a href="#htb">2.图标(写)</a></blockquote></li>
+			<li><blockquote><a href="#htbzy">3.图标资源(写)</a></blockquote></li>
+			<li><blockquote><a href="#htbwz">4.图标位置(写)</a></blockquote></li>
+			<li><blockquote><a href="#htbsffs">5.图标缩放方式(写)</a></blockquote></li>
+			<li><blockquote><a href="#hzttb">6.字体图标(写)</a></blockquote></li>
+			<li><blockquote><a href="#hzttbys">7.图标颜色(写)</a></blockquote></li>
+			<li><blockquote><a href="#hzttbcc">8.字体图标尺寸(写)</a></blockquote></li>
+			<li><blockquote><a href="#hztccc">9.字体尺寸(写)</a></blockquote></li>
+			<li><blockquote><a href="#hztysh">10.字体颜色(写)</a></blockquote></li>
+			<li><blockquote><a href="#hbtnr">11.标题(写)</a></blockquote></li>
+			<li><blockquote><a href="#hspdqfs">12.水平对齐方式(写)</a></blockquote></li>
+			<li><blockquote><a href="#hspdqfs">13.垂直对齐方式(写)</a></blockquote></li>
+			<li><blockquote><a href="#hjdbjs">14.焦点背景色(写)</a></blockquote></li>
+			<li><blockquote><a href="#hjinyong">15.禁用(写)</a></blockquote></li>
+			<li><blockquote><a href="#hjinyong">16.禁用时字体颜色(写)</a></blockquote></li>
+			<li><blockquote><a href="#hjinyong">17.禁用时背景色(写)</a></blockquote></li>
+			<li><blockquote><a href="#hjinyong">18.禁用时边框色(写)</a></blockquote></li>
+			<li><blockquote><a href="#hkxxg">19.空心效果(写)</a></blockquote></li>
+			<li><blockquote><a href="#hbiankuang">20.边框宽度(写)</a></blockquote></li>
+			<li><blockquote><a href="#hbiankuang">21.边框颜色(写)</a></blockquote></li>
+			<li><blockquote><a href="#hbjys">22.背景颜色(写)</a></blockquote></li>
+			<li><blockquote><a href="#hzddx">23.自动大写(写)</a></blockquote></li>
+			<li><blockquote><a href="#hzdytbzt">24.自定义图标字体(写)</a></blockquote></li>
+			<li><blockquote><a href="#hzdyzt">25.自定义字体(写)</a></blockquote></li>
+			<li><blockquote><a href="#htbwbk">26.图标文本框组件(读)</a></blockquote></li>
+			<li><blockquote><a href="#htbsffs">27.图片框组件(读)</a></blockquote></li>
+			<li><blockquote><a href="#hspdqfs">28.文本框组件(读)</a></blockquote></li>
+			<li><blockquote><a href="#hztbnbj">29.置图标内边距</a></blockquote></li>
+			<li><blockquote><a href="#hzyjds">30.置圆角度数</a></blockquote></li>
+		</ol>
+	</ol>
+</ul>
+</div>	
+
+<p align="left"><a name="huashianniu"></a>
+<h2>花式按钮实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<br/>
+<blockquote>
+ <p align="left">通过本组件可快速实现一个带图标的按钮。</p>
+    <p align="left"><font color="#F70408">注意：本组件位于<strong><b>“花式按钮组件”</b></strong>模块中，欲使用本组件需添加其模块。</font> </p>
+	<p align="left"><img border="0" src="fancybutton_images/1.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">界面设计如下图：</p>
+<blockquote>
+    <p align="left">引用<b>“花式按钮组件”</b>模块后，在<b>“扩展容器组件”</b>中可找到此组件。</p>
+    <p align="left">随后将其拖放到界面设计器中。</p>
+	<p align="left"><img border="0" src="fancybutton_images/2.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码如下图：</p>
+<blockquote>
+    <p align="left">保存布局后，代码效果如下。</p>
+	<p align="left"><img border="0" src="fancybutton_images/3.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">花式按钮默认效果如下：</p>
+    <p align="left">1、背景色为黑色，如需修改颜色需要通过<b>“背景颜色”</b>属性修改。</p>
+    <p align="left">2、文本色为白色，如需修改颜色需要通过<b>“字体颜色”</b>属性修改。</p>
+    <p align="left">3、不设置标题的情况下，默认会出现一个<b>“Fancy Button”</b>的标题，修改文本通过<b>“标题”</b>属性修改。</p>
+	<p align="left"><img border="0" src="fancybutton_images/4.png" ></p>
+	</blockquote>	
+<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p><a name="htb"></a>
+<font style="font-size: 12pt; font-weight:700">● 图标(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本属性可设置一个图标资源。</p>
+    <p align="left">属性值的类型为<b>“可绘制对象类”</b>。</p>
+	<p align="left"><img border="0" src="fancybutton_images/5.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、定义类型为<b>“可绘制资源”</b>的变量，导入一张图片。</p>
+    <p align="left">2、通过<b>“载入可绘制资源()”</b>方法将可绘制资源转换成可绘制对象类，并赋值给<b>“图标”</b>属性。</p>
+	<p align="left"><img border="0" src="fancybutton_images/6.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到<b>“花式按钮”</b>被点击后增加了一个图标。</p>
+	<p align="left"><img border="0" src="fancybutton_images/7.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	<a name="htbzy"></a>
+<font style="font-size: 12pt; font-weight:700">● 图标资源(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本属性可设置<b>“可绘制资源”</b>类型的图标。 </p>
+	<p align="left"><img border="0" src="fancybutton_images/8.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、定义类型为<b>“可绘制资源”</b>的变量，初始值导入图片。</p>
+    <p align="left">2、调用<b>“图标资源”</b>属性设置定义的资源变量。</p>
+	<p align="left"><img border="0" src="fancybutton_images/9.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">最终可看到<b>“花式按钮”</b>被点击后增加了一个图标。</p>
+	<p align="left"><img border="0" src="fancybutton_images/10.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	<a name="htbwz"></a>
+<font style="font-size: 12pt; font-weight:700">● 图标位置(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本属性可设置图标显示位置。</p>
+    <p align="left">属性值调用方式<b>“花式按钮图标位置.XXX”</b>。</p>
+	<p align="left"><img border="0" src="fancybutton_images/12.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“花式按钮1”</b>被点击后，设置图标位置为右侧。</p>
+	<p align="left"><img border="0" src="fancybutton_images/11.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到按钮被点击后，图标从文本左侧换成了文本右侧。</p>
+	<p align="left"><img border="0" src="fancybutton_images/13.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	<a name="htbsffs"></a>
+<font style="font-size: 12pt; font-weight:700">● 图片框组件(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 图标缩放方式(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“图片框组件(读)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">通过本属性可读取<b>“花式按钮”</b>中的图片框组件。</p>
+    <p align="left">注：<b>“图标”</b>和<b>“图标资源”</b>设置的图片都会显示在此图片框上。 </p>
+	<p align="left"><img border="0" src="fancybutton_images/14.png" ></p>
+	</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“图标缩放方式(写)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">通过本属性可设置<b>“图片框组件”</b>的图片缩放方式。</p>
+    <p align="left">注：如果使用的为字体图标则无效。</p>
+	<p align="left"><img border="0" src="fancybutton_images/15.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、定义类型为<b>“图片框”</b>的变量，勾选参考。</p>
+    <p align="left">2、调用<b>“图片框组件”</b>属性赋值给定义的图片框变量。</p>
+    <p align="left">3、设置图片框的尺寸。</p>
+    <p align="left">4、通过花式按钮设置缩放方式为缩放。</p>
+	<p align="left"><img border="0" src="fancybutton_images/16.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到不仅图片大小发生变化，同时图片也处于缩放状态（即铺满整个图片组件）。</p>
+	<p align="left"><img border="0" src="fancybutton_images/17.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	<a name="hzttb"></a>
+<font style="font-size: 12pt; font-weight:700">● 字体图标(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本属性可设置字体图标，设置的字体图标来源于<b>“FontAwesome”</b>字体图标库。</p>
+    <p align="left">属性值提供字体图标的Unicode值，例如：<b>“\uf082”</b>。</p>
+	<p align="left"><img border="0" src="fancybutton_images/18.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">字体图标获取方法：</p>
+<blockquote>
+    <p align="left">1、进入FontAwesome中文网：<a href="http://www.fontawesome.com.cn/faicons" target="_blank">http://www.fontawesome.com.cn/faicons</a></p>
+    <p align="left">2、进入后随便点击一个图标，例如：file-text。</p>
+	<p align="left"><img border="0" src="fancybutton_images/19.png" ></p>
+	<p align="left">3、在新的页面中复制Unicode后面的<b>“f15c”</b>。</p>
+	<p align="left"><img border="0" src="fancybutton_images/20.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">花式按钮被点击后调用本属性设置字体图标。</p>
+	<p align="left"><img border="0" src="fancybutton_images/21.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最后可看到字体图标设置成功，默认为白色。</p>
+	<p align="left"><img border="0" src="fancybutton_images/22.gif" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>	<a name="hzttbys"></a>
+<font style="font-size: 12pt; font-weight:700">● 图标颜色(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本属性可设置字体图标的颜色。</p>
+    <p align="left">参数值可使用颜色类中的常量值，例如：颜色类.红色。</p>
+	<p align="left"><img border="0" src="fancybutton_images/23.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">花式按钮被点击后，设置图标颜色为红色。</p>
+	<p align="left"><img border="0" src="fancybutton_images/24.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到图标颜色由白变红。</p>
+	<p align="left"><img border="0" src="fancybutton_images/25.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	<a name="hzttbcc"></a>
+<font style="font-size: 12pt; font-weight:700">● 字体图标尺寸(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本属性可设置字体图标尺寸。</p>
+	<p align="left"><img border="0" src="fancybutton_images/26.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“花式按钮1”</b>被点击后设置本属性值为20.</p>
+	<p align="left"><img border="0" src="fancybutton_images/27.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到图标尺寸明显变大。</p>
+	<p align="left"><img border="0" src="fancybutton_images/28.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	<a name="hztccc"></a>
+<font style="font-size: 12pt; font-weight:700">● 字体尺寸(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本属性可设置花式按钮的标题文本尺寸。</p>
+    <p align="left">单位像素。</p>
+	<p align="left"><img border="0" src="fancybutton_images/29.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">调用本属性设置尺寸为28像素。</p>
+	<p align="left"><img border="0" src="fancybutton_images/30.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到文本尺寸明显变大。</p>
+	<p align="left"><img border="0" src="fancybutton_images/31.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	<a name="hztysh"></a>
+<font style="font-size: 12pt; font-weight:700">● 字体颜色(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本属性可设置标题颜色。</p>
+	<p align="left"><img border="0" src="fancybutton_images/32.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“花式按钮1”</b>被点击后，调用本属性设置颜色为红色。</p>
+	<p align="left"><img border="0" src="fancybutton_images/33.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到文本颜色变成红色。</p>
+	<p align="left"><img border="0" src="fancybutton_images/34.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	<a name="hbtnr"></a>
+<font style="font-size: 12pt; font-weight:700">● 标题(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本属性可更新花式按钮标题。</p>
+	<p align="left"><img border="0" src="fancybutton_images/35.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“花式按钮1”</b>被点击后，更新标题为<b>“新标题”</b>。</p>
+	<p align="left"><img border="0" src="fancybutton_images/36.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到标题被修改。</p>
+	<p align="left"><img border="0" src="fancybutton_images/37.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	<a name="hspdqfs"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本框组件(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 垂直对齐方式(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 水平对齐方式(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“文本框组件(读)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本属性可取出标题所在的文本框组件。</p>
+    <p align="left">注意：如果花式按钮未初始化完毕，则本属性返回空对象。</p>
+	<p align="left"><img border="0" src="fancybutton_images/38.png" ></p>
+	</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“水平对齐方式(写)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本属性用于设置标题文本针对文本框组件的内容水平对齐方式。</p>
+    <p align="left">属性值填写：水平对齐方式.XX</p>
+	<p align="left"><img border="0" src="fancybutton_images/39.png" ></p>
+	</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“垂直对齐方式(写)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本属性用于设置标题文本针对文本框组件的内容垂直对齐方式。</p>
+    <p align="left">属性值填写：垂直对齐方式.XX</p>
+	<p align="left"><img border="0" src="fancybutton_images/40.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、调用<b>“文本框组件”</b>读属性读取文本框，并设置背景色和尺寸信息。</p>
+    <p align="left">2、调用<b>“水平/垂直对齐方式”</b>设置标题对齐方向。</p>
+	<p align="left"><img border="0" src="fancybutton_images/41.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到，花式按钮的标题区域变大，并且内容也处于居中底对齐方向。</p>
+	<p align="left"><img border="0" src="fancybutton_images/42.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	<a name="hjdbjs"></a>
+<font style="font-size: 12pt; font-weight:700">● 焦点背景色(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本属性可开启花式按钮点击时产生一种水波涟漪效果。</p>
+    <p align="left">涟漪效果的颜色由本属性决定。</p>
+    <p align="left">如果想取消涟漪效果，设置本属性值为<b>“颜色类.透明色”</b>即可。</p>
+	<p align="left"><img border="0" src="fancybutton_images/43.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“花式按钮1”</b>被点击后，设置本属性值为<b>“颜色类.白色”</b>。</p>
+	<p align="left"><img border="0" src="fancybutton_images/44.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到花式按钮被点击后会产生一种白色的水波涟漪效果。</p>
+	<p align="left"><img border="0" src="fancybutton_images/45.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	<a name="hbiankuang"></a>
+<font style="font-size: 12pt; font-weight:700">● 边框宽度(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 边框颜色(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“边框宽度(写)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">通过本属性可设置花式按钮的边框宽度。</p>
+    <p align="left">如果不设置此宽度，默认为0.</p>
+	<p align="left"><img border="0" src="fancybutton_images/46.png" ></p>
+	</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“边框颜色(写)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">通过本属性可设置花式按钮的边框颜色。</p>
+	<p align="left"><img border="0" src="fancybutton_images/47.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“花式按钮1”</b>被点击后调用以上两个属性，实现一个宽度为5像素的白色边框。</p>
+	<p align="left"><img border="0" src="fancybutton_images/48.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到白色按钮增加了一个白色边框。</p>
+	<p align="left"><img border="0" src="fancybutton_images/49.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	<a name="hkxxg"></a>
+<font style="font-size: 12pt; font-weight:700">● 空心效果(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本属性可设置花式按钮的空心效果，即组件背景透明。</p>
+	<p align="left"><img border="0" src="fancybutton_images/50.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“花式按钮1”</b>被点击后设置本属性值为真。</p>
+	<p align="left"><img border="0" src="fancybutton_images/51.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">左图：单独使用<b>“空心效果”</b>的结果。</p>
+	<p align="left">右图：配合<b>“边框宽度”</b>使用<b>“空心效果”</b>。</p>
+	<p align="left"><img border="0" src="fancybutton_images/52.gif" ><img border="0" src="fancybutton_images/53.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	<a name="hjinyong"></a>
+<font style="font-size: 12pt; font-weight:700">● 禁用(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 禁用时字体颜色(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 禁用时背景色(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 禁用时边框色(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">以上属性用于设置组件被禁用后的一些禁用效果。</p>
+<p align="left">除<b>“禁用”</b>属性为逻辑值之外，其余属性的属性值均是整数颜色值。</p>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、在花式按钮的属性栏设置相关属性。</p>
+    <p align="left">2、<b>“花式按钮1”</b>被点击后，设置<b>“禁用=真”</b>。</p>
+	<p align="left"><img border="0" src="fancybutton_images/54.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到，当按钮被禁用后按钮颜色将会发生更改，并且按钮也无法再次触发被单击事件。</p>
+	<p align="left"><img border="0" src="fancybutton_images/55.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	<a name="hbjys"></a>
+<font style="font-size: 12pt; font-weight:700">● 背景颜色(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote><p align="left">顾名思义，通过本属性可设置当前花式按钮的背景色。</p>
+<blockquote><p align="left">如果不设置本属性，默认为黑色背景。</p>
+	<p align="left"><img border="0" src="fancybutton_images/56.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">按钮被点击后调用本属性，设置背景色为白色。</p>
+	<p align="left"><img border="0" src="fancybutton_images/57.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到背景颜色变成白色。</p>
+	<p align="left"><img border="0" src="fancybutton_images/58.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	<a name="hzddx"></a>
+<font style="font-size: 12pt; font-weight:700">● 自动大写(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本属性可自动叫标题文本转换为大写。</p>
+	<p align="left"><img border="0" src="fancybutton_images/59.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、设置小写的英文标题，例如：abc。</p>
+    <p align="left">2、<b>“花式按钮1”</b>被点击后设置按钮属性<b>“自动大写=真”</b></p>
+	<p align="left"><img border="0" src="fancybutton_images/60.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到<b>“abc”</b>变成了<b>“ABC”</b>。</p>
+	<p align="left"><img border="0" src="fancybutton_images/61.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	<a name="hzdytbzt"></a>
+<font style="font-size: 12pt; font-weight:700">● 自定义图标字体(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本属性主要用于更新<b>“花式按钮”</b>组件中的<b>“FontAwesome”</b>字体图标库版本。</p>
+    <p align="left">并且本属性也只能使用<b>“FontAwesome”</b>的ttf文件来更新图标库。</p>
+	<p align="left"><img border="0" src="fancybutton_images/62.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、首先去FontAwesome中文网下载最新版的字体文件，网址为：<a href="http://www.fontawesome.com.cn/" target="_blank">http://www.fontawesome.com.cn/</a></p>
+    <p align="left">2、下载完毕后通过<b>“@安卓.外部资产”</b>属性值引用ttf文件。</p>
+    <p align="left">3、在属性里设置一个最新版中才有的图标。</p>
+    <p align="left">4、<b>“花式按钮1”</b>被点击后，调用本属性更新字体图标库。</p>
+	<p align="left"><img border="0" src="fancybutton_images/63.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到花式按钮被点击后，字体图标成功显示。</p>
+	<p align="left"><img border="0" src="fancybutton_images/64.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	<a name="hzdyzt"></a>
+<font style="font-size: 12pt; font-weight:700">● 自定义字体(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本属性可设置标题的字体样式（即引用一个ttf格式的字体文件）。</p>
+    <p align="left">注意：属性值只能提供资产文件名，并且在使用自定义字体的时候，务必保证拥有字体的商用权限。</p>
+	<p align="left"><img border="0" src="fancybutton_images/65.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、通过属性<b>“@安卓.外部资产”</b>引用一个ttf字体文件。</p>
+    <p align="left">2、花式按钮1被点击后调用本属性设置引用的字体。</p>
+	<p align="left"><img border="0" src="fancybutton_images/66.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到字体样式被更改。</p>
+	<p align="left"><img border="0" src="fancybutton_images/67.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	<a name="htbwbk"></a>
+<font style="font-size: 12pt; font-weight:700">● 图标文本框组件(读)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本属性可读取存放字体图标的文本框组件。</p>
+    <p align="left">注意：如果花式按钮尚未初始化完毕，本组件会返回空对象。</p>
+	<p align="left"><img border="0" src="fancybutton_images/68.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、定义<b>“文本框”</b>变量，勾选参考。</p>
+    <p align="left">2、调用本属性赋值给定义的文本框变量。</p>
+    <p align="left">3、修改图标文本框的背景色属性。</p>
+	<p align="left"><img border="0" src="fancybutton_images/69.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到图标的背景色被修改成红色。</p>
+	<p align="left"><img border="0" src="fancybutton_images/70.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	<a name="hztbnbj"></a>
+<font style="font-size: 12pt; font-weight:700">● 置图标内边距</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本方法可设置<b>“字体图标”</b>的内边距，可让图标和按钮标题产生间距。</p>
+    <p align="left">本方法共四个参数，分别设置<b>“左，上，右，下”</b>四个方向的内边距。</p>
+	<p align="left"><img border="0" src="fancybutton_images/71.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“花式按钮1”</b>被点击后分别设置四个参数为10像素。</p>
+	<p align="left"><img border="0" src="fancybutton_images/72.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到标题被挤压，证明图标产生了边距。</p>
+	<p align="left"><img border="0" src="fancybutton_images/73.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>	<a name="hzyjds"></a>
+<font style="font-size: 12pt; font-weight:700">● 置圆角度数</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本方法可设置按钮四个角产生圆角效果。</p>
+	<p align="left"><img border="0" src="fancybutton_images/74.png" ></p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“花式按钮1”</b>被点击后，分别设置四个角度数为50。</p>
+	<p align="left"><img border="0" src="fancybutton_images/75.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可看到花式按钮组件四个角变圆，角度越大越圆。</p>
+	<p align="left"><img border="0" src="fancybutton_images/76.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

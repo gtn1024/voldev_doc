@@ -1,0 +1,1377 @@
+﻿
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>剪贴板操作</h4></li>
+	<ol>
+    		<li><blockquote><a href="#">0.准备工作</a></blockquote></li>     
+            <li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.剪贴板管理器<span>(可收缩)</span></h6></li>
+       
+	  <ol id="new1">
+            <li><blockquote><a href="#jtbblsm">1.本类说明</a></blockquote></li>  
+			<li><blockquote><a href="#zjtbwb">2.置剪贴板文本</a></blockquote></li>
+		 
+            <li><blockquote><a href="#qjtbwb">3.取剪贴板文本</a></blockquote></li>
+             <li><blockquote><a href="#zjtbsj">4.置剪贴板数据</a></blockquote></li>
+            <li><blockquote><a href="#qjtbsj">5.取剪贴板数据</a></blockquote></li>
+            <li><blockquote><a href="#qjtbsjmsxx">6.取剪贴板数据描述信息</a></blockquote></li>
+            <li><blockquote><a href="#jtbzsfczwb">7.剪贴板中是否存在文本</a></blockquote></li>
+            <li><blockquote><a href="#jtbsfbwk">8.剪贴板是否不为空</a></blockquote></li>
+            <li><blockquote><a href="#jtbnrbgb">9.剪贴板内容被改变(事件)</a></blockquote></li>
+            <li><blockquote><a href="#jtjtbnrgbx">10.监听剪贴板内容改变（写）</a></blockquote></li>
+            <li><blockquote><a href="#jtjtbnrgbd">11.监听剪贴板内容改变(读)</a></blockquote></li>
+		</ol>	
+		<!--<li><a href="#wjdxczl">一.文件读写操作类</a></li>-->
+        <li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new2')" >二.剪贴数据类<span>(可收缩)</span></h6></li>
+		<ol id="new2">
+    		<li><blockquote><a href="#jtsjlblsm">1.本类说明</a></blockquote></li>
+            <li><blockquote><a href="#sjlcj">2.创建</a></blockquote></li>
+            <li><blockquote><a href="#sjlcj2">3.创建2</a></blockquote></li>
+            <li><blockquote><a href="#sjlcjhtml">4.创建HTML文本剪贴数据</a></blockquote></li>
+            <li><blockquote><a href="#sjlcjwbjtsj">5.创建文本剪贴数据</a></blockquote></li>
+            <li><blockquote><a href="#sjlcjxxdxjtsj">6.创建信息对象剪贴数据</a></blockquote></li>
+            <li><blockquote><a href="#sjlcjzybsf">7.创建资源标识符剪贴数据</a></blockquote></li>
+            <li><blockquote><a href="#sjlfz">8.复制</a></blockquote></li>
+            <li><blockquote><a href="#sjltjsjx">9.添加数据项</a></blockquote></li>
+            <li><blockquote><a href="#sjlqsjx">10.取数据项</a></blockquote></li>
+            <li><blockquote><a href="#sjlsjxsm">11.数据项数目（读）</a></blockquote></li>
+            <li><blockquote><a href="#sjlmsxx">12.描述信息（读）</a></blockquote></li>
+		</ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new3')" >三.剪贴数据描述类<span>(可收缩)</span></h6></li>
+		<ol id="new3">
+			<li><blockquote><a href="#sjms">1.本类说明</a></blockquote></li>
+            <li><blockquote><a href="#sjmscj">2.创建</a></blockquote></li>
+             <li><blockquote><a href="#msfz">3.复制</a></blockquote></li>
+            <li><blockquote><a href="#msmtlx">4.媒体类型是否匹配</a></blockquote></li>
+            <li><blockquote><a href="#msqmtlx">5.取媒体类型</a></blockquote></li>
+            <li><blockquote><a href="#msqppmtlx">6.取匹配媒体类型</a></blockquote></li>
+            <li><blockquote><a href="#mssfczppmtlx">7.是否存在匹配媒体类型</a></blockquote></li>
+            <li><blockquote><a href="#msmtlxsm">8.媒体类型数目（读）</a></blockquote></li>
+            <li><blockquote><a href="#msbqd">9.标签（读）</a></blockquote></li>           
+            
+		</ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new4')" >四.剪贴数据项类<span>(可收缩)</span></h6></li>
+		<ol id="new4">
+        
+           <li><blockquote><a href="#sjx">1.本类说明</a></blockquote></li>
+          <li><blockquote><a href="#sjxcjxx">2.创建信息剪贴项</a></blockquote></li>
+          <li><blockquote><a href="#sjxcjfh1">3.创建复合剪贴项1</a></blockquote></li>
+          <li><blockquote><a href="#sjxcjfh2">4.创建复合剪贴项2</a></blockquote></li>
+          <li><blockquote><a href="#sjxcjfh3">5.创建复合剪贴项3</a></blockquote></li>
+           <li><blockquote><a href="#sjxcjwbjtx">6.创建文本剪贴项</a></blockquote></li>
+           <li><blockquote><a href="#sjxcjzybsf">7.创建资源标识符剪贴项</a></blockquote></li>
+           <li><blockquote><a href="#sjxqhtml">8.取HTML文本</a></blockquote></li>
+           <li><blockquote><a href="#sjxqxxdx">9.取信息对象</a></blockquote></li>
+           <li><blockquote><a href="#sjxqwb">10.取文本</a></blockquote></li>
+           <li><blockquote><a href="#sjxqyswb">11.取样式文本</a></blockquote></li>
+           <li><blockquote><a href="#sjxqzybsf">12.取资源标识符对象</a></blockquote></li>
+           
+           <li><blockquote><a href="#chang">13.HTML文本媒体类型（常）</a></blockquote></li>
+           <li><blockquote><a href="#chang">14.信息对象媒体类型（常）</a></blockquote></li>
+           <li><blockquote><a href="#chang">15.文本媒体类型（常）</a></blockquote></li>
+           <li><blockquote><a href="#chang">16.资源标识符媒体类型（常）</a></blockquote></li>
+		</ol>	
+        
+			
+	</ol>
+</ul>
+</div>
+
+
+<p align="left">
+<h2>剪贴板操作实例讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+<a name="zbgz"></a>    
+     
+<font style="font-size: 12pt; font-weight:700">● 帮助说明</font><br/>
+<br/>
+
+
+<blockquote>
+
+  
+<p align="left">本篇教程针对系统各种<strong>“剪贴板操作”</strong>进行讲解。</p>
+<p align="left">具体方法可看本教程<strong>右侧树型目录</strong>。</p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 准备一个界面</font><br/>
+<p align="left">&nbsp;</p>
+
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">打开窗口设计器，放两个<b>“按钮”</b>，分别起名<b>“按钮1”</b>和<b>“按钮2”</b>。</p>
+    <p align="left">按钮下面继续放两个<b>“编辑框”</b>，两个<b>“编辑框组件”</b>宽度类型都设置为<b>“匹配父组件宽度”</b>。</p>
+	<p align="left"><img border="0" src="jtb_images/2.png" ></p>
+    <p align="left">保存布局后，右键<b>“按钮”</b>，添加<b>“按钮被单击”</b>接受事件方法，添加完毕后<b>如下图</b>所示。</p>
+    <p align="left"><img border="0" src="jtb_images/3.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="jtbblsm"></a>
+<h2>一、剪贴板管理器</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">本类没有特别的注意事项，它是一个全局类，用户安卓剪贴板的基本操作。</p>
+	<p align="left"><img border="0" src="jtb_images/4.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>调用方式</b>：</p>
+<blockquote>
+
+	<p align="left">全局类有两种调用方式。</p>
+    <p align="left">第一：<b>“类名”</b>加<b>“方法名”</b>。</p>
+    <p align="left">第二：直接输入<b>“方法名”</b>。</p>
+    <p align="left">根据自己的需求选择适合自己的方式。</p>
+	<p align="left"><img border="0" src="jtb_images/5.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="zjtbwb"></a>
+<a name="qjtbwb"></a>
+<font style="font-size: 12pt; font-weight:700">● 置剪贴板文本</font><br/>
+
+<font style="font-size: 12pt; font-weight:700">● 取剪贴板文本</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">以上为两个关联方法，这里统一讲解。</p>
+<p align="left"><b>“置剪贴板文本”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义就是将<b>“一段文本”</b>放到系统<b>“剪贴板”</b>中，<b>“剪贴板”</b>中原来的数据<b>“会被覆盖”</b>。</p>
+    <p align="left">参数1：提供要放入剪贴板的文本。</p>
+    <p align="left">参数2：就是做标记，记录这串文本的作用。</p>
+    <p align="left">可以用<a href="#qjtbsjmsxx">"取剪贴板数据描述信息()"</a>方法，将剪贴板中<b>“参数2”</b>取出。</p>
+    <p align="left"><img border="0" src="jtb_images/6.png" ></p>
+   
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">"取剪贴板文本"帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，就是将<b>“剪贴板”</b>中的<b>“文本数据”</b>取出。</p>
+    <p align="left">如果<b>“剪贴板”</b>中的数据<b>“不是文本”</b>，还可以设置<b>“逻辑参数”</b>，将其<b>“强转文本”</b>型显示。</p>
+    <p align="left">如果不存在返回<b>“空文本”</b>。</p>
+    <p align="left"><img border="0" src="jtb_images/7.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">判断<b>“按钮1”</b>点击，用<b>“置剪贴板文本()”</b>方法写<b>“编辑框1.内容”</b>。</p>
+    <p align="left"><b>“按钮2”</b>点击，用<b>“取剪贴板文本()”</b>方法，取出数据后赋值给<b>“编辑框2.内容”</b>。</p>
+	<p align="left"><img border="0" src="jtb_images/8.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果（GIF）：</p>
+<blockquote>
+    <p align="left">随便输入一段文本后，执行<b>“按钮1”</b>后，"编辑框1"的内容就会放到系统剪贴板。</p>
+    <p align="left">然后去执行<b>“按钮2”</b>就会取出内容赋值给<b>“编辑框2”</b>显示。</p>
+	<p align="left"><img border="0" src="jtb_images/9.gif" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+<a name="zjtbsj"></a><a name="qjtbsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 置剪贴板数据</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取剪贴板数据</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">以上为两个关联方法，这里统一讲解。</p>
+<p align="left"><b>“置剪贴板数据”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法执行后会<b>“覆盖”</b>剪贴板原有数据。</p>
+    <p align="left">它只有一个参数，不再是单一的<b>“文本数据”</b>，而是一个<b>“剪贴数据类”</b>，类中有很多方法可以使用。</p>
+    <p align="left"><img border="0" src="jtb_images/10.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">"取剪贴板数据"帮助文档：</p>
+<blockquote>
+	<p align="left">如果剪贴板内容不为空，则返回<b>“剪贴数据类”</b>对象，否则返回空对象。</p>
+	<p align="left"><img border="0" src="jtb_images/11.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击代码</p>
+    <p align="left">定义一个类型为<b>“剪贴数据类”</b>的变量，设置参考。</p>
+    <p align="left">随后利用<a href="#sjlcjwbjtsj"><b>“剪贴数据类.创建文本剪贴数据()”</b></a>方法，创建对象，赋值给定义的<b>“剪贴类”</b>变量。</p>
+    <p align="left">方法参数内，我们就填写<b>“编辑框1”</b>的内容。</p>
+    <p align="left">最后利用<b>“置剪贴板数据”</b>方法，把定义的<b>“剪贴类”</b>变量放入参数即可。</p><br>
+    <p align="left"><b>“按钮2”</b>被点击代码</p>
+    <p align="left">定义一个同样的变量，设置参考。</p>
+    <p align="left">随后我们利用<b>“取剪贴板数据()”</b>赋值给<b>“剪贴类”</b>变量。</p>
+    <p align="left">利用<b>“剪贴类”</b>变量<b>“取数据项()”</b>方法，继续<b>“取文本()”</b>就可以取出<b>“剪贴板”</b>中的文本数据。</p>
+	<p align="left"><img border="0" src="jtb_images/12.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left"><b>“编辑框1”</b>随便输入一串文本后去执行<b>“按钮1”</b>，<b>“编辑框1”</b>的文本数据就会存入系统剪贴板。</p>
+    <p align="left">随后执行<b>“按钮2”</b>，剪贴板数据就会取出放到<b>“编辑框2”</b>。</p>
+	<p align="left"><img border="0" src="jtb_images/13.gif" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="qjtbsjmsxx"></a>
+<font style="font-size: 12pt; font-weight:700">● 取剪贴板数据描述信息</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本方法没有任何参数，返回一个<b>“剪贴数据描述类”</b>。</p>
+<p align="left">如果<b>“剪贴板为空”</b>，将返回<b>“空对象”</b>。</p>
+	<p align="left"><img border="0" src="jtb_images/14.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在上一个方法的代码基础上进行简单修改即可。</p>
+    <p align="left">给<b>“创建文本剪贴数据”</b>，增加一个<b>“参数2”</b>，写一串<b>“标签文本”</b>。</p>
+    <p align="left"><b>“按钮2”</b>被点击这里，定义一个类型为<b>“剪贴数据描述类”</b>的变量，设置参考。</p>
+    <p align="left">利用<b>“本方法”</b>赋值给定义的<b>“描述类”</b>变量。</p>
+    <p align="left">最后利用<b>“描述类.标签”</b>读属性，读取<b>“标签文本”</b>赋值给<b>“编辑框2”</b>的内容。</p>
+	<p align="left"><img border="0" src="jtb_images/15.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">首先点击<b>“按钮1”</b>，随后去点击<b>“按钮2”</b>标签文本就会出现在<b>“编辑框2”</b>的内容。</p>
+    <p align="left">备注：<b>“空文本”</b>也可以添加到<b>“剪贴板”</b>。</p>
+
+    <p align="left"><img border="0" src="jtb_images/16.gif" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="jtbzsfczwb"></a>
+<font style="font-size: 12pt; font-weight:700">● 剪贴板中是否存在文本</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">判断<b>“剪贴板”</b>内是否存在<b>“纯文本”</b>内容。</p>
+<p align="left">返回<b>“真”</b>为存在，返回<b>“假”</b>为不存在。</p>
+    
+	<p align="left"><img border="0" src="jtb_images/17.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被单击，使用<b>“置剪贴板文本”</b>方法，放<b>“编辑框1”</b>的内容。</p>
+    <p align="left"><b>“按钮2”</b>被点击，直接用<b>“如果”</b>命令去判断<b>“本方法”</b>的返回值是否等于<b>“真”</b>。</p>
+    <p align="left">然后弹出对应的信息框。</p>
+	<p align="left"><img border="0" src="jtb_images/18.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果图（GIF）：</p>
+<blockquote>
+  <p align="left">点击<b>“按钮1”</b>后去点击<b>“按钮2”</b>，会弹出<b>“存在”</b>信息框。</p>
+  <p align="left">因为<b>“空文本”</b>也是<b>“纯文本数据”</b>，所以<b>“本方法”</b>结果会返回<b>“真”</b>。</p>
+  <p align="left">只有剪贴板内存储了<b>“非纯文本”</b>数据，本方法才会<b>“返回假”</b>。</p>
+	<p align="left"><img border="0" src="jtb_images/19.gif" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="jtbsfbwk"></a>
+<font style="font-size: 12pt; font-weight:700">● 剪贴板是否不为空</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本方法是判断剪贴板是不是<b>“空数据”</b>。</p>
+	<p align="left">存在数据<b>“返回真”</b>，不存在数据<b>“返回假”</b>。</p>
+    <p align="left">注意：此处的<b>“空数据”</b>是指<b>“没有任何”</b>数据。</p>
+    <p align="left">通常情况下安卓系统重启后，剪贴板会变成<b>“空数据”</b>，在这种状态下会返回<b>“假”</b>。</p>
+    <p align="left"><img border="0" src="jtb_images/20.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击，依然是利用<b>“置剪贴板文本”</b>方法，放<b>“编辑框1”</b>的内容。</p>
+    <p align="left">给<b>“按钮2”</b>被单击，直接用<b>“如果”</b>去判断<b>“本方法”</b>是否等于<b>“真”</b>。</p>
+    <p align="left">如果等于真，弹出<b>“提示信息框”</b>，提示<b>“不是空的”</b>代表有数据。</p>
+    <p align="left">否则弹出<b>“错误信息框”</b>，提示<b>“空的”</b>表示没有任何数据。</p>
+	<p align="left"><img border="0" src="jtb_images/21.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">手机进行<b>“重启操作”</b>后，首先点击<b>“按钮2”</b>会弹错<b>“错误信息框”</b>，因为此时系统剪贴板内没有任何数据。</p>
+    <p align="left">随后，我们点击<b>“按钮1”</b>把<b>“编辑框1”</b>的内容存到<b>“剪贴板”</b>。</p>
+    <p align="left">这时候去点击<b>“按钮2”</b>就会弹出<b>“提示信息框”</b>。</p>
+    <p align="left">注意：剪贴板<b>“存空文本”</b>也代表<b>“有数据”</b>。</p>
+	<p align="left"><img border="0" src="jtb_images/22.gif" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="jtbnrbgb"></a><a name="jtjtbnrgbx"></a>
+<font style="font-size: 12pt; font-weight:700">● 剪贴板内容被改变(事件)</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 监听剪贴板内容改变（写）</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">以上为两个关联方法，统一讲解。</p>
+<p align="left"><b>“剪贴板内容被改变”</b>帮助文档：</p>
+<blockquote>
+<p align="left">它是一个<b>“事件”</b>方法，只有设置<b>“监听剪贴板内容改变”</b>等于<b>“真”</b>的时候，本事件才会被触发。</p>
+	<p align="left"><img border="0" src="jtb_images/23.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">"监听剪贴板内容改变（写）"帮助文档：</p>
+<blockquote>
+<p align="left">它是<b>“写属性”</b>，配合<b>“剪贴板内容被改变”</b>事件方法使用。</p>
+<p align="left">注意：本写属性需要使用类名调用，或者<b>“类型”</b>为类名的变量名。</p>
+	<p align="left"><img border="0" src="jtb_images/24.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+<p align="left">创建一个类型为<b>“剪贴板管理器”</b>的变量，右键点击<b>“类型”</b>，选择<b>“添加事件接受方法”</b>。</p>
+	<p align="left"><img border="0" src="jtb_images/25.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+<p align="left">添加完毕后会生成<b>“如下”</b>所示的表格代码，首先指定<b>“来源对象”</b>为<b>“剪贴板”</b>变量。</p>
+	<p align="left">随后写一个<b>“提示框”</b>方法，弹出一串提示文本。</p>
+	<p align="left">紧接着利用<b>“取剪贴板文本（）”</b>方法给<b>“编辑框2”</b>的内容赋值。</p>
+	<p align="left"><img border="0" src="jtb_images/26.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（3）：</p>
+<blockquote>
+<p align="left">点击<b>“按钮1”</b>设置<b>“剪贴板.监听剪贴板内容改变=真”</b>。</p>
+	<p align="left">然后利用<b>“置剪贴板文本()”</b>方法，置入<b>“编辑框1”</b>的内容。</p>
+	<p align="left"><b>“按钮2”</b>被点击设置<b>“剪贴板.监听剪贴板内容改变=假”</b>，同样也使用一次<b>“置剪贴板文本()”</b>。</p>
+	<p align="left">注意：这里的<b>“剪贴板”</b>自然就是最开始定义的<b>“成员变量”</b>名。</p>
+	<p align="left"><img border="0" src="jtb_images/27.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果（GIF）：</p>
+<blockquote>
+<p align="left">可以看到执行<b>“按钮1”</b>后弹出了<b>“提示框”</b>，证明<b>“监听成功”</b>。</p>
+	<p align="left">但是点击<b>“按钮2”</b>的时候并没有弹出，证明<b>“监听”</b>被关闭。</p>
+	<p align="left"><img border="0" src="jtb_images/28.gif" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="jtjtbnrgbd"></a>
+<font style="font-size: 12pt; font-weight:700">● 监听剪贴板内容改变(读)</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">顾名思义，就是读取当前剪贴板是否被监听。</p>
+	<p align="left">返回<b>“真”</b>表示被监听，返回<b>“假”</b>没有被监听。</p>
+	<p align="left"><img border="0" src="jtb_images/29.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">直接在上一个方法代码基础上修改<b>“按钮2”</b>被单击的的内容。</p>
+	<p align="left">直接用如果判断<b>“本属性”</b>的返回值是否等于真。</p>
+	<p align="left">然后弹出对应的信息框。</p>
+	<p align="left"><img border="0" src="jtb_images/30.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果（GIF）：</p>
+<blockquote>
+<p align="left">运行后首先点击<b>“按钮2”</b>提示<b>“没有监听”</b>。</p>
+	<p align="left">此时点击<b>“按钮1”</b>设置监听后，再次去点击<b>“按钮2”</b>就会弹出<b>“监听状态”</b>的信息框。</p>
+	<p align="left"><img border="0" src="jtb_images/31.gif" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="jtsjlblsm"></a>
+<h2>二、剪贴数据类</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left">本类没有什么特别的注意事项，它的作用就是用来记录和创建剪贴数据。</p>
+  <p align="left">本类并不是<b>“全局类”</b>，所以需要用<b>“类名+方法名”</b>的方式调用。</p>
+	<p align="left"><img border="0" src="jtb_images/32.png" >
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="sjlcj"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">创建一个<b>“剪贴数据类”</b>对象，提供给<b>“置剪贴板数据()”</b>方法操作。</p>
+	<p align="left">本方法总有有三个参数。</p>
+	<p align="left">参数1：媒体类型数组。相关的<b>“媒体类型”</b>说明，可以看<b>“剪贴数据项类”</b>中的说明。</p>
+	<p align="left">参数2：要剪贴的数据项，具体有哪些方法可以点击查看。</p>
+	<p align="left">参数3：给剪贴数据提供标记。</p>
+	<p align="left"><img border="0" src="jtb_images/33.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">本方法完整操作有些复杂，首先<b>“按钮1”</b>单击定义<b>“三个”</b>变量。</p>
+	<p align="left">类型为<b>“文本型[]”</b>的<b>“媒体数组”</b>变量。</p>
+  <p align="left">另外两个类型分别为<b>“剪贴数据项类”</b>和<b>“剪贴数据类”</b>，需要设置参考。</p><br>
+	
+  <p align="left">随后利用<b>“剪贴数据项类.创建文本剪贴项()”</b>方法，创建一个对象，赋值给<b>“剪贴数据项”</b>变量。</p>
+  <p align="left">随后我们需要利用<b>“文本数组操作”</b>去创建数组，赋值给<b>“媒体数组”</b>变量。</p>
+  <p align="left">具体关于<b>“数组创建”</b>的说明和操作看<b>“<a href="j_array.htm" title="文本数组操作点击查看">文本数组操作</a>”</b></p>
+	<p align="left">创建数组成员数后，给<b>“成员0”</b>赋值<b>“剪贴数据项类.文本媒体类型”</b>。</p>
+	<p align="left">这里的<b>“文本媒体类型”</b>是一个成员常量。</p>
+	
+  <p align="left">最后利用<b>“创建()”</b>方法，把对应的参数写入，参数3默认为空可以不写。</p>
+  <p align="left">创建后赋值给定义的<b>“剪贴数据”</b>变量，最后用<b>“置剪贴板数据”</b>方法，把<b>“剪贴数据”</b>变量写入参数内即可。</p><br>
+	<p align="left"><b>“按钮2”</b>被点击，是一个关于<b>“媒体类型”</b>的简单用法。</p>
+	<p align="left">首先创建一个<b>“剪贴数据类”</b>变量，设置参考。</p>
+  <p align="left">然后用<b>“取剪贴板数据”</b>方法，赋值给定义的变量。</p>
+	<p align="left"><b>“剪贴数据.描述信息.取媒体类型()”</b>方法，就可以取出设置的<b>“媒体类型”</b>。</p>
+  <p align="left">因为只定义了一个媒体类型数组，所以参数填写<b>“0”</b>即可。</p>
+	<p align="left">利用<b>“媒体类型是否匹配”</b>方法就可以判断两个媒体类型是否相等。</p>
+	<p align="left">例如：我这里把<b>“取出来的媒体类型”</b>和内置的<b>“文本媒体类型”</b>进行比对。</p>
+	<p align="left"><img border="0" src="jtb_images/34.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果（GIF）：</p>
+<blockquote>
+<p align="left">首先点击<b>“按钮1”</b>取置剪贴板数据，随后点击<b>“按钮2”</b>就可以去判断<b>“媒体类型是否匹配”</b>。</p>
+	<p align="left">如果要取出剪贴板的文本，可以看<a href="#qjtbsj"><b>“取剪贴板数据（）”</b></a>方法。</p>
+	<p align="left"><img border="0" src="jtb_images/35.gif" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="sjlcj2"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建2</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">可以看到有<b>“两个”</b>参数。</p>
+	<p align="left">参数1：放描述信息。</p>
+	<p align="left">参数2：放要剪贴的数据。</p>
+	<p align="left"><img border="0" src="jtb_images/36.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">首先我们需要定义<b>“四个”</b>变量，其中一个类型为<b>“文本型[]”</b>。</p>
+	<p align="left">另外三个类型分别为<b>“剪贴数据描述类”</b>，<b>“剪贴数据项类”</b>，<b>“剪贴数据类”</b>，需要设置参考。</p>
+	<p align="left">和上一个方法一样，需要创建一个<b>“媒体类型”</b>数组，加入一个<b>“文本媒体类型”</b>的成员。</p>
+  <p align="left">然后利用<b>“剪贴数据描述类”</b>的<b>“创建()”</b>方法，创建描述信息，赋值给<b>“数据描述”</b>变量。</p>
+  <p align="left">参数1：填写数组变量，参数2：随便填写一串文本。</p>
+  <p align="left">随后用<b>“剪贴数据项类.创建文本剪贴项()”</b>方法，创建后赋值给定义的<b>“剪贴数据”</b>变量。</p>
+  <p align="left">接下来就可以使用<b>“创建2”</b>方法，将<b>“数据描述”</b>和<b>“剪贴数据”</b>变量依次写入参数内。</p>
+  <p align="left">最后就是调用<b>“置剪贴板数据”</b>方法。</p><br>
+  <p align="left"><b>“按钮2”</b>被点击后，把这些定义的数据取出来。</p>
+  <p align="left">可以不定义<b>“剪贴数据类”</b>变量，直接在方法后面写<b>“小数点”</b>就可以<b>“取数据项”</b>然后<b>“取文本”</b>。</p>
+	<p align="left">取<b>“标签”</b>和<b>“取媒体类型”</b>是一样的原理。</p>
+	<p align="left"><img border="0" src="jtb_images/37.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果（GIF）：</p>
+<blockquote>
+<p align="left"><b>“编辑框1”</b>输入一串内容后，点击<b>“按钮1”</b>，随后去执行<b>“按钮2”</b>就会依次取出三条信息。</p>
+	<p align="left">其中<b>“text/plain”</b>就表示<b>“文本媒体类型”</b>。</p>
+	<p align="left"><img border="0" src="jtb_images/38.gif" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="sjlcjhtml"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建HTML文本剪贴数据</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">有<b>“三个”</b>参数，本方法可以创建内容为<b>“html”</b>的文本数据，同时还可以创建一个<b>“文本”</b>数据。</p>
+	<p align="left">参数1：填写要创建的文本内容。</p>
+  <p align="left">参数2：填写要创建的html文本内容。</p>
+  <p align="left">参数3：标签文本，可以省略。</p>
+	<p align="left"><img border="0" src="jtb_images/39.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">定义一个<b>“文本型”</b>变量，名称为<b>“HTML文本”</b>，并且给它设置初始值，初始值必须为<b>“html格式”</b>。</p>
+	<p align="left">还需要定义一个<b>“剪贴数据类”</b>变量，注意不要忘记设置参考。</p>
+	<p align="left">随后调用<b>“创建HTML文本剪贴数据”</b>方法，<b>“参数1”</b>填写<b>“编辑框1”</b>的内容，参数2填写文本变量。</p>
+	<p align="left">赋值给<b>“剪贴数据”</b>变量后，用<b>“置剪贴板数据”</b>放到系统剪贴板内。</p>
+	<p align="left"><b>“按钮2”</b>被单击后，分别<b>“取文本”</b>，<b>“取HTML文本”</b>，取出后添加到<b>“编辑框2”</b>显示。</p>
+	<p align="left">&nbsp;</p>
+	<p align="left"><img border="0" src="jtb_images/40.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果（GIF）：</p>
+<blockquote>
+<p align="left">输入一段文本，执行<b>“按钮1”</b>后数据就会放到<b>“剪贴板内”</b>。</p>
+	<p align="left">执行<b>“按钮2”</b>后，剪贴板内的<b>“文本数据”</b>和<b>“HTML文本”</b>都会取出。</p>
+	<p align="left"><img border="0" src="jtb_images/41.gif" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="sjlcjwbjtsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建文本剪贴数据</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">顾名思义，就是创建一个<b>“文本剪贴数据”</b>，然后把创建的对象利用<b>“置剪贴板数据”</b>方法，放到系统剪贴板内。</p>
+	<p align="left">本类的相关操作已经在<a href="#qjtbsj"><b>“取剪贴板数据”</b></a>方法中进行了演示，这里不再演示。</p>
+	<p align="left"><img border="0" src="jtb_images/42.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="sjlcjxxdxjtsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建信息对象剪贴数据</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">可以看到有两个参数。</p>
+	<p align="left">本方法的作用，可以将<b>“通知_被创建”</b>虚拟方法里的<b>“启动信息”</b>参数放到本方法的<b>“参数1”</b>中。</p>
+  <p align="left">然后就可以利用<b>“置剪贴板数据()”</b>方法，把<b>“启动信息”</b>存储到剪贴板中。</p>
+	<p align="left"><img border="0" src="jtb_images/43.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被单击，定义类型为<b>“数据包类”</b>的变量。</p>
+<p align="left">利用<b>“数据包.写文本字段()”</b>方法，写一串文本数据进去。</p>
+	<p align="left">最后利用<b>“载入窗口()”</b>方法，载入<b>“窗口2”</b>。</p>
+	<p align="left">参数2填写定义的<b>“数据包”</b>变量。</p>
+	<p align="left"><img border="0" src="jtb_images/44.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+	<p align="left">我们可以使用快捷键Ctrl+D创建一个新的类，起名<b>“窗口2”</b>，基础类填写<b>“窗口”</b>。</p>
+	<p align="left">这样<b>“窗口2”</b>就创建完毕。</p>
+	<p align="left"><img border="0" src="jtb_images/45.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">界面设计：</p>
+<blockquote>
+	<p align="left">打开<b>“窗口2”</b>的设计器，拖放一个<b>“按钮”</b>。</p>
+	<p align="left">右侧的按钮<b>“文本”</b>设置为<b>“窗口2按钮”</b>。</p>
+	<p align="left"><img border="0" src="jtb_images/46.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（3）：</p>
+<blockquote>
+	<p align="left">保存布局后，右键<b>“窗口”</b>添加<b>“通知_被创建”</b>虚拟方法。</p>
+	<p align="left">在虚拟方法内，定义一个类型为<b>“剪贴数据类”</b>的变量，设置参考。</p>
+	<p align="left">然后利用<b>“剪贴数据类.创建信息对象剪贴数据()”</b>方法，创建对象赋值给定义的<b>“剪贴数据”</b>变量。</p>
+	<p align="left">方法内的参数填写<b>“启动信息”</b>。</p>
+	<p align="left">最后用<b>“置剪贴板数据()”</b>方法，就可以将<b>“启动信息”</b>放到安卓系统剪贴板内。</p>
+	<p align="left"><img border="0" src="jtb_images/47.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（4）：</p>
+<blockquote>
+	<p align="left">添加<b>“窗口2”</b>的<b>“按钮被单击”</b>事件，添加事件后指定按钮<b>“来源对象”</b>。</p>
+	<p align="left">定义一个类型为<b>“启动信息类”</b>的变量，设置参考。</p>
+	<p align="left">然后利用<b>“取剪贴板数据().取数据项(0).取信息对象()”</b>就可以将剪贴板内的<b>“启动信息”</b>取出来。</p>
+	<p align="left">最后利用启动信息类的<b>“取附带数据包().读文本字段()”</b>就可以取出写入的字段值。</p>
+	<p align="left">注意：这里的参数字段名，一定要和保存时填写的一致。</p>
+	<p align="left"><img border="0" src="jtb_images/48.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+  <p align="left">可以看到点击<b>“按钮1”</b>后，就会进入<b>“窗口2”</b>。</p>
+	<p align="left">这时候我们去点击<b>“窗口2按钮”</b>就会弹出<b>“提示信息框”</b>。</p>
+	<p align="left">信息框内显示的文本，也是<b>“启动类”</b>窗口代码中写入的文本。</p>
+	<p align="left"><img border="0" src="jtb_images/49.gif" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="sjlcjzybsf"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建资源标识符剪贴数据</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">有两个参数，它的作用是创建<b>“资源标识符类”</b>的剪贴板数据。</p>
+	<p align="left">具体关于<b>“资源标识符类”</b>的说明，可以点击查看它的帮助文档，内有详细的说明介绍。</p>
+	
+	<p align="left"><img border="0" src="jtb_images/50.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+<p align="left">给<b>“成员变量”</b>编辑框1增加一个<b>“内容”</b>属性，设置一个属性值<b>“http://www.voldp.com/#jiaocheng”</b>。</p>
+	<p align="left"><img border="0" src="jtb_images/51.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击下，定义两个变量，类型分别为<b>“资源标识符类”</b>和<b>“剪贴数据类”</b>，同时设置参考。</p>
+	<p align="left">利用<b>“资源标识符类.创建()”</b>方法，创建<b>“编辑框1”</b>的内容为<b>“资源标识符”</b>。</p>
+	<p align="left">创建后赋值给<b>“资源标识”</b>变量，将本变量放入<b>“创建资源标识符剪贴数据()”</b>方法中。</p>
+	<p align="left">最后<b>“置剪贴板数据”</b>将对象放到系统剪贴板。</p><br>
+	<p align="left"><b>“按钮2”</b>被单击，定义一个类型为<b>“资源标识符类”</b>的变量，设置参考。</p>
+	<p align="left">随后利用<b>“取剪贴板数据().取数据项(0).取资源标识符对象()”</b>，取出<b>“资源标识符类”</b>赋值给<b>“资源标识”</b>变量。</p>
+	<p align="left">最后用<b>“资源标识.主机地址”</b>读属性就可以读取主机地址。</p>
+	<p align="left"><b>“片段内容”</b>读属性，可以取出URL地址<b>“#”</b>后的内容。</p>
+	<p align="left"><img border="0" src="jtb_images/52.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果（GIF）：</p>
+<blockquote>
+<p align="left">执行<b>“按钮1”</b>后去执行<b>“按钮2”</b>，就会成功的取出<b>“主机名称”</b>和<b>“片段内容”</b>。</p>
+	<p align="left">代码中两个读属性的作用，等同于<b>“解析URL”</b>地址。</p>
+	<p align="left"><b>“主机名称”</b>读取的就是：www.voldp.com。</p>
+	<p align="left"><b>“片段内容”</b>读取的就是：jiaocheng。</p>
+	<p align="left"><img border="0" src="jtb_images/53.gif" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="sjlfz"></a>
+<font style="font-size: 12pt; font-weight:700">● 复制</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本方法支持动态调用，它的作用就是复制参数内的对象，并返回。</p>
+	<p align="left"><img border="0" src="jtb_images/54.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">我们可以定义一个类型为<b>“剪贴数据类”</b>的<b>“成员剪贴变量”</b>，设置参考。</p>
+	<p align="left">然后在<b>“按钮1”</b>被单击下，定义一个<b>“剪贴数据类”</b>的局部变量，同样也需要设置参考。</p>
+	<p align="left">随后用<b>“创建文本剪贴数据()”</b>方法，创建<b>“编辑框1.内容”</b>为剪贴数据。</p>
+	<p align="left">赋值给定义的<b>“剪贴数据”</b>变量后，将本变量放到<b>“复制()”</b>方法参数内，然后整个方法赋值给<b>“成员剪贴变量”</b>。</p>
+	
+	<p align="left">判断<b>“按钮2”</b>被单击的时候，利用<b>“成员剪贴变量”</b>就可以进行<b>“取文本”</b>操作。</p>
+	<p align="left"><img border="0" src="jtb_images/55.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果（GIF）：</p>
+<blockquote>
+<p align="left">可以看到，我随便在<b>“编辑框1”</b>输入了一串文本后。</p>
+<p align="left">点击<b>“按钮1”</b>执行了<b>“复制()”</b>方法后，去点击<b>“按钮2”</b>。</p>
+	<p align="left">这时候<b>“编辑框2”</b>就会出现同样的内容，证明<b>“复制()”</b>方法执行成功。</p>
+	<p align="left"><img border="0" src="jtb_images/56.gif" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="sjltjsjx"></a>
+<font style="font-size: 12pt; font-weight:700">● 添加数据项</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">可以看到有本方法有两个参数，没有返回值。</p>
+	<p align="left">本方法的作用就是在<b>“剪贴数据类”</b>中添加一个新的数据，这个数据的类型为<b>“剪贴数据项类”</b>。</p>
+	<p align="left">添加之后<b>“剪贴数据类”</b>就会有两个数据项。</p>
+	<p align="left"><img border="0" src="jtb_images/57.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被单击，定义两个变量设置参考，一个类型为<b>“剪贴数据类”</b>，另外一个类型为<b>“剪贴数据项类”</b>。</p>
+	<p align="left">随后利用<b>“剪贴数据类.创建文本剪贴数据()”</b>方法去创建<b>“编辑框1”</b>的内容，赋值给定义的<b>“剪贴数据”</b>变量。</p>
+	<p align="left">利用<b>“剪贴数据项类.创建文本剪贴数据()”</b>去创建<b>“编辑框2”</b>的内容，最后赋值给<b>“要添加的数据项”</b>变量。</p>
+	<p align="left">然后可以调用<b>“剪贴数据.添加数据项()”</b>方法，把<b>“要添加的数据项”</b>写入参数即可。</p>
+	<p align="left">注意：上面是<b>“动态调用”</b>，所以<b>“参数1省略”</b>。</p>
+	<p align="left">最后把<b>“剪贴数据”</b>放到系统剪贴板内。</p><br>
+	<p align="left">判断<b>“按钮2”</b>被单击，定义<b>“两个文本”</b>变量，分别存放两个文本<b>“数据项”</b>。</p>
+	<p align="left">代码中间<b>“取数据项()”</b>方法，第一行填写<b>“索引0”</b>，第二行<b>“填写1”</b>，这样就可以将两个数据项取出。</p>
+	<p align="left">最后利用<b>“提示信息框”</b>，将两个<b>“取出的文本”</b>显示出来即可。</p>
+	<p align="left"><img border="0" src="jtb_images/58.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果（GIF）：</p>
+<blockquote>
+<p align="left"><b>“编辑框1”</b>和<b>“编辑框2”</b>分别输入内容后去依次执行<b>“按钮1”</b>和<b>“按钮2”</b>。</p>
+	<p align="left">最后<b>“提示信息框”</b>内显示的就是这<b>“两个编辑框”</b>内的文本。</p>
+	<p align="left"><img border="0" src="jtb_images/59.gif" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="sjlqsjx"></a>
+<font style="font-size: 12pt; font-weight:700">● 取数据项</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本方法支持动态调用，有两个参数，返回值为当前类。</p>
+	<p align="left">动态调用时，参数1<b>“剪贴数据类”</b>省略即可。</p>
+	<p align="left">本方法的用法，参考<b>“<a href="#sjltjsjx">添加数据项()</a>”</b>方法。</p>
+	<p align="left"><img border="0" src="jtb_images/60.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="sjlsjxsm"></a>
+<font style="font-size: 12pt; font-weight:700">● 数据项数目（读）</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">读属性方法，它可以用来读取当前<b>“剪贴数据类”</b>中的数据项<b>“数量”</b>。</p>
+	<p align="left"><img border="0" src="jtb_images/61.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">将<b>“<a href="#sjltjsjx">添加数据项()</a>”</b>方法的代码照搬下来，修改<b>“按钮2”</b>被单击的代码。</p>
+	<p align="left">直接在<b>“取剪贴板数据()”</b>方法后写<b>“.数据项数目”</b>就可以取出。</p>
+	<p align="left">最后<b>“到文本”</b>转换提供给<b>“提示信息框”</b>显示效果。</p>
+	<p align="left"><img border="0" src="jtb_images/62.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果（GIF）：</p>
+<blockquote>
+<p align="left">可以看到我依次执行<b>“按钮”</b>后，信息框内就会显示<b>“数据项数量：2”</b>。</p>
+	<p align="left">如果不进行<b>“添加数据项”</b>操作，那么这里就会显示<b>“1”</b>。</p>
+	<p align="left"><img border="0" src="jtb_images/63.gif" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="sjlmsxx"></a>
+<font style="font-size: 12pt; font-weight:700">● 描述信息（读）</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本方法为读属性，顾名思义返回当前<b>“剪贴数据类”</b>中所存储的<b>“描述信息”</b>。</p>
+	<p align="left">本读属性的用法，可以参考<a href="#sjlcj"><b>“剪贴数据类.创建”</b></a>或者<a href="#sjlcj2"><b>“剪贴数据类.创建2”</b></a>中的用法。</p>
+	<p align="left"><img border="0" src="jtb_images/64.png" ></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="sjms"></a>
+<h2>三、剪贴数据描述类</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助如下图：</p>
+<blockquote>
+	<p align="left">本类中用到了关于<b>“媒体类型”</b>的概念，详细说明可以看<a href="#sjx"><b>“剪贴数据项类”</b></a>中的描述。</p>
+	<p align="left">本类共有<b>“两个”</b>读属性和<b>“六个”</b>方法。</p>
+
+	<p align="left"><img border="0" src="jtb_images/65.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+<a name="sjmscj"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建</font><br/>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">有<b>“两个”</b>参数，返回值为当前类。</p>
+    <p align="left">参数一：虽然是文本数组，但是这里并不是随便填写的文本数组，填写的必须保证是<a href="#sjx"><b>“媒体类型”</b></a>。</p>
+    <p align="left">参数二：根据自己的需求决定是否填写。</p>
+  <p align="left">本类的代码编写和用法，可以参考<a href="#sjlcj2"><b>“剪贴数据类.创建2”</b></a>方法，该方法内使用了本方法。</p>
+    <p align="left"><img border="0" src="jtb_images/66.png" ></p>
+ 
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="msfz"></a>
+<font style="font-size: 12pt; font-weight:700">● 复制</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，复制创建的<b>“剪贴数据描述类”</b>并返回，支持动态调用。</p>
+	<p align="left"><img border="0" src="jtb_images/67.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义类型为<b>“剪贴数据描述类”</b>的成员变量，设置参考。</p>
+    <p align="left"><b>“按钮1”</b>被单击下，首先创建一个<b>“媒体数组”</b>，数组内放一个<b>“文本媒体类型”</b>。</p>
+    <p align="left">随后将<b>“媒体数组”</b>变量，放到<b>“创建”</b>参数内，赋值给成员变量。</p>	
+	<p align="left"><b>“按钮2”</b>被单击，同样定义一个<b>“剪贴数据描述类”</b>的变量，设置参考。</p>
+	<p align="left">然后利用<b>“成员剪贴描述”</b>变量取调用<b>“复制（）”</b>方法，随后赋值给<b>“剪贴数据描述”</b>变量。</p>
+	<p align="left">最后就可以利用<b>“剪贴数据描述”</b>变量对描述类进行一些操作。</p>
+	<p align="left">例如：我这里写的是<b>“剪贴数据描述.媒体类型数目”</b>，本读属性可以取出存放的媒体类型数量。</p>
+    <p align="left"><img border="0" src="jtb_images/68.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+<p align="left">执行<b>“按钮1”</b>后去执行<b>“按钮2”</b>，就会在<b>“编辑框1”</b>内显示数量1。</p>
+	<p align="left">因为定义<b>“媒体类型”</b>数据时只定义了一个成员。</p>
+    <p align="left"><img border="0" src="jtb_images/69.gif" >
+    </p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="msmtlx"></a>
+<font style="font-size: 12pt; font-weight:700">● 媒体类型是否匹配</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">有两个<b>“文本参数”</b>和一个<b>“逻辑”</b>返回值。</p>
+	<p align="left">顾名思义，就是用来判断两个媒体类型是否相等。</p>
+   <p align="left">使用方法参考<a href="#sjlcj">剪贴数据类.创建</a>方法。</p>
+	<p align="left"><img border="0" src="jtb_images/70.png" >
+
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="msqmtlx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 取媒体类型</font>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>  
+<p align="left">有两个参数和一个文本返回值，支持动态调用。</p>
+	<p align="left">使用方法参考<b>“剪贴数据类”</b>中的<a href="#sjlcj"><b>“创建”</b></a>或者<a href="#sjlcj2"><b>“创建2”</b></a>方法。</p>
+	<p align="left"><img border="0" src="jtb_images/71.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+<a name="msqppmtlx"></a>
+<font style="font-size: 12pt; font-weight:700">● 取匹配媒体类型</font>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">通俗理解：就是把<b>“剪贴数据描述类”</b>中存放的所有<b>“指定媒体类型”</b>全部取出，并且以<b>“文本数组”</b>的形式返回。</p>
+	<p align="left">本方法支持动态调用。</p>
+	<p align="left"><img border="0" src="jtb_images/72.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">首先依然是定义类型为<b>“剪贴数据描述类”</b>的成员变量，设置参考。</p>
+	<p align="left"><b>“按钮1”</b>被点击，定义类型为<b>“文本型[]”</b>媒体数组变量。</p>
+	<p align="left">给这个文本数组的三个成员，分别赋值<b>“媒体类型”</b>，其中<b>“两个文本”</b>媒体。</p>
+	<p align="left">然后<b>“创建”</b>剪贴数据描述类，赋值给定义的<b>“成员变量”</b>。</p><br>
+	<p align="left"><b>“按钮2”</b>被单击，定义<b>“媒体数组”</b>变量。</p>
+	<p align="left">利用<b>“成员剪贴描述.取匹配媒体类型()”</b>去匹配<b>“文本媒体类型”</b>。</p>
+	<p align="left">最后<b>“取数组成员数”</b>添加到编辑框显示。</p>
+	<p align="left">然后取<b>“两个媒体”</b>类型，添加到<b>“编辑框1”</b>显示。</p>
+    <p align="left"><img border="0" src="jtb_images/73.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">点击<b>“按钮1”</b>后，随后点击<b>“按钮2”</b>，就可以看到<b>“数量：2”</b>。</p>
+	<p align="left">证明匹配到<b>“两个文本媒体”</b>类型，从数组内取出来的<b>“两个类型”</b>自然也都是<b>“文本媒体类型”</b>。</p>
+	<p align="left"><img border="0" src="jtb_images/74.gif" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="mssfczppmtlx"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否存在匹配媒体类型</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法的作用就是判断<b>“剪贴数据描述类”</b>中是否存在<b>“指定媒体类型”</b>。</p>
+    <p align="left">存在返回<b>“真”</b>，不存在返回<b>“假”</b>。</p>
+	<p align="left"><img border="0" src="jtb_images/75.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">直接在<b>“取匹配媒体类型()”</b>方法的基础上进行修改即可。</p>
+ <p align="left">把<b>“按钮2”</b>被单击的代码改成<b>“如果”</b>，利用<b>“成员剪贴描述类”</b>去调用<b>“本方法”</b>。</p>
+	<p align="left">比如：我这里判断<b>“信息对象媒体类型”</b>是否存在，然后弹出对应信息框提示。</p>
+	
+	<p align="left"><img border="0" src="jtb_images/76.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">执行<b>“按钮1”</b>后去执行<b>“按钮2”</b>，这时候会弹出<b>“警告信息框”</b>，提示不存在。</p>
+    <p align="left">如果我们在判断代码中填写<b>“文本媒体类型”</b>或者<b>“HTML文本媒体类型”</b>，肯定会弹出<b>“提示信息框”</b>。</p>
+	<p align="left"><img border="0" src="jtb_images/77.gif" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="msmtlxsm"></a>
+<font style="font-size: 12pt; font-weight:700">● 媒体类型数目（读）</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">读属性方法，它的作用就是用来取出媒体类型的数量。</p>
+    <p align="left">代码编写可以参考<a href="#msfz"><b>“剪贴数据描述类.复制()”</b></a>方法。</p>
+	<p align="left"><img border="0" src="jtb_images/78.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="msbqd"></a>
+<font style="font-size: 12pt; font-weight:700">● 标签（读）</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	
+    <p align="left">读属性，返回存储在剪贴板中的<b>“标签”</b>文本。</p>
+    <p align="left">代码编写参考<a href="#qjtbsjmsxx"><b>“取剪贴板数据描述信息”</b></a>。</p>
+	<p align="left">该方法中使用了<b>“标签”</b>读属性。</p>
+	<p align="left"><img border="0" src="jtb_images/79.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="sjx"></a>
+<h2>四、剪贴数据项类</h2>
+<p align="left">&nbsp;</p>
+
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+    <p align="left">本类使用了<b>“MIME类型”</b>的概念，全称是<b>“多用途互联网邮件扩展类型”</b>，简称<b>“媒体类型”</b>。</p>
+    <p align="left">本类定义了四种常用的媒体类型，调用方式：<b>“剪贴数据项类.XXXX”</b></p>
+ 
+    <p align="left">本类共有：4个常量，11个方法。</p>
+	<p align="left"><img border="0" src="jtb_images/80.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="sjxcjxx"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建信息剪贴项</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法只有一个<b>“启动信息类”</b>参数，返回当前类</p>
+	<p align="left">可以通过<b>“启动信息类”</b>，来保存一些复杂的数据。</p>
+	<p align="left"><img border="0" src="jtb_images/81.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">本方法和<a href="#sjlcjxxdxjtsj"><b>“创建信息对象剪贴数据()”</b></a>方法，用法基本一致，可以将该方法的全部代码复制下来。</p>
+	
+  <p align="left">随后我们对<b>“窗口2”</b>中的<b>“通知_被创建”</b>虚拟方法中的代码进行简单修改。</p>
+	<p align="left">定义三个变量，类型分别为<b>“剪贴数据项类”</b>，<b>“剪贴数据类”</b>和<b>“文本型[]”</b>。</p>
+	<p align="left">前两个变量，不要忘记设置参考。</p>
+	
+	<p align="left">随后将<b>“启动信息”</b>参数，放入<b>“剪贴数据项类.创建信息剪贴项()”</b>方法中。</p>
+	
+	<p align="left">紧接着需要创建文本数组，给数组成员赋值<b>“剪贴数据项类.文本媒体类型”</b>。</p>
+	<p align="left">随后将变量依次写入<b>“剪贴数据类.创建()”</b>方法中，赋值给<b>“剪贴数据”</b>变量。</p>
+	
+	<p align="left">最后就可以放到系统<b>“剪贴板”</b>内。</p>
+	<p align="left"><img border="0" src="jtb_images/82.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果（GIF）：</p>
+<blockquote>
+    <p align="left">代码修改完毕后，调试运行程序。</p>
+    <p align="left">执行<b>“按钮1”</b>会进入到<b>“窗口2”</b>。</p>
+    <p align="left">点击<b>“窗口2按钮”</b>，就会弹出<b>“提示信息框”</b>。</p>
+<p align="left">信息框内显示的内容，就是我们写文本字段写入的内容。</p>
+    
+	<p align="left"><img border="0" src="jtb_images/83.gif" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="sjxcjfh1"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建复合剪贴项1</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+ <p align="left">本方法可以同时创建<b>“文本内容”</b>和<b>“HTML文本内容”</b>的剪贴数据项。</p>
+	<p align="left">创建后返回<b>“当前类”</b>。</p>
+    <p align="left"><img border="0" src="jtb_images/84.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+
+     <p align="left"><b>“按钮1”</b>被单击，创建四个变量，类型分别为<b>“文本型”</b>，<b>“文本型[]”</b>，<b>“剪贴数据类”</b>和<b>“剪贴数据项类”</b>。</p>
+      <p align="left">给<b>“HTML文本”</b>变量，设置一个文本<b>“初始值”</b>，必须为<b>“HTML格式”</b>。</p>
+       <p align="left">随后调用<b>“创建符合剪贴项1”</b>方法，参数1：随便填写一串文本。参数2：填写<b>“HTML文本”</b>变量。</p>
+       <p align="left">然后将定义的<b>“媒体数组”</b>变量和<b>“剪贴数据项”</b>变量，依次写入<b>“创建”</b>方法的参数内。</p>
+       
+       <p align="left">最后将<b>“剪贴数据”</b>变量放到剪贴板内。</p><br>
+       
+       <p align="left"><b>“按钮2”</b>被点击后，取出所有的数据。</p>
+       <p align="left">可以<b>“取文本”</b>，<b>“取HTML文本”</b>，同样也可以取出<b>“媒体类型数目”</b>。</p>
+    
+	<p align="left"><img border="0" src="jtb_images/85.png" >
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">点击<b>“按钮1”</b>后，填写的信息就会存入剪贴板内。</p>
+    <p align="left">然后我们点击<b>“按钮2”</b>内容就会取出。</p>
+	<p align="left"><img border="0" src="jtb_images/86.gif" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="sjxcjfh2"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建复合剪贴项2</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+ <p align="left">本方法有<b>“三个”</b>参数。</p>
+    <p align="left">参数1：填写你想要放到剪贴板中的文本。</p>
+    <p align="left">参数2：通常填写<b>“通知_被创建”</b>方法下的<b>“启动信息”</b>参数。</p>
+    <p align="left">参数3：填写<b>“资源标识符类”</b>，点击就可以看到具体的说明。</p>
+	<p align="left"><img border="0" src="jtb_images/87.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+	<p align="left">定义一个类型为<b>“数据包类”</b>的变量。</p>
+    <p align="left">利用<b>“写文本字段”</b>方法，写一串文本进去，赋值给定义的变量后。</p>
+    <p align="left">将定义的<b>“数据包”</b>变量，放到<b>“载入窗口”</b>的<b>“参数2”</b>中。</p>
+	<p align="left"><img border="0" src="jtb_images/88.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+    <p align="left">创建一个<b>“基础类”</b>为<b>“窗口2”</b>的类，并添加窗口2的<b>“通知_被创建”</b>虚拟方法。</p>
+    <p align="left">随后需要定义四个变量，分别为<b>“资源标识符类”</b>，<b>“剪贴数据类”</b>，<b>“剪贴数据项类”</b>和<b>“文本型[]”</b>。</p>
+	<p align="left">创建<b>“资源标识符类”</b>赋值给<b>“资源标识符”</b>变量。</p>
+	
+	<p align="left">随后调用<b>“创建符合剪贴数据项2”</b>方法，参数依次写入。</p>
+  <p align="left">然后已然需要创建一个<b>“文本媒体类型”</b>的数组，将<b>“媒体数组”</b>放入<b>“创建”</b>方法的参数1中。</p>
+	<p align="left"><b>“剪贴数据项”</b>变量放入<b>“参数2”</b>。</p>
+	<p align="left">最后调用<b>“置剪贴板数据”</b>就可以将所有的数据放到剪贴板内。</p><br>
+  <p align="left">如果要取出<b>“启动信息”</b>和<b>“资源标识符”</b>。</p>
+	<p align="left">可以参考<a href="#sjlcjxxdxjtsj" ><b>“创建信息对象剪贴数据()”</b></a>方法和<a href="#sjlcjzybsf"><b>“创建资源标识符剪贴数据”</b></a>方法，这里不再进行演示操作。</p>
+	
+    <p align="left"><img border="0" src="jtb_images/89.png" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="sjxcjfh3"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建复合剪贴项3</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法有<b>“四个参数”</b>，也就意味着利用本方法可以同时存放<b>“四种数据”</b>，返回值依然是当前类。</p>
+  
+	<p align="left"><img border="0" src="jtb_images/90.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">直接在<b>“创建复合剪贴项2”</b>代码基础上进行简单修改。</p>
+    <p align="left">增加一个<b>“HTML文本”</b>变量，设置一串<b>“HTML文本”</b>初始值。</p>
+	<p align="left"><b>“创建复合剪贴项2”</b>改成本方法，在<b>“文本内容”</b>后增加一个参数，并把<b>“HTML文本”</b>变量写入即可。</p>
+	
+	 <p align="left">如果要取出<b>“html文本”</b>、<b>“启动信息”</b>和<b>“资源标识符”</b></p>
+	
+	<p align="left">
+		可以参考
+		<a href="#sjlcjhtml"><b>“创建HTMl文本剪贴数据()”</b></a>、
+		<a href="#sjlcjxxdxjtsj" ><b>“创建信息对象剪贴数据()”</b></a>方法和
+		<a href="#sjlcjzybsf"><b>“创建资源标识符剪贴数据”</b></a>方法。
+	</p>
+	<p align="left">这里不再进行演示操作。</p>
+	<p align="left"><img border="0" src="jtb_images/91.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="sjxcjwbjtx"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建文本剪贴项</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">创建并且返回一个<b>“包含文本”</b>的剪贴项。</p>
+	<p align="left">本方法在<a href="#sjlcj"><b>“剪贴数据类.创建”</b></a>和<a href="#sjlcj2"><b>“剪贴数据类.创建2”</b></a>中均进行了使用，这里不再进行演示。</p>
+	<p align="left"><img border="0" src="jtb_images/92.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="sjxcjzybsf"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建资源标识符剪贴项</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法和<b>“剪贴数据类.创建资源标识符剪贴数据”</b>方法基本一致。</p>
+	<p align="left">不同之处、本方法只有一个<b>“资源标识符类”</b>参数，并且返回的类型不同。</p>
+	<p align="left">资源标识符，通俗可以理解为，针对URL地址进行解析。</p>
+	<p align="left"><img border="0" src="jtb_images/93.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+	<p align="left">首先给<b>“编辑框1”</b>增加一个<b>“内容”</b>属性，设置一个<b>“URL地址”</b>的属性值。</p>
+	<p align="left"><img border="0" src="jtb_images/94.png" ></p>
+   
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被单击定义四个变量，类型分别为<b>“资源标识符类”</b>，<b>“剪贴数据项类”</b>，<b>“文本型[]”</b>和<b>“剪贴数据类”</b>。</p>
+	<p align="left">其中有<b>“三个变量”</b>需要设置<b>“参考”</b>。</p>
+	<p align="left">首先创建<b>“编辑框1”</b>的内容为资源标识符。</p>
+	<p align="left">然后将<b>“资源标识符”</b>变量，放到本方法内去创建<b>“剪贴数据项类”</b>。</p>
+	<p align="left">依然需要创建一个媒体类型数组。</p>
+	<p align="left">之后将<b>“媒体数组”</b>和<b>“剪贴数据项”</b>分别放入<b>“剪贴数据类.创建”</b>方法内。</p>
+	<p align="left">最后利用<b>“置剪贴板数据”</b>放到系统剪贴板内。</p><br>
+	<p align="left"><b>“按钮2”</b>被单击后，首先<b>“取资源标识符对象”</b>赋值给定义的<b>“资源标识”</b>变量。</p>
+	<p align="left">然后利用<b>“资源标识.主机地址”</b>读属性，就可以读取<b>“主机地址”</b>。</p>
+	<p align="left"><b>“资源标识.查询参数”</b>就可以读取URL的参数，URL地址<b>“?”</b>后的内容。</p>
+	<p align="left"><img border="0" src="jtb_images/95.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">运行后执行<b>“按钮1”</b>，随后去执行<b>“按钮2”</b>。</p>
+	<p align="left">主机地址<b>“www.voldp.com”</b>成功取出。</p>
+	<p align="left">查询参数<b>“baidu=123”</b>也会被取出。</p>
+	<p align="left"><img border="0" src="jtb_images/96.gif" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="sjxqhtml"></a>
+<font style="font-size: 12pt; font-weight:700">● 取HTML文本</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">方法支持动态调用，有两个参数和一个文本返回值。</p>
+<p align="left">返回<b>“剪贴数据项”</b>内存储的HTMl文本。</p>
+	<p align="left">如果对象内存储的不是HTMl文本，可以设置<b>“参数2”</b>为真，强制将内容转换成<b>“HTML文本”</b>。</p>
+	
+	<p align="left">使用方法可以参考<a href="#sjlcjhtml"><b>“创建HTML文本剪贴数据
+”</b></a>，这里不再进行演示。</p>
+    <p align="left"><img border="0" src="jtb_images/97.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="sjxqxxdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 取信息对象</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法支持动态调用，返回对象中存储的<b>“启动信息类”</b>，如果不存在返回空对象。</p>
+	
+	<p align="left">使用方法参考，<a href="#sjlcjxxdxjtsj"><b>“创建信息对象剪贴数据
+”</b></a>，这里不再进行演示。</p>
+	<p align="left"><img border="0" src="jtb_images/98.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="sjxqwb"></a>
+<font style="font-size: 12pt; font-weight:700">● 取文本</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，就是去除对象内存储的<b>“文本数据”</b>，如果不是文本数据，可以设置<b>“参数2”</b>进行强制转换。</p>
+	<p align="left">本方法支持动态调用。</p>
+	<p align="left">代码编写参考：<a href="#qjtbsj"><b>“取剪贴板数据”</b></a>，这里不再进行演示。</p>
+	<p align="left"><img border="0" src="jtb_images/99.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="sjxqyswb"></a>
+<font style="font-size: 12pt; font-weight:700">● 取样式文本</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法支持动态调用，有一个<b>“剪贴数据项类”</b>参数和一个<b>“文本”</b>返回值。</p>
+	<p align="left">通俗理解，本方法可以将一串文本内的<b>“HTML代码”</b>全部剔除，仅<b>“保留文本内容”</b>。</p>
+	<p align="left"><img border="0" src="jtb_images/100.png" ></p>
+</blockquote>
+
+	 
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">首先给<b>“编辑框1”</b>增加一个<b>“内容”</b>属性，设置一串带有<b>“HTML代码”</b>的文本值。</p>
+	<p align="left">随后在<b>“按钮1”</b>被单击下，定义一个类型为<b>“剪贴数据类”</b>的变量，设置参考。</p>  
+	<p align="left">然后调用<b>“剪贴数据类.创建HTML文本剪贴数据”</b>创建对象后，赋值给<b>“剪贴数据”</b>变量。</p>
+	<p align="left">参数1：随便输入一串文本。</p>
+	<p align="left">参数2：赋值<b>“编辑框1”</b>的内容。</p>
+	<p align="left">最后将<b>“剪贴数据”</b>变量放到<b>“置剪贴板数据”</b>方法中。</p>
+	<p align="left"><img src="jtb_images/101.png" width="847" height="560" border="0" ></p>
+   
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">运行程序后，<b>“编辑框1”</b>默认显示我们设置的<b>“HTML内容”</b>。</p>
+	<p align="left">随后依次执行<b>“按钮”</b>，<b>“编辑框2”</b>的内容只会显示<b>“火山图文教程”</b>几个字，HTML代码会全部剔除。</p>
+	<p align="left"><img border="0" src="jtb_images/102.gif" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="sjxqzybsf"></a>
+<font style="font-size: 12pt; font-weight:700">● 取资源标识符对象</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法支持动态调用，返回对象中存储的<b>“资源标识符类”</b>，不存在返回空对象。</p>
+	<p align="left">使用方法，参考<a href="#sjxcjzybsf"><b>“创建资源标识符剪贴项”</b></a>，这里不再进行演示。</p>
+	
+	<p align="left"><img border="0" src="jtb_images/103.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="chang"></a>
+<font style="font-size: 12pt; font-weight:700">● HTML文本媒体类型（常）</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 信息对象媒体类型（常）</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 文本媒体类型（常）</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 资源标识符媒体类型（常）</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+    <p align="left">以上都是<b>“成员常量”</b>，调用方式<b>“剪贴数据项类.XXXX”</b>。</p>
+	<p align="left">或者如下图所示的一样，通过创建变量形式调用。</p>
+	<p align="left">本常量的其它应用方式已经在本文档中的好几个方法中进行了演示，这里不再进行演示。</p>
+	<p align="left"><img border="0" src="jtb_images/104.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">执行两个按钮后，两个编辑框都成功显示了HTML媒体类型。</p>
+
+	<p align="left"><img border="0" src="jtb_images/105.gif" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

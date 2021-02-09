@@ -1,0 +1,326 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>自动完成编辑框组件</h4></li>
+	<ol>
+    		
+        <li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new2')" >一.自动完成编辑框<span>(可收缩)</span></h6></li>
+		<ol id="new2">
+    		<li><blockquote><a href="#zdwcbjk">1.本类说明</a></blockquote></li>
+            <li><blockquote><a href="#bxlbx">2.备选列表（写）</a></blockquote></li>
+			
+            <li><blockquote><a href="#xslxk">3.显示下拉框</a></blockquote></li>
+            <li><blockquote><a href="#zxzlmd">4.置下拉框锚点</a></blockquote></li>
+           
+            <li><blockquote><a href="#xlkkddx">5.下拉框宽度（读写）</a></blockquote></li>
+            <li><blockquote><a href="#xlkgddx">6.下拉框高度（读写）</a></blockquote></li>
+		
+            <li><blockquote><a href="#zfsfz">7.字符数阀值（读写）</a></blockquote></li>
+		
+            <li><blockquote><a href="#zxlkbjtx">8.置下拉框背景图（写）</a></blockquote></li>
+            <li><blockquote><a href="#xlkbjtx">9.下拉框背景图（写）</a></blockquote></li>
+            <li><blockquote><a href="#xlkbjsx">10.下拉框背景色（写）</a></blockquote></li>
+            <li><blockquote><a href="#xlkbgbsj">11.下拉框被关闭（事件）</a></blockquote></li>
+            <li><blockquote><a href="#xlkxmbjdsj">12.下拉框项目被单击（事件）</a></blockquote></li>
+  
+       
+		</ol>
+		
+	</ol>
+</ul>
+</div>
+
+<p align="left">
+<h2>自动完成编辑框组件操作实例讲解</h2><a name="zdwcbjk"></a>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<h2>一、自动完成编辑框</h2>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">本组件，继承了<a href="../Text_component/a_ctrl_text.htm"><b>“文本框”</b></a>和<a href="../View_basis/a_ctrl_base.htm"><b>“窗口组件”</b></a>的所有方法。</p>
+  <p align="left">通过本组件可制作弹出列表的编辑框。</p>
+<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 界面准备</font>
+	
+<blockquote>
+<p align="left">拖放两个<b>“按钮”</b>和一个<b>“自动完成编辑框”</b>。</p>
+	<p align="left"><img border="0" src="edit_images/34.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="xlkxmbjdsj"></a><a name="bxlbx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 备选列表（写）</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 下拉框项目被单击（事件）</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“备选列表（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">本属性的作用，就是用来设置当前<b>“自动完成编辑框”</b>的下拉文本项。</p>
+<p align="left">多个文本项之间用换行符分割。</p>
+<p align="left">在安卓开发中<b>“\n”</b>代表换行符。</p>
+<p align="left"><img border="0" src="edit_images/35.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“下拉框项目被单击（事件）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">当<b>“自动完成编辑框”</b>下拉选项中的某个项目被点击后，将会发送本事件。</p>
+<p align="left">通过<b>“被单击项目索引”</b>参数可以获得单击索引。</p>
+<p align="left"><img border="0" src="edit_images/36.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击后调用<b>“备选列表”</b>设置当前的下拉列表项。</p>
+<p align="left">然后在<b>“下拉框项目被单击”</b>事件下，通过<b>“被单击项目索引”</b>参数，可以获得当前被单击的项目索引。</p>
+	<p align="left"><img border="0" src="edit_images/37.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+<p align="left">点击<b>“按钮1”</b>后，在编辑框内输入<b>“火山”</b>就会弹出列表。</p>
+<p align="left">任意选择一个列表项后，列表项的内容就会出现在当前的编辑框中。</p>
+<p align="left">并且也会弹出当前索引位置。</p>
+	<p align="left"><img border="0" src="edit_images/38.gif" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="xslxk"></a><a name="zxzlmd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 置下拉框锚点</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 显示下拉框</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“置下拉框锚点”</b>帮助文档：</p>
+<blockquote>
+<p align="left">本方法的作用，就是用来设置下拉框的弹出位置，默认为当前组件。</p>
+<p align="left">注意：必须保证当前为火山的窗口组件，否则本方法无效。</p>
+<p align="left"><img border="0" src="edit_images/39.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“显示下拉框”</b>帮助文档：</p>
+<blockquote>
+<p align="left">本方法的作用就是直接将下拉框显示出来。</p>
+<p align="left"><img border="0" src="edit_images/40.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击后，调用<b>“置下拉框锚点”</b>方法，设置锚点为<b>“按钮2”</b>。</p>
+<p align="left">紧接着调用<b>“显示下拉框”</b>方法。</p>
+	<p align="left"><img border="0" src="edit_images/41.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+<p align="left">可以看到直接输入<b>“火山”</b>，会在当前编辑框弹出下拉框。</p>
+<p align="left">当点击<b>“按钮1”</b>后，就会在<b>“按钮2”</b>的下面弹出下拉框。</p>
+<p align="left">注意：如果想要让下拉框内的文本全部显示，可调整<b>“锚点组件”</b>的宽度。</p>
+<p align="left">或者使用<b>“下拉框宽度(写)”</b>属性调整。</p>
+	<p align="left"><img border="0" src="edit_images/42.gif" ></p>
+</blockquote>
+
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="xlkkddx"></a><a name="xlkgddx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 下拉框宽度（读写）</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 下拉框高度（读写）</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“下拉框宽度（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，本写属性就是用来设置当前下拉框的宽度，单位像素。</p>
+<p align="left">同名读属性，即读取当前设置的宽度。</p>
+<p align="left"><img border="0" src="edit_images/43.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“下拉框高度（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，本写属性就是用来设置当前下拉框的高度，单位像素。</p>
+<p align="left">同名读属性，即读取当前设置的高度。</p>
+<p align="left"><img border="0" src="edit_images/44.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击后，设置窗口<b>“背景色”</b>和当前编辑框的文本色，方便区分。</p>
+<p align="left">然后调用<b>“下拉框宽度/高度”</b>写属性，分别设置指定数值。</p>
+<p align="left"><b>“按钮2”</b>被点击后将其读取出来，显示在编辑框内。</p>
+	<p align="left"><img border="0" src="edit_images/45.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+<p align="left">最后可以看到<b>“按钮1”</b>被点击后，输入内容后弹出的提示框呈正方形。</p>
+<p align="left"><b>“按钮2”</b>被点击后也成功读取当前的高度和宽度。</p>
+	<p align="left"><img border="0" src="edit_images/46.gif" ></p>
+
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="zfsfz"></a>
+	<font style="font-size: 12pt; font-weight:700">● 字符数阀值（读写）</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“字符数阀值（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">本写属性简单来说，就是设置当前编辑框输入几个字符才弹出列表框。</p>
+<p align="left">默认需要输入两个字符才能弹出列表框。</p>
+<p align="left">同名读属性即读取当前的<b>“字符数阀值”</b>。</p>
+<p align="left"><img border="0" src="edit_images/47.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击后，设置当前属性值为<b>“1”</b>，即输入一个字符弹出列表框。</p>
+<p align="left">如果不是<b>“按钮1”</b>点击就读取当前的<b>“字符数阀值”</b>显示在编辑框中。</p>
+	<p align="left"><img border="0" src="edit_images/48.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+<p align="left">可以看到默认需要输入两个字符才能弹出列表。</p>
+<p align="left"><b>“按钮1”</b>被点击后，只需要输入一个字符就可以弹出。</p>
+	<p align="left"><img border="0" src="edit_images/49.gif" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="zxlkbjtx"></a><a name="xlkbjtx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 置下拉框背景图（写）</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 下拉框背景图（写）</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">以上两个属性都是用来设置背景图片。</p>
+	<p align="left">前者的属性值为<b>“可绘制对象类”</b>，后者的属性值为<b>“可绘制资源”</b>。</p>
+	<p align="left">此处讲解<b>“置下拉框背景图”</b>。</p>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“置下拉框背景图（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">本属性的属性值为<b>“可绘制对象类”</b>。</p>
+<p align="left">可通过<b>“载入可绘制资源”</b>方法将<b>“可绘制资源”</b>转换为<b>“可绘制对象类”</b>。</p>
+	<p align="left">本属性会覆盖其它方式设置的背景。</p>
+<p align="left"><img border="0" src="edit_images/50.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">定义<b>“可绘制资源”</b>变量，导入一张图片。</p>
+<p align="left">然后调用当前属性，属性值填写<b>“载入可绘制资源(背景图1)”</b>即可。</p>
+	<p align="left"><img border="0" src="edit_images/51.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+<p align="left">可以看到<b>“按钮1”</b>被点击后，下拉列表的背景修改成了设置的图片。</p>
+	<p align="left"><img border="0" src="edit_images/52.gif" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="xlkbjsx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 下拉框背景色（写）</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“下拉框背景色（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，设置当前下拉框的背景色。</p>
+	<p align="left">本属性会覆盖其它方式设置的背景。</p>
+<p align="left"><img border="0" src="edit_images/54.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">直接在<b>“按钮1”</b>被单击下调用本属性，设置想要修改的颜色即可。</p>
+	<p align="left"><img border="0" src="edit_images/53.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+<p align="left">可以看到<b>“按钮1”</b>被点击后，下拉列表的背景修改成了设置的蓝色。</p>
+	<p align="left"><img border="0" src="edit_images/55.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="xlkbjsx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 下拉框被关闭（事件）</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“下拉框被关闭（事件）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，当前下拉框被关闭后会触发本事件。</p>
+<p align="left"><img border="0" src="edit_images/56.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">直接添加当前事件后，填写想要执行的方法即可。</p>
+<p align="left">例如：本例子中执行了一个提示框。</p>
+	<p align="left"><img border="0" src="edit_images/57.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+<p align="left">可以看到下拉框关闭后，弹出了一个提示框。</p>
+	<p align="left"><img border="0" src="edit_images/58.gif" ></p>
+</blockquote>
+	
+	
+
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

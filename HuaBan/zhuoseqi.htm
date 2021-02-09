@@ -1,0 +1,254 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		 <li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new13')" >一.着色器类<span>(可收缩)</span></h6></li>
+		<ol id="new13">
+			<li><blockquote><a href="#zhuoselei">1.本类说明</a></blockquote></li>  
+			<li><blockquote><a href="#cjfhzsq">2.创建复合着色器</a></blockquote></li>  
+    		<li><blockquote><a href="#cjsmjbzsq">3.创建扫描渐变着色器</a></blockquote></li>
+    		<li><blockquote><a href="#cjsmjbzsq2">4.创建扫描渐变着色器2</a></blockquote></li>
+    		<li><blockquote><a href="#cjwtzsq">5.创建位图着色器</a></blockquote></li>
+    		<li><blockquote><a href="#cjxxjbzsq">6.创建线性渐变着色器</a></blockquote></li>
+    		<li><blockquote><a href="#cjxxjbzsq2">7.创建线性渐变着色器2</a></blockquote></li>
+    		<li><blockquote><a href="#cjyxjbzsq">8.创建圆形渐变着色器</a></blockquote></li>
+    		<li><blockquote><a href="#cjyxjbzsq2">9.创建圆形渐变着色器2</a></blockquote></li>
+   		</ol>
+		
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>着色器类实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+  	<p align="left">使用本类中的方法，可以实现一些特殊的贴图效果和渐变色的填充。</p>
+	<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+</blockquote>	
+
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="cjsmjbzsq"></a>
+	<font style="font-size: 12pt; font-weight:700">● 创建扫描渐变着色器</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用，是创建一个<b>“扫描样式”</b>的渐变颜色图形。</p>
+	<p align="left">注意：<b>“参数1和2”</b>中的横纵坐标是针对整个画布的横纵坐标。</p>
+	<p align="left"><img border="0" src="hb_images/524.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义<b>“画笔类”</b>变量，然后给<b>“画笔.着色器”</b>赋值<b>“创建扫描渐变着色器()”</b>，方法内填写对应的<b>“坐标”</b>和想要渐变的<b>“颜色”</b>参数。</p>
+	<p align="left">最后调用<b>“画圆”</b>方法，将<b>“渐变颜色图形”</b>填充在<b>“圆形”</b>内。</p>
+	<p align="left"><img border="0" src="hb_images/525.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">可以看到，图形中的<b>“红色”</b>是从<b>“3点钟”</b>开始，然后<b>“顺时针”</b>发生<b>“渐变”</b>，慢慢的变成了<b>“绿色”</b>。</p>
+	
+	<p align="left"><img border="0" src="hb_images/526.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="cjsmjbzsq2"></a>
+	<font style="font-size: 12pt; font-weight:700">● 创建扫描渐变着色器2</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法与上个方法不同之处在于，想要渐变的颜色变成了<b>“整数数组”</b>。</p>
+	<p align="left">通过本数组可以一次性实现<b>“多个颜色”</b>的渐变。</p>
+	<p align="left">注意：如果要填写<b>“参数4”</b>请注意红框内的说明。</p>
+	<p align="left">如果填写为空对象，将均匀渐变。</p>
+	<p align="left"><img border="0" src="hb_images/527.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义<b>“整数数组”</b>变量，分别设置<b>“三个颜色”</b>成员。</p>
+	<p align="left">然后调用本方法，将<b>“颜色数组”</b>写入参数中即可，<b>“参数4”</b>我这里填写空对象。</p>
+	<p align="left">最后调用<b>“画圆”</b>方法，将颜色填充在圆形内。</p>
+	<p align="left"><img border="0" src="hb_images/528.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最后可以看到实现了三个颜色的渐变。</p>
+	<p align="left"><img border="0" src="hb_images/529.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="cjwtzsq"></a>
+	<font style="font-size: 12pt; font-weight:700">● 创建位图着色器</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用是进行贴图。</p>
+	<p align="left">代码编写可参考<a href="#zsqx"><b>“画笔类.着色器”</b></a>属性，此处不再讲解。</p>
+	<p align="left"><img border="0" src="hb_images/530.png" ></p>
+</blockquote>
+
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="cjxxjbzsq"></a>
+	<font style="font-size: 12pt; font-weight:700">● 创建线性渐变着色器</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用就是创建一个线性的渐变色，最终的样式是倾斜形状的。</p>
+	<p align="left">本方法与<b>“扫描渐变”</b>的区别是多了一个<b>“着色器平铺方式”</b>，并且有<b>“两个”</b>横纵坐标。</p>
+	<p align="left"><b>“着色器平铺方式”</b>内有三个常量可供调用。</p>
+	<p align="left"><img border="0" src="hb_images/531.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">调用本方法填写对应参数，可以使用<b>“画矩形”</b>方法，针对绘制的矩形进行渐变色填充。</p>
+	<p align="left">最终的效果：<b>“蓝色”</b>到<b>“绿色”</b>渐变，<b>“平铺方式”</b>使用<b>“重复”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/532.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">可以看到本渐变色并不是垂直上下，而是有一定切斜角度的渐变色。</p>
+	<p align="left">并且采用了<b>“重复”</b>模式。</p>
+	<p align="left"><img border="0" src="hb_images/533.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="cjxxjbzsq2"></a>
+	<font style="font-size: 12pt; font-weight:700">● 创建线性渐变着色器2</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“创建扫描渐变着色器2”</b>一样，也是把颜色值变成了<b>“整数数组”</b>。</p>
+	<p align="left">并且同样也有一个<b>“浮点小数数组”</b>用来定义渐变颜色<b>“起始位置”</b>。</p>
+	<p align="left">如果填写为空对象，将均匀渐变。</p>
+	<p align="left">大家可自行填写参数进行测试，感受效果的变化，此处不再演示。</p>
+	<p align="left"><img border="0" src="hb_images/534.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="cjyxjbzsq"></a>
+	<font style="font-size: 12pt; font-weight:700">● 创建圆形渐变着色器</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用就是通过指定的<b>“横纵坐标”</b>和<b>“半径值”</b>进行创建一个圆形的渐变色。</p>
+	<p align="left">参数4、5填写想要渐变的<b>“颜色值”</b>即可。</p>
+	<p align="left"><img border="0" src="hb_images/535.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">调用本方法填写相关<b>“坐标、半径和颜色值”</b>，平铺方式选择<b>“重复”</b>。</p>
+	<p align="left">最后绘制在一个矩形内。</p>
+	<p align="left"><img border="0" src="hb_images/536.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终可以看到形成了一个圆形的渐变色，并且在<b>“重复渐变”</b>。</p>
+	<p align="left">半径的距离是指：从<b>“起始颜色”</b>的中心点到<b>“结束色”</b>的最边缘的距离。</p>
+	<p align="left"><img border="0" src="hb_images/537.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="cjyxjbzsq2"></a>
+	<font style="font-size: 12pt; font-weight:700">● 创建圆形渐变着色器2</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+		<p align="left">本方法和<b>“创建扫描渐变着色器2”</b>一样，也是把颜色值变成了<b>“整数数组”</b>。</p>
+	<p align="left">并且同样也有一个<b>“浮点小数数组”</b>用来定义渐变颜色<b>“起始位置”</b>。</p>
+	<p align="left">大家可自行填写参数进行测试，此处不再演示。</p>
+	<p align="left"><img border="0" src="hb_images/538.png" ></p>
+</blockquote>
+
+	
+		
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="cjfhzsq"></a>
+	<font style="font-size: 12pt; font-weight:700">● 创建复合着色器</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用就是将两个<b>“着色器类”</b>组合起来，并且还可以添加<b>“图像混合方式”</b>。</p>
+	
+	<p align="left"><img border="0" src="hb_images/539.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义两个<b>“着色器类”</b>变量，然后分别创建两个不同的<b>“渐变着色器”</b>赋值给对应的变量。</p>
+	<p align="left">随后调用本方法，将两个<b>“着色器变量”</b>写入参数，使用<b>“图像混合方式.加亮”</b>算法。</p>
+	<p align="left">最后绘制在画板上。</p>
+	<p align="left"><img border="0" src="hb_images/540.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="hb_images/541.png" ></p>
+</blockquote>
+	
+	
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

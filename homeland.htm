@@ -1,0 +1,98 @@
+﻿<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<p align="left"><b><font style="font-size: 14pt">祖国您好！</font></b></p>
+<p align="left">注: 基于火山安卓平台举例</p>
+<p align="left">[<a href="vol_object.htm">上一章</a>]</p>
+<p align="left">&nbsp;</p>
+<p align="left">前面阐述了火山面向对象的应用机制,现在我们基于火山安卓平台来开发一个显示“祖国您好！”的程序。</p>
+<p align="left">选择“文件-&gt;新建-&gt;项目”菜单项：</p>
+<p align="left">
+<img border="0" src="images/b39.png" width="911" height="685"></p>
+<p align="left">在左侧树形框中选择“<b>空白安卓程序</b>”项目，在上部选择“<b>空窗口</b>”，在“<b>项目名称</b>”编辑框中输入项目的名称（随意），在“<b>所处位置</b>”编辑框中输入新建解决方案所处的文件目录（随意），在“<b>解决方案名称</b>”编辑框中输入所新建解决方案的名称（随意），然后点击确定新建一个<b>解决方案</b>。</p>
+<p align="left">在此解释一下火山的“<b>项目</b>”和“<b>解决方案</b>”概念：</p>
+<blockquote>
+	<p align="left"><b>项目：</b>记录用作生成目的程序（安卓平台下是“.APK”）的所有<b>火山源代码程序</b>的集合，并同时提供相关的编译时设置信息。</p>
+	<p align="left"><b>解决方案：</b>记录一序列的<b>相关项目</b>集合，用作开发者将相关项目归类集中管理。</p>
+	<p align="left">即，按被集合顺序：“<b>火山源代码程序</b>”-&gt;“<b>项目</b>”-&gt;“<b>解决方案</b>”</p>
+</blockquote>
+<p align="left">前面新建解决方案时同时指定新建了一个安卓程序项目，该项目内创建了一个默认火山源代码程序文件：</p>
+<p align="left">
+<img border="0" src="images/b40.png" width="428" height="161"></p>
+<p align="left">鼠标右键单击“<b>启动类</b>”的定义行：</p>
+<p align="left">
+<img border="0" src="images/b41.png" width="425" height="159"></p>
+<p align="left">选择所弹出菜单中的“<b>设计启动类的界面布局</b>”菜单项：</p>
+<p align="left">
+<img border="0" src="images/b42.png" width="460" height="593"></p>
+<p align="left">注意：</p>
+<blockquote>
+	<p align="left">1、名为“<b>启动类</b>”的类在整个项目中只能存在一个，用作标记用户程序的启动位置；</p>
+	<p align="left">2、只有窗口类（直接或间接基础类为“<b>窗口</b>”的类）才能设计其界面布局。</p>
+</blockquote>
+<p align="left">以下为“<b>启动类</b>”的界面布局设计器界面：</p>
+<p align="left">
+<img border="0" src="images/b43.png" width="1016" height="770"></p>
+<p align="left">选择左侧工具箱中的“<b>按钮</b>”组件，将其拖动到设计区域内：</p>
+<p align="left">
+<img border="0" src="images/b44.png" width="1016" height="770"></p>
+<p align="left">选择设计区域内的“<b>按钮1</b>”，然后在右侧属性表中的“<b>文本</b>”属性内填入“我的按钮”文本：</p>
+<p align="left">
+<img border="0" src="images/b45.png" width="1014" height="771"></p>
+<p align="left">点击“<b>确认</b>”按钮返回到程序设计界面，此时可以发现界面设计器自动在“<b>启动类</b>”中插入了一个数据类型为“<b>按钮</b>”名称为“<b>按钮1</b>”的成员变量，其具有一个名为“<b>安卓.窗口.布局</b>”属性，在此属性的属性值中记录了所有在界面设计器中对此按钮的设计内容。由于这些内容普通用户无需了解，所以其属性值默认处于“<b>隐藏</b>”状态：</p>
+<p align="left">
+<img border="0" src="images/b46.png" width="661" height="148"></p>
+<p align="left">火山遵循“<b>程序与数据集中</b>”的原则，这样做有以下好处：</p>
+<blockquote>
+	<p align="left">1、便于程序与其相关数据的集中维护和查找；</p>
+	<p align="left">2、只有被真实使用到的程序数据才会被编译到结果中去。假设有一个系统类方法里面使用了一个图片资源（譬如“提示信息框”），那么只有当用户程序确实使用了该方法，该图片资源才会被加入到编译结果中去。</p>
+</blockquote>
+<p align="left">根据此原则，火山并没有将窗口类的界面布局数据与其程序分开存放，而是全部存放在窗口类自身的源代码中。在安卓平台中，具体就在窗口类及其中的“<b>窗口组件类</b>”（直接/间接基础类为“<b>窗口组件</b>”的类）<b>成员变量</b>的“<b>安卓.窗口.布局</b>”属性值中。</p>
+<p align="left">所以以上代码你不通过界面设计器自行手工录入也是可以的，不过比较繁琐。</p>
+<p align="left">按钮添加完毕后，我们现在要来接收此按钮的被单击事件，用作在按钮被单击时显示“祖国您好！”文本。</p>
+<p align="left">根据我们在前面所讲过的方法，右键单击“<b>按钮1</b>”成员变量定义行，然后选择所弹出菜单中的“<b>添加按钮1的事件接收方法</b>”菜单项，选择其中的“<b>按钮_被单击</b>”事件：</p>
+<p align="left">
+<img border="0" src="images/b47.png" width="704" height="471"></p>
+<p align="left">然后点击“<b>添加</b>”按钮，将在“<b>启动类</b>”中自动插入如下“<b>事件接收成员方法</b>”：</p>
+<p align="left">
+<img border="0" src="images/b48.png" width="1007" height="254"></p>
+<p align="left">在“<b>返回 (0)</b>”语句前按下“<b>Insert</b>”快捷键插入一个空语句行，然后输入以下代码：</p>
+<blockquote>
+	<p align="left">提示信息框 (&quot;祖国您好!&quot;)</p>
+</blockquote>
+<p align="left">还记得首拼输入法吗？不用敲汉字输入“<b>提示信息框</b>”那么麻烦，直接输入此文本的首拼字母“tsxxk”然后选择对应列表项就可以了（程序中所需要输入的其它中文文本都可以这样输入）。</p>
+<p align="left">至此，我们第一个程序开发完毕。在运行程序之前，必须首先做如下准备工作（以后不再累述）：</p>
+<blockquote>
+	<p align="left"><b>1、</b>电脑上必须已经安装了JDK和安卓ADK软件开发包,下面是它们的最新下载地址:</p>
+	<blockquote>
+		<p align="left"><b>JDK</b>：<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></p>
+		<p align="left"><b>ADK</b>：<a href="https://developer.android.com/studio/index.html">https://developer.android.com/studio/index.html</a> 
+			(下载后面的命令行工具即可)</p>
+		<p align="left">下载安装完毕后，请执行菜单项“<b>工具-&gt;选项-&gt;安卓管理器-&gt;全局</b>”，然后填写其中的对应选项。也可以不填写，此时系统将根据相关环境变量自动搜寻。</p>
+		<p align="left">
+		<img border="0" src="images/b50.png" width="879" height="626"></p>
+		<p align="left"><b>如果不愿意下载</b>前面的内容，您也可以选择下载我们整合好的<a href="http://www.voldp.com/android.html">相关JDK和ADK包</a>，然后直接解压到火山平台安装目录的“plugins\vprj_android”子目录下即可（此时请保持上图箭头所指向的属性项为空）。</p>
+	</blockquote>
+	<p align="left"><b>2、</b>强烈推荐直接使用安卓真机测试，速度快而且直接面对真实应用环境。此前需要先启用测试用安卓手机的USB调试模式（请查询该手机的用户手册），在电脑上安装该手机的驱动程序（手机厂商提供或使用通用驱动程序），然后使用USB连线将其连接到电脑，最后在手机上授权当前电脑对该手机的USB调试许可即可。<br>&nbsp;</p>
+</blockquote>
+<p align="left">运行前的准备工作做完后,按下“<b>F5</b>”快捷键启动程序然后单击“我的按钮”看效果吧：</p>
+<p align="left">
+<img border="0" src="images/b49.jpg" width="540" height="960"></p>
+<p align="left">具体例程请参见系统安装目录的“samples\vprj_android\samples.vsln”解决方案中的“<b>教程相关\祖国您好</b>”项目<b>。</b></p>
+</body>
+
+</html>

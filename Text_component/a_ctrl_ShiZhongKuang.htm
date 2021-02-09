@@ -1,0 +1,196 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>文本时钟框组件</h4></li>
+	<ol>
+    	
+	
+        <li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new2')" >一.文本时钟框<span>(可收缩)</span></h6></li>
+		<ol id="new2">
+    		<li><blockquote><a href="#wbszk">1.本类说明</a></blockquote></li>
+            <li><blockquote><a href="#wessxsms">2.为二十四小时模式</a></blockquote></li>
+            <li><blockquote><a href="#essxsgsdx">2.二十四小时格式（读写）</a></blockquote></li>
+            <li><blockquote><a href="#sexsgsdx">2.十二小时格式（读写）</a></blockquote></li>
+            <li><blockquote><a href="#sqdx">2.时区（读写）</a></blockquote></li>
+       
+		</ol>
+		
+
+	</ol>
+</ul>
+</div>
+<p align="left">
+<h2>文本时钟框组件操作实例讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="wbszk"></a>
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+  <p align="left">本类是一个可视化组件。</p>
+  <p align="left">当前组件上会显示当前手机时间。</p>
+  <p align="left">显示格式可通过<b>“二十四小时格式”</b>或<b>“十二小时格式”</b>等属性决定。</p>
+  <p align="left">默认以当前系统的时间格式显示。</p>
+<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 界面准备</font>
+	
+<blockquote>
+<p align="left">拖放两个<b>“按钮”</b>和一个<b>“文本时钟框”</b>。</p>
+	<p align="left"><img border="0" src="text_images/130.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="wessxsms"></a>
+	<font style="font-size: 12pt; font-weight:700">● 为二十四小时模式</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本方法的作用是用来判断，当前手机系统的时间格式。</p>
+<p align="left">返回真，表示当前手机为24小时格式，否则返回假。</p>
+<p align="left"><img border="0" src="text_images/131.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">直接判断本方法的返回值，然后弹出对应提示即可。</p>
+	<p align="left"><img border="0" src="text_images/132.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+<p align="left">无论是系统时间，<b>“文本时钟框”</b>显示时间，还是弹出的提示，都是24小时格式。</p>
+	<p align="left"><img border="0" src="text_images/133.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="essxsgsdx"></a><a name="sexsgsdx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 二十四小时格式（读写）</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 十二小时格式（读写）</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“二十四小时格式（读写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">当前系统时间如果是<b>“24小时格式”</b>，那么本写属性的作用是用来设置，24小时的显示格式。</p>
+<p align="left">属性值通过<b>“日历类.常用格式X”</b>来指定。</p>
+<p align="left">注意：当前系统时间如果为<b>“12小时格式”</b>，那么本属性无效。</p>
+<p align="left">同名的读属性，就是读取当前设置的<b>“常用格式”</b>。</p>
+<p align="left"><img border="0" src="text_images/134.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“十二小时格式（读写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">同样的，本属性只能设置系统时间为<b>“12小时格式”</b>的。</p>
+<p align="left">注意：当前系统时间如果为<b>“24小时格式”</b>，那么本属性无效。</p>
+<p align="left">同名的读属性，就是读取当前设置的<b>“常用格式”</b>。</p>
+<p align="left"><img border="0" src="text_images/134a.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">首先调用<b>“为二十四小时模式（）”</b>方法，判断当前系统时间是否为<b>“二十小时格式”</b>。</p>
+<p align="left">如果是24小时，则设置<b>“二十四小时格式”</b>的属性值为<b>“日历类.常用格式1”</b>。</p>
+<p align="left">然后调用<b>“如果”</b>判断是否设置成功。</p>
+<p align="left">如果当前不为24小时，则设置<b>“十二小时格式”</b>的属性值为<b>“日历类.常用格式2”</b>。</p>
+<p align="left">然后调用<b>“如果”</b>判断是否设置成功。</p>
+	<p align="left"><img border="0" src="text_images/135.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果（1）：</p>
+<blockquote>
+<p align="left">可以看到右上角显示时间为24小时格式，因此修改的时间格式也是24小时格式。</p>
+	<p align="left"><img border="0" src="text_images/136.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果（2）：</p>
+<blockquote>
+
+	<p align="left">如果把当前系统时间改为<b>“12小时格式”</b>的，此时会修改<b>“十二小时格式”</b>的属性值。</p>
+	<p align="left"><img border="0" src="text_images/137.gif" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="sqdx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 时区（读写）</font><br>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“时区（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，设置当前时区。</p>
+<p align="left">如果属性值为<b>“空对象”</b>或不调用本属性，则默认时区为当前系统的时区。</p>
+<p align="left">注意：设置时区后，手动修改系统时区，本组件将不会自动同步时区。</p>
+<p align="left"><img border="0" src="text_images/138.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“时区（读）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，读取当前时区。</p>
+<p align="left">如果未设置，则返回<b>“空对象”</b>，否则返回当前设置的<b>“时区”</b>。</p>
+<p align="left"><img border="0" src="text_images/139.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击后，设置<b>“时区”</b>属性值为<b>“America/New_York”</b>即美国纽约时区。</p>
+<p align="left"><b>“按钮2”</b>被点击后，首先判断当前<b>“时区”</b>是否为空对象。</p>
+<p align="left">如果不是空对象则弹出当前时区。</p>
+	<p align="left"><img border="0" src="text_images/140.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+<p align="left">首先点击<b>“按钮2”</b>会提示<b>“当前是默认时区”</b>。</p>
+<p align="left">随后点击<b>“按钮1”</b>，会发现时钟时间从<b>“下午六点”</b>变成了<b>“上午六点”</b>。</p>
+<p align="left">上午六点正是美国纽约的时区。</p>
+<p align="left">再次点击<b>“按钮2”</b>的时候，就会弹出设置的美国纽约时区。</p>
+	<p align="left"><img border="0" src="text_images/141.gif" ></p>
+</blockquote>
+	
+	
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

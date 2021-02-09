@@ -1,0 +1,190 @@
+
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+			<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.XML合成器类<span>(可收缩)</span></h6></li>
+		<ol id="new1">
+           <li><blockquote><a href="#xmlhcq">1.开始XML文档</a></blockquote></li>
+          <li><blockquote><a href="#xmlhcq">2.结束XML文档</a></blockquote></li>
+          <li><blockquote><a href="#xmlhcq">3.开始节点</a></blockquote></li>
+          <li><blockquote><a href="#xmlhcq">4.结束节点</a></blockquote></li>
+		   <li><blockquote><a href="#xmlhcq">5.导出XML文档</a></blockquote></li>
+          <li><blockquote><a href="#xmljdsx">6.添加节点属性</a></blockquote></li>
+           <li><blockquote><a href="#xmljdnr">7.置节点内容</a></blockquote></li>
+           <li><blockquote><a href="#xmltjzs">8.添加注释</a></blockquote></li>
+		</ol>
+	</ol>
+</ul>
+</div>
+
+
+<p align="left">
+<h2>XML合成器类操作实例讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+<a name="zbgz"></a>    
+     
+<font style="font-size: 12pt; font-weight:700">● 帮助说明</font><br/>
+<br/>
+<blockquote>
+<p align="left">本类位于<strong>“XML数据访问支持”</strong>模块中。</p>
+ <!-- <p align="left"><img border="0" src="img/1.png" ></p>-->
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="xmlhcq"></a>
+<h2>一、XML合成器类</h2>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 开始XML文档</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 结束XML文档</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 开始节点</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 结束节点</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 导出XML文档</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“开始XML文档”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">1、创建XML文档务必调用本方法进行开始，参数填写文档编码。</p>
+    <p align="left">2、可通过<b>“文本编码.XX”</b>调用。</p>
+    <p align="left">3、开始成功返回真，失败返回假。</p>
+	<p align="left"><img border="0" src="img/229.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“结束XML文档”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">结束xml文档编写后，务必调用本方法结束，结束成功返回真。</p>
+	<p align="left"><img border="0" src="img/230.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“开始节点”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">通过本方法可定义XML节点，参数输入节点名称，开始成功返回真。</p>
+	<p align="left"><img border="0" src="img/231.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“结束节点”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">调用<b>“开始节点()”</b>后，务必调用本方法结束节点输入，结束成功返回真。</p>
+	<p align="left"><img border="0" src="img/232.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“导出XML文档”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">通过本方法可以将定义的XML对象转换成文本显示，失败返回空对象。</p>
+	<p align="left"><img border="0" src="img/233.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">通过以上学习内容，生成一个简单的XML文档。</p>
+    <p align="left">1、定义类型为<b>“XML合成器类”</b>的变量。</p>
+    <p align="left">2、调用<b>“开始XML文档()”</b>方法设置编码信息。</p>
+    <p align="left">3、设置<b>“节点信息”</b>，开始节点和结束节点务必保持一致。</p>
+    <p align="left">4、调用<b>“结束XML文档()”</b>方法，结束文档编写。</p>
+    <p align="left">5、最后调用<b>“导出XML文档()”</b>方法，赋值给编辑框的内容。</p>
+	<p align="left"><img border="0" src="img/234.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">注：因节点内并无节点内容，所以生成的XML文档，仅显示一个节点名。</p>
+	<p align="left"><img border="0" src="img/235.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="xmljdsx"></a>
+<p><font style="font-size: 12pt; font-weight:700">● 添加节点属性</font>
+</p>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">通过本方法可设置节点属性，添加成功返回真。</p>
+<p align="left">参数1：填写属性名。</p>
+<p align="left">参数2：填写属性值。</p>
+<p align="left">注意：本方法务必写到<b>“开始节点()”</b>和<b>“结束节点()”</b>方法中。</p>
+	<p align="left"><img border="0" src="img/236.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">在源代码的基础上简单修改，增加本方法即可。</p>
+<p align="left">注：一个节点可以设置多个属性。</p>
+	<p align="left"><img border="0" src="img/237.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/238.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="xmljdnr"></a>
+<p><font style="font-size: 12pt; font-weight:700">● 置节点内容</font>
+</p>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本方法可设置节点内容，设置成功返回真。</p>
+    <p align="left">注意：本方法务必写到<b>“开始节点()”</b>和<b>“结束节点()”</b>方法中。</p>
+	<p align="left"><img border="0" src="img/239.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">在源代码的基础上简单修改，调用本方法即可。</p>
+	<p align="left"><img border="0" src="img/240.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">设置节点内容后，首尾节点将完整显示，节点内容将位于两值之间。</p>
+	<p align="left"><img border="0" src="img/241.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="xmltjzs"></a>
+<p><font style="font-size: 12pt; font-weight:700">● 添加注释</font>
+</p>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，给当前位置添加xml文档注释，添加成功返回真。</p>
+	<p align="left"><img border="0" src="img/242.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">本方法位于<b>“开始XML文档()”</b>和<b>“结束XML文档()”</b>内即可，具体位置并不受节点限制。</p>
+	<p align="left"><img border="0" src="img/243.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/244.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

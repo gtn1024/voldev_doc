@@ -1,0 +1,128 @@
+﻿
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>提示输入框组件</h4></li>
+	<ol>
+
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new13')" >一.提示输入框<span>(可收缩)</span></h6></li>
+		<ol id="new13">
+			<li><blockquote><a href="#tssrk">1.准备工作</a></blockquote></li>
+			<li><blockquote><a href="#tanrbjk">2.内容编辑框(读)</a></blockquote></li>
+			<li><blockquote><a href="#tanrbjk">3.提示文本框(读)</a></blockquote></li>
+			<li><blockquote><a href="#tsbjq">4.布局器(读)</a></blockquote></li>
+		</ol>
+		
+		
+	</ol>
+</ul>
+</div>	
+	
+
+<p align="left">
+<h2>提示输入框组件操作实例讲解</h2>	
+<a name="souxun"></a>
+<p><strong>作者：创世魂</strong></p>
+
+<p align="left">&nbsp;</p>
+	<font style="font-size: 12pt; font-weight:700">● 辅助说明</font><br/>
+     <blockquote>
+	<p align="left"><font color="#F70408">本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+	</blockquote>	
+<p align="left">&nbsp;</p>
+<h2>一、提示输入框</h2>
+<p align="left">&nbsp;</p>
+	<a name="tssrk"></a>
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font>	
+<p align="left">&nbsp;</p>
+<p align="left">界面准备：</p>	
+<blockquote>
+	<p align="left">打开启动类界面设计器，设计如下界面。</p>
+	<p align="left">从上到下依次是：<b>“按钮1”</b>和<b>“提示输入框1”</b>。</p>
+	<p align="left">当前窗口组件是由<b>“自定义窗口容器组件”</b>类创建。</p>
+	<p align="left"><img src="Tssrk_images/267.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="tanrbjk"></a>
+<font style="font-size: 12pt; font-weight:700">● 内容编辑框(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 提示文本框(读)</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“内容编辑框(读)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">读取当前组件中的编辑框组件。</p>
+	<p align="left"><img border="0" src="Tssrk_images/268.png" ></p>
+</blockquote>		
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“提示文本框(读)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">读取当前组件中的文本框组件。</p>
+	<p align="left"><img border="0" src="Tssrk_images/269.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">分别读取两个组件可设置<b>“内容”</b>属性。</p>
+	<p align="left"><img border="0" src="Tssrk_images/270.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="Tssrk_images/271.gif" >
+    </p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="tsbjq"></a>
+<font style="font-size: 12pt; font-weight:700">● 布局器(读)</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可返回本组件的<b>“线性布局器”</b>，通过返回的布局器可添加其它火山组件到当前组件中。</p>
+	<p align="left"><img border="0" src="Tssrk_images/272.png" ></p>
+</blockquote>	
+
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、<b>“按钮1”</b>被点击后，定义<b>“图片框”</b>变量，设置<b>“图片”</b>属性导入一张图片。</p>
+	<p align="left">2、通过本读属性可直接调用<b>“添加子组件()”</b>方法，将<b>“图片框1”</b>加入参数即可。</p>
+	<p align="left"><img src="Tssrk_images/273.png" width="706" height="425" border="0" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，定义的图片框就会加入到当前组件中。</p>
+	<p align="left"><img border="0" src="Tssrk_images/274.gif" >
+    </p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

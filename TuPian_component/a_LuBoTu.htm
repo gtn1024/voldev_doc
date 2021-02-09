@@ -1,0 +1,733 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		 <li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new6')" >一.轮播图<span>(可收缩)</span></h6></li>
+		<ol id="new6">
+    		<li><blockquote><a href="#lbt">1.准备工作</a></blockquote></li>
+    		<li><blockquote><a href="#szsj">2.设置数据</a></blockquote></li>
+			<li><blockquote><a href="#kszdlb">3.开始自动轮播</a></blockquote></li>
+    		<li><blockquote><a href="#kszdlb">4.结束自动轮播</a></blockquote></li>
+    		<li><blockquote><a href="#dqymsl">5.当前页面数量(读)</a></blockquote></li>
+    		<li><blockquote><a href="#yxsdhd">6.允许手动滑动(写)</a></blockquote></li>
+    		<li><blockquote><a href="#zsqzdb">7.指示器置底部(写)</a></blockquote></li>
+    		<li><blockquote><a href="#zsdwz">8.指示点位置(写)</a></blockquote></li>
+    		<li><blockquote><a href="#zsdkj">9.指示点可见(写)</a></blockquote></li>
+    		<li><blockquote><a href="#zclbdj">10.支持轮播单击(写)</a></blockquote></li>
+    		<li><blockquote><a href="#zcymgbjt">11.支持页面改变监听(写)</a></blockquote></li>
+    		<li><blockquote><a href="#kszdlb">12.自动切换间隔(写)</a></blockquote></li>
+    		<li><blockquote><a href="#ymqhsd">13.页面切换速度(写)</a></blockquote></li>
+    		<li><blockquote><a href="#ymjj">14.页面间距(写)</a></blockquote></li>
+    		<li><blockquote><a href="#szsj">15.加载项目视图(事件)</a></blockquote></li>
+    		<li><blockquote><a href="#zclbdj">16.轮播被单击(事件)</a></blockquote></li>
+    		<li><blockquote><a href="#ymksgd">17.页面开始滚动(事件)</a></blockquote></li>
+    		<li><blockquote><a href="#ymgdztgb">18.页面滚动状态改变(事件)</a></blockquote></li>
+    		<li><blockquote><a href="#zcymgbjt">19.页面被选择(事件)</a></blockquote></li>
+		</ol>
+		
+		 <li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >二.设计器属性<span>(可收缩)</span></h6></li>
+		<ol id="new1">
+    		<li><blockquote><a href="#paomadeng">1.提示文本跑马灯</a></blockquote></li>
+    		<li><blockquote><a href="#zsqzttu">2.指示器未选中状态点</a></blockquote></li>
+    		<li><blockquote><a href="#zsqzttu">3.指示器选中状态点</a></blockquote></li>
+    		<li><blockquote><a href="#zhishiqibjs">4.指示器背景色</a></blockquote></li>
+    		<li><blockquote><a href="#zhishiqiweizhi">5.指示器位置</a></blockquote></li>
+    		<li><blockquote><a href="#dianzuoyou">6.指示点容器左右内边距</a></blockquote></li>
+    		<li><blockquote><a href="#zsdzynbj">7.指示点左右内边距</a></blockquote></li>
+    		<li><blockquote><a href="#zsdsxbnbj">8.指示点上下内边距</a></blockquote></li>
+    		<li><blockquote><a href="#tswbys">9.提示文本颜色</a></blockquote></li>
+    		<li><blockquote><a href="#tswenbenchicun">10.提示文本尺寸</a></blockquote></li>
+    		<li><blockquote><a href="#shuzizhishiqi">11.显示数字指示器</a></blockquote></li>
+    		<li><blockquote><a href="#shuzibeijing">12.数字指示器背景</a></blockquote></li>
+    		<li><blockquote><a href="#zhanweitu">13.整体占位图</a></blockquote></li>
+    		<li><blockquote><a href="#xianshiduoge">14.单屏显示多个</a></blockquote></li>
+    		<li><blockquote><a href="#lbzuoyou">15.轮播左右间距</a></blockquote></li>
+    		<li><blockquote><a href="#lbshangxia">16.轮播上下间距</a></blockquote></li>
+    		<li><blockquote><a href="#yemianjianju">17.轮播页面间距</a></blockquote></li>
+    		
+		</ol>
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left"><a name="lbt"></a>   
+<h2>轮播图实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<h2>一、轮播图</h2>
+<p align="left">&nbsp;</p>
+	
+
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">打开启动类界面设计器，设计如下界面。</p>
+    <p align="left">依次是<b>“按钮1”</b>和<b>“轮播图1”</b>，并设置轮播图的高度和宽度。 </p>
+	 <p align="left"><font color="#F30F12">注意：本组件位于<strong>“轮播图窗口组件”</strong>模块中。</font></p>
+	<p align="left"><img src="img_images/lunbo_images/95.png" border="0" ></p>
+
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="szsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 设置数据</font><br>
+<font style="font-size: 12pt; font-weight:700">● 加载项目视图(事件)</font>
+
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“设置数据”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本方法可设置<b>“轮播图”</b>数据。</p>
+	<p align="left">本方法会发送<b>“加载项目视图”</b>事件，通过本事件来载入具体数据。</p>
+	<p align="left">参数1：用于存储图片地址列表数据，可以是<b>“网络地址”</b>也可以是<b>“本地存储卡”</b>路径。</p>
+	<p align="left">参数2：用于存储轮播图的提示文本，不提供文本填写<b>“空对象”</b>即可。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/96.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“加载项目视图(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">调用<b>“设置数据”</b>方法会发送本事件。</p>
+	<p align="left">参数1：通过本参数可取出<b>“设置数据”</b>方法中的<b>“图片地址列表”</b>数据。</p>
+	<p align="left">参数2：要设置图片数据的图片框。</p>
+	<p align="left">参数3：当前载入的索引。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/97.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义两个<b>“文本列表类”</b>，名称分别为<b>“图片列表”</b>和<b>“提示列表”</b>。</p>
+	<p align="left">2、通过<b>“文本数组类”</b>创建列表对象。</p>
+	<p align="left">3、通过列表对象添加成员方法，添加<b>“图片地址”</b>和<b>“提示文本”</b>。</p>
+	<p align="left">4、调用<b>“设置数据”</b>方法，将两个变量依次写入参数即可。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/98.png" ></p>
+	<p align="left">&nbsp;</p>
+	<p align="left">5、添加<b>“轮播图_加载项目视图”</b>事件。</p>
+	<p align="left">6、利用<b>“对象到文本”</b>方法，将<b>“数据对象”</b>转换为文本型。</p>
+	<p align="left">7、使用<b>“图像加载工具类.载入图片”</b>方法，载入轮播图数据。</p>
+	<blockquote>
+	<p align="left">参数1：填写<b>“本对象”</b></p>
+	<p align="left">参数2：填写<b>“图片地址”</b>变量。</p>
+	<p align="left">参数3：填写<b>“组件对象”</b>即可。</p>
+	</blockquote>
+	<p align="left"><img border="0" src="img_images/lunbo_images/99.png" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">注意：轮播图默认自动切换。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/99.gif" ></p>
+</blockquote>
+
+
+	<p align="left">&nbsp;</p>
+	<a name="kszdlb"></a>
+<font style="font-size: 12pt; font-weight:700">● 开始自动轮播</font><br>
+<font style="font-size: 12pt; font-weight:700">● 结束自动轮播</font><br>
+<font style="font-size: 12pt; font-weight:700">● 自动切换间隔(写)</font>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“开始自动轮播”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，调用本方法可进行自动轮播。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/100.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“结束自动轮播”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，调用本方法可停止轮播。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/101.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“自动切换间隔(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本写属性，可设置自动切换时间间隔，单位毫秒。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/102.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+	<p align="left">界面准备如下图：</p>
+<blockquote>
+	<p align="left">在原界面的基础上增加一个按钮。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/105.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在<b>“通知_被创建”</b>方法下，调用<b>“设置数据”</b>方法，设置要轮播数据。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/103.png" ></p>
+	<p align="left">&nbsp;</p>
+	<p align="left">在<b>“轮播图1”</b>属性栏，增加<b>“自动切换间隔”</b>属性，属性值填写<b>“500”</b>毫秒。</p>
+	<p align="left"><b>“按钮1”</b>被点击执行<b>“开始自动轮播”</b>方法。</p>
+	<p align="left"><b>“按钮2”</b>被点击执行<b>“结束自动轮播”</b>方法。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/104.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img_images/lunbo_images/106.gif" ></p>
+</blockquote>	
+
+	<p align="left">&nbsp;</p>
+	<a name="dqymsl"></a>
+<font style="font-size: 12pt; font-weight:700">● 当前页面数量(读)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，本读属性可读取当前轮播图数量，返回值为整数。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/107.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，调用本属性显示在提示信息框中。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/108.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left"><img border="0" src="img_images/lunbo_images/109.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<a name="yxsdhd"></a>
+<font style="font-size: 12pt; font-weight:700">● 允许手动滑动(写)</font>
+	<p align="left">&nbsp;</p>
+
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可设置当前组件是否支持手动切换页面。</p>
+	<p align="left">如果不设置本属性，默认为真。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/110.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后设置本属性值为<b>“真”</b>。</p>
+	<p align="left"><b>“按钮2”</b>被点击后设置本属性值为<b>“真”</b>。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/111.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img_images/lunbo_images/112.gif" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+	<a name="zsqzdb"></a>
+<font style="font-size: 12pt; font-weight:700">● 指示器置底部(写)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可将轮播图的指示器设置到顶部。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/113.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">设置本属性值为假，指示器就会显示在顶部的位置。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/114.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img_images/lunbo_images/115.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<a name="zsdwz"></a>
+<font style="font-size: 12pt; font-weight:700">● 指示点位置(写)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可设置轮播图的指示点位置。</p>
+	<p align="left">属性值调用方式：<b>“轮播指示点位置.XXX”</b>。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/116.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">调用本属性，设置属性值<b>“左对齐”</b>。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/117.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，可看到两个指示点位于左侧。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/118.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<a name="zsdkj"></a>
+<font style="font-size: 12pt; font-weight:700">● 指示点可见(写)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本属性可设置指示点是否可见。</p>
+	<p align="left">属性值为真可见，否则相反。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/119.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，调用本属性，设置属性值为假。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/120.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><img border="0" src="img_images/lunbo_images/121.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<a name="zclbdj"></a>
+<font style="font-size: 12pt; font-weight:700">● 支持轮播单击(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 轮播被单击(事件)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“支持轮播单击(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，本方法用来设置当前轮播组件是否支持单击。</p>
+	<p align="left">属性值为真则支持单击，否则相反。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/122.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“轮播被单击(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">想要让本事件生效，务必设置<b>“支持轮播单击”</b>属性值为真。</p>
+	<p align="left">本事件共返回三个参数。</p>
+	<p align="left">参数1：返回的数据对象，通过<b>“对象到文本”</b>方法可取出图片地址。</p>
+	<p align="left">参数2：取出被单击的窗口组件。</p>
+	<p align="left">参数3：取出被单击的索引。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/123.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，设置<b>“支持轮播点击”</b>属性值为真。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/124.png" ></p>
+	<p align="left"></p>
+	<p align="left">添加<b>“轮播被点击”</b>事件，弹出<b>“图片地址”</b>和<b>“当前索引”</b>。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/125.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img_images/lunbo_images/126.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<a name="zcymgbjt"></a>
+<font style="font-size: 12pt; font-weight:700">● 支持页面改变监听(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 页面被选择(事件)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“支持页面改变监听(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本属性可设置页面被改变监听。</p>
+	<p align="left">属性值为真则监听，否则相反。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/127.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“页面被选中(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">当轮播图切换完毕后触发本事件，参数返回当前轮播图的索引值。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/128.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击，设置监听。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/129.png" ></p>
+	<p align="left"></p>
+	<p align="left">添加<b>“页面被选择”</b>事件，弹出切换完毕后的索引值。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/130.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">在未点击<b>“按钮1”</b>前切换轮播图，并不会触发当前事件。</p>
+	<p align="left">点击后，可看到当前事件被触发。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/130.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<a name="ymqhsd"></a>
+<font style="font-size: 12pt; font-weight:700">● 页面切换速度(写)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性用来设置轮播图切换的速度，属性值单位为毫秒。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/131.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击设置属性值为<b>“2000毫秒”</b>。</p>
+	<p align="left"><b>“按钮2”</b>被点击设置属性值为<b>“100毫秒”</b>。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/132.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">注意观察切换速度。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/133.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<a name="ymjj"></a>
+<font style="font-size: 12pt; font-weight:700">● 页面间距(写)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性用来设置两个轮播图页面之间的间距，属性值单位像素。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/134.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击设置当前属性值为<b>“100像素”</b>。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/135.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">注意观察两个轮播图之间的间距变化。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/136.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<a name="ymksgd"></a>
+<font style="font-size: 12pt; font-weight:700">● 页面开始滚动(事件)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">务必设置<b>“支持页面改变监听”</b>属性值为真，本事件才能被发送。</p>
+	<p align="left">参数1：返回当前索引。</p>
+	<p align="left">参数2：返回距离原页面偏移距离，数值范围<b>“0-1”</b>。</p>
+	<p align="left">参数3：返回位置偏移，单位像素。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/137.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、设置<b>“支持页面改变监听”</b>属性值为真。</p>
+	<p align="left">2、添加<b>“页面开始滚动”</b>事件，在<b>“按钮2”</b>上显示返回的参数信息。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/138.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img_images/lunbo_images/138.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<a name="ymgdztgb"></a>
+<font style="font-size: 12pt; font-weight:700">● 页面滚动状态改变(事件)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">务必设置<b>“支持页面改变监听”</b>属性值为真，本事件才能被发送。</p>
+	<p align="left">参数值将返回三个状态，调用方式：<b>“视图容器.XXX”</b>。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/139.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、设置<b>“支持页面改变监听”</b>属性值为真。</p>
+	<p align="left">2、添加<b>“页面滚动状态改变”</b>事件，分别判断三个状态值即可。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/140.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img_images/lunbo_images/141.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="paomadeng"></a>
+<h2>二、设计器属性</h2>
+<p align="left">&nbsp;</p>
+<p align="left">顾名思义，只能在界面设计器里面看到的属性，通过此属性可以让轮播图拥有更多效果。</p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 提示文本跑马灯</font>
+	<p align="left">&nbsp;</p>
+<p align="left">界面属性如下图：</p>
+<blockquote>
+	<p align="left">打开界面设计器，选中要修改属性的“轮播图”组件，在右侧可看到本属性。</p>
+	<p align="left">在设计器下方位置，可看到当前属性的注释等信息，可以得知当前属性是逻辑型。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/1.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">将当前属性设置为真后，如果轮播图的提示文本过长会自动出现文字跑马灯效果。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/1.gif" ></p>
+</blockquote><p align="left">&nbsp;</p>
+    <a name="zsqzttu"></a>
+<font style="font-size: 12pt; font-weight:700">● 指示器未选中状态点</font>
+<font style="font-size: 12pt; font-weight:700">● 指示器选中状态点</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">以上两个属性用于自定义指示器显示图片。</p>
+	<p align="left">&nbsp;</p>
+<p align="left">界面设置如图：</p>
+<blockquote>
+	<p align="left">打开界面设计器，分别给这两个属性选择不同的图片。</p>
+	<p align="left">注意：此处要注意图片尺寸，不能太大，否则指示器图片会遮盖轮播图组件。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/2.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可以看到轮播图指示器图片被修改。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/2.gif" ></p>
+</blockquote>
+    <p align="left">&nbsp;</p><a name="zhishiqibjs"></a>
+    <font style="font-size: 12pt; font-weight:700">● 指示器背景色</font>
+	<p align="left">&nbsp;</p>
+<p align="left">界面设置如图：</p>
+<blockquote>
+	<p align="left">打开界面设计器，选中轮播图后即可看到当前属性，点击可选择想要修改的颜色。</p>
+	<p align="left">也可以直接输入十六进制文本的颜色值。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/3.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">指示器所处的背景色将会被修改成红色，默认为透明色。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/4.png" ></p>
+</blockquote>
+     <p align="left">&nbsp;</p><a name="zhishiqiweizhi"></a>
+    <font style="font-size: 12pt; font-weight:700">● 指示器位置</font>
+	<p align="left">&nbsp;</p>
+<p align="left">界面设置如下图：</p>
+<blockquote>
+	<p align="left">本属性共有三个选项，分别是“无”，“顶部”和“底部”。</p>
+	<p align="left">如果不设置，默认显示在底部。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/5.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">选择顶部后，指示器包含指示器文本都将显示在顶部位置。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/6.png" ></p>
+</blockquote>
+     <p align="left">&nbsp;</p><a name="dianzuoyou"></a>
+    <font style="font-size: 12pt; font-weight:700">● 指示点容器左右内边距</font>
+	<p align="left">&nbsp;</p>
+<p align="left">界面设置如下图：</p>
+<blockquote>
+	<p align="left">本属性类型为小数，可输入小数值，用于设置指示点容器的左右边距。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/7.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">因轮播图的提示文本也在指示点容器内，所以文本左侧会产生间距。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/8.png" ></p>
+</blockquote>
+     <p align="left">&nbsp;</p><a name="zsdzynbj"></a>
+    <font style="font-size: 12pt; font-weight:700">● 指示点左右内边距</font>
+	<p align="left">&nbsp;</p>
+<p align="left">界面设置如下图：</p>
+<blockquote>
+	<p align="left">在界面设计器中选中组件就可以看到当前属性，属性值为小数。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/9.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终指示点左右都会有边距产生。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/10.png" ></p>
+</blockquote>
+     <p align="left">&nbsp;</p><a name="zsdsxbnbj"></a>
+    <font style="font-size: 12pt; font-weight:700">● 指示点上下内边距</font>
+	<p align="left">&nbsp;</p>
+<p align="left">界面设置如下图：</p>
+<blockquote>
+	<p align="left">打开界面设计器，选中轮播图组件后就可看到本属性，属性值为小数。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/11.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终指示点上下都有产生边距。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/12.png" ></p>
+</blockquote>
+      <p align="left">&nbsp;</p><a name="tswbys"></a>
+    <font style="font-size: 12pt; font-weight:700">● 提示文本颜色</font>
+	<p align="left">&nbsp;</p>
+<p align="left">界面设置如下图：</p>
+<blockquote>
+	<p align="left">打开界面设计器，选中组件后就可看到本属性，属性值为文本型。</p>
+	<p align="left">可以直接下拉选择颜色，或者输入十六进制文本颜色值。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/13.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">运行后提示文本颜色将会修改成红色。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/14.png" ></p>
+</blockquote>
+      <p align="left">&nbsp;</p><a name="tswenbenchicun"></a>
+    <font style="font-size: 12pt; font-weight:700">● 提示文本尺寸</font>
+	<p align="left">&nbsp;</p>
+<p align="left">界面设置如下图：</p>
+<blockquote>
+	<p align="left">打开界面设计器，选中组件后就可以看到本属性，属性值为小数值。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/15.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">软件运行后，文本尺寸会发生变化。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/16.png" ></p>
+</blockquote>
+     <p align="left">&nbsp;</p><a name="shuzizhishiqi"></a>
+    <font style="font-size: 12pt; font-weight:700">● 显示数字指示器</font>
+	<p align="left">&nbsp;</p>
+<p align="left">界面设置如下图：</p>
+<blockquote>
+	<p align="left">打开界面设计器，选中组件后可以看到本属性，属性值为逻辑型。</p>
+	<p align="left">选择真后，轮播图指示点将会变成数字显示。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/17.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">数字显示效果为“当前页/总页数”。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/18.png" ></p>
+</blockquote>
+   
+    <p align="left">&nbsp;</p><a name="shuzibeijing"></a>   
+    <font style="font-size: 12pt; font-weight:700">● 数字指示器背景</font>
+	<p align="left">&nbsp;</p>
+<p align="left">界面设置如下图：</p>
+<blockquote>
+	<p align="left">打开界面设计器，选中组件后将会看到本属性，属性值为可绘制资源。</p>
+	<p align="left">想要使用本属性，必须同时设置显示数字指示器为真。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/19.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">运行后，数字指示器将会显示引用的背景图。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/20.png" ></p>
+</blockquote>
+    <p align="left">&nbsp;</p><a name="zhanweitu"></a>   
+    <font style="font-size: 12pt; font-weight:700">● 整体占位图</font>
+	<p align="left">&nbsp;</p>
+<p align="left">界面设置如下图：</p>
+<blockquote>
+	<p align="left">打开界面设计器，选中组件后就可以看到本属性，属性值为可绘制资源。</p>
+	<p align="left">本属性的作用，在轮播图无数据或数据无效时，将会显示引用的图来占位。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/21.png" ></p>
+</blockquote>
+    <p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在代码中屏蔽“设置数据()”方法，模拟无数据情况。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/22.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终整个轮播图的区域会显示引用的图片。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/23.png" ></p>
+</blockquote>
+       <p align="left">&nbsp;</p><a name="xianshiduoge"></a> 
+    <font style="font-size: 12pt; font-weight:700">● 单屏显示多个</font>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本属性可让轮播图单屏显示多张图片。</p>
+	<p align="left">本属性值为逻辑型，共有三个选项。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/24.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">当本属性设置为真后，单屏将会显示三张图片。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/25.png" ></p>
+</blockquote>
+      <p align="left">&nbsp;</p><a name="lbzuoyou"></a> 
+    <font style="font-size: 12pt; font-weight:700">● 轮播左右间距</font>
+	<p align="left">&nbsp;</p>
+<p align="left">界面设置如下图：</p>
+<blockquote>
+	<p align="left">本属性的属性值为小数，单位DP。</p>
+	<p align="left">欲设置本属性，必须同时设置“单屏显示多个”属性为真。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/26.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">设置左右间距后，左右的图片会显示更多的内容。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/27.png" ></p>
+</blockquote>
+      <p align="left">&nbsp;</p><a name="lbshangxia"></a> 
+    <font style="font-size: 12pt; font-weight:700">● 轮播上下间距</font>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">本属性可设置轮播图上下边距，属性值为小数，单位DP。</p>
+	<p align="left">欲设置本属性必须将“单屏显示多个”设置为真才有效。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/28.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终可看到轮播图上下都会产生边距。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/29.png" ></p>
+</blockquote>
+     <p align="left">&nbsp;</p><a name="yemianjianju"></a> 
+    <font style="font-size: 12pt; font-weight:700">● 轮播页面间距</font>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">本属性可设置页面左右边距，属性值为小数，单位DP。</p>
+    <p align="left">欲设置本属性必须将“单屏显示多个”设置为真才有效。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/30.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终可看到轮播图左右会有间距产生。</p>
+	<p align="left"><img border="0" src="img_images/lunbo_images/31.png" ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

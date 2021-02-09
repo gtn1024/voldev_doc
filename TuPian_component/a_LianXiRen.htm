@@ -1,0 +1,143 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new5')" >一.联系人按钮<span>(可收缩)</span></h6></li>
+		<ol id="new5">
+			<li><blockquote><a href="#lianxiren">1.准备工作</a></blockquote></li>
+			<li><blockquote><a href="#lxrurl">2.联系人URL(写)</a></blockquote></li>
+			<li><blockquote><a href="#lxrurl">3.联系人电话(写)</a></blockquote></li>
+			<li><blockquote><a href="#lxrurl">4.联系人邮件(写)</a></blockquote></li>
+			<!-- <li><blockquote><a href="#pcmtlx">5.排除媒体类型</a></blockquote></li> -->
+			<li><blockquote><a href="#czlxtp">5.重置联系图片</a></blockquote></li>
+		</ol>
+		
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left"><a name="lianxiren"></a>
+<h2>联系人按钮实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+	
+<p align="left">&nbsp;</p>
+	<font style="font-size: 12pt; font-weight:700">● 辅助说明</font><br/>
+     	<blockquote>
+		<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+	</blockquote>	
+<p align="left">&nbsp;</p>
+	
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font>	
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">打开启动类界面设计器，设计如下界面。</p>
+	<p align="left">从上到下依次是<b>“按钮1”</b>、<b>“联系人按钮1”</b>。 </p>
+	<p align="left"><img border="0" src="img_images/59.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">想要正常使用<b>“联系人按钮”</b>，必须设置<b>“置状态背景图”</b>方法。</p>
+	<p align="left">注意：本组件还继承了<b>“图片框”</b>的所有方法。</p>
+	<p align="left"><img border="0" src="img_images/60.png" ></p>
+</blockquote>	
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="lxrurl"></a>
+<font style="font-size: 12pt; font-weight:700">● 联系人URL(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 联系人邮件(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 联系人电话(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">以上三个属性最终效果一致，此处讲解<b>“联系人电话”</b>写属性。</p>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性可用来直接选择手机联系人，如果联系人不存在将提示添加联系人。</p>
+	<p align="left">如果同时使用了<b>“联系人URL”</b>和<b>“联系人邮件”</b>属性，本属性将被清除不再使用。</p>
+	<p align="left"><img border="0" src="img_images/61.png" ></p>
+</blockquote>	
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">定义<b>“状态到图像表”</b>变量，设置<b>“通常”</b>和<b>“被按下”</b>属性。</p>
+	<p align="left">调用<b>“置状态背景图”</b>方法，设置状态背景图。</p>
+	<p align="left">最后设置<b>“联系人电话”</b>属性。</p>
+	
+	<p align="left"><img border="0" src="img_images/62.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">第一次点击：会提示添加联系人。</p>
+    <p align="left">第二次点击：直接会选择已经添加的联系人。</p>
+	<p align="left"><img border="0" src="img_images/63.gif" >
+    </p>
+</blockquote>
+	
+	
+		<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="czlxtp"></a>
+	<font style="font-size: 12pt; font-weight:700">● 重置联系图片</font>
+<p align="left">&nbsp;</p>
+<p align="left">界面准备：</p>
+<blockquote>
+	<p align="left">在原界面的基础上增加一个<b>“按钮2”</b>。</p>
+	<p align="left"><img border="0" src="img_images/64.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可重置联系人按钮图片。</p>
+	<p align="left"><img border="0" src="img_images/65.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，给当前联系人按钮设置状态背景图。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，调用本方法重置按钮图片。</p>
+	
+	<p align="left"><img border="0" src="img_images/66.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img_images/67.gif" >
+    </p>
+</blockquote>
+	
+	
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

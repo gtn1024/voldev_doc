@@ -1,0 +1,503 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		
+		<li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new11')" >一.位图类<span>(可收缩)</span></h6></li>
+		<ol id="new11">
+			<li><blockquote><a href="#weitu">1.本类说明</a></blockquote></li>  
+			<li><blockquote><a href="#wtlcwtcj">2.从位图创建</a></blockquote></li> 
+			<li><blockquote><a href="#wtlfzcj">3.复制创建</a></blockquote></li>
+    		<li><blockquote><a href="#cwtqycj">4.从位图区域创建</a></blockquote></li>
+    		<li><blockquote><a href="#cwtsfcj">5.从位图缩放创建</a></blockquote></li>
+    		<li><blockquote><a href="#cjzszcj">6.从字节数组创建</a></blockquote></li>
+			<li><blockquote><a href="#qzjszwtcc">7.取字节数组位图尺寸</a></blockquote></li>
+			<li><blockquote><a href="#qwjcj">8.从文件创建</a></blockquote></li>
+			<li><blockquote><a href="#qwjwtcc">9.取文件位图尺寸</a></blockquote></li>
+			<li><blockquote><a href="#czywjcj">10.从资产文件创建</a></blockquote></li>
+			<li><blockquote><a href="#qzcwjwtcc">11.取资产文件位图尺寸</a></blockquote></li>
+			<li><blockquote><a href="#czycj">12.从资源创建</a></blockquote></li>
+			<li><blockquote><a href="#qzywtcc">13.取资源位图尺寸</a></blockquote></li>
+			<li><blockquote><a href="#wtyssc">14.压缩输出</a></blockquote></li>
+			<li><blockquote><a href="#qsfkd">15.取缩放宽度</a></blockquote></li>
+			<li><blockquote><a href="#qsfgd">16.取缩放高度</a></blockquote></li>
+			<li><blockquote><a href="#qtmdwt">17.取透明度位图</a></blockquote></li>
+			<li><blockquote><a href="#xssjccd">18.像素数据尺寸（读）</a></blockquote></li>
+			<li><blockquote><a href="#wtlkdd">19.宽度（读）</a></blockquote></li>
+			<li><blockquote><a href="#wtgd">20.高度（读）</a></blockquote></li>
+			<li><blockquote><a href="#wtlmdd">21.密度（读）</a></blockquote></li>
+			<li><blockquote><a href="#zctmdd">22.支持透明度（读）</a></blockquote></li>
+			<li><blockquote><a href="#wtybmsd">23.易变模式（读）</a></blockquote></li>
+			<li><blockquote><a href="#wtpzgs">24.配置格式（读）</a></blockquote></li>
+			
+   		</ol>
+		
+		
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>位图类实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+  	<p align="left">本类的主要作用就是创建<b>“位图数据”</b>绘制在画板上，也就是通过本类中的相关方法可以在画板上绘制图片。</p>
+	<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="wtlcwtcj"></a>
+	<font style="font-size: 12pt; font-weight:700">● 从位图创建</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用就是从已知的<b>“位图类”</b>对象中，创建一个新的位图对象，并返回。</p>
+	<p align="left">创建失败返回<b>“空对象”</b>。</p>
+	<p align="left">需要注意的是：本方法创建的位图会与源对象共享数据状态。</p>
+	<p align="left"><img border="0" src="hb_images/486.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">例如：我们利用<b>“位图类.从资源创建”</b>方法创建位图对象赋值给<b>“位图1”</b>变量。</p>
+	<p align="left">随后我们调用<b>“位图类.从位图创建”</b>方法，将<b>“位图1”</b>变量填入参数内，最后赋值给<b>“位图2”</b>。</p>
+	<p align="left">这样<b>“位图2”</b>就有了<b>“位图1”</b>的数据。</p>
+	<p align="left">最后调用<b>“画板对象.画位图”</b>方法，画<b>“位图2”</b>，同样也可以将导入的<b>“可绘制资源”</b>绘制出来。</p>
+	<p align="left"><img border="0" src="hb_images/487.png" ></p>
+</blockquote>	
+
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="wtlfzcj"></a>
+	<font style="font-size: 12pt; font-weight:700">● 复制创建</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“从位图创建”</b>方法类似，不同之处，本方法增加了两个参数。</p>
+	<p align="left">分别为<b>“位图配置格式”</b>和<b>“是否易变”</b>。</p>
+	<p align="left">配置格式中有三个常量可供调用，通常情况下使用：<b>“位图配置格式.ARGB8888”</b>即可。</p>
+	<p align="left"><b>“是否易变”</b>参数，简单来说就是，如果填写<b>“真”</b>修改复制位图时不会影响到源位图，为假则反之。</p>
+	<p align="left">代码编写可参考<b>“从位图创建”</b>方法。</p>
+	<p align="left"><img border="0" src="hb_images/488.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="cwtqycj"></a>
+	<font style="font-size: 12pt; font-weight:700">● 从位图区域创建</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法简单来说，就是从位图的指定区域裁剪一块区域，创建一个位图对象。</p>
+	<p align="left">裁剪的坐标通过<b>“参数2,3,4,5”</b>决定。</p>
+	<p align="left">注意：使用本方法，会与源对象共享状态和数据。</p>
+	<p align="left"><img border="0" src="hb_images/489.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接复制<b>“从位图创建”</b>那一套代码，然后进行一些修改。</p>
+	<p align="left">增加<b>“位图类.从位图区域创建”</b>方法，将<b>“位图1”</b>填入参数内，分别写入想要裁剪的区域。</p>
+	<p align="left">例如：我这里填写的（0,0,100,100）表示从左上角开始，裁剪一个<b>“100*100”</b>的矩形。</p>
+	<p align="left">最后绘制<b>“位图2”</b>查看效果。</p>
+	<p align="left"><img border="0" src="hb_images/490.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">左图：为绘制<b>“位图2”</b>的效果。</p>
+	<p align="left">右图：原图完整效果。</p>
+	<p align="left"><img border="0" src="hb_images/491.png" ><img border="0" src="hb_images/311a.jpg" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="cwtsfcj"></a>
+	<font style="font-size: 12pt; font-weight:700">● 从位图缩放创建</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用，就是根据已知的<b>“位图类”</b>，根据<b>“参数2,3”</b>指定的<b>“高度和宽度”</b>进行缩放处理。</p>
+	<p align="left">参数4，可以用来指定是否进行过滤算法。</p>
+	<p align="left">代码编写参考<b>“从位图区域创建”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/492.png" ></p>
+</blockquote>
+
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="cjzszcj"></a>
+	<font style="font-size: 12pt; font-weight:700">● 从字节数组创建</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用就是通过<b>“字节数组”</b>进行创建位图，可以用来<b>“读取存储卡图片”</b>来进行绘制。</p>
+	<p align="left">必须要保证载入的<b>“字节数组”</b>能够进行绘制，不然<b>“位图类”</b>可能会创建失败。</p>
+	<p align="left"><b>“起始偏移”</b>和<b>“数据尺寸”</b>通常情况下默认值即可，不需要填写。</p>
+	<p align="left">参数4：如果图片过大时，可以通过本参数进行压缩。</p>
+	<p align="left"><img border="0" src="hb_images/493.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义<b>“位图类”</b>和<b>“字节[]”</b>变量。</p>
+	<p align="left">随后利用<b>“读入文件”</b>方法，读取存储卡根目录存放的一张<b>“1.png”</b></p>
+	<p align="left">点击查看：<a href="j_file.htm"><b>“文件操作教程”</b></a>。</p>
+	<p align="left">读取的字节数组赋值给定义的<b>“字节图片”</b>变量。</p>
+	<p align="left">随后可通过本方法创建<b>“位图”</b>对象。</p>
+	<p align="left">最后调用<b>“画位图”</b>方法绘制位图。</p>
+	<p align="left"><img border="0" src="hb_images/494.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">这是一张提前放在存储卡内的图片，现在成功绘制在画板上。</p>
+	<p align="left"><img border="0" src="hb_images/495.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="qzjszwtcc"></a>
+	<font style="font-size: 12pt; font-weight:700">● 取字节数组位图尺寸</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用就是获得<b>“字节数组”</b>的图片高度和宽度。</p>
+	<p align="left">参数2、3通常情况下为默认值即可。</p>
+	<p align="left"><img border="0" src="hb_images/496.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">保持上一个方法的代码不变，增加一个<b>“尺寸类”</b>变量，设置参考。</p>
+	<p align="left">随后调用<b>“位图类.取字节数组位图尺寸”</b>方法，将<b>“字节图片”</b>变量填入参数。</p>
+	<p align="left">将整个方法赋值给<b>“尺寸”</b>变量。</p>
+	<p align="left">通过尺寸变量的<b>“高度”</b>和<b>“宽度”</b>变量可获取当前图片的高度和宽度。</p>
+	<p align="left">最后提供给<b>“提示框”</b>演示结果。</p>
+	<p align="left"><img border="0" src="hb_images/497.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">可以看到成功的读取了图片的高度和宽度值，单位像素。</p>
+	<p align="left"><img border="0" src="hb_images/498.png" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="qwjcj"></a>
+	<font style="font-size: 12pt; font-weight:700">● 从文件创建</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用就是直接从<b>“完整的路径文件名”</b>创建<b>“位图类”</b>对象。</p>
+	<p align="left">参数1：可参考<b>“从字节数组创建”</b>方法中<b>“读入文件”</b>使用的文件路径。</p>
+	<p align="left">参数2：一般情况下为默认值即可。</p>
+	<p align="left"><img border="0" src="hb_images/499.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="qwjwtcc"></a>
+	<font style="font-size: 12pt; font-weight:700">● 取文件位图尺寸</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用是通过完整的路径文件名，取出位图尺寸。</p>
+	<p align="left">可参考<b>“从字节数组创建”</b>方法中<b>“读入文件”</b>使用的文件路径。</p>
+	<p align="left">本方法返回的也是<b>“尺寸类”</b>对象，通过<b>“尺寸类.高度”</b>和<b>“宽度”</b>就可以读取具体数值。</p>
+	<p align="left"><img border="0" src="hb_images/500.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="czywjcj"></a>
+	<font style="font-size: 12pt; font-weight:700">● 从资产文件创建</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">在安卓程序结构中，有一个目录的名字叫<b>“assets”</b>，在本目录内存放的文件称为<b>“资产文件”</b>。</p>
+	<p align="left">导入<b>“资产文件”</b>后，直接在需要用到的地方输入<b>“文件名”</b>即可<b>“引用资产文件”</b>。</p>
+	<p align="left"><img border="0" src="hb_images/501.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在<b>“启动类”</b>中，后面的属性名填写<b>“@安卓.外部资产”</b>，点击后面的按钮就可以<b>“导入资产”</b>。</p>
+	<p align="left">导入后的资产会自动添加到安卓程序的<b>“assets”</b>目录中。</p>
+	<p align="left">比如：我这里导入了一张图片，图片名为<b>“tu.jpg”</b>。</p>
+	<p align="left">随后在<b>“异步绘制帧”</b>方法下使用<b>“位图类.从资产文件创建”</b>方法时，参数内直接输入<b>“tu.jpg”</b>就可以引用这张图片。</p>
+	<p align="left">最后的结果必然绘制成功，不再展示。</p>
+	<p align="left"><img border="0" src="hb_images/502.png" ></p>
+</blockquote>	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="qzcwjwtcc"></a>
+	<font style="font-size: 12pt; font-weight:700">● 取资产文件位图尺寸</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用就是<b>“取资产文件”</b>中位图的尺寸。</p>
+	<p align="left">务必要保证，输入的文件名为位图文件，否则会返回空对象。</p>
+	<p align="left">调用方法：<b>“位图类.取资产文件位图尺寸()”</b>方法内直接输入资产文件名即可。</p>
+	<p align="left"><img border="0" src="hb_images/503.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="czycj"></a>
+	<font style="font-size: 12pt; font-weight:700">● 从资源创建</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">直接给<b>“参数1”</b>填写想要载入的可绘制资源即可。</p>
+	<p align="left">本方法在本教程内多次使用，此处不再演示。</p>
+	<p align="left"><img border="0" src="hb_images/504.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="qzywtcc"></a>
+	<font style="font-size: 12pt; font-weight:700">● 取资源位图尺寸</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">直接在参数内填写想要取尺寸的<b>“可绘制资源”</b>即可。</p>
+	<p align="left">本方法同样也是返回的尺寸类。</p>
+	<p align="left"><img border="0" src="hb_images/505.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="wtyssc"></a>
+	<font style="font-size: 12pt; font-weight:700">● 压缩输出</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法的作用，就是将<b>“位图类”</b>中的位图数据，放到<b>“输出流”</b>对象中。</p>
+	<p align="left">通过<b>“流对象”</b>可以将位图写出到<b>“存储卡”</b>，以达到保存位图数据的目的。</p>
+	<p align="left">参数1：操作要输出的位图类对象。</p>
+	<p align="left">参数2：<b>“位图压缩格式”</b>中有三个常量可以使用，调用方式：<b>“位图压缩格式.XXX”</b></p>
+	<p align="left">参数3：可以用来控制文件输出尺寸的大小。如果要输出的位图很大，可以通过控制本参数的数值控制。</p>
+	<p align="left">当然数值越小，位图会相应的丢失一些像素，导致图片模糊。</p>
+	<p align="left">参数4：填写要使用的流对象即可。</p>
+	<p align="left"><img border="0" src="hb_images/506.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">比如：想让一个资产文件写出到手机存储卡上。</p>
+	<p align="left">首先参考<b>“从资产文件创建”</b>方法导入一个资产文件。</p>
+	<p align="left">随后在<b>“异步绘制帧”</b>事件下，定义三个变量，分别为<b>“位图类”</b>，<b>“字节数组输出流”</b>和<b>“字节[]”</b>。</p>
+	<p align="left">调用<b>“从资产文件创建”</b>方法，创建位图对象，赋值给定义的位图变量。</p>
+	<p align="left">然后调用<b>“字节数组输出流.创建”</b>方法，创建输出流对象，赋值给定义的流变量。</p>
+	<p align="left">紧接着就可以使用<b>“压缩输出”</b>方法，将位图数据放到流对象中。</p>
+	<p align="left">在<b>“流对象”</b>中，有一个方法叫做<b>“取已写入数据()”</b>，本方法可以将流对象中的<b>“字节数组”</b>取出。</p>
+	<p align="left">我们把这个方法赋值给<b>“字节数组”</b>变量。</p>
+	<p align="left">最后<b>“关闭”</b>流对象。</p>
+	<p align="left">然后调用<b>“写出文件”</b>方法，将字节数组写出到一个图文文件名。</p>
+	<p align="left"><img border="0" src="hb_images/507.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终结果，运行后点击<b>“按钮1”</b>就弹出提示<b>“保存成功”</b>。</p>
+	<p align="left">随后打开了<b>“文件管理器”</b>就可以看到图片成功保存在了存储卡内。</p>
+	<p align="left"><img border="0" src="hb_images/508.gif" ></p>
+</blockquote>
+	
+	
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="qsfkd"></a>
+	<a name="qsfgd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 取缩放宽度</font><br/>
+	
+	<font style="font-size: 12pt; font-weight:700">● 取缩放高度</font><br/>
+<p align="left">&nbsp;</p>
+	
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">以上两个方法的作用，就是返回指定<b>“位图类”</b>在当前设备绘制时，返回推荐的高度和宽度。</p>
+	<p align="left">除了需要提供位图类之外，还需要一个<b>“目的设备密度”</b>参数。</p>
+	<p align="left">可以使用<b>“常用显示密度”</b>中定义的常量值来指定。</p>
+	<p align="left">返回的宽度和高度也是推荐值，大家可以根据实际情况决定是否使用这个推荐值。</p>
+	<p align="left"><img border="0" src="hb_images/509.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="qtmdwt"></a>
+	<font style="font-size: 12pt; font-weight:700">● 取透明度位图</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">简单来说就是将位图所有的颜色丢掉，只保留透明度部分。</p>
+	<p align="left">本方法的作用可以用来绘制阴影，失败返回空对象。</p>
+	<p align="left"><img border="0" src="hb_images/510.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">定义<b>“画笔类”</b>变量，设置颜色为<b>“黄色”</b>。</p>
+	<p align="left">在<b>“异步绘制帧”</b>事件下，定义两个<b>“位图类”</b>变量和一个<b>“可绘制资源”</b>，给可绘制资源导入一张图片。</p>
+	<p align="left">首先创建<b>“源位图”</b>对象，然后将其绘制在画板上做参考。</p>
+	<p align="left">随后调用<b>“源位图.取透明度位图()”</b>取出透明位图赋值给<b>“透明位图”</b>变量。</p>
+	<p align="left">然后将<b>“透明位图”</b>绘制在画板上，注意：此处要填写<b>“画笔”</b>变量。</p>
+	<p align="left">填写<b>“画笔”</b>变量后，绘制时就会给<b>“透明位图”</b>填充颜色。</p>
+	<p align="left">然后继续将<b>“透明位图”</b>和<b>“源位图”</b>绘制到同一个坐标，<b>“源位图”</b>进行几个像素的偏移。</p>
+	<p align="left"><img border="0" src="hb_images/511.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">可以看到两个合并在一起后，<b>“黄色”</b>的位图，此时充当了一个类似阴影层的角色。</p>
+	<p align="left"><img border="0" src="hb_images/512.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="xssjccd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 像素数据尺寸（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">读属性，返回当前位图像素数据尺寸大小，单位字节。</p>
+	<p align="left">注意：并非整个位图的尺寸。</p>
+	<p align="left">调用方式：<b>“位图变量.像素数据尺寸”</b></p>
+	<p align="left">注：<b>“位图变量”</b>是指通过<b>“位图类”</b>创建的变量名称。</p>
+	<p align="left">以下的读属性均为同一个模式调用。</p>
+	<p align="left"><img border="0" src="hb_images/513.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="wtlkdd"></a>
+	<a name="wtgd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 宽度（读）</font><br/>
+	
+	<font style="font-size: 12pt; font-weight:700">● 高度（读）</font><br/>
+<p align="left">&nbsp;</p>
+
+<blockquote>
+	<p align="left">以上两个读属性，分别可以读取位图的高度和宽度。</p>
+	
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="wtlmdd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 密度（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本读属性用来读取当前位图的显示密度，如果密度未知返回0。</p>
+	
+	<p align="left"><img border="0" src="hb_images/514.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="zctmdd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 支持透明度（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">判断当前位图是否支持透明度通道。</p>
+	<p align="left">如果导入的位图为<b>“jpg”</b>格式，本属性必然返回<b>“假”</b>。</p>
+	<p align="left">如果为<b>“gif”</b>或<b>“png”</b>本属性必然返回<b>“真”</b>。</p>
+	
+	<p align="left"><img border="0" src="hb_images/515.png" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="wtybmsd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 易变模式（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本读属性的作用是判断当前<b>“位图类”</b>是否启用了<b>“易变模式”</b>。</p>
+	<p align="left">关于<b>“易变模式”</b>可看<b>“红框”</b>内的详细说明。</p>
+	
+	<p align="left"><img border="0" src="hb_images/516.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+	<p align="left">&nbsp;</p>
+<a name="wtpzgs"></a>
+	<font style="font-size: 12pt; font-weight:700">● 配置格式（读）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本读属性的作用，就是用来读取<b>“复制创建”</b>方法填写的<b>“位图配置格式”</b>。</p>
+
+	<p align="left"><img border="0" src="hb_images/517.png" ></p>
+</blockquote>
+
+	
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

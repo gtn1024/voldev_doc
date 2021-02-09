@@ -1,0 +1,195 @@
+
+<html>
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+	
+	<div class="xuanfu">
+<ul class="menu">
+	<ol>
+	
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new2')" >一.数组操作<span>(可收缩)</span></h6></li>
+		<ol id="new2">
+			<li><blockquote><a href="#shuzucaozuo">1.本类说明</a></blockquote></li>
+			<li><blockquote><a href="#xjsz">2.新建数组</a></blockquote></li>
+			<li><blockquote><a href="#xjsz">3.新建数组2</a></blockquote></li>
+			<li><blockquote><a href="#xjsz">4.新建数组3</a></blockquote></li>
+			<li><blockquote><a href="#qszcys">5.取数组成员数</a></blockquote></li>
+			<li><blockquote><a href="#qszcys1">6.取数组成员数1</a></blockquote></li>
+			<li><blockquote><a href="#qszcys1">7.取数组成员数2</a></blockquote></li>
+			<li><blockquote><a href="#qszcys1">8.取数组成员数3</a></blockquote></li>
+			<li><blockquote><a href="#qcysz2">9.取成员数组2</a></blockquote></li>
+			<li><blockquote><a href="#shuzfz">10.数组复制</a></blockquote></li>
+		</ol>
+	</ol>
+</ul>
+</div>
+
+
+<p align="left">
+
+<h2>数组操作实例讲解</h2>
+<p>作者：创世魂</p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">本类提供了数组数据的常规操作方法，例如：<b>“新建数组”</b>，<b>“取数组成员数”</b>等。</p>
+	<p align="left">本类为全局类，可通过方法名直接调用。</p>
+	<p align="left"><img border="0" src="sz_images/47.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="xjsz"></a>
+<font style="font-size: 12pt; font-weight:700">● 新建数组</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 新建数组2</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 新建数组3</font>
+<p align="left">&nbsp;</p>
+<p align="left">以上三个方法分别用来建立：一维、二维和三维数组。</p>
+<p align="left">此处演示讲解<b>“新建数组()”</b>的用法，另外两个方法类同。</p>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本方法可创建一个指定数据类型的单维数组。</p>
+    <p align="left">参数1：填写要创建的数据类型，例如：<b>“整数”</b>，<b>“文本型”</b>等。</p>
+    <p align="left">参数2：填写要创建的成员数。</p>
+    <p align="left">返回值：数据类型由<b>“参数1”</b>决定。</p>
+	<p align="left"><img border="0" src="sz_images/48.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、定义<b>“文本型[]”</b>变量。</p>
+    <p align="left">2、调用<b>“新建数组()”</b>方法，创建一个两位成员数的文本型数组，赋值给此变量。</p>
+    <p align="left">3、创建就可以可以进行添加成员操作，也可以利用<a href="j_array.htm#szdwb"><b>“数组到文本()”</b></a>方法转换成文本。</p>
+	<p align="left"><img border="0" src="sz_images/49.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="sz_images/50.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="qszcys"></a>
+<font style="font-size: 12pt; font-weight:700">● 取数组成员数</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本方法可取出数组内的成员数量。</p>
+    <p align="left">参数直接填写要取成员的数组即可。</p>
+	<p align="left"><img border="0" src="sz_images/51.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、定义5个成员的文本数组，并添加两个成员。</p>
+    <p align="left">2、利用本方法取出成员数显示在编辑框中。</p>
+	<p align="left"><img border="0" src="sz_images/52.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+    <p align="left">最终结果证明，添加的成员数量不等于成员数，成员数是由定义的数量决定。</p>
+	<p align="left"><img border="0" src="sz_images/53.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="qszcys1"></a>
+<font style="font-size: 12pt; font-weight:700">● 取数组成员数1</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取数组成员数2</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 取数组成员数3</font>
+<p align="left">&nbsp;</p>
+<p align="left">以上三个方法用于取出多维数组中的成员数量，不同之处就是针对的维度不同。</p>
+<p align="left">此处讲解<b>“取数组成员数1”</b>方法，其它方法以此类推。</p>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法用来取出多维数组中，第一维成员的子成员数量。</p>
+    <p align="left">参数1：填写要取成员的数组。</p>
+    <p align="left">参数2：填写成员索引值，从0开始，且必须小于第一维成员数。</p>
+    <p align="left">例如：第一维成员数位5，那么本参数只能填写<b>“0-4”</b>之间的数字。</p>
+	<p align="left"><img border="0" src="sz_images/54.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">随便定义一个三维数组，利用本方法取出一维数组，成员索引0的子成员数量。</p>
+	<p align="left"><img border="0" src="sz_images/55.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+    <p align="left">本方法的最终结果实际上就是取出第二维数组的成员数。</p>
+	<p align="left"><img border="0" src="sz_images/56.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="qcysz2"></a>
+<font style="font-size: 12pt; font-weight:700">● 取成员数组2</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本方法的作用就是取出二维数组中，指定一维数组索引的二维数组对象。</p>
+	<p align="left"><img border="0" src="sz_images/57.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、定义一个二维数组，并添加一些二维成员。</p>
+    <p align="left">2、调用当前方法取出索引0的成员。</p>
+	<p align="left"><img border="0" src="sz_images/58.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+    <p align="left">最终结果会取出添加的二维成员。</p>
+	<p align="left"><img border="0" src="sz_images/59.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="shuzfz"></a>
+<font style="font-size: 12pt; font-weight:700">● 数组复制</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">通过本方法可将两个数组合并。</p>
+    <p align="left">参数1：填写要复制的源数组。</p>
+    <p align="left">参数2：填写从原数组什么位置开始复制，索引从0开始。</p>
+    <p align="left">参数3：要注意目标数组成员数，必须满足复制后的成员条件。</p>
+    <p align="left">参数4：复制到目标数组的首索引位置，如果此位置存在成员将会被覆盖。</p>
+    <p align="left">参数5：填写要复制的源数组的数量。</p>
+	<p align="left"><img border="0" src="sz_images/60.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、定义一个原文本数组，填写三个成员。</p>
+    <p align="left">2、定义目标文本数组，成员数必须满足合并后的成员数。</p>
+    <p align="left">3、调用<b>“数组复制()”</b>填写对应参数进行复制操作。</p>
+    <p align="left">4、最后将目标数组输出到编辑框中。</p>
+	<p align="left"><img border="0" src="sz_images/61.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="sz_images/62.png" ></p>
+</blockquote>
+
+	
+	
+	
+</p>
+</body>
+</html>

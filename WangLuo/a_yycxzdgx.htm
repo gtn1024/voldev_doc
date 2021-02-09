@@ -1,0 +1,487 @@
+
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+<div class="xuanfu">
+<ul class="menu">
+<!--  <li><h4>临时分类</h4></li>-->
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.应用更新类<span>(可收缩)</span></h6></li>
+		<ol id="new1"> 
+			<li><blockquote><a href="#">1.本类说明</a></blockquote></li>
+			<li><blockquote><a href="#yygxlcsh">2.初始化</a></blockquote></li>
+			<li><blockquote><a href="#yygxlcsh">3.检查更新</a></blockquote></li>
+			<li><blockquote><a href="#yygxlcsh">4.检测到有更新(事件)</a></blockquote></li>
+			<li><blockquote><a href="#yygxlcsh">5.应用更新数据解析基础类</a></blockquote></li>
+			<li><blockquote><a href="#yygxlcsh">6.数据解析(虚拟)</a></blockquote></li>
+			<li><blockquote><a href="#yygxlcsh">7.应用更新数据类</a></blockquote></li>
+			<li><blockquote><a href="#jcgxyks">8.检测更新已开始(事件)</a></blockquote></li>
+			<li><blockquote><a href="#xzrwjindu">9.下载任务已开始(事件)</a></blockquote></li>
+			<li><blockquote><a href="#xzrwjindu">10.下载任务已完成(事件)</a></blockquote></li>
+			<li><blockquote><a href="#yygxxzsb">11.下载失败(事件)</a></blockquote></li>
+			<li><blockquote><a href="#yygxjcdwgx">12.检测到无更新(事件)</a></blockquote></li>
+			<li><blockquote><a href="#yygxjcgxsb">13.检测更新失败(事件)</a></blockquote></li>
+			<li><blockquote><a href="#yygxlyhqx">14.用户取消更新(事件)</a></blockquote></li>
+			<li><blockquote><a href="#yygxhlgx">15.用户忽略更新(事件)</a></blockquote></li>
+			<li><blockquote><a href="#yygxqddsgx">16.启动后台更新任务</a></blockquote></li>
+			<li><blockquote><a href="#yygxqddsgx">17.停止后台更新任务</a></blockquote></li>
+			<li><blockquote><a href="#yygxzgxcl">18.置更新策略</a></blockquote></li>
+			<li><blockquote><a href="#yygxzgxcl">19.应用更新策略基础类</a></blockquote></li>
+			<li><blockquote><a href="#yygxzgxcl">20.显示更新通知(虚拟)</a></blockquote></li>
+			<li><blockquote><a href="#yygxzdaz">21.下载完成自动安装(虚拟)</a></blockquote></li>
+			<li><blockquote><a href="#xszzjdkxn">22.显示下载进度框(虚拟)</a></blockquote></li>
+		</ol>
+		
+	
+	
+		
+	</ol>
+</ul>
+</div>	
+
+
+
+<p align="left">
+<h2>应用更新类操作实例讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+<a name="yygxl"></a>  
+     
+<font style="font-size: 12pt; font-weight:700">● 帮助说明</font><br/>
+<br/>
+<blockquote>
+	<p align="left">通过使用本类可快速实现软件的检测更新下载，不需要自己去处理文件下载和安装。</p>
+	<p align="left">更多优点可看下图内的帮助说明。</p>
+	<p align="left">注意：本类想要正常使用，务必<a href="new.htm#byfbbb">编译发布版</a>。</p>
+	<p align="left" style="color: #F00A0D">注意2：本类位于<b>“应用程序自动更新支持”</b>模块中，欲使用本类务必添加其模块。</p>
+	<p align="left"><img border="0" src="yygx_images/help/1.png" ></p>
+</blockquote>	
+
+	<p align="left">&nbsp;</p>
+	<font style="font-size: 12pt; font-weight:700">● 准备操作</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">一、准备域名和虚拟主机</p>
+<blockquote>
+	<p align="left">1、购买租用虚拟主机或云服务器。</p>
+	<p align="left">2、购买域名后，绑定虚拟主机或者服务器。</p>
+	<p align="left">3、测试网站是否能正常访问。</p>
+	<p align="left">提示：域名和虚拟主机购买可去腾讯云，阿里云，主机屋等较为知名的服务器提供商咨询购买。</p>
+	<p align="left">如果不会绑定域名等操作，咨询对应网站的客服人员。</p>
+</blockquote>
+		<p align="left">二、准备如下文本文件</p>
+<blockquote>
+	<p align="left">文本文件起名<b>“gengxin.txt”</b>，并在文件中输入如下图所示的7段文本，每段文本用<b>“#”</b>分割。</p>
+	<p align="left">软件MD5：就是最新<a href="new.htm#byfbbb">编译发布版</a>APK文件的MD5，文件MD5具体获取方法有很多，自行百度搜索。</p>
+	<p align="left">下载地址：就是最新版APK文件的下载地址，必须是<a href="new.htm#byfbbb">发布版程序</a>。</p>
+	<p align="left">版本号和版本名称：可参考<a href="new.htm#szrjxx"><b>“新手图文教程”</b></a>中的介绍。</p>
+	<p align="left">填写好数据后，将本文件另存为<b>“UTF-8”</b>编码，并上传至网站服务器中（如何上传到服务器，可咨询服务器提供商客服）。</p>
+	<p align="left">如果不保存为<b>“UTF-8”</b>编码，检测更新可能会出现乱码的情况。</p>
+	<p align="left"><img border="0" src="yygx_images/2.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="yygxlcsh"></a>
+<font style="font-size: 12pt; font-weight:700">● 初始化</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 检查更新</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 检测到有更新(事件)</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 应用更新数据解析基础类</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 数据解析(虚拟)</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 应用更新数据类</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“初始化”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">顾名思义，通过本方法可初始化一些数据，进行检测更新前的准备。</p>
+    <p align="left">参数1：填写你自己的网络数据地址，也就是<b>“gengxin.txt”</b>所在的网站地址。</p>
+    <p align="left">参数2：需要定义一个<b>“基础类”</b>为<b>“应用更新数据解析基础类”</b>的对象，类名随意，然后创建此对象放在本参数中。</p>
+    <p align="left">参数3、4：用于监听更新和下载请求，默认为真。</p>
+	<p align="left"><img border="0" src="yygx_images/help/3.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“检查更新”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">顾名思义，调用本方法可请求更新检测，如果发现新版会进行下载。</p>
+    <p align="left">注意：调用本方法时，务必保证已经调用过<b>“初始化()”</b>方法。</p>
+	<p align="left"><img border="0" src="yygx_images/help/4.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“检测到有更新(事件)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">当软件有更新时，会触发本事件。</p>
+	<p align="left"><img border="0" src="yygx_images/help/5.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“应用更新数据解析基础类”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本类主要用于解析更新请求所返回的数据。</p>
+    <p align="left">具体实现过程通过<b>“数据解析”</b>虚拟方法操作。</p>
+	<p align="left"><img border="0" src="yygx_images/help/6.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“数据解析(虚拟)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">此虚拟方法是继承自<b>“应用更新数据解析基础类”</b>，主要作用就是用于解析更新请求返回的数据。</p>
+    <p align="left">本方法只有一个参数<b>“返回数据”</b>，本数据返回的是<b>“初始化()”</b>方法<b>“参数1”</b>填写的网站地址源码。</p>
+	<p align="left"><img border="0" src="yygx_images/help/7.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“应用更新数据类”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本类的主要作用，用于存储要更新的数据信息，如果检测到更新最终会将数据显示出来。</p>
+    <p align="left">设置的下载地址，则会在后台进行网络访问，将最新版的程序下载到手机上。</p>
+	<p align="left"><img border="0" src="yygx_images/help/8.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、定义类型为<b>“应用更新类”</b>的成员变量，起名<b>“检测更新”</b>。</p>
+    <p align="left">2、添加<b>“通知_被创建”</b>虚拟方法，调用<b>“初始化()”</b>，进行数据初始化操作。</p>
+	<p align="left"><img border="0" src="yygx_images/9.png" ></p>
+	 <p align="left">3、<b>“按钮1”</b>被点击后，调用<b>“检查更新()”</b>方法检查更新。</p>
+	 <p align="left">4、添加应用更新类的<b>“检测到有更新”</b>事件，检测到更新后弹出提示。</p>
+	<p align="left"><img border="0" src="yygx_images/10.png" ></p>
+	 <p align="left">5、定义<b>“基础类”</b>为<b>“应用更新数据解析基础类”</b>的对象，类名务必和<b>“初始化()”</b>方法中的保持一致。</p>
+	 <p align="left">6、在此类中右键可添加<b>“数据解析”</b>虚拟方法。</p>
+	 <p align="left">7、调用<b>“正则文本分割()”</b>方法，分割<b>“返回数据”</b>赋值给定义的<b>“网络数据数组”</b>变量。</p>
+	 <p align="left">8、定义类型为<b>“应用更新数据类”</b>的变量，起名<b>“设置更新数据”</b>。</p>
+	 <p align="left">9、读取<b>“网络数据数组”</b>中的各个成员数据，并赋值给对应的<b>“设置更新数据”</b>属性。</p>
+	 <p align="left">10、最后设置完毕将<b>“设置更新数据”</b>进行返回。</p>
+	<p align="left"><img border="0" src="yygx_images/11.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，如果检测到更新就会进行后台下载，并弹出更新提示和最新版本号等信息。</p>
+	<p align="left">还可以进行安装操作。</p>
+	<p align="left"><font color="##E91114">注意：必须编译发布版才能正常检测更新。</font></p>
+	<p align="left"><img border="0" src="yygx_images/12.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="jcgxyks"></a>
+<font style="font-size: 12pt; font-weight:700">● 检测更新已开始(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，本事件的作用就是当检测更新开始时会被触发。</p>
+	<p align="left"><img border="0" src="yygx_images/help/13.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">在原代码的基础上，添加本事件即可。</p>
+    <p align="left">注意：本事件被触发，并不能表示能够正常检测更新。</p>
+	<p align="left"><img border="0" src="yygx_images/14.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+    <p align="left">当<b>“按钮1”</b>被点击后，编辑框1会添加内容，证明<b>“检测更新已开始”</b>事件被触发。</p>
+	<p align="left"><img border="0" src="yygx_images/15.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="xzrwjindu"></a>
+<font style="font-size: 12pt; font-weight:700">● 下载任务已开始(事件)</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 下载任务已完成(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“下载任务已开始(事件)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">顾名思义，当下载任务已经开始时会触发本事件。</p>
+	<p align="left"><img border="0" src="yygx_images/help/16.png" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“下载任务已完成(事件)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">顾名思义，当下载任务完成后，会触发本事件。</p>
+    <p align="left">参数文件名类，将返回下载后的安装包路径。</p>
+	
+	<p align="left"><img border="0" src="yygx_images/help/18.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">在原代码的基础上，增加以上两个事件，并添加内容到编辑框中提示。</p>
+	<p align="left"><img border="0" src="yygx_images/17.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图<a href="yygx_images/19.gif" target="_blank" title="点击预览效果">（GIF）</a>：</p>
+<blockquote>
+    <p align="left">最终提示文本都显示在编辑框中，证明以上两个事件均被触发。</p>
+	<p align="left"><img border="0" src="yygx_images/19.gif" > </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="yygxxzsb"></a>
+<font style="font-size: 12pt; font-weight:700">● 下载失败(事件) </font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，当应用安装包下载失败的时候会触发本事件。</p>
+    <p align="left">例如：下载地址不存在，或者网络原因导致下载失败，都会触发本事件。</p>
+	<p align="left"><img border="0" src="yygx_images/help/20.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、添加<b>“下载失败”</b>事件，并弹出一个下载失败的提示框。</p>
+	<p align="left"><img border="0" src="yygx_images/21.png" ></p>
+	<p align="left">2、在<b>“gengxin.txt”</b>中指定一个不存在的下载地址。</p>
+	<p align="left"><img border="0" src="yygx_images/22.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">如果下载地址不存在，最终本事件会被触发并弹出<b>“下载失败”</b>的提示。</p>
+	<p align="left"><img border="0" src="yygx_images/22.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="yygxjcdwgx"></a>
+<font style="font-size: 12pt; font-weight:700">● 检测到无更新(事件)</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，当程序没有检测到更新的时候，会触发本事件。</p>
+	<p align="left"><img border="0" src="yygx_images/help/23.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、添加本事件，并弹出提示框提示。</p>
+	<p align="left"><img border="0" src="yygx_images/24.png" ></p>
+	<p align="left">2、在<b>“gengxin.txt”</b>中填写和要检测程序一样的版本号。</p>
+	<p align="left"><img border="0" src="yygx_images/25.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终结果，点击<b>“按钮1”</b>就会提示<b>“没有检测到更新”</b>。</p>
+	<p align="left"><img border="0" src="yygx_images/25.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="yygxjcgxsb"></a>
+<font style="font-size: 12pt; font-weight:700">● 检测更新失败(事件)</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，当检测更新失败的时候就会触发本事件。</p>
+    <p align="left">例如：当检测更新的地址不存在，或者手机网络不好的情况都会触发本事件。</p>
+	<p align="left"><img border="0" src="yygx_images/help/26.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、添加本事件并弹出一个提示框。</p>
+	<p align="left"><img border="0" src="yygx_images/27.png" ></p>
+	<p align="left">2、在<b>“初始化()”</b>方法的参数中故意指定一个错误的更新地址。</p>
+	<p align="left"><img border="0" src="yygx_images/28.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终结果会提示<b>“检测更新失败”</b>。</p>
+	<p align="left"><img border="0" src="yygx_images/28.gif" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<a name="yygxlyhqx"></a>
+<font style="font-size: 12pt; font-weight:700">● 用户取消更新(事件)</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">当用户主动取消更新时会触发本事件。</p>
+	<p align="left"><img border="0" src="yygx_images/help/29.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">添加<b>“用户取消更新”</b>事件，并弹出<b>“更新被取消”</b>提示。</p>
+	<p align="left"><img border="0" src="yygx_images/30.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终，当程序检测到更新时，点击<b>“取消”</b>按钮，<b>“用户取消更新”</b>事件被触发。</p>
+	<p align="left"><img border="0" src="yygx_images/31.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="yygxhlgx"></a>
+<font style="font-size: 12pt; font-weight:700">● 用户忽略更新(事件)</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">当用户主动忽略更新时会触发本事件，并且会返回一个参数<b>“应用数据更新类”</b>。</p>
+    <p align="left">通过本参数可获取最新版软件的版本号等数据。</p>
+	<p align="left"><img border="0" src="yygx_images/help/32.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">添加<b>“用户忽略更新”</b>事件，并取出最新版的一些数据，显示在编辑框中。</p>
+    <p align="left">调用方式：更新数据.XXX。</p>
+	<p align="left"><img border="0" src="yygx_images/33.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终当用户忽略更新后，最新版的一些数据会显示在编辑框中。</p>
+	<p align="left"><img border="0" src="yygx_images/34.gif" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<a name="yygxqddsgx"></a>
+<font style="font-size: 12pt; font-weight:700">● 启动后台更新任务</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 停止后台更新任务</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“启动后台更新任务”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">顾名思义，启动后会持续查询更新接口，用来达到实时检测更新的效果。</p>
+    <p align="left">检测时间间隔由参数1决定，单位秒。</p>
+	<p align="left"><img border="0" src="yygx_images/help/35.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“停止后台更新任务”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">调用本方法后，后台检测更新将会停止。</p>
+	<p align="left"><img border="0" src="yygx_images/help/36.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、<b>“按钮1”</b>被点击后，调用<b>“检测更新()”</b>和<b>“启动后台更新任务()”</b>方法。</p>
+    <p align="left">2、<b>“按钮2”</b>被点击后，调用<b>“停止后台更新任务()”</b>停止定时检测更新。</p>
+    <p align="left">3、添加<b>“检测到无更新”</b>事件，并向编辑框中添加内容，用于验证是否正在持续检测更新。</p>
+	<p align="left"><img border="0" src="yygx_images/37.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终结果证明<b>“启动后台更新任务”</b>方法确实可以实现定时检测更新。</p>
+	<p align="left"><img border="0" src="yygx_images/37.gif" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<a name="yygxzgxcl"></a>
+<font style="font-size: 12pt; font-weight:700">● 置更新策略</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 应用更新策略基础类</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 显示更新通知(虚拟)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“置更新策略”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本方法课对更新策略进行设置。</p>
+    <p align="left">注意：本方法务必在检测更新前调用。</p>
+	<p align="left"><img border="0" src="yygx_images/help/38.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“应用更新策略基础类”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本类是一个基础类，并不能直接使用。需要定义一个新的类，并将本类的名字填入<b>“基础类”</b>表格中。</p>
+    <p align="left">定义完毕后，右键添加下图所示的三个虚拟方法，可进行对哪种更新策略进行设置。</p>
+    <p align="left">此处首先讲解<b>“显示更新通知”</b>虚拟方法。</p>
+	<p align="left"><img border="0" src="yygx_images/help/39.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“显示更新通知(虚拟)”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">本虚拟方法，用来设置是否显示更新通知。</p>
+  <p align="left">如果方法返回真，则显示更新通知。</p>
+  <p align="left">如果返回假，则不通知直接开始下载安装。</p>
+	<p align="left"><img border="0" src="yygx_images/help/40.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+    <p align="left">1、定义一个新的类，基础类填写<b>“应用更新策略基础类”</b>，类名随意。</p>
+    <p align="left">2、右键类名选择<b>“添加更新策略的虚拟方法”</b>，找到<b>“显示更新通知”</b>添加此方法，并返回真。</p>
+	<p align="left"><img border="0" src="yygx_images/41.png" ></p>
+  <p align="left">3、<b>“按钮1”</b>被点击后，首先调用<b>“置更新策略()”</b>方法，设置策略。随后在<b>“检测更新()”</b>.</p>
+  <p align="left"><img border="0" src="yygx_images/42.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+  <p align="left">最终结果，检测到更新后会弹出更新提示信息框。</p>
+	<p align="left"><img border="0" src="yygx_images/43.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+    <p align="left">如果将<b>“显示更新通知”</b>虚拟方法的返回值改成假，结果也会发生变化。</p>
+	<p align="left"><img border="0" src="yygx_images/44.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+  <p align="left">最终结果，检测到更新后，会直接进入新版程序安装过程，并不会弹出安装提示。</p>
+	<p align="left"><img border="0" src="yygx_images/45.gif" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<a name="yygxzdaz"></a>
+<font style="font-size: 12pt; font-weight:700">● 下载完成自动安装(虚拟)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">通过本添加本虚拟方法，设置返回值可约束是否立刻进入安装界面。</p>
+  <p align="left">返回真则进入安装界面，返回假则不进入。</p>
+	<p align="left"><img border="0" src="yygx_images/help/46.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、添加<b>“显示更新通知”</b>虚拟方法，将其返回<b>“假”</b>，如果在不设置<b>“下载完成自动安装”</b>此方法的情况下，必然会直接进入安装界面。</p>
+    <p align="left">2、添加<b>“下载完成自动安装”</b>虚拟方法，设置返回<b>“假”</b>，这样就约束了最终状态，从而决定是否进入安装界面。</p>
+	<p align="left"><img border="0" src="yygx_images/47.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终结果没有进入安装界面，而是弹出了一个提示。</p>
+	<p align="left"><img border="0" src="yygx_images/48.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="xszzjdkxn"></a>
+<font style="font-size: 12pt; font-weight:700">● 显示下载进度框(虚拟)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本虚拟方法可用来约束是否显示下载的进度对话框。</p>
+  <p align="left">如果不设置本方法，默认是显示状态。</p>
+  <p align="left">注意：如果安装包很小，进度可能不显示。</p>
+	<p align="left"><img border="0" src="yygx_images/help/49.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">添加本虚拟方法后，让其返回值返回真。</p>
+	<p align="left"><img border="0" src="yygx_images/50.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终结果就会显示一个进度对话框正在下载新版程序。</p>
+	<p align="left"><img border="0" src="yygx_images/51.gif" ></p>
+</blockquote>
+
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

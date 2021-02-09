@@ -1,0 +1,1440 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>文本框组件</h4></li>
+	<ol>
+            <li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.文本框 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+            <li><blockquote><a href="#wenbenkuang">1.本类说明</a></blockquote></li>  
+            <li><blockquote><a href="#qhbjjx">2.取行边界矩形</a></blockquote></li> 
+             <li><blockquote><a href="#sfwsrfmbb">3.是否为输入法目标</a></blockquote></li>
+            <li><blockquote><a href="#tjzjzf">4.查找最近字符</a></blockquote></li>
+            <li><blockquote><a href="#tjnr">5.添加内容</a></blockquote></li>
+            <li><blockquote><a href="#tjnrh">6.添加内容行</a></blockquote></li>
+            <li><blockquote><a href="#tjgsnr">7.添加格式内容</a></blockquote></li>
+            <li><blockquote><a href="#tjgsnrh">8.添加格式内容行</a></blockquote></li>
+            <li><blockquote><a href="#znrdqfs">9.置内容对齐方式</a></blockquote></li>
+            <li><blockquote><a href="#znbtxdx">10.置内部图像对象</a></blockquote></li>
+            <li><blockquote><a href="#znbtxzy">11.置内部图像资源</a></blockquote></li>
+			
+		    <li><blockquote><a href="#zzt">12.置字体</a></blockquote></li>
+			
+            <li><blockquote><a href="#zwbyy">13.置文本阴影</a></blockquote></li>
+		
+            <li><blockquote><a href="#ztswbysb">14.置提示文本颜色表</a></blockquote></li>
+			
+            <li><blockquote><a href="#ztswbysb2">15.置提示文本颜色表2</a></blockquote></li>
+		   <li><blockquote><a href="#zwbysb">16.置文本颜色表</a></blockquote></li> 
+             <li><blockquote><a href="#zwbysb2">17.置文本颜色表2</a></blockquote></li> 
+		     <li><blockquote><a href="#zljwbysb">18.置链接文本颜色表</a></blockquote></li> 
+             <li><blockquote><a href="#zljwbysb2">18.置链接文本颜色表2</a></blockquote></li>
+            <li><blockquote><a href="#xskddx">20.像素宽度（读写）</a></blockquote></li>
+            <li><blockquote><a href="#xsgddx">21.像素高度（读写）</a></blockquote></li>
+          <li><blockquote><a href="#nrdx">22.内容（读写）</a></blockquote></li> 
+         
+            <li><blockquote><a href="#nbtxjjdx">23.内部图像间距（读写）</a></blockquote></li> 
+            <li><blockquote><a href="#dhmsdx">24.单行模式（写）</a></blockquote></li>
+            <li><blockquote><a href="#kxzdx">25.可选择（读写）</a></blockquote></li>
+			
+			<li><blockquote><a href="#bxzbjys">26.被选中文本背景色（读写）</a></blockquote></li>
+            <li><blockquote><a href="#neirongshenglue">27.内容省略（写）</a></blockquote></li>
+			<li><blockquote><a href="#zmdhcfcsdx">28.字幕动画重复次数（写）</a></blockquote></li>
+			
+			<li><blockquote><a href="#tswbdx">29.提示文本（读写）</a></blockquote></li> 
+		    <li><blockquote><a href="#tswbysdx">30.提示文本颜色（读写）</a></blockquote></li>
+
+		    <li><blockquote><a href="#wbysdx">31.文本颜色（读写）</a></blockquote></li>
+		 
+		     <li><blockquote><a href="#tswbysbx">32.提示文本颜色表（写）</a></blockquote></li>
+            <li><blockquote><a href="#wbysbx">33.文本颜色表（写）</a></blockquote></li>
+            <li><blockquote><a href="#ljwbysx">34.链接文本颜色（写）</a></blockquote></li> 
+            <li><blockquote><a href="#ljwbysbx">35.链接文本颜色表（写）</a></blockquote></li>
+		   <li><blockquote><a href="#zcnrbgbjtdx">36.支持内容改变监听（读写）</a></blockquote></li> 
+            <li><blockquote><a href="#zcgdczdx">37.支持滚动操作（读写）</a></blockquote></li>
+            <li><blockquote><a href="#wbztdx">38.文本字体（读写）</a></blockquote></li>
+			<li><blockquote><a href="#wbztfgdx">39.文本字体风格（读写）</a></blockquote></li>
+		
+            <li><blockquote><a href="#wbztdxdx">40.文本字体对象（读写）</a></blockquote></li>
+            <li><blockquote><a href="#wbztccdx">41.文本字体尺寸（读写）</a></blockquote></li>
+           
+            
+			<li><blockquote><a href="#wbspsfbdx">42.文本水平缩放比（读写）</a></blockquote></li>
+           
+      
+            <li><blockquote><a href="#hzbzdx">43.绘制标志（读写）</a></blockquote></li>
+            <li><blockquote><a href="#zdcljdx">44.自动超链接（读写）</a></blockquote></li>
+			
+            <li><blockquote><a href="#hsgddx">45.行数高度（读写）</a></blockquote></li>
+            <li><blockquote><a href="#hjjdx">46.行间距（读写）</a></blockquote></li>
+        
+            <li><blockquote><a href="#yyqydx">47.语言区域（读写）</a></blockquote></li> 
+          
+            <li><blockquote><a href="#zywbnrx">48.资源文本内容（写）</a></blockquote></li>
+            
+            <li><blockquote><a href="#yxspgdx">49.允许水平滚动（写）</a></blockquote></li>
+            <li><blockquote><a href="#yxnrspgdx">50.允许内容水平滚动（写）</a></blockquote></li>
+			<li><blockquote><a href="#nrczdqfsx">51.内容垂直对齐方式（写）</a></blockquote></li> 
+             <li><blockquote><a href="#nrspdqfsx">52.内容水平对齐方式（写）</a></blockquote></li> 
+            <li><blockquote><a href="#zddxx">53.自动大写（写）</a></blockquote></li>
+            <li><blockquote><a href="#hsd">54.行数（读）</a></blockquote></li>
+            <li><blockquote><a href="#hgd">55.行高（读）</a></blockquote></li>
+            
+			<li><blockquote><a href="#xzqqswzd">56.是否有选择区（读）</a></blockquote></li>
+            <li><blockquote><a href="#xzqqswzd">57.选择区结束位置（读）</a></blockquote></li>
+            <li><blockquote><a href="#xzqqswzd">58.选择区起始位置（读）</a></blockquote></li>
+            <li><blockquote><a href="#yyczpyd">59.阴影垂直偏移（读）</a></blockquote></li>
+            <li><blockquote><a href="#yymhbjd">60.阴影模糊半径（读）</a></blockquote></li>
+            <li><blockquote><a href="#yysppyd">61.阴影水平偏移（读）</a></blockquote></li>
+            <li><blockquote><a href="#yyysd">62.阴影颜色（读）</a></blockquote></li>
+            <li><blockquote><a href="#nrbgbsj">63.内容被改变（事件）</a></blockquote></li>
+         
+		</ol>	
+
+	</ol>
+</ul>
+</div>
+
+
+<p align="left">
+<h2>文本框组件操作实例讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+	<font style="font-size: 12pt; font-weight:700">● 辅助说明</font><br/>
+     	<blockquote>
+		<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+	</blockquote>	
+
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font><br/>
+<p align="left">&nbsp;</p>
+
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">打开窗口设计器，拖放两个<b>“按钮”</b>，一个<b>“文本框”</b>。</p>
+    <p align="left">分别起名<b>“按钮1、按钮2”</b>和<b>“文本框1”</b>。</p>
+	<p align="left"><img src="text_images/2.png" border="0" ></p><br>
+    <p align="left">保存布局后，右键<b>“按钮”</b>选择<b>“添加事件接收方法”</b>。</p> 
+	<p align="left">然后去添加<b>“按钮_被单击”</b>事件。</p>
+	<p align="left">最终达到如图所示的效果。</p>
+    <p align="left"><img border="0" src="text_images/3.png" ></p>
+
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<h2>一、文本框</h2>
+<p align="left">&nbsp;</p>
+<a name="wenbenkuang"></a>
+<font style="font-size: 12pt; font-weight:700">● 本类说明</font><br/>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left"><b>“文本框”</b>组件，即常说的标签组件。</p>
+	<p align="left">此组件的作用就是来显示文本。</p>
+	<p align="left">可通过<a href="a_ctrl_base.htm"><b>“窗口组件”</b></a>的基础类中的<a href="a_ctrl_base.htm#bjsx"><b>“背景色”</b></a>，<a href="a_ctrl_base.htm#bjsx"><b>“背景图”</b></a>等属性调整当前文本框的背景色和背景图。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="nrdx"></a><a name="qhbjjx"></a>
+<font style="font-size: 12pt; font-weight:700">● 内容（读写）</font><br><font style="font-size: 12pt; font-weight:700">● 取行边界矩形</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“内容（写）”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">顾名思义，本写属性的作用就是用来设置当前<b>“文本框”</b>的内容。</p>
+	<p align="left">可以在<b>“成员变量”</b>中指定属性，也可是使用代码<b>“文本框1.内容="XXX"”</b>来设置。</p>
+	<p align="left"><img border="0" src="text_images/4.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“内容（读）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，读取当前的文本框的内容。</p>
+	<p align="left"><img border="0" src="text_images/5.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“取行边界矩形”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">本方法的作用，可以取出指定行的<b>“基线Y向位置”</b>。</p>
+	<p align="left">除此之外，如果<b>“参数2”</b>不为<b>“空对象”</b>，还可以取出当前行的边界矩形。</p>
+	<p align="left">关于基线位置可看<a href="a_ctrl_base.htm#wbjxd"><b>“窗口组件->文本基线”</b></a>。</p>
+	<p align="left">注意：行数从0开始，即0代表第一行。</p>
+	<p align="left"><img border="0" src="text_images/6.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">首先给<b>“文本框1”</b>增加<b>“内容”</b>写属性，设置一串文本。</p>
+	<p align="left">然后在<b>“按钮1”</b>被单击下，定义两个变量，类型分别为<b>“矩形类”</b>和<b>“整数”</b>。</p>
+	<p align="left">随后调用<b>“取行边界矩形(0,矩形)”</b>，取出第一行的基线位置，赋值给变量。</p>
+	<p align="left">第一行的边界矩形，会赋值给<b>“矩形”</b>变量。</p>
+	<p align="left">通过矩形类的<b>“上下左右”</b>四个读属性，就可以读取第一行的边界位置。</p>
+	<p align="left">最后点击<b>“按钮2”</b>，可以通过<b>“内容”</b>读属性，读取当前文本框的内容。</p>
+	<p align="left"><img border="0" src="text_images/7.png" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可以看到无论是<b>“文本基线”</b>、<b>“边界矩形”</b>还是当前文本框内容，都成功读取。</p>
+	<p align="left"><img border="0" src="text_images/8.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="sfwsrfmbb"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否为输入法目标</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">简单来说，就是判断输入法输入文字的时候，文字是否会在当前组件显示。</p>
+	<p align="left">如果是当前组件，则返回真，否则返回假。</p>
+	<p align="left"><img border="0" src="text_images/9.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接调用当前方法判断返回值即可。</p>
+	<p align="left"><img border="0" src="text_images/10.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>后，会弹出<b>“不是”</b>。</p>
+	<p align="left">证明当前输入法目标并不是本组件。</p>
+	<p align="left"><img border="0" src="text_images/11.png" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="tjzjzf"></a>
+<font style="font-size: 12pt; font-weight:700">● 查找最近字符</font>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法，可以在屏幕指定坐标位置，取出临近字符索引。</p>
+	<p align="left"><img border="0" src="text_images/12.png" ></p>
+</blockquote>
+
+	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">首先给<b>“文本框1”</b>设置一长串的内容，方便等下取字符索引。</p>
+	<p align="left">此处定义三个变量，一个<b>“整数”</b>两个<b>“文本型”</b>。</p>
+	<p align="left">调用本方法，参数内随便填入一个坐标，然后赋值给<b>“文本索引”</b>变量。</p>
+	<p align="left">就会取出当前坐标所临近的字符索引。</p>
+  <p align="left">可以通过<a href="j_text.htm#qwbzf"><b>“取文本字符()”</b></a>方法，将指定字符索引的字符取出，利用<b>“到文本”</b>转换成文本。</p>
+  <p align="left">最后将两个信息，显示在信息框内。</p>
+	<p align="left"><img border="0" src="text_images/13.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最后可以看到两个信息成功取出。</p>
+	<p align="left"><img border="0" src="text_images/14.png" ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="tjnr"></a><a name="tjnrh"></a>
+<font style="font-size: 12pt; font-weight:700">● 添加内容</font><br>
+<font style="font-size: 12pt; font-weight:700">● 添加内容行</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“添加内容”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，本方法的作用就是给当前文本框添加内容。</p>
+	<p align="left">即在原内容的基础上新增内容。</p>
+	<p align="left">直接将要添加的内容，写到参数内即可。</p>
+	<p align="left"><img border="0" src="text_images/15.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“添加内容行”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法的作用是是一行一行的添加文本，无需使用换行符即可换行添加。</p>
+	<p align="left">注意：如果文本框有内容，首次添加会在原内容的基础上增加，第二次添加时才会换行添加。</p>
+	<p align="left"><img border="0" src="text_images/16.png" ></p>
+</blockquote>
+	
+
+	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击时调用<b>“添加内容”</b>方法。</p>
+	<p align="left"><b>“按钮2”</b>被点击时调用<b>“添加内容行”</b>方法。</p>
+	<p align="left"><img border="0" src="text_images/17.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可以看到<b>“按钮1”</b>被点击，会不停的在原内容上增加新的内容。</p>
+	<p align="left"><b>“按钮2”</b>第一次点击会在原内容基础上增加，第二次点击会换行增加文本。</p>
+	<p align="left"><img border="0" src="text_images/18.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="tjgsnr"></a><a name="tjgsnrh"></a>
+<font style="font-size: 12pt; font-weight:700">● 添加格式内容</font><br><font style="font-size: 12pt; font-weight:700">● 添加格式内容行</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“添加格式内容”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法的作用是用来添加格式文本内容。</p>
+	<p align="left">具体<b>“格式文本”</b>可看<a href="j_text.htm#gshwb"><b>“文本操作->格式化文本”</b></a>的帮助文档。</p>
+	<p align="left">参数2为可扩展参数。</p>
+	<p align="left"><img border="0" src="text_images/19.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“添加格式内容行”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法是用来添加格式内容行，添加模式和<b>“添加内容行”</b>一致。</p>
+	<p align="left">参数2为可扩展参数。</p>
+	<p align="left"><img border="0" src="text_images/20.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮1和按钮2点击后，分别调用者两个方法。</p>
+	<p align="left">参数1：填写一段格式文本。</p>
+	<p align="left">参数2：填写要替换的文本。</p>
+	<p align="left">注意：<b>“添加格式内容行”</b>方法，此处写了两个<b>“%s，那么此处需要扩展一个参数出来。</p>
+	<p align="left">第一个<b>“%s”</b>对应<b>“app”</b>，第二个<b>“%s”</b>对应<b>“开发”</b>。</p>
+	<p align="left"><img border="0" src="text_images/21.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终结果可以看到，参数对格式文本进行了替换操作。</p>
+	<p align="left">另外两个方法的效果和<b>“添加内容，添加内容行”</b>一致。</p>
+	<p align="left"><img border="0" src="text_images/22.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="znrdqfs"></a>
+<font style="font-size: 12pt; font-weight:700">● 置内容对齐方式</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，本方法的作用就是来设置当前文本框的内容对齐方式。</p>
+	<p align="left">参数1调用方式：水平对齐方式.XXX。</p>
+	<p align="left">参数2调用方式：垂直对齐方式.XXX。</p>
+	<p align="left"><img border="0" src="text_images/23.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">界面准备如下图：</p>
+<blockquote>
+	<p align="left">首先将当前文本框的宽度调整为<b>“匹配父组件”</b>宽度</p>
+
+	<p align="left"><img border="0" src="text_images/24.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在<b>“按钮1”</b>被点击下，调用本方法，填写想要调整的对齐方式即可。</p>
+	<p align="left">例如：这里全部设置为居中对齐。</p>
+	<p align="left"><img border="0" src="text_images/25.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最终可以看到，内容被进行了居中对齐。</p>
+	<p align="left"><img border="0" src="text_images/26.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="znbtxdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 置内部图像对象</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">本方法的作用，就是给当前文本框的指定位置添加图片。</p>
+  <p align="left">如果某个方向不想添加，直接填写<b>“空对象”</b>即可。</p>
+  <p align="left"><img border="0" src="text_images/27.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">定义一个<b>“可绘制资源”</b>的变量，初始值导入一张图片。</p>
+	<p align="left">通过<b>“载入可绘制资源()”</b>方法，可以将<b>“可绘制资源”</b>转换成<b>“可绘制对象类”</b>。</p>
+	<p align="left">其它参数如果不想填写，直接输入<b>“空对象”</b>。</p>
+  <p align="left"><img border="0" src="text_images/28.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+  <p align="left">点击<b>“按钮1”</b>后，文本框内左侧位置会出现一个图片。</p>
+	<p align="left">注意：此图片的大小无法调整，载入后将会是原始图片大小。</p>
+  <p align="left"><img border="0" src="text_images/29.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="znbtxzy"></a>
+<font style="font-size: 12pt; font-weight:700">● 置内部图像资源</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“置内部图像对象”</b>不同之处在于，本方法的参数全部是<b>“可绘制资源”</b>。</p>
+	<p align="left">不需要调用任何方法进行转换。</p>
+	<p align="left"><img border="0" src="text_images/30.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">例如：此处修改<b>“文本框1”</b>顶边图片资源。</p>
+	<p align="left">注意：参数中的<b>“(可绘制资源)空资源()”</b>，意思就是将<b>“空资源()”</b>强制转换成<b>“可绘制资源”</b>。</p>
+	<p align="left"><img border="0" src="text_images/31.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+	<p align="left">因当前文本框的宽度时<b>“匹配父组件”</b>宽度，所以显示的图像在窗口中间位置。</p>
+<p align="left"><img border="0" src="text_images/32.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="zzt"></a>
+<font style="font-size: 12pt; font-weight:700">● 置字体</font>
+<p align="left">&nbsp;</p>
+
+<p align="left">帮助文档如下图</p>
+<blockquote>
+	<p align="left">设置当前文本框字体效果，例如：粗体斜体等等。</p>
+	<p align="left">注意：本方法并非是用来设置<b>“字体文件”</b>。</p>
+	<p align="left">参数1：通过<b>“常用字体类型.XXX”</b>来调用。</p>
+	<p align="left">参数2：通过<b>“字体风格.XXX”</b>来调用。</p>
+	<p align="left"><img border="0" src="text_images/33.png" ></p>
+  </blockquote> 
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接调用本方法，填写自己想要设置的效果即可。</p>
+<p align="left"><img border="0" src="text_images/34.png" ></p>
+  </blockquote> 
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可以明显看到，文本框中的字体发生了变化。</p>
+<p align="left"><img border="0" src="text_images/35.gif" ></p>
+  </blockquote> 
+	
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="zwbyy"></a>
+	<a name="yyysd"></a><a name="yyczpyd"></a><a name="yymhbjd"></a><a name="yysppyd"></a>
+<font style="font-size: 12pt; font-weight:700">● 置文本阴影</font><br>
+<font style="font-size: 12pt; font-weight:700">● 阴影垂直偏移（读）</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 阴影模糊半径（读）</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 阴影水平偏移（读）</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 阴影颜色（读）</font><br>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，本方法的作用就是用来设置当前的文本阴影。</p>
+	<p align="left">参数1：设置模糊半径，数值越大越模糊，为0表示不模糊。</p>
+	<p align="left">参数2，3：均为要偏移像素位置。</p>
+	<p align="left">参数4：阴影颜色，可使用<b>“颜色类”</b>中的常量值。</p>
+	<p align="left">另外四个读属性，分别用来读取这四个参数值。</p>
+	<p align="left"><img border="0" src="text_images/36.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，直接调用<b>“置文本阴影”</b>方法，填写对应参数即可。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，分别读取对应的属性显示在文本框中。</p>
+    <p align="left"><img border="0" src="text_images/37.png" ></p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">最终可以看到<b>“按钮1”</b>被点击后，文本增加了一个黄色的阴影。</p>
+    <p align="left"><b>“按钮2”</b>被点击后，对应的属性值也全部读取出来。</p>
+    <p align="left">并且新加入的文本，也都有阴影效果。</p>
+	<p align="left"><img border="0" src="text_images/38.gif" >
+    </p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="tswbdx"></a><a name="tswbysdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 提示文本（读写）</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 提示文本颜色（读写）</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“提示文本（写）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性是用来设置文本框的<b>“提示文本”</b>。</p>
+	<p align="left">当文本框的内容为空时，会默认显示此文本。</p>
+	<p align="left"><img border="0" src="text_images/39.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+<p align="left"><b>“提示文本（读）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性的作用就是用来读取当前设置的<b>“提示文本”</b>。</p>
+    <p align="left"><img border="0" src="text_images/40.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“提示文本颜色（写）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本写属性的作用就是用来设置当前默认文本的颜色。</p>
+	<p align="left">可通过<b>“颜色类”</b>中定义的常量值来设置。</p>
+	<p align="left"><img border="0" src="text_images/41.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+<p align="left"><b>“提示文本颜色（读）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">读取当前设置的提示文本颜色。</p>
+    <p align="left"><img border="0" src="text_images/42.png" ></p>
+</blockquote>
+
+	<a name="tishi"></a>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被单击后，首先清空文本框的内容，然后在设置<b>“提示文本”</b>。</p>
+	<p align="left">最后调整提示文本的颜色。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，将<b>“提示文本”</b>和<b>“提示文本颜色”</b>分别取出。</p>
+	<p align="left"><img border="0" src="text_images/43.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">可以看到成功设置提示文本，并且也顺利取出。</p>
+	<p align="left"><img border="0" src="text_images/44.gif" >
+    </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+	<a name="wbysdx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 文本颜色（读写）</font><br/>
+
+	<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">本读写属性，就是用来读取和设置当前文本框的文本颜色。</p>
+	<p align="left">代码编写参考上面的<a href="#tishi"><b>“提示文本颜色”</b></a>即可。</p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="ljwbysx"></a><a name="zdcljdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 自动超链接（读写）</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 链接文本颜色（写）</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“自动超链接（写）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本写属性的作用就是给文本框内的指定内容<b>“自动添加超链接”</b>。</p>
+	<p align="left">属性值可以通过<b>“链接类型.XXX”</b>来指定。</p>
+	<p align="left">注意：必须在修改内容之前设置本属性。</p>
+	<p align="left"><img border="0" src="text_images/50.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+<p align="left"><b>“自动超链接（读）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">读取当前设置的超链接属性值。</p>
+    <p align="left"><img border="0" src="text_images/51.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“链接文本颜色（写）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本写属性的作用就是用来设置当前<b>“超链接”</b>的文本颜色。</p>
+	<p align="left">可以使用<b>“颜色类”</b>中定义的常量值。</p>
+	<p align="left"><img border="0" src="text_images/52.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，设置<b>“自动超链接”</b>属性值为<b>“连接类型.网址”</b>。</p>
+	<p align="left">设置后调整<b>“文本框1”</b>的内容为一个带超链接的内容。</p>
+  <p align="left">随后可调用<b>“链接文本颜色”</b>属性设置链接颜色。</p>
+  <p align="left"><b>“按钮2”</b>被点击后，判断当前<b>“自动超链接”</b>的返回值是否为<b>“网址”</b>。</p>
+  <p align="left">最后弹出对应的提示即可。</p>
+    <p align="left"><img border="0" src="text_images/54.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮1”</b>后，文本框上出现了一个可点击的超链接。</p>
+	<p align="left">点击超链接后，如果手机上有多个浏览器，此时就会弹出浏览器选择提示。</p>
+	<p align="left"><b>“按钮2”</b>被点击，就会弹出<b>“当前为网址”</b>的提示。</p>
+    <p align="left"><img border="0" src="text_images/53.gif" ></p>
+</blockquote>
+	
+	
+	
+	
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="ztswbysb2"></a><a name="ztswbysb"></a>
+<font style="font-size: 12pt; font-weight:700">● 置提示文本颜色表</font><br/><font style="font-size: 12pt; font-weight:700">● 置提示文本颜色表2</font>
+
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“置提示文本颜色表”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">本方法的作用就是用来设置当前文本框的状态颜色。</p>
+    <p align="left">例如：<b>“通常”</b>状态，<b>“被按下”</b>状态等等。</p>
+    <p align="left">需要通过<b>“状态到颜色表”</b>来定义。</p>
+	<p align="left"><img border="0" src="text_images/45.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>“置提示文本颜色表2”</b>帮助文档：</p>
+<blockquote>
+     <p align="left">本方法和上面的方法类似，都是来设置文本框的状态颜色。</p>
+    <p align="left">不过本方法需要通过<b>“颜色表”</b>类来创建。</p>
+	<p align="left"><img border="0" src="text_images/46.png" >
+  <p align="left">&nbsp;</p>
+	<p align="left">在<b>“颜色表类”</b>中有一个叫做<b>“创建”</b>的方法可以创建当前对象。</p>
+	<p align="left">而这个创建方法的参数和<b>“置提示文本颜色表”</b>的参数一致。</p>
+		
+		
+  <p align="left"><img border="0" src="text_images/47.png" >	
+  </p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击后，设置空内容，设置提示文本，设置支持单击。</p>
+    <p align="left">然后定义<b>“状态到颜色表”</b>变量，设置<b>“通常”</b>和<b>“被按下”</b>属性。</p>
+    <p align="left">最后调用<b>“置提示文本颜色表()”</b>方法，将变量名填入参数即可。</p>
+    <p align="left"><b>“按钮2”</b>被点击后，定义两个变量类型分别为<b>“状态到颜色表”</b>和<b>“颜色表类”</b>。</p>
+  <p align="left">给<b>“状态到颜色表”</b>变量分别填写<b>“通常”</b>和<b>“被按下”</b>属性。</p>
+    <p align="left"><b>“颜色表类”</b>需要设置参考。</p>
+    <p align="left">调用<b>“颜色表类.创建(颜色表2)”</b>方法赋值给<b>“颜色表变量”</b>。</p>
+    <p align="left">最后执行<b>“置提示文本颜色表2(颜色表变量)”</b>方法即可。</p>
+	<p align="left"><img border="0" src="text_images/48.png" >
+    </p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（gif）：</p>
+<blockquote>
+    <p align="left">可以看到<b>“按钮1”</b>和<b>“按钮2”</b>被单击后，<b>“文本框1”</b>都拥有了不同的状态颜色。</p>
+	<p align="left"><img border="0" src="text_images/49.gif" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="zwbysb"></a>
+<a name="zwbysb2"></a>
+<a name="zljwbysb"></a>
+<a name="zljwbysb2"></a>
+<a name="ljwbysbx"></a>
+<a name="wbysbx"></a>
+<a name="tswbysbx"></a>
+<font style="font-size: 12pt; font-weight:700">● 置文本颜色表</font><br>
+<font style="font-size: 12pt; font-weight:700">● 置文本颜色表2</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 置链接文本颜色表</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 置链接文本颜色表2</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 提示文本颜色表（写）</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 文本颜色表（写）</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 链接文本颜色表（写）</font><br>
+	
+<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+<p align="left">以上方法或属性中：</p>
+<p align="left"><b>“颜色表”</b>可参考<a href="#ztswbysb"><b>“置提示文本颜色表”</b></a>。</p>
+<p align="left"><b>“颜色表2”</b>可参考<a href="#ztswbysb"><b>“置提示文本颜色表2”</b></a>。</p>
+</blockquote>
+	
+	
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="qbjt"></a><a name="zbjt"></a>
+<font style="font-size: 12pt; font-weight:700">● 像素宽度（读写）</font><br>
+<font style="font-size: 12pt; font-weight:700">● 像素高度（读写）</font>	
+	<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+   <p align="left">以上两个写属性，分别用来设置当前文本框的像素高度和像素宽度。</p>
+   <p align="left">读属性即读取像素高度和宽度。</p>
+   <p align="left">注意：如果要设置像素高度，务必保证<b>“界面设计器”</b>内的宽度和高度类型为空（如下图所示）。</p>
+   <p align="left">只有设置为空后，才能够调整像素高度和宽度。</p>
+  <p align="left"><img border="0" src="text_images/55.png" ></p>
+</blockquote>
+	
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，分别设置<b>“像素高度/宽度”</b>属性值为100.</p>
+	<p align="left"><b>“按钮2”</b>被点击后，分别读取<b>“像素高度/宽度”</b>.</p>
+	<p align="left"><img border="0" src="text_images/56.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，文本框变成了一个白色的正方形。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，成功读取了像素高度/宽度。</p>
+	<p align="left"><img border="0" src="text_images/57.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<a name="nbtxjjdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 内部图像间距（读写）</font>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“内部图像间距（写）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本写属性的作用，就是用来设置组件内部图像的间距。</p>
+	<p align="left">组件添加图像时通过<a href="#znbtxdx"><b>“置内部图像对象()”</b></a>方法来设置。</p>
+	<p align="left">单位为像素。</p>
+	<p align="left"><img border="0" src="text_images/58.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“内部图像间距（读）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本读属性的作用，就是用来读取当前设置的间距。</p>
+	
+	<p align="left"><img border="0" src="text_images/59.png" ></p>
+</blockquote>
+	
+	
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后添加图片参考：<a href="#znbtxdx"><b>“置内部图像对象()”</b></a>方法。</p>
+  <p align="left"><b>“按钮2”</b>被点击后，设置<b>“内部图像间距”</b>，并读取出来赋值给文本框显示。</p>
+	<p align="left"><img border="0" src="text_images/60.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+  <p align="left">最后可以看到<b>“按钮2”</b>被点击后，导入的图像和文本之间增加了一定的距离。</p>
+	<p align="left"><img border="0" src="text_images/61.gif" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="dhmsdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 单行模式（写）</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本写属性的作用，就是用来设置当前文本是否处于单行模式。</p>
+	<p align="left">如果不设置本属性，文本框内的文本默认多行模式。</p>
+    <p align="left"><img border="0" src="text_images/62.png" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如图下图：</p>
+<blockquote>
+<p align="left">给<b>“文本框1”</b>添加<b>“内容”</b>属性，导入一串长文本。</p>
+	<p align="left">最后在<b>“按钮1”</b>被点击下，设置<b>“单行模式”</b>属性值为真。</p>
+  
+    <p align="left"><img border="0" src="text_images/63.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+<p align="left">可以看到<b>“按钮1”</b>点击后，文本框内的文本就变成了单行模式。</p>
+    <p align="left"><img border="0" src="text_images/64.gif" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="kxzdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 可选择（读写）</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“可选择(写)”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，设置当前文本框的内容可否被选择。</p>
+<p align="left">注意：选择不代表可以随意修改。</p>
+	<p align="left"><img border="0" src="text_images/65.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“可选择(读)”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，本读属性的作用就是来读取当前的文本框是否可以被选择。</p>
+<p align="left">返回真表示可以选择，否则返回假。</p>
+	<p align="left"><img border="0" src="text_images/66.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击后设置<b>“可选择”</b>属性值为真。</p>
+<p align="left"><b>“按钮2”</b>被点击后判断<b>“可选择”</b>属性的返回值。</p>
+	<p align="left"><img border="0" src="text_images/67.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+<p align="left">可以看到第一次点击<b>“按钮2”</b>的时候，提示<b>“不可选择”</b>。</p>
+<p align="left">点击<b>“按钮1”</b>后会发现文本支持了选择文本，并且还支持了<b>“内容滚动”</b>。</p>
+<p align="left">此时再次点击<b>“按钮2”</b>会弹出<b>“可选择”</b>。</p>
+<p align="left">注意：通过鼠标滚轮，也可是实现对文本内容的滚动。</p>
+	<p align="left"><img border="0" src="text_images/68.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="bxzbjys"></a>
+<font style="font-size: 12pt; font-weight:700">● 被选中文本背景色（读写）</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“被选中文本背景色（写）”</b>帮助文档如下图：</p>
+<blockquote>
+<p align="left">顾名思义，本写属性的作用就是用来设置，当前文本框的文本被选中后显示的背景颜色。</p>
+<p align="left">注意：务必保证当前文本框的<b>“可选择”</b>属性值为真。</p>
+	<p align="left"><img border="0" src="text_images/69.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“被选中文本背景色（读）”</b>帮助文档如下图：</p>
+<blockquote>
+<p align="left">本读属性的作用就是来读取当前被选择的背景色。</p>
+	<p align="left"><img border="0" src="text_images/70.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击后，设置<b>“可选择=真”</b>，紧接着设置<b>“被选择文本背景色”</b>为黄色。</p>
+<p align="left"><b>“按钮2”</b>被点击后，可以调用<b>“文本颜色”</b>写属性，属性值为<b>“被选择文本背景色”</b>的读属性。</p>
+	<p align="left"><img border="0" src="text_images/71.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+<p align="left">最后可以看到<b>“按钮1”</b>被点击后，文本选中后的背景色变成了黄色。</p>
+	<p align="left"><img border="0" src="text_images/72.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="neirongshenglue"></a><a name="zmdhcfcsdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 内容省略（写）</font><br/><font style="font-size: 12pt; font-weight:700">● 字幕动画重复次数（写）</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“内容省略(写)”</b>帮助文档：</p>
+<blockquote>
+   <p align="left">顾名思义，本写属性的作用就是在当前文本框无法完整显示内容是，执行内容省略方式。</p>
+   <p align="left">属性值通过<b>“文本省略方式.XXX”</b>指定。</p>
+   <p align="left">注意：想要使用本属性，必须保证<b>“单行模式”</b>的属性值为<b>“真”</b>。</p>
+   
+	<p align="left"><img border="0" src="text_images/73.png" ></p>
+	<p align="left"></p>
+	<p align="left">如果要使用<b>“文本省略方式.字幕动画”</b>常量值。</p>
+	<p align="left">那么此时必须保证<b>“被选择”</b>属性值为真。</p>
+	<p align="left"><img border="0" src="text_images/73a.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“字幕动画重复次数(写)”</b>帮助文档：</p>
+<blockquote>
+   <p align="left">在当前组件开启<b>“字幕动画”</b>后，本属性是用来设置动画滚动次数。</p>
+   <p align="left">如果不设置本属性，则一直重复滚动。</p>
+	<p align="left"><img border="0" src="text_images/74.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击后，开启<b>“可选择，单行模式”</b>，设置<b>“内容省略”</b>为<b>“字幕动画”</b>。</p>
+<p align="left">最后设置<b>“字幕动画重复次数”</b>，不设置则一直滚动。</p>
+	<p align="left"><img border="0" src="text_images/75.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+<p align="left">点击<b>“按钮1”</b>后可以看到，文本框内立刻变成了单行模式，并且文本开始从左向右滚动。</p>
+<p align="left">滚动5次后，就会停止。</p>
+	<p align="left"><img border="0" src="text_images/76.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="zcnrbgbjtdx"></a><a name="nrbgbsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 支持内容改变监听（读写）</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 内容被改变（事件）</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“支持内容改变监听（写）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，本写属性的作用就是用来监听<b>“文本框”</b>内容被改变事件。</p>
+	<p align="left">当本属性设置为<b>“真”</b>时，会发送<b>“内容被改变”</b>事件。</p>
+    <p align="left"><img border="0" src="text_images/77.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“支持内容改变监听（读）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本读属性的作用就是用来，读取当前<b>“文本框”</b>组件是否被监听。</p>
+	<p align="left">返回真表示监听，否则相反。</p>
+    <p align="left"><img border="0" src="text_images/78.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“内容被改变（事件）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">当<b>“支持内容改变监听”</b>属性值设置为<b>“真”</b>后，会发送本事件进行监听。</p>
+    <p align="left"><img border="0" src="text_images/79.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写(1)：</p>
+<blockquote>
+	<p align="left">首先在<b>“按钮1”</b>被点击下，设置<b>“支持内容改变监听”</b>的属性值为<b>“真”</b>。</p>
+	<p align="left">随后使用<b>“内容”</b>写属性，更新文本框的内容。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，判断当前是否被监听，然后弹出对应提示。</p>
+    <p align="left"><img border="0" src="text_images/80.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写(2)：</p>
+<blockquote>
+	<p align="left">右键<b>“文本框”</b>，选择<b>“事件接收方法”</b>。</p>
+    <p align="left"><img border="0" src="text_images/81.png" ></p>
+
+	<p align="left">&nbsp;</p>
+	<p align="left">继续选择<b>“文本框_内容被改变”</b>事件，随后点击<b>“添加”</b>。</p>
+    <p align="left"><img border="0" src="text_images/82.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写(3)：</p>
+<blockquote>
+	<p align="left">添加后，判断来源对象，然后弹出对应的提示框。</p>
+    <p align="left"><img border="0" src="text_images/83.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可以看到<b>“按钮1”</b>被点击后，成功弹出了<b>“内容被改变”</b>提示。</p>
+    <p align="left"><img border="0" src="text_images/84.gif" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+	<a name="zcgdczdx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 支持滚动操作（读写）</font>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“支持滚动操作（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">如果当前文本框内容无法全部显示，可调用本写属性，来给文本框增加滚动效果。</p>
+<p align="left">可以理解为添加了一个滚动条，让文本框内容能够滚动显示更多的内容。</p>
+	<p align="left"><img border="0" src="text_images/85.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“支持滚动操作（读）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">本读属性的作用，就是用来判断当前文本框是否开启了滚动操作。</p>
+<p align="left">返回真表示开启，否则返回假。</p>
+	<p align="left"><img border="0" src="text_images/86.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">首先给<b>“文本框1”</b>设置一段内容。</p>
+	<p align="left"><b>“按钮1”</b>被点击后，设置<b>“支持滚动操作”</b>属性值为真。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，读取当前属性的返回值，然后弹出对应提示。</p>
+	<p align="left"><img border="0" src="text_images/87.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">可以看到<b>“按钮1”</b>被点击后，文本框支持了滚动操作。</p>
+	<p align="left">点击<b>“按钮2”</b>也正常弹出对应的提示。</p>
+	<p align="left"><img border="0" src="text_images/88.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="wbztdx"></a><a name="wbztfgdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本字体（读写）</font>
+<br>	
+<font style="font-size: 12pt; font-weight:700">● 文本字体风格（读写）</font>	
+<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+<p align="left">以上两个读写属性和<a href="#zzt"><b>“置字体()”</b></a>方法一致。</p>
+<p align="left">可参考<a href="#zzt"><b>“置字体()”</b></a>的用法。</p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="wbztdxdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本字体对象（读写）</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“文本字体对象(写)”</b>帮助文档：</p>
+<blockquote>
+<p align="left">通过本写属性可设置<b>“文本框”</b>的字体样式，包括载入一个<b>“ttf格式”</b>的字体。</p>
+<p align="left">都需要通过<b>“字体类”</b>来实现。</p>
+<p align="left">注意：本属性会覆盖<b>“文本字体”</b>和<b>“文本字体风格”</b>的属性。</p>
+	<p align="left"><img border="0" src="text_images/89.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“文本字体对象(读)”</b>帮助文档：</p>
+<blockquote>
+<p align="left">本读属性的作用就是来读取当前的<b>“字体类”</b>对象。</p>
+<p align="left">如果不存在则返回<b>“空对象”</b>。</p>
+	<p align="left"><img border="0" src="text_images/90.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">首先在<b>“窗口”</b>类的<b>“属性名”</b>一栏填写<b>“@安卓.外部资产”</b>，点击按钮导入一个<b>“ttf格式”</b>的字体文件。</p>
+<p align="left">随后给文本框设置一串内容。</p>
+<p align="left">然后在<b>“按钮1”</b>被单击下调用本属性，属性值填写为<b>“字体类.从资产文件创建()”</b>。</p>
+<p align="left">创建参数内填写导入的字体文件名即可。</p>
+<p align="left"><b>“按钮2”</b>被点击时，可以修改<b>“按钮2”</b>的字体等于<b>“按钮1”</b>的字体。</p>
+	<p align="left"><img border="0" src="text_images/91.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击后，可以明显的看到<b>“文本框1”</b>的字体发生了变化。</p>
+<p align="left"><b>“按钮2”</b>被点击后，可以看到它和<b>“文本框1”</b>的字体一致。</p>
+	<p align="left"><img border="0" src="text_images/92.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="wbztccdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本字体尺寸（读写）</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“文本字体尺寸（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，本写属性的作用就是用来设置字体大小。</p>
+<p align="left">本属性值的单位为SP，可看<b>“尺寸单位.SP”</b>的说明。</p>
+	<p align="left"><img border="0" src="text_images/93.png" ></p>
+	<p align="left">&nbsp;</p>
+  <p align="left">使用帮助文档的搜索功能，可快速找到<b>“尺寸单位”</b>类，选中后右侧就可以看到一些尺寸单位的常量。</p>
+	<p align="left"><b>“SP”</b>单位和<b>“DP”</b>基本相同，不同之处在于，本尺寸大小会随着系统的字体设置而进行再次缩放。</p>
+	<p align="left">大部分软件使用的字体大小，均是以SP为单位的。</p>
+	<p align="left"><img src="text_images/93a.png" width="732" height="461" border="0" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“文本字体尺寸（读）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">本读属性的作用，就是用来读取当前字体尺寸。</p>
+	<p align="left"><img border="0" src="text_images/94.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">首先依然是给文本框1设置一段内容。</p>
+<p align="left">然后<b>“按钮1”</b>被点击后，调用<b>“文本字体尺寸”</b>设置属性值为<b>“20”</b>。</p>
+<p align="left">因<b>“按钮”</b>继承自文本框，所以<b>“按钮”</b>也可以调用文本框的所有方法。</p>
+<p align="left">此处<b>“按钮2”</b>调用本写属性，设置属性值为<b>“文本框1.文本字体尺寸”</b>。</p>
+<p align="left">使其<b>“按钮2”</b>的字体大小和<b>“文本框1”</b>的字体大小一致。</p>
+	<p align="left"><img border="0" src="text_images/95.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可以看到字体大小发生了明显的变化。</p>
+	<p align="left"><img border="0" src="text_images/96.gif" ></p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="wbspsfbdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本水平缩放比（读写）</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“文本水平缩放比（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">水平缩放比可以理解为<b>“横向缩放”</b>，本属性值必须大于0。</p>
+<p align="left">通常情况下默认值为1，如果属性值小于1，则会横向缩小，如果大于1则会横向放大。</p>
+	<p align="left"><img border="0" src="text_images/97.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“文本水平缩放比（读）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，返回当前设置的水平缩放比。</p>
+	<p align="left"><img border="0" src="text_images/98.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击后，设置缩放比的属性值为<b>“2”</b>。</p>
+<p align="left"><b>“按钮2”</b>被点击后，设置<b>“按钮2”</b>的缩放比和<b>“文本框1”</b>的缩放比一致。</p>
+	<p align="left"><img border="0" src="text_images/99.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最后可以看到字体明显发生了横向放大。</p>
+	<p align="left"><img border="0" src="text_images/100.gif" ></p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="hzbzdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 绘制标志（读写）</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“绘制标志（写）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">通过本属性可以给当前文本框的文本设置<b>“下划线，加粗”</b>等属性。</p>
+<p align="left">需要通过<b>“画笔标志类”</b>中定义的常量值指定。</p>
+	<p align="left"><img border="0" src="text_images/101.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“绘制标志（读）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，返回当前文本框的绘制标志。</p>
+	<p align="left"><img border="0" src="text_images/102.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击后，设置当前属性值为<b>“画笔标志类.下划线文本”</b>。</p>
+<p align="left">此属性值可以让文本增加下划线。</p>
+<p align="left"><b>“按钮2”</b>被点击时，设置<b>“按钮2.绘制标志”</b>等于文本框1的绘制标志。</p>
+	<p align="left"><img border="0" src="text_images/103.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">最后可以看到<b>“文本框1”</b>和<b>“按钮2”</b>都会拥有下划线。</p>
+	<p align="left"><img border="0" src="text_images/104.gif" ></p>
+</blockquote>
+	
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="hsgddx"></a><a name="hjjdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 行数高度（读写）</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 行间距（读写）</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“行数高度（写）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本写属性的作用是用来设置，当前文本框组件以<b>“文本内容”</b>的<b>“行数”</b>为高度，并非<b>“像素”</b>和<b>“DPI”</b>。</p>
+	
+	<p align="left"><img border="0" src="text_images/105.png" ></p>
+	<p align="left"></p>
+	<p align="left">另外要注意的是，如果要使用本属性，必须保证<b>“界面设计器”</b>中的<b>“组件高度类型”</b>为空。</p>
+	<p align="left"><img border="0" src="text_images/108a.png" >
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“行数高度（读）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，就是读取当前行数的高度。</p>
+	<p align="left">如果先前使用过以像素为单位的高度，那么本属性将会返回-1。</p>
+	<p align="left"><img border="0" src="text_images/106.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“行间距（写）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，设置文本行与行之间的距离，单位像素。</p>
+	<p align="left"><img border="0" src="text_images/107.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“行间距（读）”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，读取当前行间距。</p>
+	<p align="left"><img border="0" src="text_images/108.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">在<b>“按钮1”</b>被单击下，同时设置<b>“行数高度”</b>和<b>“行间距”</b>。</p>
+<p align="left"><b>“按钮2”</b>点击后，同时读取各自的数据。</p>
+	<p align="left"><img border="0" src="text_images/109.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+<p align="left">可以看到<b>“按钮1”</b>被点击后，当前文本立刻变成了<b>“两行”</b>的高度。</p>
+<p align="left">并且行与行之间增加了一定的距离。</p>
+	<p align="left"><img border="0" src="text_images/110.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="yyqydx"></a>
+<font style="font-size: 12pt; font-weight:700">● 语言区域（读写）</font>
+
+<p align="left">帮助说明：</p>
+<blockquote>
+<p align="left">关于<b>“语言区域”</b>可以看<a href="a_canvas.htm#yyqyx"><b>“画笔类->语言区域”</b></a>中的说明。</p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+	<a name="zywbnrx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 资源文本内容（写）</font>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">顾名思义，通过本属性可以将<b>“文本资源”</b>中定义的文本显示在文本框中。</p>
+<p align="left">注意：<b>“文本资源”</b>类似常量，但并非常量。</p>
+	<p align="left"><img border="0" src="text_images/111.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">定义一个<b>“文本资源”</b>变量，设置初始值。</p>
+<p align="left">然后将<b>“文本资源”</b>变量填写在本属性的属性值中即可。</p>
+	<p align="left"><img border="0" src="text_images/112.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+<p align="left">最后可以看到<b>“按钮1”</b>被点击后，文本框的内容变成了<b>“文本资源”</b>中的文本。</p>
+	<p align="left"><img border="0" src="text_images/113.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+	<a name="nrczdqfsx"></a><a name="nrspdqfsx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 内容垂直对齐方式（写）</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 内容水平对齐方式（写）</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“内容垂直对齐方式”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，本属性就是用来设置当前文本框的内容对齐方式。</p>
+<p align="left">通过<b>“垂直对齐方式.XXX”</b>调用。</p>
+	<p align="left"><img border="0" src="text_images/114.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“内容水平对齐方式”</b>帮助文档：</p>
+<blockquote>
+<p align="left">本属性是用来设置水平对齐方式，通过<b>“水平对齐方式.XXX”</b>来调用。</p>
+	<p align="left"><img border="0" src="text_images/115.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">首先给<b>“文本框1”</b>设置内容。</p>
+<p align="left">然后设置<b>“宽度，颜色”</b>等信息，方便区分最终效果。</p>
+<p align="left">最后调用这两个写属性，设置对齐方式为<b>“居中”</b>。</p>
+	<p align="left"><img border="0" src="text_images/116.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+<p align="left">可以看到<b>“按钮1”</b>被点击后，内容进行了横向纵向居中对齐。</p>
+	<p align="left"><img border="0" src="text_images/117.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+	<a name="zddxx"></a>
+<font style="font-size: 12pt; font-weight:700">● 自动大写（写）</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">本写属性可以将文本框内的小写英文字母全部变成大写。</p>
+    <p align="left">注意：只支持改变<b>“英文字母”</b>，其它的不支持改变。</p>
+	<p align="left"><img border="0" src="text_images/118.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">首先给文本框设置一串文本，保证文本内存在小写的英文字母。</p>
+<p align="left">然后<b>“按钮1”</b>被点击后，调用本属性，属性值设置为真。</p>
+	<p align="left"><img border="0" src="text_images/119.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+<p align="left">最后可以看到<b>“按钮1”</b>被点击后，文本框的<b>“小写字母”</b>自动变成了<b>“大写字母”</b>。</p>
+	<p align="left"><img border="0" src="text_images/120.gif" ></p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="yxspgdx"></a><a name="yxnrspgdx"></a>
+	<font style="font-size: 12pt; font-weight:700">● 允许水平滚动（写）</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 允许内容水平滚动（写）</font>
+<p align="left">&nbsp;</p>
+	<p align="left">以上两个属性最终效果基本一致，此处讲解<b>“允许水平滚动”</b>。</p>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">如果本属性值为真，则禁止内容自动换行，否则相反。</p>
+<p align="left">如果不设置本属性，默认为假。</p>
+	<p align="left"><img border="0" src="text_images/121.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">如果想要实现水平滚动，必须将<b>“可选择”</b>属性设置为真。</p>
+<p align="left">然后将当前属性值也设置为真。</p>
+	<p align="left"><img border="0" src="text_images/122.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击后，可以看到文本框中的文本框立刻变成了单行，并且也支持了水平滚动。</p>
+<p align="left">注意：变成单行，不代表当前是<b>“单行模式”</b>，通过<b>“\n”</b>换行符依然可以换行。</p>
+	<p align="left"><img border="0" src="text_images/123.gif" ></p>
+</blockquote>
+		
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="hsd"></a><a name="hgd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 行数（读）</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 行高（读）</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“行数（读）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，本读属性的作用就是来取出当前文本框内的总行数。</p>
+<p align="left">如果当前文本为完成布局，则返回<b>“0”</b>。</p>
+	<p align="left"><img border="0" src="text_images/124.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“行高（读）”</b>帮助文档：</p>
+<blockquote>
+<p align="left">顾名思义，本读属性的作用就是用来读取当前文本框内，单行的标准行高。</p>
+<p align="left">注意：行高并不等于字体高度，因为文本框在绘制文本时，会增加一定的间距空间。</p>
+	<p align="left"><img border="0" src="text_images/125.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击后，分别取出<b>“行数”</b>和<b>“行高”</b>显示在<b>“按钮2”</b>上。</p>
+<p align="left">然后让两者相乘，可计算出<b>“总行高”</b>。</p>
+	<p align="left"><img border="0" src="text_images/126.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+<p align="left">最后点击<b>“按钮1”</b>后，按钮2就会出现对应的结果。</p>
+<p align="left">注意：模拟器调试本例程可能会出现闪退等情况，建议使用真机调试。</p>
+	<p align="left"><img border="0" src="text_images/127.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<a name="xzqqswzd"></a><a name="xzqqswzd"></a><a name="xzqqswzd"></a>
+	<font style="font-size: 12pt; font-weight:700">● 是否有选择区（读）</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 选择区起始位置（读）</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 选择区结束位置（读）</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+<p align="left"><b>“是否有选择区”</b>的返回值为逻辑型，返回真表示有选区，否则相反。</p>
+<p align="left"><b>“选择区起始/结束位置”</b>就是字面上的意思，返回值为整数。</p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">在<b>“按钮1”</b>被单击下，判断<b>“是否有选择区”</b>的返回值是否为真。</p>
+<p align="left">如果存在选择区，则将<b>“起始位置”</b>和<b>“结束位置”</b>取出。</p>
+<p align="left">如果不存在选择区，则弹出提示。</p>
+	<p align="left"><img border="0" src="text_images/128.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+<p align="left">第一次点击<b>“按钮1”</b>提示<b>“没有选择区”</b>。</p>
+<p align="left">此时会自动执行<b>“可选择”</b>属性，在当前文本框选择文本后，再次点击<b>“按钮1”</b>。</p>
+<p align="left">文本框内就会出现<b>“起始选择位置”</b>和<b>“结束位置”</b>。</p>
+<p align="left">注意：结束位置为0，那是因为点击<b>“按钮1”</b>后，选择区消失导致的。</p>
+	<p align="left"><img border="0" src="text_images/129.gif" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

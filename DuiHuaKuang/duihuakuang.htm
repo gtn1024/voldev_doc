@@ -1,0 +1,470 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>对话框操作</h4></li>
+	<ol>
+    <li><blockquote><a href="#zbgz">0.准备工作</a></blockquote></li>     
+        <li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new2')" >一.对话框类<span>(可收缩)</span></h6></li>
+		<ol id="new2">
+            <li><blockquote><a href="#dhcjdhk">1.创建对话框</a></blockquote></li>
+    		<li><blockquote><a href="#dhtjzj">2.添加组件</a></blockquote></li>
+            <li><blockquote><a href="#dhczzj">3.查找组件</a></blockquote></li>
+            <li><blockquote><a href="#dhznrzj">4.置内容组件</a></blockquote></li>
+			<li><blockquote><a href="#dhxs">5.显示</a></blockquote></li>
+            <li><blockquote><a href="#dhyc">6.隐藏</a></blockquote></li>
+            <li><blockquote><a href="#dhgb">7.关闭</a></blockquote></li>
+			<li><blockquote><a href="#dhzz">8.中止</a></blockquote></li>
+			<li><blockquote><a href="#dhbtx">9.标题（写）</a></blockquote></li>
+			<li><blockquote><a href="#dhjwcmgbx">10.界外触摸关闭（写）</a></blockquote></li>
+    		<li><blockquote><a href="#dhthjgbx">11.退回键关闭（写）</a></blockquote></li>
+			<li><blockquote><a href="#dhsfbxsd">12.是否被显示（读）</a></blockquote></li>
+          <li><blockquote><a href="#dhbgb">13.被关闭（事件）</a></blockquote></li>
+            <li><blockquote><a href="#dhbxs">14.被显示（事件）</a></blockquote></li>
+            <li><blockquote><a href="#dhbzz">15.被中止（事件）</a></blockquote></li>
+		</ol>
+	
+        
+ 							
+	</ol>
+</ul>
+</div>
+
+
+<p align="left">
+<h2>对话框类操作实例讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+<a name="zbgz"></a>    
+     
+<font style="font-size: 12pt; font-weight:700">● 帮助说明</font><br/>
+<br/>
+
+
+
+<blockquote>
+  
+	<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 准备一个界面</font><br/>
+<p align="left">&nbsp;</p>
+
+<p align="left">界面如下图：</p>
+<blockquote>
+	<p align="left">打开窗口设计器，放两个<b>“按钮”</b>，右侧属性文本分别起名<b>“按钮1”</b>和<b>“按钮2”</b>。</p>
+	<p align="left"><img border="0" src="dhk_images/2.png" ></p>
+    <p align="left">保存布局后，右键<b>“按钮”</b>，添加<b>“按钮被单击事件接收方法”</b>，添加完毕后<b>如下图</b>所示。</p>
+    <p align="left"><img border="0" src="dhk_images/02.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="dhcjdhk"></a>
+<h2>一、对话框类</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 创建对话框</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">可以看到有一个<b>“窗口”</b>参数，可以一个<b>“对话框类”</b>返回值。</p>
+    <p align="left">创建后，所有的<b>“对话框操作”</b>都基于这个返回值。</p>
+	<p align="left"><img border="0" src="dhk_images/15.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码如下图：</p>
+<blockquote>
+    <p align="left">创建一个类型为<b>“对话框类”</b>的成员变量（名称随意），设置参考。</p>
+    <p align="left">随后在<b>“按钮1被单击”</b>事件下，用<b>“对话框类.创建对话框()”</b>，创建后赋值给定义的成员变量。</p>
+    <p align="left">窗口参数，填写<b>“本对象”</b>即可。</p>
+    <p align="left">最后可以利用<b>“显示()”</b>方法，将对话框显示出来。</p>
+	<p align="left"><img border="0" src="dhk_images/16.png" >
+    </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">执行<b>“按钮1”</b>后，就可以看到<b>“对话框”</b>被弹出。</p>
+	<p align="left"><img border="0" src="dhk_images/17.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="dhtjzj"></a>
+<font style="font-size: 12pt; font-weight:700">● 添加组件</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">可以看到本方法有<b>“三个”</b>参数。</p>
+	<p align="left">参数1：要添加的组件，注意不能是窗口组件。</p>
+    <p align="left">注意<b>“参数2、3”</b>，并不是用来设置高度和宽度的，只能写<b>“-1”</b>或者<b>“-2”</b>。</p>
+	<p align="left"><img border="0" src="dhk_images/18.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在原代码基础上，设置一个类型为<b>“文本框”</b>的变量，顺便还可以在<b>“属性名”</b>写<b>“内容”</b>，<b>“属性值”</b>写要添加的内容。</p>
+    <p align="left">随后利用<b>“本方法”</b>把定义的<b>“文本框变量”</b>添加进去。</p>
+    <p align="left">最后依然是调用<b>“显示()”</b>方法，显示出来。</p>
+	<p align="left"><img border="0" src="dhk_images/19.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">点击<b>“按钮1”</b>后，在弹出的<b>“对话框”</b>里面就多了一个<b>“文本框”</b>并且设置的标题内容也成功显示。</p>
+    <p align="left"><img border="0" src="dhk_images/20.png" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="dhczzj"></a>
+<font style="font-size: 12pt; font-weight:700">● 查找组件</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">可以看到只有一个<b>“组件ID”</b>参数，通过这个<b>“组件ID”</b>就可以查找到对应的组件，并且返回。</p>
+    
+	<p align="left"><img border="0" src="dhk_images/21.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+	<p align="left">我们只需要在<b>“添加组件代码”</b>基础上，稍作修改即可。</p>
+    <p align="left">第一：将<b>“文本框变量”</b>放到<b>“如果”</b>上面，并且增加一个<b>“ID”</b>属性名，属性值填写<b>“1”</b>。</p>
+  <p align="left">添加一个<b>“否则(来源对象==按钮2)”</b>，判断<b>“按钮2”</b>被点击。</p>
+  <p align="left">在<b>“按钮2”</b>下面创建一个类型为<b>“窗口组件”</b>的变量。</p>
+  <p align="left">然后利用<b>“对话框变量.查找组件”</b>查找文本框的<b>“ID”</b>。</p>
+  <p align="left">最后可以利用<b>“窗口组件”</b>的背景色属性，给<b>“文本框”</b>设置<b>“背景色”</b>。</p>
+	<p align="left"><img border="0" src="dhk_images/22.png" ></p>
+</blockquote>
+
+<p align="left">代码编写（2）：</p>
+<blockquote>
+	<p align="left">如果你要修改文本框的<b>“内容”</b>，只需要<b>“两步”</b>就可以办到。</p>
+	
+    <p align="left">第一：类型设置<b>“文本框”</b>。</p>
+    <p align="left">第二：强转<b>“窗口组件”</b>类型为<b>“文本框”</b>，在本方法的最前面直接写(文本框)即可。</p>
+    <p align="left">强转后就可以设置文本框的新内容。</p>
+    <p align="left"><img border="0" src="dhk_images/23.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码1</b>运行效果图（GIF）：</p>
+<p align="left">代码2自行测试</p>
+<blockquote>
+  <p align="left">首先执行<b>“按钮1”</b>创建对话框，随后执行<b>“按钮2”</b>查找组件，修改属性。</p>
+	<p align="left"><img border="0" src="dhk_images/23.gif" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="dhznrzj"></a>
+<font style="font-size: 12pt; font-weight:700">● 置内容组件</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本方法和<b>“添加组件”</b>一样，不同之处，本方法会<b>“覆盖”</b>对话框上所有的组件。</p>
+	<p align="left">本方法依然不能使用<b>“窗口上"的火山组件。</p>
+	<p align="left"><img border="0" src="dhk_images/24.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">我们继续在原代码的基础上修改，增加一个类型为<b>“按钮”</b>的<b>“按钮变量”</b>。</p>
+    <p align="left">设置内容为<b>“新按钮”</b>。</p>
+    <p align="left">然后利用本方法设置<b>“按钮组件”</b>。</p>
+    <p align="left">最后利用<b>“显示()”</b>方法显示对话框。</p>
+	<p align="left"><img border="0" src="dhk_images/25.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">最后结果会看到，只显示了<b>“按钮”</b>并没有显示<b>“文本框”</b>，文本框会被按钮<b>“覆盖”</b>掉。</p>
+	<p align="left"><img border="0" src="dhk_images/26.png" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="dhxs"></a>
+<font style="font-size: 12pt; font-weight:700">● 显示</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">顾名思义显示当前定义的对话框，前面的几个例子都展示了<b>“显示”</b>方法，这里不再演示。</p>
+	<p align="left"><img border="0" src="dhk_images/27.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<a name="dhyc"></a>
+<font style="font-size: 12pt; font-weight:700">● 隐藏</font><br/>
+<a name="dhgb"></a>
+<font style="font-size: 12pt; font-weight:700">● 关闭</font><br/>
+<a name="dhzz"></a>
+<font style="font-size: 12pt; font-weight:700">● 中止</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">以上三个方法用法和最终效果一致，这里举例<b>“隐藏”</b>。</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，就是用来<b>“隐藏”</b>对话框窗口。</p>
+   
+	<p align="left"><img border="0" src="dhk_images/28.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">定义<b>“按钮”</b>变量，设置标题为<b>“隐藏”</b>。</p>
+<p align="left">创建<b>“对话框对象”</b>后，添加<b>“隐藏按钮”</b>。</p>
+	<p align="left">利用<b>“挂接事件()”</b>方法，动态挂接创建的<b>“隐藏按钮”</b>。</p>
+    <p align="left">参数1：填写按钮名称。参数2，标记值。</p>
+    <p align="left">随后利用<b>“显示”</b>方法显示。</p>
+    <p align="left">最后我们利用<b>“挂接事件”</b>方法填写<b>“标记值”</b>来判断<b>“隐藏按钮”</b>被单击。</p>
+    <p align="left">然后执行<b>“隐藏”</b>方法即可。</p>
+    <p align="left">如果你要使用<b>“关闭方法”</b>，直接将<b>“隐藏”</b>改成<b>“关闭”</b>即可。</p>
+	<p align="left"><img border="0" src="dhk_images/29.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">可以看到我点击<b>“隐藏”</b>后，对话框消失。</p>
+	<p align="left"><img border="0" src="dhk_images/30.gif" >
+    </p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+<a name="dhbtx"></a>
+<font style="font-size: 12pt; font-weight:700">● 标题（写）</font><br/>
+<br/>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">写属性方法，顾名思义就是给对话框设置一个标题。</p>
+   
+	<p align="left"><img border="0" src="dhk_images/31.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">创建<b>“对话框”</b>后，直接写<b>“对话框变量.标题=”</b>加你想要设置的标题即可。</p>
+	<p align="left"><img border="0" src="dhk_images/32.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">显示对话框后，可以看到<b>“对话框”</b>多了一个标题文本。</p>
+	<p align="left"><img border="0" src="dhk_images/33.png" >
+    </p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="dhjwcmgbx"></a>
+<font style="font-size: 12pt; font-weight:700">● 界外触摸关闭（写）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">本命令也是写属性，顾名思义就是用来设置<b>“对话框外界”</b>，触摸的时候<b>“是否关闭”</b>对话框。</p>
+<p align="left"><b>“真”</b>则关闭，<b>“假”</b>则不关闭（可以通过返回键关闭）。</p>
+<p align="left">如果不设置默认为真。</p>
+	<p align="left"><img border="0" src="dhk_images/34.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left"><b>代码编写</b>：</p>
+<blockquote>
+	<p align="left">在<b>“按钮1”</b>被单击下写<b>“界外触摸关闭=真”</b></p>
+    <p align="left">在"按钮2"被单击下写"界外触摸关闭=假"</p>
+
+	<p align="left"><img border="0" src="dhk_images/35.png" ></p>
+   
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可以看到点击<b>“按钮1”</b>显示对话框后，点击<b>“对话框外界”</b>直接关闭。</p>
+    <p align="left">而点击<b>“按钮2”</b>显示对话框后，点击<b>“对话框外界”</b>则不会关闭。</p>
+    <p align="left">此时，可以按<b>“手机返回键”</b>关闭对话框。</p>
+	<p align="left"><img border="0" src="dhk_images/36.gif" >
+    </p>
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="dhthjgbx"></a>
+<font style="font-size: 12pt; font-weight:700">● 退回键关闭（写）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">写属性，就是用来设置<b>“按下手机返回键”</b>是否关闭对话框。</p>
+    <p align="left"><b>“等于真”</b>关闭，<b>“等于假”</b>不关闭。</p>
+    <p align="left">如果不设置，默认点击返回键关闭。</p>
+	<p align="left"><img border="0" src="dhk_images/36.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">我们直接在<b>“界外触摸关闭”</b>的代码基础上稍作修改。</p>
+    <p align="left">将<b>“界外触摸关闭”</b>改成<b>“退回键关闭”</b>即可。</p>
+	<p align="left"><img border="0" src="dhk_images/37.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果（GIF）： </p>
+<blockquote>
+	<p align="left">可以看到点击<b>“按钮1”</b>显示后，按下返回键，对话框关闭。</p>
+    <p align="left">点击<b>“按钮2”</b>显示时，按下返回键，对话框不会关闭。</p>
+	<p align="left"><img border="0" src="dhk_images/38.gif" ></p>
+   
+</blockquote>
+
+
+
+<p align="left">&nbsp;</p>
+<a name="dhsfbxsd"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否被显示（读）</font><br/>
+<br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">读属性，顾名思义就是用来判断当前对话框是否显示。</p>
+<p align="left">返回<b>“真”</b>显示，返回<b>“假”</b>没显示。</p>
+	<p align="left"><img border="0" src="dhk_images/39.png" ></p>
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被单击下写<b>“显示”</b>方法后判断<b>“是否被显示”</b>。</p>
+    <p align="left"><b>“按钮2”</b>这边不写显示方法，直接判断是否被显示。</p>
+	<p align="left"><img border="0" src="dhk_images/40.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果（GIF）：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被单击后，自然是提示<b>“显示了”</b>。</p>
+    <p align="left"><b>“按钮2”</b>则相反。</p>
+	<p align="left"><img border="0" src="dhk_images/41.gif" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+<a name="dhbxs"></a>
+<font style="font-size: 12pt; font-weight:700">● 被显示（事件）</font><br/>
+<a name="dhbgb"></a>
+<font style="font-size: 12pt; font-weight:700">● 被关闭（事件）</font><br/>
+<a name="dhbzz"></a>
+<font style="font-size: 12pt; font-weight:700">● 被中止（事件）</font><br/>
+
+<p align="left">&nbsp;</p>
+<p align="left">事件添加：</p>
+<blockquote>
+<p align="left">右键<b>“对话框类”</b>，选择<b>“事件接收方法”</b>。</p>
+	<p align="left"><img border="0" src="dhk_images/45.png" ></p>
+    <p align="left">&nbsp;</p>
+    <p align="left">在弹出窗口中，依次选择后<b>“添加”</b>。</p>
+    <p align="left">&nbsp;</p>
+    <p align="left"><img border="0" src="dhk_images/46.png" ></p>
+ 
+</blockquote>
+
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+	<p align="left">会生成如下图所示的<b>“三个”</b>事件，分别判断<b>“来源对象”</b>后弹出<b>“提示框”</b>。</p>
+    <p align="left">您可以将<b>“提示框”</b>，换成您想要操作的<b>“其它方法”</b>。</p>
+	<p align="left"><img border="0" src="dhk_images/47.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+	<p align="left">我们需要添加<b>“三个组件”</b>，其中的<b>“线性布局器”</b>是用来放<b>“两个按钮”</b>的。</p>
+    <p align="left">因为<b>“对话框”</b>内只能放<b>“一个”</b>组件，所以我们需要一个<b>“线性布局器”</b>来实现放更多的组件。</p>
+    <p align="left">创建<b>“对话框”</b>后，我们用线性布局器<b>“添加子组件”</b>方法，将<b>“两个按钮”</b>依次添加进去。</p>
+    <p align="left">最后给对话框添加<b>“线性布局器”</b>。</p>
+    <p align="left">然后我们需要给对话框挂接事件，这样<b>“被显示”</b>等事件才能被触发。</p>
+    <p align="left">随后给两个按钮挂接事件，填写标记值，然后判断按钮被点击。</p>
+	<p align="left"><img border="0" src="dhk_images/48.png" ></p>
+   
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+    <p align="left">可以看到<b>“对话框”</b>显示后，<b>“被显示”</b>事件也被触发。</p>
+    <p align="left">当<b>“关闭”</b>按钮被点击时，<b>“被关闭”</b>事件也被触发。</p>
+    <p align="left">当<b>“中止”</b>按钮被点击时，除了<b>“被中止”</b>事件触发外，<b>“被关闭”</b>事件也被触发</p>
+	<p align="left"><img border="0" src="dhk_images/49.gif" >
+    </p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

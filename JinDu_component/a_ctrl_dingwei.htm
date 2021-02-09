@@ -1,0 +1,205 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>定位条组件</h4></li>
+	<ol>
+            <li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new2')" >一.定位条 <span>(可收缩)</span></h6></li>
+	  <ol id="new2">
+			<li><blockquote><a href="#dwt">1.准备工作</a></blockquote></li>
+			<li><blockquote><a href="#gbydjdz">2.光标移动进度值(读写)</a></blockquote></li>
+			<li><blockquote><a href="#hkpy">3.滑块偏移(读写)</a></blockquote></li>
+			<li><blockquote><a href="#hktx">4.滑块图像(写)</a></blockquote></li>
+			<li><blockquote><a href="#hktx">5.置滑块图像(写)</a></blockquote></li>
+			<li><blockquote><a href="#kstd">6.开始拖动(事件)</a></blockquote></li>
+			<li><blockquote><a href="#kstd">7.结束拖动(事件)</a></blockquote></li>
+			<li><blockquote><a href="#kstd">8.定位位置改变(事件)</a></blockquote></li>
+		</ol>	
+	
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">
+<h2>定位条组件操作实例讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+
+<p align="left">&nbsp;</p>
+		<font style="font-size: 12pt; font-weight:700">● 辅助说明</font><br/>
+     	<blockquote>
+		<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+	</blockquote>	
+<p align="left">&nbsp;</p>
+<h2>一、定位条</h2>
+<p align="left">&nbsp;</p>
+	<a name="dwt"></a>
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font>	
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">打开启动类<b>“界面设计器”</b>，设计如下界面。</p>
+	<p align="left">从上到下依次是<b>“按钮1”</b>和<b>“定位条1”</b>。</p>
+	<p align="left">本组件除了自带的三个事件外，还继承了<b>“定位条基础类”</b>和<b>“进度条”</b>的所有方法。</p>
+	<p align="left"><img border="0" src="jd_images/23.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="gbydjdz"></a>
+<font style="font-size: 12pt; font-weight:700">● 光标移动进度值(读写)</font><p align="left"></p>
+<p align="left"><b>“光标移动进度值(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性用来设置，按下光标键（键盘左右方向键）后增加或减少的进度值。</p>
+	<p align="left">不设置本属性，默认进度为1.</p>
+	<p align="left">同名读属性，即读取当前移动进度值。</p>
+	<p align="left">本属性继承自<b>“定位条基础类”</b>。</p>
+	<p align="left"><img border="0" src="jd_images/24.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后，设置当前属性值为<b>“30”</b>，随后将其属性读取出来。</p>
+	<p align="left"><img border="0" src="jd_images/25.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+<p align="left">通过键盘<b>“上下”</b>方向键，可调整组件焦点，焦点在定位条后，可通过<b>“左右”</b>方向键调节进度。</p>
+	<p align="left"><img border="0" src="jd_images/26.gif" >
+    </p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="bkys"></a>
+<font style="font-size: 12pt; font-weight:700">● 滑块偏移(读写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“滑块偏移(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本属性可设置滑块横向偏移，单位像素。</p>
+	<p align="left">同名读属性，即读取当前滑块偏移。</p>
+	<p align="left">本属性继承自<b>“定位条基础类”</b>。</p>
+	<p align="left"><img border="0" src="jd_images/27.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>点击后设置当前属性值为<b>“50像素”</b>，随后将其读取出来。</p>
+	<p align="left"><img border="0" src="jd_images/28.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">正常情况下<b>“滑块”</b>紧挨着<b>“轨道”</b>。</p>
+	<p align="left">点击<b>“按钮1”</b>后滑块将进行横向偏移。</p>
+	<p align="left"><img border="0" src="jd_images/29.gif" >
+    </p>
+</blockquote>
+	
+	
+		<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="hktx"></a>
+<font style="font-size: 12pt; font-weight:700">● 滑块图像(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 置滑块图像(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">以上两个属性作用一致，此处讲解<b>“置滑块图像”</b>。</p>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">设置当前滑块图像，属性值为<b>“可绘制对象类”</b>。</p>
+	<p align="left">以上两个属性同样继承自<b>“定位条基础类”</b>。</p>
+	<p align="left"><img border="0" src="jd_images/30.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">定义<b>“可绘制资源”</b>变量，导入一张图片。</p>
+	<p align="left">通过<b>“载入可绘制资源”</b>方法可将<b>“可绘制资源”</b>转换为<b>“可绘制对象类”</b>。</p>
+	<p align="left">最后赋值给当前属性即可。</p>
+	<p align="left"><img border="0" src="jd_images/31.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>被点击后可以看到当前滑块图像发生了变化。</p>
+	<p align="left"><img border="0" src="jd_images/32.gif" >
+    </p>
+</blockquote>
+
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="kstd"></a>
+<font style="font-size: 12pt; font-weight:700">● 开始拖动(事件)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 结束拖动(事件)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 定位位置改变(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“开始拖动”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">当用户点击拖动定位条时，触发本事件。</p>
+	<p align="left"><img border="0" src="jd_images/33.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“结束拖动”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">当用户结束拖动后，触发本事件。</p>
+	<p align="left"><img border="0" src="jd_images/34.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“定位位置改变”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">定位条位置被改变后触发本事件。</p>
+	<p align="left">参数1：返回当前位置。</p>
+	<p align="left">参数2：可以判断当前是否为用户拖动。</p>
+	<p align="left"><img border="0" src="jd_images/35.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">分别添加这三个事件，指定来源对象后，弹出提示。</p>
+	<p align="left"><img border="0" src="jd_images/36.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="jd_images/37.gif" >
+    </p>
+</blockquote>
+		
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

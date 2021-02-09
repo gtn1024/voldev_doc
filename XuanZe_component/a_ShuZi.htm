@@ -1,0 +1,277 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new10')" >一.数字选择器<span>(可收缩)</span></h6></li>
+		<ol id="new10">
+			<li><blockquote><a href="#shuzi">1.准备工作</a></blockquote></li>
+			<li><blockquote><a href="#szzdz">2.最大值(读写)</a></blockquote></li>
+			<li><blockquote><a href="#szzdz">3.最小值(读写)</a></blockquote></li>
+			<li><blockquote><a href="#szzdz">4.当前值(读写)</a></blockquote></li>
+			<li><blockquote><a href="#szxhgd">5.循环滚动(读写)</a></blockquote></li>
+			<li><blockquote><a href="#szgdsd">6.滚动速度(写)</a></blockquote></li>
+			<li><blockquote><a href="#szzwbsz">7.置文本数组</a></blockquote></li>
+			<li><blockquote><a href="#szqwbsz">8.取文本数组</a></blockquote></li>
+			<li><blockquote><a href="#szgdztbgb">9.滚动状态被改变(事件)</a></blockquote></li>
+			<li><blockquote><a href="#szxzbgb">10.选择被改变(事件)</a></blockquote></li>
+			<li><blockquote><a href="#szgdztbgb">11.滚动_触摸滚动(常)</a></blockquote></li>
+			<li><blockquote><a href="#szgdztbgb">12.滚动_触摸离开(常)</a></blockquote></li>
+			<li><blockquote><a href="#szgdztbgb">13.滚动_闲置(常)</a></blockquote></li>
+		</ol>
+	</ol>
+</ul>
+</div>	
+
+
+<p align="left">	<a name="shuzi"></a>
+<h2>数字选择器实例讲解</h2> 
+<p><strong>作者：创世魂</strong></p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<h2>一、数字选择器</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 准备工作</font>	
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">拖放两个<b>“按钮”</b>和一个<b>“数字选择器”</b>。</p>
+	<p align="left">拖放完毕后保存布局即可。</p>
+		<p align="left"><font color="#F70408">注意：本类位于<strong>“安卓基本类”</strong>模块中，必须添加此模块才能使用。</font></p>
+	<p align="left"><img border="0" src="sz_images/152.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="szzdz"></a>
+<font style="font-size: 12pt; font-weight:700">● 最大值(读写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 最小值(读写)</font><br><font style="font-size: 12pt; font-weight:700">● 当前值(读写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“最大值(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本属性可以设置当前<b>“数字选择器”</b>的最大值。</p>
+	<p align="left">同名读属性即读取当前的最大值。</p>
+	<p align="left"><img border="0" src="sz_images/153.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“最小值(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本属性可以设置当前<b>“数字选择器”</b>的最小值。</p>
+	<p align="left">同名读属性即读取当前的最小值。</p>
+	<p align="left"><img border="0" src="sz_images/154.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“当前值(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，通过本属性可以设置当前<b>“数字选择器”</b>的当前选择值。</p>
+	<p align="left">同名读属性即读取当前的当前选择值。</p>
+	<p align="left"><img border="0" src="sz_images/155.png" ></p>
+</blockquote>	
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，分别设置当前的<b>“最大值，最小值”</b>和<b>“当前值”</b>。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，分别取出显示在提示框。</p>
+	<p align="left"><img border="0" src="sz_images/156.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">软件运行后<b>“数字选择器”</b>默认只有一个0。</p>
+	<p align="left"><b>“按钮1”</b>被点击后，当前数字选择器就会显示<b>“1-5”</b>5个数字。</p>
+	<p align="left"><b>“按钮2”</b>被点击后，会将当前值取出，显示在提示框中。</p>
+	<p align="left"><img border="0" src="sz_images/157.gif" >
+    </p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="szxhgd"></a>
+<font style="font-size: 12pt; font-weight:700">● 循环滚动(读写)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“循环滚动(写)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">顾名思义，本属性值就是用来设置当前<b>“数字选择器”</b>是否可以循环滚动。</p>
+	<p align="left">属性值为真则可以循环滚动，否则相反。</p>
+	<p align="left">如果不设置本属性，默认支持循环滚动。</p>
+	<p align="left">同名读属性，即读取当前是否开启循环滚动。</p>
+	<p align="left"><img border="0" src="sz_images/158.png" ></p>
+</blockquote>	
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后设置数值。</p>
+  <p align="left"><b>“按钮2”</b>点击后，利用<b>“取反”</b>方法给<b>“循环滚动”</b>属性赋值。</p>
+	<p align="left"><img border="0" src="sz_images/159.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">点击<b>“按钮2”</b>后，当前数字选择器会在<b>“循环滚动”</b>和<b>“不可循环滚动”</b>之间进行切换。</p>
+	<p align="left"><img border="0" src="sz_images/160.gif" >
+    </p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="szgdsd"></a>
+<font style="font-size: 12pt; font-weight:700">● 滚动速度(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">在<b>“数字选择器”</b>中，上下文本可以进行长按滚动。</p>
+	<p align="left">本属性的作用是用来设置滚动速度，默认为300毫秒。</p>
+	<p align="left">注意：模拟器的<b>“鼠标长按”</b>等于<b>“手指触摸”</b>长按。</p>
+	<p align="left"><img border="0" src="sz_images/161.png" ></p>
+</blockquote>	
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后设置数值。</p>
+  <p align="left"><b>“按钮2”</b>被点击后设置滚动速度为<b>“1000”</b>。</p>
+	<p align="left"><img border="0" src="sz_images/162.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图<a href="sz_images/163.gif" target="_blank">(GIF)</a>：</p>
+<blockquote>
+	
+	<p align="left">第一次长按，可以看到速度很快。</p>
+	<p align="left">当点击<b>“按钮2”</b>后进行第二次长按，速度会慢很多。</p>
+	<p align="left"><img border="0" src="sz_images/163.gif" >
+    </p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="szzwbsz"></a>
+<a name="szqwbsz"></a>
+<font style="font-size: 12pt; font-weight:700">● 置文本数组</font><br>
+<font style="font-size: 12pt; font-weight:700">● 取文本数组</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“置文本数组”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">通过本方法可以一次性设置一批文本到<b>“数字选择器”</b>中。</p>
+	<p align="left"><img border="0" src="sz_images/164.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“取文本数组”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">本方法的作用是用来读取当前由<b>“置文本数组”</b>设置的数据。</p>
+	<p align="left"><img border="0" src="sz_images/165.png" ></p>
+</blockquote>	
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，定义一个<b>“文本型[3]”</b>数组变量，在<b>“初始值”</b>写入三个文本数组。</p>
+  <p align="left">然后调用<b>“置文本数组”</b>方法设置数据即可。</p>
+  <p align="left"><b>“按钮2”</b>被点击后，在<b>“文本数组操作类.数组到文本()”</b>方法的参数内填写<b>“数字选择器1.取文本数组()”</b>。</p>
+  <p align="left">这样就可以将文本数组以文本形式显示在<b>“提示信息框”</b>中。</p>
+	<p align="left"><img border="0" src="sz_images/166.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	
+	<p align="left"><b>“按钮1”</b>被点击后，当前<b>“数字选择器”</b>置入了三个文本。</p>
+	<p align="left">点击<b>“按钮2”</b>后，当前置入的文本显示在<b>“提示信息框”</b>中。</p>
+	<p align="left"><img border="0" src="sz_images/167.gif" >
+    </p>
+</blockquote>
+	
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="szxzbgb"></a>
+<font style="font-size: 12pt; font-weight:700">● 选择被改变(事件)</font>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当前<b>“数字选择器”</b>选中任意一个项目后会触发本事件。</p>
+	<p align="left">并且会返回<b>“上一次的数值”</b>和<b>“当前新的值”</b>。</p>
+	<p align="left"><img border="0" src="sz_images/168.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，分别设置数值。</p>
+  <p align="left">添加<b>“数字选择器_选择被改变”</b>事件后，将参数<b>“旧的值”</b>和<b>“新的值”</b>分别取出，显示在提示框中。</p>
+	<p align="left"><img border="0" src="sz_images/169.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	
+	<p align="left">可以看到，当前<b>“数字选择器”</b>选择数字时，会提示<b>“新的值”</b>和<b>“旧的值”</b>。</p>
+	<p align="left"><img border="0" src="sz_images/170.gif" >
+    </p>
+</blockquote>
+	
+	
+		<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>	
+<a name="szgdztbgb"></a>
+<font style="font-size: 12pt; font-weight:700">● 滚动状态被改变(事件)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 滚动_触摸滚动(常)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 滚动_触摸离开(常)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 滚动_闲置(常)</font>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“滚动状态被改变(事件)”</b>帮助文档：</p>
+<blockquote>
+	<p align="left">当前滚动状态被改变时会触发本事件，参数返回的常量值，即上面列举的三个常量值。</p>
+	<p align="left">调用方式：<b>“数字选择器1.滚动_XXX”</b>。</p>
+	<p align="left"><img border="0" src="sz_images/171.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，分别设置数值。</p>
+  <p align="left">添加<b>“数字选择器_滚动状态被改变”</b>事件后，指定来源对象。</p>
+  <p align="left">最后分别判断<b>“滚动状态”</b>的返回值，然后弹出对应提示即可。</p>
+	<p align="left"><img border="0" src="sz_images/172.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图(GIF)：</p>
+<blockquote>
+	
+	<p align="left">可以看到，当前触摸滚动时，三个状态被依次触发。</p>
+	<p align="left"><img border="0" src="sz_images/173.gif" >
+    </p>
+</blockquote>
+	
+		
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,439 @@
+
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>FTP客户端模块</h4></li>
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.FTP客户端<span>(可收缩)</span></h6></li>
+		<ol id="new1"> 
+			<li><blockquote><a href="#ftp">1.本模块说明</a></blockquote></li>
+			<li><blockquote><a href="#ftpzbcz">2.准备操作</a></blockquote></li>
+			<li><blockquote><a href="#ftpdengl">3.FTP登陆</a></blockquote></li>
+			<li><blockquote><a href="#ftphuoqu">4.获取目录和文件</a></blockquote></li>
+			<li><blockquote><a href="#ftpjrml">5.进入目录</a></blockquote></li>
+			<li><blockquote><a href="#ftpjrml">6.返回上级目录</a></blockquote></li>
+			<li><blockquote><a href="#ftpcjml">7.创建目录</a></blockquote></li>
+			<li><blockquote><a href="#ftpcmm">8.重命名</a></blockquote></li>
+			<li><blockquote><a href="#ftpcmm">9.移动</a></blockquote></li>
+			<li><blockquote><a href="#ftpsc">10.删除文件</a></blockquote></li>
+			<li><blockquote><a href="#ftpsc">11.删除目录</a></blockquote></li>
+			<li><blockquote><a href="#ftpshangchuan">12.上传文件</a></blockquote></li>
+			<li><blockquote><a href="#ftpxiazai">13.下载文件</a></blockquote></li>
+		</ol>
+		
+	</ol>
+</ul>
+</div>	
+
+
+
+<!--<p align="left">
+<h2>ZIP压缩解压操作实例讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+<a name="zbgz"></a>    
+     
+<font style="font-size: 12pt; font-weight:700">● 帮助说明</font><br/>
+<br/>
+<blockquote>
+<p align="left">本教程针对ZIP压缩解压进行了讲解说明。</p>
+<p align="left">本教程所有方法均位于<strong><b>“数据压缩解压及JAR访问支持”</b></strong>模块中。</p>
+ <!-- <p align="left"><img border="0" src="sz_images/1.png" ></p>
+</blockquote>	-->
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="ftp"></a>
+<h2>一、FTP客户端</h2>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 本模块说明</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">通过使用本模块可以实现FTP相关操作，开发一个FTP管理软件。</p>
+	<p align="left">注：欲使用本功能必须配置<font color="#F50004"><b>“FTP客户端”</b></font>模块。</p>
+</blockquote>
+	<p align="left">&nbsp;</p><a name="ftpzbcz"></a>
+	<font style="font-size: 12pt; font-weight:700">● 准备操作</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">需要准备一个FTP服务器。</p>
+<blockquote>
+	<p align="left">1、本地搭建可以使用<font color="#F50004"><b>“简单FTP&nbsp;server”</b></font>等轻量级的FTP服务器软件。</p>
+	<p align="left">2、网络搭建可以使用<font color="#F50004"><b>“FileZilla&nbsp;Server”</b>，<b>“
+Serv-U”</b></font>等软件搭建。</p>
+	<p align="left">3、也可以使用<font color="#F50004"><b>“PhpStudy”</b></font>等建站软件搭建FTP。</p>
+	<p align="left">4、FTP服务器搭建完毕后，建立一个FTP用户，并开启所有控制权限。</p>
+	<p align="left">注：不同FTP服务器创建用户的方式不同，权限设置可能也不一样，自行百度搜索解决方案。</p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<a name="ftpdengl"></a>
+<font style="font-size: 12pt; font-weight:700">● FTP登陆</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">想要实现FTP登陆需要使用一个类<b>“FTP客户端”</b>和本类中的两个方法<b>“连接”</b>和<b>“登陆”</b>。</p>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“连接”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">通过本方法可连接FTP服务器，如果想要登陆FTP必须在连接成功后调用<b>“登陆()”</b>方法。</p>
+    <p align="left">参数1：填写FTP服务器地址。</p>
+    <p align="left">参数2：填写FTP端口号，默认为21。</p>
+    <p align="left">参数3：本参数如果填写<b>“真”</b>则会触发<b>“连接完毕”</b>事件，并且是否连接成功也在该事件下。</p>
+	<blockquote>
+    <p align="left">如果本参数填写假，则直接返回是否连接成功。</p></blockquote>
+	<p align="left"><img border="0" src="FTP_images/help/1.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“登陆”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">顾名思义，调用本方法可登陆FTP服务器。</p>
+    <p align="left">注意：必须调用<b>“连接()”</b>方法连接成功后才能调用本方法登陆。</p>
+    <p align="left">参数1：输入FTP账户名称，默认为匿名账户。</p>
+    <p align="left">参数2：输入FTP账户密码，匿名登陆直接忽略即可。</p>
+	<p align="left"><img border="0" src="FTP_images/help/2.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、准备三个编辑框和一个按钮，编辑框用来填写FTP服务器相关信息，按钮用来点击登陆。</p>
+    <p align="left">2、定义类型为<b>“FTP客户端”</b>的成员变量。</p>
+    <p align="left">3、<b>“按钮1”</b>被点击后，执行<b>“连接()”</b>方法填写对应参数并判断是否连接成功。</p>
+    <p align="left">4、如果连接成功则执行<b>“登陆()”</b>方法登陆FTP服务器。</p>
+	<p align="left"><img border="0" src="FTP_images/3.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+    <p align="left">左图：<b>“按钮1”</b>被点击后提示登陆成功。</p>
+    <p align="left">右图：FTP服务器软件也显示有用户登陆。</p>
+	<p align="left"><img border="0" src="FTP_images/4.png" ><img border="0" src="FTP_images/5.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="ftphuoqu"></a>
+<font style="font-size: 12pt; font-weight:700">● 获取目录和文件</font>
+<p align="left">&nbsp;</p>
+<p align="left">想要获取FTP中的目录和文件，需要使用<b>“FTP客户端”</b>类的以下方法配合。</p>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“被动模式()”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">在FTP连接中分为<b>“主动模式”</b>和<b>“被动模式”</b>。</p>
+    <p align="left">此方法的作用就是将当前FTP设置为被动模式。</p>
+    <p align="left">在被动模式的FTP中，命令连接和数据连接都由客户端完成。</p>
+    <p align="left">只有在此模式下，才能进行对FTP文件目录的获取。</p>
+	<p align="left"><img border="0" src="FTP_images/help/3.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“取文件列表()”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">顾名思义，通过本方法课获取FTP指定目录中的文件列表，返回值为<b>“FTP文件类[]”</b>数组。</p>
+    <p align="left">失败将返回空对象。</p>
+	<p align="left"><img border="0" src="FTP_images/help/4.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“FTP文件类”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">本类中存储了FTP所有的文件信息。</p>
+    <p align="left">例如：通过<b>“FTP文件类.为文件”</b>读属性可判断是否为文件。</p>
+    <p align="left">注意：本类不能直接创建，必须通过<b>“取文件列表()”</b>方法获取。</p>
+	<p align="left"><img border="0" src="FTP_images/help/5.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“编码(写)”</b>帮助文档：</p>
+<blockquote>
+  <p align="left">如果在获取FTP文件遇到中文乱码时，可通过本属性修改编码。</p>
+    <p align="left">属性值书写方式：<b>“文本编码.XXX”</b>,或者直接填写<b>“GBK”</b>、<b>“UTF-8”</b>等编码名称。</p>
+	<p align="left"><img border="0" src="FTP_images/help/6.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">界面准备：</p>
+<blockquote>
+    <p align="left">准备一个<b>“按钮”</b>和一个<b>“简单列表框”</b>。</p>
+    <p align="left">然后将<b>“简单列表框”</b>组件设置<b>“高/宽度”</b>分别为<b>“匹配父组件”</b>尺寸。 </p>
+	<p align="left"><img border="0" src="FTP_images/7.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、在进行获取目录之前必须要进行<a href="#ftpdengl"><b>“登陆”</b></a>操作(后续将不再赘述)。</p>
+  <p align="left">2、登陆成功后立刻设置<b>“被动模式()”</b>和<b>“编码”</b>，因电脑是GBK编码，所以此处要填写<b>“文本编码.GBK”</b>.</p>
+    <p align="left">3、调用<b>“取文件列表()”</b>，赋值给定义的<b>“FTP文件类[]”</b>变量。</p>
+    <p align="left">4、利用<b>“循环()”</b>取出所有成员，并从FTP文件类中取出想要的数据插入到列表框中。</p>
+	<p align="left"><img border="0" src="FTP_images/6.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+   
+    <p align="left">左图：FTP客户端获取目录效果。</p>
+    <p align="left">右图：FTP服务器根目录文件展示。</p>
+	 <p align="left">当按钮被点击后，FTP根目录的所有文件都会出现在列表框中。</p>
+    <p align="left">注意：目录中<b>“.”</b>和<b>“..”</b>并非连接所有FTP服务器都会出现。</p>
+    <p align="left">这两个目录通常用作识别想要的操作。</p>
+  <p align="left">例如：点击<b>“..”</b>返回上一级，点击<b>“.”</b>返回根目录。</p>
+	<p align="left"><img border="0" src="FTP_images/8.gif" >&nbsp;&nbsp; <img border="0" src="FTP_images/9.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="ftpjrml"></a>
+<font style="font-size: 12pt; font-weight:700">● 进入目录</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 返回上级目录</font>
+<p align="left">&nbsp;</p>
+<p align="left">想要实现以上两个操作，需要使用以下方法实现。</p>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“取工作目录”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">顾名思义，可以取出当前工作目录。</p>
+    <p align="left">使用本方法时，需要注意路径符号的问题（红框内）。</p>
+    <p align="left">注意：如果FTP掉线等情况，本方法将会返回空对象。</p>
+	<p align="left"><img border="0" src="FTP_images/help/7.png" ></p>
+</blockquote><p align="left">&nbsp;</p>
+<p align="left"><b>“置工作目录”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">设置后当前FTP的工作目录就会被设置成指定目录。</p>
+    <p align="left">设置成功后，如果要下载工作目录内的文件，直接填写文件名就可以下载。</p>
+    <p align="left">注意：成功返回真，失败返回假。</p>
+    <p align="left">失败原因：通常为没有在<b>“登陆FTP”</b>前调用<b>“被动模式()”</b>方法。</p>
+	
+	<p align="left"><img border="0" src="FTP_images/help/8.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“切换到父目录()”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">顾名思义，切换工作目录到上级目录。</p>
+    <p align="left">成功返回真，失败返回假。</p>
+	
+	<p align="left"><img border="0" src="FTP_images/help/9.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">界面设计：</p>
+<blockquote>
+    <p align="left">在原界面的基础上增加一个按钮，用于返回上一级。</p>
+	<p align="left"><img border="0" src="FTP_images/10.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p><a name="ftphuoqumulu"></a>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+    <p align="left">将前面学到的<a href="#ftphuoqu"><b>“获取目录和文件”</b></a>的办法，进行一下封装操作，方便多次调用。</p>
+    <p align="left">可利用<b>“Ctrl+M”</b>新建方法。</p>
+	<p align="left"><img border="0" src="FTP_images/11.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+    <p align="left"><b>“按钮1”</b>被点击：登陆之后调用<b>“获取目录()”</b>方法。</p>
+    <p align="left">注意：必须在登陆之前调用<b>“被动模式()”</b>方法，否则无法正常执行<b>“置工作目录()”</b>方法。</p>
+    <p align="left"><b>“按钮2”</b>被点击：调用<b>“切换到父目录()”</b>方法 后执行<b>“获取目录()”</b>方法。</p>
+	<p align="left"><img border="0" src="FTP_images/12.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（3）：</p>
+<blockquote>
+    <p align="left">1、添加<b>“简单列表框_项目被单击”</b>事件。</p>
+    <p align="left">2、通过列表框适配器的<b>“取项目()”</b>方法取出列表标题，即FTP目录名称。</p>
+    <p align="left">3、利用<b>“取工作目录()”</b>方法判断是否需要路径符号。</p>
+    <p align="left">4、调用<b>“置工作目录()”</b>方法，设置新路径后调用<b>“获取目录()”</b>。</p>
+	<p align="left"><img border="0" src="FTP_images/13.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">最终成功进入新目录，也可以返回上一级目录。</p>
+	<p align="left"><img border="0" src="FTP_images/14.gif" > </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<a name="ftpcjml"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建目录</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，调用本方法可以在FTP服务器中创建一个新的目录。</p>
+    <p align="left">成功返回真，失败返回假。</p>
+	<p align="left"><img border="0" src="FTP_images/help/10.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">在前面的例程基础上简单修改即可。</p>
+    <p align="left"><b>“按钮2”</b>被点击后，调用当前方法创建一个新的目录，创建后刷新FTP目录。</p>
+    <p align="left">关于<b>“获取目录()”</b>方法<a href="#ftphuoqumulu">点击跳转</a>,后续将不再赘述。</p>
+	<p align="left"><img border="0" src="FTP_images/15.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+    <p align="left">可以看到当<b>“创建目录”</b>按钮被点击后，FTP文件列表中增加了一个新的目录。</p>
+	<p align="left"><img border="0" src="FTP_images/16.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="ftpcmm"></a>
+<font style="font-size: 12pt; font-weight:700">● 重命名</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 移动</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">在FTP服务器有权限的情况下，本方法共有四个作用。</p>
+    <p align="left">1、重命名文件。</p>
+    <p align="left">2、重命名目录。</p>
+    <p align="left">3、移动文件。</p>
+    <p align="left">4、移动目录。</p>
+    <p align="left">进行移动操作时，<b>“参数2”</b>直接填写新目录+新文件路径即可。</p>
+    <p align="left">注意：填写路径的时候应当注意工作目录的问题。</p>
+    <p align="left">例如：FTP完整路径为<b>“/A/B/C”</b>，当前工作目录为<b>“B”</b>，如果要操作<b>“C”</b>目录，参数1直接填写<b>“C”</b>即可，无需输入完整路径。</p>
+	<p align="left"><img border="0" src="FTP_images/help/11.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮2”</b>被点击后，调用<b>“重命名文件()”</b>方法，将<b>“新的目录1”</b>进行重命名操作。</p>
+    <p align="left">随后调用<b>“获取目录()”</b>刷新。</p>
+	<p align="left"><img border="0" src="FTP_images/17.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终结果，可以看到<b>“新的目录1”</b>被更名为<b>“重命名后的名字”</b>。</p>
+	<p align="left"><img border="0" src="FTP_images/18.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="ftpsc"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除文件</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 删除目录</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">以上两个方法都是用于删除操作，此处讲解<b>“删除目录()”</b>方法。</p>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，本方法的作用就是用来删除目录。</p>
+    <p align="left">注意：只能删除没有任何内容的空目录。</p>
+    <p align="left">删除成功返回真，失败返回假。</p>
+	<p align="left"><img border="0" src="FTP_images/help/12.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left"><b>“按钮2”</b>被点击后，调用<b>“删除目录()”</b>方法删除<b>“测试文件夹1”</b>。</p>
+    <p align="left">删除后刷新目录。</p>
+	<p align="left"><img border="0" src="FTP_images/19.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终可以看到<b>“测试文件夹1”</b>被删除。</p>
+	<p align="left"><img border="0" src="FTP_images/20.gif" > </p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<a name="ftpshangchuan"></a>
+<font style="font-size: 12pt; font-weight:700">● 上传文件</font> <br/>
+<p align="left">&nbsp;</p>
+<p align="left">想要实现文件上传，需要使用以下方法事件。</p>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“数据接收缓冲区尺寸(写)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">想要实现文件上传务必设置此属性，建议设置：20480字节。</p>
+    <p align="left">本属性的作用就是设置一个临时的数据缓冲区，上传或者下载文件的时候临时存放一些数据。</p>
+    <p align="left">注意：本属性<b>“下载文件()”</b>方法同样也需要设置。</p>
+	<p align="left"><img border="0" src="FTP_images/help/13.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“上传文件()”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">顾名思义，调用本方法就可以实现上传本地文件到FTP服务器中。</p>
+    <p align="left">参数1：填写要上传的本地文件路径。</p>
+    <p align="left">参数2：填写要FTP保存路径。</p>
+    <p align="left">本方法调用后会触发<b>“传输进度被改变”</b>事件，上传结束后会触发<b>“传输完毕”</b>事件。</p>
+    <p align="left">注意：本方法不能和<b>“下载文件()”</b>方法同时使用。</p>
+	<p align="left"><img border="0" src="FTP_images/help/14.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“传输进度被改变(事件)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">调用<b>“上传文件()”</b>或<b>“下载文件()”</b>都会触发本事件。</p>
+    <p align="left">参数1：如果为上传模式则返回本地文件名，下载模式则为远程文件名。</p>
+    <p align="left">参数2：返回当前已经上传/下载的尺寸，单位字节，通过此参数可确定上传/下载进度。</p>
+    <p align="left">参数3：如果为上传模式则返回远程文件名，否则返回本地文件名。</p>
+	<p align="left"><img border="0" src="FTP_images/help/15.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“传输完毕(事件)”</b>帮助文档：</p>
+<blockquote>
+    <p align="left">上传或下载完毕都会触发本事件。</p>
+    <p align="left">参数1、2：这两个参数和<b>“传输进度被改变”</b>事件的作用一致。</p>
+    <p align="left">参数3：用于判断是否传输成功。</p>
+    <p align="left">参数4：返回0表示当前为上传模式，返回1表示下载模式。</p>
+	<p align="left"><img border="0" src="FTP_images/help/16.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+    <p align="left">1、<b>“按钮2”</b>被点击，设置缓冲区后调用<b>“上传文件()”</b>方法上传存储卡中的一个文件到ftp服务器中。</p>
+    <p align="left">2、添加<b>“传输进度被改变”</b>事件，利用<b>“取文件尺寸()”</b>方法取出要上传的文件尺寸。</p>
+    <p align="left">3、将<b>“已传输尺寸”</b>参数和<b>“文件尺寸”</b>显示在窗口标题上。</p>
+    <p align="left">4、添加<b>“传输完毕”</b>事件，判断上传成功后调用<b>“获取目录()”</b>刷新目录。</p>
+	<p align="left"><img border="0" src="FTP_images/21.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)： </p>
+<blockquote>
+	<p align="left">最终点击<b>“上传”</b>按钮后，文件成功出现在FTP服务器中。</p>
+	<p align="left"><img border="0" src="FTP_images/22.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="ftpxiazai"></a>
+<font style="font-size: 12pt; font-weight:700">● 下载文件</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+    <p align="left">顾名思义，本方法可以将ftp服务器上的文件下载到手机存储卡上。</p>
+    <p align="left">参数1：填写要下载的ftp服务器文件名称。</p>
+    <p align="left">参数2：填写本地保存文件路径。</p>
+    <p align="left">注意：下载文件不支持暂停和断点续传，如果中断需要从头开始下载。</p>
+	<p align="left"><img border="0" src="FTP_images/help/17.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写（1）：</p>
+<blockquote>
+    <p align="left">封装一个<b>“获取指定FTP文件大小”</b>方法备用。</p>
+    <p align="left">1、在新建的方法中填写一个参数，用作判断要取哪个文件的大小。</p>
+    <p align="left">2、调用<b>“取文件列表()”</b>方法取出ftp服务器中所有文件数据。</p>
+    <p align="left">3、循环取出的文件数据，并判断是否有参数中的文件名，如果有则返回此文件的尺寸。</p>
+    <p align="left">4、最后在循环的末尾返回-1，表示没找到。</p>
+	<p align="left"><img border="0" src="FTP_images/23.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">代码编写（2）：</p>
+<blockquote>
+    <p align="left">1、<b>“按钮2”</b>被点击，设置缓冲区并取出要下载的文件大小，赋值给定义好的成员变量。</p>
+    <p align="left">2、调用<b>“下载文件()”</b>下载指定文件。</p>
+    <p align="left">3、在<b>“传输进度被改变”</b>事件下，将<b>“ftp文件大小”</b>和<b>“已传输尺寸”</b>显示在窗口标题上。</p>
+    <p align="left">4、<b>“传输完毕”</b>事件下，判断下载的文件是否存在，用于验证是否下载成功。</p>
+	<p align="left"><img border="0" src="FTP_images/24.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图(GIF)：</p>
+<blockquote>
+	<p align="left">最终点击<b>“下载文件”</b>按钮后提示<b>“下载完毕”</b>，并且下载进度也正常显示。</p>
+	<p align="left"><img border="0" src="FTP_images/25.gif" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

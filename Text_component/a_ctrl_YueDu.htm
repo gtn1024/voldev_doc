@@ -1,0 +1,545 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+
+
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>阅读器组件</h4></li>
+	<ol>
+        <li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new6')" >一.轻量阅读器<span>(可收缩)</span></h6></li>
+		<ol id="new6">
+    		<li><blockquote><a href="#ydqjmzb">1.界面准备</a></blockquote></li>
+    		<li><blockquote><a href="#ycshwb">2.初始化完毕(事件)</a></blockquote></li>
+            <li><blockquote><a href="#ycshwb">3.打开章节内容</a></blockquote></li>
+            <li><blockquote><a href="#ycshwb">4.阅读</a></blockquote></li>
+            <li><blockquote><a href="#ycshwb1">5.文本尺寸(写)</a></blockquote></li>
+            <li><blockquote><a href="#ycshwb1">6.文本段距(写)</a></blockquote></li>
+            <li><blockquote><a href="#ycshwb1">7.文本行距(写)</a></blockquote></li>
+            <li><blockquote><a href="#ycshwb1">8.文本颜色(写)</a></blockquote></li>
+			<li><blockquote><a href="#ycshwb1">9.阅读背景色(写)</a></blockquote></li>
+			<li><blockquote><a href="#yydbjt">10.阅读背景图(写)</a></blockquote></li>
+			<li><blockquote><a href="#yxxlwbcc">11.信息栏文本尺寸(写)</a></blockquote></li>
+            <li><blockquote><a href="#yxxlwbcc">12.信息栏文本颜色(写)</a></blockquote></li>
+            <li><blockquote><a href="#yxszjbt">13.显示章节标题(写)</a></blockquote></li>
+            <li><blockquote><a href="#yxszjbt">14.章节标题尺寸(写)</a></blockquote></li>
+            <li><blockquote><a href="#yxszjbt">15.章节标题颜色(写)</a></blockquote></li>
+            <li><blockquote><a href="#yhzstbjkd">16.绘制视图边距宽度(写)</a></blockquote></li>
+            <li><blockquote><a href="#yhzstbjkd">17.绘制视图边距高度(写)</a></blockquote></li>
+            <li><blockquote><a href="#yfydh">18.翻页动画(写)</a></blockquote></li>
+            <li><blockquote><a href="#ykd">19.宽度(读)</a></blockquote></li>
+            <li><blockquote><a href="#ykd">20.高度(读)</a></blockquote></li>
+            <li><blockquote><a href="#ydqydy">21.当前阅读页(读)</a></blockquote></li>
+            <li><blockquote><a href="#ydqydy">22.总页数(读)</a></blockquote></li>
+            <!-- <li><blockquote><a href="#yqzjymlb">23.取章节页面列表</a></blockquote></li> -->
+            <li><blockquote><a href="#yqymnrlb">23.取页面内容列表</a></blockquote></li>
+            <li><blockquote><a href="#yfysyy">24.翻阅上一页</a></blockquote></li>
+            <li><blockquote><a href="#yfysyy">25.翻阅下一页</a></blockquote></li>
+            <li><blockquote><a href="#yydbjms">29.阅读背景模式</a></blockquote></li>
+			<li><blockquote><a href="#yymbgb">30.页码被改变(事件)</a></blockquote></li>
+            <li><blockquote><a href="#yjzsyz">31.加载上一章(事件)</a></blockquote></li>
+            <li><blockquote><a href="#yjzsyz">32.加载下一章(事件)</a></blockquote></li>
+            <li><blockquote><a href="#yzjbgb">33.章节被改变(事件)</a></blockquote></li>
+            <li><blockquote><a href="#yzdydbxxl">34.自定义底部信息栏(事件)</a></blockquote></li>
+            <li><blockquote><a href="#yzdydbxxl">35.自定义顶部信息栏(事件)</a></blockquote></li>
+            <li><blockquote><a href="#ycmcdqy">36.触摸菜单区域(事件)</a></blockquote></li>
+			 <li><blockquote><a href="#yxskbwy">37.显示空白尾页(写)</a></blockquote></li>
+       
+		</ol>
+		
+
+	</ol>
+</ul>
+</div>
+
+<p align="left">
+<h2>轻量阅读器组件操作实例讲解</h2><a name="zbgz"></a>    
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p><a name="ydqjmzb"></a>
+<h2>一、轻量阅读器</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 界面准备</font>
+<blockquote>
+    <p align="left">准备一个<b>“按钮1”</b>和<b>“轻量阅读器1”</b>，并设置阅读器的高度和宽度。</p>
+	<p align="left"><font color="#F30F12">注意：本组件位于<strong>“文本阅读器窗口组件”</strong>模块中。</font></p>
+	<p align="left"><img border="0" src="text_images/190.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<a name="ycshwb"></a>
+	<font style="font-size: 12pt; font-weight:700">● 初始化完毕(事件)</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 打开章节内容</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 阅读</font>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“初始化完毕(事件)”</b>帮助文档：</p>
+<blockquote>
+<p align="left">1、当阅读器初始化完毕后将会发送本事件。</p>
+<p align="left">2、建议用户在本事件被触发后，再去加载章节内容。</p>
+<p align="left"><img border="0" src="text_images/191.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“打开章节内容”</b>帮助文档：</p>
+<blockquote>
+<p align="left">1、通过本方法可以解析导入的章节内容，但本方法并不会绘制内容。</p>
+<p align="left">2、如果要绘制内容需要调用<b>“阅读()”</b>方法。</p>
+<p align="left">参数1：通过<b>“阅读内容章节类”</b>对象可以设置<b>“章节标题”</b>和<b>“章节内容”</b>。</p>
+<p align="left">参数2：本参数的作用，用来记录当前阅读到哪一章。</p>
+<p align="left"><img border="0" src="text_images/192.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“阅读”</b>帮助文档：</p>
+<blockquote>
+<p align="left">通过本方法可以阅读载入的章节，参数值可调整阅读到哪一页。</p>
+<p align="left">注意：如果设置了<b>“显示空白尾页”</b>属性，提供<b>“-1”</b>为空白页，<b>“-2”</b>为最后一页。</p>
+<p align="left"><img border="0" src="text_images/193.png" ></p>
+</blockquote>
+<a name="ycshwb1"></a>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“文本尺寸(写)”</b>，<b>“文本段距(写)”</b>,<b>“文本行距(写)”</b>,<b>“文本颜色(写)”</b>,<b>“阅读背景色(写)”</b>帮助说明：</p>
+<blockquote>
+<p align="left">文本尺寸：单位SP。</p>
+<p align="left">段距和行距：单位DP。</p>
+<p align="left">文本颜色：章节内容主题颜色，不包括阅读器顶部信息颜色和底部信息颜色。</p>
+<p align="left">阅读背景色：整个阅读器的背景色，如果使用了<b>“阅读背景图”</b>会覆盖本属性。</p>
+<p align="left">备注：如果不设置以上属性信息，将无法加载章节内容。</p>
+</blockquote>
+	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">1、添加<b>“轻量阅读器_初始化完毕”</b>接收事件，判断来源对象是否等于<b>“轻量阅读器1”</b>。</p>
+<p align="left">2、定义类型为<b>“阅读内容章节类”</b>的变量，通过本类可设置<b>“章节名”</b>和<b>“内容”</b>信息。</p>
+<p align="left">3、调用<b>“打开章节内容()”</b>方法，打开<b>“章节信息”</b>，因当前做演示只有一个章节，因此参数2填写0即可。</p>
+<p align="left">4、调用<b>“阅读()”</b>方法，阅读第一页。</p>
+
+	<p align="left"><img border="0" src="text_images/194.png" ></p>
+	<p align="left">&nbsp;</p>
+	<p align="left">5、在<b>“轻量阅读器1”</b>成员变量的属性栏，填写对应属性设置属性值。</p>
+	<p align="left"><img border="0" src="text_images/195.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图：</p>
+<blockquote>
+<p align="left">左图：运行最终效果。</p>
+<p align="left">右图：阅读器默认翻页效果。</p>
+	<p align="left"><img border="0" src="text_images/196.png" >&nbsp;&nbsp;<img border="0" src="text_images/196.gif" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<a name="yydbjt"></a>
+	<font style="font-size: 12pt; font-weight:700">● 阅读背景图(写)</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+<p align="left">顾名思义，通过本属性可设置阅读背景图，属性值为可绘制资源。</p>
+<p align="left">注意：本属性会覆盖设置的背景色。</p>
+<p align="left"><img border="0" src="text_images/197.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">直接调用本属性，设置<b>“可绘制资源”</b>属性值即可。</p>
+	<p align="left"><img border="0" src="text_images/198.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"> <b>“按钮1”</b>被点击后，当前阅读背景会被修改。</p>
+	<p align="left"><img border="0" src="text_images/199.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>
+<a name="yxxlwbcc"></a>
+	<font style="font-size: 12pt; font-weight:700">● 信息栏文本尺寸(写)</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 信息栏文本颜色(写)</font>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+<p align="left">以上两个属性用于设置阅读器顶部信息栏的文本尺寸和颜色信息。</p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left"><b>“按钮1”</b>被点击后，分别设置这两个属性的属性值即可。</p>
+	<p align="left"><img border="0" src="text_images/200.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行结果如下图（GIF）：</p>
+<blockquote>
+<p align="left">注意观察阅读器顶部信息栏。</p>
+	<p align="left"><img border="0" src="text_images/201.gif" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<a name="yxszjbt"></a>
+	<font style="font-size: 12pt; font-weight:700">● 显示章节标题(写)</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 章节标题尺寸(写)</font><br>
+	<font style="font-size: 12pt; font-weight:700">● 章节标题颜色(写)</font>
+
+	<p align="left">&nbsp;</p>
+<p align="left">帮助说明：</p>
+<blockquote>
+<p align="left">显示章节标题：属性值为逻辑型，用于显示和隐藏章节标题。</p>
+<p align="left">标题尺寸和颜色，用于设置字号大小和显示的颜色值。</p>
+<p align="left">备注：章节标题仅在当前章节首页显示。</p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+<p align="left">直接调用这三个属性，分别设置属性值即可。</p>
+	<p align="left"><img border="0" src="text_images/202.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">按钮1点击后，当前<b>“章节首页”</b>就会显示当前章节标题。</p>
+	<p align="left"><img border="0" src="text_images/203.gif" > </p>
+</blockquote>
+<p align="left">&nbsp;</p>	
+<a name="yhzstbjkd"></a>
+<font style="font-size: 12pt; font-weight:700">● 绘制视图边距宽度(写)</font>	<br>
+	<font style="font-size: 12pt; font-weight:700">● 绘制视图边距高度(写)</font>	
+	<p align="left">&nbsp;</p>	
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left"><b>“绘制视图边距宽度”</b>属性，用于设置章节内容距离左侧的宽度。</p>	
+	<p align="left"><b>“绘制视图边距高度”</b>属性，用于设置距离顶部的高度。</p>	
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，分别设置这两个属性值。</p>
+	<p align="left"><img border="0" src="text_images/204.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可以看到章节内容位置发生偏移。</p>
+	<p align="left"><img border="0" src="text_images/205.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<a name="yfydh"></a>
+<font style="font-size: 12pt; font-weight:700">● 翻页动画(写)</font>	
+	<p align="left">&nbsp;</p>	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">1、通过本属性可设置当前阅读器的翻页方式。</p>	
+	<p align="left">2、属性值调用方式<b>“阅读器翻页动画标志类.XX”</b>。</p>	
+	<p align="left"><img border="0" src="text_images/206.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，设置动画为<b>“连体滑动”</b>。</p>
+	<p align="left"><img border="0" src="text_images/207.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="text_images/208.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<a name="ykd"></a>
+<font style="font-size: 12pt; font-weight:700">● 宽度(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 高度(读)</font>	
+	<p align="left">&nbsp;</p>	
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">以上两个读属性，用于读取当前阅读器组件绘制完毕后的高度和宽度，单位像素。</p>	
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，读取高度和宽度到提示信息框。 </p>
+	<p align="left"><img border="0" src="text_images/209.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="text_images/210.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<a name="ydqydy"></a>
+<font style="font-size: 12pt; font-weight:700">● 当前阅读页(读)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 总页数(读)</font>	
+	<p align="left">&nbsp;</p>	
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">顾名思义，以上两个属性就是用来取出<b>“当前章节阅读页”</b>和<b>“当前章节总页数”</b>。</p>	
+	<p align="left">注意：<b>“当前阅读页”</b>从0开始，0为第一页，1为第二页以此类推。</p>	
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left"><b>“按钮1”</b>被点击后，读取页数到窗口标题。</p>
+	<p align="left"><img border="0" src="text_images/211.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="text_images/212.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<a name="yqymnrlb"></a>
+<font style="font-size: 12pt; font-weight:700">● 取页面内容列表</font>
+	<p align="left">&nbsp;</p>	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可以取出当前阅读器指定页的内容。</p>	
+	<p align="left">注意：页数不能小于0，不能大于总页数。</p>	
+		<p align="left"><img border="0" src="text_images/213.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<p align="left">界面准备：</p>
+<blockquote>
+	<p align="left">在原界面的基础上增加一个编辑框，用来放阅读页的内容。</p>	
+		<p align="left"><img border="0" src="text_images/214.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">1、定义类型为<b>“阅读页面内容类”</b>的变量，勾选参考，调用当前方法赋值给本变量。</p>
+  <p align="left">2、循环取出每一行的内容添加到编辑框。</p>
+	<p align="left"><img border="0" src="text_images/215.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left"><b>“按钮1”</b>点击后，当前页的内容会显示在编辑框中。</p>	
+	<p align="left"><img border="0" src="text_images/216.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<a name="yfysyy"></a>
+<font style="font-size: 12pt; font-weight:700">● 翻阅上一页</font><br>
+<font style="font-size: 12pt; font-weight:700">● 翻阅下一页</font>
+	<p align="left">&nbsp;</p>	
+<p align="left">帮助说明：</p>
+<blockquote>
+	<p align="left">以上两个方法用于上下翻页，此处演示<b>“翻阅下一页”</b>。</p>	
+	
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">调用当前方法翻阅到下一页，并读取当前阅读页和总页数。</p>
+  <p align="left">注意：通过当前方法调用翻页，没有翻页动画。</p>
+	<p align="left"><img border="0" src="text_images/217.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="text_images/218.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<a name="yydbjms"></a>
+<font style="font-size: 12pt; font-weight:700">● 阅读背景模式</font>
+	<p align="left">&nbsp;</p>	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可以判断当前阅读器的背景是纯色还是背景图，返回0为纯色，返回1为背景图。</p>	
+		<p align="left"><img border="0" src="text_images/219.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">直接调用本方法判断返回值即可。</p>
+	<p align="left"><img border="0" src="text_images/220.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="text_images/221.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<a name="yymbgb"></a>
+<font style="font-size: 12pt; font-weight:700">● 页码被改变(事件)</font>
+	<p align="left">&nbsp;</p>	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，当前阅读器被翻页后会触发本事件。</p>	
+	<p align="left">参数1：返回当前阅读到第几页（注意：从0开始）。</p>	
+	<p align="left">参数2：返回当前章节总页数。</p>	
+		<p align="left"><img border="0" src="text_images/222.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">添加<b>“轻量阅读器_页码被改变”</b>接收事件，取出页码显示在窗口标题上。</p>
+	<p align="left"><img border="0" src="text_images/223.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">阅读器进行翻页动作后，标题页码会随之更新。</p>
+	<p align="left"><img border="0" src="text_images/224.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<a name="yjzsyz"></a>
+<font style="font-size: 12pt; font-weight:700">● 加载上一章(事件)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 加载下一章(事件)</font>
+	<p align="left">&nbsp;</p>	
+	<p align="left">以上两个事件基本一致，此处演示<b>“加载下一章”</b>事件。</p>	
+	<p align="left">&nbsp;</p>	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">阅读到最后一页后，再次滑动时会触发本事件，返回0没有下一章，返回1表示有下一章。</p>	
+	<p align="left">参数1：用于判断是否还有下一章。</p>	
+	<p align="left">参数2：如果返回1，通过本参数设置章节标题和内容。</p>	
+		<p align="left"><img border="0" src="text_images/225.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">1、添加<b>“轻量阅读器_加载下一章”</b>接收事件，判断<b>“当前章节章码”</b>是否大于等于总章节数。</p>
+  <p align="left">2、如果符合条件，返回0，表示没有下一章。</p>
+  <p align="left">备注：因章节码从0开始，所以需要+1。</p>
+  <p align="left">3、如果不符合条件，则设置下一章内容并返回1。</p>
+	<p align="left"><img border="0" src="text_images/226.png" ></p>
+	</blockquote>
+<p align="left">运行效果如下图（GIF）： </p>
+<blockquote>
+	<p align="left">第二章加载结束后，就会提示<b>“已经是最后一章”</b>。</p>	
+  <p align="left"><img border="0" src="text_images/227.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<a name="yzjbgb"></a>
+<font style="font-size: 12pt; font-weight:700">● 章节被改变(事件)</font>
+	<p align="left">&nbsp;</p>	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当上一章下一章被切换后会触发本事件，参数返回当前章节码。</p>
+  <p align="left"><img border="0" src="text_images/228.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">添加本事件，提示框返回当前章节码。</p>
+	<p align="left"><img border="0" src="text_images/229.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">章节被切换后可以看到弹出了切换后的章节。</p>	
+	<p align="left"><img border="0" src="text_images/230.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<a name="yzdydbxxl"></a>
+<font style="font-size: 12pt; font-weight:700">● 自定义底部信息栏(事件)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 自定义顶部信息栏(事件)</font>
+	<p align="left">&nbsp;</p>	
+	<p align="left">以上两个事件用法基本一致，此处演示<b>“自定义底部信息栏”</b>事件。</p>	
+	<p align="left">&nbsp;</p>	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本事件可以绘制自定义底部信息栏，通过<a href="a_canvas.htm#huabanlei"><b>“画板对象”</b></a>进行绘制。</p>
+	<p align="left">备注：如果要自己绘制底部信息栏，务必返回<b>“1”</b>。</p>	
+		<p align="left"><img border="0" src="text_images/231.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">1、添加本事件后判断来源对象。 </p>
+  <p align="left">2、定义类型为<a href="a_canvas.htm#huabilei"><b>“画笔类”</b></a>的变量，设置绘制文本的相关属性。 </p>
+  <p align="left">3、计算绘制纵坐标。</p>
+  <p align="left">4、 通过<b>“画板对象”</b>调用<a href="a_canvas.htm#hwb"><b>“画文本”</b></a>方法填写对应参数进行左侧绘制。</p>
+  <p align="left">5、 取出右侧文本宽度，计算右侧文本横坐标。</p>
+  <p align="left">6、 通过<b>“画板对象”</b>调用<a href="a_canvas.htm#hwb"><b>“画文本”</b></a>方法，绘制右侧文本。</p>
+	<p align="left"><img border="0" src="text_images/232.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="text_images/233.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<a name="ycmcdqy"></a>
+<font style="font-size: 12pt; font-weight:700">● 触摸菜单区域(事件)</font>
+	<p align="left">&nbsp;</p>	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当用户触摸阅读器水中的中间区域时，会触发本事件。</p>	
+	<p align="left">注意：如果要弹出菜单，建议设置阅读器的<b>“可否被触摸”</b>属性为假，这样可以禁止翻页动作。</p>	
+		<p align="left"><img border="0" src="text_images/234.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">添加本事件，弹出提示。</p>
+	<p align="left"><img border="0" src="text_images/235.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left">可以看到当前阅读器只有点击屏幕中间区域时，才会弹出提示。</p>
+	<p align="left"><img border="0" src="text_images/236.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p>	
+<a name="yxskbwy"></a>
+<font style="font-size: 12pt; font-weight:700">● 显示空白尾页(写)</font>
+	<p align="left">&nbsp;</p>	
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">通过本属性可以在章节尾部增加一个空白页，可用于设置广告或者其它信息。</p>	
+		<p align="left"><img border="0" src="text_images/237.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>	
+<p align="left">界面准备：</p>
+<blockquote>
+  <p align="left">拖放一个帧布局器，在帧布局器上拖放<b>“轻量阅读器1”</b>和<b>“文本框1”</b>组件。</p>
+	<p align="left"><img border="0" src="text_images/238.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>	
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">1、在<b>“轻量阅读器1”</b>的属性栏，增加<b>“显示空白尾页”</b>属性设置为真。</p>
+  <p align="left">2、在<b>“文本框1”</b>的属性栏，设置<b>“可视”</b>为完全隐藏。</p>
+	<p align="left"><img border="0" src="text_images/239.png" ></p>
+	<p align="left">&nbsp;</p>
+	<p align="left">3、在<b>“页码被改变”</b>事件下，判断<b>“当前页码”</b>是否等于<b>“章节总页数”</b>。</p>
+	<p align="left">4、如果相等则表示已经是最后一页，即空白尾页，此时设置<b>“文本框1”</b>为可视，否则隐藏。</p>
+	<p align="left"><img border="0" src="text_images/240.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>	
+<p align="left">运行效果如下图（GIF）：</p>
+<blockquote>
+	<p align="left"><img border="0" src="text_images/241.gif" ></p>
+</blockquote>
+
+	
+
+	
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+
+</body>
+</html>

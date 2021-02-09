@@ -1,0 +1,1525 @@
+<html>
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+  <li><h4>Sqlite数据库</h4></li>
+    <ol>
+    		<li><blockquote><a href="#blzbgz">0.本类准备工作</a></blockquote></li>
+    </ol> 
+<li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'SQLiteDatabase')" >一.Sqlite数据库<span>(可收缩)</span></h6></li>
+		<ol id="SQLiteDatabase">
+			<li><blockquote><a href="#sdksjk">1.打开数据库</a></blockquote></li>
+			<li><blockquote><a href="#sdksjk">2.打开或创建数据库</a></blockquote></li>
+            <li><blockquote><a href="#sdksjk">3.创建内存数据库</a></blockquote></li>
+			<li><blockquote><a href="#sgbsjk">4.关闭数据库</a></blockquote></li>
+			<li><blockquote><a href="#szxsql">5.执行SQL</a></blockquote></li>
+			<!-- <li><blockquote><a href="#sbdzxsql">5.绑定执行SQL</a></blockquote></li> -->
+			<li><blockquote><a href="#scxsql">6.查询SQL</a></blockquote></li>
+			<li><blockquote><a href="#sbysql">7.编译SQL</a></blockquote></li>
+			<li><blockquote><a href="#scrjl">8.插入记录</a></blockquote></li>
+			<li><blockquote><a href="#scrjl">9.插入记录2</a></blockquote></li>
+			<li><blockquote><a href="#sxgjl">10.修改记录</a></blockquote></li>
+			<li><blockquote><a href="#sxgjl">11.修改记录2</a></blockquote></li>
+			<li><blockquote><a href="#sscjl">12.删除记录</a></blockquote></li>
+			<li><blockquote><a href="#sscsjkwj">13.删除数据库文件</a></blockquote></li>
+			<li><blockquote><a href="#sqybfcx">14.启用并发查询</a></blockquote></li>
+			<li><blockquote><a href="#sswcl">15.开始事务</a></blockquote></li>
+			<li><blockquote><a href="#sswcl">16.撤销事务</a></blockquote></li>
+			<li><blockquote><a href="#sswcl">17.提交事务</a></blockquote></li>
+			<li><blockquote><a href="#sxzkbjb">18.寻找可编辑表</a></blockquote></li>
+			<li><blockquote><a href="#sjywzx">19.校验完整性</a></blockquote></li>
+			<li><blockquote><a href="#sqyxqrz">20.启用写前日志</a></blockquote></li>
+			<li><blockquote><a href="#sxbbh">21.版本号</a></blockquote></li>
+			<li><blockquote><a href="#sxydk">22.已打开</a></blockquote></li>
+			<li><blockquote><a href="#sxzd">23.只读</a></blockquote></li>
+			<li><blockquote><a href="#sxcyswz">24.处于事务中</a></blockquote></li>
+			<li><blockquote><a href="#sxzdcc">25.最大尺寸</a></blockquote></li>
+			<li><blockquote><a href="#sxymcc">26.页面尺寸</a></blockquote></li>
+			<li><blockquote><a href="#sxwjlj">27.文件路径</a></blockquote></li>	
+			<li><blockquote><a href="#sxybbxcsd">28.已被本线程锁定</a></blockquote></li>
+			<li><blockquote><a href="#sxyqyxqrz">29.已启用写前日志</a></blockquote></li>
+			
+		</ol>
+<li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'SQLiteCursor')" >二.记录集类<span>(可收缩)</span></h6></li>
+		<ol id="SQLiteCursor">
+			<li><blockquote><a href="#czbgz">0.准备工作</a></blockquote></li>
+			<li><blockquote><a href="#cgb">1.关闭</a></blockquote></li>
+			<li><blockquote><a href="#cdsxswh">2.到上一行</a></blockquote></li>
+            <li><blockquote><a href="#cdsxswh">3.到下一行</a></blockquote></li>
+			<li><blockquote><a href="#cdzdh">4.到指定行</a></blockquote></li>
+			<li><blockquote><a href="#cdzdh">5.移动游标</a></blockquote></li>
+			<li><blockquote><a href="#cdsxswh">6.移动至首行</a></blockquote></li>
+			<li><blockquote><a href="#cdsxswh">7.移动至尾行</a></blockquote></li>
+			<li><blockquote><a href="#cqsylmc">8.取所有列名称</a></blockquote></li>
+			<li><blockquote><a href="#cqlmc">9.取列名称</a></blockquote></li>
+			<li><blockquote><a href="#cqlsy">10.取列索引</a></blockquote></li>
+			<li><blockquote><a href="#cqlzlx">11.取列值类型</a></blockquote></li>
+			<li><blockquote><a href="#cqlzsj">12.取列字节集值</a></blockquote></li>
+			<li><blockquote><a href="#cqlzsj">13.取列小数值</a></blockquote></li>
+			<li><blockquote><a href="#cqlzsj">14.取列整数值</a></blockquote></li>
+			<li><blockquote><a href="#cqlzsj">15.取列文本值</a></blockquote></li>
+			<li><blockquote><a href="#cqlzsj">16.取列短整数值</a></blockquote></li>
+			<li><blockquote><a href="#cqlzsj">17.取列长整数值</a></blockquote></li>
+			<li><blockquote><a href="#cqlzlx">18.取字段值类型</a></blockquote></li>
+			<li><blockquote><a href="#cqzdzsj">19.取字段字节集值</a></blockquote></li>
+			<li><blockquote><a href="#cqzdzsj">20.取字段小数值</a></blockquote></li>
+			<li><blockquote><a href="#cqzdzsj">21.取字段整数值</a></blockquote></li>
+			<li><blockquote><a href="#cqzdzsj">22.取字段文本值</a></blockquote></li>
+			<li><blockquote><a href="#cqzdzsj">23.取字段短整数值</a></blockquote></li>
+			<li><blockquote><a href="#cqzdzsj">24.取字段长整数值</a></blockquote></li>
+			<li><blockquote><a href="#csfwkz">25.是否为空值</a></blockquote></li>
+			<li><blockquote><a href="#cygb">26.已关闭</a></blockquote></li>
+			<li><blockquote><a href="#chs">27.行数</a></blockquote></li>
+			<li><blockquote><a href="#cls">28.列数</a></blockquote></li>	
+			<li><blockquote><a href="#cdqh">29.当前行</a></blockquote></li>
+			<li><blockquote><a href="#czwh">30.在尾行</a></blockquote></li>
+			<li><blockquote><a href="#czwhh">31.在尾行后</a></blockquote></li>
+			<li><blockquote><a href="#czsh">32.在首行</a></blockquote></li>
+			<li><blockquote><a href="#czshq">33.在首行前</a></blockquote></li>
+		</ol>
+<li style="background-color:#E0F0F0;"><h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'SQLiteStatement')" >三.已编译语句类<span>(可收缩)</span></h6></li>
+		<ol id="SQLiteStatement">
+			<li><blockquote><a href="#tzxcr">1.执行插入</a></blockquote></li>
+			<li><blockquote><a href="#tzxxgsc">2.执行修改删除</a></blockquote></li>
+            <li><blockquote><a href="#tzxcjxh">3.执行创建销毁</a></blockquote></li>
+			<li><blockquote><a href="#tcxsj">4.查询长整数值</a></blockquote></li>
+			<li><blockquote><a href="#tcxsj">5.查询文本值</a></blockquote></li>
+			<li><blockquote><a href="#tbdsycs">6.绑定所有参数</a></blockquote></li>
+			<li><blockquote><a href="#tbdcs">7.绑定小数</a></blockquote></li>
+			<li><blockquote><a href="#tbdcs">8.绑定长整数</a></blockquote></li>
+			<li><blockquote><a href="#tbdcs">9.绑定文本</a></blockquote></li>
+			<li><blockquote><a href="#tbdcs">10.绑定字节集</a></blockquote></li>
+			<li><blockquote><a href="#tbdcs">11.绑定空值</a></blockquote></li>
+			<li><blockquote><a href="#tscsybd">12.删除所有绑定</a></blockquote></li>
+			<li><blockquote><a href="#tsfyy">13.关闭</a></blockquote></li>
+			<li><blockquote><a href="#tqqyy">14.请求引用</a></blockquote></li>
+			<li><blockquote><a href="#tsfyy">15.释放引用</a></blockquote></li>
+		</ol>
+</ul>
+</div>
+
+<p align="left">
+<p align="left">
+<h2>Sqlite数据库实例讲解</h2>
+<p><b>作者：洫蜘蛛</b></p>
+<!--<p align="left">[<a href="object.htm">上一章</a>] [<a href="homeland.htm">下一章</a>]</p>-->
+<p align="left">&nbsp;</p>
+<a name="blzbgz"></a>
+<font style="font-size: 12pt; font-weight:700">●&nbsp;准备工作：</font>设计实例需求的界面布局。<br/>
+<p align="left"><b>1、启动类</b>的界面布局需求组件：<b>文本框1</b>、<b>编辑框1</b>、<b>按钮1</b>、<b>按钮2</b>、<b>按钮3</b>、<b>按钮4</b>、<b>按钮5</b>、<b>文本框2</b>。</p>
+<blockquote>
+	<p align="left"><b>编辑框1</b>用于输入数据库的文件名，<b>按钮1-3</b>用于打开或创建数据库，<b>按钮4</b>关闭数据库，<b>按钮5</b>用于演示数据库读写等，<b>文本框2</b>用于输出提示信息。</p>
+	<p align="left">组件的属性设置：</p>
+		<blockquote>
+			<p align="left"><b>文本框1：</b>属性<b>&quot;文本&quot;</b>设置为<b>&quot;数据库文件名：&quot;</b>。</p>
+			<p align="left"><b>编辑框1：</b>属性<b>&quot;文本&quot;</b>设置为<b>&quot;test&quot;</b>，也可以设置为其他名称。</p>
+			<p align="left"><b>按钮1：</b>属性<b>&quot;文本&quot;</b>设置为<b>&quot;打开现有数据库&quot;</b>。</p>
+			<p align="left"><b>按钮2：</b>属性<b>&quot;文本&quot;</b>设置为<b>&quot;打开或创建数据库&quot;</b>。</p>
+			<p align="left"><b>按钮3：</b>属性<b>&quot;文本&quot;</b>设置为<b>&quot;创建内存数据库&quot;</b>。</p>
+			<p align="left"><b>按钮4：</b>属性<b>&quot;文本&quot;</b>设置为<b>&quot;关闭数据库&quot;</b>。</p>
+			<p align="left"><b>按钮5：</b>属性<b>&quot;文本&quot;</b>设置为<b>&quot;执行&quot;</b>。</p>
+		</blockquote>
+	<p align="left">最终界面布局如下图所示：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/jmsjt.png" ></p>
+	</blockquote>
+</blockquote>
+<p align="left"><b>2、</b>添加<b>&quot;启动类&quot;</b>成员变量<b>&quot;数据库&quot;</b>，数据类型为<b>&quot;Sqlite数据库&quot;</b>，勾选<b>参考</b>(此类不能自动创建对象)，如下图所示：</p>
+<blockquote>
+	<p align="left"><img border="0" src="sqlite_images/cyblsz.png" ></p>
+</blockquote>
+
+<p align="left"><b>3、</b>接收<b>&quot;启动类&quot;</b>的按钮被单击事件并通过<b>来源对象</b>区分被单击的按钮，如下图所示：</p>
+<blockquote>
+	<p align="left"><img border="0" src="sqlite_images/anbdjsj.png" ></p>
+	<p align="left">代码中的备注部分可写可不写。</p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">●&nbsp;属性方法：</font><br/>
+<blockquote>
+<!-- 文档开始 -->
+
+<!-- 打开数据库 -->
+	<a name="sdksjk"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;打开数据库</font>、<font style="font-size: 12pt; font-weight:700">打开或创建数据库</font>、<font style="font-size: 12pt; font-weight:700">创建内存数据库</font><br/>
+	<p align="left">此三个方法用于创建Sqlite数据库对象，他们之间的区别：</p>
+	<blockquote>
+		<p align="left"><b>打开数据库</b>：打开储存在磁盘(储存卡)内的数据库文件，未指定特定参数时该<b>文件必须存在</b>。</p>
+		<p align="left"><b>打开或创建数据库</b>：打开储存在磁盘(储存卡)内的数据库文件，如果该文件不存在则会<b>自动创建文件</b>。</p>
+		<p align="left"><b>创建内存数据库</b>：从内存中创建数据库，<b>不占用磁盘(储存卡)空间</b>，数据全部储存于内存中。</p>
+	</blockquote>
+	<p align="left">以&quot;<b>打开数据库</b>&quot;为例(后附另外两种方式的代码图)。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlite001.png"></p>
+		<p align="left">本方法有三个参数，返回值类型为<b>Sqlite数据库</b>。</p>
+		<p align="left">其中第二个参数指定打开标志，参考常量类<b>Sqlite标志</b>：</p>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef001.png" ></p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+	<p align="left">1，在<b>按钮1</b>被单击事件中，声明一个具有<b>参考</b>属性、类型为<b>文件名类</b>的局部变量：<b>文件路径</b>。</p>
+	<p align="left">2，创建临时文件作为数据库的储存文件。</p>
+	<p align="left">3，申明一个类型为<b>文本缓冲区</b>的局部变量：<b>错误信息</b>。</p>
+	<p align="left">4，调用该方法并判断返回结果。</p>	
+	<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite002.png" ></p>
+		</blockquote>
+	<p align="left">下面是<b>打开或创建数据库</b>、<b>创建内存数据库</b>的代码图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite004.png" ></p>
+		</blockquote>	
+	</blockquote>
+	<p align="left">运行效果展示图：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/sqlite003.gif"></p>
+		<p align="left">如果文件不存在或打开数据库出错，<b>文本框2</b>将输出失败提示和具体错误信息文本。</p>
+	</blockquote>
+<!-- 关闭数据库 -->
+	<p align="left"><br/></p>
+	<a name="sgbsjk"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;关闭数据库</font><br/>
+	<p align="left">该方法用于关闭某个已打开的数据库。</p>
+	<p align="left">本例前置代码：<a href="#sdksjk">打开数据库</a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlite005.png"></p>
+		<p align="left">本方法有一个参数，无返回值。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮4</b>被单击事件中，通过数据库的<b>已打开</b>属性判断是否已打开。</p>
+		<p align="left">2，如果数据库已打开则调用该方法关闭数据库：</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite006.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite007.gif"></p>
+		</blockquote>
+	</blockquote>
+	
+<!-- 执行SQL -->
+	<p align="left"><br/></p>
+	<a name="szxsql"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;执行SQL</font><br/>
+	<p align="left">该方法用于执行无数据返回的SQL语句，例如：<b>ALERT</b>、<b>CREATE</b>、<b>DROP</b>、<b>REINDEX</b>等。</p>
+	<p align="left">本例前置代码：<a href="#sdksjk">打开数据库</a>、<a href="#sgbsjk">关闭数据库</a>。</p>
+	<p align="left">此处以执行<b>CREATE</b>语句在数据库中创建一个表为例(其他SQL语句请查阅相关文档)。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlite008.png"></p>
+		<p align="left">本方法有三个参数，返回值类型为<b>逻辑型</b>。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中，声明一个类型为<b>文本缓冲区</b>的局部变量：<b>错误信息</b>。</p>
+		<p align="left">2，动态调用该方法执行SQL语句：<b>CREATE TABLE Mydata(name TEXT)</b>。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite009.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite010.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 查询SQL -->
+	<p align="left"><br/></p>
+	<a name="scxsql"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;查询SQL</font><br/>
+	<p align="left">该方法用于执行从数据库中查询数据的<b>Select</b>类语句。</p>
+	<p align="left">该方法返回的是包含数据的<b>记录集类</b>对象，读取数据请参考例程：<a href="#czbgz">Sqlite记录集</a>。</p>
+	<p align="left">本例前置代码：<a href="#sdksjk">打开数据库</a>、<a href="#szxsql">执行SQL</a>、<a href="#sgbsjk">关闭数据库</a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef002.png"></p>
+		<p align="left">本方法有三个参数，返回值类型为<b>记录集类</b>。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中，声明一个类型为<b>记录集类</b>的局部变量：<b>记录集</b>。</p>
+		<p align="left">2，动态调用该方法执行SQL语句：<b>SELECT * FROM Mydata</b>。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite011.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite012.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 编译SQL -->
+	<p align="left"><br/></p>
+	<a name="sbysql"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;编译SQL</font><br/>
+	<p align="left">该方法用于编译SQL语句，支持携带参数标记符(?)。</p>
+	<p align="left">本例前置代码：<a href="#sdksjk">打开数据库</a>、<a href="#szxsql">执行SQL</a>、<a href="#sgbsjk">关闭数据库</a>。</p>
+	<p align="left">该方法返回的是编译后的<b>已编译语句类</b>对象，并不会实际执行，执行编译后的SQL语句请参考：<a href="#tzxcr">已编译语句类</a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef003.png"></p>
+		<p align="left">本方法有三个参数，返回值类型为<b>已编译语句类</b>。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>
+		<p align="left">本方法返回的是包含所有数据的<b>已编译语句类</b>对象。</p>
+		<p align="left">本方法只编译不执行，绑定参数和执行编译的语句请参阅<b>已编译语句类</b>例程。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中，声明一个类型为<b>已编译语句类</b>的局部变量：<b>准备语句</b>。</p>
+		<p align="left">2，动态调用该方法编译SQL语句：<b>SELECT * FROM Mydata</b>。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite013.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite014.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 插入记录 -->
+	<p align="left"><br/></p>
+	<a name="scrjl"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;插入记录</font>、<font style="font-size: 12pt; font-weight:700">插入记录2</font><br/>
+	<p align="left">此两个方法用于向数据库中插入一条记录，他们之间的区别：</p>
+	<blockquote>
+		<p align="left"><b>插入记录2</b>比<b>插入记录</b>多一个参数，支持应对冲突</b>。</p>
+	</blockquote>
+	<p align="left">本例前置代码：<a href="#sdksjk">打开数据库</a>、<a href="#szxsql">执行SQL</a>、<a href="#sgbsjk">关闭数据库</a>。</p>
+	<p align="left">以&quot;<b>插入记录2</b>&quot;为例。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef004.png"></p>
+		<p align="left">本方法有五个参数，返回值类型为<b>长整数</b>。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>
+		<p align="left">其中第五个参数指定如何解决数据冲突，参考常量类<b>冲突应对类</b>：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef005.png"></p>
+		</blockquote>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中，声明一个类型为<b>键值容器类</b>的局部变量：<b>记录键值</b>。</p>
+		<p align="left">2，将欲插入的数据加入到<b>记录键值</b>。</p>
+		<p align="left">3，声明一个类型为<b>长整数</b>的局部变量：<b>记录ID</b>。</p>
+		<p align="left">4，动态调用该方法将数据插入到数据库中。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite015.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite016.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 修改记录 -->
+	<p align="left"><br/></p>
+	<a name="sxgjl"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;修改记录</font>、<font style="font-size: 12pt; font-weight:700">修改记录2</font><br/>
+	<p align="left">此两个方法用于修改数据库中记录的值，他们之间的区别：</p>
+	<blockquote>
+		<p align="left"><b>修改记录2</b>比<b>修改记录</b>多一个参数，支持应对冲突</b>。</p>
+	</blockquote>
+	<p align="left">本例前置代码：<a href="#sdksjk">打开数据库</a>、<a href="#szxsql">执行SQL</a>、<a href="#scrjl">插入记录</a>、<a href="#sgbsjk">关闭数据库</a>。</p>
+	<p align="left">以&quot;<b>修改记录2</b>&quot;为例。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef006.png"></p>
+		<p align="left">本方法有五个参数，返回值类型为<b>整数</b>。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>
+		<p align="left">其中第六个参数指定如何解决数据冲突，参考常量类<b>冲突应对类</b>：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef005.png"></p>
+		</blockquote>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中，声明一个类型为<b>文本型数组</b>的局部变量：<b>绑定参数</b>，成员数：1。</p>
+		<p align="left">2，<b>绑定参数</b>的第一个成员赋值&quot;<b>1</b>&quot;，表示修改所有记录。</p>
+		<p align="left">3，声明一个类型为<b>整数</b>的局部变量：<b>影响行数</b>。</p>
+		<p align="left">4，动态调用该方法。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite017.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite018.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 删除记录 -->
+	<p align="left"><br/></p>
+	<a name="sscjl"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;删除记录</font><br/>
+	<p align="left">此方法用于删除数据库中的记录。</p>
+	<p align="left">本例前置代码：<a href="#sdksjk">打开数据库</a>、<a href="#szxsql">执行SQL</a>、<a href="#scrjl">插入记录</a>、<a href="#sxgjl">修改记录</a>、<a href="#sgbsjk">关闭数据库</a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef007.png"></p>
+		<p align="left">本方法有四个参数，返回值类型为<b>整数</b>。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，<b>绑定参数</b>的第一个成员赋值&quot;<b>1</b>&quot;，表示删除所有记录。</p>
+		<p align="left">2，在<b>按钮5</b>被单击事件中，动态调用该方法。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite019.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite020.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 事务处理 -->
+	<p align="left"><br/></p>
+	<a name="sswcl"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;开始事务</font>、<font style="font-size: 12pt; font-weight:700">撤销事务</font>、<font style="font-size: 12pt; font-weight:700">提交事务</font><br/>
+	<p align="left">此三个方法需要配对使用，用于数据库的事务处理。</p>
+
+	<p align="left">本例前置代码：<a href="#sdksjk">打开数据库</a>、<a href="#szxsql">执行SQL</a>、<a href="#scrjl">插入记录</a>、<a href="#sxgjl">修改记录</a>、<a href="#sscjl">删除记录</a>、<a href="#sgbsjk">关闭数据库</a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><b>开始事务</b>：开启一项事务。</p>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef008.png"></p>
+		
+		<p align="left"><b>撤销事务</b>：放弃整项事务。</p>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef009.png"></p>
+		
+		<p align="left"><b>提交事务</b>：将事务中所有对数据库的操作作为一个整体提交并写入数据库。</p>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef010.png"></p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件的开始处，动态调用<b>开始事务</b>。</p>
+		<p align="left">2，在<b>按钮5</b>被单击事件中的插入、修改、删除操作失败的地方动态调用<b>撤销事务</b>。</p>
+		<p align="left">3，在<b>按钮5</b>被单击事件中的插入、修改、删除操作全部成功之后的地方动态调用<b>提交事务</b>。</p>
+		<p align="left">4，至此，只有当所有操作都成功，才会全部写入数据库。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite021.png" >
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite022.gif"></p>
+			<p align="left">只有当提交事务之后，所有操作才会实际写入数据库。</p>
+		</blockquote>
+	</blockquote>
+<!-- 删除数据库文件 -->
+	<p align="left"><br/></p>
+	<a name="sscsjkwj"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;删除数据库文件</font><br/>
+	<p align="left">此方法用于删除数据库文件，包括日志文件以及其他辅助文件。</p>
+	<p align="left">本例前置代码：<a href="#sdksjk">打开或创建数据库</a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef011.png"></p>
+		<p align="left">本方法有一个参数，返回值类型为<b>逻辑型</b>。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中动态调用该方法。。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite023.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite024.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 启用并发查询 -->
+	<p align="left"><br/></p>
+	<a name="sqybfcx"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;启用并发查询</font><br/>
+	<p align="left">此方法用于设置启用或禁用多线程并发查询，未设置时默认禁用。</p>
+	<p align="left">本例前置代码：<a href="#sdksjk">打开数据库</a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef012.png"></p>
+		<p align="left">本方法有两个参数，返回值类型为<b>逻辑型</b>。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中，动态调用该方法。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite025.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite026.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 启用写前日志 -->
+	<p align="left"><br/></p>
+	<a name="sqyxqrz"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;启用写前日志</font><br/>
+	<p align="left">此方法用于设置启用或禁用写前日志，注意：内存数据库不支持此功能。</p>
+	<p align="left">本例前置代码：<a href="#sdksjk">打开数据库</a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef013.png"></p>
+		<p align="left">本方法有三个参数，返回值类型为<b>逻辑型</b>。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中，声明一个类型为<b>文本缓冲区</b>的局部变量：<b>错误信息</b>。</p>
+		<p align="left">2，动态调用该方法。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite027.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite028.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 寻找可编辑表 -->
+	<p align="left"><br/></p>
+	<a name="sxzkbjb"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;寻找可编辑表</font><br/>
+	<p align="left">此方法用于从指定的多个表名称中寻找第一个可编辑的表。</p>
+	<p align="left">本例前置代码：<a href="#sdksjk">打开数据库</a>、<a href="#szxsql">执行SQL</a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef014.png"></p>
+		<p align="left">本方法有两个参数，返回值类型为<b>逻辑型</b>。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中，声明一个类型为<b>文本型</b>的局部变量：<b>表名称</b>。</p>
+		<p align="left">2，动态调用该方法。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite029.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite030.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 校验完整性 -->
+	<p align="left"><br/></p>
+	<a name="sjywzx"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;校验完整性</font><br/>
+	<p align="left">此方法用于校验数据库以及所有附属数据库是否完整(此操作耗时可能会较长)。</p>
+	<p align="left">本例前置代码：<a href="#sdksjk">打开数据库</a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef015.png"></p>
+		<p align="left">本方法有一个参数，返回值类型为<b>逻辑型</b>。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中，动态调用该方法。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite031.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite032.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 已打开 -->
+	<p align="left"><br/></p>
+	<a name="sxydk"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;已打开&nbsp;&nbsp;(只读)</font><br/>
+	<p align="left">此属性用于判断数据库是否已打开。</p>
+	<p align="left">本例前置代码：<a href="#sdksjk">打开数据库</a>、<a href="#sgbsjk">关闭数据库</a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef016.png"></p>
+		<p align="left">动态调用可直接读取该属性。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中读取该属性。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite033.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite034.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 版本号 -->
+	<p align="left"><br/></p>
+	<a name="sxbbh"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;版本号&nbsp;&nbsp;(只读)</font><br/>
+	<p align="left">此属性用于判断数据库引擎版本号。</p>
+	<p align="left">本例前置代码：<a href="#sdksjk">打开数据库</a>、<a href="#sgbsjk">关闭数据库</a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef017.png"></p>
+		<p align="left">动态调用可直接读取该属性。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中读取该属性。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite035.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite036.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 只读 -->
+	<p align="left"><br/></p>
+	<a name="sxzd"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;只读&nbsp;&nbsp;(只读)</font><br/>
+	<p align="left">此属性用于判断数据库是否为只读权限。</p>
+	<p align="left">本例前置代码：<a href="#sdksjk">打开数据库</a>、<a href="#sgbsjk">关闭数据库</a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef018.png"></p>
+		<p align="left">动态调用可直接读取该属性。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中读取该属性。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite037.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite038.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 处于事务中 -->
+	<p align="left"><br/></p>
+	<a name="sxcyswz"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;处于事务中&nbsp;&nbsp;(只读)</font><br/>
+	<p align="left">此属性用于判断数据库是否处于事务中。</p>
+	<p align="left">本例前置代码：<a href="#sdksjk">打开数据库</a>、<a href="#sgbsjk">关闭数据库</a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef019.png"></p>
+		<p align="left">动态调用可直接读取该属性。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中读取该属性。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite039.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite040.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 最大尺寸 -->
+	<p align="left"><br/></p>
+	<a name="sxzdcc"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;最大尺寸&nbsp;&nbsp;(只读)</font><br/>
+	<p align="left">此属性用于判断数据库可增长的最大尺寸(单位：字节)。</p>
+	<p align="left">本例前置代码：<a href="#sdksjk">打开数据库</a>、<a href="#sgbsjk">关闭数据库</a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef020.png"></p>
+		<p align="left">动态调用可直接读取该属性。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中读取该属性。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite041.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite042.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 页面尺寸 -->
+	<p align="left"><br/></p>
+	<a name="sxymcc"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;页面尺寸&nbsp;&nbsp;(只读)</font><br/>
+	<p align="left">此属性用于判断数据库单页尺寸(单位：字节)。</p>
+	<p align="left">本例前置代码：<a href="#sdksjk">打开数据库</a>、<a href="#sgbsjk">关闭数据库</a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef021.png"></p>
+		<p align="left">动态调用可直接读取该属性。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中读取该属性。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite043.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite044.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 文件路径 -->
+	<p align="left"><br/></p>
+	<a name="sxwjlj"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;文件路径&nbsp;&nbsp;(只读)</font><br/>
+	<p align="left">此属性用于获取数据库的文件路径。</p>
+	<p align="left">本例前置代码：<a href="#sdksjk">打开数据库</a>、<a href="#sgbsjk">关闭数据库</a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef022.png"></p>
+		<p align="left">动态调用可直接读取该属性。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中读取该属性。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite045.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite046.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 已被本线程锁定 -->
+	<p align="left"><br/></p>
+	<a name="sxybbxcsd"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;已被本线程锁定&nbsp;&nbsp;(只读)</font><br/>
+	<p align="left">此属性用于判断数据库是否已被调用线程锁定。</p>
+	<p align="left">本例前置代码：<a href="#sdksjk">打开数据库</a>、<a href="#sgbsjk">关闭数据库</a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef023.png"></p>
+		<p align="left">动态调用可直接读取该属性。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中读取该属性。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite047.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite048.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 已启用写前日志 -->
+	<p align="left"><br/></p>
+	<a name="sxyqyxqrz"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;已启用写前日志&nbsp;&nbsp;(只读)</font><br/>
+	<p align="left">此属性用于判断数据库是否已启用写前日志。</p>
+	<p align="left">本例前置代码：<a href="#sdksjk">打开数据库</a>、<a href="#sgbsjk">关闭数据库</a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef024.png"></p>
+		<p align="left">动态调用可直接读取该属性。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中读取该属性。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite049.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite050.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- Sqlite记录集 准备工作 -->
+	<p align="left"><br/></p>
+	<a name="czbgz"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;准备工作&nbsp;&nbsp;(Sqlite记录集)</font><br/>
+	<p align="left">前置代码：<a href="#sdksjk">打开数据库</a>、<a href="#sgbsjk">关闭数据库</a>。</p>
+	<p align="left">本例讲解如何从<b>记录集类</b>对象中读出数据以及该对象的一些其他应用。</p>
+	<p align="left">在此之前，我们需要先准备一些用于读取的数据内容。</p>
+	<blockquote>
+		<p align="left">1，在<b>启动类</b>中添加一个新方法：<b>建立测试数据</b>，返回值类型：<b>记录集类</b>。</p>
+		<blockquote>
+			<p align="left">&nbsp;如下图所示：</p>
+			<p align="left">&nbsp;<img border="0" src="sqlite_images/sqlite051.png"></p>
+		</blockquote>
+		<p align="left">2，在<b>按钮5</b>被单击事件中声明一个类型为<b>记录集类</b>局部变量：<b>记录集</b>。</p>
+		<blockquote>
+			<p align="left">&nbsp;调用之前添加的方法并获得<b>记录集类</b>对象。</p>
+			<p align="left">&nbsp;如下图所示：</p>
+			<p align="left">&nbsp;<img border="0" src="sqlite_images/sqlite052.png"></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite053.gif"></p>
+		</blockquote>		
+	</blockquote>	
+<!-- 关闭 -->
+	<p align="left"><br/></p>
+	<a name="cgb"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;关闭</font><br/>
+	<p align="left">该方法用于关闭某个已打开的记录集。</p>
+	<p align="left">前置代码：<a href="#czbgz"><b>准备工作</b></a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef025.png"></p>
+		<p align="left">本方法有一个参数，返回值类型：<b>逻辑型</b>。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中，动态调用该方法。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite054.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite055.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 移动行 -->
+	<p align="left"><br/></p>
+	<a name="cdsxswh"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;到上一行</font>、<font style="font-size: 12pt; font-weight:700">到下一行</font>、<font style="font-size: 12pt; font-weight:700">移动至首行</font>、<font style="font-size: 12pt; font-weight:700">移动至尾行</font><br/>
+	<p align="left">这几个方法的用法一致，区别：</p>
+	<blockquote>
+		<p align="left"><b>到上一行</b>、<b>到下一行</b>：分别是将游标从当前位置<b>向前</b>或<b>向后</b>移动一行。</p>
+		<p align="left"><b>移动至首行</b>、<b>移动至尾行</b>：分别是将游标直接移动到<b>第一行</b>或<b>最后一行</b>。</p>
+	</blockquote>
+	<p align="left">前置代码：<a href="#czbgz"><b>准备工作</b></a>。</p>
+	<p align="left">以<b>移动至尾行</b>为例，帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef026.png"></p>
+		<p align="left">本方法有一个参数，返回值类型：<b>逻辑型</b>。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中，动态调用该方法。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite056.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite057.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 到指定行 -->
+	<p align="left"><br/></p>
+	<a name="cdzdh"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;到指定行</font>、<font style="font-size: 12pt; font-weight:700">移动游标</font><br/>
+	<p align="left">这两个方法的用法一致，区别：</p>
+	<blockquote>
+		<p align="left"><b>到指定行</b>：直接设置当前游标位置到新位置。</p>
+		<p align="left"><b>移动游标</b>：以当前游标位置为起点移动指定行数，正值表示向后(正向)移动、负值表示向前(反向)移动。</p>
+	</blockquote>
+	<p align="left">前置代码：<a href="#czbgz"><b>准备工作</b></a>。</p>
+	<p align="left">以<b>到指定行</b>为例，帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef027.png"></p>
+		<p align="left">本方法有两个参数，返回值类型：<b>逻辑型</b>。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中，动态调用该方法。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite058.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite059.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 取所有列名称 -->
+	<p align="left"><br/></p>
+	<a name="cqsylmc"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;取所有列名称</font><br/>
+	<p align="left">该方法用于取出记录集中所有列的名称。</p>
+	<p align="left">前置代码：<a href="#czbgz"><b>准备工作</b></a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef028.png"></p>
+		<p align="left">本方法有一个参数，返回值类型：<b>文本型数组</b>。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中，声明两个局部变量：</p>
+		<blockquote>
+			<p align="left">&nbsp;1.1，文本型数组：<b>列名数组</b>。</p>
+			<p align="left">&nbsp;1.2，整数：<b>列名索引</b>。</p>
+		</blockquote>
+		<p align="left">2，动态调用该方法并<b>循环</b>读出全部列名。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite060.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite061.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 取列名称 -->
+	<p align="left"><br/></p>
+	<a name="cqlmc"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;取列名称</font><br/>
+	<p align="left">该方法用于取出记录集中指定列的名称。</p>
+	<p align="left">前置代码：<a href="#czbgz"><b>准备工作</b></a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef029.png"></p>
+		<p align="left">本方法有两个参数，返回值类型：<b>文本型</b>。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中，声明一个类型为<b>文本型</b>的局部变量：<b>列名称</b>。</p>
+		<p align="left">2，动态调用该方法。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite062.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite063.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 取列索引 -->
+	<p align="left"><br/></p>
+	<a name="cqlsy"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;取列索引</font><br/>
+	<p align="left">该方法用于取出记录集中指定字段名称所在列的索引。</p>
+	<p align="left">前置代码：<a href="#czbgz"><b>准备工作</b></a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef030.png"></p>
+		<p align="left">本方法有两个参数，返回值类型：<b>整数</b>。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中，声明一个类型为<b>整数</b>的局部变量：<b>列索引</b>。</p>
+		<p align="left">2，动态调用该方法。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite064.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite065.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 取列值类型 -->
+	<p align="left"><br/></p>
+	<a name="cqlzlx"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;取列值类型</font>、<font style="font-size: 12pt; font-weight:700">取字段值类型</font><br/>
+	<p align="left">这两个方法用法一致，用于取出记录集中当前行指定列的数据值类型，区别：</p>
+	<blockquote>
+		<p align="left"><b>取列值类型</b>：根据指定列的索引获取值类型。</p>
+		<p align="left"><b>取字段值类型</b>：根据指定列的名称获取值类型。</p>
+	</blockquote>
+	<p align="left">注意：是数据的值类型，不是字段类型，Sqlite数据库的字段是没有具体类型的。</p>
+	<p align="left">前置代码：<a href="#czbgz"><b>准备工作</b></a>。</p>
+	<p align="left">以<b>取列值类型</b>为例，帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef031.png"></p>
+		<p align="left">本方法有两个参数，返回值类型：<b>字段值类型</b>。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>
+		<p align="left">返回值参考常量类<b>字段值类型</b>，如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef032.png" ></p>
+		</blockquote>		
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中，声明一个类型为<b>字段值类型</b>的局部变量：<b>值类型</b>。</p>
+		<p align="left">2，记录集的游标移动至首行以保证当前行有效。</p>
+		<p align="left">3，动态调用该方法。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite066.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite067.gif"></p>
+		</blockquote>
+	</blockquote>
+	
+<!-- 取列值数据 -->
+	<p align="left"><br/></p>
+	<a name="cqlzsj"></a>
+	
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;取列小数值</font>、<font style="font-size: 12pt; font-weight:700">取列短整数值</font>、<font style="font-size: 12pt; font-weight:700">取列整数值</font>、<font style="font-size: 12pt; font-weight:700">取列长整数值</font>、<font style="font-size: 12pt; font-weight:700">取列文本值</font>、<font style="font-size: 12pt; font-weight:700">取列字节集值</font><br/>
+	<p align="left">这些方法用法一致，用于从记录集的当前行取出指定列索引的数据，区别是数据类型不同。</p>
+	<p align="left">前置代码：<a href="#czbgz"><b>准备工作</b></a>。</p>
+	<p align="left">以<b>取列文本值</b>为例，帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef033.png"></p>
+		<p align="left">本方法有两个参数，返回值类型：<b>文本型</b>。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>	
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中，声明一个类型为<b>文本型</b>的局部变量：<b>文本内容</b>。</p>
+		<p align="left">2，记录集的游标移动至首行以保证当前行有效。</p>
+		<p align="left">3，动态调用该方法。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite068.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite069.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 取字段值数据 -->
+	<p align="left"><br/></p>
+	<a name="cqzdzsj"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;取字段小数值</font>、<font style="font-size: 12pt; font-weight:700">取字段短整数值</font>、<font style="font-size: 12pt; font-weight:700">取字段整数值</font>、<font style="font-size: 12pt; font-weight:700">取字段长整数值</font>、<font style="font-size: 12pt; font-weight:700">取字段文本值</font>、<font style="font-size: 12pt; font-weight:700">取字段字节集值</font><br/>
+	<p align="left">这几个方法用法一致，用于从记录集的当前行取出指定列名称的数据，区别是数据类型不同。</p>
+	<p align="left">前置代码：<a href="#czbgz"><b>准备工作</b></a>。</p>
+	<p align="left">以<b>取字段文本值</b>为例，帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef034.png"></p>
+		<p align="left">本方法有两个参数，返回值类型：<b>文本型</b>。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>	
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中，声明一个类型为<b>文本型</b>的局部变量：<b>文本内容</b>。</p>
+		<p align="left">2，记录集的游标移动至首行以保证当前行有效。</p>
+		<p align="left">3，动态调用该方法。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite070.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite071.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 是否为空值 -->
+	<p align="left"><br/></p>
+	<a name="csfwkz"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;是否为空值</font><br/>
+	<p align="left">该方法用于判断记录集当前行的指定列是否为空值(null)。</p>
+	<p align="left">前置代码：<a href="#czbgz"><b>准备工作</b></a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef035.png"></p>
+		<p align="left">本方法有两个参数，返回值类型：<b>逻辑型</b>。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>	
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中移动记录集的游标至首行以保证当前行有效。</p>
+		<p align="left">2，动态调用该方法。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite072.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite073.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 已关闭 -->
+	<p align="left"><br/></p>
+	<a name="cygb"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;已关闭&nbsp;&nbsp;(只读)</font><br/>
+	<p align="left">此属性用于判断游标是否已关闭。</p>
+	<p align="left">前置代码：<a href="#czbgz"><b>准备工作</b></a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef036.png"></p>
+		<p align="left">动态调用可直接读取该属性。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中读取该属性。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite074.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite075.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 行数 -->
+	<p align="left"><br/></p>
+	<a name="chs"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;行数&nbsp;&nbsp;(只读)</font><br/>
+	<p align="left">此属性用于获取记录集的行数(记录数目)。</p>
+	<p align="left">前置代码：<a href="#czbgz"><b>准备工作</b></a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef037.png"></p>
+		<p align="left">动态调用可直接读取该属性。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中读取该属性。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite076.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite077.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 列数 -->
+	<p align="left"><br/></p>
+	<a name="cls"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;列数&nbsp;&nbsp;(只读)</font><br/>
+	<p align="left">此属性用于获取记录集的列数(字段数目)。</p>
+	<p align="left">前置代码：<a href="#czbgz"><b>准备工作</b></a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef038.png"></p>
+		<p align="left">动态调用可直接读取该属性。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中读取该属性。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite078.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite079.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 当前行 -->
+	<p align="left"><br/></p>
+	<a name="cdqh"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;当前行&nbsp;&nbsp;(只读)</font><br/>
+	<p align="left">此属性用于获取记录集当前所在行(游标位置,-1表示在首记录之前。)。</p>
+	<p align="left">前置代码：<a href="#czbgz"><b>准备工作</b></a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef039.png"></p>
+		<p align="left">动态调用可直接读取该属性。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中读取该属性。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite080.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite081.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 在尾行 -->
+	<p align="left"><br/></p>
+	<a name="czwh"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;在尾行&nbsp;&nbsp;(只读)</font><br/>
+	<p align="left">此属性用于判断记录集当前行是否最后一行。</p>
+	<p align="left">前置代码：<a href="#czbgz"><b>准备工作</b></a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef040.png"></p>
+		<p align="left">动态调用可直接读取该属性。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中读取该属性。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite082.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite083.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 在尾行后 -->
+	<p align="left"><br/></p>
+	<a name="czwhh"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;在尾行后&nbsp;&nbsp;(只读)</font><br/>
+	<p align="left">此属性用于判断记录集当前行是否在最后一行之后。</p>
+	<p align="left">前置代码：<a href="#czbgz"><b>准备工作</b></a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef041.png"></p>
+		<p align="left">动态调用可直接读取该属性。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中读取该属性。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite084.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite085.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 在首行 -->
+	<p align="left"><br/></p>
+	<a name="czsh"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;在首行&nbsp;&nbsp;(只读)</font><br/>
+	<p align="left">此属性用于判断记录集当前行是否第一行。</p>
+	<p align="left">前置代码：<a href="#czbgz"><b>准备工作</b></a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef042.png"></p>
+		<p align="left">动态调用可直接读取该属性。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中读取该属性。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite086.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite087.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 在首行前 -->
+	<p align="left"><br/></p>
+	<a name="czshq"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;在首行前&nbsp;&nbsp;(只读)</font><br/>
+	<p align="left">此属性用于判断记录集当前行是否在第一行之前。</p>
+	<p align="left">前置代码：<a href="#czbgz"><b>准备工作</b></a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef043.png"></p>
+		<p align="left">动态调用可直接读取该属性。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中读取该属性。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite088.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite089.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 执行插入 -->
+	<p align="left"><br/></p>
+	<a name="tzxcr"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;执行插入</font><br/>
+	<p align="left">此方法用于执行插入(Insert)类型的SQL语句。</p>
+	<p align="left">前置代码：<a href="#sdksjk">打开数据库</a>、<a href="#sgbsjk">关闭数据库</a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef044.png"></p>
+		<p align="left">有两个参数，返回值类型：<b>长整数</b>。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中，执行SQL&quot;<b>CREATE TABLE Mydata(name TEXT)</b>&quot;创建例程需要的目的表。</p>
+		<p align="left">2，声明变量：</p>
+		<blockquote>
+		<p align="left">&nbsp;2.1，<b>准备语句</b>：已编译语句类、参考。</p>
+		<p align="left">&nbsp;2.2，<b>记录ID</b>：长整数。</p>
+		<p align="left">&nbsp;2.3，<b>错误信息</b>：文本缓冲区。</p>
+		</blockquote>
+		<p align="left">3，编译欲执行的SQL语句，获得<b>已编译语句类</b>对象。</p>
+		<p align="left">4，动态调用该方法。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite090.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite091.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 执行修改删除 -->
+	<p align="left"><br/></p>
+	<a name="tzxxgsc"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;执行修改删除</font><br/>
+	<p align="left">此方法用于执行修改(Update)和删除(Delete)类型的SQL语句。</p>
+	<p align="left">前置代码：<a href="#sdksjk">打开数据库</a>、<a href="#sgbsjk">关闭数据库</a>。</p>
+	<p align="left">下面以执行修改(Update)语句为例，帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef045.png"></p>
+		<p align="left">有两个参数，返回值类型：<b>整数</b>。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中：</p>
+		<blockquote>
+		<p align="left">&nbsp;1.1，执行SQL&quot;<b>CREATE TABLE Mydata(name TEXT)</b>&quot;创建例程需要的目的表。</p>
+		<p align="left">&nbsp;1.2，插入例程需要的记录数据。</p>
+		</blockquote>		
+		<p align="left">2，声明变量：</p>
+		<blockquote>
+		<p align="left">&nbsp;2.1，<b>准备语句</b>：已编译语句类、参考。</p>
+		<p align="left">&nbsp;2.2，<b>影响行数</b>：整数。</p>
+		<p align="left">&nbsp;2.3，<b>错误信息</b>：文本缓冲区。</p>
+		</blockquote>
+		<p align="left">3，编译欲执行的SQL语句，获得<b>已编译语句类</b>对象。</p>
+		<p align="left">4，动态调用该方法。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite092.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite093.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 执行创建销毁 -->
+	<p align="left"><br/></p>
+	<a name="tzxcjxh"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;执行创建销毁</font><br/>
+	<p align="left">此方法用于执行创建(Create)和销毁(Drop)等无数据返回类型的SQL语句。</p>
+	<p align="left">前置代码：<a href="#sdksjk">打开数据库</a>、<a href="#sgbsjk">关闭数据库</a>。</p>
+	<p align="left">下面以执行创建(Create)语句为例，帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef046.png"></p>
+		<p align="left">有两个参数，返回值类型：<b>逻辑型</b>。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+	<blockquote>
+		<p align="left">1，在<b>按钮5</b>被单击事件中声明变量：</p>
+		<blockquote>
+		<p align="left">&nbsp;1.1，<b>准备语句</b>：已编译语句类、参考。</p>
+		<p align="left">&nbsp;1.2，<b>错误信息</b>：文本缓冲区。</p>
+		</blockquote>
+		<p align="left">2，编译欲执行的SQL语句，获得<b>已编译语句类</b>对象。</p>
+		<p align="left">3，动态调用该方法。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite094.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite095.gif"></p>
+		</blockquote>
+	</blockquote>
+<!-- 查询长整数值 -->
+	<p align="left"><br/></p>
+	<a name="tcxsj"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;查询长整数值</font>、<font style="font-size: 12pt; font-weight:700">查询文本值</font><br/>
+	<p align="left">这两个方法用于执行简单的查询(Select)类型SQL语句，返回的是查询到的第一条记录、第一个字段的数据值。</p>
+	<p align="left">前置代码：<a href="#sdksjk">打开数据库</a>、<a href="#sgbsjk">关闭数据库</a>。</p>
+	<p align="left">下面以<b>查询长整数值</b>为例，帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef047.png"></p>
+		<p align="left">有两个参数，返回值类型：<b>长整数</b>。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+		<p align="left">1，在<b>按钮5</b>被单击事件中：</p>
+		<blockquote>
+		<p align="left">&nbsp;1.1，执行SQL&quot;<b>CREATE TABLE Mydata(number INTEGER)</b>&quot;创建例程需要的目的表。</p>
+		<p align="left">&nbsp;1.2，插入例程需要的记录数据。</p>
+		</blockquote>		
+		<p align="left">2，声明变量：</p>
+		<blockquote>
+		<p align="left">&nbsp;2.1，<b>准备语句</b>：已编译语句类、参考。</p>
+		<p align="left">&nbsp;2.2，<b>记录数值</b>：长整数。</p>
+		<p align="left">&nbsp;2.3，<b>错误信息</b>：文本缓冲区。</p>
+		</blockquote>
+		<p align="left">3，编译欲执行的SQL语句，获得<b>已编译语句类</b>对象。</p>
+		<p align="left">4，动态调用该方法。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite096.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite097.gif"></p>
+		</blockquote>
+
+	
+<!-- 绑定所有参数 -->
+	<p align="left"><br/></p>
+	<a name="tbdsycs"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;绑定所有参数</font><br/>
+	<p align="left">此方法用于绑定SQL语句中以&quot;<b>?</b>&quot;标记的全部参数值。</p>
+	<p align="left">前置代码：<a href="#sdksjk">打开数据库</a>、<a href="#sgbsjk">关闭数据库</a>。</p>
+	<p align="left">下面以绑定插入语句中的参数作为示例。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef048.png"></p>
+		<p align="left">有两个参数，无返回值。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+		<p align="left">1，在<b>按钮5</b>被单击事件中执行SQL&quot;<b>CREATE TABLE Mydata(name TEXT, city TEXT)</b>&quot;创建例程需要的目的表。</p>		
+		<p align="left">2，声明变量：</p>
+		<blockquote>
+		<p align="left">&nbsp;2.1，<b>准备语句</b>：已编译语句类、参考。</p>
+		<p align="left">&nbsp;2.2，<b>绑定参数</b>：文本型 [2]。</p>
+		<p align="left">&nbsp;2.3，<b>记录ID</b>：长整数。</p>
+		<p align="left">&nbsp;2.4，<b>错误信息</b>：文本缓冲区。</p>
+		</blockquote>
+		<p align="left">3，编译欲执行的SQL语句，获得<b>已编译语句类</b>对象。</p>
+		<p align="left">4，设置<b>绑定参数</b>各成员值并动态调用该方法进行绑定。</p>
+		<p align="left">5，执行已编译并已绑定参数值的SQL语句。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite098.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite099.gif"></p>
+		</blockquote>
+
+<!-- 绑定参数 -->
+	<p align="left"><br/></p>
+	<a name="tbdcs"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;绑定文本</font>、<font style="font-size: 12pt; font-weight:700">绑定字节集</font>、<font style="font-size: 12pt; font-weight:700">绑定小数</font>、<font style="font-size: 12pt; font-weight:700">绑定长整数</font>、<font style="font-size: 12pt; font-weight:700">绑定空值</font><br/>
+	<p align="left">这几个方法用于绑定SQL语句中以&quot;<b>?</b>&quot;标记的指定参数值。</p>
+	<p align="left">前置代码：<a href="#sdksjk">打开数据库</a>、<a href="#sgbsjk">关闭数据库</a>。</p>
+	<p align="left">下面以绑定插入语句中的参数作为示例。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left">这几个方法的定义大体相同，区别是第三个参数的数据类型不同，以<b>绑定文本</b>为例：</p>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef049.png"></p>
+		<p align="left">有两个参数，无返回值。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>
+		
+	</blockquote>
+	<p align="left">演示说明：</p>
+		<p align="left">1，在<b>按钮5</b>被单击事件中创建例程需要的目的表。</p>
+		<blockquote>
+				<p align="left">&nbsp;创建表的SQL语句：&quot;<b>CREATE TABLE Mydata(name TEXT, photo BLOB, money REAL, stamp INTEGER, girl TEXT)</b>&quot;</p>
+		</blockquote>
+		<p align="left">2，声明变量：</p>
+		<blockquote>
+		<p align="left">&nbsp;2.1，<b>准备语句</b>：已编译语句类、参考。</p>
+		<p align="left">&nbsp;2.2，<b>记录ID</b>：长整数。</p>
+		<p align="left">&nbsp;2.3，<b>错误信息</b>：文本缓冲区。</p>
+		</blockquote>
+		<p align="left">3，编译欲执行的SQL语句，获得<b>已编译语句类</b>对象。</p>
+		<p align="left">4，动态调用对应数据类型的方法绑定各个参数值。</p>
+		<p align="left">5，执行已编译并已绑定参数值的SQL语句。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite100.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite099.gif"></p>
+		</blockquote>
+<!-- 删除所有绑定 -->
+	<p align="left"><br/></p>
+	<a name="tscsybd"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;删除所有绑定</font><br/>
+	<p align="left">此方法用于清除之前对SQL语句进行绑定的所有参数值。</p>
+	<p align="left">清除绑定后如果继续执行该SQL语句则需要重新进行绑定。</p>
+	<p align="left"><b>注：清除绑定参数后不应继续执行该SQL。</b></p>
+	<p align="left">前置代码：<a href="#sdksjk">打开数据库</a>、<a href="#sgbsjk">关闭数据库</a>、<a href="#tbdcs">[&nbsp;绑定文本、绑定字节集、绑定小数、绑定长整数、绑定空值&nbsp;]</a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef050.png"></p>
+		<p align="left">有一个参数，无返回值。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>
+		
+	</blockquote>
+	<p align="left">演示说明：</p>
+		<p align="left">1，在之前绑定参数的代码之后，动态调用该方法清除绑定。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite101.png" ></p>
+		</blockquote>
+		
+
+<!-- 关闭 -->
+	<p align="left"><br/></p>
+	<a name="tsfyy"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;关闭</font>、<font style="font-size: 12pt; font-weight:700">释放引用</font><br/>
+	<p align="left">这两个方法效果一致，释放对<b>已编译语句类</b>对象的引用。</p>
+	<p align="left">当最后一次引用也被释放之后自动关闭该对象，不可再用。</p>
+	<p align="left"><b>注：释放引用后不应继续使用该对象。</b></p>
+	<p align="left">前置代码：<a href="#sdksjk">打开数据库</a>、<a href="#sgbsjk">关闭数据库</a>、<a href="#tbdcs">[&nbsp;绑定文本、绑定字节集、绑定小数、绑定长整数、绑定空值&nbsp;]</a>。</p>
+	<p align="left">两个方法帮助内容差不多，以<b>关闭</b>为例：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef051.png"></p>
+		<p align="left">有一个参数，无返回值。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>
+		
+	</blockquote>
+	<p align="left">演示说明：</p>
+		<p align="left">1，在之前编译SQL的代码之后，动态调用该方法。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite102.png" ></p>
+		</blockquote>
+<!-- 请求引用 -->
+	<p align="left"><br/></p>
+	<a name="tqqyy"></a>
+	<font style="font-size: 12pt; font-weight:700">●&nbsp;请求引用</font><br/>
+	<p align="left">此方法用于请求引用指定<b>已编译语句类</b>对象，效果类似增加引用计数。</p>
+	<p align="left">前置代码：<a href="#sdksjk">打开数据库</a>、<a href="#sgbsjk">关闭数据库</a>。</p>
+	<p align="left">帮助内容：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="sqlite_images/help_images/sqlitef052.png"></p>
+		<p align="left">有一个参数，返回值类型：<b>逻辑型</b>。</p>
+		<p align="left">以动态格式调用该方法，可省略第一个参数。</p>
+	</blockquote>
+	<p align="left">演示说明：</p>
+		<p align="left">1，在<b>按钮5</b>被单击事件中执行SQL&quot;<b>CREATE TABLE Mydata(name TEXT)</b>&quot;创建例程需要的目的表。</p>		
+		<p align="left">2，声明变量：</p>
+		<blockquote>
+		<p align="left">&nbsp;2.1，<b>准备语句</b>：已编译语句类、参考。</p>
+		<p align="left">&nbsp;2.2，<b>记录ID</b>：长整数。</p>
+		<p align="left">&nbsp;2.3，<b>错误信息</b>：文本缓冲区。</p>
+		</blockquote>
+		<p align="left">3，编译欲执行的SQL语句，获得<b>已编译语句类</b>对象。</p>
+		<p align="left">4，动态调用该方法。</p>
+		<p align="left">5，执行已编译的SQL语句。</p>
+		<p align="left">注意：<b>请求引用</b>和<b>释放引用</b>应该配对出现，每次成功的引用，当不再使用后都应该有一次释放。</p>
+		<p align="left">如下图所示：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite103.png" ></p>
+		</blockquote>
+		<p align="left">运行效果展示图：</p>
+		<blockquote>
+			<p align="left"><img border="0" src="sqlite_images/sqlite104.gif"></p>
+		</blockquote>		
+
+<!-- 文档结束 -->
+<p align="left"><br/></p>
+</blockquote>
+</body>
+</html>
