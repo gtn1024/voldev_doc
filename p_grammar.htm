@@ -122,6 +122,7 @@
 				</tr>
 				</table>
 			<p>如: &quot;您好!\n祖国&quot; 在&quot;您好!&quot;和&quot;祖国&quot;之间通过使用转义符插入了一个换行符.</p>
+			<p>注意: 在火山视窗平台里面,如果欲达到换行效果,需要插入&quot;\r\n&quot;回车和换行两个字符.</p>
 		</blockquote>
 		<p align="left"><b>4. 数组立即数</b>(只能在提供数组常量/变量初始值时使用):</p>
 		<blockquote>
@@ -253,6 +254,63 @@
 				<td width="566">&nbsp;</td>
 			</tr>
 			<tr>
+				<td width="222">@pdt2&lt;参数名称&gt;</td>
+				<td width="657">同&quot;@pdt&quot;唯一的不同是所有类数据类型始终使用统一的&quot;vcls&quot;名称.</td>
+				<td width="566">&nbsp;</td>
+			</tr>
+			<tr>
+				<td width="222"><a name="param_data_type_ch"></a>@pdt_ch&lt;参数名称&gt;</td>
+				<td width="657">引用为所指定参数提供的实际调用值数据类型的标识字符,包括: 基本数据类型/类.<p>
+				数据类型的数组部分被忽略,常量类数据类型被转换到所对应的基本数据类型.</p>
+				<p>数据类型与标识字符的对应表(区分大小写):</p>
+				<blockquote>
+					<table border="0" width="20%">
+						<tr>
+							<td><b>字节:</b></td>
+							<td>b</td>
+						</tr>
+						<tr>
+							<td><b>短整数:</b></td>
+							<td>s</td>
+						</tr>
+						<tr>
+							<td><b>字符:</b></td>
+							<td>c</td>
+						</tr>
+						<tr>
+							<td><b>整数:</b></td>
+							<td>n</td>
+						</tr>
+						<tr>
+							<td><b>变整数:</b></td>
+							<td>p</td>
+						</tr>
+						<tr>
+							<td><b>长整数:</b></td>
+							<td>l</td>
+						</tr>
+						<tr>
+							<td><b>小数:</b></td>
+							<td>f</td>
+						</tr>
+						<tr>
+							<td><b>逻辑值:</b></td>
+							<td>B</td>
+						</tr>
+						<tr>
+							<td><b>文本型:</b></td>
+							<td>S</td>
+						</tr>
+						<tr>
+							<td><b>类:</b></td>
+							<td>C</td>
+						</tr>
+					</table>
+				</blockquote>
+				</td>
+				<td width="566">&nbsp;</td>
+			</tr>
+			<tr>
 				<td width="222"><a name="embed_pkg"></a>@pkg&lt;包名称&gt;</td>
 				<td width="657">引用所指定的包名称</td>
 				<td width="566">@pkg&lt;火山.用户.程序&gt;</td>
@@ -277,50 +335,8 @@
 					<p><b>8. </b>&quot;quot&quot;: 双引号字符;</p>
 					<p><b>9.</b> &quot;apos&quot;: 单引号字符;</p>
 					<p><b>10. </b>&quot;pm_types&quot;: 
-					只能在嵌入式方法中的嵌入行里使用,为调用该嵌入式方法时所提供的全部参数的实际调用值数据类型的标识字符串.字符串两侧使用双引号括住,数据类型的数组部分被忽略,每个参数调用值数据类型对应一个标识字符(区分大小写),其含义如下:</p>
+					为调用该嵌入式方法时所提供的全部参数的实际调用值数据类型的标识字符串.字符串两侧使用双引号括住,数据类型的数组部分被忽略,常量类数据类型被转换到所对应的基本数据类型,每个参数调用值数据类型对应一个标识字符(区分大小写),具体数据类型与标识字符的对应表见&quot;<a href="#param_data_type_ch">@pdt_ch</a>&quot;处:</p>
 					<blockquote>
-						<table border="0" width="20%">
-							<tr>
-								<td><b>字节:</b></td>
-								<td>b</td>
-							</tr>
-							<tr>
-								<td><b>短整数:</b></td>
-								<td>s</td>
-							</tr>
-							<tr>
-								<td><b>字符:</b></td>
-								<td>c</td>
-							</tr>
-							<tr>
-								<td><b>整数:</b></td>
-								<td>n</td>
-							</tr>
-							<tr>
-								<td><b>变整数:</b></td>
-								<td>p</td>
-							</tr>
-							<tr>
-								<td><b>长整数:</b></td>
-								<td>l</td>
-							</tr>
-							<tr>
-								<td><b>小数:</b></td>
-								<td>f</td>
-							</tr>
-							<tr>
-								<td><b>逻辑值:</b></td>
-								<td>B</td>
-							</tr>
-							<tr>
-								<td><b>文本型:</b></td>
-								<td>S</td>
-							</tr>
-							<tr>
-								<td><b>类:</b></td>
-								<td>C</td>
-							</tr>
-						</table>
 						<p>如果参数调用值数据类型为类,可以通过其运行时类型信息来进行进一步判定其具体是什么类.</p>
 					</blockquote>
 					<p><b>11.</b> &quot;rand_name0&quot; 到 &quot;rand_name9&quot;: 随机生成的程序内唯一性名称.<blockquote>
@@ -330,7 +346,8 @@
 							3; @sn&lt;rand_name5&gt;++)</blockquote>
 						<p>
 						其中&quot;@sn&lt;rand_name5&gt;&quot;所生成的随机名称在整个程序内为唯一性名称,但是在该嵌入式方法体内这三个位置处将为同一个名称文本.</blockquote>
-				</blockquote>
+					<p><b>12. </b>&quot;current_statment&quot;: 当前语句的位置字符串,格式: &quot;&lt;所处源文件名&gt;, 
+					所处源文件行号, 所处包名.所处类名, 所处方法名&quot;</blockquote>
 				</td>
 				<td width="566">@sn&lt;current_class&gt;<p>@sn&lt;current_package&gt;</p>
 				<p>@sn&lt;base_class&gt;</p>
@@ -715,9 +732,10 @@
 		<td>长整数基本数据类型,有效值范围从-9223372036854774808到9223372036854774807,占用8个字节空间.</td>
 	</tr>
 	<tr>
-		<td width="220">小数</td>
-		<td width="89">double</td>
-		<td>双精度小数基本数据类型,有效值范围从1.797693e+308到4.9000000e-324,占用8个字节空间.</td>
+		<td width="12%" valign="top">小数</td>
+		<td width="5%" valign="top">double</td>
+		<td valign="top" bordercolor="#FFFFFF">
+		双精度小数基本数据类型,有效值范围从2.2250738585072014e-308到1.7976931348623158e+308,占用8个字节空间.</td>
 	</tr>
 	<tr>
 		<td width="220">逻辑型</td>
@@ -1620,7 +1638,9 @@
 				<p><b>12. req_str_param_text_pointer</b>: 逻辑型,默认值为假. 
 				仅在视窗版中使用,用作指定是否将本方法的所有文本型调用参数转换为其文本数据指针(const TCHAR*).本属性的优先级高于&quot;<b>req_obj_param_pointer&quot;</b>,也就是说如果同时定义了&quot;<b>req_obj_param_pointer</b>&quot;,文本型调用参数会被转换为&quot;const 
 				TCHAR*&quot;而不是&quot;CVolString*&quot;;</p>
-				<p><b>13. no_end_sem</b>: 逻辑型,默认值为假. 指定在嵌入式方法的调用语句尾部是否不自动加入分号.</p>
+				<p><b>13. req_str_param_text_pointer_u8</b>: 逻辑型,默认值为假. 
+				仅在视窗版中使用,同&quot;<b>req_str_param_text_pointer&quot;</b>,只不过为提供UTF8编码的文本指针;</p>
+				<p><b>14. no_end_sem</b>: 逻辑型,默认值为假. 指定在嵌入式方法的调用语句尾部是否不自动加入分号.</p>
 			</blockquote>
 			<p>嵌入式方法具有以下特点和需要注意的地方:</p>
 			<blockquote>
@@ -1699,6 +1719,16 @@
 			</td>
 		</tr>
 		<tr>
+			<td width="158">@匹配方法</td>
+			<td width="132">文本型</td>
+			<td width="129">&nbsp;</td>
+			<td width="113">参数</td>
+			<td>
+			本属性只能应用于嵌入式方法的参数定义成员上,用作指定需要为该参数提供一个指定格式的类静态/非静态方法(由属性值所指定模板方法的静态属性决定).<p>
+			属性值为一个任意类方法的访问名称(不检查是否对其具有访问权限),用作指定本参数所能接收类方法的定义格式,为空文本表示可以接收任何格式的类静态方法.</p>
+			<p>注意本属性不能与&quot;<a href="#param_match_mode">@匹配类型</a>&quot;/&quot;<a href="#param_req_mode">@需求类型</a>&quot;/&quot;<a href="#ret_value_type">@返回值类型</a>&quot;属性同时使用.</td>
+		</tr>
+		<tr>
 			<td width="158">@需求类型<a name="param_req_mode"></a></td>
 			<td width="132">整数</td>
 			<td width="129">　</td>
@@ -1726,7 +1756,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="158">@返回值类型</td>
+			<td width="158">@返回值类型<a name="ret_value_type"></a></td>
 			<td width="132">整数</td>
 			<td width="129">　</td>
 			<td width="113">参数</td>
@@ -2508,7 +2538,7 @@
 	<p><font size="3"><b>二</b></font><b><font size="3">. 类中的额外处理嵌入方法</font></b></p>
 	<blockquote>
 		<p><font size="2">
-		在类嵌入行中定义的一些具有特定名称和格式的嵌入方法具有特殊意义,主要用作进行一些针对类中C++嵌入成员的额外处理,列表如下:</font></p>
+		在类嵌入行中定义的一些具有特定名称和格式的嵌入方法具有特殊意义,列表如下:</font></p>
 		<table border="1" style="border-collapse: collapse" width="100%">
 			<tr>
 				<td width="50%" align="center" bgcolor="#808080" height="27"><b>
@@ -2516,26 +2546,39 @@
 				<td align="center" bgcolor="#808080" height="27"><b>解释</b></td>
 			</tr>
 			<tr>
+				<td width="50%">static void @an&lt;_sOnBeforeAppInit&gt; ()</td>
+				<td>如果存在,在初始化用户程序数据并启动用户程序前被自动调用,在该方法中不能访问任何用户程序数据,因为其尚未被初始化.<p>
+				可以在本方法中初始化所处火山类所需要的相关C++运行时环境.如果基础类和其继承类同时定义有本方法,则基础类的始终在前面被调用.<p>
+				注意: 本方法在类中的C++访问权限必须为public.</td>
+			</tr>
+			<tr>
+				<td width="50%">static void @an&lt;_sOnAfterAppExit&gt; ()</td>
+				<td>如果存在,在清理用户程序数据并退出用户程序后被自动调用,在该方法中不能访问任何用户程序数据,因为其已经被清理.<p>
+				可以在本方法中清理所处火山类所需要的相关C++运行时环境.如果基础类和其继承类同时定义有本方法,则继承类的始终在前面被调用.<p>
+				注意: 本方法在类中的C++访问权限必须为public.</td>
+			</tr>
+			<tr>
 				<td width="50%">static void @an&lt;_sOnStaticInitExtra&gt; ()</td>
-				<td>如果存在,在程序初始化静态数据时被自动调用,用作初始化所处火山类中的额外静态成员.</td>
+				<td>如果存在,在初始化用户程序静态数据时被自动调用,用作初始化所处火山类中的额外静态成员变量(额外成员变量的说明见注解).<p>
+				如果基础类和其继承类同时定义有本方法,则基础类的始终在前面被调用.</td>
 			</tr>
 			<tr>
 				<td width="50%">void @an&lt;_OnInitExtra&gt; ()</td>
-				<td>如果存在,在所处火山类的对象构造时被自动调用,用作初始化所处类中的额外动态成员.</td>
+				<td>如果存在,在所处火山类的对象构造时被自动调用,用作初始化所处火山类中的额外动态成员变量.</td>
 			</tr>
 			<tr>
 				<td width="50%">void @an&lt;_OnCleanupExtra&gt; ()</td>
-				<td>如果存在,在所处火山类的对象析构时被自动调用,用作清理所处类中的额外动态成员.</td>
+				<td>如果存在,在所处火山类的对象析构时被自动调用,用作清理所处火山类中的额外动态成员变量.</td>
 			</tr>
 			<tr>
 				<td width="50%">BOOL @an&lt;_IsSelfEqual&gt; (const 
 				@sn&lt;current_class&gt;&amp; objCompare) const</td>
-				<td>如果存在,在进行火山类对象比较时被自动调用,用作对类额外成员进行比较,返回是否相等.</td>
+				<td>如果存在,在进行火山类对象比较时被自动调用,用作对类额外成员变量进行比较,返回是否相等.</td>
 			</tr>
 			<tr>
 				<td width="50%">void @an&lt;_CopySelfFromExtra&gt; (const 
 				@sn&lt;current_class&gt;&amp; objCopyFrom)</td>
-				<td>如果存在,在进行火山类对象赋值操作时被自动调用,用作复制类中的额外成员内容.</td>
+				<td>如果存在,在进行火山类对象赋值操作时被自动调用,用作复制类中的额外成员变量内容.</td>
 			</tr>
 			<tr>
 				<td width="35%">void @an&lt;_OnAfterEventAttached&gt; (BOOL blAttach)</td>
@@ -2545,8 +2588,8 @@
 		</table>
 		<p>注明:</p>
 		<blockquote>
-			<p>1. 以上所说的额外成员,是指火山类中使用类嵌入行定义的C++成员,火山程序成员本身会自动得到处理;</p>
-			<p>2. 在以上额外处理嵌入方法中,均不用考虑所处类的基础类,基础类需要此类处理需要自行定义,编译器亦会自动顺序调用;</p>
+			<p>1. 以上所说的<b>额外成员变量</b>,是指火山类中使用类嵌入行定义的C++成员变量,以火山程序方式定义的成员变量会自动得到处理;</p>
+			<p>2. 在以上额外处理嵌入方法中,均不用考虑所处类的基础类,基础类需要此类处理需要自行定义,编译器亦会自动一一调用;</p>
 			<p>3. 上面嵌入方法定义格式中的&quot;<a href="#embed_an">@an</a>&quot;和&quot;<a href="#sn_current_class">@sn&lt;current_class&gt;</a>&quot;参见前面的<a href="#embed_line">嵌入行</a>说明内容;</p>
 			<p>4. 
 			以上方法的使用实例请参见&quot;视窗基本类&quot;模块中的&quot;w_base.v&quot;或&quot;MFC界面基本类&quot;模块中的&quot;w_mfc_ui_base.v&quot;火山源程序.</p>
@@ -2570,7 +2613,9 @@
 				<td width="198">类或方法</td>
 				<td>本属性可以应用在类或方法定义成员上,用作在转换到C++代码后在头文件中其成员定义前方添加一段指定文本.<p>
 				当应用在类上时,用作在&quot;class&quot;关键字前添加一段文本;<p>
-				当应用在方法上时,用作在方法定义语句首部添加一段文本,但如果所提供文本以&#39;@&#39;字符开头(譬如&quot;@WINAPI&quot;),则将后续文本放置在方法名称的前面(用作加入类似WINAPI这样的声明).</td>
+				当应用在方法上时,用作在方法定义语句首部添加一段文本,但如果所提供文本以&#39;@&#39;字符开头(譬如&quot;@CDECL&quot;),则将后续文本放置在方法名称的前面(可以用作加入类似CDECL这样的
+				调用协议声明).<p>
+				注意火山静态方法默认具有<b>CALLBACK</b>调用协议,但如果在本属性中指定了其它调用协议,可以将其覆盖.</td>
 			</tr>
 			<tr>
 				<td width="199">@视窗.后缀文本</td>
@@ -2591,7 +2636,10 @@
 				<blockquote>
 					<p>1. &quot;x64&quot;(编译64位平台版本时) / &quot;win32&quot;(编译32位平台版本时);</p>
 					<p>2. &quot;debug&quot;(编译调试版本时) / &quot;release&quot;(编译发布版本时);</p>
-					<p>3. &quot;exe&quot;(编译为窗口可执行文件时) / &quot;dll&quot;(编译为动态库时) / &quot;lib&quot;(编译为静态链接库时) 
+					<p>3. &quot;default&quot;(火山模块链接方式为默认时) / &quot;dynamic&quot;(火山模块链接方式为动态时) / 
+					&quot;static&quot;(火山模块链接方式为静态时) / &quot;non_dynamic&quot;(火山模块链接方式不为动态时) / 
+					&quot;non_static&quot;(火山模块链接方式不为静态时);</p>
+					<p>4. &quot;exe&quot;(编译为窗口可执行文件时) / &quot;dll&quot;(编译为动态库时) / &quot;lib&quot;(编译为静态链接库时) 
 					/ &quot;console&quot;(编译为控制台可执行文件时).</p>
 				</blockquote>
 				<p>
@@ -2613,7 +2661,10 @@
 				<blockquote>
 					<p>1. &quot;x64&quot;(编译64位平台版本时) / &quot;win32&quot;(编译32位平台版本时);</p>
 					<p>2. &quot;debug&quot;(编译调试版本时) / &quot;release&quot;(编译发布版本时);</p>
-					<p>3. &quot;exe&quot;(编译为窗口可执行文件时) / &quot;dll&quot;(编译为动态库时) / &quot;lib&quot;(编译为静态链接库时) 
+					<p>3. &quot;default&quot;(火山模块链接方式为默认时) / &quot;dynamic&quot;(火山模块链接方式为动态时) / 
+					&quot;static&quot;(火山模块链接方式为静态时) / &quot;non_dynamic&quot;(火山模块链接方式不为动态时) / 
+					&quot;non_static&quot;(火山模块链接方式不为静态时);</p>
+					<p>4. &quot;exe&quot;(编译为窗口可执行文件时) / &quot;dll&quot;(编译为动态库时) / &quot;lib&quot;(编译为静态链接库时) 
 					/ &quot;console&quot;(编译为控制台可执行文件时).</p>
 				</blockquote>
 				<p>
@@ -2644,7 +2695,9 @@
 						<p>$(p): 当前编译目标平台英文名称(x64/win32);</p>
 						<p>$(r): 当前编译结果类型英文名称(exe/dll/lib/console);</p>
 						<p>$(d): 当前编译调试版本类型英文名称(debug/realse);</p>
-						<p>$(pf): 当前项目文件去除路径及后缀后的名称.</p>
+						<p>$(pf): 当前项目文件去除路径及后缀后的名称;</p>
+						<p>$(lm): 当前火山模块的链接方式(default/dynamic/static);</p>
+						<p>$(vs): 当前所使用VS版本号(注意其中的小数点使用下划线替代).</p>
 					</blockquote>
 				</blockquote>
 				</td>
@@ -2656,7 +2709,10 @@
 				<blockquote>
 					<p>1. &quot;x64&quot;(编译64位平台版本时) / &quot;win32&quot;(编译32位平台版本时);</p>
 					<p>2. &quot;debug&quot;(编译调试版本时) / &quot;release&quot;(编译发布版本时);</p>
-					<p>3. &quot;exe&quot;(编译为窗口可执行文件时) / &quot;dll&quot;(编译为动态库时) / &quot;lib&quot;(编译为静态链接库时) 
+					<p>3. &quot;default&quot;(火山模块链接方式为默认时) / &quot;dynamic&quot;(火山模块链接方式为动态时) / 
+					&quot;static&quot;(火山模块链接方式为静态时) / &quot;non_dynamic&quot;(火山模块链接方式不为动态时) / 
+					&quot;non_static&quot;(火山模块链接方式不为静态时);</p>
+					<p>4. &quot;exe&quot;(编译为窗口可执行文件时) / &quot;dll&quot;(编译为动态库时) / &quot;lib&quot;(编译为静态链接库时) 
 					/ &quot;console&quot;(编译为控制台可执行文件时).</p>
 				</blockquote>
 				<p>
@@ -2673,7 +2729,9 @@
 						<p>$(p): 当前编译目标平台英文名称(x64/win32);</p>
 						<p>$(r): 当前编译结果类型英文名称(exe/dll/lib/console);</p>
 						<p>$(d): 当前编译调试版本类型英文名称(debug/realse);</p>
-						<p>$(pf): 当前项目文件去除路径及后缀后的名称.</p>
+						<p>$(pf): 当前项目文件去除路径及后缀后的名称;</p>
+						<p>$(lm): 当前火山模块的链接方式(default/dynamic/static);</p>
+						<p>$(vs): 当前所使用VS版本号(注意其中的小数点使用下划线替代).</p>
 					</blockquote>
 				</blockquote>
 				</td>
@@ -2685,7 +2743,10 @@
 				<blockquote>
 					<p>1. &quot;x64&quot;(编译64位平台版本时) / &quot;win32&quot;(编译32位平台版本时);</p>
 					<p>2. &quot;debug&quot;(编译调试版本时) / &quot;release&quot;(编译发布版本时);</p>
-					<p>3. &quot;exe&quot;(编译为窗口可执行文件时) / &quot;dll&quot;(编译为动态库时) / &quot;lib&quot;(编译为静态链接库时) 
+					<p>3. &quot;default&quot;(火山模块链接方式为默认时) / &quot;dynamic&quot;(火山模块链接方式为动态时) / 
+					&quot;static&quot;(火山模块链接方式为静态时) / &quot;non_dynamic&quot;(火山模块链接方式不为动态时) / 
+					&quot;non_static&quot;(火山模块链接方式不为静态时);</p>
+					<p>4. &quot;exe&quot;(编译为窗口可执行文件时) / &quot;dll&quot;(编译为动态库时) / &quot;lib&quot;(编译为静态链接库时) 
 					/ &quot;console&quot;(编译为控制台可执行文件时).</p>
 				</blockquote>
 				<p>
@@ -2700,7 +2761,9 @@
 						<p>$(p): 当前编译目标平台英文名称(x64/win32);</p>
 						<p>$(r): 当前编译结果类型英文名称(exe/dll/lib/console);</p>
 						<p>$(d): 当前编译调试版本类型英文名称(debug/realse);</p>
-						<p>$(pf): 当前项目文件去除路径及后缀后的名称.</p>
+						<p>$(pf): 当前项目文件去除路径及后缀后的名称;</p>
+						<p>$(lm): 当前火山模块的链接方式(default/dynamic/static);</p>
+						<p>$(vs): 当前所使用VS版本号(注意其中的小数点使用下划线替代).</p>
 					</blockquote>
 				</blockquote>
 				</td>
@@ -2712,7 +2775,10 @@
 				<blockquote>
 					<p>1. &quot;x64&quot;(编译64位平台版本时) / &quot;win32&quot;(编译32位平台版本时);</p>
 					<p>2. &quot;debug&quot;(编译调试版本时) / &quot;release&quot;(编译发布版本时);</p>
-					<p>3. &quot;exe&quot;(编译为窗口可执行文件时) / &quot;dll&quot;(编译为动态库时) / &quot;lib&quot;(编译为静态链接库时) 
+					<p>3. &quot;default&quot;(火山模块链接方式为默认时) / &quot;dynamic&quot;(火山模块链接方式为动态时) / 
+					&quot;static&quot;(火山模块链接方式为静态时) / &quot;non_dynamic&quot;(火山模块链接方式不为动态时) / 
+					&quot;non_static&quot;(火山模块链接方式不为静态时);</p>
+					<p>4. &quot;exe&quot;(编译为窗口可执行文件时) / &quot;dll&quot;(编译为动态库时) / &quot;lib&quot;(编译为静态链接库时) 
 					/ &quot;console&quot;(编译为控制台可执行文件时).</p>
 				</blockquote>
 				<p>
@@ -2727,7 +2793,9 @@
 						<p>$(p): 当前编译目标平台英文名称(x64/win32);</p>
 						<p>$(r): 当前编译结果类型英文名称(exe/dll/lib/console);</p>
 						<p>$(d): 当前编译调试版本类型英文名称(debug/realse);</p>
-						<p>$(pf): 当前项目文件去除路径及后缀后的名称.</p>
+						<p>$(pf): 当前项目文件去除路径及后缀后的名称;</p>
+						<p>$(lm): 当前火山模块的链接方式(default/dynamic/static);</p>
+						<p>$(vs): 当前所使用VS版本号(注意其中的小数点使用下划线替代).</p>
 					</blockquote>
 				</blockquote>
 				</td>
@@ -2739,7 +2807,10 @@
 				<blockquote>
 					<p>1. &quot;x64&quot;(编译64位平台版本时) / &quot;win32&quot;(编译32位平台版本时);</p>
 					<p>2. &quot;debug&quot;(编译调试版本时) / &quot;release&quot;(编译发布版本时);</p>
-					<p>3. &quot;exe&quot;(编译为窗口可执行文件时) / &quot;dll&quot;(编译为动态库时) / &quot;lib&quot;(编译为静态链接库时) 
+					<p>3. &quot;default&quot;(火山模块链接方式为默认时) / &quot;dynamic&quot;(火山模块链接方式为动态时) / 
+					&quot;static&quot;(火山模块链接方式为静态时) / &quot;non_dynamic&quot;(火山模块链接方式不为动态时) / 
+					&quot;non_static&quot;(火山模块链接方式不为静态时);</p>
+					<p>4. &quot;exe&quot;(编译为窗口可执行文件时) / &quot;dll&quot;(编译为动态库时) / &quot;lib&quot;(编译为静态链接库时) 
 					/ &quot;console&quot;(编译为控制台可执行文件时).</p>
 				</blockquote>
 				<p>
@@ -2762,7 +2833,9 @@
 					<p>$(p): 当前编译目标平台英文名称(x64/win32);</p>
 					<p>$(r): 当前编译结果类型英文名称(exe/dll/lib/console);</p>
 					<p>$(d): 当前编译调试版本类型英文名称(debug/realse);</p>
-					<p>$(pf): 当前项目文件去除路径及后缀后的名称.</p>
+					<p>$(pf): 当前项目文件去除路径及后缀后的名称;</p>
+					<p>$(lm): 当前火山模块的链接方式(default/dynamic/static);</p>
+					<p>$(vs): 当前所使用VS版本号(注意其中的小数点使用下划线替代).</p>
 				</blockquote>
 				</td>
 			</tr>
@@ -2773,11 +2846,19 @@
 				<p>
 				当成功编译完毕后,这些文件或目录(包括其中的所有文件及子目录)将被复制到编译结果文件所处的目录中,以供其运行时访问.</p>
 				<p>
+				可以在所提供的附属文件或目录名称后加一个右尖括号&#39;&gt;<b>&#39;</b>字符,再后跟随一个相对目录路径,该路径相对编译结果文件所处目录,会被自动创建,用作指定附属文件或目录的最终拷贝到目录位置.</p>
+				<p>
+				譬如: &quot;<a href="file:///c:/abc.txt%20%3E%20data/txt">c:\abc.txt &gt; 
+				data\txt</a>&quot;,系统将会把&quot;c:\abc.txt&quot;复制到编译结果文件所处目录的&quot;data\txt&quot;子目录内.</p>
+				<p>
 				可以通过在属性名后缀中提供对应的修饰符组合来指定这些文件所具体应用到的编译环境,所支持的修饰符有以下几组:</p>
 				<blockquote>
 					<p>1. &quot;x64&quot;(编译64位平台版本时) / &quot;win32&quot;(编译32位平台版本时);</p>
 					<p>2. &quot;debug&quot;(编译调试版本时) / &quot;release&quot;(编译发布版本时);</p>
-					<p>3. &quot;exe&quot;(编译为窗口可执行文件时) / &quot;dll&quot;(编译为动态库时) / &quot;lib&quot;(编译为静态链接库时) 
+					<p>3. &quot;default&quot;(火山模块链接方式为默认时) / &quot;dynamic&quot;(火山模块链接方式为动态时) / 
+					&quot;static&quot;(火山模块链接方式为静态时) / &quot;non_dynamic&quot;(火山模块链接方式不为动态时) / 
+					&quot;non_static&quot;(火山模块链接方式不为静态时);</p>
+					<p>4. &quot;exe&quot;(编译为窗口可执行文件时) / &quot;dll&quot;(编译为动态库时) / &quot;lib&quot;(编译为静态链接库时) 
 					/ &quot;console&quot;(编译为控制台可执行文件时).</p>
 				</blockquote>
 				<p>
@@ -2788,7 +2869,9 @@
 					<p>$(p): 当前编译目标平台英文名称(x64/win32);</p>
 					<p>$(r): 当前编译结果类型英文名称(exe/dll/lib/console);</p>
 					<p>$(d): 当前编译调试版本类型英文名称(debug/realse);</p>
-					<p>$(pf): 当前项目文件去除路径及后缀后的名称.</p>
+					<p>$(pf): 当前项目文件去除路径及后缀后的名称;</p>
+					<p>$(lm): 当前火山模块的链接方式(default/dynamic/static);</p>
+					<p>$(vs): 当前所使用VS版本号(注意其中的小数点使用下划线替代).</p>
 				</blockquote>
 				</td>
 			</tr>
@@ -2799,7 +2882,9 @@
 				在目录名中可以使用&quot;$(环境变量名)&quot;引用已有的计算机系统或编译器内嵌环境变量值,编译器内嵌支持的环境变量引用名有以下:<blockquote>
 					<p>$(p): 当前编译目标平台英文名称(x64/win32);<p>$(r): 
 					当前编译结果类型英文名称(exe/dll/lib/console);<p>$(d): 
-					当前编译调试版本类型英文名称(debug/realse);<p>$(pf): 当前项目文件去除路径及后缀后的名称.</blockquote>
+					当前编译调试版本类型英文名称(debug/realse);<p>$(pf): 当前项目文件去除路径及后缀后的名称;<p>
+					$(lm): 当前火山模块的链接方式(default/dynamic/static);<p>
+					$(vs): 当前所使用VS版本号(注意其中的小数点使用下划线替代).</blockquote>
 				</td>
 			</tr>
 			<tr>
@@ -2808,34 +2893,67 @@
 				在目录名中可以使用&quot;$(环境变量名)&quot;引用已有的计算机系统或编译器内嵌环境变量值,编译器内嵌支持的环境变量引用名有以下:<blockquote>
 					<p>$(p): 当前编译目标平台英文名称(x64/win32);<p>$(r): 
 					当前编译结果类型英文名称(exe/dll/lib/console);<p>$(d): 
-					当前编译调试版本类型英文名称(debug/realse);<p>$(pf): 当前项目文件去除路径及后缀后的名称.</blockquote>
+					当前编译调试版本类型英文名称(debug/realse);<p>$(pf): 当前项目文件去除路径及后缀后的名称;<p>
+					$(lm): 当前火山模块的链接方式(default/dynamic/static);<p>
+					$(vs): 当前所使用VS版本号(注意其中的小数点使用下划线替代).</blockquote>
 				</td>
 			</tr>
 			<tr>
 				<td width="199">@视窗.需求VS版本</td>
 				<td width="129" rowspan="3">&nbsp;</td>
 				<td>本属性用作提供所处包/类/方法正常编译所需求 Visual Studio 
-				或其生成工具的编译器版本号范围,属性值为使用逗号分隔的所需求最小和最大版本号,两个版本号均可以被省略(被省略表示对应版本号无需求),因此有效的格式为以下几种之一:<blockquote>
-					<p>1. &quot;最小版本号&quot;;</p>
-					<p>2. &quot;最小版本号, 最大版本号&quot;;</p>
-					<p>3. &quot;, 最大版本号&quot;.</p>
+				或其生成工具的编译器版本号范围,属性值为一个或多个版本需求描述项.<p>每个描述项的格式为: &quot;版本号1 - 版本号2&quot;, 
+				两个版本号及其中的减号均可以被省略,因此有效的格式为以下几种之一:</p>
+				<blockquote>
+					<p>1. &quot;版本号1&quot;: 当VS版本号等于版本号1时满足要求;</p>
+					<p>2. &quot;版本号1 -&quot;: 当VS版本号大于等于版本号1时满足要求;</p>
+					<p>3. &quot;版本号1 - 版本号2&quot;: 当VS版本号大于等于版本号1且小于等于版本号2时满足要求;</p>
+					<p>4. &quot;- 版本号2&quot;: 当VS版本号小于等于版本号2时满足要求.</p>
 				</blockquote>
+				<p>多个描述项之间使用逗号分隔,当任一描述项满足需求则认为整体满足了需求.</p>
+				<p>举例,以下属性值指定了需求VS2013或者2017及以上的版本: &quot;12, 15-&quot;</p>
 				<p>以下为各个常用 Visual Studio 或其生成工具对应的编译器版本号:</p>
 				<blockquote>
-					<p>1. Visual Studio 2010: 10.0</p>
-					<p>2. Visual Studio 2012: 11.0</p>
-					<p>3. Visual Studio 2013: 12.0</p>
-					<p>4. Visual Studio 2014: 13.0</p>
-					<p>5. Visual Studio 2015: 14.0</p>
-					<p>6. Visual Studio 2017 或其生成工具: 15.0</p>
-					<p>7. Visual Studio 2019 或其生成工具: 16.0</p>
+					<p>1. Visual Studio 2010: 10</p>
+					<p>2. Visual Studio 2012: 11</p>
+					<p>3. Visual Studio 2013: 12</p>
+					<p>4. Visual Studio 2014: 13</p>
+					<p>5. Visual Studio 2015: 14</p>
+					<p>6. Visual Studio 2017 或其生成工具: 15</p>
+					<p>7. Visual Studio 2019 或其生成工具: 16</p>
 				</blockquote>
+				<p>
+				可以通过在属性名后缀中提供对应的修饰符组合来指定当前资源文件所具体应用到的编译环境,所支持的修饰符有以下几组:</p>
+				<blockquote>
+					<p>1. &quot;x64&quot;(编译64位平台版本时) / &quot;win32&quot;(编译32位平台版本时);</p>
+					<p>2. &quot;debug&quot;(编译调试版本时) / &quot;release&quot;(编译发布版本时);</p>
+					<p>3. &quot;default&quot;(火山模块链接方式为默认时) / &quot;dynamic&quot;(火山模块链接方式为动态时) / 
+					&quot;static&quot;(火山模块链接方式为静态时) / &quot;non_dynamic&quot;(火山模块链接方式不为动态时) / 
+					&quot;non_static&quot;(火山模块链接方式不为静态时);</p>
+					<p>4. &quot;exe&quot;(编译为窗口可执行文件时) / &quot;dll&quot;(编译为动态库时) / &quot;lib&quot;(编译为静态链接库时) 
+					/ &quot;console&quot;(编译为控制台可执行文件时).</p>
+				</blockquote>
+				<p>
+				属性名后缀中可以同时存在多个修饰符,但每组修饰符中只允许同时存在一个,多个修饰符之间使用减号字符分隔,其排列顺序没有要求.如果某组中的修饰符一个都没有指定,说明对所对应的编译选项没有要求(任意均可).</p>
 				</td>
 			</tr>
 			<tr>
 				<td width="199">@视窗.需求目标平台</td>
 				<td>
-				本属性用作提供所处包/类/方法正常编译所需求的目标平台.<p>属性值可以为以下之一: 所有平台、64位平台、32位平台</td>
+				本属性用作提供所处包/类/方法正常编译所需求的目标平台.<p>属性值可以为以下之一: 所有平台、64位平台、32位平台<p>
+				可以通过在属性名后缀中提供对应的修饰符组合来指定当前资源文件所具体应用到的编译环境,所支持的修饰符有以下几组:</p>
+				<blockquote>
+					<p>1. &quot;x64&quot;(编译64位平台版本时) / &quot;win32&quot;(编译32位平台版本时);</p>
+					<p>2. &quot;debug&quot;(编译调试版本时) / &quot;release&quot;(编译发布版本时);</p>
+					<p>3. &quot;default&quot;(火山模块链接方式为默认时) / &quot;dynamic&quot;(火山模块链接方式为动态时) / 
+					&quot;static&quot;(火山模块链接方式为静态时) / &quot;non_dynamic&quot;(火山模块链接方式不为动态时) / 
+					&quot;non_static&quot;(火山模块链接方式不为静态时);</p>
+					<p>4. &quot;exe&quot;(编译为窗口可执行文件时) / &quot;dll&quot;(编译为动态库时) / &quot;lib&quot;(编译为静态链接库时) 
+					/ &quot;console&quot;(编译为控制台可执行文件时).</p>
+				</blockquote>
+				<p>
+				属性名后缀中可以同时存在多个修饰符,但每组修饰符中只允许同时存在一个,多个修饰符之间使用减号字符分隔,其排列顺序没有要求.如果某组中的修饰符一个都没有指定,说明对所对应的编译选项没有要求(任意均可).</p>
+				</td>
 			</tr>
 			<tr>
 				<td width="199">@视窗.需求系统头文件</td>
@@ -2848,12 +2966,27 @@
 					<p>3. &quot;@视窗.头文件搜寻目录&quot;属性中设置的头文件搜寻路径;</p>
 					<p>4. &quot;INCLUDE&quot;系统环境变量中设置的头文件搜寻路径.</p>
 				</blockquote>
+				<p>
+				可以通过在属性名后缀中提供对应的修饰符组合来指定当前资源文件所具体应用到的编译环境,所支持的修饰符有以下几组:</p>
+				<blockquote>
+					<p>1. &quot;x64&quot;(编译64位平台版本时) / &quot;win32&quot;(编译32位平台版本时);</p>
+					<p>2. &quot;debug&quot;(编译调试版本时) / &quot;release&quot;(编译发布版本时);</p>
+					<p>3. &quot;default&quot;(火山模块链接方式为默认时) / &quot;dynamic&quot;(火山模块链接方式为动态时) / 
+					&quot;static&quot;(火山模块链接方式为静态时) / &quot;non_dynamic&quot;(火山模块链接方式不为动态时) / 
+					&quot;non_static&quot;(火山模块链接方式不为静态时);</p>
+					<p>4. &quot;exe&quot;(编译为窗口可执行文件时) / &quot;dll&quot;(编译为动态库时) / &quot;lib&quot;(编译为静态链接库时) 
+					/ &quot;console&quot;(编译为控制台可执行文件时).</p>
+				</blockquote>
+				<p>
+				属性名后缀中可以同时存在多个修饰符,但每组修饰符中只允许同时存在一个,多个修饰符之间使用减号字符分隔,其排列顺序没有要求.如果某组中的修饰符一个都没有指定,说明对所对应的编译选项没有要求(任意均可).</p>
 				<p>在文件名中可以使用&quot;$(环境变量名)&quot;引用已有的计算机系统或编译器内嵌环境变量值,编译器内嵌支持的环境变量引用名有以下:</p>
 				<blockquote>
 					<p>$(p): 当前编译目标平台英文名称(x64/win32);</p>
 					<p>$(r): 当前编译结果类型英文名称(exe/dll/lib/console);</p>
 					<p>$(d): 当前编译调试版本类型英文名称(debug/realse);</p>
-					<p>$(pf): 当前项目文件去除路径及后缀后的名称.</p>
+					<p>$(pf): 当前项目文件去除路径及后缀后的名称;</p>
+					<p>$(lm): 当前火山模块的链接方式(default/dynamic/static);</p>
+					<p>$(vs): 当前所使用VS版本号(注意其中的小数点使用下划线替代).</p>
 				</blockquote>
 				<p>例子: @视窗.需求系统头文件 = &quot;afxwin.h | 当前 Visual Studio 本地编译环境未安装 MFC 
 				,需要首先将其安装才能进行编译,安装方法请参考系统菜单\&quot;工具-&gt;安装 Visual Studio 2019 
@@ -2875,7 +3008,9 @@
 						<p>$(p): 当前编译目标平台英文名称(x64/win32);</p>
 						<p>$(r): 当前编译结果类型英文名称(exe/dll/lib/console);</p>
 						<p>$(d): 当前编译调试版本类型英文名称(debug/realse);</p>
-						<p>$(pf): 当前项目文件去除路径及后缀后的名称.</p>
+						<p>$(pf): 当前项目文件去除路径及后缀后的名称;</p>
+						<p>$(lm): 当前火山模块的链接方式(default/dynamic/static);</p>
+						<p>$(vs): 当前所使用VS版本号(注意其中的小数点使用下划线替代).</p>
 					</blockquote>
 				</blockquote>
 				</td>
@@ -2985,6 +3120,7 @@
 			[category] = xxx<br>
 			*
 			[icon] = xxx<br>
+			*[ocx] = xxx<br>
 			[default_event] = xxx<br>
 			*
 			[default_size] = &quot;xx, xx&quot;</p>
@@ -3019,13 +3155,24 @@
 				<tr>
 					<td width="11%">icon</td>
 					<td width="9%">文本型</td>
-					<td>提供本组件图标的图片文件名,相对本配置信息所处火山源文件位于的目录,为空表示
-					使用默认图标.<br>
+					<td>提供本组件图标的图片文件名,相对本配置信息所处火山源文件位于的目录,为空表示使用默认图标.<br>
 					图片文件要求如下: 格式为BMP,尺寸24x24像素,颜色深度32位,透明背景色为洋红(RGB颜色分量: 255, 0, 
 					255).<p>也可以通过使用&#39;@&#39;字符引导的
 					整数索引值来引用系统内置的相关图标,该索引值索引到如下图片:
 					<a href="images/ctrl_icons.bmp">images/ctrl_icons.bmp</a></p>
 					</td>
+				</tr>
+				<tr>
+					<td width="11%">ocx_x64</td>
+					<td width="9%">文本型</td>
+					<td>
+					如果本组件为OCX组件,用作提供对应的64位OCX文件名,相对本配置信息所处火山源文件位于的目录,界面设计器在载入本组件前会自动将其注册.</td>
+				</tr>
+				<tr>
+					<td width="11%">ocx_win32</td>
+					<td width="9%">文本型</td>
+					<td>
+					如果本组件为OCX组件,用作提供对应的32位OCX文件名,相对本配置信息所处火山源文件位于的目录,界面设计器在载入本组件前会自动将其注册.</td>
 				</tr>
 				<tr>
 					<td width="11%">default_event</td>
@@ -3070,7 +3217,9 @@
 				<blockquote>
 					<p><b>1.</b> 在使用&quot;S&quot;结构数据类型时,前面注意加入其所处类的类名前缀,即: 
 					&quot;所处类名::S&quot;,在嵌入语句行中可以使用&quot;<a href="#embed_data_type">@dt</a>&lt;所处类名&gt;::S&quot;表达;</p>
-					<p><b>2. </b>类中使用嵌入语句行直接加入的C++成员变量不会被处理.</p>
+					<p><b>2. </b>类中使用嵌入语句行直接加入的C++成员变量不会被处理;</p>
+					<p><b>3. </b>
+					类中如果有&quot;小数&quot;或&quot;小数数组&quot;成员变量需要使用单精度小数(FLOAT),请在此成员变量上设置值为真的&quot;<a href="#float_param">@视窗.单精度小数</a>&quot;属性.</p>
 				</blockquote>
 				</td>
 			</tr>
@@ -3085,7 +3234,10 @@
 				<blockquote>
 					<p>1. &quot;x64&quot;(编译64位平台版本时) / &quot;win32&quot;(编译32位平台版本时);</p>
 					<p>2. &quot;debug&quot;(编译调试版本时) / &quot;release&quot;(编译发布版本时);</p>
-					<p>3. &quot;exe&quot;(编译为窗口可执行文件时) / &quot;dll&quot;(编译为动态库时) / &quot;lib&quot;(编译为静态链接库时) 
+					<p>3. &quot;default&quot;(火山模块链接方式为默认时) / &quot;dynamic&quot;(火山模块链接方式为动态时) / 
+					&quot;static&quot;(火山模块链接方式为静态时) / &quot;non_dynamic&quot;(火山模块链接方式不为动态时) / 
+					&quot;non_static&quot;(火山模块链接方式不为静态时);</p>
+					<p>4. &quot;exe&quot;(编译为窗口可执行文件时) / &quot;dll&quot;(编译为动态库时) / &quot;lib&quot;(编译为静态链接库时) 
 					/ &quot;console&quot;(编译为控制台可执行文件时).</p>
 				</blockquote>
 				<p>属性名后缀中可以同时存在多个修饰符,但每组修饰符中只允许同时存在一个,多个修饰符之间使用减号字符分隔,其排列顺序没有要求.如果某组中的修饰符一个都没有指定,说明对所对应的编译选项没有要求(任意均可).</p>
@@ -3100,15 +3252,20 @@
 					如果属性值为lib库文件名且该lib为静态链接库(即不为dll动态链接库的输入库),则需要在属性值文本首部加上一个&#39;@&#39;引导字符用作区分;</p>
 					<p><b>3. </b>
 					如果属性值为非lib库文件名,则编译器认为其是一个动态链接库文件,该文件名路径如为相对路径,则为相对本程序编译后结果文件运行时所处目录;</p>
-					<p><b>4. </b>
-					本属性所处方法的定义格式必须与所指定外部库中输出函数的定义格式完全一致,如果外部输出函数中的某参数在定义时指定了&quot;<a href="#win_out_param">@视窗.输出参数</a>&quot;属性(火山编译的外部库)或将输出返回数据(非火山编译的外部库),则所处方法的对应参数也必须指定&quot;<a href="#win_out_param">@视窗.输出参数</a>&quot;属性,以通知编译器复制回输出函数参数中所返回的数据.</p>
-					<p><b>5.</b> 
+					<p><b>4.</b> 如果所输入文件为动态链接库且欲使用序号方式来输入其中函数,则属性值应该为&quot;所输入DLL文件名 
+					+ ? + 所输入函数序号值&quot;格式;</p>
+					<p><b>5. </b>
+					本属性所处方法的定义格式必须与所指定外部库中输出函数的定义格式完全一致,如果外部输出函数中的某参数在定义时指定了&quot;<a href="#win_out_param">@视窗.输出参数</a>&quot;或&quot;<a href="#float_param">@视窗.单精度小数</a>&quot;属性,则所处方法的对应参数也必须指定
+					同样属性值的&quot;<a href="#win_out_param">@视窗.输出参数</a>&quot;或&quot;<a href="#float_param">@视窗.单精度小数</a>&quot;属性,如果外部输出函数本身指定了&quot;<a href="#float_param">@视窗.单精度小数</a>&quot;属性,则所处方法本身也必须指定具有同样属性值的该属性;</p>
+					<p><b>6.</b> 
 					在文件名中可以使用&quot;$(环境变量名)&quot;引用已有的计算机系统或编译器内嵌环境变量值,编译器内嵌支持的环境变量引用名有以下:</p>
 					<blockquote>
 						<p>$(p): 当前编译目标平台英文名称(x64/win32);</p>
 						<p>$(r): 当前编译结果类型英文名称(exe/dll/lib/console);</p>
 						<p>$(d): 当前编译调试版本类型英文名称(debug/realse);</p>
-						<p>$(pf): 当前项目文件去除路径及后缀后的名称.</p>
+						<p>$(pf): 当前项目文件去除路径及后缀后的名称;</p>
+						<p>$(lm): 当前火山模块的链接方式(default/dynamic/static);</p>
+						<p>$(vs): 当前所使用VS版本号(注意其中的小数点使用下划线替代).</p>
 					</blockquote>
 				</blockquote>
 				</td>
@@ -3122,7 +3279,9 @@
 				注意:</p>
 				<blockquote>
 					<p><b>1. </b>方法所有参数的数据类型必须为基本数据类型或字节集类或设置了&quot;<a href="#win_struct_class">@视窗.结构类</a>&quot;属性的类数据类型,如果需要将某参数的数据修改后返回到调用方,则必须在该参数上指定&quot;<a href="#win_out_param">@视窗.输出参数</a>&quot;属性;</p>
-					<p><b>2. </b>方法如果定义有返回值,其数据类型必须为非文本型基本数据类型.</p>
+					<p><b>2. </b>
+					如果方法返回值或方法参数为小数数据类型且想使用单精度小数(FLOAT),请在方法或对应方法参数上设置值为真的&quot;<a href="#float_param">@视窗.单精度小数</a>&quot;属性;</p>
+					<p><b>3. </b>方法如果定义有返回值,其数据类型必须为非文本型基本数据类型.</p>
 				</blockquote>
 				</td>
 			</tr>
@@ -3133,6 +3292,19 @@
 				<td width="198">方法参数</td>
 				<td>
 				本属性只能应用在设置了&quot;<a href="#win_import_method">@视窗.输入</a>&quot;或&quot;<a href="#win_export_method">@视窗.输出</a>&quot;属性的方法的参数上,参数数据类型必须为设置了&quot;<a href="#win_out_param">@视窗.输出参数</a>&quot;属性的类数据类型,用作表示该参数中的数据是否会在方法内被修改以返回输出数据到调用方.只有当设置了本属性,编译器才会加入对应的处理代码.</td>
+			</tr>
+			<tr>
+				<td width="199">@视窗.单精度小数<a name="float_param"></a></td>
+				<td width="90">逻辑型</td>
+				<td width="129">&nbsp;</td>
+				<td width="198">方法参数</td>
+				<td>
+				本属性只能应用在以下位置,用作进一步表示对应位置处的&quot;小数&quot;数据类型为单精度浮点小数(FLOAT):<blockquote>
+					<p><b>1. </b>设置了&quot;<a href="#win_import_method">@视窗.输入</a>&quot;或&quot;<a href="#win_export_method">@视窗.输出</a>&quot;属性的方法上,用作表示该方法返回值数据类型为单精度浮点小数;</p>
+					<p><b>2. </b>设置了&quot;<a href="#win_import_method">@视窗.输入</a>&quot;或&quot;<a href="#win_export_method">@视窗.输出</a>&quot;属性的方法参数上,用作表示该参数数据类型为单精度浮点小数;</p>
+					<p><b>3. </b>设置了&quot;<a href="#win_struct_class">@视窗.结构类</a>&quot;属性的类的成员变量上,用作表示该成员变量数据类型为单精度浮点小数或单精度浮点小数数组(根据成员变量是否为数组而定).</p>
+				</blockquote>
+				</td>
 			</tr>
 			</table>
 		<p>注释:</p>
